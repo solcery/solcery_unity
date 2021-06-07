@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: AOTGenerationConfig
+  m_EditorClassIdentifier: 
+  automateBeforeBuilds: 1
+  deleteDllAfterBuilds: 1
+  AutomateForAllAOTPlatforms: 1
+  automateForPlatforms: 0900000014000000
+  lastScan: 637586350040620327
+  supportSerializedTypes:
+  - TypeName: Grimmz.BrickConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.BrickSubtypeAction, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.BrickSubtypeCondition, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.BrickSubtypeValue, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.BrickType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[Grimmz.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Grimmz.BrickConfig,
+      Assembly-CSharp]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Enum, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Grimmz.BrickType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Grimmz.BrickType, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.Utils.IUpdateable, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Grimmz.BrickConfig, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Grimmz.Utils.IUpdateable, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Grimmz.UIBrickSlotStruct, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Grimmz.UIBrickSlotStruct, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
