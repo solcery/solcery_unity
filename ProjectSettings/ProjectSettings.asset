@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: grimmz
-  productName: grimmz_unity
+  productName: solcery
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -676,11 +676,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 9de17324-9779-4888-a6f8-5278a5435689
+  cloudProjectId: e6d0c82d-ee40-4720-98ae-485e378a95a9
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: grimmz_unity
-  organizationId: grimmzz
+  projectName: solcery
+  organizationId: tjumma
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
