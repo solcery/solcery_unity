@@ -448,7 +448,7 @@ MonoBehaviour:
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
   tooltip: Test your freshly minted cards in a sandbox duel. All game logic is written
-    on chain and we are proud of it.
+    on chain.
 --- !u!114 &300940413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,8 +1561,8 @@ MonoBehaviour:
   title: {fileID: 202503150}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
-  tooltip: Here you can stake SOL, USDC and LP tokens to farm logic bricks for card
-    creation and customization
+  tooltip: Here you wil be able to stake game LP tokens to farm logic bricks for
+    card creation and customization.
 --- !u!114 &1593928670
 MonoBehaviour:
   m_ObjectHideFlags: 0
