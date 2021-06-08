@@ -17,7 +17,6 @@ namespace Grimmz.UI
         public void Init()
         {
             _cards = new List<UICard>();
-            // Debug.Log("UICardCollection Init");
 
             CardCollection.Instance?.Collection.ForEachAsync(c =>
             {
@@ -27,7 +26,7 @@ namespace Grimmz.UI
 
         public void DeInit()
         {
-            // Debug.Log("UICardCollection DeInit");
+
         }
 
         public void UpdateCollection(Collection collection)
@@ -48,7 +47,6 @@ namespace Grimmz.UI
 
         private void OnCardCasted(string cardMintAddress)
         {
-            // Debug.Log("Card casted");
             UnityToReact.Instance?.CallUseCard(cardMintAddress);
         }
 
