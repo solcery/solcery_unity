@@ -4,6 +4,7 @@ using Grimmz.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 namespace Grimmz.UI.Create
 {
@@ -14,6 +15,7 @@ namespace Grimmz.UI.Create
         [SerializeField] private UIBrickEditor brickEditor = null;
         [SerializeField] private UICreateCard createCard = null;
         [SerializeField] private Button createButton = null;
+        [SerializeField] private TextMeshProUGUI finishCardCreation = null;
 
         public void Init()
         {
@@ -35,7 +37,10 @@ namespace Grimmz.UI.Create
 
         private void Update()
         {
-            createButton.interactable = brickEditor.BrickTree.IsValid();
+            var isBrickTreeValid = brickEditor.BrickTree.IsValid();
+
+            createButton.interactable = isBrickTreeValid;
+            finishCardCreation.gameObject.SetActive(!isBrickTreeValid);
         }
 
         public void DeInit()
