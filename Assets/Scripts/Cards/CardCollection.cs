@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using Grimmz.Utils;
-using UnityEngine;
 
 namespace Grimmz.Modules.CardCollection
 {
@@ -16,12 +15,12 @@ namespace Grimmz.Modules.CardCollection
 
         public void Init()
         {
-            // Debug.Log("CardCollection Init");
+            
         }
 
         public void DeInit()
         {
-            // Debug.Log("CardCollection DeInit");
+            
         }
     }
 }

@@ -44,15 +44,15 @@ namespace Grimmz.UI.Sandbox
 
         private void UpdateFight(Fight fight)
         {
-            this.fight.gameObject.SetActive(true);
-            this.fight.UpdateFight(fight);
+            this.fight?.gameObject?.SetActive(true);
+            this.fight?.UpdateFight(fight);
         }
 
         public void DeInit()
         {
-            fight.DeInit();
-            cardCollection.DeInit();
-            createFightButton.onClick.RemoveAllListeners();
+            fight?.DeInit();
+            cardCollection?.DeInit();
+            createFightButton?.onClick?.RemoveAllListeners();
         }
     }
 }
