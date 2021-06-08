@@ -35,7 +35,7 @@ namespace Grimmz
         public int Object = 0;
 
         public bool HasField = false;
-        public int IntField = -1;
+        public int IntField = 0;
         public string StringField = null;
         public bool HasObjectSelection = false;
 
@@ -58,7 +58,7 @@ namespace Grimmz
             buffer.AddRange(BitConverter.GetBytes(Subtype).ToList<byte>());
             if (HasObjectSelection)
                 buffer.AddRange(BitConverter.GetBytes(Object).ToList<byte>());
-            if (IntField >= 0)
+            if (HasField)
                 buffer.AddRange(BitConverter.GetBytes(IntField).ToList<byte>());
             foreach (BrickData child in Slots)
                 child?.SerializeToBytes(ref buffer);
