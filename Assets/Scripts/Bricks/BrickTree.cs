@@ -15,12 +15,21 @@ namespace Grimmz
             MetaData = new CardMetadata(true);
         }
 
-        public void SerializeToBytes(ref List<byte> buffer) {
+        public void SerializeToBytes(ref List<byte> buffer)
+        {
             List<byte> tmpBuffer = new List<byte>();
             MetaData.SerializeToBytes(ref tmpBuffer);
             buffer.AddRange(BitConverter.GetBytes(tmpBuffer.Count).ToList<byte>());
             buffer.AddRange(tmpBuffer);
             Genesis.SerializeToBytes(ref buffer);
+        }
+
+        public bool IsValid()
+        {
+            if (Genesis == null)
+                return false;
+                
+            return Genesis.IsValid();
         }
     }
 }

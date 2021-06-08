@@ -9,24 +9,23 @@ namespace Grimmz.UI.Wallet
 {
     public class UIWallet : Singleton<UIWallet>
     {
+        [SerializeField] private GameObject connectWalletPopup = null;
         [SerializeField] private TextMeshProUGUI _walletConnectedText;
         private WalletData _data = null;
 
         public void Init(WalletData data)
         {
-            // Debug.Log("UIWallet Init");
-
             _data = data;
 
-            _data.IsWalletConnected.WithoutCurrent().ForEachAsync(i =>
+            _data.IsWalletConnected.ForEachAsync(w =>
             {
-                SetWalletConnectedText(i);
+                SetWalletConnected(w);
             }, this.GetCancellationTokenOnDestroy()).Forget();
         }
 
-        private void SetWalletConnectedText(bool isConnected)
+        private void SetWalletConnected(bool isConnected)
         {
-            _walletConnectedText.text = isConnected ? "wallet connected" : "wallet disconnected";
+            connectWalletPopup.SetActive(!isConnected);
         }
     }
 }

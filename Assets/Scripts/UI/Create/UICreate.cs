@@ -28,7 +28,14 @@ namespace Grimmz.UI.Create
                 List<byte> buffer = new List<byte>();
                 brickEditor.BrickTree.SerializeToBytes(ref buffer);
                 UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
+
+                brickEditor.DeleteGenesisBrick();
             });
+        }
+
+        private void Update()
+        {
+            createButton.interactable = brickEditor.BrickTree.IsValid();
         }
 
         public void DeInit()

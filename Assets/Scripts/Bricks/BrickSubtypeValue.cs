@@ -4,6 +4,8 @@ namespace Grimmz
     {
         Const,
         Conditional,
-        CurrentHP,
+        Add,
+        Sub,
+        CurrentHP
     }
 }

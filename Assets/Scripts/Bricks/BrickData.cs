@@ -6,6 +6,30 @@ namespace Grimmz
 {
     public class BrickData
     {
+        public bool IsValid()
+        {
+            if (Slots.Length == 0)
+                return true;
+            else
+            {
+                var areSlotsValid = true;
+
+                foreach (var slot in Slots)
+                {
+                    if (slot == null)
+                        return false;
+                    else
+                    {
+                        if (!slot.IsValid())
+                            areSlotsValid = false;
+                    }
+
+                }
+
+                return areSlotsValid;
+            }
+        }
+
         public int Type = -1;
         public int Subtype = -1;
         public int Object = 0;
@@ -37,7 +61,7 @@ namespace Grimmz
             if (IntField >= 0)
                 buffer.AddRange(BitConverter.GetBytes(IntField).ToList<byte>());
             foreach (BrickData child in Slots)
-                child.SerializeToBytes(ref buffer);
+                child?.SerializeToBytes(ref buffer);
         }
     }
 

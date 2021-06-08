@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311dde061d168e845bcd6a32a9d3cbd8, type: 3}
-  m_Name: RandomRange
+  m_Name: Sub
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,7 +26,7 @@ MonoBehaviour:
       Data: 0|Grimmz.BrickSubtypeValue, Assembly-CSharp
     - Name: 
       Entry: 3
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -45,7 +45,7 @@ MonoBehaviour:
       Data: 2
     - Name: Name
       Entry: 1
-      Data: Start
+      Data: Value #1
     - Name: 
       Entry: 8
       Data: 
@@ -57,7 +57,7 @@ MonoBehaviour:
       Data: 2
     - Name: Name
       Entry: 1
-      Data: End
+      Data: Value #2
     - Name: 
       Entry: 8
       Data: 
@@ -68,7 +68,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 2
-  Description: Returns random number between start and end, both inclusive.
+  Description: Returns value #1 minus value #2
   HasField: 0
   FieldType: 0
   FieldName: 

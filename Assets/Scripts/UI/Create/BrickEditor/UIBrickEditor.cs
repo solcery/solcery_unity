@@ -16,6 +16,7 @@ namespace Grimmz.UI.Create.BrickEditor
         [SerializeField] private GameObject brickPrefab = null;
 
         private BrickTree _brickTree;
+        private UIBrick _genesisBrick;
 
         private void Start()
         {
@@ -57,13 +58,13 @@ namespace Grimmz.UI.Create.BrickEditor
             if (button.Parent == null)
             {
                 _brickTree.SetGenesis(brickData);
+                _genesisBrick = brick;
             }
             else
             {
                 button.Parent.Data.Slots[button.IndexInParentSlots] = brickData;
                 button.Parent.Slots.Slots[button.IndexInParentSlots].SetFilled(true);
             }
-
 
             for (int i = 0; i < config.Slots.Count; i++)
             {
@@ -82,6 +83,7 @@ namespace Grimmz.UI.Create.BrickEditor
             if (brick.Parent == null)
             {
                 _brickTree.SetGenesis(null);
+                _genesisBrick = null;
                 selectBrickButton.Init(BrickType.Action, content);
             }
             else
@@ -95,6 +97,11 @@ namespace Grimmz.UI.Create.BrickEditor
             DestroyImmediate(brick.gameObject);
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+        }
+
+        public void DeleteGenesisBrick()
+        {
+            DeleteBrick(_genesisBrick);
         }
 
         private void CreateFirstButton()
