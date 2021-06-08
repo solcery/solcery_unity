@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ namespace Grimmz.UI.Create.BrickEditor
         [SerializeField] private GameObject selectBrickButtonPrefab = null;
         [SerializeField] private RectTransform content;
         [SerializeField] private GameObject brickPrefab = null;
+        [SerializeField] private TextMeshProUGUI helperText = null;
 
         private BrickTree _brickTree;
         private UIBrick _genesisBrick;
@@ -30,6 +32,8 @@ namespace Grimmz.UI.Create.BrickEditor
             contentBlocker.transform.SetAsLastSibling();
             subtypePopup.gameObject.SetActive(true);
             subtypePopup.Open(button, OnBrickAdded);
+
+            helperText.gameObject.SetActive(false);
         }
 
         public void CloseSubtypePopup()
@@ -92,6 +96,9 @@ namespace Grimmz.UI.Create.BrickEditor
                 brick.Parent.Slots.Slots[brick.IndexInParentSlots].SetFilled(false);
                 selectBrickButton.Init(brick.Config.Type, brick.Vert.transform, brick.Parent, brick.IndexInParentSlots);
             }
+
+            if(_genesisBrick == null)
+                helperText.gameObject.SetActive(true);
 
             DestroyImmediate(brick.Hor);
             DestroyImmediate(brick.gameObject);
