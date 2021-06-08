@@ -36,7 +36,7 @@ namespace Grimmz.UI.Sandbox
                 UpdateFight(FightModule.Instance.Fight.Value);
             }
 
-            FightModule.Instance?.Fight.WithoutCurrent().ForEachAsync(f =>
+            FightModule.Instance?.Fight?.WithoutCurrent().ForEachAsync(f =>
             {
                 if (f != null) UpdateFight(f);
             }, this.GetCancellationTokenOnDestroy()).Forget();
