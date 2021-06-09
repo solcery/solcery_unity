@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 790001995}
   - component: {fileID: 790001994}
   m_Layer: 5
-  m_Name: UIWalletConnectedText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,7 +731,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   connectWalletPopup: {fileID: 1721250333}
-  _walletConnectedText: {fileID: 790001994}
 --- !u!1 &1061892243
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +743,7 @@ GameObject:
   - component: {fileID: 1061892246}
   - component: {fileID: 1061892245}
   m_Layer: 5
-  m_Name: UIWalletBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,12 +985,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1721250334}
   m_Layer: 5
-  m_Name: UIConnectWalletPopup
+  m_Name: ConnectWalletPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721250334
 RectTransform:
   m_ObjectHideFlags: 0

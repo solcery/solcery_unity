@@ -10,8 +10,8 @@ namespace Grimmz.WebGL
     {
         public void SetWalletConnected(string data)
         {
-            var w = JsonUtility.FromJson<WalletConnectionData>(data);
-            Wallet.Instance.Data.IsWalletConnected.Value = w.isConnected;
+            var connectionData = JsonUtility.FromJson<WalletConnectionData>(data);
+            Wallet.Instance.Connection.IsConnected.Value = connectionData.IsConnected;
         }
 
         public void UpdateCollection(string collectionJson)
@@ -25,11 +25,5 @@ namespace Grimmz.WebGL
             var fight = JsonUtility.FromJson<Fight>(fightJson);
             FightModule.Instance?.UpdateFight(fight);
         }
-    }
-
-    public struct WalletConnectionData
-    {
-        public bool isConnected;
-        public int someInt;
     }
 }

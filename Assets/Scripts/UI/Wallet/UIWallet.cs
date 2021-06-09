@@ -1,5 +1,4 @@
-using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Linq;
+using System.Threading;
 using Grimmz.Modules.Wallet;
 using Grimmz.Utils;
 using TMPro;
@@ -10,20 +9,21 @@ namespace Grimmz.UI.Wallet
     public class UIWallet : Singleton<UIWallet>
     {
         [SerializeField] private GameObject connectWalletPopup = null;
-        [SerializeField] private TextMeshProUGUI _walletConnectedText;
-        private WalletData _data = null;
 
-        public void Init(WalletData data)
+        private CancellationTokenSource _cts;
+
+        public void Init(WalletConnection connection)
         {
-            _data = data;
-
-            _data.IsWalletConnected.ForEachAsync(w =>
-            {
-                SetWalletConnected(w);
-            }, this.GetCancellationTokenOnDestroy()).Forget();
+            _cts = new CancellationTokenSource();
+            connection.Subscribe(OnWalletConnectionChange, _cts.Token);
         }
 
-        private void SetWalletConnected(bool isConnected)
+        public void DeInit()
+        {
+            _cts.Cancel();
+        }
+
+        private void OnWalletConnectionChange(bool isConnected)
         {
             connectWalletPopup.SetActive(!isConnected);
         }
