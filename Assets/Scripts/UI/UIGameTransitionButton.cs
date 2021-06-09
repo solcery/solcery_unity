@@ -13,7 +13,7 @@ namespace Solcery.UI
 
         protected virtual void OnEnable()
         {
-            button.onClick.AddListener(() => { GameSM.Instance.PerformTransition(transition).Forget(); });
+            button.onClick.AddListener(() => { GameSM.Instance?.PerformTransition(transition); });
         }
 
         private void OnDisable()

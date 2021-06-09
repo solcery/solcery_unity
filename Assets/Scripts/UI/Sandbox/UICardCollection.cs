@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 using Solcery.Modules.CardCollection;
+using Solcery.Utils.Reactives;
 using Solcery.WebGL;
 using UnityEngine;
 
@@ -13,15 +15,14 @@ namespace Solcery.UI
         [SerializeField] private GameObject cardPrefab;
 
         private List<UICard> _cards;
+        private CancellationTokenSource _cts;
 
         public void Init()
         {
+            _cts = new CancellationTokenSource();
             _cards = new List<UICard>();
 
-            CardCollection.Instance?.Collection.ForEachAsync(c =>
-            {
-                UpdateCollection(c);
-            }, this.GetCancellationTokenOnDestroy()).Forget();
+            Reactives.SubscribeTo(CardCollection.Instance?.Collection, UpdateCollection, _cts.Token);
         }
 
         public void DeInit()

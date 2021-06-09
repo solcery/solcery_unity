@@ -9,7 +9,7 @@ namespace Solcery.Utils.Reactives
     {
         public static void SubscribeTo<T>(AsyncReactiveProperty<T> property, Action<T> callback, CancellationToken cancellationToken)
         {
-            property.ForEachAsync(p => callback?.Invoke(p), cancellationToken);
+            property?.ForEachAsync(p => callback?.Invoke(p), cancellationToken);
         }
     }
 }

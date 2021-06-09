@@ -1,7 +1,9 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 using Solcery.Modules.FightModule;
 using Solcery.Utils;
+using Solcery.Utils.Reactives;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,8 +18,12 @@ namespace Solcery.UI.Sandbox
         [SerializeField] private UIFight fight = null;
         [SerializeField] private UICardCollection cardCollection = null;
 
+        private CancellationTokenSource _cts;
+
         public void Init()
         {
+            _cts = new CancellationTokenSource();
+
             fight.Init();
             cardCollection.Init();
 
@@ -36,10 +42,7 @@ namespace Solcery.UI.Sandbox
                 UpdateFight(FightModule.Instance.Fight.Value);
             }
 
-            FightModule.Instance?.Fight?.WithoutCurrent().ForEachAsync(f =>
-            {
-                if (f != null) UpdateFight(f);
-            }, this.GetCancellationTokenOnDestroy()).Forget();
+            Reactives.SubscribeTo(FightModule.Instance?.Fight, UpdateFight, _cts.Token);
         }
 
         private void UpdateFight(Fight fight)
@@ -50,6 +53,8 @@ namespace Solcery.UI.Sandbox
 
         public void DeInit()
         {
+            _cts?.Cancel();
+
             fight?.DeInit();
             cardCollection?.DeInit();
             createFightButton?.onClick?.RemoveAllListeners();

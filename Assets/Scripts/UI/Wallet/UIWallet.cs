@@ -14,12 +14,12 @@ namespace Solcery.UI.Wallet
         public void Init(Solcery.Modules.Wallet.Wallet wallet)
         {
             _cts = new CancellationTokenSource();
-            Reactives.SubscribeTo(wallet.Connection.IsConnected, OnWalletConnectionChange, _cts.Token);
+            Reactives.SubscribeTo(wallet.Connection?.IsConnected, OnWalletConnectionChange, _cts.Token);
         }
 
         public void DeInit()
         {
-            _cts.Cancel();
+            _cts?.Cancel();
         }
 
         private void OnWalletConnectionChange(bool isConnected)
