@@ -1,5 +1,5 @@
 using Solcery.Modules.CardCollection;
-using Solcery.Modules.FightModule;
+using Solcery.Modules.Fight;
 using Solcery.Modules.Wallet;
 using Solcery.Utils;
 using UnityEngine;
@@ -22,8 +22,8 @@ namespace Solcery.WebGL
 
         public void UpdateFight(string fightJson)
         {
-            var fight = JsonUtility.FromJson<Fight>(fightJson);
-            FightModule.Instance?.UpdateFight(fight);
+            var fightData = JsonUtility.FromJson<FightData>(fightJson);
+            Fight.Instance?.UpdateFight(fightData);
         }
     }
 }

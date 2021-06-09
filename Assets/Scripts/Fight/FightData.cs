@@ -3,7 +3,7 @@ using System;
 namespace Solcery
 {
     [Serializable]
-    public class Fight
+    public class FightData
     {
         public int HP1;
         public int HP2;

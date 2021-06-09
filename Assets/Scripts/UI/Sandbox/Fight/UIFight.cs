@@ -18,10 +18,10 @@ namespace Solcery.UI.Sandbox
 
         }
 
-        public void UpdateFight(Fight fight)
+        public void UpdateFight(FightData fightData)
         {
-            hp1Text.text = fight.HP1.ToString();
-            hp2Text.text = fight.HP2.ToString();
+            hp1Text.text = fightData.HP1.ToString();
+            hp2Text.text = fightData.HP2.ToString();
         }
     }
 }

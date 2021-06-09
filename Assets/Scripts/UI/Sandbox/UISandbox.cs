@@ -1,5 +1,5 @@
 using System.Threading;
-using Solcery.Modules.FightModule;
+using Solcery.Modules.Fight;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using Solcery.WebGL;
@@ -25,7 +25,7 @@ namespace Solcery.UI.Sandbox
             fight.Init();
             cardCollection.Init();
 
-            if (FightModule.Instance.Fight.Value == null)
+            if (Fight.Instance.FightData.Value == null)
             {
                 createFightButton.onClick.AddListener(() =>
                 {
@@ -37,16 +37,16 @@ namespace Solcery.UI.Sandbox
             {
                 fight.gameObject.SetActive(true);
                 createFightButton.gameObject.SetActive(false);
-                UpdateFight(FightModule.Instance.Fight.Value);
+                UpdateFight(Fight.Instance.FightData.Value);
             }
 
-            Reactives.SubscribeTo(FightModule.Instance?.Fight, UpdateFight, _cts.Token);
+            Reactives.SubscribeTo(Fight.Instance?.FightData, UpdateFight, _cts.Token);
         }
 
-        private void UpdateFight(Fight fight)
+        private void UpdateFight(FightData fightData)
         {
             this.fight?.gameObject?.SetActive(true);
-            this.fight?.UpdateFight(fight);
+            this.fight?.UpdateFight(fightData);
         }
 
         public void DeInit()
