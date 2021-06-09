@@ -1,7 +1,7 @@
-using Grimmz.UI.Sandbox;
-using Grimmz.Utils;
+using Solcery.UI.Sandbox;
+using Solcery.Utils;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Sandbox : Singleton<Sandbox>
     {

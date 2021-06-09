@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 
-namespace Grimmz.UI.Create.BrickEditor
+namespace Solcery.UI.Create.BrickEditor
 {
     public class UIBrickSlot : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Bootstrapper : MonoBehaviour
     {

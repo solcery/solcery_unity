@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Grimmz.Utils
+namespace Solcery.Utils
 {
     public class Updater : Singleton<Updater>
     {

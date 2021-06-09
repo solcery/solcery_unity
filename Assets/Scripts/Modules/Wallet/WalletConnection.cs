@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 
-namespace Grimmz.Modules.Wallet
+namespace Solcery.Modules.Wallet
 {
     public class WalletConnection
     {

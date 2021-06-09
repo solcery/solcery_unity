@@ -1,8 +1,8 @@
 using Cysharp.Threading.Tasks;
-using Grimmz.Utils;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz.FSM
+namespace Solcery.FSM
 {
     public class SM<TSM, TState, TTransition> : UpdateableSingleton<TSM>
     where TSM : SM<TSM, TState, TTransition>

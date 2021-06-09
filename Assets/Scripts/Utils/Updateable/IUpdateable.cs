@@ -1,4 +1,4 @@
-namespace Grimmz.Utils
+namespace Solcery.Utils
 {
     public interface IUpdateable
     {

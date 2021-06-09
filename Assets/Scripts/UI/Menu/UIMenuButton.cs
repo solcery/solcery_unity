@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Grimmz.UI.Menu
+namespace Solcery.UI.Menu
 {
     public class UIMenuButton : UIGameTransitionButton, IPointerEnterHandler, IPointerExitHandler
     {

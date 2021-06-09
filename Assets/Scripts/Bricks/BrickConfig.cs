@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
-    [CreateAssetMenu(menuName = "Grimmz/Bricks/BrickConfig", fileName = "BrickConfig")]
+    [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfig", fileName = "BrickConfig")]
     public class BrickConfig : SerializedScriptableObject
     {
         public BrickType Type;

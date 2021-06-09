@@ -1,7 +1,7 @@
-using Grimmz.Utils;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Farm : Singleton<Farm>
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Grimmz
+namespace Solcery
 {
     [Serializable]
     public class CardData

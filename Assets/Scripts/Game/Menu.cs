@@ -1,7 +1,7 @@
-using Grimmz.UI.Menu;
-using Grimmz.Utils;
+using Solcery.UI.Menu;
+using Solcery.Utils;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Menu : Singleton<Menu>
     {

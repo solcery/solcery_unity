@@ -1,9 +1,9 @@
 using System.Runtime.InteropServices;
 using System;
 using System.Collections.Generic;
-using Grimmz.Utils;
+using Solcery.Utils;
 
-namespace Grimmz.WebGL
+namespace Solcery.WebGL
 {
     public class UnityToReact : Singleton<UnityToReact>
     {

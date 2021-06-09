@@ -1,10 +1,10 @@
-using Grimmz.Modules.CardCollection;
-using Grimmz.Modules.FightModule;
-using Grimmz.Modules.Wallet;
-using Grimmz.Utils;
+using Solcery.Modules.CardCollection;
+using Solcery.Modules.FightModule;
+using Solcery.Modules.Wallet;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz.WebGL
+namespace Solcery.WebGL
 {
     public class ReactToUnity : Singleton<ReactToUnity>
     {

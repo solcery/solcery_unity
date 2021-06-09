@@ -1,8 +1,8 @@
-using Grimmz.UI.Create;
-using Grimmz.Utils;
+using Solcery.UI.Create;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Create : Singleton<Create>
     {

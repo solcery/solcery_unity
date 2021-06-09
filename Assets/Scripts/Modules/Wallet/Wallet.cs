@@ -1,7 +1,7 @@
-using Grimmz.UI.Wallet;
-using Grimmz.Utils;
+using Solcery.UI.Wallet;
+using Solcery.Utils;
 
-namespace Grimmz.Modules.Wallet
+namespace Solcery.Modules.Wallet
 {
     public class Wallet : Singleton<Wallet>
     {

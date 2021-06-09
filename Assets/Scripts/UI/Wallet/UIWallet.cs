@@ -1,10 +1,10 @@
 using System.Threading;
-using Grimmz.Modules.Wallet;
-using Grimmz.Utils;
+using Solcery.Modules.Wallet;
+using Solcery.Utils;
 using TMPro;
 using UnityEngine;
 
-namespace Grimmz.UI.Wallet
+namespace Solcery.UI.Wallet
 {
     public class UIWallet : Singleton<UIWallet>
     {

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Grimmz
+namespace Solcery
 {
     public class BrickData
     {

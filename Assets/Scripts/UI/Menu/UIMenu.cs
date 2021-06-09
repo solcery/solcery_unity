@@ -1,7 +1,7 @@
-using Grimmz.Utils;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz.UI.Menu
+namespace Solcery.UI.Menu
 {
     public class UIMenu : Singleton<UIMenu>
     {

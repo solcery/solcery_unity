@@ -1,13 +1,13 @@
 using Cysharp.Threading.Tasks;
-using Grimmz.FSM.Game;
-using Grimmz.Utils;
-using Grimmz.Modules.Wallet;
-using Grimmz.Modules.CardCollection;
-using Grimmz.WebGL;
-using Grimmz.Modules.FightModule;
+using Solcery.FSM.Game;
+using Solcery.Utils;
+using Solcery.Modules.Wallet;
+using Solcery.Modules.CardCollection;
+using Solcery.WebGL;
+using Solcery.Modules.FightModule;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Game : Singleton<Game>
     {

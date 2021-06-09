@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Grimmz
+namespace Solcery
 {
     [Serializable]
     public struct CardMetadata

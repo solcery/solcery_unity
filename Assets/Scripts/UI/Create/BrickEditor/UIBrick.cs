@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Grimmz.UI.Create.BrickEditor
+namespace Solcery.UI.Create.BrickEditor
 {
     public class UIBrick : MonoBehaviour
     {

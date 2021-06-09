@@ -1,12 +1,12 @@
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
-using Grimmz.Modules.FightModule;
-using Grimmz.Utils;
-using Grimmz.WebGL;
+using Solcery.Modules.FightModule;
+using Solcery.Utils;
+using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Grimmz.UI.Sandbox
+namespace Solcery.UI.Sandbox
 {
     public class UISandbox : Singleton<UISandbox>
     {

@@ -1,12 +1,12 @@
-using Grimmz.UI.Create.BrickEditor;
-using Grimmz.Utils;
-using Grimmz.WebGL;
+using Solcery.UI.Create.BrickEditor;
+using Solcery.Utils;
+using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
-namespace Grimmz.UI.Create
+namespace Solcery.UI.Create
 {
     public class UICreate : Singleton<UICreate>
     {

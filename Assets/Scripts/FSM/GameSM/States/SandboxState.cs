@@ -1,9 +1,9 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Grimmz.FSM.Game
+namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Grimmz/FSM/Game/States/Sandbox", fileName = "Sandbox")]
+    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Sandbox", fileName = "Sandbox")]
     public class SandboxState : GameState
     {
         public override async UniTask Enter()

@@ -1,20 +1,20 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Grimmz.FSM.Game
+namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Grimmz/FSM/Game/States/Create", fileName = "Create")]
+    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Create", fileName = "Create")]
     public class CreateState : GameState
     {
         public override async UniTask Enter()
         {
             await base.Enter();
-            Grimmz.Create.Instance?.Init();
+            Solcery.Create.Instance?.Init();
         }
 
         public override async UniTask Exit()
         {
-            Grimmz.Create.Instance?.DeInit();
+            Solcery.Create.Instance?.DeInit();
             await base.Exit();
         }
     }

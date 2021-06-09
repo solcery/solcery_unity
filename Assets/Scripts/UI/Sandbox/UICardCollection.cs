@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
-using Grimmz.Modules.CardCollection;
-using Grimmz.WebGL;
+using Solcery.Modules.CardCollection;
+using Solcery.WebGL;
 using UnityEngine;
 
-namespace Grimmz.UI
+namespace Solcery.UI
 {
     public class UICardCollection : MonoBehaviour
     {

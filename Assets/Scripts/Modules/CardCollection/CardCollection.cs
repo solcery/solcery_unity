@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
-using Grimmz.Utils;
+using Solcery.Utils;
 
-namespace Grimmz.Modules.CardCollection
+namespace Solcery.Modules.CardCollection
 {
     public class CardCollection : Singleton<CardCollection>
     {

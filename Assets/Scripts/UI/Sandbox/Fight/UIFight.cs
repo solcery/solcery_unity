@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Grimmz.UI.Sandbox
+namespace Solcery.UI.Sandbox
 {
     public class UIFight : MonoBehaviour
     {

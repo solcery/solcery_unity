@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
-    [CreateAssetMenu(menuName = "Grimmz/Bricks/BrickConfigs", fileName = "BrickConfigs")]
+    [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfigs", fileName = "BrickConfigs")]
     public class BrickConfigs : SerializedScriptableObject
     {
         [SerializeField] private Dictionary<BrickType, List<BrickConfig>> ConfigsByType = new Dictionary<BrickType, List<BrickConfig>>();

@@ -1,8 +1,8 @@
 using Cysharp.Threading.Tasks;
-using Grimmz.Utils;
+using Solcery.Utils;
 using UnityEngine;
 
-namespace Grimmz.Modules.FightModule
+namespace Solcery.Modules.FightModule
 {
     public class FightModule : Singleton<FightModule>
     {

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Grimmz.UI
+namespace Solcery.UI
 {
     public class UICard : MonoBehaviour
     {

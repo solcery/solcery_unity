@@ -1,4 +1,4 @@
-namespace Grimmz.Modules.Wallet
+namespace Solcery.Modules.Wallet
 {
     public struct WalletConnectionData
     {
