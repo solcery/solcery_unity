@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Threading;
-using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Linq;
 using Solcery.Modules.CardCollection;
 using Solcery.Utils.Reactives;
 using Solcery.WebGL;

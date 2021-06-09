@@ -10,7 +10,7 @@ namespace Solcery
 {
     public class Game : Singleton<Game>
     {
-        public async UniTaskVoid Init()
+        public void Init()
         {
             Wallet.Instance?.Init();
             CardCollection.Instance?.Init();

@@ -1,6 +1,4 @@
 using System.Threading;
-using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Linq;
 using Solcery.Modules.FightModule;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
