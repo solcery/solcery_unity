@@ -51,7 +51,7 @@ namespace Solcery.UI.Sandbox
 
         public void DeInit()
         {
-            _cts?.Cancel();
+            _cts.Cancel();
 
             fight?.DeInit();
             cardCollection?.DeInit();

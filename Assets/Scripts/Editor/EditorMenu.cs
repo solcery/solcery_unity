@@ -44,7 +44,13 @@ namespace Solcery.Editor
             await StopPlayingAndOpenScene("Assets/Scenes/Sandbox.unity");
         }
 
-        [MenuItem("Solcery/Scene/GUI Kit", false, 101)]
+        [MenuItem("Solcery/Scene/Test", false, 101)]
+        static async UniTask OpenTestScene()
+        {
+            await StopPlayingAndOpenScene("Assets/Scenes/Test/Test.unity");
+        }
+
+        [MenuItem("Solcery/Scene/GUI Kit", false, 201)]
         static async UniTask OpenGUIKitScene()
         {
             await StopPlayingAndOpenScene("Assets/GUI Kit - Dark Geo/Scenes/DemoScene.unity");

@@ -19,7 +19,7 @@ namespace Solcery.UI.Wallet
 
         public void DeInit()
         {
-            _cts?.Cancel();
+            _cts.Cancel();
         }
 
         private void OnWalletConnectionChange(bool isConnected)
