@@ -1,7 +1,6 @@
 using System.Threading;
-using Solcery.Modules.Wallet;
 using Solcery.Utils;
-using TMPro;
+using Solcery.Utils.Reactives;
 using UnityEngine;
 
 namespace Solcery.UI.Wallet
@@ -12,10 +11,10 @@ namespace Solcery.UI.Wallet
 
         private CancellationTokenSource _cts;
 
-        public void Init(WalletConnection connection)
+        public void Init(Solcery.Modules.Wallet.Wallet wallet)
         {
             _cts = new CancellationTokenSource();
-            connection.Subscribe(OnWalletConnectionChange, _cts.Token);
+            Reactives.SubscribeTo(wallet.Connection.IsConnected, OnWalletConnectionChange, _cts.Token);
         }
 
         public void DeInit()

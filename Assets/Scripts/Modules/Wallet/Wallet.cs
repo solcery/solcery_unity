@@ -11,7 +11,7 @@ namespace Solcery.Modules.Wallet
         public void Init()
         {
             _connection = new WalletConnection();
-            UIWallet.Instance?.Init(_connection);
+            UIWallet.Instance?.Init(this);
         }
 
         public void DeInit()

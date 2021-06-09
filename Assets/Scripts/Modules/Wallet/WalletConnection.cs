@@ -18,13 +18,5 @@ namespace Solcery.Modules.Wallet
             _isConnected = new AsyncReactiveProperty<bool>(false);
 #endif
         }
-
-        public void Subscribe(Action<bool> callback, CancellationToken cancellationToken)
-        {
-            _isConnected.ForEachAsync(isConnected =>
-            {
-                callback?.Invoke(isConnected);
-            }, cancellationToken);
-        }
     }
 }
