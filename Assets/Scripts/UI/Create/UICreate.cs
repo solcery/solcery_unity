@@ -8,7 +8,7 @@ using TMPro;
 
 namespace Solcery.UI.Create
 {
-    public class UICreate : Singleton<UICreate>
+    public class UICreate : UpdateableSingleton<UICreate>
     {
         public UIBrickEditor BrickEditor => brickEditor;
 
@@ -35,18 +35,18 @@ namespace Solcery.UI.Create
             });
         }
 
-        private void Update()
+        public void DeInit()
+        {
+            createCard.DeInit();
+            createButton.onClick.RemoveAllListeners();
+        }
+
+        public override void PerformUpdate()
         {
             var isBrickTreeValid = brickEditor.BrickTree.IsValid();
 
             createButton.interactable = isBrickTreeValid;
             finishCardCreation.gameObject.SetActive(!isBrickTreeValid);
-        }
-
-        public void DeInit()
-        {
-            createCard.DeInit();
-            createButton.onClick.RemoveAllListeners();
         }
     }
 }

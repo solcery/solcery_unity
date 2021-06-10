@@ -13,14 +13,60 @@ MonoBehaviour:
   m_Name: LesserThan
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 01010700000053007500620074007900700065002f00000000012d0000004700720069006d006d007a002e0042007200690063006b00530075006200740079007000650043006f006e0064006900740069006f006e002c00200041007300730065006d0062006c0079002d00430053006800610072007000000000001e07000000000000000501010500000053006c006f00740073002f010000000158000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004c00690073007400600031005b005b004700720069006d006d007a002e005500490042007200690063006b0053006c006f0074005300740072007500630074002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c006900620001000000060200000000000000042f0200000001290000004700720069006d006d007a002e005500490042007200690063006b0053006c006f0074005300740072007500630074002c00200041007300730065006d0062006c0079002d004300530068006100720070001d0104000000540079007000650002000000000000002701040000004e0061006d0065000108000000560061006c0075006500200023003100050430020000001d0104000000540079007000650002000000000000002701040000004e0061006d0065000108000000560061006c0075006500200023003200050705
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: Subtype
+      Entry: 7
+      Data: 0|Solcery.BrickSubtypeCondition, Assembly-CSharp
+    - Name: 
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Slots
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
+    - Name: Type
+      Entry: 3
+      Data: 0
+    - Name: Name
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
+    - Name: Type
+      Entry: 3
+      Data: 0
+    - Name: Name
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   Type: 1
   Description: Returns true if value#1 is lesser than value#2.
   HasField: 0

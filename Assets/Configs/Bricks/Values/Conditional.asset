@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: Subtype
       Entry: 7
-      Data: 0|Grimmz.BrickSubtypeValue, Assembly-CSharp
+      Data: 0|Solcery.BrickSubtypeValue, Assembly-CSharp
     - Name: 
       Entry: 3
       Data: 1
@@ -32,44 +32,44 @@ MonoBehaviour:
       Data: 
     - Name: Slots
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[Grimmz.UIBrickSlotStruct, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: Grimmz.UIBrickSlotStruct, Assembly-CSharp
+      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
     - Name: Type
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: Name
-      Entry: 1
-      Data: Condition
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: Grimmz.UIBrickSlotStruct, Assembly-CSharp
+      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
     - Name: Type
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: Name
-      Entry: 1
-      Data: Positive
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: Grimmz.UIBrickSlotStruct, Assembly-CSharp
+      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
     - Name: Type
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: Name
-      Entry: 1
-      Data: Negative
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
