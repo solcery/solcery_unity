@@ -11,5 +11,10 @@ namespace Solcery.Utils.Reactives
         {
             property?.ForEachAsync(p => callback?.Invoke(p), cancellationToken);
         }
+
+        public static void SubscribeWithoutCurrent<T>(AsyncReactiveProperty<T> property, Action<T> callback, CancellationToken cancellationToken)
+        {
+            property?.WithoutCurrent().ForEachAsync(p => callback?.Invoke(p), cancellationToken);
+        }
     }
 }

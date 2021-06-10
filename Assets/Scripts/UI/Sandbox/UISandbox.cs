@@ -40,11 +40,13 @@ namespace Solcery.UI.Sandbox
                 UpdateFight(Fight.Instance.FightData.Value);
             }
 
-            Reactives.SubscribeTo(Fight.Instance?.FightData, UpdateFight, _cts.Token);
+            Reactives.SubscribeWithoutCurrent(Fight.Instance?.FightData, UpdateFight, _cts.Token);
         }
 
         private void UpdateFight(FightData fightData)
         {
+            if (fightData == null) return;
+
             this.fight?.gameObject?.SetActive(true);
             this.fight?.UpdateFight(fightData);
         }
