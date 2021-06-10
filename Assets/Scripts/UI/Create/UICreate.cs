@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Solcery.Utils.Reactives;
+using System.Threading;
 
 namespace Solcery.UI.Create
 {
@@ -18,9 +20,15 @@ namespace Solcery.UI.Create
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
         [SerializeField] private GameObject lockIcon = null;
 
+        private CancellationTokenSource _cts;
+
         public void Init()
         {
-            createCard.Init();
+            _cts = new CancellationTokenSource();
+            brickEditor?.Init();
+            createCard?.Init();
+
+            Reactives.SubscribeWithoutCurrent(brickEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
@@ -38,17 +46,19 @@ namespace Solcery.UI.Create
 
         public void DeInit()
         {
-            createCard.DeInit();
+            _cts.Cancel();
+            _cts.Dispose();
+
+            brickEditor?.DeInit();
+            createCard?.DeInit();
             createButton.onClick.RemoveAllListeners();
         }
 
-        private void Update()
+        private void OnBrickTreeValidityChange(bool isValid)
         {
-            var isBrickTreeValid = brickEditor.BrickTree.IsValid();
-
-            createButton.interactable = isBrickTreeValid;
-            finishCardCreation.gameObject.SetActive(!isBrickTreeValid);
-            lockIcon.gameObject.SetActive(!isBrickTreeValid);
+            createButton.interactable = isValid;
+            finishCardCreation.gameObject.SetActive(!isValid);
+            lockIcon.gameObject.SetActive(!isValid);
         }
     }
 }

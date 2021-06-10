@@ -14,7 +14,7 @@ namespace Solcery.UI.Wallet
         public void Init(Solcery.Modules.Wallet.Wallet wallet)
         {
             _cts = new CancellationTokenSource();
-            Reactives.SubscribeTo(wallet.Connection?.IsConnected, OnWalletConnectionChange, _cts.Token);
+            Reactives.Subscribe(wallet.Connection?.IsConnected, OnWalletConnectionChange, _cts.Token);
         }
 
         public void DeInit()

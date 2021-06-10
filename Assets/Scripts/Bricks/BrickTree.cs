@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Cysharp.Threading.Tasks;
 
 namespace Solcery
 {
@@ -8,6 +9,7 @@ namespace Solcery
     {
         public BrickData Genesis { get; private set; }
         public CardMetadata MetaData;
+        public AsyncReactiveProperty<bool> IsValid = new AsyncReactiveProperty<bool>(false);
 
         public void SetGenesis(BrickData data)
         {
@@ -24,12 +26,12 @@ namespace Solcery
             Genesis.SerializeToBytes(ref buffer);
         }
 
-        public bool IsValid()
+        public void CheckValidity()
         {
             if (Genesis == null)
-                return false;
-                
-            return Genesis.IsValid();
+                IsValid.Value = false;
+            else
+                IsValid.Value = Genesis.IsValid();
         }
     }
 }

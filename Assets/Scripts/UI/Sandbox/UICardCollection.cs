@@ -20,7 +20,7 @@ namespace Solcery.UI
             _cts = new CancellationTokenSource();
             _cards = new List<UICard>();
 
-            Reactives.SubscribeTo(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
+            Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
 
         public void DeInit()

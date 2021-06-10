@@ -1,6 +1,5 @@
 using Solcery.UI.Create;
 using Solcery.Utils;
-using UnityEngine;
 
 namespace Solcery
 {
@@ -8,14 +7,12 @@ namespace Solcery
     {
         public void Init()
         {
-            // Debug.Log("Create Init");
-            UICreate.Instance.Init();
+            UICreate.Instance?.Init();
         }
 
         public void DeInit()
         {
-            // Debug.Log("Create DeInit");
-            UICreate.Instance.DeInit();
+            UICreate.Instance?.DeInit();
         }
     }
 }

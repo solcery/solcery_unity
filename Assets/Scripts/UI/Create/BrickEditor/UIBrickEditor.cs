@@ -22,10 +22,15 @@ namespace Solcery.UI.Create.BrickEditor
         private BrickTree _brickTree;
         private UIBrick _genesisBrick;
 
-        private void Start()
+        public void Init()
         {
             _brickTree = new BrickTree();
             CreateFirstButton();
+        }
+
+        public void DeInit()
+        {
+            
         }
 
         public void OpenSubtypePopup(UISelectBrickButton button)
@@ -79,14 +84,16 @@ namespace Solcery.UI.Create.BrickEditor
                 selectBrickButton.Init(config.Slots[i].Type, vert.transform, brick, i);
             }
 
+            _brickTree?.CheckValidity();
+
             contentCG.alpha = 0;
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.1f)
+            for (float f = 0f; f <= 1f; f += 0.2f)
             {
                 await UniTask.DelayFrame(1);
             }
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.1f)
+            for (float f = 0f; f <= 1f; f += 0.2f)
             {
                 contentCG.alpha = f;
                 await UniTask.DelayFrame(1);
@@ -116,15 +123,17 @@ namespace Solcery.UI.Create.BrickEditor
             DestroyImmediate(brick.Hor);
             DestroyImmediate(brick.gameObject);
 
+            _brickTree?.CheckValidity();
+
             contentCG.alpha = 0;
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
 
-            for (float f = 0f; f <= 1f; f += 0.1f)
+            for (float f = 0f; f <= 1f; f += 0.2f)
             {
                 await UniTask.DelayFrame(1);
             }
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.1f)
+            for (float f = 0f; f <= 1f; f += 0.2f)
             {
                 contentCG.alpha = f;
                 await UniTask.DelayFrame(1);
