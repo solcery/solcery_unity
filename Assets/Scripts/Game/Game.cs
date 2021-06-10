@@ -1,8 +1,7 @@
-using Cysharp.Threading.Tasks;
 using Solcery.FSM.Game;
 using Solcery.Utils;
 using Solcery.Modules.Wallet;
-using Solcery.Modules.CardCollection;
+using Solcery.Modules.Collection;
 using Solcery.WebGL;
 using Solcery.Modules.Fight;
 
@@ -13,7 +12,7 @@ namespace Solcery
         public void Init()
         {
             Wallet.Instance?.Init();
-            CardCollection.Instance?.Init();
+            Collection.Instance?.Init();
             Fight.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
             GameSM.Instance?.PerformInitialTransition();
@@ -22,7 +21,7 @@ namespace Solcery
         public void DeInit()
         {
             Wallet.Instance?.DeInit();
-            CardCollection.Instance?.DeInit();
+            Collection.Instance?.DeInit();
             Fight.Instance?.DeInit();
         }
     }

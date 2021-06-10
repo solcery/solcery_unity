@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
-using Solcery.Modules.CardCollection;
+using Solcery.Modules.Collection;
 using Solcery.Utils.Reactives;
 using Solcery.WebGL;
 using UnityEngine;
@@ -20,7 +20,7 @@ namespace Solcery.UI
             _cts = new CancellationTokenSource();
             _cards = new List<UICard>();
 
-            Reactives.SubscribeTo(CardCollection.Instance?.Collection, UpdateCollection, _cts.Token);
+            Reactives.SubscribeTo(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
 
         public void DeInit()
@@ -28,14 +28,14 @@ namespace Solcery.UI
             _cts.Cancel();
         }
 
-        public void UpdateCollection(Collection collection)
+        public void UpdateCollection(CollectionData collectionData)
         {
             DeleteAllCards();
             _cards = new List<UICard>();
 
-            if (collection == null) return;
+            if (collectionData == null) return;
 
-            foreach (var cardData in collection.Cards)
+            foreach (var cardData in collectionData.Cards)
             {
                 var newCard = Instantiate(cardPrefab, content).GetComponent<UICard>();
                 newCard.Init(cardData, OnCardCasted);

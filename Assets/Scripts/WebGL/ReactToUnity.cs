@@ -1,4 +1,4 @@
-using Solcery.Modules.CardCollection;
+using Solcery.Modules.Collection;
 using Solcery.Modules.Fight;
 using Solcery.Modules.Wallet;
 using Solcery.Utils;
@@ -16,8 +16,8 @@ namespace Solcery.WebGL
 
         public void UpdateCollection(string collectionJson)
         {
-            var collection = JsonUtility.FromJson<Collection>(collectionJson);
-            CardCollection.Instance?.UpdateCollection(collection);
+            var collectionData = JsonUtility.FromJson<CollectionData>(collectionJson);
+            Collection.Instance?.UpdateCollection(collectionData);
         }
 
         public void UpdateFight(string fightJson)
