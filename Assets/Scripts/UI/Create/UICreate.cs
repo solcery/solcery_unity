@@ -8,7 +8,7 @@ using TMPro;
 
 namespace Solcery.UI.Create
 {
-    public class UICreate : UpdateableSingleton<UICreate>
+    public class UICreate : Singleton<UICreate>
     {
         public UIBrickEditor BrickEditor => brickEditor;
 
@@ -42,7 +42,7 @@ namespace Solcery.UI.Create
             createButton.onClick.RemoveAllListeners();
         }
 
-        public override void PerformUpdate()
+        private void Update()
         {
             var isBrickTreeValid = brickEditor.BrickTree.IsValid();
 

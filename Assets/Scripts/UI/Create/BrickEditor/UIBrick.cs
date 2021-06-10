@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,7 +48,7 @@ namespace Solcery.UI.Create.BrickEditor
 
             closeButton.onClick.AddListener(() =>
             {
-                UICreate.Instance.BrickEditor.DeleteBrick(this);
+                UICreate.Instance.BrickEditor.DeleteBrick(this).Forget();
             });
         }
     }

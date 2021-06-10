@@ -2197,6 +2197,7 @@ MonoBehaviour:
   vertPrefab: {fileID: 5529018972987236072, guid: 55ad42e2acc528a48b42cdf4c083d5e5, type: 3}
   selectBrickButtonPrefab: {fileID: 2309973541627025021, guid: a92917aab956e6442a04f4e69b1780d0, type: 3}
   content: {fileID: 1693996952}
+  contentCG: {fileID: 1693996955}
   brickPrefab: {fileID: 2866484904552466780, guid: cc223bdbca6bf064bb67424936083654, type: 3}
   helperText: {fileID: 417081112}
 --- !u!1 &1209277617
@@ -2847,6 +2848,7 @@ GameObject:
   - component: {fileID: 1693996952}
   - component: {fileID: 1693996953}
   - component: {fileID: 1693996954}
+  - component: {fileID: 1693996955}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2916,6 +2918,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &1693996955
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693996951}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1731740557
 GameObject:
   m_ObjectHideFlags: 0

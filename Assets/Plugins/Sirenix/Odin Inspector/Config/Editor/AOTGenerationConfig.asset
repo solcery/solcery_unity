@@ -16,56 +16,56 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637588256209835462
+  lastScan: 637589001155301232
   supportSerializedTypes:
-  - TypeName: Grimmz.BrickConfig, Assembly-CSharp
+  - TypeName: Solcery.BrickConfig, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.BrickSubtypeAction, Assembly-CSharp
+  - TypeName: Solcery.BrickSubtypeAction, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.BrickSubtypeCondition, Assembly-CSharp
+  - TypeName: Solcery.BrickSubtypeCondition, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.BrickSubtypeValue, Assembly-CSharp
+  - TypeName: Solcery.BrickSubtypeValue, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.BrickType, Assembly-CSharp
+  - TypeName: Solcery.BrickType, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Grimmz.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Grimmz.BrickConfig,
+  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Solcery.BrickConfig,
       Assembly-CSharp]], mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Enum, mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Grimmz.BrickType,
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Grimmz.BrickType, Assembly-CSharp]],
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.BrickType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.Utils.IUpdateable, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[Grimmz.BrickConfig, Assembly-CSharp]],
+  - TypeName: System.Collections.Generic.List`1[[Solcery.Utils.IUpdateable, Assembly-CSharp]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[Grimmz.Utils.IUpdateable, Assembly-CSharp]],
-      mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[Grimmz.UIBrickSlotStruct, Assembly-CSharp]],
+  - TypeName: System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
       mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.String, mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: Grimmz.UIBrickSlotStruct, Assembly-CSharp
+  - TypeName: Solcery.UIBrickSlotStruct, Assembly-CSharp
     IsCustom: 0
     Emit: 1

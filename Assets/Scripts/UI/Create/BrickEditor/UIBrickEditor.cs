@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,8 @@ namespace Solcery.UI.Create.BrickEditor
         [SerializeField] private GameObject horPrefab = null;
         [SerializeField] private GameObject vertPrefab = null;
         [SerializeField] private GameObject selectBrickButtonPrefab = null;
-        [SerializeField] private RectTransform content;
+        [SerializeField] private RectTransform content = null;
+        [SerializeField] private CanvasGroup contentCG = null;
         [SerializeField] private GameObject brickPrefab = null;
         [SerializeField] private TextMeshProUGUI helperText = null;
 
@@ -45,10 +47,10 @@ namespace Solcery.UI.Create.BrickEditor
         private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickButton button)
         {
             CloseSubtypePopup();
-            CreateBrick(subtypeNameConfig.Config, button);
+            CreateBrick(subtypeNameConfig.Config, button).Forget();
         }
 
-        private void CreateBrick(BrickConfig config, UISelectBrickButton button)
+        private async UniTaskVoid CreateBrick(BrickConfig config, UISelectBrickButton button)
         {
             DestroyImmediate(button.gameObject);
 
@@ -77,10 +79,20 @@ namespace Solcery.UI.Create.BrickEditor
                 selectBrickButton.Init(config.Slots[i].Type, vert.transform, brick, i);
             }
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            contentCG.alpha = 0;
+            LayoutRebuilder.MarkLayoutForRebuild(content);
+            for (float f = 0f; f <= 1f; f += 0.05f)
+            {
+                await UniTask.DelayFrame(1);
+            }
+            for (float f = 0f; f <= 1f; f += 0.1f)
+            {
+                contentCG.alpha = f;
+                await UniTask.DelayFrame(1);
+            }
         }
 
-        public void DeleteBrick(UIBrick brick)
+        public async UniTask DeleteBrick(UIBrick brick)
         {
             var selectBrickButton = Instantiate(selectBrickButtonPrefab, brick.Vert.transform).GetComponent<UISelectBrickButton>();
 
@@ -97,18 +109,30 @@ namespace Solcery.UI.Create.BrickEditor
                 selectBrickButton.Init(brick.Config.Type, brick.Vert.transform, brick.Parent, brick.IndexInParentSlots);
             }
 
-            if(_genesisBrick == null)
+            if (_genesisBrick == null)
                 helperText.gameObject.SetActive(true);
 
             DestroyImmediate(brick.Hor);
             DestroyImmediate(brick.gameObject);
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            contentCG.alpha = 0;
+            LayoutRebuilder.MarkLayoutForRebuild(content);
+
+            for (float f = 0f; f <= 1f; f += 0.05f)
+            {
+                await UniTask.DelayFrame(1);
+            }
+
+            for (float f = 0f; f <= 1f; f += 0.1f)
+            {
+                contentCG.alpha = f;
+                await UniTask.DelayFrame(1);
+            }
         }
 
         public void DeleteGenesisBrick()
         {
-            DeleteBrick(_genesisBrick);
+            DeleteBrick(_genesisBrick).Forget();
         }
 
         private void CreateFirstButton()
