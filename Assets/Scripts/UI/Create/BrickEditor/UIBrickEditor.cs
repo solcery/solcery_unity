@@ -81,7 +81,7 @@ namespace Solcery.UI.Create.BrickEditor
 
             contentCG.alpha = 0;
             LayoutRebuilder.MarkLayoutForRebuild(content);
-            for (float f = 0f; f <= 1f; f += 0.05f)
+            for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 await UniTask.DelayFrame(1);
             }
@@ -118,7 +118,7 @@ namespace Solcery.UI.Create.BrickEditor
             contentCG.alpha = 0;
             LayoutRebuilder.MarkLayoutForRebuild(content);
 
-            for (float f = 0f; f <= 1f; f += 0.05f)
+            for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 await UniTask.DelayFrame(1);
             }
