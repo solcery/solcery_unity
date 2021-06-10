@@ -16,6 +16,7 @@ namespace Solcery.UI.Create
         [SerializeField] private UICreateCard createCard = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
+        [SerializeField] private GameObject lockIcon = null;
 
         public void Init()
         {
@@ -47,6 +48,7 @@ namespace Solcery.UI.Create
 
             createButton.interactable = isBrickTreeValid;
             finishCardCreation.gameObject.SetActive(!isBrickTreeValid);
+            lockIcon.gameObject.SetActive(!isBrickTreeValid);
         }
     }
 }
