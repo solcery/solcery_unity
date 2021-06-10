@@ -80,11 +80,12 @@ namespace Solcery.UI.Create.BrickEditor
             }
 
             contentCG.alpha = 0;
-            LayoutRebuilder.MarkLayoutForRebuild(content);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 await UniTask.DelayFrame(1);
             }
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 contentCG.alpha = f;
@@ -116,13 +117,13 @@ namespace Solcery.UI.Create.BrickEditor
             DestroyImmediate(brick.gameObject);
 
             contentCG.alpha = 0;
-            LayoutRebuilder.MarkLayoutForRebuild(content);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
 
             for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 await UniTask.DelayFrame(1);
             }
-
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             for (float f = 0f; f <= 1f; f += 0.1f)
             {
                 contentCG.alpha = f;
