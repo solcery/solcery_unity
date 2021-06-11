@@ -16,12 +16,18 @@ public class TestArrow : MonoBehaviour
         switch (state)
         {
             case ArrowState.DownIsLeft:
+                Line.offsetMin = new Vector2(-1.5f, Line.offsetMin.y);
+                Line.offsetMax = new Vector2(1.5f, Line.offsetMax.y);
+
                 Down.anchorMin = new Vector2(0, 0);
                 Down.anchorMax = new Vector2(0, 0.5f);
                 Up.anchorMin = new Vector2(1, 0.5f);
                 Up.anchorMax = new Vector2(1, 1);
                 break;
             case ArrowState.DownIsRight:
+                Line.offsetMin = new Vector2(-1.5f, Line.offsetMin.y);
+                Line.offsetMax = new Vector2(1.5f, Line.offsetMax.y);
+
                 Down.anchorMin = new Vector2(1, 0);
                 Down.anchorMax = new Vector2(1, 0.5f);
                 Up.anchorMin = new Vector2(0, 0.5f);
@@ -31,6 +37,7 @@ public class TestArrow : MonoBehaviour
                 Debug.Log("straight arrow");
                 Line.gameObject.SetActive(false);
                 rect.sizeDelta = new Vector2(3, rect.sizeDelta.y);
+                rect.localPosition = new Vector2(rect.localPosition.x - 1.5f, rect.localPosition.y);
                 // rect.offsetMin = new Vector2(-1.5f, rect.offsetMin.y);\
                 Down.offsetMin = new Vector2(0, 0);
                 Down.offsetMax = new Vector2(0, 0);
