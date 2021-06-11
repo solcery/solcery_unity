@@ -13,15 +13,11 @@ public class TestBrick : MonoBehaviour
 
     public Vector2 BrickSize;
     public List<TestBrick> Slots = new List<TestBrick>();
+    public List<TestArrow> Arrows = new List<TestArrow>();
     public float Width;
     public float Height;
 
     public RectTransform rect;
-
-    private void Awake()
-    {
-        rect = (RectTransform)transform;
-    }
 
     public float GetMaxHeight()
     {
@@ -50,26 +46,26 @@ public class TestBrick : MonoBehaviour
 
     public float GetMaxWidth()
     {
-        var slotsWidth = 0f;
+        var slotsWidth = -BrickWidthSpacing;
         foreach (var slot in Slots)
         {
             slotsWidth += slot.GetMaxWidth();
             slotsWidth += BrickWidthSpacing;
         }
-        slotsWidth += BrickWidthSpacing;
+        // slotsWidth += BrickWidthSpacing;
 
-        var maxWidth = Mathf.Max(BrickWidth + BrickWidthSpacing, slotsWidth);
+        var maxWidth = Mathf.Max(BrickWidth, slotsWidth);
         Width = maxWidth;
 
         return maxWidth;
     }
 
-    public void PassDown()
+    public void Rebuild()
     {
         var rect = (RectTransform)this.transform;
         rect.sizeDelta = new Vector2(Width, Height);
 
-        var slotsWidthSoFar = BrickWidthSpacing;
+        var slotsWidthSoFar = 0f;
 
         foreach (var slot in Slots)
         {
@@ -91,10 +87,11 @@ public class TestBrick : MonoBehaviour
             else
                 arrowState = ArrowState.Equal;
             arrow.Init(arrowState);
+            Arrows.Add(arrow);
 
             slotsWidthSoFar += slot.Width;
             slotsWidthSoFar += BrickWidthSpacing;
-            slot.PassDown();
+            slot.Rebuild();
         }
 
         slotsWidthSoFar += BrickWidthSpacing;

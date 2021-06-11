@@ -2,21 +2,23 @@ using UnityEngine;
 
 public class TestTree : MonoBehaviour
 {
+    public GameObject TestBrickPrefab;
     public TestBrick Genesis;
 
     public RectTransform rect;
 
-    private void Awake()
+    void Start()
     {
-        rect = (RectTransform)transform;
+        // var firstBrick = Instantiate(TestBrickPrefab, transform);
+        Rebuild();
     }
 
-    void Start()
+    public void Rebuild()
     {
         var maxWidth = Genesis.GetMaxWidth();
         var maxHeight = Genesis.GetMaxHeight();
 
         rect.sizeDelta = new Vector2(maxWidth, maxHeight);
-        Genesis.PassDown();
+        Genesis.Rebuild();
     }
 }
