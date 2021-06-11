@@ -33,5 +33,13 @@ namespace Solcery
             else
                 IsValid.Value = Genesis.IsValid();
         }
+
+        public int GetDepth()
+        {
+            if (Genesis == null)
+                return 0;
+
+            return Genesis.GetDepth();
+        }
     }
 }

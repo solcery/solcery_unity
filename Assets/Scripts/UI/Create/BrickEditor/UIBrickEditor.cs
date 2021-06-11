@@ -15,9 +15,12 @@ namespace Solcery.UI.Create.BrickEditor
         [SerializeField] private GameObject vertPrefab = null;
         [SerializeField] private GameObject selectBrickButtonPrefab = null;
         [SerializeField] private RectTransform content = null;
-        [SerializeField] private CanvasGroup contentCG = null;
         [SerializeField] private GameObject brickPrefab = null;
         [SerializeField] private TextMeshProUGUI helperText = null;
+        [SerializeField] private Canvas canvas = null;
+
+        [SerializeField] private RawImage screenshot = null;
+        [SerializeField] private RectTransform scrollView = null;
 
         private BrickTree _brickTree;
         private UIBrick _genesisBrick;
@@ -30,7 +33,7 @@ namespace Solcery.UI.Create.BrickEditor
 
         public void DeInit()
         {
-            
+
         }
 
         public void OpenSubtypePopup(UISelectBrickButton button)
@@ -59,6 +62,15 @@ namespace Solcery.UI.Create.BrickEditor
         {
             DestroyImmediate(button.gameObject);
 
+
+            // #if UNITY_WEBGL && !UNITY_EDITOR
+            //             canvas.enabled = false;
+            //             await UniTask.WaitForEndOfFrame();
+            //             var texture = ScreenCapture.CaptureScreenshotAsTexture();
+            //             screenshot.texture = ScreenCapture.CaptureScreenshotAsTexture();
+            //             screenshot.gameObject.SetActive(true);
+            // #endif
+
             var brickData = new BrickData(config);
 
             var brick = Instantiate(brickPrefab, button.Vert).GetComponent<UIBrick>();
@@ -80,28 +92,46 @@ namespace Solcery.UI.Create.BrickEditor
             for (int i = 0; i < config.Slots.Count; i++)
             {
                 var vert = Instantiate(vertPrefab, hor.transform);
+                LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)hor.transform);
                 var selectBrickButton = Instantiate(selectBrickButtonPrefab, vert.transform).GetComponent<UISelectBrickButton>();
                 selectBrickButton.Init(config.Slots[i].Type, vert.transform, brick, i);
             }
 
             _brickTree?.CheckValidity();
 
-            contentCG.alpha = 0;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.2f)
-            {
-                await UniTask.DelayFrame(1);
-            }
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.2f)
-            {
-                contentCG.alpha = f;
-                await UniTask.DelayFrame(1);
-            }
+            // var depth = BrickTree.GetDepth();
+
+            Application.targetFrameRate = 120;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollView);
+            // canvas.enabled = false;
+
+            // for (int i = 0; i < depth; i++)
+            // {
+            //     await UniTask.Delay(1);
+            // }
+            // canvas.enabled = true;
+            // await UniTask.DelayFrame(1);
+
+            // #if UNITY_WEBGL && !UNITY_EDITOR
+            //             await UniTask.DelayFrame(5);
+            //             screenshot.gameObject.SetActive(false);
+            //             Object.Destroy(texture);
+            //             canvas.enabled = true;
+            // #endif
+
+            Debug.Log(BrickTree.Genesis.GetDepth());
         }
 
         public async UniTask DeleteBrick(UIBrick brick)
         {
+            //             canvas.enabled = false;
+            // #if UNITY_WEBGL && !UNITY_EDITOR
+            //             await UniTask.WaitForEndOfFrame();
+            //             var texture = ScreenCapture.CaptureScreenshotAsTexture();
+            //             screenshot.texture = ScreenCapture.CaptureScreenshotAsTexture();
+            //             screenshot.gameObject.SetActive(true);
+            // #endif
+
             var selectBrickButton = Instantiate(selectBrickButtonPrefab, brick.Vert.transform).GetComponent<UISelectBrickButton>();
 
             if (brick.Parent == null)
@@ -125,19 +155,18 @@ namespace Solcery.UI.Create.BrickEditor
 
             _brickTree?.CheckValidity();
 
-            contentCG.alpha = 0;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            Application.targetFrameRate = 120;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollView);
+            // await UniTask.DelayFrame(1);
 
-            for (float f = 0f; f <= 1f; f += 0.2f)
-            {
-                await UniTask.DelayFrame(1);
-            }
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-            for (float f = 0f; f <= 1f; f += 0.2f)
-            {
-                contentCG.alpha = f;
-                await UniTask.DelayFrame(1);
-            }
+
+            // #if UNITY_WEBGL && !UNITY_EDITOR
+            //             await UniTask.DelayFrame(5);
+            //             screenshot.gameObject.SetActive(false);
+            //             Object.Destroy(texture);
+            // #endif
+
+            //             canvas.enabled = true;
         }
 
         public void DeleteGenesisBrick()

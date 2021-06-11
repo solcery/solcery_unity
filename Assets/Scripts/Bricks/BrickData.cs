@@ -63,6 +63,33 @@ namespace Solcery
             foreach (BrickData child in Slots)
                 child?.SerializeToBytes(ref buffer);
         }
+
+        public int GetDepth()
+        {
+            if (Slots == null || Slots.Length == 0)
+            {
+                // UnityEngine.Debug.Log("1");
+                return 1;
+            }
+
+            var maxDepth = 1;
+
+            foreach (var slot in Slots)
+            {
+                if (slot == null)
+                {
+                    // UnityEngine.Debug.Log("2");
+                    continue;
+                }
+
+                var slotDepth = slot.GetDepth();
+
+                if ((slotDepth + 1) > maxDepth)
+                    maxDepth = 1 + slotDepth;
+            }
+
+            return maxDepth;
+        }
     }
 
 }

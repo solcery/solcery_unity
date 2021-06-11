@@ -8,6 +8,7 @@ namespace Solcery.WebGL
     public class UnityToReact : Singleton<UnityToReact>
     {
         [DllImport("__Internal")] private static extern void LogToConsole(string message);
+        [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
         [DllImport("__Internal")] private static extern void CreateCard(string card);
         [DllImport("__Internal")] private static extern void CreateFight(string message);
@@ -18,6 +19,13 @@ namespace Solcery.WebGL
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     LogToConsole (message);
+#endif
+        }
+
+        public void CallOpenLinkInNewTab(string link)
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+    OpenLinkInNewTab (link);
 #endif
         }
 
