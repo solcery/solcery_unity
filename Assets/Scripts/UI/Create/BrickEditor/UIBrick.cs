@@ -48,7 +48,7 @@ namespace Solcery.UI.Create.BrickEditor
 
             closeButton.onClick.AddListener(() =>
             {
-                UICreate.Instance.BrickEditor.DeleteBrick(this).Forget();
+                UICreate.Instance.BrickEditor.DeleteBrick(this);
             });
         }
     }

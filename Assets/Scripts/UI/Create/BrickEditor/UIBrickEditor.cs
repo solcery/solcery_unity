@@ -17,9 +17,6 @@ namespace Solcery.UI.Create.BrickEditor
         [SerializeField] private RectTransform content = null;
         [SerializeField] private GameObject brickPrefab = null;
         [SerializeField] private TextMeshProUGUI helperText = null;
-        [SerializeField] private Canvas canvas = null;
-
-        [SerializeField] private RawImage screenshot = null;
         [SerializeField] private RectTransform scrollView = null;
 
         private BrickTree _brickTree;
@@ -41,7 +38,7 @@ namespace Solcery.UI.Create.BrickEditor
             contentBlocker.gameObject.SetActive(true);
             contentBlocker.transform.SetAsLastSibling();
             subtypePopup.gameObject.SetActive(true);
-            subtypePopup.Open(button, OnBrickAdded);
+            // subtypePopup.Open(button, OnBrickAdded);
 
             helperText.gameObject.SetActive(false);
         }
@@ -55,21 +52,12 @@ namespace Solcery.UI.Create.BrickEditor
         private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickButton button)
         {
             CloseSubtypePopup();
-            CreateBrick(subtypeNameConfig.Config, button).Forget();
+            CreateBrick(subtypeNameConfig.Config, button);
         }
 
-        private async UniTaskVoid CreateBrick(BrickConfig config, UISelectBrickButton button)
+        private void CreateBrick(BrickConfig config, UISelectBrickButton button)
         {
             DestroyImmediate(button.gameObject);
-
-
-            // #if UNITY_WEBGL && !UNITY_EDITOR
-            //             canvas.enabled = false;
-            //             await UniTask.WaitForEndOfFrame();
-            //             var texture = ScreenCapture.CaptureScreenshotAsTexture();
-            //             screenshot.texture = ScreenCapture.CaptureScreenshotAsTexture();
-            //             screenshot.gameObject.SetActive(true);
-            // #endif
 
             var brickData = new BrickData(config);
 
@@ -99,39 +87,14 @@ namespace Solcery.UI.Create.BrickEditor
 
             _brickTree?.CheckValidity();
 
-            // var depth = BrickTree.GetDepth();
-
             Application.targetFrameRate = 120;
             LayoutRebuilder.ForceRebuildLayoutImmediate(scrollView);
-            // canvas.enabled = false;
-
-            // for (int i = 0; i < depth; i++)
-            // {
-            //     await UniTask.Delay(1);
-            // }
-            // canvas.enabled = true;
-            // await UniTask.DelayFrame(1);
-
-            // #if UNITY_WEBGL && !UNITY_EDITOR
-            //             await UniTask.DelayFrame(5);
-            //             screenshot.gameObject.SetActive(false);
-            //             Object.Destroy(texture);
-            //             canvas.enabled = true;
-            // #endif
 
             Debug.Log(BrickTree.Genesis.GetDepth());
         }
 
-        public async UniTask DeleteBrick(UIBrick brick)
+        public void DeleteBrick(UIBrick brick)
         {
-            //             canvas.enabled = false;
-            // #if UNITY_WEBGL && !UNITY_EDITOR
-            //             await UniTask.WaitForEndOfFrame();
-            //             var texture = ScreenCapture.CaptureScreenshotAsTexture();
-            //             screenshot.texture = ScreenCapture.CaptureScreenshotAsTexture();
-            //             screenshot.gameObject.SetActive(true);
-            // #endif
-
             var selectBrickButton = Instantiate(selectBrickButtonPrefab, brick.Vert.transform).GetComponent<UISelectBrickButton>();
 
             if (brick.Parent == null)
@@ -157,21 +120,11 @@ namespace Solcery.UI.Create.BrickEditor
 
             Application.targetFrameRate = 120;
             LayoutRebuilder.ForceRebuildLayoutImmediate(scrollView);
-            // await UniTask.DelayFrame(1);
-
-
-            // #if UNITY_WEBGL && !UNITY_EDITOR
-            //             await UniTask.DelayFrame(5);
-            //             screenshot.gameObject.SetActive(false);
-            //             Object.Destroy(texture);
-            // #endif
-
-            //             canvas.enabled = true;
         }
 
         public void DeleteGenesisBrick()
         {
-            DeleteBrick(_genesisBrick).Forget();
+            DeleteBrick(_genesisBrick);
         }
 
         private void CreateFirstButton()

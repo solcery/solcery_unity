@@ -34,7 +34,6 @@ public class TestArrow : MonoBehaviour
                 Up.anchorMax = new Vector2(0, 1);
                 break;
             case ArrowState.Equal:
-                Debug.Log("straight arrow");
                 Line.gameObject.SetActive(false);
                 rect.sizeDelta = new Vector2(3, rect.sizeDelta.y);
                 rect.localPosition = new Vector2(rect.localPosition.x - 1.5f, rect.localPosition.y);

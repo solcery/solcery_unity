@@ -9,12 +9,12 @@ namespace Solcery.UI.Create.BrickEditor
         [SerializeField] private GameObject optionPrefab = null;
         [SerializeField] private BrickConfigs brickConfigs = null;
 
-        private Action<SubtypeNameConfig, UISelectBrickButton> _onOptionSelected;
+        private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
         private List<UIBrickSubtypePopupOption> _options = new List<UIBrickSubtypePopupOption>();
 
-        private UISelectBrickButton _button;
+        private UISelectBrickNode _button;
 
-        public void Open(UISelectBrickButton button, Action<SubtypeNameConfig, UISelectBrickButton> onOptionSelected)
+        public void Open(UISelectBrickNode button, Action<SubtypeNameConfig, UISelectBrickNode> onOptionSelected)
         {
             this.transform.SetAsLastSibling();
 

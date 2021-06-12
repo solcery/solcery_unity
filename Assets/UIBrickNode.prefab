@@ -84,9 +84,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3059688946991341016}
-  - component: {fileID: 3059688946991341017}
+  - component: {fileID: 3691025764471999136}
   m_Layer: 5
-  m_Name: TestBrick
+  m_Name: UIBrickNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &3059688946991341017
+--- !u!114 &3691025764471999136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3059688946991341019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc07eaa4b8825548881e8a69a8a39ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f252cfddd39c4c4aa67c7b312739358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BrickWidth: 250
@@ -130,8 +130,8 @@ MonoBehaviour:
   BrickHeightSpacing: 50
   Image: {fileID: 3059688945436018829}
   ArrowPrefab: {fileID: 7664997694533523456, guid: 7e429be83b5ede14491cf3fde30b4c7e, type: 3}
-  BrickSize: {x: 0, y: 0}
   Slots: []
-  Width: 250
-  Height: 100
+  Arrows: []
+  Width: 0
+  Height: 0
   rect: {fileID: 3059688946991341016}
