@@ -10,7 +10,7 @@ public class UINode : MonoBehaviour
 
     public RectTransform Image;
     public GameObject ArrowPrefab;
-    public UINode[] Slots;
+    public UINode[] NodeSlots;
     public TestArrow[] Arrows;
     public float Width;
     public float Height;
@@ -22,11 +22,11 @@ public class UINode : MonoBehaviour
     {
         float MaxHeight = BrickHeight;
 
-        if (Slots.Length != 0 && Slots != null)
+        if (NodeSlots.Length != 0 && NodeSlots != null)
         {
             var maxSlotHeight = 0f;
 
-            foreach (var slot in Slots)
+            foreach (var slot in NodeSlots)
             {
                 if (slot != null)
                 {
@@ -46,7 +46,7 @@ public class UINode : MonoBehaviour
     public float GetMaxWidth()
     {
         var slotsWidth = -BrickWidthSpacing;
-        foreach (var slot in Slots)
+        foreach (var slot in NodeSlots)
         {
             if (slot != null)
             {
@@ -71,12 +71,12 @@ public class UINode : MonoBehaviour
         // var slotsWidthSoFar = 0f;
         var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth)/2);
 
-        for (int i = 0; i < Slots.Length; i++)
+        for (int i = 0; i < NodeSlots.Length; i++)
         {
-            if (Slots[i] != null)
+            if (NodeSlots[i] != null)
             {
                 var x = slotsWidthSoFar;
-                Slots[i].transform.localPosition = new Vector2(x, -(BrickHeight + BrickHeightSpacing));
+                NodeSlots[i].transform.localPosition = new Vector2(x, -(BrickHeight + BrickHeightSpacing));
 
                 if (Arrows[i] == null)
                 {
@@ -84,7 +84,7 @@ public class UINode : MonoBehaviour
                 }
 
                 var arrowRect = Arrows[i].GetComponent<RectTransform>();
-                var slotCenterX = x + Slots[i].Width / 2;
+                var slotCenterX = x + NodeSlots[i].Width / 2;
                 var brickCenterX = Width / 2;
                 arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, brickCenterX), -(BrickHeight));
                 arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing + 2);
@@ -98,9 +98,9 @@ public class UINode : MonoBehaviour
                     arrowState = ArrowState.Equal;
                 Arrows[i].Init(arrowState);
 
-                slotsWidthSoFar += Slots[i].Width;
+                slotsWidthSoFar += NodeSlots[i].Width;
                 slotsWidthSoFar += BrickWidthSpacing;
-                Slots[i].Rebuild();
+                NodeSlots[i].Rebuild();
             }
         }
 

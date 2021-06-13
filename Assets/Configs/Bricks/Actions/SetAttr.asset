@@ -42,10 +42,10 @@ MonoBehaviour:
       Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
     - Name: Type
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: Name
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Value
     - Name: 
       Entry: 8
       Data: 

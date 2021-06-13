@@ -44,8 +44,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: Name
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Action #1
     - Name: 
       Entry: 8
       Data: 
@@ -56,8 +56,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: Name
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Action #2
     - Name: 
       Entry: 8
       Data: 

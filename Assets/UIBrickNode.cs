@@ -11,6 +11,7 @@ public class UIBrickNode : UINode
     public BrickData Data { get; private set; }
     public UIBrickNode Parent { get; private set; }
     public int IndexInParentSlots { get; private set; }
+    public UIBrickSlots Slots => slots;
 
     [SerializeField] private Button deleteButton = null;
     [SerializeField] private TextMeshProUGUI typeName = null;
@@ -27,7 +28,7 @@ public class UIBrickNode : UINode
         Parent = parent;
         IndexInParentSlots = indexInParentSlots;
 
-        Slots = new UINode[config.Slots.Count];
+        NodeSlots = new UINode[config.Slots.Count];
         Arrows = new TestArrow[config.Slots.Count];
 
         typeName.text = Enum.GetName(typeof(BrickType), config.Type);
