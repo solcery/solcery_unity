@@ -87,7 +87,7 @@ public class UINode : MonoBehaviour
                 var slotCenterX = x + Slots[i].Width / 2;
                 var brickCenterX = Width / 2;
                 arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, brickCenterX), -(BrickHeight));
-                arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing);
+                arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing + 2);
 
                 ArrowState arrowState;
                 if (slotCenterX < brickCenterX)

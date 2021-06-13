@@ -12,9 +12,9 @@ namespace Solcery.UI.Create
 {
     public class UICreate : Singleton<UICreate>
     {
-        public UIBrickEditor BrickEditor => brickEditor;
+        public UINodeEditor NodeEditor => nodeEditor;
 
-        [SerializeField] private UIBrickEditor brickEditor = null;
+        [SerializeField] private UINodeEditor nodeEditor = null;
         [SerializeField] private UICreateCard createCard = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
@@ -25,19 +25,19 @@ namespace Solcery.UI.Create
         public void Init()
         {
             _cts = new CancellationTokenSource();
-            brickEditor?.Init();
+            nodeEditor?.Init();
             createCard?.Init();
 
-            Reactives.SubscribeWithoutCurrent(brickEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
+            Reactives.SubscribeWithoutCurrent(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
-                brickEditor.BrickTree.MetaData.Name = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
-                brickEditor.BrickTree.MetaData.Description = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
-                brickEditor.BrickTree.MetaData.Picture = createCard.CurrentPictureIndex;
+                nodeEditor.BrickTree.MetaData.Name = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
+                nodeEditor.BrickTree.MetaData.Description = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
+                nodeEditor.BrickTree.MetaData.Picture = createCard.CurrentPictureIndex;
 
                 List<byte> buffer = new List<byte>();
-                brickEditor.BrickTree.SerializeToBytes(ref buffer);
+                nodeEditor.BrickTree.SerializeToBytes(ref buffer);
                 UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
 
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
@@ -49,7 +49,7 @@ namespace Solcery.UI.Create
             _cts.Cancel();
             _cts.Dispose();
 
-            brickEditor?.DeInit();
+            nodeEditor?.DeInit();
             createCard?.DeInit();
             createButton.onClick.RemoveAllListeners();
         }

@@ -28,28 +28,28 @@ namespace Solcery.UI.Create.BrickEditor
 
         public void Init(BrickConfig config, BrickData data, UIBrick parent, int indexInParentSlots, Transform vert, GameObject hor)
         {
-            Config = config;
-            Data = data;
-            Parent = parent;
-            IndexInParentSlots = indexInParentSlots;
-            Vert = vert;
-            Hor = hor;
+            // Config = config;
+            // Data = data;
+            // Parent = parent;
+            // IndexInParentSlots = indexInParentSlots;
+            // Vert = vert;
+            // Hor = hor;
 
-            typeName.text = Enum.GetName(typeof(BrickType), config.Type);
-            subtypeName.text = BrickConfigs.GetSubtypeName(config.Type, config.Subtype);
-            description.text = config.Description;
+            // typeName.text = Enum.GetName(typeof(BrickType), config.Type);
+            // subtypeName.text = BrickConfigs.GetSubtypeName(config.Type, config.Subtype);
+            // description.text = config.Description;
 
-            field.gameObject.SetActive(config.HasField);
-            if (config.HasField) field.Init(config.FieldName, config.FieldType, data);
+            // field.gameObject.SetActive(config.HasField);
+            // if (config.HasField) field.Init(config.FieldName, config.FieldType, data);
 
-            objectSwitcher.gameObject.SetActive(config.HasObjectSelection);
-            objectSwitcher.Init(data);
-            slots.Init(config.Slots);
+            // objectSwitcher.gameObject.SetActive(config.HasObjectSelection);
+            // objectSwitcher.Init(data);
+            // slots.Init(config.Slots);
 
-            closeButton.onClick.AddListener(() =>
-            {
-                UICreate.Instance.BrickEditor.DeleteBrick(this);
-            });
+            // closeButton.onClick.AddListener(() =>
+            // {
+            //     UICreate.Instance.NodeEditor.DeleteBrick(this);
+            // });
         }
     }
 }

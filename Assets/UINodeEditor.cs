@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UINodeEditor : Singleton<UINodeEditor>
 {
+    public BrickTree BrickTree => _brickTree;
     public GameObject BrickNodePrefab;
     public GameObject SelectBrickNode;
     public UINode Genesis;
@@ -13,6 +14,17 @@ public class UINodeEditor : Singleton<UINodeEditor>
     [SerializeField] private UIBrickSubtypePopup subtypePopup = null;
 
     private BrickTree _brickTree;
+
+    public void Init()
+    {
+        _brickTree = new BrickTree();
+        CreateFirstButton();
+    }
+
+    public void DeInit()
+    {
+        _brickTree = null;
+    }
 
     public void Rebuild()
     {
@@ -38,12 +50,6 @@ public class UINodeEditor : Singleton<UINodeEditor>
         contentBlocker.gameObject.SetActive(false);
         subtypePopup.Close();
         CreateBrickNode(subtypeNameConfig.Config, button);
-    }
-
-    void Start()
-    {
-        _brickTree = new BrickTree();
-        CreateFirstButton();
     }
 
     void Update()
