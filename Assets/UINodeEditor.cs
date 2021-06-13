@@ -33,7 +33,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
         var maxWidth = Genesis.GetMaxWidth();
         var maxHeight = Genesis.GetMaxHeight();
 
-        rect.sizeDelta = new Vector2(maxWidth, maxHeight);
+        rect.sizeDelta = new Vector2(maxWidth, maxHeight + 400);
         Genesis.Rebuild();
     }
 
