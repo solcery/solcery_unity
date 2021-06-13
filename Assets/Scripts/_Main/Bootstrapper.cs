@@ -6,6 +6,7 @@ namespace Solcery
     {
         void Start()
         {
+            Application.targetFrameRate = 60;
             Game.Instance?.Init();
         }
     }

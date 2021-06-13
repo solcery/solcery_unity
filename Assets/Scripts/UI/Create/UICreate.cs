@@ -40,7 +40,7 @@ namespace Solcery.UI.Create
                 brickEditor.BrickTree.SerializeToBytes(ref buffer);
                 UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
 
-                brickEditor.DeleteGenesisBrick();
+                UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }
 

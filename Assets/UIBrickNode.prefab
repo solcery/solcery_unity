@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3059688945436018819}
   - component: {fileID: 3059688945436018818}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BrickContents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7155923583471340091}
   m_Father: {fileID: 3059688946991341016}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,15 +59,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 4091886722701799983, guid: 3330bf1b117ed7f4d95bc464d0bfb21d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -135,3 +136,117 @@ MonoBehaviour:
   Width: 0
   Height: 0
   rect: {fileID: 3059688946991341016}
+  deleteButton: {fileID: 3099971893051038974}
+--- !u!1001 &7267788793050114500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3059688945436018829}
+    m_Modifications:
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 648147414526365500, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+      propertyPath: m_Name
+      value: UIBrickNodeDeleteButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+--- !u!224 &7155923583471340091 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 545689765143864319, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+  m_PrefabInstance: {fileID: 7267788793050114500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3099971893051038974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5753646927746020666, guid: 8f3b0f173d05d9e4b87f6c0c9c3d2567, type: 3}
+  m_PrefabInstance: {fileID: 7267788793050114500}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

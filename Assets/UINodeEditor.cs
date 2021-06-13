@@ -16,6 +16,8 @@ public class UINodeEditor : Singleton<UINodeEditor>
 
     public void Rebuild()
     {
+        _brickTree?.CheckValidity();
+
         var maxWidth = Genesis.GetMaxWidth();
         var maxHeight = Genesis.GetMaxHeight();
 
@@ -86,5 +88,34 @@ public class UINodeEditor : Singleton<UINodeEditor>
         }
 
         Rebuild();
+    }
+
+    public void DeleteBrickNode(UIBrickNode brickNode)
+    {
+        if (brickNode.Parent == null)
+        {
+            var selectBrickButton = Instantiate(SelectBrickNode, transform).GetComponent<UISelectBrickNode>();
+            Genesis = selectBrickButton;
+            _brickTree.SetGenesis(null);
+            selectBrickButton.Init(BrickType.Action, transform);
+        }
+        else
+        {
+            var selectBrickButton = Instantiate(SelectBrickNode, brickNode.Parent.transform).GetComponent<UISelectBrickNode>();
+            brickNode.Parent.Data.Slots[brickNode.IndexInParentSlots] = null;
+            //TODO: set BrickSlots for UIBrickNode
+            // button.Parent.Slots.Slots[button.IndexInParentSlots].SetFilled(true);
+            selectBrickButton.Init(brickNode.Config.Type, brickNode.Parent.transform, brickNode.Parent, brickNode.IndexInParentSlots);
+            brickNode.Parent.Slots[brickNode.IndexInParentSlots] = selectBrickButton;
+        }
+
+        DestroyImmediate(brickNode.gameObject);
+        Rebuild();
+    }
+
+    public void DeleteGenesisBrickNode()
+    {
+        if (Genesis is UIBrickNode)
+            DeleteBrickNode(Genesis as UIBrickNode);
     }
 }

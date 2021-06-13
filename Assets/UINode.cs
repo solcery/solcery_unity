@@ -14,13 +14,9 @@ public class UINode : MonoBehaviour
     public TestArrow[] Arrows;
     public float Width;
     public float Height;
+    public float ChildrenWidth;
 
     public RectTransform rect;
-
-    // void Awake()
-    // {
-    //     Arrows = new TestArrow[Slots.Length];
-    // }
 
     public float GetMaxHeight()
     {
@@ -62,6 +58,7 @@ public class UINode : MonoBehaviour
 
         var maxWidth = Mathf.Max(BrickWidth, slotsWidth);
         Width = maxWidth;
+        ChildrenWidth = Mathf.Max(0, slotsWidth);
 
         return maxWidth;
     }
@@ -71,7 +68,8 @@ public class UINode : MonoBehaviour
         var rect = (RectTransform)this.transform;
         rect.sizeDelta = new Vector2(Width, Height);
 
-        var slotsWidthSoFar = 0f;
+        // var slotsWidthSoFar = 0f;
+        var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth)/2);
 
         for (int i = 0; i < Slots.Length; i++)
         {
