@@ -84,16 +84,31 @@ public class UINode : MonoBehaviour
                 var arrowRect = Arrows[i].GetComponent<RectTransform>();
                 var slotCenterX = x + NodeSlots[i].Width / 2;
                 var brickCenterX = Width / 2;
-                arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, brickCenterX), -(BrickHeight));
-                arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing + 2);
+
+                float halfSlots = NodeSlots.Length / 2f;
+                float offset = i + 0.5f - halfSlots;
+                var arrowSlotCenterX = brickCenterX + offset * 80f;
+                arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, arrowSlotCenterX), -(BrickHeight));
+                arrowRect.sizeDelta = new Vector2(Mathf.Abs(arrowSlotCenterX - slotCenterX), BrickHeightSpacing + 2);
 
                 ArrowState arrowState;
-                if (slotCenterX < brickCenterX)
+                if (slotCenterX < arrowSlotCenterX)
                     arrowState = ArrowState.DownIsLeft;
-                else if (slotCenterX > brickCenterX)
+                else if (slotCenterX > arrowSlotCenterX)
                     arrowState = ArrowState.DownIsRight;
                 else
                     arrowState = ArrowState.Equal;
+
+                // arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, brickCenterX), -(BrickHeight));
+                // arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing + 2);
+
+                // ArrowState arrowState;
+                // if (slotCenterX < brickCenterX)
+                //     arrowState = ArrowState.DownIsLeft;
+                // else if (slotCenterX > brickCenterX)
+                //     arrowState = ArrowState.DownIsRight;
+                // else
+                //     arrowState = ArrowState.Equal;
                 Arrows[i].Init(arrowState);
 
                 slotsWidthSoFar += NodeSlots[i].Width;
