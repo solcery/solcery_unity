@@ -593,7 +593,7 @@ MonoBehaviour:
   BrickWidth: 200
   BrickHeight: 100
   BrickWidthSpacing: 20
-  BrickHeightSpacing: 20
+  BrickHeightSpacing: 50
   Image: {fileID: 3059688945436018829}
   ArrowPrefab: {fileID: 7664997694533523456, guid: 7e429be83b5ede14491cf3fde30b4c7e, type: 3}
   NodeSlots: []
@@ -606,18 +606,12 @@ MonoBehaviour:
   contents: {fileID: 3059688945436018829}
   deleteButton: {fileID: 3099971893051038974}
   type: {fileID: 2428255592686822399}
-  typeRect: {fileID: 4654847415866180861}
   subtype: {fileID: 4493169260967748538}
-  subtypeRect: {fileID: 3794022372595737999}
   description: {fileID: 141155186366245908}
-  descriptionRect: {fileID: 3668693293387433672}
   descriptionLE: {fileID: 3391800056024238471}
   field: {fileID: 8280162266702316507}
-  fieldRect: {fileID: 246610265794087146}
   objectSwitcher: {fileID: 5830252409685818196}
-  objectSwitcherRect: {fileID: 5830252409685818199}
   slots: {fileID: 3456926484050553591}
-  slotsRect: {fileID: 190663729010166289}
 --- !u!225 &4929505902759272288
 CanvasGroup:
   m_ObjectHideFlags: 0
