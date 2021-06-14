@@ -7,12 +7,12 @@ namespace Solcery
     {
         public void Init()
         {
-            // Debug.Log("Farm Init");
+
         }
 
         public void DeInit()
         {
-            // Debug.Log("Farm DeInit");
+
         }
     }
 }

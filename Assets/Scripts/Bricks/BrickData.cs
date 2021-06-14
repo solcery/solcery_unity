@@ -68,7 +68,6 @@ namespace Solcery
         {
             if (Slots == null || Slots.Length == 0)
             {
-                // UnityEngine.Debug.Log("1");
                 return 1;
             }
 
@@ -78,7 +77,6 @@ namespace Solcery
             {
                 if (slot == null)
                 {
-                    // UnityEngine.Debug.Log("2");
                     continue;
                 }
 

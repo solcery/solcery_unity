@@ -29,15 +29,16 @@ public class UINodeEditor : Singleton<UINodeEditor>
         _brickTree = null;
     }
 
-    public async UniTask Rebuild()
+    public void Rebuild()
     {
         _brickTree?.CheckValidity();
 
-        var maxWidth = await Genesis.GetMaxWidth();
-        var maxHeight = await Genesis.GetMaxHeight();
+        var maxWidth = Genesis.GetMaxWidth();
+        var maxHeight = Genesis.GetMaxHeight();
 
-        rect.sizeDelta = new Vector2(maxWidth, maxHeight + 400);
-        Genesis.Rebuild().Forget();
+        rect.sizeDelta = new Vector2(maxWidth + 400, maxHeight + 400);
+        Genesis.rect.localPosition = new Vector2(-Genesis.Width / 2, Genesis.rect.localPosition.y);
+        Genesis.Rebuild();
     }
 
     public void OpenSubtypePopup(UISelectBrickNode button)
@@ -53,7 +54,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
     {
         contentBlocker.gameObject.SetActive(false);
         subtypePopup.Close();
-        CreateBrickNode(subtypeNameConfig.Config, button);
+        CreateBrickNode(subtypeNameConfig.Config, button).Forget();
     }
 
     void Update()
@@ -97,7 +98,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
             brickNode.NodeSlots[i] = selectBrickButton;
         }
 
-        await Rebuild();
+        Rebuild();
     }
 
     public void DeleteBrickNode(UIBrickNode brickNode)

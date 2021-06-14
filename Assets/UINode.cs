@@ -18,7 +18,7 @@ public class UINode : MonoBehaviour
 
     public RectTransform rect;
 
-    public virtual async UniTask<float> GetMaxHeight()
+    public virtual float GetMaxHeight()
     {
         float MaxHeight = BrickHeight;
 
@@ -30,7 +30,7 @@ public class UINode : MonoBehaviour
             {
                 if (slot != null)
                 {
-                    var slotHeight = await slot.GetMaxHeight();
+                    var slotHeight = slot.GetMaxHeight();
                     if (slotHeight > maxSlotHeight)
                         maxSlotHeight = slotHeight + BrickHeightSpacing;
                 }
@@ -43,14 +43,14 @@ public class UINode : MonoBehaviour
         return MaxHeight;
     }
 
-    public virtual async UniTask<float> GetMaxWidth()
+    public virtual float GetMaxWidth()
     {
         var slotsWidth = -BrickWidthSpacing;
         foreach (var slot in NodeSlots)
         {
             if (slot != null)
             {
-                slotsWidth += await slot.GetMaxWidth();
+                slotsWidth += slot.GetMaxWidth();
                 slotsWidth += BrickWidthSpacing;
             }
         }
@@ -62,7 +62,7 @@ public class UINode : MonoBehaviour
         return maxWidth;
     }
 
-    public virtual async UniTask Rebuild()
+    public void Rebuild()
     {
         var rect = (RectTransform)this.transform;
         rect.sizeDelta = new Vector2(Width, Height);
@@ -75,7 +75,6 @@ public class UINode : MonoBehaviour
             {
                 var x = slotsWidthSoFar;
                 NodeSlots[i].transform.localPosition = new Vector2(x, -(BrickHeight + BrickHeightSpacing));
-                Debug.Log($"child thinks BrickHeight: {BrickHeight}");
 
                 if (Arrows[i] == null)
                 {
