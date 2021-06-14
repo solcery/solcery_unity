@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Solcery;
 using Solcery.UI.Create.BrickEditor;
 using Solcery.Utils;
@@ -28,15 +29,15 @@ public class UINodeEditor : Singleton<UINodeEditor>
         _brickTree = null;
     }
 
-    public void Rebuild()
+    public async UniTask Rebuild()
     {
         _brickTree?.CheckValidity();
 
-        var maxWidth = Genesis.GetMaxWidth();
-        var maxHeight = Genesis.GetMaxHeight();
+        var maxWidth = await Genesis.GetMaxWidth();
+        var maxHeight = await Genesis.GetMaxHeight();
 
         rect.sizeDelta = new Vector2(maxWidth, maxHeight + 400);
-        Genesis.Rebuild();
+        Genesis.Rebuild().Forget();
     }
 
     public void OpenSubtypePopup(UISelectBrickNode button)
@@ -69,12 +70,12 @@ public class UINodeEditor : Singleton<UINodeEditor>
         Rebuild();
     }
 
-    private void CreateBrickNode(BrickConfig config, UISelectBrickNode button)
+    private async UniTaskVoid CreateBrickNode(BrickConfig config, UISelectBrickNode button)
     {
         DestroyImmediate(button.gameObject);
         var brickData = new BrickData(config);
         var brickNode = Instantiate(BrickNodePrefab, button.ParentTransform).GetComponent<UIBrickNode>();
-        brickNode.Init(config, brickData, button.Parent, button.IndexInParentSlots);
+        await brickNode.Init(config, brickData, button.Parent, button.IndexInParentSlots);
 
         if (button.Parent == null)
         {
@@ -96,7 +97,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
             brickNode.NodeSlots[i] = selectBrickButton;
         }
 
-        Rebuild();
+        await Rebuild();
     }
 
     public void DeleteBrickNode(UIBrickNode brickNode)

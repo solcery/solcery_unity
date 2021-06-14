@@ -9,7 +9,7 @@ namespace Solcery
     {
         public BrickType Type;
         public System.Enum Subtype;
-        public string Description;
+        [Multiline(5)] public string Description;
 
         public bool HasField;
         [ShowIf("HasField")] public UIBrickFieldType FieldType;

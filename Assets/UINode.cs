@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class UINode : MonoBehaviour
 {
-    public float BrickWidth = 250;
-    public float BrickHeight = 100;
-    public float BrickWidthSpacing = 20;
-    public float BrickHeightSpacing = 20;
+    public float BrickWidth;
+    public float BrickHeight;
+    public float BrickWidthSpacing;
+    public float BrickHeightSpacing;
 
     public RectTransform Image;
     public GameObject ArrowPrefab;
@@ -18,7 +18,7 @@ public class UINode : MonoBehaviour
 
     public RectTransform rect;
 
-    public float GetMaxHeight()
+    public virtual async UniTask<float> GetMaxHeight()
     {
         float MaxHeight = BrickHeight;
 
@@ -30,7 +30,7 @@ public class UINode : MonoBehaviour
             {
                 if (slot != null)
                 {
-                    var slotHeight = slot.GetMaxHeight();
+                    var slotHeight = await slot.GetMaxHeight();
                     if (slotHeight > maxSlotHeight)
                         maxSlotHeight = slotHeight + BrickHeightSpacing;
                 }
@@ -43,18 +43,17 @@ public class UINode : MonoBehaviour
         return MaxHeight;
     }
 
-    public float GetMaxWidth()
+    public virtual async UniTask<float> GetMaxWidth()
     {
         var slotsWidth = -BrickWidthSpacing;
         foreach (var slot in NodeSlots)
         {
             if (slot != null)
             {
-                slotsWidth += slot.GetMaxWidth();
+                slotsWidth += await slot.GetMaxWidth();
                 slotsWidth += BrickWidthSpacing;
             }
         }
-        // slotsWidth += BrickWidthSpacing;
 
         var maxWidth = Mathf.Max(BrickWidth, slotsWidth);
         Width = maxWidth;
@@ -63,13 +62,12 @@ public class UINode : MonoBehaviour
         return maxWidth;
     }
 
-    public void Rebuild()
+    public virtual async UniTask Rebuild()
     {
         var rect = (RectTransform)this.transform;
         rect.sizeDelta = new Vector2(Width, Height);
 
-        // var slotsWidthSoFar = 0f;
-        var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth)/2);
+        var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth) / 2);
 
         for (int i = 0; i < NodeSlots.Length; i++)
         {
@@ -77,6 +75,7 @@ public class UINode : MonoBehaviour
             {
                 var x = slotsWidthSoFar;
                 NodeSlots[i].transform.localPosition = new Vector2(x, -(BrickHeight + BrickHeightSpacing));
+                Debug.Log($"child thinks BrickHeight: {BrickHeight}");
 
                 if (Arrows[i] == null)
                 {
