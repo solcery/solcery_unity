@@ -36,7 +36,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 3
     - Name: 
       Entry: 7
       Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
@@ -57,7 +57,7 @@ MonoBehaviour:
       Data: 0
     - Name: Name
       Entry: 1
-      Data: 1
+      Data: Positive
     - Name: 
       Entry: 8
       Data: 
@@ -69,31 +69,7 @@ MonoBehaviour:
       Data: 0
     - Name: Name
       Entry: 1
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
-    - Name: Type
-      Entry: 3
-      Data: 0
-    - Name: Name
-      Entry: 1
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Solcery.UIBrickSlotStruct, Assembly-CSharp
-    - Name: Type
-      Entry: 3
-      Data: 0
-    - Name: Name
-      Entry: 1
-      Data: 4
+      Data: Negative
     - Name: 
       Entry: 8
       Data: 
@@ -105,7 +81,6 @@ MonoBehaviour:
       Data: 
   Type: 0
   Description: Applies positive if condition is passed, otherwise applies negative.
-    But now it's a longass description to test how Brick layot behaves in this circumstances
   HasField: 1
   FieldType: 1
   FieldName: TestField
