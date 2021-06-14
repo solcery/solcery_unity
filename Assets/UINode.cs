@@ -69,7 +69,7 @@ public class UINode : MonoBehaviour
 
         var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth) / 2);
         float halfSlots = NodeSlots.Length / 2f;
-        var lastOffset = -1f;
+        var lastOffset = 0;
         var hasChangedArrowDirection = false;
 
         for (int i = 0; i < NodeSlots.Length; i++)
