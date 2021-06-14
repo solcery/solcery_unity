@@ -68,6 +68,9 @@ public class UINode : MonoBehaviour
         rect.sizeDelta = new Vector2(Width, Height);
 
         var slotsWidthSoFar = Mathf.Max(0, (Width - ChildrenWidth) / 2);
+        float halfSlots = NodeSlots.Length / 2f;
+        var lastOffset = -1f;
+        var hasChangedArrowDirection = false;
 
         for (int i = 0; i < NodeSlots.Length; i++)
         {
@@ -85,7 +88,6 @@ public class UINode : MonoBehaviour
                 var slotCenterX = x + NodeSlots[i].Width / 2;
                 var brickCenterX = Width / 2;
 
-                float halfSlots = NodeSlots.Length / 2f;
                 float offset = i + 0.5f - halfSlots;
                 var arrowSlotCenterX = brickCenterX + offset * 80f;
                 arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, arrowSlotCenterX), -(BrickHeight));
@@ -93,23 +95,22 @@ public class UINode : MonoBehaviour
 
                 ArrowState arrowState;
                 if (slotCenterX < arrowSlotCenterX)
+                {
                     arrowState = ArrowState.DownIsLeft;
+                    lastOffset += 1f;
+                }
                 else if (slotCenterX > arrowSlotCenterX)
+                {
+                    if (!hasChangedArrowDirection)
+                        hasChangedArrowDirection = true;
+                    else
+                        lastOffset -= 1f;
                     arrowState = ArrowState.DownIsRight;
+                }
                 else
                     arrowState = ArrowState.Equal;
 
-                // arrowRect.transform.localPosition = new Vector2(Mathf.Min(slotCenterX, brickCenterX), -(BrickHeight));
-                // arrowRect.sizeDelta = new Vector2(Mathf.Abs(brickCenterX - slotCenterX), BrickHeightSpacing + 2);
-
-                // ArrowState arrowState;
-                // if (slotCenterX < brickCenterX)
-                //     arrowState = ArrowState.DownIsLeft;
-                // else if (slotCenterX > brickCenterX)
-                //     arrowState = ArrowState.DownIsRight;
-                // else
-                //     arrowState = ArrowState.Equal;
-                Arrows[i].Init(arrowState);
+                Arrows[i].Init(arrowState, lastOffset);
 
                 slotsWidthSoFar += NodeSlots[i].Width;
                 slotsWidthSoFar += BrickWidthSpacing;

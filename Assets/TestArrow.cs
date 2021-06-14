@@ -8,43 +8,54 @@ public class TestArrow : MonoBehaviour
     public RectTransform Down;
 
     public ArrowState State;
+    public float VOffsetValue = 4f;
+    public float Index;
 
-    public void Init(ArrowState state)
+    public void Init(ArrowState state, float vOffset)
     {
         State = state;
+        Index = vOffset;
 
         switch (state)
         {
             case ArrowState.DownIsLeft:
                 Line.gameObject.SetActive(true);
-                Line.offsetMin = new Vector2(-1f, Line.offsetMin.y);
-                Line.offsetMax = new Vector2(1f, Line.offsetMax.y);
+                Line.offsetMin = new Vector2(-0.5f, -Index * VOffsetValue);
+                Line.offsetMax = new Vector2(0.5f, -Index * VOffsetValue);
+                Line.sizeDelta = new Vector2(Line.sizeDelta.x, 1);
 
-                Down.sizeDelta = new Vector2(2, Down.sizeDelta.y);
+                Down.sizeDelta = new Vector2(1, Down.sizeDelta.y);
                 Down.anchorMin = new Vector2(0, 0);
                 Down.anchorMax = new Vector2(0, 0.5f);
+                Down.offsetMax = new Vector2(Down.offsetMax.x, -Index * VOffsetValue);
 
-                Up.sizeDelta = new Vector2(2, Up.sizeDelta.y);
+                Up.sizeDelta = new Vector2(1, Up.sizeDelta.y);
                 Up.anchorMin = new Vector2(1, 0.5f);
                 Up.anchorMax = new Vector2(1, 1);
+                Up.offsetMin = new Vector2(Up.offsetMin.x, -Index * VOffsetValue);
+
                 break;
             case ArrowState.DownIsRight:
                 Line.gameObject.SetActive(true);
-                Line.offsetMin = new Vector2(-1f, Line.offsetMin.y);
-                Line.offsetMax = new Vector2(1f, Line.offsetMax.y);
+                Line.offsetMin = new Vector2(-0.5f, -Index * VOffsetValue);
+                Line.offsetMax = new Vector2(0.5f, -Index * VOffsetValue);
+                Line.sizeDelta = new Vector2(Line.sizeDelta.x, 1);
 
-                Down.sizeDelta = new Vector2(2, Down.sizeDelta.y);
+                Down.sizeDelta = new Vector2(1, Down.sizeDelta.y);
                 Down.anchorMin = new Vector2(1, 0);
                 Down.anchorMax = new Vector2(1, 0.5f);
+                Down.offsetMax = new Vector2(Down.offsetMax.x, -Index * VOffsetValue);
 
-                Up.sizeDelta = new Vector2(2, Up.sizeDelta.y);
+
+                Up.sizeDelta = new Vector2(1, Up.sizeDelta.y);
                 Up.anchorMin = new Vector2(0, 0.5f);
                 Up.anchorMax = new Vector2(0, 1);
+                Up.offsetMin = new Vector2(Up.offsetMin.x, -Index * VOffsetValue);
                 break;
             case ArrowState.Equal:
                 Line.gameObject.SetActive(false);
-                rect.sizeDelta = new Vector2(2, rect.sizeDelta.y);
-                rect.localPosition = new Vector2(rect.localPosition.x - 1f, rect.localPosition.y);
+                rect.sizeDelta = new Vector2(1, rect.sizeDelta.y);
+                rect.localPosition = new Vector2(rect.localPosition.x - 0.5f, rect.localPosition.y);
 
                 Down.offsetMin = new Vector2(0, 0);
                 Down.offsetMax = new Vector2(0, 0);

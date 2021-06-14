@@ -593,7 +593,7 @@ MonoBehaviour:
   BrickWidth: 200
   BrickHeight: 100
   BrickWidthSpacing: 20
-  BrickHeightSpacing: 50
+  BrickHeightSpacing: 60
   Image: {fileID: 3059688945436018829}
   ArrowPrefab: {fileID: 7664997694533523456, guid: 7e429be83b5ede14491cf3fde30b4c7e, type: 3}
   NodeSlots: []
