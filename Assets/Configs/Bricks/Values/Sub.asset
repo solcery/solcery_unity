@@ -68,7 +68,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 2
-  Description: Returns value #1 minus value #2
+  Description: Returns <b>value #1</b> minus <b>value #2</b>
   HasField: 0
   FieldType: 0
   FieldName: 

@@ -44,7 +44,17 @@ public class UIBrickNode : UINode
 
         objectSwitcher.gameObject.SetActive(config.HasObjectSelection);
         objectSwitcher.Init(data);
-        slots.Init(config.Slots);
+
+        if (config.Slots.Count > 0)
+        {
+            slots.gameObject.SetActive(true);
+            slots.Init(config.Slots);
+        }
+        else
+        {
+            slots.gameObject.SetActive(false);
+        }
+
 
         deleteButton.onClick.AddListener(() =>
         {

@@ -44,7 +44,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 2
-  Description: Returns given value.
+  Description: Returns given integer <b>value</b>.
   HasField: 1
   FieldType: 0
   FieldName: Value

@@ -68,8 +68,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 1
-  Description: Logical "and". Returns true if all of containing conditions return
-    true, otherwise returns false.
+  Description: Logical "and". Returns true if all of containing <b>conditions</b>
+    return true, otherwise returns false.
   HasField: 0
   FieldType: 0
   FieldName: 

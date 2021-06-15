@@ -56,7 +56,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 0
-  Description: Deals amount of damage to unit.
+  Description: Deals <b>amount</b> of damage to unit.
   HasField: 0
   FieldType: 0
   FieldName: 

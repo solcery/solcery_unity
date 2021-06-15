@@ -4,6 +4,7 @@ using Solcery.UI.Create.BrickEditor;
 using Solcery.Utils;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UINodeEditor : Singleton<UINodeEditor>
 {
@@ -13,6 +14,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
     public UINode Genesis;
     [SerializeField] private RectTransform rect = null;
     [SerializeField] private GameObject contentBlocker = null;
+    [SerializeField] private Button contentBlockerButton = null;
     [SerializeField] private UIBrickSubtypePopup subtypePopup = null;
     [SerializeField] private TextMeshProUGUI helperText = null;
 
@@ -46,6 +48,12 @@ public class UINodeEditor : Singleton<UINodeEditor>
         helperText.gameObject.SetActive(false);
         contentBlocker.SetActive(true);
         contentBlocker.transform.SetAsLastSibling();
+        contentBlockerButton.onClick.AddListener(() =>
+        {
+            subtypePopup.Close();
+            contentBlocker.SetActive(false);
+            // contentBlocker.transform.SetAsFirstSibling();
+        });
         subtypePopup.gameObject.SetActive(true);
         subtypePopup.Open(button, OnBrickAdded);
     }
@@ -53,6 +61,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
     private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickNode button)
     {
         contentBlocker.gameObject.SetActive(false);
+        contentBlockerButton.onClick.RemoveAllListeners();
         subtypePopup.Close();
         CreateBrickNode(subtypeNameConfig.Config, button).Forget();
     }
@@ -73,7 +82,9 @@ public class UINodeEditor : Singleton<UINodeEditor>
 
     private async UniTaskVoid CreateBrickNode(BrickConfig config, UISelectBrickNode button)
     {
+        button.DeInit();
         DestroyImmediate(button.gameObject);
+
         var brickData = new BrickData(config);
         var brickNode = Instantiate(BrickNodePrefab, button.ParentTransform).GetComponent<UIBrickNode>();
         await brickNode.Init(config, brickData, button.Parent, button.IndexInParentSlots);
@@ -94,8 +105,9 @@ public class UINodeEditor : Singleton<UINodeEditor>
         for (int i = 0; i < config.Slots.Count; i++)
         {
             var selectBrickButton = Instantiate(SelectBrickNode, brickNode.transform).GetComponent<UISelectBrickNode>();
-            selectBrickButton.Init(config.Slots[i].Type, brickNode.transform, brickNode, i);
+            selectBrickButton.Init(config.Slots[i].Type, brickNode.transform, brickNode, i, brickNode.Slots.Slots[i]);
             brickNode.NodeSlots[i] = selectBrickButton;
+            brickNode.Slots.Slots[i].SetButton(selectBrickButton);
         }
 
         Rebuild();
@@ -117,7 +129,7 @@ public class UINodeEditor : Singleton<UINodeEditor>
             brickNode.Parent.Data.Slots[brickNode.IndexInParentSlots] = null;
             //TODO: set BrickSlots for UIBrickNode
             brickNode.Parent.Slots.Slots[brickNode.IndexInParentSlots].SetFilled(false);
-            selectBrickButton.Init(brickNode.Config.Type, brickNode.Parent.transform, brickNode.Parent, brickNode.IndexInParentSlots);
+            selectBrickButton.Init(brickNode.Config.Type, brickNode.Parent.transform, brickNode.Parent, brickNode.IndexInParentSlots, brickNode.Parent.Slots.Slots[brickNode.IndexInParentSlots]);
             brickNode.Parent.NodeSlots[brickNode.IndexInParentSlots] = selectBrickButton;
         }
 

@@ -56,7 +56,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 1
-  Description: Logical "not". Returns the opposite on corresponding condition result.
+  Description: Logical "not". Returns the opposite on corresponding <b>condition</b>
+    result.
   HasField: 0
   FieldType: 0
   FieldName: 

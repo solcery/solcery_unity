@@ -80,8 +80,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 2
-  Description: Returns positive brick value if condition is passed, otherwise returns
-    negative.
+  Description: Returns <b>positive</b> brick value if <b>condition</b> is passed,
+    otherwise returns <b>negative</b>.
   HasField: 0
   FieldType: 0
   FieldName: 

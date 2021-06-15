@@ -1,8 +1,10 @@
 using Solcery;
+using Solcery.UI.Create.BrickEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UISelectBrickNode : UINode
+public class UISelectBrickNode : UINode, IPointerEnterHandler, IPointerExitHandler
 {
     public BrickType BrickType { get; private set; }
     public UIBrickNode Parent { get; private set; }
@@ -10,13 +12,19 @@ public class UISelectBrickNode : UINode
     public int IndexInParentSlots { get; private set; }
 
     [SerializeField] private Button button = null;
+    [SerializeField] private Image buttonImage = null;
+    [SerializeField] private Sprite activeButtonSprite = null;
+    [SerializeField] private Sprite inactiveButtonSprite = null;
 
-    public void Init(BrickType brickType, Transform parentTransform, UIBrickNode parent = null, int indexInParentSlots = 0)
+    private UIBrickSlot _slot;
+
+    public void Init(BrickType brickType, Transform parentTransform, UIBrickNode parent = null, int indexInParentSlots = 0, UIBrickSlot slot = null)
     {
         BrickType = brickType;
         ParentTransform = parentTransform;
         Parent = parent;
         IndexInParentSlots = indexInParentSlots;
+        _slot = slot;
 
         button.onClick.AddListener(() =>
         {
@@ -26,6 +34,24 @@ public class UISelectBrickNode : UINode
 
     public void DeInit()
     {
+        _slot = null;
         button.onClick.RemoveAllListeners();
+    }
+
+    public void SetActive(bool isActive)
+    {
+        buttonImage.sprite = isActive ? activeButtonSprite : inactiveButtonSprite;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _slot?.SetHighlighted(true);
+        SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _slot?.SetHighlighted(false);
+        SetActive(false);
     }
 }

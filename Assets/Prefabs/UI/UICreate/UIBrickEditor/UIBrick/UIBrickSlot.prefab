@@ -407,3 +407,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 2658536787896828505}
   slotName: {fileID: 2658536788939452968}
+  normalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedTextColor: {r: 0.57254905, g: 0.49411768, b: 0.40000004, a: 1}

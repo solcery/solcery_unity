@@ -80,11 +80,12 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 0
-  Description: Applies positive if condition is passed, otherwise applies negative.
-  HasField: 1
+  Description: Applies <b>positive</b> if <b>condition</b> is passed, otherwise applies
+    <b>negative</b>.
+  HasField: 0
   FieldType: 1
   FieldName: TestField
-  HasObjectSelection: 1
+  HasObjectSelection: 0
   DoesAddObject: 0
   AddedObjectName: 
   areSlotsExpandable: 0

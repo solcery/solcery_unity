@@ -32,6 +32,8 @@ namespace Solcery.UI.Create.BrickEditor
                         break;
                 };
             });
+
+            fieldInput.Select();
         }
     }
 }

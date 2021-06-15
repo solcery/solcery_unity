@@ -68,7 +68,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Type: 1
-  Description: Returns true if value#1 is greater than value#2.
+  Description: Returns true if <b>value#1</b> is greater than <b>value#2</b>.
   HasField: 0
   FieldType: 0
   FieldName: 
