@@ -28,7 +28,8 @@ namespace Solcery.UI.Create.BrickEditor
                     AddOption(subTypeConfig);
 
 
-            this.transform.position = button.transform.position;
+            // this.transform.position = button.transform.position;
+            this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth/2, button.transform.position.y);
         }
 
         public void Close()

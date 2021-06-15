@@ -1888,6 +1888,7 @@ MonoBehaviour:
   createButton: {fileID: 1736981069}
   finishCardCreation: {fileID: 261614797}
   lockIcon: {fileID: 723986527}
+  createButtonText: {fileID: 506456254}
 --- !u!1 &970244726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,7 +3050,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1736981070}
   m_OnClick:
     m_PersistentCalls:

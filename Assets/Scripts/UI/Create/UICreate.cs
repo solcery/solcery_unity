@@ -19,6 +19,7 @@ namespace Solcery.UI.Create
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
         [SerializeField] private GameObject lockIcon = null;
+        [SerializeField] private GameObject createButtonText = null;
 
         private CancellationTokenSource _cts;
 
@@ -28,7 +29,7 @@ namespace Solcery.UI.Create
             nodeEditor?.Init();
             createCard?.Init();
 
-            Reactives.SubscribeWithoutCurrent(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
+            Reactives.Subscribe(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
@@ -59,6 +60,7 @@ namespace Solcery.UI.Create
             createButton.interactable = isValid;
             finishCardCreation.gameObject.SetActive(!isValid);
             lockIcon.gameObject.SetActive(!isValid);
+            createButtonText.gameObject.SetActive(isValid);
         }
     }
 }
