@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace Solcery.UI.Create.BrickEditor
+namespace Solcery.UI.Create.NodeEditor
 {
     public class UIBrickField : MonoBehaviour
     {

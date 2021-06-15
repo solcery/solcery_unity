@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7664997694533523463}
   - component: {fileID: 4860404621515138986}
   m_Layer: 5
-  m_Name: Arrow
+  m_Name: UINodeArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,4 @@
-using Solcery.UI.Create.BrickEditor;
+using Solcery.UI.Create.NodeEditor;
 using Solcery.Utils;
 using Solcery.WebGL;
 using UnityEngine;

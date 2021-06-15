@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Solcery.UI.Create.BrickEditor
+namespace Solcery.UI.Create.NodeEditor
 {
     public class UIBrickSubtypePopup : MonoBehaviour
     {
