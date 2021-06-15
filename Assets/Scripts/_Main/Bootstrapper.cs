@@ -9,13 +9,15 @@ namespace Solcery
         void Start()
         {
             AnalyticsEvent.GameStart();
-            var result1 = AnalyticsEvent.Custom("secret_found", new Dictionary<string, object>
+            var customEventResult = AnalyticsEvent.Custom("secret_found", new Dictionary<string, object>
             {
                 { "secret_id", 123 },
                 { "time_elapsed", Time.timeSinceLevelLoad }
             });
-            AnalyticsResult result = Analytics.CustomEvent("Test");
-            
+            Debug.Log(customEventResult);
+            var testEventResult = Analytics.CustomEvent("Test");
+            Debug.Log(testEventResult);
+
             Application.targetFrameRate = 60;
 #if UNITY_WEBGL && !UNITY_EDITOR
             WebGLInput.captureAllKeyboardInput = true;

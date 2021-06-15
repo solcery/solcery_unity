@@ -1,11 +1,10 @@
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEngine;
 
 namespace Solcery.Editor
 {
-    public class EditorMenu : MonoBehaviour
+    public static class EditorMenu
     {
         [MenuItem("Solcery/Play", false, -1)]
         static async UniTask Play()
