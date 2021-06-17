@@ -25,5 +25,17 @@ namespace Solcery.WebGL
             var fightData = JsonUtility.FromJson<FightData>(fightJson);
             Fight.Instance?.UpdateFight(fightData);
         }
+
+        public void SetCardCreationSigned(string signJson)
+        {
+            var signData = JsonUtility.FromJson<CardCreationSignData>(signJson);
+            Debug.Log($"signed: {signData.IsSigned}");
+        }
+
+        public void SetCardCreationConfirmed(string confirmJson)
+        {
+            var confirmData = JsonUtility.FromJson<CardCreationConfirmData>(confirmJson);
+            Debug.Log($"confirmed: {confirmData.IsConfirmed}");
+        }
     }
 }
