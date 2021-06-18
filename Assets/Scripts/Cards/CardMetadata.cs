@@ -31,7 +31,5 @@ namespace Solcery
             tmpBuffer.AddRange(Encoding.UTF8.GetBytes(Description).ToList<byte>());
             buffer.AddRange(tmpBuffer);
         }
-
-
     }
 }

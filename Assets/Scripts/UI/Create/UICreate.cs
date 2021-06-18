@@ -33,14 +33,19 @@ namespace Solcery.UI.Create
 
             createButton.onClick.AddListener(() =>
             {
-                nodeEditor.BrickTree.MetaData.Name = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
-                nodeEditor.BrickTree.MetaData.Description = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
-                nodeEditor.BrickTree.MetaData.Picture = createCard.CurrentPictureIndex;
+                var cardName = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
+                var cardDescription = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
+                var cardPicture = createCard.CurrentPictureIndex;
+
+                nodeEditor.BrickTree.MetaData.Name = cardName;
+                nodeEditor.BrickTree.MetaData.Description = cardDescription;
+                nodeEditor.BrickTree.MetaData.Picture = cardPicture;
 
                 List<byte> buffer = new List<byte>();
                 nodeEditor.BrickTree.SerializeToBytes(ref buffer);
-                UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
 
+                UICreatingCardPopup.Instance.Open(nodeEditor.BrickTree.MetaData);
+                UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }

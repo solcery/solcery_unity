@@ -1,3 +1,4 @@
+using System;
 using Solcery.Modules.Collection;
 using Solcery.Modules.Fight;
 using Solcery.Modules.Wallet;
@@ -8,6 +9,9 @@ namespace Solcery.WebGL
 {
     public class ReactToUnity : Singleton<ReactToUnity>
     {
+        public static Action<CardCreationSignData> OnCardCreationSignDataChanged;
+        public static Action<CardCreationConfirmData> OnCardCreationConfirmDataChanged;
+
         public void SetWalletConnected(string data)
         {
             var connectionData = JsonUtility.FromJson<WalletConnectionData>(data);
@@ -29,13 +33,13 @@ namespace Solcery.WebGL
         public void SetCardCreationSigned(string signJson)
         {
             var signData = JsonUtility.FromJson<CardCreationSignData>(signJson);
-            Debug.Log($"signed: {signData.IsSigned}");
+            OnCardCreationSignDataChanged?.Invoke(signData);
         }
 
         public void SetCardCreationConfirmed(string confirmJson)
         {
             var confirmData = JsonUtility.FromJson<CardCreationConfirmData>(confirmJson);
-            Debug.Log($"confirmed: {confirmData.IsConfirmed}");
+            OnCardCreationConfirmDataChanged?.Invoke(confirmData);
         }
     }
 }
