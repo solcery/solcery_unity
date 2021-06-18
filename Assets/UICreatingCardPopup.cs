@@ -18,9 +18,13 @@ namespace Solcery.UI.Create
         [SerializeField] private UICreatingCardPopupStatusPanel confirmTransactionStatus = null;
         [SerializeField] private Button okButton = null;
 
+        private CardMetadata _currentCardMetadata;
+
         public void Open(CardMetadata cardMetadata)
         {
             canvas.enabled = true;
+
+            _currentCardMetadata = cardMetadata;
 
             if (popupTitleText != null) popupTitleText.text = "Creating card";
             if (cardNameText != null) cardNameText.text = cardMetadata.Name;
@@ -47,12 +51,16 @@ namespace Solcery.UI.Create
 
         private void OnCardCreationSignDataChanged(CardCreationSignData signData)
         {
+            if (signData.CardName != _currentCardMetadata.Name) return;
+
             signTransactionStatus?.SetState(signData.IsSigned ? UIStatusState.Success : UIStatusState.Fail);
             if (!signData.IsSigned && popupTitleText != null) popupTitleText.text = "Creation failed";
         }
 
         private void OnCardCreationConfirmDataChanged(CardCreationConfirmData confirmData)
         {
+            if (confirmData.CardName != _currentCardMetadata.Name) return;
+
             confirmTransactionStatus?.SetState(confirmData.IsConfirmed ? UIStatusState.Success : UIStatusState.Fail);
             popupTitleText.text = confirmData.IsConfirmed ? "Card created" : "Creation failed";
         }

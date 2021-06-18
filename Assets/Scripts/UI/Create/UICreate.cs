@@ -41,11 +41,8 @@ namespace Solcery.UI.Create
                 nodeEditor.BrickTree.MetaData.Description = cardDescription;
                 nodeEditor.BrickTree.MetaData.Picture = cardPicture;
 
-                List<byte> buffer = new List<byte>();
-                nodeEditor.BrickTree.SerializeToBytes(ref buffer);
-
                 UICreatingCardPopup.Instance.Open(nodeEditor.BrickTree.MetaData);
-                UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
+                UnityToReact.Instance?.CallCreateCard();
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }

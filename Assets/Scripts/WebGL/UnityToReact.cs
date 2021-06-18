@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using System;
 using System.Collections.Generic;
 using Solcery.Utils;
+using Solcery.UI.Create;
 
 namespace Solcery.WebGL
 {
@@ -10,7 +11,7 @@ namespace Solcery.WebGL
         [DllImport("__Internal")] private static extern void LogToConsole(string message);
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
-        [DllImport("__Internal")] private static extern void CreateCard(string card);
+        [DllImport("__Internal")] private static extern void CreateCard(string card, string cardName);
         [DllImport("__Internal")] private static extern void CreateFight(string message);
         [DllImport("__Internal")] private static extern void UseCard(string card);
 
@@ -50,11 +51,13 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallCreateCard(byte[] card)
+        public void CallCreateCard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    string buf = String.Join("|", card);
-    CreateCard(buf);
+            List<byte> buffer = new List<byte>();
+            UICreate.Instance.NodeEditor.BrickTree.SerializeToBytes(ref buffer);
+            string buf = String.Join("|", buffer.ToArray());
+            CreateCard(buf, UICreate.Instance.NodeEditor.BrickTree.MetaData.Name);
 #endif
         }
     }

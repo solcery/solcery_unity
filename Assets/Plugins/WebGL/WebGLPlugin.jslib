@@ -5,8 +5,8 @@ mergeInto(LibraryManager.library, {
     OpenLinkInNewTab: function (link) {
       ReactUnityWebGL.OpenLinkInNewTab(Pointer_stringify(link));
     },
-    CreateCard: function (card) {
-      ReactUnityWebGL.CreateCard(Pointer_stringify(card));
+    CreateCard: function (card, cardName) {
+      ReactUnityWebGL.CreateCard(Pointer_stringify(card), Pointer_stringify(cardName));
     },
     UseCard: function (card) {
       ReactUnityWebGL.UseCard(Pointer_stringify(card));
