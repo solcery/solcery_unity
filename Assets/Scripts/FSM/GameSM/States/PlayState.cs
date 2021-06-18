@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Sandbox", fileName = "Sandbox")]
-    public class SandboxState : GameState
+    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Play", fileName = "Play")]
+    public class PlayState : GameState
     {
         public override async UniTask Enter()
         {
             await base.Enter();
-            Sandbox.Instance?.Init();
+            Play.Instance?.Init();
         }
 
         public override async UniTask Exit()
         {
-            Sandbox.Instance?.DeInit();
+            Play.Instance?.DeInit();
             await base.Exit();
         }
     }

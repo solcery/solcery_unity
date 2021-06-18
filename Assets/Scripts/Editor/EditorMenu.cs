@@ -37,10 +37,10 @@ namespace Solcery.Editor
             await StopPlayingAndOpenScene("Assets/Scenes/Create.unity");
         }
 
-        [MenuItem("Solcery/Scene/Sandbox", false, 25)]
-        static async UniTask OpenSandboxScene()
+        [MenuItem("Solcery/Scene/Play", false, 25)]
+        static async UniTask OpenPlayScene()
         {
-            await StopPlayingAndOpenScene("Assets/Scenes/Sandbox.unity");
+            await StopPlayingAndOpenScene("Assets/Scenes/Play.unity");
         }
 
         [MenuItem("Solcery/Scene/Test", false, 101)]

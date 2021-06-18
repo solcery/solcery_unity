@@ -6,9 +6,9 @@ using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Sandbox
+namespace Solcery.UI.Play
 {
-    public class UISandbox : Singleton<UISandbox>
+    public class UIPlay : Singleton<UIPlay>
     {
         public UICardCollection CardCollection => cardCollection;
 
