@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionPrefab: {fileID: 9075808060668510954, guid: 02ade79a6c7429d478e35e18a2381e39, type: 3}
-  brickConfigs: {fileID: 11400000, guid: ba145136b3bac5d4b878eb2f984de89e, type: 2}
+  brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
 --- !u!114 &2503520720810901488
 MonoBehaviour:
   m_ObjectHideFlags: 0

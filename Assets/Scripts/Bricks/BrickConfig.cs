@@ -9,12 +9,14 @@ namespace Solcery
     [Serializable]
     public class BrickConfigData
     {
+        public string Name;
         public BrickType Type;
         public int Subtype;
         public string Description;
 
-        public BrickConfigData(BrickType type, int subtype, string description)
+        public BrickConfigData(string name, BrickType type, int subtype, string description)
         {
+            Name = name;
             Type = type;
             Subtype = subtype;
             Description = description;
@@ -38,11 +40,11 @@ namespace Solcery
         [ShowIf("DoesAddObject")] public string AddedObjectName;
 
         public bool areSlotsExpandable;
-        public List<UIBrickSlotStruct> Slots = new List<UIBrickSlotStruct>();
+        public List<UIBrickSlotStruct> Slots;
 
         public BrickConfigData ToData()
         {
-            return new BrickConfigData(Type, Convert.ToInt32(Subtype), Description);
+            return new BrickConfigData(this.name, Type, Convert.ToInt32(Subtype), Description);
         }
 
         public void FromData(BrickConfigData data)

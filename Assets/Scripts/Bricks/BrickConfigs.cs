@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Solcery.Utils;
 using UnityEngine;
 
 namespace Solcery
@@ -9,9 +10,10 @@ namespace Solcery
     public class BrickConfigsData
     {
         [SerializeField]
-        public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
+        public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType;
+        
 
-        public BrickConfigsData(Dictionary<BrickType, List<BrickConfig>> configsByType)
+        public BrickConfigsData Create(Dictionary<BrickType, List<BrickConfig>> configsByType)
         {
             ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
 
@@ -26,6 +28,8 @@ namespace Solcery
 
                 ConfigsByType.Add(entry.Key, list);
             }
+
+            return this;
         }
     }
 
@@ -36,7 +40,28 @@ namespace Solcery
 
         public BrickConfigsData ToData()
         {
-            return new BrickConfigsData(ConfigsByType);
+            var brickConfigsData = new BrickConfigsData();
+            return brickConfigsData.Create(ConfigsByType);
+        }
+
+        public void FromData(BrickConfigsData data)
+        {
+            ConfigsByType = new Dictionary<BrickType, List<BrickConfig>>();
+
+            foreach (KeyValuePair<BrickType, List<BrickConfigData>> entry in data.ConfigsByType)
+            {
+                var list = new List<BrickConfig>();
+
+                foreach (var configData in entry.Value)
+                {
+                    var config = ScriptableObject.CreateInstance<BrickConfig>();
+                    config.name = configData.Name;
+                    config.FromData(configData);
+                    list.Add(config);
+                }
+
+                ConfigsByType.Add(entry.Key, list);
+            }
         }
 
         public List<BrickConfig> GetConfigsByType(BrickType brickType)
@@ -90,6 +115,20 @@ namespace Solcery
                 _ => Enum.GetName(typeof(BrickSubtypeValue), subtype)
             };
         }
+
+        [Button(ButtonSizes.Gigantic)]
+        private void SaveToStreamingAssets()
+        {
+            Saver.SaveBrickConfigs(this);
+        }
+
+        [Button(ButtonSizes.Gigantic)]
+        private void LoadFromStreamingAssets()
+        {
+            Saver.LoadBrickConfigs(fileName, this);
+        }
+
+        [SerializeField] private string fileName;
     }
 
     public struct SubtypeNameConfig
