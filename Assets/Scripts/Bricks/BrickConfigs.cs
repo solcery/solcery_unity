@@ -5,10 +5,39 @@ using UnityEngine;
 
 namespace Solcery
 {
+    [Serializable]
+    public class BrickConfigsData
+    {
+        [SerializeField]
+        public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
+
+        public BrickConfigsData(Dictionary<BrickType, List<BrickConfig>> configsByType)
+        {
+            ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
+
+            foreach (KeyValuePair<BrickType, List<BrickConfig>> entry in configsByType)
+            {
+                var list = new List<BrickConfigData>();
+
+                foreach (var config in entry.Value)
+                {
+                    list.Add(config.ToData());
+                }
+
+                ConfigsByType.Add(entry.Key, list);
+            }
+        }
+    }
+
     [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfigs", fileName = "BrickConfigs")]
     public class BrickConfigs : SerializedScriptableObject
     {
         [SerializeField] private Dictionary<BrickType, List<BrickConfig>> ConfigsByType = new Dictionary<BrickType, List<BrickConfig>>();
+
+        public BrickConfigsData ToData()
+        {
+            return new BrickConfigsData(ConfigsByType);
+        }
 
         public List<BrickConfig> GetConfigsByType(BrickType brickType)
         {

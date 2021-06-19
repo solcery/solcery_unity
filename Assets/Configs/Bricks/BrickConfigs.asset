@@ -16,10 +16,13 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 34b6f76d7245ea4438267272031aa364, type: 2}
+    - {fileID: 11400000, guid: 8919de7a2244f214db5eb9da5bd63771, type: 2}
+    - {fileID: 11400000, guid: 5f9901d7d723bb740bc3427939f8ae4a, type: 2}
+    - {fileID: 11400000, guid: 6e12d1521b0f5b445b9240789553a205, type: 2}
     - {fileID: 11400000, guid: c521759d5af865b4392f13a57ef3c592, type: 2}
     - {fileID: 11400000, guid: 1e8d584a9fe8558429a0d018589622e2, type: 2}
     - {fileID: 11400000, guid: e4891bd621d81c74b816fec60c0185d2, type: 2}
-    - {fileID: 11400000, guid: 8919de7a2244f214db5eb9da5bd63771, type: 2}
     - {fileID: 11400000, guid: d0443a428a16bad4d87caef5bfcf5ca2, type: 2}
     - {fileID: 11400000, guid: 3d71da02b6aee1a4291e87ca758adf96, type: 2}
     - {fileID: 11400000, guid: 6d17dce15a7afc9469ebfc50645a6b9e, type: 2}
@@ -27,8 +30,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6b3ae10d56fd28d4594b0c6359bf7f2a, type: 2}
     - {fileID: 11400000, guid: b8a87525eb3443c47a5147aaa15b699d, type: 2}
     - {fileID: 11400000, guid: 3a75944a041667d4ab03b9e64a119a7c, type: 2}
-    - {fileID: 11400000, guid: 5f9901d7d723bb740bc3427939f8ae4a, type: 2}
-    - {fileID: 11400000, guid: 6e12d1521b0f5b445b9240789553a205, type: 2}
     - {fileID: 11400000, guid: f83876dff2e83114a9822e2dd6a3137a, type: 2}
     - {fileID: 11400000, guid: 3fa498b35b6a1034eada107f721a846d, type: 2}
     - {fileID: 11400000, guid: 5b75d3dfdaaef364289aa8e1f66fd07d, type: 2}
@@ -39,13 +40,101 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Data
+      Entry: 7
+      Data: 0|Solcery.BrickConfigsData, Assembly-CSharp
     - Name: ConfigsByType
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Grimmz.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Grimmz.BrickConfig,
+      Data: 1|System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Solcery.BrickConfig,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Grimmz.BrickType,
+      Data: 2|System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ConfigsByType
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Solcery.BrickConfig,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 6|System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -67,26 +156,26 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[Grimmz.BrickConfig, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 10
-      Data: 0
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 10
       Data: 1
     - Name: 
       Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 10
-      Data: 4
+      Data: 7
     - Name: 
       Entry: 13
       Data: 
@@ -104,20 +193,11 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[Grimmz.BrickConfig, Assembly-CSharp]],
+      Data: 8|System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 8
-    - Name: 
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 10
-      Data: 7
     - Name: 
       Entry: 10
       Data: 8
@@ -134,6 +214,15 @@ MonoBehaviour:
       Entry: 10
       Data: 12
     - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -150,14 +239,11 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Grimmz.BrickConfig, Assembly-CSharp]],
+      Data: 9|System.Collections.Generic.List`1[[Solcery.BrickConfig, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
-    - Name: 
-      Entry: 10
-      Data: 13
     - Name: 
       Entry: 10
       Data: 14
@@ -170,6 +256,9 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
     - Name: 
       Entry: 13
       Data: 

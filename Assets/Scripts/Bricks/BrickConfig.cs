@@ -1,11 +1,28 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace Solcery
 {
+    [Serializable]
+    public class BrickConfigData
+    {
+        public BrickType Type;
+        public int Subtype;
+        public string Description;
+
+        public BrickConfigData(BrickType type, int subtype, string description)
+        {
+            Type = type;
+            Subtype = subtype;
+            Description = description;
+        }
+    }
+
     [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfig", fileName = "BrickConfig")]
-    public class BrickConfig : SerializedScriptableObject
+    public class BrickConfig : SerializedScriptableObject, ISerializationCallbackReceiver
     {
         public BrickType Type;
         public System.Enum Subtype;
@@ -16,12 +33,30 @@ namespace Solcery
         [ShowIf("HasField")] public string FieldName;
 
         public bool HasObjectSelection;
-        
+
         public bool DoesAddObject;
         [ShowIf("DoesAddObject")] public string AddedObjectName;
 
         public bool areSlotsExpandable;
         public List<UIBrickSlotStruct> Slots = new List<UIBrickSlotStruct>();
+
+        public BrickConfigData ToData()
+        {
+            return new BrickConfigData(Type, Convert.ToInt32(Subtype), Description);
+        }
+
+        public void FromData(BrickConfigData data)
+        {
+            Type = data.Type;
+            Subtype = Type switch
+            {
+                BrickType.Action => (BrickSubtypeAction)data.Subtype,
+                BrickType.Condition => (BrickSubtypeCondition)data.Subtype,
+                BrickType.Value => (BrickSubtypeValue)data.Subtype,
+                _ => (BrickSubtypeValue)data.Subtype
+            };
+            Description = data.Description;
+        }
     }
 
     public enum UIBrickFieldType
