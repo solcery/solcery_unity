@@ -9,7 +9,7 @@ namespace Solcery.FSM.Game
         public override async UniTask Enter()
         {
             await base.Enter();
-            Solcery.Create.Instance?.Init();
+            await Solcery.Create.Instance.Init();
         }
 
         public override async UniTask Exit()

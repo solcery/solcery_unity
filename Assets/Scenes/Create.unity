@@ -4601,6 +4601,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
 --- !u!1 &1692048282
 GameObject:
   m_ObjectHideFlags: 0

@@ -203,6 +203,7 @@ MonoBehaviour:
   BrickNodePrefab: {fileID: 3059688946991341019, guid: 0ad196fc01e22e94e8f8c7e4aba7ae5c, type: 3}
   SelectBrickNode: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
   Genesis: {fileID: 0}
+  brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
   rect: {fileID: 2306234734800147975}
   contentBlocker: {fileID: 2306234733950431606}
   contentBlockerButton: {fileID: 1969649561184392811}

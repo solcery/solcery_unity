@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Solcery.UI.Create;
 using Solcery.Utils;
 
@@ -5,9 +6,9 @@ namespace Solcery
 {
     public class Create : Singleton<Create>
     {
-        public void Init()
+        public async UniTask Init()
         {
-            UICreate.Instance?.Init();
+            await UICreate.Instance.Init();
         }
 
         public void DeInit()

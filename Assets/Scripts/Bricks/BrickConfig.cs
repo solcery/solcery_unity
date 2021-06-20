@@ -13,21 +13,34 @@ namespace Solcery
         public BrickType Type;
         public int Subtype;
         public string Description;
+        public bool HasField;
+        public UIBrickFieldType FieldType;
+        public string FieldName;
+        public bool HasObjectSelection;
+        public List<UIBrickSlotStruct> Slots;
 
-        public BrickConfigData(string name, BrickType type, int subtype, string description)
+        public BrickConfigData Create(BrickConfig config)
         {
-            Name = name;
-            Type = type;
-            Subtype = subtype;
-            Description = description;
+            Name = config.Name;
+            Type = config.Type;
+            Subtype = Convert.ToInt32(config.Subtype);
+            Description = config.Description;
+            HasField = config.HasField;
+            FieldType = config.FieldType;
+            FieldName = config.FieldName;
+            HasObjectSelection = config.HasObjectSelection;
+            Slots = config.Slots;
+
+            return this;
         }
     }
 
     [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfig", fileName = "BrickConfig")]
     public class BrickConfig : SerializedScriptableObject, ISerializationCallbackReceiver
     {
+        public string Name;
         public BrickType Type;
-        public System.Enum Subtype;
+        public int Subtype;
         [Multiline(5)] public string Description;
 
         public bool HasField;
@@ -44,20 +57,20 @@ namespace Solcery
 
         public BrickConfigData ToData()
         {
-            return new BrickConfigData(this.name, Type, Convert.ToInt32(Subtype), Description);
+            return new BrickConfigData().Create(this);
         }
 
         public void FromData(BrickConfigData data)
         {
+            Name = data.Name;
             Type = data.Type;
-            Subtype = Type switch
-            {
-                BrickType.Action => (BrickSubtypeAction)data.Subtype,
-                BrickType.Condition => (BrickSubtypeCondition)data.Subtype,
-                BrickType.Value => (BrickSubtypeValue)data.Subtype,
-                _ => (BrickSubtypeValue)data.Subtype
-            };
+            Subtype = data.Subtype;
             Description = data.Description;
+            HasField = data.HasField;
+            FieldType = data.FieldType;
+            FieldName = data.FieldName;
+            HasObjectSelection = data.HasObjectSelection;
+            Slots = data.Slots;
         }
     }
 
@@ -67,6 +80,7 @@ namespace Solcery
         String
     }
 
+    [Serializable]
     public struct UIBrickSlotStruct
     {
         public BrickType Type;

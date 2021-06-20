@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace Solcery
     {
         [SerializeField]
         public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType;
-        
+
 
         public BrickConfigsData Create(Dictionary<BrickType, List<BrickConfig>> configsByType)
         {
@@ -84,8 +85,7 @@ namespace Solcery
 
                 foreach (var config in configsOfType)
                 {
-                    var name = GetSubtypeName(brickType, config.Subtype);
-                    names.Add(new SubtypeNameConfig(config.Subtype, name, config));
+                    names.Add(new SubtypeNameConfig(config.Name, config));
                 }
 
                 return names;
@@ -116,16 +116,21 @@ namespace Solcery
             };
         }
 
+        public async UniTask Init()
+        {
+            await StreamingAsseter.LoadBrickConfigs(fileName, this);
+        }
+
         [Button(ButtonSizes.Gigantic)]
         private void SaveToStreamingAssets()
         {
-            Saver.SaveBrickConfigs(this);
+            StreamingAsseter.SaveBrickConfigs(this);
         }
 
         [Button(ButtonSizes.Gigantic)]
         private void LoadFromStreamingAssets()
         {
-            Saver.LoadBrickConfigs(fileName, this);
+            StreamingAsseter.LoadBrickConfigs(fileName, this).Forget();
         }
 
         [SerializeField] private string fileName;
@@ -133,13 +138,11 @@ namespace Solcery
 
     public struct SubtypeNameConfig
     {
-        public Enum Subtype;
         public string Name;
         public BrickConfig Config;
 
-        public SubtypeNameConfig(Enum subtype, string name, BrickConfig config)
+        public SubtypeNameConfig(string name, BrickConfig config)
         {
-            Subtype = subtype;
             Name = name;
             Config = config;
         }

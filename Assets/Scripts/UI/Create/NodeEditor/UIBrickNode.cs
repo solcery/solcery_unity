@@ -36,7 +36,7 @@ namespace Solcery.UI.Create.NodeEditor
             Arrows = new UINodeArrow[config.Slots.Count];
 
             type.text = Enum.GetName(typeof(BrickType), config.Type);
-            subtype.text = BrickConfigs.GetSubtypeName(config.Type, config.Subtype);
+            subtype.text = config.Name;
             description.text = config.Description;
 
             field.gameObject.SetActive(config.HasField);

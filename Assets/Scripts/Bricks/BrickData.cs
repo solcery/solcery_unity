@@ -44,7 +44,7 @@ namespace Solcery
         public BrickData(BrickConfig config)
         {
             Type = (int)config.Type;
-            Subtype = BrickConfigs.GetSubtypeIndex(config.Type, config.Subtype);
+            Subtype = config.Subtype;
 
             HasField = config.HasField;
             HasObjectSelection = config.HasObjectSelection;

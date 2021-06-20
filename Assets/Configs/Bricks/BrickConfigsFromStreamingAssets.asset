@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311dde061d168e845bcd6a32a9d3cbd8, type: 3}
-  m_Name: True
+  m_Script: {fileID: 11500000, guid: ba42d12a5e2b0ae4397cb56a9501b79e, type: 3}
+  m_Name: BrickConfigsFromStreamingAssets
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,19 +21,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: Subtype
+    - Name: ConfigsByType
       Entry: 7
-      Data: 0|Solcery.BrickSubtypeCondition, Assembly-CSharp
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Slots
+      Data: 0|System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Solcery.BrickConfig,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -43,12 +38,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Type: 1
-  Description: Returns true.
-  HasField: 0
-  FieldType: 0
-  FieldName: 
-  HasObjectSelection: 0
-  DoesAddObject: 0
-  AddedObjectName: 
-  areSlotsExpandable: 0
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  fileName: BrickConfigs

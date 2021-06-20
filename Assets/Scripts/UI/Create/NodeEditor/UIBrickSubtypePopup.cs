@@ -7,14 +7,13 @@ namespace Solcery.UI.Create.NodeEditor
     public class UIBrickSubtypePopup : MonoBehaviour
     {
         [SerializeField] private GameObject optionPrefab = null;
-        [SerializeField] private BrickConfigs brickConfigs = null;
 
         private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
         private List<UIBrickSubtypePopupOption> _options = new List<UIBrickSubtypePopupOption>();
 
         private UISelectBrickNode _button;
 
-        public void Open(UISelectBrickNode button, Action<SubtypeNameConfig, UISelectBrickNode> onOptionSelected)
+        public void Open(UISelectBrickNode button, BrickConfigs brickConfigs, Action<SubtypeNameConfig, UISelectBrickNode> onOptionSelected)
         {
             this.transform.SetAsLastSibling();
 
@@ -27,9 +26,7 @@ namespace Solcery.UI.Create.NodeEditor
                 foreach (var subTypeConfig in subTypeConfigs)
                     AddOption(subTypeConfig);
 
-
-            // this.transform.position = button.transform.position;
-            this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth/2, button.transform.position.y);
+            this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth / 2, button.transform.position.y);
         }
 
         public void Close()

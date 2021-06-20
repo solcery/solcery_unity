@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311dde061d168e845bcd6a32a9d3cbd8, type: 3}
-  m_Name: False
+  m_Name: 2_Conditional
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -20,35 +20,23 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: Subtype
-      Entry: 7
-      Data: 0|Solcery.BrickSubtypeCondition, Assembly-CSharp
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Slots
-      Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  Type: 1
-  Description: Returns false.
+    SerializationNodes: []
+  Name: Conditional
+  Type: 0
+  Subtype: 2
+  Description: Applies <b>positive</b> if <b>condition</b> is passed, otherwise applies
+    <b>negative</b>.
   HasField: 0
-  FieldType: 0
-  FieldName: 
+  FieldType: 1
+  FieldName: TestField
   HasObjectSelection: 0
   DoesAddObject: 0
   AddedObjectName: 
   areSlotsExpandable: 0
+  Slots:
+  - Type: 1
+    Name: Condition
+  - Type: 0
+    Name: Positive
+  - Type: 0
+    Name: Negative

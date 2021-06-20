@@ -3,10 +3,10 @@ using Solcery.Utils;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
 using Solcery.Utils.Reactives;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 
 namespace Solcery.UI.Create
 {
@@ -23,10 +23,10 @@ namespace Solcery.UI.Create
 
         private CancellationTokenSource _cts;
 
-        public void Init()
+        public async UniTask Init()
         {
             _cts = new CancellationTokenSource();
-            nodeEditor?.Init();
+            await nodeEditor.Init();
             createCard?.Init();
 
             Reactives.Subscribe(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);

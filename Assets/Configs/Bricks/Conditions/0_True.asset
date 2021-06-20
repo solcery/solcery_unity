@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311dde061d168e845bcd6a32a9d3cbd8, type: 3}
+  m_Name: 0_True
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  Name: True
+  Type: 1
+  Subtype: 0
+  Description: Returns true.
+  HasField: 0
+  FieldType: 0
+  FieldName: 
+  HasObjectSelection: 0
+  DoesAddObject: 0
+  AddedObjectName: 
+  areSlotsExpandable: 0
+  Slots: []

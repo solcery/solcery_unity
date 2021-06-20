@@ -16,18 +16,9 @@ MonoBehaviour:
   deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637596436523278951
+  lastScan: 637597604753952983
   supportSerializedTypes:
   - TypeName: Solcery.BrickConfig, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.BrickSubtypeAction, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.BrickSubtypeCondition, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.BrickSubtypeValue, Assembly-CSharp
     IsCustom: 0
     Emit: 1
   - TypeName: Solcery.BrickType, Assembly-CSharp
@@ -35,9 +26,6 @@ MonoBehaviour:
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.List`1[[Solcery.BrickConfig,
       Assembly-CSharp]], mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Enum, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
@@ -57,15 +45,5 @@ MonoBehaviour:
     Emit: 1
   - TypeName: System.Collections.Generic.List`1[[Solcery.Utils.IUpdateable, Assembly-CSharp]],
       mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[Solcery.UIBrickSlotStruct, Assembly-CSharp]],
-      mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.String, mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.UIBrickSlotStruct, Assembly-CSharp
     IsCustom: 0
     Emit: 1

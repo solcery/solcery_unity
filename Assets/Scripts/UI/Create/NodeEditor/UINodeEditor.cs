@@ -12,6 +12,7 @@ namespace Solcery.UI.Create.NodeEditor
         public GameObject BrickNodePrefab;
         public GameObject SelectBrickNode;
         public UINode Genesis;
+        [SerializeField] private BrickConfigs brickConfigs = null;
         [SerializeField] private RectTransform rect = null;
         [SerializeField] private GameObject contentBlocker = null;
         [SerializeField] private Button contentBlockerButton = null;
@@ -20,10 +21,11 @@ namespace Solcery.UI.Create.NodeEditor
 
         private BrickTree _brickTree;
 
-        public void Init()
+        public async UniTask Init()
         {
             _brickTree = new BrickTree();
             CreateFirstButton();
+            await brickConfigs.Init();
         }
 
         public void DeInit()
@@ -52,10 +54,10 @@ namespace Solcery.UI.Create.NodeEditor
             {
                 subtypePopup.Close();
                 contentBlocker.SetActive(false);
-            // contentBlocker.transform.SetAsFirstSibling();
-        });
+                // contentBlocker.transform.SetAsFirstSibling();
+            });
             subtypePopup.gameObject.SetActive(true);
-            subtypePopup.Open(button, OnBrickAdded);
+            subtypePopup.Open(button, brickConfigs, OnBrickAdded);
         }
 
         private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickNode button)
