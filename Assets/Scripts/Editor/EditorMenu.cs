@@ -43,12 +43,6 @@ namespace Solcery.Editor
             await StopPlayingAndOpenScene("Assets/Scenes/Play.unity");
         }
 
-        [MenuItem("Solcery/Scene/PVP", false, 26)]
-        static async UniTask OpenPVPScene()
-        {
-            await StopPlayingAndOpenScene("Assets/Scenes/PVP.unity");
-        }
-
         [MenuItem("Solcery/Scene/Test", false, 101)]
         static async UniTask OpenTestScene()
         {
