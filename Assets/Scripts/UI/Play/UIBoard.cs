@@ -1,4 +1,6 @@
+using Solcery.WebGL;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI.Play
 {
@@ -8,6 +10,7 @@ namespace Solcery.UI.Play
         [SerializeField] private UIPlayer enemy = null;
         [SerializeField] private UIShop shop = null;
         [SerializeField] private UIDrawPile deck = null;
+        [SerializeField] private Button endTurnButton = null;
 
         public void Init()
         {
@@ -17,6 +20,7 @@ namespace Solcery.UI.Play
         public void DeInit()
         {
             Board.Instance.OnBoardUpdate -= OnBoardUpdate;
+            endTurnButton?.onClick.RemoveAllListeners();
         }
 
         private void OnBoardUpdate(BoardData boardData)
@@ -26,6 +30,18 @@ namespace Solcery.UI.Play
 
             deck.SetCardsCount(boardData.Places.ContainsKey(CardPlace.Deck) ? boardData.Places[CardPlace.Deck].Count : 0);
             shop.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
+
+            endTurnButton.gameObject.SetActive(boardData.Players[0].IsActive);
+
+            if (boardData.Players[0].IsActive)
+                endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked(boardData));
+            else
+                endTurnButton?.onClick.RemoveAllListeners();
+        }
+
+        private void OnEndTurnButtonClicked(BoardData boardData)
+        {
+            UnityToReact.Instance.CallUseCard(boardData.Cards[0].MintAdress, boardData.Cards[0].CardIndex);
         }
     }
 }
