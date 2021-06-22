@@ -23,7 +23,7 @@ namespace Solcery.UI
             {
                 button.interactable = isInteractable;
                 if (isInteractable)
-                    button.onClick.AddListener(() => { onCardCasted?.Invoke(cardData.MintAdress, cardData.CardIndex); });
+                    button.onClick.AddListener(() => { onCardCasted?.Invoke(cardData.MintAddress, cardData.CardIndex); });
             }
         }
 

@@ -7,7 +7,7 @@ namespace Solcery
     {
         public int CardIndex;
         public CardPlace CardPlace;
-        public string MintAdress;
+        public string MintAddress;
         public CardMetadata Metadata;
     }
 }
