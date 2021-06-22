@@ -14,7 +14,7 @@ namespace Solcery
 
             Application.targetFrameRate = 60;
 #if UNITY_WEBGL && !UNITY_EDITOR
-            WebGLInput.captureAllKeyboardInput = true;
+            WebGLInput.captureAllKeyboardInput = false;
 #endif
             Game.Instance?.Init();
         }

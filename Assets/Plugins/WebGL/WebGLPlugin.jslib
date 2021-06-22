@@ -15,7 +15,7 @@ mergeInto(LibraryManager.library, {
       ReactUnityWebGL.CreateBoard();
     },
     JoinBoard: function (gameKey) {
-      ReactUnityWebGL.CreateBoard(Pointer_stringify(gameKey));
+      ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
     OnUnityLoaded: function () {
       ReactUnityWebGL.OnUnityLoaded();
