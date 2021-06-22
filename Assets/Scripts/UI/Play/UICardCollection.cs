@@ -38,13 +38,13 @@ namespace Solcery.UI
             foreach (var cardData in collectionData.Cards)
             {
                 var newCard = Instantiate(cardPrefab, content).GetComponent<UICard>();
-                newCard.Init(cardData, OnCardCasted);
+                newCard.Init(cardData, true, OnCardCasted);
 
                 _cards.Add(newCard);
             }
         }
 
-        private void OnCardCasted(string cardMintAddress)
+        private void OnCardCasted(string cardMintAddress, int cardIndex)
         {
             // UnityToReact.Instance?.CallUseCard(cardMintAddress);
         }

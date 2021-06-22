@@ -13,13 +13,18 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
 
-        public void Init(CardData cardData, Action<string> onCardCasted)
+        public void Init(CardData cardData, bool isInteractable, Action<string, int> onCardCasted = null)
         {
             cardPicture.sprite = cardPictures.GetSpriteByIndex(cardData.Metadata.Picture);
             cardName.text = cardData.Metadata.Name;
             cardDescription.text = cardData.Metadata.Description;
 
-            button.onClick.AddListener(() => { onCardCasted?.Invoke(cardData.MintAdress); });
+            if (button != null)
+            {
+                button.interactable = isInteractable;
+                if (isInteractable)
+                    button.onClick.AddListener(() => { onCardCasted?.Invoke(cardData.MintAdress, cardData.CardIndex); });
+            }
         }
 
         public void DeInit()

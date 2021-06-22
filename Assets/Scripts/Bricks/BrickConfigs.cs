@@ -13,7 +13,6 @@ namespace Solcery
         [SerializeField]
         public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType;
 
-
         public BrickConfigsData Create(Dictionary<BrickType, List<BrickConfig>> configsByType)
         {
             ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
