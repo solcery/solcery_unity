@@ -24,10 +24,10 @@ namespace Solcery.WebGL
             Collection.Instance?.UpdateCollection(collectionData);
         }
 
-        public void UpdateFight(string fightJson)
+        public void UpdateBoard(string boardJson)
         {
-            var fightData = JsonUtility.FromJson<FightData>(fightJson);
-            Fight.Instance?.UpdateFight(fightData);
+            var boardData = JsonUtility.FromJson<BoardData>(boardJson);
+            Board.Instance?.UpdateBoard(boardData.Prettify());
         }
 
         public void SetCardCreationSigned(string signJson)

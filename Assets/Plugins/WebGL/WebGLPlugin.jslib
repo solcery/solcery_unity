@@ -8,8 +8,8 @@ mergeInto(LibraryManager.library, {
     CreateCard: function (card, cardName) {
       ReactUnityWebGL.CreateCard(Pointer_stringify(card), Pointer_stringify(cardName));
     },
-    UseCard: function (card) {
-      ReactUnityWebGL.UseCard(Pointer_stringify(card));
+    UseCard: function (cardIndex) {
+      ReactUnityWebGL.UseCard(cardIndex);
     },
     CreateFight: function () {
       ReactUnityWebGL.CreateFight();

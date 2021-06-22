@@ -46,7 +46,7 @@ namespace Solcery.UI
 
         private void OnCardCasted(string cardMintAddress)
         {
-            UnityToReact.Instance?.CallUseCard(cardMintAddress);
+            // UnityToReact.Instance?.CallUseCard(cardMintAddress);
         }
 
         private void DeleteAllCards()

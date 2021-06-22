@@ -11,9 +11,11 @@ namespace Solcery.UI.Play
     public class UIPlay : Singleton<UIPlay>
     {
         public UICardCollection CardCollection => cardCollection;
+        public UIBoard Board => board;
 
         [SerializeField] private Button createFightButton = null;
         [SerializeField] private UIFight fight = null;
+        [SerializeField] private UIBoard board = null;
         [SerializeField] private UICardCollection cardCollection = null;
 
         private CancellationTokenSource _cts;
@@ -22,8 +24,9 @@ namespace Solcery.UI.Play
         {
             _cts = new CancellationTokenSource();
 
-            fight.Init();
-            cardCollection.Init();
+            fight?.Init();
+            board?.Init();
+            cardCollection?.Init();
 
             if (Fight.Instance.FightData.Value == null)
             {
@@ -56,6 +59,7 @@ namespace Solcery.UI.Play
             _cts.Cancel();
 
             fight?.DeInit();
+            board?.DeInit();
             cardCollection?.DeInit();
             createFightButton?.onClick?.RemoveAllListeners();
         }
