@@ -15,27 +15,46 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
-            _isPlayer = (playerIndex == 0);
-            _isActive = boardData.Players[playerIndex].IsActive;
+            if (boardData.Players.Count > playerIndex)
+            {
+                _isPlayer = (playerIndex == 0);
+                _isActive = boardData.Players[playerIndex].IsActive;
 
-            UpdatePlayerData(boardData.Players[playerIndex]);
-            UpdatePlayerDrawPile(boardData);
-            UpdatePlayerHand(boardData, playerIndex);
+                UpdatePlayerData(boardData.Players[playerIndex]);
+                UpdatePlayerDrawPile(boardData);
+                UpdatePlayerHand(boardData, playerIndex);
+            }
+            else
+            {
+                UpdatePlayerData(null);
+                UpdatePlayerDrawPile(null);
+                UpdatePlayerHand(null);
+            }
         }
 
         private void UpdatePlayerData(PlayerData playerData)
         {
-            SetHP(playerData.HP);
-            SetCoins(playerData.Coins);
+            SetHP(playerData != null ? playerData.HP : 0);
+            SetCoins(playerData != null ? playerData.Coins : 0);
         }
 
         private void UpdatePlayerDrawPile(BoardData boardData)
         {
-            playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.DrawPile1) ? boardData.Places[CardPlace.DrawPile1].Count : 0);
+            if (boardData == null)
+                playerDrawPile?.SetCardsCount(0);
+            else
+                playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.DrawPile1) ? boardData.Places[CardPlace.DrawPile1].Count : 0);
         }
 
-        private void UpdatePlayerHand(BoardData boardData, int playerIndex)
+        private void UpdatePlayerHand(BoardData boardData, int playerIndex = 0)
         {
+            if (boardData == null)
+            {
+                playerHand?.DeleteAllCards();
+                return;
+            }
+                
+
             CardPlace cardPlace = playerIndex switch
             {
                 0 => CardPlace.Hand1,

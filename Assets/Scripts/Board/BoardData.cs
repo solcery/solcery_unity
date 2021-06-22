@@ -7,10 +7,22 @@ namespace Solcery
     public class BoardData
     {
         public List<CardData> Cards;
-        [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
         public List<PlayerData> Players;
+        public int EndTurnCardId;
+
+        [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
+        [NonSerialized] public CardData EndTurnCard;
 
         public BoardData Prettify()
+        {
+            CreatePlacesDictionary();
+            MakeMeTheFirstPlayer();
+            FindEndTurnCard();
+
+            return this;
+        }
+
+        private void CreatePlacesDictionary()
         {
             Places = new Dictionary<CardPlace, List<CardData>>();
 
@@ -25,8 +37,29 @@ namespace Solcery
                     Places.Add(card.CardPlace, new List<CardData>() { card });
                 }
             }
+        }
 
-            return this;
+        private void MakeMeTheFirstPlayer()
+        {
+            for (int i = 0; i < Players.Count; i++)
+            {
+                if (Players[i].IsMe)
+                {
+                    var me = Players[i];
+                    var temp = Players[0];
+                    Players[0] = me;
+                    Players[i] = temp;
+                }
+            }
+        }
+
+        private void FindEndTurnCard()
+        {
+            foreach (var card in Cards)
+            {
+                if (card.CardId == EndTurnCardId)
+                    EndTurnCard = card;
+            }
         }
     }
 }

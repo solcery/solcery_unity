@@ -5,7 +5,7 @@ namespace Solcery
     [Serializable]
     public class CardData
     {
-        public int CardIndex;
+        public int CardId;
         public CardPlace CardPlace;
         public string MintAddress;
         public CardMetadata Metadata;

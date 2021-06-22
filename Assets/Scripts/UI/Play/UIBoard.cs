@@ -42,7 +42,7 @@ namespace Solcery.UI.Play
 
         private void OnEndTurnButtonClicked(BoardData boardData)
         {
-            UnityToReact.Instance.CallUseCard(boardData.Cards[0].MintAddress, boardData.Cards[0].CardIndex);
+            UnityToReact.Instance.CallUseCard(boardData.EndTurnCard.MintAddress, boardData.EndTurnCard.CardId);
         }
     }
 }

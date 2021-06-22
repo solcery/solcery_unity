@@ -18,8 +18,6 @@ namespace Solcery.UI.Play
             if (cards == null)
                 return;
 
-            _cards = new List<UICard>();
-
             foreach (var cardData in cards)
             {
                 var card = Instantiate(cardPrefab, content).GetComponent<UICard>();
@@ -34,7 +32,7 @@ namespace Solcery.UI.Play
             Debug.Log("interactable card clicked");
         }
 
-        private void DeleteAllCards()
+        public void DeleteAllCards()
         {
             if (_cards != null && _cards.Count > 0)
             {
@@ -44,6 +42,8 @@ namespace Solcery.UI.Play
                     DestroyImmediate(_cards[i].gameObject);
                 }
             }
+
+            _cards = new List<UICard>();
         }
     }
 }
