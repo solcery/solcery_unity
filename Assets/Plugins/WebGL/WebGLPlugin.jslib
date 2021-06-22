@@ -11,8 +11,11 @@ mergeInto(LibraryManager.library, {
     UseCard: function (cardMintAddress, cardIndex) {
       ReactUnityWebGL.UseCard(Pointer_stringify(cardMintAddress), cardIndex);
     },
-    CreateFight: function () {
-      ReactUnityWebGL.CreateFight();
+    CreateBoard: function () {
+      ReactUnityWebGL.CreateBoard();
+    },
+    JoinBoard: function (gameKey) {
+      ReactUnityWebGL.CreateBoard(Pointer_stringify(gameKey));
     },
     OnUnityLoaded: function () {
       ReactUnityWebGL.OnUnityLoaded();

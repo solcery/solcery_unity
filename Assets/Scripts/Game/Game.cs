@@ -2,8 +2,8 @@ using Solcery.FSM.Game;
 using Solcery.Utils;
 using Solcery.Modules.Wallet;
 using Solcery.Modules.Collection;
+using Solcery.Modules.Board;
 using Solcery.WebGL;
-using Solcery.Modules.Fight;
 
 namespace Solcery
 {
@@ -13,7 +13,7 @@ namespace Solcery
         {
             Wallet.Instance?.Init();
             Collection.Instance?.Init();
-            Fight.Instance?.Init();
+            Board.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
             GameSM.Instance?.PerformInitialTransition();
         }
@@ -22,7 +22,7 @@ namespace Solcery
         {
             Wallet.Instance?.DeInit();
             Collection.Instance?.DeInit();
-            Fight.Instance?.DeInit();
+            Board.Instance?.DeInit();
         }
     }
 }

@@ -12,7 +12,8 @@ namespace Solcery.WebGL
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
         [DllImport("__Internal")] private static extern void CreateCard(string card, string cardName);
-        [DllImport("__Internal")] private static extern void CreateFight(string message);
+        [DllImport("__Internal")] private static extern void CreateBoard();
+        [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
         [DllImport("__Internal")] private static extern void UseCard(string cardMintAddress, int card);
 
 
@@ -37,10 +38,17 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallCreateFight()
+        public void CallCreateBoard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    CreateFight("message");
+    CreateBoard();
+#endif
+        }
+
+        public void CallJoinBoard(string gameKey)
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+    JoinBoard(gameKey);
 #endif
         }
 

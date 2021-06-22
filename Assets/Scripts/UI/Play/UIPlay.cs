@@ -1,67 +1,64 @@
-using System.Threading;
-using Solcery.Modules.Fight;
+using Solcery.Modules.Board;
 using Solcery.Utils;
-using Solcery.Utils.Reactives;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Solcery.UI.Play
 {
     public class UIPlay : Singleton<UIPlay>
     {
-        public UICardCollection CardCollection => cardCollection;
-        public UIBoard Board => board;
-
-        [SerializeField] private Button createFightButton = null;
-        [SerializeField] private UIFight fight = null;
+        [SerializeField] private Button createGameButton = null;
+        [SerializeField] private Button joinGameButton = null;
+        [SerializeField] private TextMeshProUGUI joinGameKey = null;
         [SerializeField] private UIBoard board = null;
-        [SerializeField] private UICardCollection cardCollection = null;
-
-        private CancellationTokenSource _cts;
 
         public void Init()
         {
-            _cts = new CancellationTokenSource();
-
-            fight?.Init();
-            board?.Init();
-            cardCollection?.Init();
-
-            if (Fight.Instance.FightData.Value == null)
+            if (Board.Instance.BoardData == null)
             {
-                createFightButton.onClick.AddListener(() =>
+                createGameButton.onClick.AddListener(() =>
                 {
-                    UnityToReact.Instance?.CallCreateFight();
-                    createFightButton.gameObject.SetActive(false);
+                    UnityToReact.Instance?.CallCreateBoard();
+                    createGameButton.gameObject.SetActive(false);
+                    joinGameButton.gameObject.SetActive(false);
+                });
+
+                joinGameButton.onClick.AddListener(() =>
+                {
+                    if (joinGameKey != null && !string.IsNullOrEmpty(joinGameKey.text))
+                    {
+                        UnityToReact.Instance?.CallJoinBoard(joinGameKey.text);
+                        createGameButton.gameObject.SetActive(false);
+                        joinGameButton.gameObject.SetActive(false);
+                    }
                 });
             }
             else
             {
-                fight.gameObject.SetActive(true);
-                createFightButton.gameObject.SetActive(false);
-                UpdateFight(Fight.Instance.FightData.Value);
+                createGameButton.gameObject.SetActive(false);
+                joinGameButton.gameObject.SetActive(false);
+                board?.OnBoardUpdate(Board.Instance.BoardData);
             }
 
-            Reactives.SubscribeWithoutCurrent(Fight.Instance?.FightData, UpdateFight, _cts.Token);
+            Board.Instance.OnBoardUpdate += OnBoardUpdate;
+            board?.Init();
         }
 
-        private void UpdateFight(FightData fightData)
+        public void OnBoardUpdate(BoardData boardData)
         {
-            if (fightData == null) return;
-
-            this.fight?.gameObject?.SetActive(true);
-            this.fight?.UpdateFight(fightData);
+            board.gameObject.SetActive(true);
+            createGameButton.gameObject.SetActive(false);
+            joinGameButton.gameObject.SetActive(false);
+            board?.OnBoardUpdate(boardData);
         }
 
         public void DeInit()
         {
-            _cts.Cancel();
-
-            fight?.DeInit();
+            createGameButton?.onClick?.RemoveAllListeners();
+            Board.Instance.OnBoardUpdate -= OnBoardUpdate;
             board?.DeInit();
-            cardCollection?.DeInit();
-            createFightButton?.onClick?.RemoveAllListeners();
         }
     }
 }

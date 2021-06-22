@@ -20,7 +20,7 @@ namespace Solcery.UI.Play
 
             UpdatePlayerData(boardData.Players[playerIndex]);
             UpdatePlayerDrawPile(boardData);
-            UpdatePlayerHand(boardData);
+            UpdatePlayerHand(boardData, playerIndex);
         }
 
         private void UpdatePlayerData(PlayerData playerData)
@@ -34,9 +34,15 @@ namespace Solcery.UI.Play
             playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.DrawPile1) ? boardData.Places[CardPlace.DrawPile1].Count : 0);
         }
 
-        private void UpdatePlayerHand(BoardData boardData)
+        private void UpdatePlayerHand(BoardData boardData, int playerIndex)
         {
-            playerHand?.UpdateCards(boardData.Places.ContainsKey(CardPlace.Hand1) ? boardData.Places[CardPlace.Hand1] : null, _isPlayer, _isActive);
+            CardPlace cardPlace = playerIndex switch
+            {
+                0 => CardPlace.Hand1,
+                1 => CardPlace.Hand2,
+                _ => CardPlace.Nowhere,
+            };
+            playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer, _isActive);
         }
 
         private void SetHP(int hp)

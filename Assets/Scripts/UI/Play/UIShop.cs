@@ -6,7 +6,7 @@ namespace Solcery.UI.Play
     public class UIShop : UIHand
     {
         public void UpdateCards(List<CardData> cards)
-        {
+        {            
             base.UpdateCards(cards, areButtonsInteractable: true);
         }
 

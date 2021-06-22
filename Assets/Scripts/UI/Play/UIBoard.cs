@@ -14,17 +14,18 @@ namespace Solcery.UI.Play
 
         public void Init()
         {
-            Board.Instance.OnBoardUpdate += OnBoardUpdate;
+
         }
 
         public void DeInit()
         {
-            Board.Instance.OnBoardUpdate -= OnBoardUpdate;
             endTurnButton?.onClick.RemoveAllListeners();
         }
 
-        private void OnBoardUpdate(BoardData boardData)
+        public void OnBoardUpdate(BoardData boardData)
         {
+            this.gameObject.SetActive(true);
+
             player?.OnBoardUpdate(boardData, 0);
             enemy?.OnBoardUpdate(boardData, 1);
 

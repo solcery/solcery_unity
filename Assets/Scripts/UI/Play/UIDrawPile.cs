@@ -9,7 +9,13 @@ namespace Solcery.UI.Play
 
         public void SetCardsCount(int cardsCount)
         {
-            if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
+            if (cardsCount <= 0)
+                this.gameObject.SetActive(false);
+            else
+            {
+                this.gameObject.SetActive(true);
+                if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
+            }
         }
     }
 }

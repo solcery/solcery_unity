@@ -12,6 +12,8 @@ namespace Solcery
 
         public BoardData Prettify()
         {
+            Places = new Dictionary<CardPlace, List<CardData>>();
+
             foreach (var card in Cards)
             {
                 if (Places.ContainsKey(card.CardPlace))
