@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Solcery
+namespace Solcery.UI.Play
 {
     public class UIPlayerHand : MonoBehaviour
     {

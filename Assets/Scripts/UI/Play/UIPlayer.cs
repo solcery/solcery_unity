@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Solcery
+namespace Solcery.UI.Play
 {
     public class UIPlayer : MonoBehaviour
     {

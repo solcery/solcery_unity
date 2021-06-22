@@ -1,5 +1,8 @@
-public class CardCreationSignData
+namespace Solcery
 {
-    public string CardName;
-    public bool IsSigned;
+    public class CardCreationSignData
+    {
+        public string CardName;
+        public bool IsSigned;
+    }
 }

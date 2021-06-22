@@ -1,5 +1,9 @@
-public class CardCreationConfirmData
+namespace Solcery
 {
-    public string CardName;
-    public bool IsConfirmed;
+    public class CardCreationConfirmData
+    {
+        public string CardName;
+        public bool IsConfirmed;
+    }
+
 }
