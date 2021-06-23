@@ -30,6 +30,7 @@ namespace Solcery.UI.Play
                     if (joinGameKey != null && !string.IsNullOrEmpty(joinGameKey.text))
                     {
                         UnityToReact.Instance?.CallJoinBoard(joinGameKey.text);
+                        Debug.Log(joinGameKey.text);
                         createGameButton.gameObject.SetActive(false);
                         joinGameButton.gameObject.SetActive(false);
                     }

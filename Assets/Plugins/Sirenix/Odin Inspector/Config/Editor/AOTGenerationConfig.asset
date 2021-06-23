@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637600090306249590
+  lastScan: 637600204824672011
   supportSerializedTypes:
   - TypeName: Solcery.BrickConfig, Assembly-CSharp
     IsCustom: 0
