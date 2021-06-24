@@ -2253,13 +2253,33 @@ PrefabInstance:
       value: UINodeEditor
       objectReference: {fileID: 0}
     - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: config1
+      value: 
+      objectReference: {fileID: 11400000, guid: 6b3ae10d56fd28d4594b0c6359bf7f2a, type: 2}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: config2
+      value: 
+      objectReference: {fileID: 11400000, guid: c521759d5af865b4392f13a57ef3c592, type: 2}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: config3
+      value: 
+      objectReference: {fileID: 11400000, guid: c44a90a884634284d8aff71a99713f27, type: 2}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: config4
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d71da02b6aee1a4291e87ca758adf96, type: 2}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
       propertyPath: helperText
       value: 
       objectReference: {fileID: 1774736509}
     - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: genesisConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: e4891bd621d81c74b816fec60c0185d2, type: 2}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2306234734800147975, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4601,7 +4621,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
 --- !u!1 &1692048282
 GameObject:
   m_ObjectHideFlags: 0

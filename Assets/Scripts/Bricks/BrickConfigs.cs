@@ -93,6 +93,12 @@ namespace Solcery
             return null;
         }
 
+        public BrickConfig GetConfigByTypeAndSubtype(BrickType type, int subType)
+        {
+            var configsOfType = GetConfigsByType(type);
+            return configsOfType[subType];
+        }
+
         public static int GetSubtypeIndex(BrickType brickType, Enum subType)
         {
             return brickType switch

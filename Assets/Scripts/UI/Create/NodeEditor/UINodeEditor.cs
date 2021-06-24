@@ -21,11 +21,28 @@ namespace Solcery.UI.Create.NodeEditor
 
         private BrickTree _brickTree;
 
+        public BrickConfig genesisConfig;
+        public BrickConfig config1;
+        public BrickConfig config2;
+        public BrickConfig config3;
+        public BrickConfig config4;
+
         public async UniTask Init()
         {
-            _brickTree = new BrickTree();
-            CreateFirstButton();
             await brickConfigs.Init();
+
+            _brickTree = new BrickTree();
+            var genesisData = new BrickData(genesisConfig);
+            genesisData.Slots[0] = new BrickData(config1);
+            genesisData.Slots[2] = new BrickData(config2);
+            genesisData.Slots[0].Slots[0] = new BrickData(config3);
+            genesisData.Slots[0].Slots[0].Slots[0] = new BrickData(config4);
+            _brickTree.SetGenesis(genesisData);
+            await CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
+            Rebuild();
+
+
+            // CreateFirstButton();
         }
 
         public void DeInit()
@@ -143,6 +160,39 @@ namespace Solcery.UI.Create.NodeEditor
         {
             if (Genesis is UIBrickNode)
                 DeleteBrickNode(Genesis as UIBrickNode);
+        }
+
+        private async UniTask<UINode> CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
+        {
+            if (brickData != null)
+            {
+                BrickConfig config = brickConfigs.GetConfigByTypeAndSubtype((BrickType)brickData.Type, brickData.Subtype);
+                UIBrickNode brickNode = Instantiate(BrickNodePrefab, parentTransform).GetComponent<UIBrickNode>();
+
+                if (parentNode == null)
+                    Genesis = brickNode;
+
+                await brickNode.Init(config, brickData, parentNode, indexInParentSlots);
+
+                for (int i = 0; i < brickData.Slots.Length; i++)
+                {
+                    brickNode.NodeSlots[i] = await CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
+                    // if (brickData.Slots[i] == null)
+                    // {
+                    //     Debug.Log("null slot");
+                    // }
+                    // else
+                    // {
+                    //     brickNode.NodeSlots[i] = await CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
+                    // }
+                }
+
+                return brickNode;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
