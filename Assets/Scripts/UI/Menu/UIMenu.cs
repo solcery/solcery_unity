@@ -14,7 +14,7 @@ namespace Solcery.UI.Menu
 
         public void Init()
         {
-            twitterButton.onClick.AddListener(() => UnityToReact.Instance?.CallOpenLinkInNewTab("https://twitter.com"));
+            twitterButton.onClick.AddListener(() => UnityToReact.Instance?.CallOpenLinkInNewTab("https://twitter.com/SolceryGames"));
         }
 
         public void DeInit()
