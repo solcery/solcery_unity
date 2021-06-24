@@ -1,6 +1,6 @@
-using Grimmz.Utils;
+using Solcery.Utils;
 
-namespace Grimmz.UI.Farm
+namespace Solcery.UI.Farm
 {
     public class UIFarm : Singleton<UIFarm>
     {

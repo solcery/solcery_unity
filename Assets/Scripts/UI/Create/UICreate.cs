@@ -1,52 +1,68 @@
-using Grimmz.UI.Create.BrickEditor;
-using Grimmz.Utils;
-using Grimmz.WebGL;
+using Solcery.UI.Create.NodeEditor;
+using Solcery.Utils;
+using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
+using Solcery.Utils.Reactives;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 
-namespace Grimmz.UI.Create
+namespace Solcery.UI.Create
 {
     public class UICreate : Singleton<UICreate>
     {
-        public UIBrickEditor BrickEditor => brickEditor;
+        public UINodeEditor NodeEditor => nodeEditor;
 
-        [SerializeField] private UIBrickEditor brickEditor = null;
+        [SerializeField] private UINodeEditor nodeEditor = null;
         [SerializeField] private UICreateCard createCard = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
+        [SerializeField] private GameObject lockIcon = null;
+        [SerializeField] private GameObject createButtonText = null;
 
-        public void Init()
+        private CancellationTokenSource _cts;
+
+        public async UniTask Init()
         {
-            createCard.Init();
+            _cts = new CancellationTokenSource();
+            await nodeEditor.Init();
+            createCard?.Init();
+
+            Reactives.Subscribe(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
-                brickEditor.BrickTree.MetaData.Name = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
-                brickEditor.BrickTree.MetaData.Description = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
-                brickEditor.BrickTree.MetaData.Picture = createCard.CurrentPictureIndex;
+                var cardName = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
+                var cardDescription = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
+                var cardPicture = createCard.CurrentPictureIndex;
 
-                List<byte> buffer = new List<byte>();
-                brickEditor.BrickTree.SerializeToBytes(ref buffer);
-                UnityToReact.Instance?.CallCreateCard(buffer.ToArray());
+                nodeEditor.BrickTree.MetaData.Name = cardName;
+                nodeEditor.BrickTree.MetaData.Description = cardDescription;
+                nodeEditor.BrickTree.MetaData.Picture = cardPicture;
 
-                brickEditor.DeleteGenesisBrick();
+                UICreatingCardPopup.Instance.Open(nodeEditor.BrickTree.MetaData);
+                UnityToReact.Instance?.CallCreateCard();
+                UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
-        }
-
-        private void Update()
-        {
-            var isBrickTreeValid = brickEditor.BrickTree.IsValid();
-
-            createButton.interactable = isBrickTreeValid;
-            finishCardCreation.gameObject.SetActive(!isBrickTreeValid);
         }
 
         public void DeInit()
         {
-            createCard.DeInit();
+            _cts.Cancel();
+            _cts.Dispose();
+
+            nodeEditor?.DeInit();
+            createCard?.DeInit();
             createButton.onClick.RemoveAllListeners();
+        }
+
+        private void OnBrickTreeValidityChange(bool isValid)
+        {
+            createButton.interactable = isValid;
+            finishCardCreation.gameObject.SetActive(!isValid);
+            lockIcon.gameObject.SetActive(!isValid);
+            createButtonText.gameObject.SetActive(isValid);
         }
     }
 }

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Grimmz.UI.Menu
+namespace Solcery.UI.Menu
 {
     public class UIMenuButtonTooltips : MonoBehaviour
     {

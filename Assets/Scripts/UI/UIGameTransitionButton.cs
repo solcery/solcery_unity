@@ -1,9 +1,9 @@
 using UnityEngine;
-using Grimmz.FSM.Game;
+using Solcery.FSM.Game;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
 
-namespace Grimmz.UI
+namespace Solcery.UI
 {
     [RequireComponent(typeof(Button))]
     public class UIGameTransitionButton : MonoBehaviour
@@ -13,7 +13,7 @@ namespace Grimmz.UI
 
         protected virtual void OnEnable()
         {
-            button.onClick.AddListener(() => { GameSM.Instance.PerformTransition(transition).Forget(); });
+            button.onClick.AddListener(() => { GameSM.Instance?.PerformTransition(transition); });
         }
 
         private void OnDisable()

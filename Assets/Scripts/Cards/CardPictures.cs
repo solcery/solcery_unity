@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Grimmz
+namespace Solcery
 {
-    [CreateAssetMenu(menuName = "Grimmz/Cards/CardPictures", fileName = "CardPictures")]
+    [CreateAssetMenu(menuName = "Solcery/Cards/CardPictures", fileName = "CardPictures")]
     public class CardPictures : SerializedScriptableObject
     {
         [ListDrawerSettings(NumberOfItemsPerPage = 100)]

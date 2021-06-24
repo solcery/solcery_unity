@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
 
-namespace Grimmz.Utils
+namespace Solcery.Utils
 {
     public abstract class UpdateableBehaviour : SerializedMonoBehaviour, IUpdateable
     {

@@ -1,11 +1,13 @@
 using System;
 
-namespace Grimmz
+namespace Solcery
 {
     [Serializable]
     public class CardData
     {
-        public string MintAdress;
+        public int CardId;
+        public CardPlace CardPlace;
+        public string MintAddress;
         public CardMetadata Metadata;
     }
 }

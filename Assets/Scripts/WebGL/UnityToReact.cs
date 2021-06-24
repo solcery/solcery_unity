@@ -1,23 +1,33 @@
 using System.Runtime.InteropServices;
 using System;
 using System.Collections.Generic;
-using Grimmz.Utils;
+using Solcery.Utils;
+using Solcery.UI.Create;
 
-namespace Grimmz.WebGL
+namespace Solcery.WebGL
 {
     public class UnityToReact : Singleton<UnityToReact>
     {
         [DllImport("__Internal")] private static extern void LogToConsole(string message);
+        [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
-        [DllImport("__Internal")] private static extern void CreateCard(string card);
-        [DllImport("__Internal")] private static extern void CreateFight(string message);
-        [DllImport("__Internal")] private static extern void UseCard(string card);
+        [DllImport("__Internal")] private static extern void CreateCard(string card, string cardName);
+        [DllImport("__Internal")] private static extern void CreateBoard();
+        [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
+        [DllImport("__Internal")] private static extern void UseCard(string cardMintAddress, int card);
 
 
         public void CallLogToConsole(string message)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     LogToConsole (message);
+#endif
+        }
+
+        public void CallOpenLinkInNewTab(string link)
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+    OpenLinkInNewTab (link);
 #endif
         }
 
@@ -28,25 +38,34 @@ namespace Grimmz.WebGL
 #endif
         }
 
-        public void CallCreateFight()
+        public void CallCreateBoard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    CreateFight("message");
+    CreateBoard();
 #endif
         }
 
-        public void CallUseCard(string card)
+        public void CallJoinBoard(string gameKey)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    UseCard(card);
+    JoinBoard(gameKey);
 #endif
         }
 
-        public void CallCreateCard(byte[] card)
+        public void CallUseCard(string cardMintAddress, int cardIndex)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    string buf = String.Join("|", card);
-    CreateCard(buf);
+    UseCard(cardMintAddress, cardIndex);
+#endif
+        }
+
+        public void CallCreateCard()
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            List<byte> buffer = new List<byte>();
+            UICreate.Instance.NodeEditor.BrickTree.SerializeToBytes(ref buffer);
+            string buf = String.Join("|", buffer.ToArray());
+            CreateCard(buf, UICreate.Instance.NodeEditor.BrickTree.MetaData.Name);
 #endif
         }
     }

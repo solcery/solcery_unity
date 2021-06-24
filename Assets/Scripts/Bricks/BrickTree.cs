@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Cysharp.Threading.Tasks;
 
-namespace Grimmz
+namespace Solcery
 {
     public class BrickTree
     {
         public BrickData Genesis { get; private set; }
         public CardMetadata MetaData;
+        public AsyncReactiveProperty<bool> IsValid = new AsyncReactiveProperty<bool>(false);
 
         public void SetGenesis(BrickData data)
         {
@@ -24,12 +26,20 @@ namespace Grimmz
             Genesis.SerializeToBytes(ref buffer);
         }
 
-        public bool IsValid()
+        public void CheckValidity()
         {
             if (Genesis == null)
-                return false;
-                
-            return Genesis.IsValid();
+                IsValid.Value = false;
+            else
+                IsValid.Value = Genesis.IsValid();
+        }
+
+        public int GetDepth()
+        {
+            if (Genesis == null)
+                return 0;
+
+            return Genesis.GetDepth();
         }
     }
 }

@@ -1,23 +1,22 @@
-using Grimmz.UI.Wallet;
-using Grimmz.Utils;
+using Solcery.UI.Wallet;
+using Solcery.Utils;
 
-namespace Grimmz.Modules.Wallet
+namespace Solcery.Modules.Wallet
 {
     public class Wallet : Singleton<Wallet>
     {
-        public WalletData Data => _data;
-
-        private WalletData _data = null;
+        public WalletConnection Connection => _connection;
+        private WalletConnection _connection;
 
         public void Init()
         {
-            _data = new WalletData();
-            UIWallet.Instance?.Init(_data);
+            _connection = new WalletConnection();
+            UIWallet.Instance?.Init(this);
         }
 
         public void DeInit()
         {
-            
+            UIWallet.Instance?.DeInit();
         }
     }
 }

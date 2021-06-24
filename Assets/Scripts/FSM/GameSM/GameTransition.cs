@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Grimmz.FSM.Game
+namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Grimmz/FSM/Game/Transitions/Base", fileName = "BaseGameTransition")]
+    [CreateAssetMenu(menuName = "Solcery/FSM/Game/Transitions/Base", fileName = "BaseGameTransition")]
     public class GameTransition : Transition<GameState>
     {
 

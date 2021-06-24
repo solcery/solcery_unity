@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Grimmz.FSM
+namespace Solcery.FSM
 {
     public abstract class Transition<TState> : SerializedScriptableObject
     where TState : State

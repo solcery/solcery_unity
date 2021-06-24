@@ -1,9 +1,9 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Grimmz.FSM.Game
+namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Grimmz/FSM/Game/States/Menu", fileName = "Menu")]
+    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Menu", fileName = "Menu")]
     public class MenuState : GameState
     {
         public override async UniTask Enter()

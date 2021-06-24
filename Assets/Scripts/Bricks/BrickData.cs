@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Grimmz
+namespace Solcery
 {
     public class BrickData
     {
@@ -44,7 +44,7 @@ namespace Grimmz
         public BrickData(BrickConfig config)
         {
             Type = (int)config.Type;
-            Subtype = BrickConfigs.GetSubtypeIndex(config.Type, config.Subtype);
+            Subtype = config.Subtype;
 
             HasField = config.HasField;
             HasObjectSelection = config.HasObjectSelection;
@@ -62,6 +62,31 @@ namespace Grimmz
                 buffer.AddRange(BitConverter.GetBytes(IntField).ToList<byte>());
             foreach (BrickData child in Slots)
                 child?.SerializeToBytes(ref buffer);
+        }
+
+        public int GetDepth()
+        {
+            if (Slots == null || Slots.Length == 0)
+            {
+                return 1;
+            }
+
+            var maxDepth = 1;
+
+            foreach (var slot in Slots)
+            {
+                if (slot == null)
+                {
+                    continue;
+                }
+
+                var slotDepth = slot.GetDepth();
+
+                if ((slotDepth + 1) > maxDepth)
+                    maxDepth = 1 + slotDepth;
+            }
+
+            return maxDepth;
         }
     }
 

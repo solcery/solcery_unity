@@ -1,34 +1,28 @@
-using Cysharp.Threading.Tasks;
-using Grimmz.FSM.Game;
-using Grimmz.Utils;
-using Grimmz.Modules.Wallet;
-using Grimmz.Modules.CardCollection;
-using Grimmz.WebGL;
-using Grimmz.Modules.FightModule;
-using UnityEngine;
+using Solcery.FSM.Game;
+using Solcery.Utils;
+using Solcery.Modules.Wallet;
+using Solcery.Modules.Collection;
+using Solcery.Modules.Board;
+using Solcery.WebGL;
 
-namespace Grimmz
+namespace Solcery
 {
     public class Game : Singleton<Game>
     {
         public void Init()
         {
-            // UnityEngine.Debug.Log("Game Init");
-
             Wallet.Instance?.Init();
-            CardCollection.Instance?.Init();
-            FightModule.Instance?.Init();
+            Collection.Instance?.Init();
+            Board.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
-            GameSM.Instance?.PerformInitialTransition().Forget();
+            GameSM.Instance?.PerformInitialTransition();
         }
 
         public void DeInit()
         {
-            // UnityEngine.Debug.Log("Game DeInit");
-
             Wallet.Instance?.DeInit();
-            CardCollection.Instance?.DeInit();
-            FightModule.Instance?.DeInit();
+            Collection.Instance?.DeInit();
+            Board.Instance?.DeInit();
         }
     }
 }

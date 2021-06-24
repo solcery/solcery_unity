@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-namespace Grimmz.UI.Create
+namespace Solcery.UI.Create
 {
     public class UICreateCard : MonoBehaviour
     {

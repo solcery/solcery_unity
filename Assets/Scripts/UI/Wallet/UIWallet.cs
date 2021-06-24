@@ -1,29 +1,28 @@
-using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Linq;
-using Grimmz.Modules.Wallet;
-using Grimmz.Utils;
-using TMPro;
+using System.Threading;
+using Solcery.Utils;
+using Solcery.Utils.Reactives;
 using UnityEngine;
 
-namespace Grimmz.UI.Wallet
+namespace Solcery.UI.Wallet
 {
     public class UIWallet : Singleton<UIWallet>
     {
         [SerializeField] private GameObject connectWalletPopup = null;
-        [SerializeField] private TextMeshProUGUI _walletConnectedText;
-        private WalletData _data = null;
 
-        public void Init(WalletData data)
+        private CancellationTokenSource _cts;
+
+        public void Init(Solcery.Modules.Wallet.Wallet wallet)
         {
-            _data = data;
-
-            _data.IsWalletConnected.ForEachAsync(w =>
-            {
-                SetWalletConnected(w);
-            }, this.GetCancellationTokenOnDestroy()).Forget();
+            _cts = new CancellationTokenSource();
+            Reactives.Subscribe(wallet.Connection?.IsConnected, OnWalletConnectionChange, _cts.Token);
         }
 
-        private void SetWalletConnected(bool isConnected)
+        public void DeInit()
+        {
+            _cts.Cancel();
+        }
+
+        private void OnWalletConnectionChange(bool isConnected)
         {
             connectWalletPopup.SetActive(!isConnected);
         }

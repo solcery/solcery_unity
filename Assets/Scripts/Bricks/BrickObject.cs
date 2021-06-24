@@ -1,4 +1,4 @@
-namespace Grimmz
+namespace Solcery
 {
     public enum BrickObject
     {

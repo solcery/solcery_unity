@@ -1,4 +1,4 @@
-namespace Grimmz.Utils
+namespace Solcery.Utils
 {
     public abstract class UpdateableSingleton<T> : UpdateableBehaviour where T : UpdateableBehaviour
     {
