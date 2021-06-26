@@ -2277,6 +2277,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e4891bd621d81c74b816fec60c0185d2, type: 2}
     - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
+      propertyPath: SelectBrickNodePrefab
+      value: 
+      objectReference: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
+    - target: {fileID: 2306234734800147974, guid: 9bad83620d65e324b87eb74bb5a5fdce, type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 0}
