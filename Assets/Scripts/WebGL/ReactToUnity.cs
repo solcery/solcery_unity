@@ -60,6 +60,11 @@ namespace Solcery.WebGL
                     new CardData() { CardId = 4, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 4, Name = "4"}},
                     new CardData() { CardId = 5, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 5, Name = "5"}},
                     new CardData() { CardId = 6, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 6, Name = "6"}},
+                    new CardData() { CardId = 2, CardPlace = CardPlace.Hand2, Metadata = new CardMetadata() { Picture = 2, Name = "2"}},
+                    new CardData() { CardId = 2, CardPlace = CardPlace.Hand2, Metadata = new CardMetadata() { Picture = 2, Name = "2"}},
+                    new CardData() { CardId = 2, CardPlace = CardPlace.Hand2, Metadata = new CardMetadata() { Picture = 2, Name = "2"}},
+                    new CardData() { CardId = 2, CardPlace = CardPlace.Hand2, Metadata = new CardMetadata() { Picture = 2, Name = "2"}},
+                    new CardData() { CardId = 2, CardPlace = CardPlace.Hand2, Metadata = new CardMetadata() { Picture = 2, Name = "2"}},
                 };
 
                 boardData.Players = new List<PlayerData>() {
