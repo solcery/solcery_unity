@@ -10,7 +10,7 @@ namespace Solcery.UI.Create.NodeEditor
     {
         public BrickTree BrickTree => _brickTree;
         public GameObject BrickNodePrefab;
-        public GameObject SelectBrickNode;
+        public GameObject SelectBrickNodePrefab;
         public UINode Genesis;
         [SerializeField] private BrickConfigs brickConfigs = null;
         [SerializeField] private RectTransform rect = null;
@@ -93,7 +93,7 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void CreateFirstButton()
         {
-            var selectBrickNode = Instantiate(SelectBrickNode, rect).GetComponent<UISelectBrickNode>();
+            var selectBrickNode = Instantiate(SelectBrickNodePrefab, rect).GetComponent<UISelectBrickNode>();
             selectBrickNode.Init(BrickType.Action, transform);
             Genesis = selectBrickNode;
             Rebuild();
@@ -123,7 +123,7 @@ namespace Solcery.UI.Create.NodeEditor
 
             for (int i = 0; i < config.Slots.Count; i++)
             {
-                var selectBrickButton = Instantiate(SelectBrickNode, brickNode.transform).GetComponent<UISelectBrickNode>();
+                var selectBrickButton = Instantiate(SelectBrickNodePrefab, brickNode.transform).GetComponent<UISelectBrickNode>();
                 selectBrickButton.Init(config.Slots[i].Type, brickNode.transform, brickNode, i, brickNode.Slots.Slots[i]);
                 brickNode.NodeSlots[i] = selectBrickButton;
                 brickNode.Slots.Slots[i].SetButton(selectBrickButton);
@@ -136,7 +136,7 @@ namespace Solcery.UI.Create.NodeEditor
         {
             if (brickNode.Parent == null)
             {
-                var selectBrickButton = Instantiate(SelectBrickNode, transform).GetComponent<UISelectBrickNode>();
+                var selectBrickButton = Instantiate(SelectBrickNodePrefab, transform).GetComponent<UISelectBrickNode>();
                 Genesis = selectBrickButton;
                 _brickTree.SetGenesis(null);
                 selectBrickButton.Init(BrickType.Action, transform);
@@ -144,7 +144,7 @@ namespace Solcery.UI.Create.NodeEditor
             }
             else
             {
-                var selectBrickButton = Instantiate(SelectBrickNode, brickNode.Parent.transform).GetComponent<UISelectBrickNode>();
+                var selectBrickButton = Instantiate(SelectBrickNodePrefab, brickNode.Parent.transform).GetComponent<UISelectBrickNode>();
                 brickNode.Parent.Data.Slots[brickNode.IndexInParentSlots] = null;
                 //TODO: set BrickSlots for UIBrickNode
                 brickNode.Parent.Slots.Slots[brickNode.IndexInParentSlots].SetFilled(false);
@@ -191,6 +191,13 @@ namespace Solcery.UI.Create.NodeEditor
             }
             else
             {
+                UISelectBrickNode selectBrickNode = Instantiate(SelectBrickNodePrefab, parentTransform).GetComponent<UISelectBrickNode>();
+
+                if (parentNode == null)
+                    Genesis = selectBrickNode;
+
+                // await selectBrickNode.Init();
+
                 return null;
             }
         }
