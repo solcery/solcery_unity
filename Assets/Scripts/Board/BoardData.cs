@@ -12,11 +12,15 @@ namespace Solcery
 
         [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
         [NonSerialized] public CardData EndTurnCard;
+        [NonSerialized] public PlayerData Me;
+        [NonSerialized] public PlayerData Enemy;
+        [NonSerialized] public int MyIndex;
+        [NonSerialized] public int EnemyIndex;
 
         public BoardData Prettify()
         {
             CreatePlacesDictionary();
-            MakeMeTheFirstPlayer();
+            AssignPlayers();
             FindEndTurnCard();
 
             return this;
@@ -39,16 +43,23 @@ namespace Solcery
             }
         }
 
-        private void MakeMeTheFirstPlayer()
+        private void AssignPlayers()
         {
             for (int i = 0; i < Players.Count; i++)
             {
                 if (Players[i].IsMe)
                 {
-                    var me = Players[i];
-                    var temp = Players[0];
-                    Players[0] = me;
-                    Players[i] = temp;
+                    // var me = Players[i];
+                    // var temp = Players[0];
+                    // Players[0] = me;
+                    // Players[i] = temp;
+                    Me = Players[i];
+                    MyIndex = i;
+                }
+                else
+                {
+                    Enemy = Players[i];
+                    EnemyIndex = i;
                 }
             }
         }

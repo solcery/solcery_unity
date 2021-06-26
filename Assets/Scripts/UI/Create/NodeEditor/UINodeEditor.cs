@@ -32,17 +32,17 @@ namespace Solcery.UI.Create.NodeEditor
             await brickConfigs.Init();
 
             _brickTree = new BrickTree();
-            var genesisData = new BrickData(genesisConfig);
-            genesisData.Slots[0] = new BrickData(config1);
-            genesisData.Slots[2] = new BrickData(config2);
-            genesisData.Slots[0].Slots[0] = new BrickData(config3);
-            genesisData.Slots[0].Slots[0].Slots[0] = new BrickData(config4);
-            _brickTree.SetGenesis(genesisData);
-            await CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
-            Rebuild();
+            // var genesisData = new BrickData(genesisConfig);
+            // genesisData.Slots[0] = new BrickData(config1);
+            // genesisData.Slots[2] = new BrickData(config2);
+            // genesisData.Slots[0].Slots[0] = new BrickData(config3);
+            // genesisData.Slots[0].Slots[0].Slots[0] = new BrickData(config4);
+            // _brickTree.SetGenesis(genesisData);
+            // await CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
+            // Rebuild();
 
 
-            // CreateFirstButton();
+            CreateFirstButton();
         }
 
         public void DeInit()

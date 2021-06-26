@@ -17,7 +17,7 @@ namespace Solcery.UI.Play
         {
             if (boardData.Players.Count > playerIndex)
             {
-                _isPlayer = (playerIndex == 0);
+                _isPlayer = (playerIndex == boardData.MyIndex);
                 _isActive = boardData.Players[playerIndex].IsActive;
 
                 UpdatePlayerData(boardData.Players[playerIndex]);

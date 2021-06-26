@@ -26,15 +26,15 @@ namespace Solcery.UI.Play
         {
             this.gameObject.SetActive(true);
 
-            player?.OnBoardUpdate(boardData, 0);
-            enemy?.OnBoardUpdate(boardData, 1);
+            player?.OnBoardUpdate(boardData, boardData.MyIndex);
+            enemy?.OnBoardUpdate(boardData, boardData.EnemyIndex);
 
             deck.SetCardsCount(boardData.Places.ContainsKey(CardPlace.Deck) ? boardData.Places[CardPlace.Deck].Count : 0);
             shop.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
 
-            endTurnButton.gameObject.SetActive(boardData.Players[0].IsActive);
+            endTurnButton.gameObject.SetActive(boardData.Me.IsActive);
 
-            if (boardData.Players[0].IsActive)
+            if (boardData.Me.IsActive)
                 endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked(boardData));
             else
                 endTurnButton?.onClick.RemoveAllListeners();
