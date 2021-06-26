@@ -21,7 +21,7 @@ namespace Solcery.UI.Play
                 _isActive = boardData.Players[playerIndex].IsActive;
 
                 UpdatePlayerData(boardData.Players[playerIndex]);
-                UpdatePlayerDrawPile(boardData);
+                UpdatePlayerDrawPile(boardData, playerIndex);
                 UpdatePlayerHand(boardData, playerIndex);
             }
             else
@@ -38,12 +38,15 @@ namespace Solcery.UI.Play
             SetCoins(playerData != null ? playerData.Coins : 0);
         }
 
-        private void UpdatePlayerDrawPile(BoardData boardData)
+        private void UpdatePlayerDrawPile(BoardData boardData, int playerIndex = 0)
         {
             if (boardData == null)
                 playerDrawPile?.SetCardsCount(0);
             else
-                playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.DrawPile1) ? boardData.Places[CardPlace.DrawPile1].Count : 0);
+            {
+                CardPlace drawPile = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
+                playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(drawPile) ? boardData.Places[drawPile].Count : 0);
+            }
         }
 
         private void UpdatePlayerHand(BoardData boardData, int playerIndex = 0)
@@ -53,14 +56,8 @@ namespace Solcery.UI.Play
                 playerHand?.DeleteAllCards();
                 return;
             }
-                
 
-            CardPlace cardPlace = playerIndex switch
-            {
-                0 => CardPlace.Hand1,
-                1 => CardPlace.Hand2,
-                _ => CardPlace.Nowhere,
-            };
+            CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
             playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer, _isActive);
         }
 

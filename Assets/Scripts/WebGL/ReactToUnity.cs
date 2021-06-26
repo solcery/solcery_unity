@@ -59,6 +59,7 @@ namespace Solcery.WebGL
                     new CardData() { CardId = 3, CardPlace = CardPlace.DrawPile1, Metadata = new CardMetadata() { Picture = 3, Name = "3"}},
                     new CardData() { CardId = 4, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 4, Name = "4"}},
                     new CardData() { CardId = 5, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 5, Name = "5"}},
+                    new CardData() { CardId = 6, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 6, Name = "6"}},
                 };
 
                 boardData.Players = new List<PlayerData>() {
@@ -81,11 +82,15 @@ namespace Solcery.WebGL
                     new CardData() { CardId = 3, CardPlace = CardPlace.DrawPile1, Metadata = new CardMetadata() { Picture = 13, Name = "13"}},
                     new CardData() { CardId = 4, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 14, Name = "14"}},
                     new CardData() { CardId = 5, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 15, Name = "15"}},
-                    new CardData() { CardId = 5, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 16, Name = "16"}},
-                    new CardData() { CardId = 5, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 17, Name = "17"}},
-                    new CardData() { CardId = 5, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 18, Name = "18"}},
-                    new CardData() { CardId = 5, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 19, Name = "19"}},
-                    new CardData() { CardId = 5, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 20, Name = "20"}},
+                    new CardData() { CardId = 6, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 16, Name = "16"}},
+                    new CardData() { CardId = 7, CardPlace = CardPlace.Shop, Metadata = new CardMetadata() { Picture = 17, Name = "17"}},
+                    new CardData() { CardId = 8, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 18, Name = "18"}},
+                    new CardData() { CardId = 9, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 19, Name = "19"}},
+                    new CardData() { CardId = 10, CardPlace = CardPlace.Deck, Metadata = new CardMetadata() { Picture = 20, Name = "20"}},
+                    new CardData() { CardId = 11, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 21, Name = "21"}},
+                    new CardData() { CardId = 12, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 22, Name = "22"}},
+                    new CardData() { CardId = 13, CardPlace = CardPlace.DrawPile2, Metadata = new CardMetadata() { Picture = 23, Name = "23"}},
+                    new CardData() { CardId = 14, CardPlace = CardPlace.DrawPile1, Metadata = new CardMetadata() { Picture = 24, Name = "24"}},
                 };
 
                 boardData.Players = new List<PlayerData>() {
