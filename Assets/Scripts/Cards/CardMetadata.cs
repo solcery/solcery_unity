@@ -9,12 +9,14 @@ namespace Solcery
     public struct CardMetadata
     {
         public int Picture;
+        public int Coins;
         public string Name;
         public string Description;
 
         public CardMetadata(bool ignored)
         {
             Picture = 1;
+            Coins = 0;
             Name = "Card";
             Description = "Description";
         }

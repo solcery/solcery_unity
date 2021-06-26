@@ -12,10 +12,12 @@ namespace Solcery.UI
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
+        [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
         public void Init(CardData cardData, bool isInteractable, Action<string, int> onCardCasted = null)
         {
             cardPicture.sprite = cardPictures.GetSpriteByIndex(cardData.Metadata.Picture);
+            cardCoinsCount.text = cardData.Metadata.Coins.ToString();
             cardName.text = cardData.Metadata.Name;
             cardDescription.text = cardData.Metadata.Description;
 
@@ -33,4 +35,3 @@ namespace Solcery.UI
         }
     }
 }
-
