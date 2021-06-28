@@ -7,7 +7,7 @@ namespace Solcery.UI.Create.NodeEditor
 {
     public class UIBrickNodeHighlighter : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private Image highlighter = null;
+        [SerializeField] private GameObject highlighter = null;
 
         private Action _onHighlighted, _onDeHighlighted = null;
 
@@ -37,7 +37,7 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void HighlighVisuals(bool isActive)
         {
-            highlighter.gameObject.SetActive(isActive);
+            highlighter.SetActive(isActive);
         }
     }
 }
