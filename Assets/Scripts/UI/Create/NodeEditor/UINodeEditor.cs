@@ -20,6 +20,7 @@ namespace Solcery.UI.Create.NodeEditor
         [SerializeField] private TextMeshProUGUI helperText = null;
 
         private BrickTree _brickTree;
+        private UINode _genesisNode;
 
         public BrickConfig genesisConfig;
         public BrickConfig config1;
@@ -32,15 +33,6 @@ namespace Solcery.UI.Create.NodeEditor
             await brickConfigs.Init();
 
             _brickTree = new BrickTree();
-            // var genesisData = new BrickData(genesisConfig);
-            // genesisData.Slots[0] = new BrickData(config1);
-            // genesisData.Slots[2] = new BrickData(config2);
-            // genesisData.Slots[0].Slots[0] = new BrickData(config3);
-            // genesisData.Slots[0].Slots[0].Slots[0] = new BrickData(config4);
-            // _brickTree.SetGenesis(genesisData);
-            // await CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
-            // Rebuild();
-
 
             CreateFirstButton();
         }
@@ -71,7 +63,6 @@ namespace Solcery.UI.Create.NodeEditor
             {
                 subtypePopup.Close();
                 contentBlocker.SetActive(false);
-                // contentBlocker.transform.SetAsFirstSibling();
             });
             subtypePopup.gameObject.SetActive(true);
             subtypePopup.Open(button, brickConfigs, OnBrickAdded);
@@ -82,7 +73,7 @@ namespace Solcery.UI.Create.NodeEditor
             contentBlocker.gameObject.SetActive(false);
             contentBlockerButton.onClick.RemoveAllListeners();
             subtypePopup.Close();
-            CreateBrickNode(subtypeNameConfig.Config, button).Forget();
+            CreateBrickNode(subtypeNameConfig.Config, button);
         }
 
         void Update()
@@ -93,41 +84,72 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void CreateFirstButton()
         {
-            var selectBrickNode = Instantiate(SelectBrickNodePrefab, rect).GetComponent<UISelectBrickNode>();
-            selectBrickNode.Init(BrickType.Action, transform);
-            Genesis = selectBrickNode;
+            // var selectBrickNode = Instantiate(SelectBrickNodePrefab, rect).GetComponent<UISelectBrickNode>();
+            // selectBrickNode.Init(BrickType.Action, transform);
+            // Genesis = selectBrickNode;
+            CreateFromBrickData(_brickTree.Genesis, null, null, 0);
             Rebuild();
         }
 
-        private async UniTaskVoid CreateBrickNode(BrickConfig config, UISelectBrickNode button)
+        private UINode CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
+        {
+            if (brickData != null)
+            {
+                BrickConfig config = brickConfigs.GetConfigByTypeAndSubtype((BrickType)brickData.Type, brickData.Subtype);
+                UIBrickNode brickNode = Instantiate(BrickNodePrefab, parentTransform).GetComponent<UIBrickNode>();
+
+                if (parentNode == null)
+                    Genesis = brickNode;
+
+                brickNode.Init(config, brickData, parentNode, indexInParentSlots);
+
+                for (int i = 0; i < brickData.Slots.Length; i++)
+                {
+                    brickNode.NodeSlots[i] = CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
+                }
+
+                return brickNode;
+            }
+            else
+            {
+                UISelectBrickNode selectBrickNode;
+
+                if (parentNode == null)
+                {
+                    selectBrickNode = Instantiate(SelectBrickNodePrefab, transform).GetComponent<UISelectBrickNode>();
+                    Genesis = selectBrickNode;
+                    selectBrickNode.Init(BrickType.Action, transform);
+                }
+                else
+                {
+                    selectBrickNode = Instantiate(SelectBrickNodePrefab, parentTransform).GetComponent<UISelectBrickNode>();
+                    selectBrickNode.Init(parentNode.Config.Slots[indexInParentSlots].Type, parentTransform, parentNode, indexInParentSlots, parentNode.Slots.Slots[indexInParentSlots]);
+                }
+
+                return selectBrickNode;
+            }
+        }
+
+        private void CreateBrickNode(BrickConfig config, UISelectBrickNode button)
         {
             button.DeInit();
             DestroyImmediate(button.gameObject);
 
             var brickData = new BrickData(config);
-            var brickNode = Instantiate(BrickNodePrefab, button.ParentTransform).GetComponent<UIBrickNode>();
-            await brickNode.Init(config, brickData, button.Parent, button.IndexInParentSlots);
 
-            if (button.Parent == null)
-            {
-                _brickTree.SetGenesis(brickData);
-                Genesis = brickNode;
-            }
+            if (button.Parent != null)
+                button.Parent.Data.Slots[button.IndexInParentSlots] = brickData;
             else
             {
-                button.Parent.NodeSlots[button.IndexInParentSlots] = brickNode;
-                button.Parent.Data.Slots[button.IndexInParentSlots] = brickData;
-                //TODO: set BrickSlots for UIBrickNode
-                button.Parent.Slots.Slots[button.IndexInParentSlots].SetFilled(true);
+                _brickTree.SetGenesis(brickData);
             }
 
-            for (int i = 0; i < config.Slots.Count; i++)
+            if (_genesisNode != null)
             {
-                var selectBrickButton = Instantiate(SelectBrickNodePrefab, brickNode.transform).GetComponent<UISelectBrickNode>();
-                selectBrickButton.Init(config.Slots[i].Type, brickNode.transform, brickNode, i, brickNode.Slots.Slots[i]);
-                brickNode.NodeSlots[i] = selectBrickButton;
-                brickNode.Slots.Slots[i].SetButton(selectBrickButton);
+                _genesisNode.gameObject.SetActive(false);
+                Destroy(_genesisNode.gameObject);
             }
+            _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
 
             Rebuild();
         }
@@ -146,7 +168,6 @@ namespace Solcery.UI.Create.NodeEditor
             {
                 var selectBrickButton = Instantiate(SelectBrickNodePrefab, brickNode.Parent.transform).GetComponent<UISelectBrickNode>();
                 brickNode.Parent.Data.Slots[brickNode.IndexInParentSlots] = null;
-                //TODO: set BrickSlots for UIBrickNode
                 brickNode.Parent.Slots.Slots[brickNode.IndexInParentSlots].SetFilled(false);
                 selectBrickButton.Init(brickNode.Config.Type, brickNode.Parent.transform, brickNode.Parent, brickNode.IndexInParentSlots, brickNode.Parent.Slots.Slots[brickNode.IndexInParentSlots]);
                 brickNode.Parent.NodeSlots[brickNode.IndexInParentSlots] = selectBrickButton;
@@ -160,46 +181,6 @@ namespace Solcery.UI.Create.NodeEditor
         {
             if (Genesis is UIBrickNode)
                 DeleteBrickNode(Genesis as UIBrickNode);
-        }
-
-        private async UniTask<UINode> CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
-        {
-            if (brickData != null)
-            {
-                BrickConfig config = brickConfigs.GetConfigByTypeAndSubtype((BrickType)brickData.Type, brickData.Subtype);
-                UIBrickNode brickNode = Instantiate(BrickNodePrefab, parentTransform).GetComponent<UIBrickNode>();
-
-                if (parentNode == null)
-                    Genesis = brickNode;
-
-                await brickNode.Init(config, brickData, parentNode, indexInParentSlots);
-
-                for (int i = 0; i < brickData.Slots.Length; i++)
-                {
-                    brickNode.NodeSlots[i] = await CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
-                    // if (brickData.Slots[i] == null)
-                    // {
-                    //     Debug.Log("null slot");
-                    // }
-                    // else
-                    // {
-                    //     brickNode.NodeSlots[i] = await CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
-                    // }
-                }
-
-                return brickNode;
-            }
-            else
-            {
-                UISelectBrickNode selectBrickNode = Instantiate(SelectBrickNodePrefab, parentTransform).GetComponent<UISelectBrickNode>();
-
-                if (parentNode == null)
-                    Genesis = selectBrickNode;
-
-                // await selectBrickNode.Init();
-
-                return null;
-            }
         }
     }
 }

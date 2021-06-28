@@ -63,7 +63,7 @@ namespace Solcery.UI.Create.NodeEditor
             return maxWidth;
         }
 
-        public void Rebuild()
+        public virtual void Rebuild()
         {
             var rect = (RectTransform)this.transform;
             rect.sizeDelta = new Vector2(Width, Height);

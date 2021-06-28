@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2306234733950431602
 CanvasRenderer:
@@ -201,7 +201,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   BrickNodePrefab: {fileID: 3059688946991341019, guid: 0ad196fc01e22e94e8f8c7e4aba7ae5c, type: 3}
-  SelectBrickNode: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
+  SelectBrickNodePrefab: {fileID: 0}
   Genesis: {fileID: 0}
   brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
   rect: {fileID: 2306234734800147975}
@@ -209,6 +209,11 @@ MonoBehaviour:
   contentBlockerButton: {fileID: 1969649561184392811}
   subtypePopup: {fileID: 4103315189851865344}
   helperText: {fileID: 0}
+  genesisConfig: {fileID: 0}
+  config1: {fileID: 0}
+  config2: {fileID: 0}
+  config3: {fileID: 0}
+  config4: {fileID: 0}
 --- !u!1001 &2306234735595922241
 PrefabInstance:
   m_ObjectHideFlags: 0

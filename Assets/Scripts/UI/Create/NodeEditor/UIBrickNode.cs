@@ -1,5 +1,4 @@
 using System;
-using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,12 +19,11 @@ namespace Solcery.UI.Create.NodeEditor
         [SerializeField] private TextMeshProUGUI type = null;
         [SerializeField] private TextMeshProUGUI subtype = null;
         [SerializeField] private TextMeshProUGUI description = null;
-        [SerializeField] private LayoutElement descriptionLE = null;
         [SerializeField] private UIBrickField field = null;
         [SerializeField] private UIBrickObjectSwitcher objectSwitcher = null;
         [SerializeField] private UIBrickSlots slots = null;
 
-        public async UniTask Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots)
+        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots)
         {
             Config = config;
             Data = data;
@@ -55,39 +53,61 @@ namespace Solcery.UI.Create.NodeEditor
                 slots.gameObject.SetActive(false);
             }
 
-
             deleteButton.onClick.AddListener(() =>
             {
                 UINodeEditor.Instance.DeleteBrickNode(this);
             });
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(contents);
-            BrickWidth = contents.sizeDelta.x;
-            BrickHeight = contents.sizeDelta.y;
-            descriptionLE.preferredWidth = BrickWidth - 24;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(contents);
-            await UniTask.WaitForEndOfFrame();
-            BrickWidth = contents.sizeDelta.x;
-            BrickHeight = contents.sizeDelta.y;
             cg.alpha = 1;
         }
 
         public override float GetMaxHeight()
         {
-            BrickWidth = contents.sizeDelta.x;
-            BrickHeight = contents.sizeDelta.y;
-            descriptionLE.preferredWidth = BrickWidth - 24;
+            BrickHeight = 15;
+
+            type.transform.localPosition = new Vector2(type.transform.localPosition.x, -BrickHeight);
+            BrickHeight += 20;
+
+            BrickHeight += 5;
+            subtype.transform.localPosition = new Vector2(subtype.transform.localPosition.x, -BrickHeight);
+            BrickHeight += 20;
+
+
+            if (Config.HasField)
+            {
+                BrickHeight += 5;
+                field.transform.localPosition = new Vector2(field.transform.localPosition.x, -BrickHeight);
+                BrickHeight += 30;
+            }
+
+            if (Config.HasObjectSelection)
+            {
+                BrickHeight += 5;
+                objectSwitcher.transform.localPosition = new Vector2(objectSwitcher.transform.localPosition.x, -BrickHeight);
+                BrickHeight += 40;
+            }
+
+            if (Config.Slots.Count > 0)
+            {
+                BrickHeight += 5;
+                slots.transform.localPosition = new Vector2(slots.transform.localPosition.x, -BrickHeight);
+                BrickHeight += 50;
+            }
 
             return base.GetMaxHeight();
         }
 
         public override float GetMaxWidth()
         {
-            BrickWidth = contents.sizeDelta.x;
-            BrickHeight = contents.sizeDelta.y;
-            descriptionLE.preferredWidth = BrickWidth - 24;
+            BrickWidth = Mathf.Max(200, slots.Slots.Count * 80);
 
             return base.GetMaxWidth();
+        }
+
+        public override void Rebuild()
+        {
+            contents.sizeDelta = new Vector2(BrickWidth, BrickHeight);
+            base.Rebuild();
         }
     }
 }
