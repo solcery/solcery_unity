@@ -57,6 +57,27 @@ namespace Solcery
 
         }
 
+        public void TurnInto(BrickData brickData)
+        {
+            this.Type = brickData.Type;
+            this.Subtype = brickData.Subtype;
+            this.Object = brickData.Object;
+            this.HasField = brickData.HasField;
+            this.IntField = brickData.IntField;
+            this.StringField = brickData.StringField;
+            this.HasObjectSelection = brickData.HasObjectSelection;
+
+            this.Slots = new BrickData[brickData.Slots.Length];
+
+            if (brickData.Slots.Length > 0)
+            {
+                for (int i = 0; i < brickData.Slots.Length; i++)
+                {
+                    this.Slots[i] = brickData.Slots[i] != null ? brickData.Slots[i].Clone : null;
+                }
+            }
+        }
+
         public BrickData Clone
         {
             get

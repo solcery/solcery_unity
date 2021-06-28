@@ -12,6 +12,13 @@ namespace Solcery.UI.Create.NodeEditor
         {
             this.fieldName.text = fieldName;
 
+            fieldInput.text = fieldType switch
+            {
+                UIBrickFieldType.Int => data.IntField.ToString(),
+                UIBrickFieldType.String => data.StringField,
+                _ => data.IntField.ToString()
+            };
+
             fieldInput.contentType = fieldType switch
             {
                 UIBrickFieldType.Int => TMP_InputField.ContentType.IntegerNumber,
