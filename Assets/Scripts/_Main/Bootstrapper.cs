@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Analytics;
 
 namespace Solcery
 {
@@ -7,12 +6,7 @@ namespace Solcery
     {
         void Start()
         {
-#if ENABLE_CLOUD_SERVICES_ANALYTICS
-            AnalyticsEvent.GameStart();
-            Analytics.FlushEvents();
-#endif
-
-            Application.targetFrameRate = 60;
+            // Application.targetFrameRate = 60;
 #if UNITY_WEBGL && !UNITY_EDITOR
             WebGLInput.captureAllKeyboardInput = false;
 #endif
