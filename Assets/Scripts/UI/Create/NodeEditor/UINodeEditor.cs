@@ -13,6 +13,8 @@ namespace Solcery.UI.Create.NodeEditor
         public GameObject SelectBrickNodePrefab;
         public UINode Genesis;
         [SerializeField] private BrickConfigs brickConfigs = null;
+        [SerializeField] private UINodeEditorClipboard clipboard = null;
+        [SerializeField] private UINodeEditorNodeSelector nodeSelector = null;
         [SerializeField] private RectTransform rect = null;
         [SerializeField] private GameObject contentBlocker = null;
         [SerializeField] private Button contentBlockerButton = null;
@@ -22,15 +24,11 @@ namespace Solcery.UI.Create.NodeEditor
         private BrickTree _brickTree;
         private UINode _genesisNode;
 
-        public BrickConfig genesisConfig;
-        public BrickConfig config1;
-        public BrickConfig config2;
-        public BrickConfig config3;
-        public BrickConfig config4;
-
         public async UniTask Init()
         {
             await brickConfigs.Init();
+            clipboard?.Init(nodeSelector, RebuildAll);
+            nodeSelector?.Init();
 
             _brickTree = new BrickTree();
 
@@ -39,6 +37,8 @@ namespace Solcery.UI.Create.NodeEditor
 
         public void DeInit()
         {
+            clipboard?.DeInit();
+            nodeSelector?.DeInit();
             _brickTree = null;
         }
 
@@ -101,11 +101,14 @@ namespace Solcery.UI.Create.NodeEditor
                 if (parentNode == null)
                     Genesis = brickNode;
 
-                brickNode.Init(config, brickData, parentNode, indexInParentSlots);
+                brickNode.Init(config, brickData, parentNode, indexInParentSlots, nodeSelector.OnBrickNodeHighlighted, nodeSelector.OnBrickNodeDeHighlighted);
 
-                for (int i = 0; i < brickData.Slots.Length; i++)
+                if (brickData.Slots != null && brickData.Slots.Length > 0)
                 {
-                    brickNode.NodeSlots[i] = CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
+                    for (int i = 0; i < brickData.Slots.Length; i++)
+                    {
+                        brickNode.NodeSlots[i] = CreateFromBrickData(brickData.Slots[i], brickNode, brickNode.transform, i);
+                    }
                 }
 
                 return brickNode;
@@ -144,6 +147,11 @@ namespace Solcery.UI.Create.NodeEditor
                 _brickTree.SetGenesis(brickData);
             }
 
+            RebuildAll();
+        }
+
+        public void RebuildAll()
+        {
             if (_genesisNode != null)
             {
                 _genesisNode.gameObject.SetActive(false);

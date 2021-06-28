@@ -99,6 +99,11 @@ namespace Solcery
             return configsOfType[subType];
         }
 
+        public static BrickType GetType(int typeIndex)
+        {
+            return (BrickType)typeIndex;
+        }
+
         public static int GetSubtypeIndex(BrickType brickType, Enum subType)
         {
             return brickType switch

@@ -569,6 +569,7 @@ MonoBehaviour:
   field: {fileID: 8280162266702316507}
   objectSwitcher: {fileID: 5830252409685818196}
   slots: {fileID: 3456926484050553591}
+  highligter: {fileID: 4393853090123977324}
 --- !u!225 &4929505902759272288
 CanvasGroup:
   m_ObjectHideFlags: 0

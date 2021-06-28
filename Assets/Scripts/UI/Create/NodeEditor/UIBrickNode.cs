@@ -22,13 +22,21 @@ namespace Solcery.UI.Create.NodeEditor
         [SerializeField] private UIBrickField field = null;
         [SerializeField] private UIBrickObjectSwitcher objectSwitcher = null;
         [SerializeField] private UIBrickSlots slots = null;
+        [SerializeField] private UIBrickNodeHighlighter highligter = null;
 
-        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots)
+        private Action<UIBrickNode> _onHighlighted, _onDeHighlighted;
+
+        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted)
         {
+            highligter?.Init(() => { onHighlighted?.Invoke(this); }, () => { onDeHighlighted?.Invoke(this); });
+
             Config = config;
             Data = data;
             Parent = parent;
             IndexInParentSlots = indexInParentSlots;
+
+            _onHighlighted = onHighlighted;
+            _onDeHighlighted = onDeHighlighted;
 
             NodeSlots = new UINode[config.Slots.Count];
             Arrows = new UINodeArrow[config.Slots.Count];
@@ -92,6 +100,10 @@ namespace Solcery.UI.Create.NodeEditor
                 BrickHeight += 5;
                 slots.transform.localPosition = new Vector2(slots.transform.localPosition.x, -BrickHeight);
                 BrickHeight += 50;
+            }
+            else
+            {
+                BrickHeight += 15;
             }
 
             return base.GetMaxHeight();

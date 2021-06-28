@@ -52,6 +52,36 @@ namespace Solcery
             Slots = new BrickData[config.Slots.Count];
         }
 
+        public BrickData()
+        {
+
+        }
+
+        public BrickData Clone()
+        {
+            var clone = new BrickData();
+
+            clone.Type = this.Type;
+            clone.Subtype = this.Subtype;
+            clone.Object = this.Object;
+            clone.HasField = this.HasField;
+            clone.IntField = this.IntField;
+            clone.StringField = this.StringField;
+            clone.HasObjectSelection = this.HasObjectSelection;
+
+            if (this.Slots != null && this.Slots.Length > 0)
+            {
+                clone.Slots = new BrickData[this.Slots.Length];
+
+                for (int i = 0; i < this.Slots.Length; i++)
+                {
+                    clone.Slots[i] = this.Slots[i] != null ? this.Slots[i].Clone() : null;
+                }
+            }
+
+            return clone;
+        }
+
         public void SerializeToBytes(ref List<byte> buffer)
         {
             buffer.AddRange(BitConverter.GetBytes(Type).ToList<byte>());

@@ -151,6 +151,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2306234734800147975}
   - component: {fileID: 2306234734800147974}
+  - component: {fileID: 2678278800170674419}
+  - component: {fileID: 6765783596397729633}
+  - component: {fileID: 5433692272713289855}
   m_Layer: 5
   m_Name: UINodeEditor
   m_TagString: Untagged
@@ -201,19 +204,62 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   BrickNodePrefab: {fileID: 3059688946991341019, guid: 0ad196fc01e22e94e8f8c7e4aba7ae5c, type: 3}
-  SelectBrickNodePrefab: {fileID: 0}
+  SelectBrickNodePrefab: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
   Genesis: {fileID: 0}
   brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
+  clipboard: {fileID: 2678278800170674419}
+  nodeSelector: {fileID: 5433692272713289855}
   rect: {fileID: 2306234734800147975}
   contentBlocker: {fileID: 2306234733950431606}
   contentBlockerButton: {fileID: 1969649561184392811}
   subtypePopup: {fileID: 4103315189851865344}
   helperText: {fileID: 0}
-  genesisConfig: {fileID: 0}
-  config1: {fileID: 0}
-  config2: {fileID: 0}
-  config3: {fileID: 0}
-  config4: {fileID: 0}
+--- !u!114 &2678278800170674419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306234734800147972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdfa4303a8eb5bc4791fabf8a47fbbdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 6765783596397729633}
+--- !u!114 &6765783596397729633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306234734800147972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09671b87b6e9c6d4e8bb80ddcb27c218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+--- !u!114 &5433692272713289855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306234734800147972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcf9299e04c4cd44a2ecaa3bc06220f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2306234735595922241
 PrefabInstance:
   m_ObjectHideFlags: 0
