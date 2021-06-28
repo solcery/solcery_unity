@@ -20,7 +20,8 @@ namespace Solcery.UI.Create.NodeEditor
             _data = data;
 
             _maxIndex = Enum.GetNames(typeof(BrickObject)).Length - 1;
-            objectName.text = Enum.GetName(typeof(BrickObject), 0);
+            _currentIndex = data.Object;
+            objectName.text = Enum.GetName(typeof(BrickObject), _currentIndex);
 
             prevObjButton.onClick.AddListener(Prev);
             nextObjButton.onClick.AddListener(Next);

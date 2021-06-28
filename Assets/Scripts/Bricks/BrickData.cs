@@ -8,7 +8,7 @@ namespace Solcery
     {
         public bool IsValid()
         {
-            if (Slots.Length == 0)
+            if (Slots == null || Slots.Length == 0)
                 return true;
             else
             {
@@ -57,29 +57,32 @@ namespace Solcery
 
         }
 
-        public BrickData Clone()
+        public BrickData Clone
         {
-            var clone = new BrickData();
-
-            clone.Type = this.Type;
-            clone.Subtype = this.Subtype;
-            clone.Object = this.Object;
-            clone.HasField = this.HasField;
-            clone.IntField = this.IntField;
-            clone.StringField = this.StringField;
-            clone.HasObjectSelection = this.HasObjectSelection;
-
-            if (this.Slots != null && this.Slots.Length > 0)
+            get
             {
+                var clone = new BrickData();
+
+                clone.Type = this.Type;
+                clone.Subtype = this.Subtype;
+                clone.Object = this.Object;
+                clone.HasField = this.HasField;
+                clone.IntField = this.IntField;
+                clone.StringField = this.StringField;
+                clone.HasObjectSelection = this.HasObjectSelection;
+
                 clone.Slots = new BrickData[this.Slots.Length];
 
-                for (int i = 0; i < this.Slots.Length; i++)
+                if (this.Slots.Length > 0)
                 {
-                    clone.Slots[i] = this.Slots[i] != null ? this.Slots[i].Clone() : null;
+                    for (int i = 0; i < this.Slots.Length; i++)
+                    {
+                        clone.Slots[i] = this.Slots[i] != null ? this.Slots[i].Clone : null;
+                    }
                 }
-            }
 
-            return clone;
+                return clone;
+            }
         }
 
         public void SerializeToBytes(ref List<byte> buffer)

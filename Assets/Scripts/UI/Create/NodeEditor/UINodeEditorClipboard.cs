@@ -26,6 +26,10 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void OnCtrlXPressed()
         {
+            var brickNodeHighlighted = _nodeSelector?.BrickNodeHighlighted;
+            _buffer = brickNodeHighlighted != null ? brickNodeHighlighted.Data : null;
+            UINodeEditor.Instance.DeleteBrickNode(brickNodeHighlighted);
+
             _rebuild?.Invoke();
         }
 
@@ -39,9 +43,13 @@ namespace Solcery.UI.Create.NodeEditor
         {
             var brickNodeHighlighted = _nodeSelector?.BrickNodeHighlighted;
 
-            if (brickNodeHighlighted != null)
+            if (brickNodeHighlighted != null && brickNodeHighlighted.Data.Type == _buffer.Type)
             {
-                brickNodeHighlighted.Parent.Data.Slots[brickNodeHighlighted.IndexInParentSlots] = _buffer.Clone();
+                if (brickNodeHighlighted.Parent != null)
+                    brickNodeHighlighted.Parent.Data.Slots[brickNodeHighlighted.IndexInParentSlots] = _buffer.Clone;
+                else
+                    UINodeEditor.Instance.BrickTree.SetGenesis(_buffer.Clone);
+
                 _rebuild?.Invoke();
             }
         }
