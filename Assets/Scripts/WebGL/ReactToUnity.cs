@@ -49,7 +49,6 @@ namespace Solcery.WebGL
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("1");
                 var boardData = new BoardData();
 
                 boardData.CardTypes = new List<CardType>()
@@ -89,7 +88,6 @@ namespace Solcery.WebGL
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Debug.Log("2");
                 var boardData = new BoardData();
 
                 boardData.CardTypes = new List<CardType>()
@@ -122,6 +120,11 @@ namespace Solcery.WebGL
                 };
 
                 Board.Instance?.UpdateBoard(boardData.Prettify());
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Board.Instance?.UpdateBoard(null);
             }
         }
 #endif

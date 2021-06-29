@@ -1,8 +1,11 @@
 using System.Runtime.InteropServices;
+using Solcery.Utils;
+
+#if (UNITY_WEBGL && !UNITY_EDITOR)
 using System;
 using System.Collections.Generic;
-using Solcery.Utils;
 using Solcery.UI.Create;
+#endif
 
 namespace Solcery.WebGL
 {

@@ -21,7 +21,7 @@ namespace Solcery.UI
         public void Init(CardData cardData, bool isInteractable, Action<string, int> onCardCasted = null)
         {
             _cardData = cardData;
-            _cardType = Board.Instance.BoardData.GetCardType(_cardData.CardTypeId);
+            _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardTypeId);
 
             if (_cardType != null)
             {

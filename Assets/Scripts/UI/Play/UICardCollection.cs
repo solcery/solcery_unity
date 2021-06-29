@@ -26,6 +26,7 @@ namespace Solcery.UI
         public void DeInit()
         {
             _cts.Cancel();
+            _cts.Dispose();
         }
 
         public void UpdateCollection(CollectionData collectionData)
