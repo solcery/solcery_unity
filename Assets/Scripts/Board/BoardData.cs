@@ -11,17 +11,17 @@ namespace Solcery
         public List<PlayerData> Players;
         public int EndTurnCardId;
 
-        [NonSerialized] public Dictionary<int, CardType> Types;
+        [NonSerialized] public Dictionary<int, CardType> CardTypesById;
         [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
-        [NonSerialized] public CardType EndTurnCard;
+        [NonSerialized] public CardType EndTurnCardType;
         [NonSerialized] public PlayerData Me;
         [NonSerialized] public PlayerData Enemy;
         [NonSerialized] public int MyIndex;
         [NonSerialized] public int EnemyIndex;
 
-        public CardType GetCardType(int type)
+        public CardType GetCardType(int cardTypeId)
         {
-            if (Types.TryGetValue(type, out var cardType))
+            if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
             {
                 return cardType;
             }
@@ -41,18 +41,16 @@ namespace Solcery
 
         private void CreateTypesDictionary()
         {
-            Types = new Dictionary<int, CardType>();
+            CardTypesById = new Dictionary<int, CardType>();
 
-            for (int i = 0; i < CardTypes.Count; i++)
+            foreach (var cardType in CardTypes)
             {
-                if (Types.ContainsKey(i))
-                {
-                    Types[i] = CardTypes[i];
-                }
+                var cardTypeId = cardType.CardTypeId;
+
+                if (CardTypesById.ContainsKey(cardTypeId))
+                    CardTypesById[cardTypeId] = cardType;
                 else
-                {
-                    Types.Add(i, CardTypes[i]);
-                }
+                    CardTypesById.Add(cardTypeId, cardType);
             }
         }
 
@@ -97,7 +95,7 @@ namespace Solcery
                 if (card.CardId == EndTurnCardId)
                 {
                     var endTurnCardData = card;
-                    EndTurnCard = GetCardType(endTurnCardData.CardType);
+                    EndTurnCardType = GetCardType(endTurnCardData.CardTypeId);
                 }
             }
         }

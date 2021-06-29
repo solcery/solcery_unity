@@ -47,7 +47,7 @@ namespace Solcery.UI.Create.NodeEditor
             {
                 if (brickNodeHighlighted.Parent != null)
                     // brickNodeHighlighted.Parent.Data.Slots[brickNodeHighlighted.IndexInParentSlots] = _buffer.Clone;
-                    brickNodeHighlighted.Data.TurnInto(_buffer);
+                    brickNodeHighlighted.Data.TurnInto(_buffer.Clone);
                 else
                     UINodeEditor.Instance.BrickTree.SetGenesis(_buffer.Clone);
 
