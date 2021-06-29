@@ -12,6 +12,9 @@ namespace Solcery.UI.Create.NodeEditor
         public GameObject BrickNodePrefab;
         public GameObject SelectBrickNodePrefab;
         public UINode Genesis;
+
+        [SerializeField] private Transform content = null;
+        [SerializeField] private ScrollRect scrollView = null;
         [SerializeField] private BrickConfigs brickConfigs = null;
         [SerializeField] private UINodeEditorClipboard clipboard = null;
         [SerializeField] private UINodeEditorNodeSelector nodeSelector = null;
@@ -70,6 +73,7 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickNode button)
         {
+            scrollView.enabled = true;
             contentBlocker.gameObject.SetActive(false);
             contentBlockerButton.onClick.RemoveAllListeners();
             subtypePopup.Close();
@@ -110,9 +114,9 @@ namespace Solcery.UI.Create.NodeEditor
 
                 if (parentNode == null)
                 {
-                    selectBrickNode = Instantiate(SelectBrickNodePrefab, transform).GetComponent<UISelectBrickNode>();
+                    selectBrickNode = Instantiate(SelectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
                     Genesis = selectBrickNode;
-                    selectBrickNode.Init(BrickType.Action, transform);
+                    selectBrickNode.Init(BrickType.Action, content);
                 }
                 else
                 {
@@ -148,7 +152,7 @@ namespace Solcery.UI.Create.NodeEditor
                 _genesisNode.gameObject.SetActive(false);
                 Destroy(_genesisNode.gameObject);
             }
-            _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, transform, 0);
+            _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, content, 0);
 
             Rebuild();
         }
@@ -157,11 +161,12 @@ namespace Solcery.UI.Create.NodeEditor
         {
             if (brickNode.Parent == null)
             {
-                var selectBrickButton = Instantiate(SelectBrickNodePrefab, transform).GetComponent<UISelectBrickNode>();
+                var selectBrickButton = Instantiate(SelectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
                 Genesis = selectBrickButton;
                 _brickTree.SetGenesis(null);
-                selectBrickButton.Init(BrickType.Action, transform);
+                selectBrickButton.Init(BrickType.Action, content);
                 helperText.gameObject.SetActive(true);
+                scrollView.enabled = false;
             }
             else
             {

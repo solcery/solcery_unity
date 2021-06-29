@@ -12,9 +12,6 @@ namespace Solcery.UI.Create
 {
     public class UICreate : Singleton<UICreate>
     {
-        public UINodeEditor NodeEditor => nodeEditor;
-
-        [SerializeField] private UINodeEditor nodeEditor = null;
         [SerializeField] private UICreateCard createCard = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
@@ -26,10 +23,10 @@ namespace Solcery.UI.Create
         public async UniTask Init()
         {
             _cts = new CancellationTokenSource();
-            await nodeEditor.Init();
+            await UINodeEditor.Instance.Init();
             createCard?.Init();
 
-            Reactives.Subscribe(nodeEditor.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
+            Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
@@ -37,11 +34,11 @@ namespace Solcery.UI.Create
                 var cardDescription = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
                 var cardPicture = createCard.CurrentPictureIndex;
 
-                nodeEditor.BrickTree.MetaData.Name = cardName;
-                nodeEditor.BrickTree.MetaData.Description = cardDescription;
-                nodeEditor.BrickTree.MetaData.Picture = cardPicture;
+                UINodeEditor.Instance.BrickTree.MetaData.Name = cardName;
+                UINodeEditor.Instance.BrickTree.MetaData.Description = cardDescription;
+                UINodeEditor.Instance.BrickTree.MetaData.Picture = cardPicture;
 
-                UICreatingCardPopup.Instance.Open(nodeEditor.BrickTree.MetaData);
+                UICreatingCardPopup.Instance.Open(UINodeEditor.Instance.BrickTree.MetaData);
                 UnityToReact.Instance?.CallCreateCard();
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
@@ -52,7 +49,7 @@ namespace Solcery.UI.Create
             _cts.Cancel();
             _cts.Dispose();
 
-            nodeEditor?.DeInit();
+            UINodeEditor.Instance?.DeInit();
             createCard?.DeInit();
             createButton.onClick.RemoveAllListeners();
         }
