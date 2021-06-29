@@ -44,7 +44,7 @@ namespace Solcery.WebGL
             OnCardCreationConfirmDataChanged?.Invoke(confirmData);
         }
 
-
+#if UNITY_EDITOR
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -124,5 +124,6 @@ namespace Solcery.WebGL
                 Board.Instance?.UpdateBoard(boardData.Prettify());
             }
         }
+#endif
     }
 }
