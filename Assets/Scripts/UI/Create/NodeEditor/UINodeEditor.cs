@@ -76,17 +76,8 @@ namespace Solcery.UI.Create.NodeEditor
             CreateBrickNode(subtypeNameConfig.Config, button);
         }
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Rebuild();
-        }
-
         private void CreateFirstButton()
         {
-            // var selectBrickNode = Instantiate(SelectBrickNodePrefab, rect).GetComponent<UISelectBrickNode>();
-            // selectBrickNode.Init(BrickType.Action, transform);
-            // Genesis = selectBrickNode;
             CreateFromBrickData(_brickTree.Genesis, null, null, 0);
             Rebuild();
         }

@@ -6,13 +6,13 @@ namespace Solcery.UI.Play
     public class UIShop : UIHand
     {
         public void UpdateCards(List<CardData> cards)
-        {            
+        {
             base.UpdateCards(cards, areButtonsInteractable: true);
         }
 
-        protected override void OnCardCasted(string cardMintAddress, int cardIndex)
+        protected override void OnCardCasted(string cardMintAddress, int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardMintAddress, cardIndex);
+            UnityToReact.Instance.CallUseCard(cardMintAddress, cardId);
         }
     }
 }

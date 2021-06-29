@@ -1,15 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Solcery.UI.Play
 {
-    public class UIHand : MonoBehaviour
+    public abstract class UIHand : MonoBehaviour
     {
         [SerializeField] private GameObject cardPrefab = null;
         [SerializeField] private Transform content = null;
 
-        private List<UICard> _cards;
+        private List<UICard> _cardsInHand;
 
         protected void UpdateCards(List<CardData> cards, bool areButtonsInteractable)
         {
@@ -23,27 +22,24 @@ namespace Solcery.UI.Play
                 var card = Instantiate(cardPrefab, content).GetComponent<UICard>();
                 card.Init(cardData, areButtonsInteractable, OnCardCasted);
 
-                _cards.Add(card);
+                _cardsInHand.Add(card);
             }
         }
 
-        protected virtual void OnCardCasted(string cardMintAddress, int cardIndex)
-        {
-            Debug.Log("interactable card clicked");
-        }
+        protected abstract void OnCardCasted(string cardMintAddress, int cardId);
 
         public void DeleteAllCards()
         {
-            if (_cards != null && _cards.Count > 0)
+            if (_cardsInHand != null && _cardsInHand.Count > 0)
             {
-                for (int i = _cards.Count - 1; i >= 0; i--)
+                for (int i = _cardsInHand.Count - 1; i >= 0; i--)
                 {
-                    _cards[i].DeInit();
-                    DestroyImmediate(_cards[i].gameObject);
+                    _cardsInHand[i].DeInit();
+                    DestroyImmediate(_cardsInHand[i].gameObject);
                 }
             }
 
-            _cards = new List<UICard>();
+            _cardsInHand = new List<UICard>();
         }
     }
 }

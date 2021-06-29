@@ -6,24 +6,54 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
+        public List<CardType> CardTypes;
         public List<CardData> Cards;
         public List<PlayerData> Players;
         public int EndTurnCardId;
 
+        [NonSerialized] public Dictionary<int, CardType> Types;
         [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
-        [NonSerialized] public CardData EndTurnCard;
+        [NonSerialized] public CardType EndTurnCard;
         [NonSerialized] public PlayerData Me;
         [NonSerialized] public PlayerData Enemy;
         [NonSerialized] public int MyIndex;
         [NonSerialized] public int EnemyIndex;
 
+        public CardType GetCardType(int type)
+        {
+            if (Types.TryGetValue(type, out var cardType))
+            {
+                return cardType;
+            }
+
+            return null;
+        }
+
         public BoardData Prettify()
         {
+            CreateTypesDictionary();
             CreatePlacesDictionary();
             AssignPlayers();
             FindEndTurnCard();
 
             return this;
+        }
+
+        private void CreateTypesDictionary()
+        {
+            Types = new Dictionary<int, CardType>();
+
+            for (int i = 0; i < CardTypes.Count; i++)
+            {
+                if (Types.ContainsKey(i))
+                {
+                    Types[i] = CardTypes[i];
+                }
+                else
+                {
+                    Types.Add(i, CardTypes[i]);
+                }
+            }
         }
 
         private void CreatePlacesDictionary()
@@ -49,10 +79,6 @@ namespace Solcery
             {
                 if (Players[i].IsMe)
                 {
-                    // var me = Players[i];
-                    // var temp = Players[0];
-                    // Players[0] = me;
-                    // Players[i] = temp;
                     Me = Players[i];
                     MyIndex = i;
                 }
@@ -69,7 +95,10 @@ namespace Solcery
             foreach (var card in Cards)
             {
                 if (card.CardId == EndTurnCardId)
-                    EndTurnCard = card;
+                {
+                    var endTurnCardData = card;
+                    EndTurnCard = GetCardType(endTurnCardData.CardType);
+                }
             }
         }
     }

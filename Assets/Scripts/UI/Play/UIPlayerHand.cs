@@ -10,9 +10,10 @@ namespace Solcery.UI.Play
             base.UpdateCards(cards, areButtonsInteractable: isPlayer);
         }
 
-        protected override void OnCardCasted(string cardMintAddress, int cardIndex)
+        protected override void OnCardCasted(string cardMintAddress, int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardMintAddress, cardIndex);
+            UnityEngine.Debug.Log($"card played from hand: {cardMintAddress} _ {cardId}");
+            UnityToReact.Instance.CallUseCard(cardMintAddress, cardId);
         }
     }
 }

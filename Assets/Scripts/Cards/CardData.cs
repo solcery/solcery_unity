@@ -6,8 +6,7 @@ namespace Solcery
     public class CardData
     {
         public int CardId;
+        public int CardType;
         public CardPlace CardPlace;
-        public string MintAddress;
-        public CardMetadata Metadata;
     }
 }
