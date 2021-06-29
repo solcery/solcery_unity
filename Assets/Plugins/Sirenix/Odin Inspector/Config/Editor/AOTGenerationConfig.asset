@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
   automateBeforeBuilds: 1
-  deleteDllAfterBuilds: 0
+  deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637605247367620151
+  lastScan: 637605558789480218
   supportSerializedTypes:
   - TypeName: Solcery.BrickConfig, Assembly-CSharp
     IsCustom: 0
