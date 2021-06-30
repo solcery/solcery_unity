@@ -11,7 +11,7 @@ namespace Solcery.UI.Create.NodeEditor
         public BrickTree BrickTree => _brickTree;
         public GameObject BrickNodePrefab;
         public GameObject SelectBrickNodePrefab;
-        public UINode Genesis;
+        public UINode Genesis => _genesisNode;
 
         [SerializeField] private Transform content = null;
         [SerializeField] private ScrollRect scrollView = null;
@@ -94,7 +94,7 @@ namespace Solcery.UI.Create.NodeEditor
                 UIBrickNode brickNode = Instantiate(BrickNodePrefab, parentTransform).GetComponent<UIBrickNode>();
 
                 if (parentNode == null)
-                    Genesis = brickNode;
+                    _genesisNode = brickNode;
 
                 brickNode.Init(config, brickData, parentNode, indexInParentSlots, nodeSelector.OnBrickNodeHighlighted, nodeSelector.OnBrickNodeDeHighlighted);
 
@@ -115,7 +115,7 @@ namespace Solcery.UI.Create.NodeEditor
                 if (parentNode == null)
                 {
                     selectBrickNode = Instantiate(SelectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
-                    Genesis = selectBrickNode;
+                    _genesisNode = selectBrickNode;
                     selectBrickNode.Init(BrickType.Action, content);
                 }
                 else
@@ -162,7 +162,7 @@ namespace Solcery.UI.Create.NodeEditor
             if (brickNode.Parent == null)
             {
                 var selectBrickButton = Instantiate(SelectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
-                Genesis = selectBrickButton;
+                _genesisNode = selectBrickButton;
                 _brickTree.SetGenesis(null);
                 selectBrickButton.Init(BrickType.Action, content);
                 helperText.gameObject.SetActive(true);
