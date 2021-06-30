@@ -1,38 +1,50 @@
 using System;
 using System.Collections.Generic;
+using Solcery.Utils;
 using UnityEngine;
 
 namespace Solcery.UI.Create.NodeEditor
 {
-    public class UIBrickSubtypePopup : MonoBehaviour
+    public class UIBrickSubtypePopup : UpdateableBehaviour
     {
         [SerializeField] private GameObject optionPrefab = null;
 
-        private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
-        private List<UIBrickSubtypePopupOption> _options = new List<UIBrickSubtypePopupOption>();
-
         private UISelectBrickNode _button;
+        private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
+        private bool _isOpen;
+        private List<UIBrickSubtypePopupOption> _options = new List<UIBrickSubtypePopupOption>();
 
         public void Open(UISelectBrickNode button, BrickConfigs brickConfigs, Action<SubtypeNameConfig, UISelectBrickNode> onOptionSelected)
         {
+            _isOpen = true;
+
             this.transform.SetAsLastSibling();
 
             _button = button;
             _onOptionSelected = onOptionSelected;
 
-            var subTypeConfigs = brickConfigs.GetConfigSubtypeNamesByType(button.BrickType);
+            var subTypeConfigs = brickConfigs.GetConfigSubtypeNamesByType(_button.BrickType);
 
             if (subTypeConfigs != null && subTypeConfigs.Count > 0)
                 foreach (var subTypeConfig in subTypeConfigs)
                     AddOption(subTypeConfig);
 
-            this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth / 2, button.transform.position.y);
+            // this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth / 2, button.transform.position.y);
         }
 
         public void Close()
         {
+            _isOpen = false;
+
             this.gameObject.SetActive(false);
             ClearAllOptions();
+        }
+
+        public override void PerformUpdate()
+        {
+            if (_isOpen)
+                if (_button != null)
+                    this.transform.position = new Vector2(_button.transform.position.x + _button.BrickWidth / 2, _button.transform.position.y);
         }
 
         private void OnOptionSelected(SubtypeNameConfig subtypeNameConfig)

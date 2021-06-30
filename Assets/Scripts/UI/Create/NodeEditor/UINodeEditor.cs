@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 namespace Solcery.UI.Create.NodeEditor
 {
-    public class UINodeEditor : Singleton<UINodeEditor>
+    public class UINodeEditor : UpdateableSingleton<UINodeEditor>
     {
         public BrickTree BrickTree => _brickTree;
-        public UINode Genesis => _genesisNode;
 
+        [SerializeField] private float horizontalPadding;
+        [SerializeField] private float verticalPadding;
         [SerializeField] private GameObject brickNodePrefab = null;
         [SerializeField] private GameObject selectBrickNodePrefab = null;
         [SerializeField] private Transform content = null;
@@ -45,16 +46,25 @@ namespace Solcery.UI.Create.NodeEditor
             _brickTree = null;
         }
 
+        private float _maxWidth;
+        private float _maxHeight;
+
         public void Rebuild()
         {
             _brickTree?.CheckValidity();
 
-            var maxWidth = Genesis.GetMaxWidth();
-            var maxHeight = Genesis.GetMaxHeight();
+            _maxWidth = _genesisNode.GetMaxWidth();
+            _maxHeight = _genesisNode.GetMaxHeight();
 
-            rect.sizeDelta = new Vector2(maxWidth + 400, maxHeight + 400);
-            Genesis.rect.localPosition = new Vector2(-Genesis.Width / 2, Genesis.rect.localPosition.y);
-            Genesis.Rebuild();
+            rect.sizeDelta = new Vector2(_maxWidth + horizontalPadding, _maxHeight + verticalPadding);
+            _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y);
+            _genesisNode.Rebuild();
+        }
+
+        public override void PerformUpdate()
+        {
+            rect.sizeDelta = new Vector2(_maxWidth + horizontalPadding / rect.localScale.x, _maxHeight + verticalPadding / rect.localScale.y);
+            _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y);
         }
 
         public void OpenSubtypePopup(UISelectBrickNode button)
@@ -64,6 +74,8 @@ namespace Solcery.UI.Create.NodeEditor
             contentBlocker.transform.SetAsLastSibling();
             contentBlockerButton.onClick.AddListener(() =>
             {
+                if (_brickTree.Genesis == null)
+                    helperText.gameObject.SetActive(true);
                 subtypePopup.Close();
                 contentBlocker.SetActive(false);
             });
@@ -183,8 +195,8 @@ namespace Solcery.UI.Create.NodeEditor
 
         public void DeleteGenesisBrickNode()
         {
-            if (Genesis is UIBrickNode)
-                DeleteBrickNode(Genesis as UIBrickNode);
+            if (_genesisNode is UIBrickNode)
+                DeleteBrickNode(_genesisNode as UIBrickNode);
         }
     }
 }

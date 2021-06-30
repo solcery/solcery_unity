@@ -1,11 +1,8 @@
 using System.Runtime.InteropServices;
 using Solcery.Utils;
-
-#if (UNITY_WEBGL && !UNITY_EDITOR)
 using System;
 using System.Collections.Generic;
-using Solcery.UI.Create;
-#endif
+using Solcery.UI.Create.NodeEditor;
 
 namespace Solcery.WebGL
 {
@@ -66,9 +63,9 @@ namespace Solcery.WebGL
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
             List<byte> buffer = new List<byte>();
-            UICreate.Instance.NodeEditor.BrickTree.SerializeToBytes(ref buffer);
+            UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
             string buf = String.Join("|", buffer.ToArray());
-            CreateCard(buf, UICreate.Instance.NodeEditor.BrickTree.MetaData.Name);
+            CreateCard(buf, UINodeEditor.Instance?.BrickTree.MetaData.Name);
 #endif
         }
     }
