@@ -228,7 +228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.6
+  m_fontSize: 16.85
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3984,9 +3984,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  BrickNodePrefab: {fileID: 3059688946991341019, guid: 0ad196fc01e22e94e8f8c7e4aba7ae5c, type: 3}
-  SelectBrickNodePrefab: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
-  Genesis: {fileID: 0}
+  brickNodePrefab: {fileID: 3059688946991341019, guid: 0ad196fc01e22e94e8f8c7e4aba7ae5c, type: 3}
+  selectBrickNodePrefab: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
   content: {fileID: 2306234734212416529}
   scrollView: {fileID: 428853571}
   brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
@@ -4322,7 +4321,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 13.45
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
