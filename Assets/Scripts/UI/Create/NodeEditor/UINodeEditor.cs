@@ -49,6 +49,18 @@ namespace Solcery.UI.Create.NodeEditor
         private float _maxWidth;
         private float _maxHeight;
 
+        public void RebuildAll()
+        {
+            if (_genesisNode != null)
+            {
+                _genesisNode.gameObject.SetActive(false);
+                Destroy(_genesisNode.gameObject);
+            }
+            _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, content, 0);
+
+            Rebuild();
+        }
+
         public void Rebuild()
         {
             _brickTree?.CheckValidity();
@@ -63,8 +75,11 @@ namespace Solcery.UI.Create.NodeEditor
 
         public override void PerformUpdate()
         {
-            rect.sizeDelta = new Vector2(_maxWidth + horizontalPadding / rect.localScale.x, _maxHeight + verticalPadding / rect.localScale.y);
-            _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y);
+            if (rect != null)
+                rect.sizeDelta = new Vector2(_maxWidth + horizontalPadding / rect.localScale.x, _maxHeight + verticalPadding / rect.localScale.y);
+
+            if (_genesisNode != null)
+                _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y);
         }
 
         public void OpenSubtypePopup(UISelectBrickNode button)
@@ -157,18 +172,6 @@ namespace Solcery.UI.Create.NodeEditor
             RebuildAll();
         }
 
-        public void RebuildAll()
-        {
-            if (_genesisNode != null)
-            {
-                _genesisNode.gameObject.SetActive(false);
-                Destroy(_genesisNode.gameObject);
-            }
-            _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, content, 0);
-
-            Rebuild();
-        }
-
         public void DeleteBrickNode(UIBrickNode brickNode)
         {
             if (brickNode.Parent == null)
@@ -178,7 +181,7 @@ namespace Solcery.UI.Create.NodeEditor
                 _brickTree.SetGenesis(null);
                 selectBrickButton.Init(BrickType.Action, content);
                 helperText.gameObject.SetActive(true);
-                scrollView.enabled = false;
+                DisableScrollView().Forget();
             }
             else
             {
@@ -191,6 +194,15 @@ namespace Solcery.UI.Create.NodeEditor
 
             DestroyImmediate(brickNode.gameObject);
             Rebuild();
+        }
+
+        private async UniTaskVoid DisableScrollView()
+        {
+            var currentElasticity = scrollView.elasticity;
+            scrollView.elasticity = 0;
+            await UniTask.NextFrame();
+            scrollView.enabled = false;
+            scrollView.elasticity = currentElasticity;
         }
 
         public void DeleteGenesisBrickNode()
