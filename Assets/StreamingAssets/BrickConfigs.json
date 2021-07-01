@@ -57,34 +57,113 @@
         ]
       },
       {
-        "Name": "Take damage",
+        "Name": "Loop",
         "Type": 0,
         "Subtype": 3,
-        "Description": "Deals <b>amount</b> of damage to unit.",
+        "Description": "Applies <b>action</b> if <b>amount</b> times.",
         "HasField": false,
-        "FieldType": 0,
-        "FieldName": "",
-        "HasObjectSelection": true,
+        "FieldType": 1,
+        "FieldName": "TestField",
+        "HasObjectSelection": false,
         "Slots": [
           {
             "Type": 2,
             "Name": "Amount"
+          },
+          {
+            "Type": 0,
+            "Name": "Action"
           }
         ]
       },
       {
-        "Name": "Heal",
+        "Name": "Card",
         "Type": 0,
         "Subtype": 4,
-        "Description": "Heals unit for <b>amount</b> of HP.",
+        "Description": "Applies <b>action</b> if <b>amount</b> times.",
+        "HasField": true,
+        "FieldType": 0,
+        "FieldName": "TestField",
+        "HasObjectSelection": false,
+        "Slots": []
+      },
+      {
+        "Name": "MoveTo",
+        "Type": 0,
+        "Subtype": 100,
+        "Description": "Moves current card to place",
         "HasField": false,
         "FieldType": 0,
         "FieldName": "",
-        "HasObjectSelection": true,
+        "HasObjectSelection": false,
         "Slots": [
           {
             "Type": 2,
-            "Name": "Amount"
+            "Name": "Player index"
+          }
+        ]
+      },
+      {
+        "Name": "SetPlayerAttr",
+        "Type": 0,
+        "Subtype": 101,
+        "Description": "0 - active, 1 - hp, 2 - mana",
+        "HasField": true,
+        "FieldType": 0,
+        "FieldName": "AttrIndex",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "PlayerIndex"
+          },
+          {
+            "Type": 2,
+            "Name": "AttrValue"
+          }
+        ]
+      },
+      {
+        "Name": "AddPlayerAttr",
+        "Type": 0,
+        "Subtype": 102,
+        "Description": "0 - active, 1 - hp, 2 - mana",
+        "HasField": true,
+        "FieldType": 0,
+        "FieldName": "AttrIndex",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "PlayerIndex"
+          },
+          {
+            "Type": 2,
+            "Name": "AttrValue"
+          }
+        ]
+      },
+      {
+        "Name": "ApplyToPlace",
+        "Type": 0,
+        "Subtype": 103,
+        "Description": "Applies action to random card in place",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "AttrIndex",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "Place index"
+          },
+          {
+            "Type": 0,
+            "Name": "Action"
+          },
+          {
+            "Type": 2,
+            "Name": "Limit (0 = no limit)"
           }
         ]
       }
@@ -227,6 +306,22 @@
             "Name": "Value #2"
           }
         ]
+      },
+      {
+        "Name": "Is at place",
+        "Type": 1,
+        "Subtype": 100,
+        "Description": "Returns true card is at given place",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "Place Index",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "Value #1"
+          }
+        ]
       }
     ],
     "Value": [
@@ -264,17 +359,6 @@
             "Name": "Negative"
           }
         ]
-      },
-      {
-        "Name": "Current Health",
-        "Type": 2,
-        "Subtype": 4,
-        "Description": "Returns current HP of unit.",
-        "HasField": false,
-        "FieldType": 0,
-        "FieldName": "",
-        "HasObjectSelection": true,
-        "Slots": []
       },
       {
         "Name": "Add",
@@ -315,6 +399,82 @@
             "Name": "Value #2"
           }
         ]
+      },
+      {
+        "Name": "Get player attr",
+        "Type": 2,
+        "Subtype": 100,
+        "Description": "0 - active, 1 - hp, 2 - mana",
+        "HasField": true,
+        "FieldType": 0,
+        "FieldName": "Attr index",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "Player index"
+          }
+        ]
+      },
+      {
+        "Name": "Get owner index",
+        "Type": 2,
+        "Subtype": 101,
+        "Description": "Returns owner's index (1 or 2) or 0 if neutral",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "",
+        "HasObjectSelection": false,
+        "Slots": []
+      },
+      {
+        "Name": "Get cards amount",
+        "Type": 2,
+        "Subtype": 102,
+        "Description": "Returns cards amount at place",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "",
+        "HasObjectSelection": false,
+        "Slots": [
+          {
+            "Type": 2,
+            "Name": "Place index"
+          }
+        ]
+      },
+      {
+        "Name": "Get current place",
+        "Type": 2,
+        "Subtype": 103,
+        "Description": "Returns current place of card",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "",
+        "HasObjectSelection": false,
+        "Slots": []
+      },
+      {
+        "Name": "GetCtxVar (WIP)",
+        "Type": 2,
+        "Subtype": 104,
+        "Description": "Returns id of player casted the card",
+        "HasField": true,
+        "FieldType": 0,
+        "FieldName": "Var index",
+        "HasObjectSelection": false,
+        "Slots": []
+      },
+      {
+        "Name": "CasterPlayerIndex",
+        "Type": 2,
+        "Subtype": 105,
+        "Description": "Returns id of player casted the card",
+        "HasField": false,
+        "FieldType": 0,
+        "FieldName": "",
+        "HasObjectSelection": false,
+        "Slots": []
       }
     ]
   }

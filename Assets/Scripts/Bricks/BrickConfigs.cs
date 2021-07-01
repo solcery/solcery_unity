@@ -13,20 +13,20 @@ namespace Solcery
         [SerializeField]
         public Dictionary<BrickType, List<BrickConfigData>> ConfigsByType;
 
-        public BrickConfigsData Create(Dictionary<BrickType, List<BrickConfig>> configsByType)
+        public BrickConfigsData Create(Dictionary<BrickType, Dictionary<int, BrickConfig>> typeSubtype)
         {
             ConfigsByType = new Dictionary<BrickType, List<BrickConfigData>>();
 
-            foreach (KeyValuePair<BrickType, List<BrickConfig>> entry in configsByType)
+            foreach (KeyValuePair<BrickType, Dictionary<int, BrickConfig>> entry in typeSubtype)
             {
-                var list = new List<BrickConfigData>();
+                var subtypes = new List<BrickConfigData>();
 
-                foreach (var config in entry.Value)
+                foreach (KeyValuePair<int, BrickConfig> subtype in entry.Value)
                 {
-                    list.Add(config.ToData());
+                    subtypes.Add(subtype.Value.ToData());
                 }
 
-                ConfigsByType.Add(entry.Key, list);
+                ConfigsByType.Add(entry.Key, subtypes);
             }
 
             return this;
@@ -36,39 +36,39 @@ namespace Solcery
     [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfigs", fileName = "BrickConfigs")]
     public class BrickConfigs : SerializedScriptableObject
     {
-        [SerializeField] private Dictionary<BrickType, List<BrickConfig>> ConfigsByType = new Dictionary<BrickType, List<BrickConfig>>();
+        [SerializeField] private Dictionary<BrickType, Dictionary<int, BrickConfig>> TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
         public BrickConfigsData ToData()
         {
             var brickConfigsData = new BrickConfigsData();
-            return brickConfigsData.Create(ConfigsByType);
+            return brickConfigsData.Create(TypeSubtype);
         }
 
         public void FromData(BrickConfigsData data)
         {
-            ConfigsByType = new Dictionary<BrickType, List<BrickConfig>>();
+            TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
             foreach (KeyValuePair<BrickType, List<BrickConfigData>> entry in data.ConfigsByType)
             {
-                var list = new List<BrickConfig>();
+                var subtypeDict = new Dictionary<int, BrickConfig>();
 
                 foreach (var configData in entry.Value)
                 {
                     var config = ScriptableObject.CreateInstance<BrickConfig>();
                     config.name = configData.Name;
                     config.FromData(configData);
-                    list.Add(config);
+                    subtypeDict.Add(config.Subtype, config);
                 }
 
-                ConfigsByType.Add(entry.Key, list);
+                TypeSubtype.Add(entry.Key, subtypeDict);
             }
         }
 
-        public List<BrickConfig> GetConfigsByType(BrickType brickType)
+        public Dictionary<int, BrickConfig> GetConfigsByType(BrickType brickType)
         {
-            if (ConfigsByType.TryGetValue(brickType, out var datas))
+            if (TypeSubtype.TryGetValue(brickType, out var subtypeDict))
             {
-                return datas;
+                return subtypeDict;
             }
 
             return null;
@@ -82,9 +82,9 @@ namespace Solcery
             {
                 var names = new List<SubtypeNameConfig>();
 
-                foreach (var config in configsOfType)
+                foreach (var entry in configsOfType)
                 {
-                    names.Add(new SubtypeNameConfig(config.Name, config));
+                    names.Add(new SubtypeNameConfig(entry.Value.Name, entry.Value));
                 }
 
                 return names;
@@ -96,7 +96,11 @@ namespace Solcery
         public BrickConfig GetConfigByTypeAndSubtype(BrickType type, int subType)
         {
             var configsOfType = GetConfigsByType(type);
-            return configsOfType[subType];
+
+            if (configsOfType.TryGetValue(subType, out var config))
+                return config;
+
+            return null;
         }
 
         public static BrickType GetType(int typeIndex)
@@ -134,7 +138,7 @@ namespace Solcery
         [Button(ButtonSizes.Gigantic)]
         private void SaveToStreamingAssets()
         {
-            StreamingAsseter.SaveBrickConfigs(this);
+            StreamingAsseter.SaveBrickConfigs(fileName, this);
         }
 
         [Button(ButtonSizes.Gigantic)]

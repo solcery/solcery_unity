@@ -8,9 +8,9 @@ namespace Solcery.Utils
 {
     public static class StreamingAsseter
     {
-        public static void SaveBrickConfigs(BrickConfigs brickConfigs)
+        public static void SaveBrickConfigs(string fileName, BrickConfigs brickConfigs)
         {
-            var filePath = Application.streamingAssetsPath + "/" + brickConfigs.name + ".json";
+            var filePath = Application.streamingAssetsPath + "/" + fileName + ".json";
 
             string json = JsonConvert.SerializeObject(brickConfigs.ToData(), Formatting.Indented);
             File.WriteAllText(filePath, json);
@@ -23,16 +23,6 @@ namespace Solcery.Utils
             var txt = (await UnityWebRequest.Get(filePath).SendWebRequest()).downloadHandler.text;
             var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(txt);
             brickConfigs.FromData(brickConfigsData);
-
-            // #if UNITY_EDITOR
-            //             if (File.Exists(filePath))
-            //             {
-            //                 string fileContents = File.ReadAllText(filePath);
-            //                 var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(fileContents);
-            //                 brickConfigs.FromData(brickConfigsData);
-            //             }
-            // #endif
         }
     }
 }
-
