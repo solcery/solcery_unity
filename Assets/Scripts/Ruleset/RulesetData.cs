@@ -1,16 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Solcery
+namespace Solcery.Ruleset
 {
     [Serializable]
     public class RulesetData
     {
         public List<string> CardMintAddresses;
-        //places
+        public List<Vector3Int> Deck;  // (Place, CardTypeId, Amount)
         public List<string> Initializers;
-        //clientData
+        public RulesetDisplayData DisplayData;
     }
 }

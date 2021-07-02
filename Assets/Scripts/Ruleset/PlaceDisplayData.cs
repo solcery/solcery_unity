@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class PlaceDisplayData : MonoBehaviour
+namespace Solcery.Ruleset
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public class PlaceDisplayData
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
