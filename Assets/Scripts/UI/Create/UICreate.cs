@@ -1,19 +1,18 @@
 using Cysharp.Threading.Tasks;
-using Solcery.UI.Create;
 using Solcery.Utils;
 
-namespace Solcery
+namespace Solcery.UI.Create
 {
-    public class Create : Singleton<Create>
+    public class UICreate : Singleton<UICreate>
     {
         public async UniTask Init()
         {
-            await UICreate.Instance.Init();
+            await UICreateCard.Instance.Init();
         }
 
         public void DeInit()
         {
-            UICreate.Instance?.DeInit();
+            UICreateCard.Instance.DeInit();
         }
     }
 }
