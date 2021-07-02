@@ -4,14 +4,12 @@ using UnityEngine.SceneManagement;
 
 namespace Solcery.FSM.Game
 {
-    public class GameState : State
+    public abstract class GameState : State
     {
         [SerializeField] private string _sceneName;
 
         public override async UniTask Enter()
         {
-            await base.Enter();
-
             if (string.IsNullOrEmpty(_sceneName))
             {
                 Debug.LogError("Empty scene name in GameState");
@@ -30,7 +28,6 @@ namespace Solcery.FSM.Game
             }
 
             await SceneManager.UnloadSceneAsync(_sceneName);
-            await base.Exit();
         }
     }
 }

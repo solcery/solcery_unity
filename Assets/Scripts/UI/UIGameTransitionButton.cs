@@ -1,7 +1,6 @@
 using UnityEngine;
 using Solcery.FSM.Game;
 using UnityEngine.UI;
-using Cysharp.Threading.Tasks;
 
 namespace Solcery.UI
 {

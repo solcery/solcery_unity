@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4540b13e8fbf3ed4aa4631018c38264c, type: 3}
-  m_Name: ToFarm
+  m_Script: {fileID: 11500000, guid: 7c504990d1756b2479986f9c4310a10b, type: 3}
+  m_Name: CreateRuleset
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,5 +21,3 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  from: {fileID: 0}
-  to: {fileID: 11400000, guid: 2a878725ee3d3a34e87d7721577938cb, type: 2}

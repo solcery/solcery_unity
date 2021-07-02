@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Solcery.FSM.Create;
 using Solcery.UI.Create;
 using Solcery.Utils;
 
@@ -9,6 +10,7 @@ namespace Solcery
         public async UniTask Init()
         {
             await UICreate.Instance.Init();
+            CreateSM.Instance?.PerformInitialTransition();
         }
 
         public void DeInit()

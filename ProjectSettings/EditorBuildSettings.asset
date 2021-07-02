@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Farm.unity
-    guid: 9c9b7e6f4991eda4681106869fc82b2b
-  - enabled: 1
     path: Assets/Scenes/Create.unity
     guid: 7988e6afe693dee498f4e09491d051ee
   - enabled: 1
