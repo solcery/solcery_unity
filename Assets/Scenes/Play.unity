@@ -2048,7 +2048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d60676df4b67e4cb9b9d23f47f8086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 2539030273299910558, guid: b09d5c249334a5a4cb9feda3fd0954c9, type: 3}
+  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
   content: {fileID: 813772836}
 --- !u!114 &1007434553
 MonoBehaviour:
@@ -3807,7 +3807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d60676df4b67e4cb9b9d23f47f8086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 2539030273299910558, guid: b09d5c249334a5a4cb9feda3fd0954c9, type: 3}
+  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
   content: {fileID: 1793680642}
 --- !u!222 &1734575834
 CanvasRenderer:

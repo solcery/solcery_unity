@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace Solcery.UI
 {
-    public class UICardCollection : MonoBehaviour
+    public class UICollection : MonoBehaviour
     {
         [SerializeField] private Transform content;
         [SerializeField] private GameObject cardPrefab;
 
-        private List<UICard> _cards;
+        private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
 
         public void Init()
         {
             _cts = new CancellationTokenSource();
-            _cards = new List<UICard>();
+            _cards = new List<UICollectionCard>();
 
             Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
@@ -32,14 +32,14 @@ namespace Solcery.UI
         public void UpdateCollection(CollectionData collectionData)
         {
             DeleteAllCards();
-            _cards = new List<UICard>();
+            _cards = new List<UICollectionCard>();
 
             if (collectionData == null) return;
 
-            foreach (var cardData in collectionData.Cards)
+            foreach (var cardType in collectionData.CardTypes)
             {
-                var newCard = Instantiate(cardPrefab, content).GetComponent<UICard>();
-                newCard.Init(cardData, true, OnCardCasted);
+                var newCard = Instantiate(cardPrefab, content).GetComponent<UICollectionCard>();
+                newCard.Init(cardType);
 
                 _cards.Add(newCard);
             }

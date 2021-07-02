@@ -1,12 +1,10 @@
-using System;
-using Solcery.Modules.Board;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Solcery.UI
 {
-    public class UICard : MonoBehaviour
+    public class UICollectionCard : MonoBehaviour
     {
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Button button = null;
@@ -15,13 +13,11 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
-        private CardData _cardData;
-        private CardType _cardType;
+        private CollectionCardType _cardType;
 
-        public void Init(CardData cardData, bool isInteractable, Action<string, int> onCardCasted = null)
+        public void Init(CollectionCardType cardType)
         {
-            _cardData = cardData;
-            _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardTypeId);
+            _cardType = cardType;
 
             if (_cardType != null)
             {
@@ -29,7 +25,7 @@ namespace Solcery.UI
                 SetCoinsCount(_cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
-                SubsribeToButton(isInteractable, onCardCasted);
+                SubsribeToButton();
             }
             else
             {
@@ -67,17 +63,11 @@ namespace Solcery.UI
                 cardDescription.text = description;
         }
 
-        private void SubsribeToButton(bool isInteractable, Action<string, int> onCardCasted = null)
+        private void SubsribeToButton()
         {
             if (button != null)
             {
-                button.interactable = isInteractable;
 
-                if (isInteractable)
-                    button.onClick.AddListener(() =>
-                    {
-                        onCardCasted?.Invoke(_cardType.MintAddress, _cardData.CardId);
-                    });
             }
         }
     }

@@ -3,7 +3,7 @@ using System;
 namespace Solcery
 {
     [Serializable]
-    public class CardData
+    public class BoardCardData
     {
         public int CardId;
         public int CardTypeId;

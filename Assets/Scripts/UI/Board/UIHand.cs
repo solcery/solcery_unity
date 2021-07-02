@@ -8,9 +8,9 @@ namespace Solcery.UI.Play
         [SerializeField] private GameObject cardPrefab = null;
         [SerializeField] private Transform content = null;
 
-        private List<UICard> _cardsInHand;
+        private List<UIBoardCard> _cardsInHand;
 
-        protected void UpdateCards(List<CardData> cards, bool areButtonsInteractable)
+        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable)
         {
             DeleteAllCards();
 
@@ -19,7 +19,7 @@ namespace Solcery.UI.Play
 
             foreach (var cardData in cards)
             {
-                var card = Instantiate(cardPrefab, content).GetComponent<UICard>();
+                var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
                 card.Init(cardData, areButtonsInteractable, OnCardCasted);
 
                 _cardsInHand.Add(card);
@@ -39,7 +39,7 @@ namespace Solcery.UI.Play
                 }
             }
 
-            _cardsInHand = new List<UICard>();
+            _cardsInHand = new List<UIBoardCard>();
         }
     }
 }

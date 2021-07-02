@@ -6,20 +6,20 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
-        public List<CardType> CardTypes;
-        public List<CardData> Cards;
+        public List<BoardCardType> CardTypes;
+        public List<BoardCardData> Cards;
         public List<PlayerData> Players;
         public int EndTurnCardId;
 
-        [NonSerialized] public Dictionary<int, CardType> CardTypesById;
-        [NonSerialized] public Dictionary<CardPlace, List<CardData>> Places;
-        [NonSerialized] public CardType EndTurnCardType;
+        [NonSerialized] public Dictionary<int, BoardCardType> CardTypesById;
+        [NonSerialized] public Dictionary<CardPlace, List<BoardCardData>> Places;
+        [NonSerialized] public BoardCardType EndTurnCardType;
         [NonSerialized] public PlayerData Me;
         [NonSerialized] public PlayerData Enemy;
         [NonSerialized] public int MyIndex;
         [NonSerialized] public int EnemyIndex;
 
-        public CardType GetCardType(int cardTypeId)
+        public BoardCardType GetCardType(int cardTypeId)
         {
             if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
             {
@@ -41,7 +41,7 @@ namespace Solcery
 
         private void CreateTypesDictionary()
         {
-            CardTypesById = new Dictionary<int, CardType>();
+            CardTypesById = new Dictionary<int, BoardCardType>();
 
             foreach (var cardType in CardTypes)
             {
@@ -56,7 +56,7 @@ namespace Solcery
 
         private void CreatePlacesDictionary()
         {
-            Places = new Dictionary<CardPlace, List<CardData>>();
+            Places = new Dictionary<CardPlace, List<BoardCardData>>();
 
             foreach (var card in Cards)
             {
@@ -66,7 +66,7 @@ namespace Solcery
                 }
                 else
                 {
-                    Places.Add(card.CardPlace, new List<CardData>() { card });
+                    Places.Add(card.CardPlace, new List<BoardCardData>() { card });
                 }
             }
         }

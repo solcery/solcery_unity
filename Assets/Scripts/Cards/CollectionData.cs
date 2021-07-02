@@ -5,6 +5,6 @@ namespace Solcery
     [Serializable]
     public class CollectionData
     {
-        public CardData[] Cards;
+        public CollectionCardType[] CardTypes;
     }
 }
