@@ -10,9 +10,9 @@ using Cysharp.Threading.Tasks;
 
 namespace Solcery.UI.Create
 {
-    public class UICreate : Singleton<UICreate>
+    public class UICreateCard : Singleton<UICreateCard>
     {
-        [SerializeField] private UICreateCard createCard = null;
+        [SerializeField] private UICardDisplay cardDisplay = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
         [SerializeField] private GameObject lockIcon = null;
@@ -24,15 +24,15 @@ namespace Solcery.UI.Create
         {
             _cts = new CancellationTokenSource();
             await UINodeEditor.Instance.Init();
-            createCard?.Init();
+            cardDisplay?.Init();
 
             Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
 
             createButton.onClick.AddListener(() =>
             {
-                var cardName = string.IsNullOrEmpty(createCard.CardNameInput.text) ? "Card" : createCard.CardNameInput.text;
-                var cardDescription = string.IsNullOrEmpty(createCard.CardDescriptionInput.text) ? "Description" : createCard.CardDescriptionInput.text;
-                var cardPicture = createCard.CurrentPictureIndex;
+                var cardName = string.IsNullOrEmpty(cardDisplay.CardNameInput.text) ? "Card" : cardDisplay.CardNameInput.text;
+                var cardDescription = string.IsNullOrEmpty(cardDisplay.CardDescriptionInput.text) ? "Description" : cardDisplay.CardDescriptionInput.text;
+                var cardPicture = cardDisplay.CurrentPictureIndex;
 
                 UINodeEditor.Instance.BrickTree.MetaData.Name = cardName;
                 UINodeEditor.Instance.BrickTree.MetaData.Description = cardDescription;
@@ -50,7 +50,7 @@ namespace Solcery.UI.Create
             _cts.Dispose();
 
             UINodeEditor.Instance?.DeInit();
-            createCard?.DeInit();
+            cardDisplay?.DeInit();
             createButton.onClick.RemoveAllListeners();
         }
 

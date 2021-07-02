@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Solcery.UI.Create
 {
-    public class UICreateCard : MonoBehaviour
+    public class UICardDisplay : MonoBehaviour
     {
         public int CurrentPictureIndex => _currentIndex;
         public TMP_InputField CardNameInput => cardNameInput;

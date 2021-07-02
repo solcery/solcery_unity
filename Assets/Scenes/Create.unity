@@ -228,7 +228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.45
+  m_fontSize: 15.15
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 395167551}
   - component: {fileID: 395167550}
   m_Layer: 5
-  m_Name: UICreateBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,7 +2395,7 @@ GameObject:
   - component: {fileID: 929517305}
   - component: {fileID: 929517309}
   m_Layer: 5
-  m_Name: UICreate
+  m_Name: UICreateCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2475,8 +2475,8 @@ RectTransform:
   m_Children:
   - {fileID: 395167549}
   - {fileID: 645145490}
-  - {fileID: 1459629598}
   - {fileID: 1493826505}
+  - {fileID: 1459629598}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2506,7 +2506,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  createCard: {fileID: 1459629601}
+  cardDisplay: {fileID: 1459629601}
   createButton: {fileID: 1736981069}
   finishCardCreation: {fileID: 261614797}
   lockIcon: {fileID: 723986527}
@@ -3575,7 +3575,7 @@ GameObject:
   - component: {fileID: 1459629599}
   - component: {fileID: 1459629601}
   m_Layer: 5
-  m_Name: UICreateCard
+  m_Name: UICardDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3596,7 +3596,7 @@ RectTransform:
   - {fileID: 1692048283}
   - {fileID: 1736981068}
   m_Father: {fileID: 929517308}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3896,7 +3896,7 @@ RectTransform:
   - {fileID: 1410822433}
   - {fileID: 428853570}
   m_Father: {fileID: 929517308}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.67, y: 1}
@@ -4339,7 +4339,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.85
+  m_fontSize: 12.35
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4776,7 +4776,7 @@ GameObject:
   - component: {fileID: 1736981070}
   - component: {fileID: 1736981069}
   m_Layer: 5
-  m_Name: UICreateCardButton
+  m_Name: CreateButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

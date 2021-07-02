@@ -8,12 +8,12 @@ namespace Solcery
     {
         public async UniTask Init()
         {
-            await UICreate.Instance.Init();
+            await UICreateCard.Instance.Init();
         }
 
         public void DeInit()
         {
-            UICreate.Instance?.DeInit();
+            UICreateCard.Instance?.DeInit();
         }
     }
 }
