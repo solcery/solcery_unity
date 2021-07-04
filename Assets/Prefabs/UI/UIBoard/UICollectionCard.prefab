@@ -125,6 +125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICollectionCard
       objectReference: {fileID: 0}
+    - target: {fileID: 5257364323743613061, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc305af7050d92f45996471175d1fda9, type: 3}
 --- !u!1 &1506602211406583174 stripped

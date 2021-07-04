@@ -12,6 +12,7 @@ namespace Solcery.UI.Create
         {
             tabs?.Init();
 
+            UICollection.Instance?.Init();
             await UICreateCard.Instance.Init();
             UICreateRuleset.Instance?.Init();
         }
@@ -20,6 +21,7 @@ namespace Solcery.UI.Create
         {
             tabs?.DeInit();
 
+            UICollection.Instance?.DeInit();
             UICreateCard.Instance?.DeInit();
             UICreateRuleset.Instance?.DeInit();
         }

@@ -126,6 +126,52 @@ namespace Solcery.WebGL
             {
                 Board.Instance?.UpdateBoard(null);
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                var collectionData = new CollectionData();
+
+                collectionData.CardTypes = new List<CollectionCardType>() {
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 1, Coins = 1, Name = "1", Description = "1"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 2, Coins = 2, Name = "2", Description = "2"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 3, Coins = 3, Name = "3", Description = "3"}},
+                };
+
+                Collection.Instance?.UpdateCollection(collectionData);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                var collectionData = new CollectionData();
+
+                collectionData.CardTypes = new List<CollectionCardType>() {
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 1, Coins = 1, Name = "1", Description = "1"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 2, Coins = 2, Name = "2", Description = "2"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 3, Coins = 3, Name = "3", Description = "3"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 4, Coins = 4, Name = "4", Description = "4"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 5, Coins = 5, Name = "5", Description = "5"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 6, Coins = 6, Name = "6", Description = "6"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 7, Coins = 7, Name = "7", Description = "7"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 8, Coins = 8, Name = "8", Description = "8"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 9, Coins = 9, Name = "9", Description = "9"}},
+                };
+
+                Collection.Instance?.UpdateCollection(collectionData);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                var collectionData = new CollectionData();
+
+                collectionData.CardTypes = new List<CollectionCardType>() {
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 1, Coins = 1, Name = "1", Description = "1"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 2, Coins = 2, Name = "2", Description = "2"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 3, Coins = 3, Name = "3", Description = "3"}},
+                    new CollectionCardType() { Metadata = new CardMetadata() { Picture = 4, Coins = 4, Name = "4", Description = "4"}},
+                };
+
+                Collection.Instance?.UpdateCollection(collectionData);
+            }
         }
 #endif
     }

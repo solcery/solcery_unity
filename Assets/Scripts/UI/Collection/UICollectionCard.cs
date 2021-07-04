@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Solcery.UI
 {
-    public class UICollectionCard : MonoBehaviour
+    public class UICollectionCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Button button = null;
@@ -65,10 +66,22 @@ namespace Solcery.UI
 
         private void SubsribeToButton()
         {
-            if (button != null)
-            {
+            button?.onClick.AddListener(OnCardClicked);
+        }
 
-            }
+        private void OnCardClicked()
+        {
+            Debug.Log($"clicked on {_cardType.Metadata.Name}");
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Debug.Log($"pointer enter {_cardType.Metadata.Name}");
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Debug.Log($"pointer exit {_cardType.Metadata.Name}");
         }
     }
 }

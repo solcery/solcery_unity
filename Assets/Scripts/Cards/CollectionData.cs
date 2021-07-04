@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solcery
 {
     [Serializable]
     public class CollectionData
     {
-        public CollectionCardType[] CardTypes;
+        public List<CollectionCardType> CardTypes;
     }
 }

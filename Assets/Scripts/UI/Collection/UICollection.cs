@@ -1,16 +1,21 @@
 using System.Collections.Generic;
 using System.Threading;
 using Solcery.Modules.Collection;
+using Solcery.Utils;
 using Solcery.Utils.Reactives;
-using Solcery.WebGL;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI
 {
-    public class UICollection : MonoBehaviour
+    public class UICollection : Singleton<UICollection>
     {
-        [SerializeField] private Transform content;
-        [SerializeField] private GameObject cardPrefab;
+        [SerializeField] private LayoutElement le = null;
+        [SerializeField] private Transform main = null;
+        [SerializeField] private Transform content = null;
+        [SerializeField] private GameObject cardPrefab = null;
+        [SerializeField] private Button openButton = null;
+        [SerializeField] private Button closeButton = null;
 
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
@@ -19,6 +24,9 @@ namespace Solcery.UI
         {
             _cts = new CancellationTokenSource();
             _cards = new List<UICollectionCard>();
+
+            openButton.onClick.AddListener(Open);
+            closeButton.onClick.AddListener(Close);
 
             Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
@@ -45,9 +53,20 @@ namespace Solcery.UI
             }
         }
 
-        private void OnCardCasted(string cardMintAddress, int cardIndex)
+        private void Open()
         {
-            // UnityToReact.Instance?.CallUseCard(cardMintAddress);
+            le.preferredWidth = 300;
+            openButton.gameObject.SetActive(false);
+            closeButton.gameObject.SetActive(true);
+            main.gameObject.SetActive(true);
+        }
+
+        private void Close()
+        {
+            le.preferredWidth = 0;
+            closeButton.gameObject.SetActive(false);
+            openButton.gameObject.SetActive(true);
+            main.gameObject.SetActive(false);
         }
 
         private void DeleteAllCards()
