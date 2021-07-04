@@ -9,7 +9,7 @@ namespace Solcery.UI.Create
 
         public void Init()
         {
-
+            
         }
 
         public void DeInit()

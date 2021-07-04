@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Solcery.UI;
 using Solcery.UI.Create;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Solcery.FSM.Create
         {
             await base.Enter();
             UICreateCard.Instance?.Open();
+            UICollection.Instance?.SetMode(UICollectionMode.CreateCard);
         }
 
         public override async UniTask Exit()

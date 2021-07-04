@@ -10,6 +10,8 @@ namespace Solcery.UI
 {
     public class UICollection : Singleton<UICollection>
     {
+        [SerializeField] private UICollectionCardDragger dragger = null;
+        [SerializeField] private Canvas canvas = null;
         [SerializeField] private LayoutElement le = null;
         [SerializeField] private Transform main = null;
         [SerializeField] private Transform content = null;
@@ -19,11 +21,14 @@ namespace Solcery.UI
 
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
+        private UICollectionMode _mode;
 
-        public void Init()
+        public void Init(Canvas createCanvas)
         {
             _cts = new CancellationTokenSource();
             _cards = new List<UICollectionCard>();
+
+            dragger?.Init(createCanvas);
 
             openButton.onClick.AddListener(Open);
             closeButton.onClick.AddListener(Close);
@@ -33,6 +38,8 @@ namespace Solcery.UI
 
         public void DeInit()
         {
+            dragger?.DeInit();
+
             _cts.Cancel();
             _cts.Dispose();
         }
@@ -44,13 +51,40 @@ namespace Solcery.UI
 
             if (collectionData == null) return;
 
-            foreach (var cardType in collectionData.CardTypes)
+            for (int i = 0; i < collectionData.CardTypes.Count; i++)
             {
                 var newCard = Instantiate(cardPrefab, content).GetComponent<UICollectionCard>();
-                newCard.Init(cardType);
+                newCard.Init(collectionData.CardTypes[i], i, OnCardClicked, OnPointerDown, OnPointerUp);
 
                 _cards.Add(newCard);
             }
+        }
+
+        public void SetMode(UICollectionMode mode)
+        {
+            _mode = mode;
+        }
+
+        private void OnCardClicked(int cardIndex)
+        {
+
+        }
+
+        private void OnPointerDown(int cardIndex)
+        {
+            switch (_mode)
+            {
+                case UICollectionMode.CreateCard:
+                    break;
+                case UICollectionMode.CreateRuleset:
+                    dragger.StartDragging(_cards[cardIndex]);
+                    break;
+            }
+        }
+
+        private void OnPointerUp(int cardIndex)
+        {
+
         }
 
         private void Open()
