@@ -8,6 +8,8 @@ namespace Solcery.UI
 {
     public class UICollectionCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
+        public CollectionCardType CardType => _cardType;
+
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private LayoutElement le = null;
         [SerializeField] private Button button = null;
