@@ -228,7 +228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.5
+  m_fontSize: 12.5
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -820,6 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e98a00ef04adaf4bbe06f8b8517de41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountSwitcher: {fileID: 0}
   cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
   cardPicture: {fileID: 250370320}
   cardName: {fileID: 951215467}
@@ -1423,7 +1424,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 240}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &278689096
 MonoBehaviour:
@@ -2869,8 +2870,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 210
     m_Right: 210
-    m_Top: 20
-    m_Bottom: 20
+    m_Top: 25
+    m_Bottom: 25
   m_ChildAlignment: 0
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
@@ -5154,7 +5155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18789db75e0817d459b7e6a987bb41df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineupCardPrefab: {fileID: 5811721983898371257, guid: b7b2cecd128202f4daf9b24390211946, type: 3}
+  lineupCardPrefab: {fileID: 134190363533606351, guid: a15155ccf3065c547ae7f111f560a055, type: 3}
   droppableAreaPrefab: {fileID: 2473486185331046619, guid: 3906203d3a4cf2f49b9763fcea8d665f, type: 3}
   cardsLG: {fileID: 702012968}
   droppablesLG: {fileID: 1810514826}
@@ -5912,7 +5913,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2006336416}
   m_HandleRect: {fileID: 2006336415}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6769,7 +6770,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.2
+  m_fontSize: 10.7
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7912,7 +7913,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 240}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1810514825
 MonoBehaviour:
@@ -7927,7 +7928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!114 &1810514826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7950,7 +7951,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -10530,7 +10531,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 240}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2619780322812857556
 GameObject:
@@ -10934,6 +10935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e98a00ef04adaf4bbe06f8b8517de41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountSwitcher: {fileID: 0}
   cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
   cardPicture: {fileID: 7047926018222495572}
   cardName: {fileID: 2619780322812857562}

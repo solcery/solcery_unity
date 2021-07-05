@@ -6,9 +6,11 @@ namespace Solcery.UI.Create
 {
     public class UILineupCard : MonoBehaviour
     {
+        public UILineupCardData Data { get; private set; }
         public UIDroppableArea Before { get; private set; }
         public UIDroppableArea After { get; private set; }
 
+        [SerializeField] private UILineupCardAmountSwitcher amountSwitcher = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
@@ -17,15 +19,24 @@ namespace Solcery.UI.Create
 
         public void Init(CollectionCardType cardType, UIDroppableArea before, UIDroppableArea after)
         {
+            Data = new UILineupCardData(cardType, 1);
+
             Before = before;
             After = after;
 
-            if (cardType != null)
+            amountSwitcher?.Init(Data.Amount, (newAmount) => { Data.Amount = newAmount; Debug.Log(Data.Amount); });
+
+            ApplyCardType();
+        }
+
+        private void ApplyCardType()
+        {
+            if (Data.CardType != null)
             {
-                SetPicture(cardType.Metadata.Picture);
-                SetCoinsCount(cardType.Metadata.Coins);
-                SetName(cardType.Metadata.Name);
-                SetDescription(cardType.Metadata.Description);
+                SetPicture(Data.CardType.Metadata.Picture);
+                SetCoinsCount(Data.CardType.Metadata.Coins);
+                SetName(Data.CardType.Metadata.Name);
+                SetDescription(Data.CardType.Metadata.Description);
             }
             else
             {
