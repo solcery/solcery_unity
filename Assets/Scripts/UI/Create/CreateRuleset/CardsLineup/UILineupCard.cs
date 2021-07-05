@@ -8,9 +8,9 @@ namespace Solcery.UI.Create
     public class UILineupCard : MonoBehaviour
     {
         public UILineupCardData Data { get; private set; }
-        public UIDroppableArea Before { get; private set; }
-        public UIDroppableArea After { get; private set; }
 
+        [SerializeField] private UIDroppableArea before = null;
+        [SerializeField] private UIDroppableArea after = null;
         [SerializeField] private UILineupCardAmountSwitcher amountSwitcher = null;
         [SerializeField] private Button deleteButton = null;
         [SerializeField] private CardPictures cardPictures = null;
@@ -21,14 +21,13 @@ namespace Solcery.UI.Create
 
         private Action<UILineupCard> _onDelete;
 
-        public void Init(CollectionCardType cardType, UIDroppableArea before, UIDroppableArea after, Action<UILineupCard> onDelete)
+        public void Init(CollectionCardType cardType, Action<UILineupCard> onDelete, Action<UILineupCard, UIDroppableAreaOption> onPointerEnter, Action<UILineupCard, UIDroppableAreaOption> onPointerExit)
         {
             Data = new UILineupCardData(cardType, 1);
-
-            Before = before;
-            After = after;
             _onDelete = onDelete;
 
+            before?.Init(this, UIDroppableAreaOption.Before, onPointerEnter, onPointerExit);
+            after?.Init(this, UIDroppableAreaOption.After, onPointerEnter, onPointerExit);
             amountSwitcher?.Init(Data.Amount, (newAmount) => Data.Amount = newAmount);
             deleteButton?.onClick.AddListener(DeleteCard);
 
