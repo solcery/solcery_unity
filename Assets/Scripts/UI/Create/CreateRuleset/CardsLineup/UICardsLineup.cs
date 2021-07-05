@@ -34,7 +34,6 @@ namespace Solcery.UI.Create
             _cards = new List<UILineupCard>();
             _droppables = new List<UIDroppableArea>();
 
-            // CreateCard(new CollectionCardType() { Metadata = new CardMetadata() { Picture = 7, Coins = 7, Name = "7", Description = "7" } });
             fakeGlobalBefore.Init(fakeCardBefore, UIDroppableAreaOption.Before, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeGlobalAfter.Init(fakeCardAfter, UIDroppableAreaOption.After, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
         }
@@ -45,7 +44,7 @@ namespace Solcery.UI.Create
             var before = Instantiate(droppableAreaPrefab, droppablesLG.transform).GetComponent<UIDroppableArea>();
             var after = Instantiate(droppableAreaPrefab, droppablesLG.transform).GetComponent<UIDroppableArea>();
 
-            lineUpCard.Init(cardType, before, after);
+            lineUpCard.Init(cardType, before, after, DeleteCard);
             before.Init(lineUpCard, UIDroppableAreaOption.Before, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             after.Init(lineUpCard, UIDroppableAreaOption.After, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
 
@@ -72,6 +71,16 @@ namespace Solcery.UI.Create
 
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
             LayoutRebuilder.ForceRebuildLayoutImmediate(_rebuildOnChange);
+        }
+
+        private void DeleteCard(UILineupCard card)
+        {
+            _cards.Remove(card);
+            _droppables.Remove(card.Before);
+            _droppables.Remove(card.After);
+            DestroyImmediate(card.Before.gameObject);
+            DestroyImmediate(card.After.gameObject);
+            DestroyImmediate(card.gameObject);
         }
 
         private void OnDroppableAreaPointerEnter(UILineupCard card, UIDroppableAreaOption option)

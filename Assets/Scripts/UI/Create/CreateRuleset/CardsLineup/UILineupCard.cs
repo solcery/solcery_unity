@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,20 +12,25 @@ namespace Solcery.UI.Create
         public UIDroppableArea After { get; private set; }
 
         [SerializeField] private UILineupCardAmountSwitcher amountSwitcher = null;
+        [SerializeField] private Button deleteButton = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
-        public void Init(CollectionCardType cardType, UIDroppableArea before, UIDroppableArea after)
+        private Action<UILineupCard> _onDelete;
+
+        public void Init(CollectionCardType cardType, UIDroppableArea before, UIDroppableArea after, Action<UILineupCard> onDelete)
         {
             Data = new UILineupCardData(cardType, 1);
 
             Before = before;
             After = after;
+            _onDelete = onDelete;
 
-            amountSwitcher?.Init(Data.Amount, (newAmount) => { Data.Amount = newAmount; Debug.Log(Data.Amount); });
+            amountSwitcher?.Init(Data.Amount, (newAmount) => Data.Amount = newAmount);
+            deleteButton?.onClick.AddListener(DeleteCard);
 
             ApplyCardType();
         }
@@ -67,6 +73,12 @@ namespace Solcery.UI.Create
         {
             if (cardDescription != null)
                 cardDescription.text = description;
+        }
+
+        private void DeleteCard()
+        {
+            Debug.Log("delete");
+            _onDelete?.Invoke(this);
         }
     }
 }

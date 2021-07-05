@@ -7,19 +7,20 @@ namespace Solcery.UI.Create
 {
     public class UILineupCardAmountSwitcher : MonoBehaviour
     {
+        [SerializeField] private int min;
+        [SerializeField] private int max;
         [SerializeField] private TextMeshProUGUI amountText = null;
         [SerializeField] private Button prevButton = null;
         [SerializeField] private Button nextButton = null;
 
-        private int _currentAmount;
         private Action<int> _onAmountChange;
+        private int _currentAmount;
 
         public void Init(int initialAmount, Action<int> onAmountChange)
         {
-            _currentAmount = initialAmount;
             _onAmountChange = onAmountChange;
 
-            SetAmount(_currentAmount);
+            SetAmount(initialAmount);
 
             prevButton.onClick.AddListener(Prev);
             nextButton.onClick.AddListener(Next);
@@ -27,12 +28,12 @@ namespace Solcery.UI.Create
 
         private void Prev()
         {
-            SetAmount(Mathf.Max(1, _currentAmount - 1));
+            SetAmount(Mathf.Max(min, _currentAmount - 1));
         }
 
         private void Next()
         {
-            SetAmount(Mathf.Min(99, _currentAmount + 1));
+            SetAmount(Mathf.Min(max, _currentAmount + 1));
         }
 
         private void SetAmount(int newAmount)
@@ -42,6 +43,7 @@ namespace Solcery.UI.Create
                 _currentAmount = newAmount;
                 _onAmountChange?.Invoke(newAmount);
                 SetAmountText();
+                CheckButtons();
             }
         }
 
@@ -49,6 +51,12 @@ namespace Solcery.UI.Create
         {
             if (amountText != null)
                 amountText.text = _currentAmount.ToString();
+        }
+
+        private void CheckButtons()
+        {
+            prevButton.gameObject.SetActive(_currentAmount != min);
+            nextButton.gameObject.SetActive(_currentAmount != max);
         }
     }
 }
