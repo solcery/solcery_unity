@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using Solcery.Modules.Collection;
@@ -22,11 +23,14 @@ namespace Solcery.UI
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
         private UICollectionMode _mode;
+        private Action _onRebuild;
 
-        public void Init(Canvas createCanvas)
+        public void Init(Canvas createCanvas, Action onRebuild)
         {
             _cts = new CancellationTokenSource();
             _cards = new List<UICollectionCard>();
+
+            _onRebuild = onRebuild;
 
             dragger?.Init(createCanvas);
 
@@ -100,6 +104,8 @@ namespace Solcery.UI
             openButton.gameObject.SetActive(false);
             closeButton.gameObject.SetActive(true);
             main.gameObject.SetActive(true);
+
+            _onRebuild?.Invoke();
         }
 
         private void Close()
@@ -108,6 +114,8 @@ namespace Solcery.UI
             closeButton.gameObject.SetActive(false);
             openButton.gameObject.SetActive(true);
             main.gameObject.SetActive(false);
+
+            _onRebuild?.Invoke();
         }
 
         private void DeleteAllCards()

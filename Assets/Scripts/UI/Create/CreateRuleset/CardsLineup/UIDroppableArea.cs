@@ -20,13 +20,11 @@ namespace Solcery.UI.Create
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("enter");
             _onPointerEnter?.Invoke(_card, _option);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Debug.Log("exit");
             _onPointerExit?.Invoke(_card, _option);
         }
     }
