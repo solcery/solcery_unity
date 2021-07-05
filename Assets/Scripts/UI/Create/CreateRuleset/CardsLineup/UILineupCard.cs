@@ -77,7 +77,6 @@ namespace Solcery.UI.Create
 
         private void DeleteCard()
         {
-            Debug.Log("delete");
             _onDelete?.Invoke(this);
         }
     }
