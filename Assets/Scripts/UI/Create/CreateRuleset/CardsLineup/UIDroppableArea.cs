@@ -8,9 +8,9 @@ namespace Solcery.UI.Create
     {
         private UILineupCard _card;
         private UIDroppableAreaOption _option;
-        private Action<UILineupCard> _onPointerEnter, _onPointerExit;
+        private Action<UILineupCard, UIDroppableAreaOption> _onPointerEnter, _onPointerExit;
 
-        public void Init(UILineupCard card, UIDroppableAreaOption option, Action<UILineupCard> onPointerEnter, Action<UILineupCard> onPointerExit)
+        public void Init(UILineupCard card, UIDroppableAreaOption option, Action<UILineupCard, UIDroppableAreaOption> onPointerEnter, Action<UILineupCard, UIDroppableAreaOption> onPointerExit)
         {
             _card = card;
             _option = option;
@@ -20,12 +20,12 @@ namespace Solcery.UI.Create
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _onPointerEnter?.Invoke(_card);
+            _onPointerEnter?.Invoke(_card, _option);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _onPointerExit?.Invoke(_card);
+            _onPointerExit?.Invoke(_card, _option);
         }
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Solcery.UI.Create;
 using Solcery.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI
 {
@@ -24,10 +26,15 @@ namespace Solcery.UI
 
         public void StartDragging(UICollectionCard card)
         {
-            _cardClone = Instantiate(card, card.transform.position, Quaternion.identity);
-            _cardClone?.DetatchFromGroup();
-            _cardClone?.transform.SetParent(_canvas.transform);
-            _cardClone?.transform.SetAsLastSibling();
+            _cardClone = Instantiate<UICollectionCard>(card, card.transform.position, Quaternion.identity);
+
+            if (_cardClone != null)
+            {
+                _cardClone.DetatchFromGroup();
+                _cardClone.GetComponent<Image>().raycastTarget = false;
+                _cardClone.transform.SetParent(_canvas.transform);
+                _cardClone.transform.SetAsLastSibling();
+            }
         }
 
         public override void PerformUpdate()
@@ -40,6 +47,21 @@ namespace Solcery.UI
             out _movePos);
 
             _cardClone.transform.position = _canvas.transform.TransformPoint(_movePos);
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (UICreateRuleset.Instance?.LineupUnderPointer != null)
+                {
+                    UICreateRuleset.Instance?.LineupUnderPointer.CreateCard(_cardClone.CardType);
+                }
+                else
+                {
+                    Debug.Log("lineup is null");
+                }
+
+                DestroyImmediate(_cardClone.gameObject);
+                _cardClone = null;
+            }
         }
     }
 }

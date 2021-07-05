@@ -18,7 +18,7 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
-        private CollectionCardType _cardType;
+        [HideInInspector] [SerializeField] private CollectionCardType _cardType;
         private int _indexInCollection;
         private Action<int> _onClick, _onPointerDown, _onPointerUp;
 

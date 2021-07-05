@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ee7ffdf1fea16428000d70dd224b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: becfc7aaf7389bb4d8434d277200145d, type: 2}
+  transition: {fileID: 0}
   button: {fileID: 1593928670}
   title: {fileID: 202503150}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}

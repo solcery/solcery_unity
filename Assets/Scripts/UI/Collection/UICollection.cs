@@ -11,7 +11,6 @@ namespace Solcery.UI
     public class UICollection : Singleton<UICollection>
     {
         [SerializeField] private UICollectionCardDragger dragger = null;
-        [SerializeField] private Canvas canvas = null;
         [SerializeField] private LayoutElement le = null;
         [SerializeField] private Transform main = null;
         [SerializeField] private Transform content = null;

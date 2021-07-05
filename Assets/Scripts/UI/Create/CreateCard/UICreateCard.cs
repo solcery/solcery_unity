@@ -13,6 +13,7 @@ namespace Solcery.UI.Create
     public class UICreateCard : Singleton<UICreateCard>
     {
         [SerializeField] private Canvas canvas = null;
+        [SerializeField] private CanvasGroup canvasGroup = null;
         [SerializeField] private UICardDisplay cardDisplay = null;
         [SerializeField] private Button createButton = null;
         [SerializeField] private TextMeshProUGUI finishCardCreation = null;
@@ -58,11 +59,13 @@ namespace Solcery.UI.Create
         public void Open()
         {
             canvas.enabled = true;
+            canvasGroup.blocksRaycasts = true;
         }
 
         public void Close()
         {
             canvas.enabled = false;
+            canvasGroup.blocksRaycasts = false;
         }
 
         private void OnBrickTreeValidityChange(bool isValid)

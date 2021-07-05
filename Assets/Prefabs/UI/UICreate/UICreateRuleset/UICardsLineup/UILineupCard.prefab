@@ -36,9 +36,17 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 923585563254932050, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910554, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539030273299910554, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910556, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Enabled
@@ -74,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910557, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 145
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910557, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_SizeDelta.y
