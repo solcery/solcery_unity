@@ -36,6 +36,7 @@ namespace Solcery.UI
                 SetCoinsCount(_cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
+                SetButton();
             }
             else
             {
@@ -76,6 +77,11 @@ namespace Solcery.UI
         {
             if (cardDescription != null)
                 cardDescription.text = description;
+        }
+
+        private void SetButton()
+        {
+            button?.onClick.AddListener(() => _onClick?.Invoke(_indexInCollection));
         }
 
         public void OnPointerDown(PointerEventData eventData)

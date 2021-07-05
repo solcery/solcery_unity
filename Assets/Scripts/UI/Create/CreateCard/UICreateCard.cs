@@ -68,6 +68,11 @@ namespace Solcery.UI.Create
             canvasGroup.blocksRaycasts = false;
         }
 
+        public void OpenCard(CollectionCardType cardType)
+        {
+            Debug.Log("Open Card");
+        }
+
         private void OnBrickTreeValidityChange(bool isValid)
         {
             createButton.interactable = isValid;

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using Solcery.Modules.Collection;
+using Solcery.UI.Create;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
@@ -66,7 +67,14 @@ namespace Solcery.UI
 
         private void OnCardClicked(int cardIndex)
         {
-
+            switch (_mode)
+            {
+                case UICollectionMode.CreateCard:
+                    UICreateCard.Instance?.OpenCard(_cards[cardIndex].CardType);
+                    break;
+                case UICollectionMode.CreateRuleset:
+                    break;
+            }
         }
 
         private void OnPointerDown(int cardIndex)
