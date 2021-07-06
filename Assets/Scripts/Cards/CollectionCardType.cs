@@ -7,5 +7,6 @@ namespace Solcery
     {
         public string MintAddress;
         public CardMetadata Metadata;
+        public BrickTree BrickTree;
     }
 }

@@ -16,7 +16,6 @@ namespace Solcery.UI.Create
         [SerializeField] private RectTransform content = null;
         [SerializeField] private UICardsLineup initialCardsLineup = null;
         [SerializeField] private ScrollRect scrollRect = null;
-        [SerializeField] private RectTransform viewport = null;
         [SerializeField] private RectTransform placesRect = null;
         [SerializeField] private Button addPlaceButton = null;
         [SerializeField] private GameObject cardsLineupPrefab = null;

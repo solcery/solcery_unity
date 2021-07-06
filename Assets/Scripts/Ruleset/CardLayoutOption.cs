@@ -5,7 +5,9 @@ namespace Solcery.Ruleset
     [Serializable]
     public enum CardLayoutOption
     {
-        Staked,
-        LayedOut
+        Stacked,
+        LayedOut,
+        Map,
+        Title
     }
 }

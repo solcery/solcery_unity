@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Solcery.Ruleset
 {
@@ -8,8 +7,7 @@ namespace Solcery.Ruleset
     public class RulesetData
     {
         public List<string> CardMintAddresses;
-        public List<Vector3Int> Deck;  // (Place, CardTypeId, Amount)
-        public List<string> Initializers;
+        public List<PlaceData> Deck;
         public RulesetDisplayData DisplayData;
     }
 }

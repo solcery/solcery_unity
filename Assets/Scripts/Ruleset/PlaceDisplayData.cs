@@ -1,11 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solcery.Ruleset
 {
     [Serializable]
     public class PlaceDisplayData
     {
-        public CardFaceOption CardFaceOption;
-        public CardLayoutOption CardLayoutOption;
+        public Dictionary<int, PlaceDisplayDataForPlayer> PlaceDisplayDataByPlayer; //0 - for all players
     }
 }
