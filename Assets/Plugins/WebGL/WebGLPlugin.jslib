@@ -1,15 +1,15 @@
 mergeInto(LibraryManager.library, {
-    LogToConsole: function (message) {
-      ReactUnityWebGL.LogToConsole(Pointer_stringify(message));
-    },
+  OnUnityLoaded: function () {
+    ReactUnityWebGL.OnUnityLoaded();
+  },
     OpenLinkInNewTab: function (link) {
       ReactUnityWebGL.OpenLinkInNewTab(Pointer_stringify(link));
     },
     CreateCard: function (card, cardName) {
       ReactUnityWebGL.CreateCard(Pointer_stringify(card), Pointer_stringify(cardName));
     },
-    UseCard: function (cardMintAddress, cardIndex) {
-      ReactUnityWebGL.UseCard(Pointer_stringify(cardMintAddress), cardIndex);
+    CreateRuleset: function (ruleset) {
+      ReactUnityWebGL.CreateRuleset(Pointer_stringify(ruleset));
     },
     CreateBoard: function () {
       ReactUnityWebGL.CreateBoard();
@@ -17,7 +17,7 @@ mergeInto(LibraryManager.library, {
     JoinBoard: function (gameKey) {
       ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
-    OnUnityLoaded: function () {
-      ReactUnityWebGL.OnUnityLoaded();
+    UseCard: function (cardMintAddress, cardIndex) {
+      ReactUnityWebGL.UseCard(Pointer_stringify(cardMintAddress), cardIndex);
     },
   });

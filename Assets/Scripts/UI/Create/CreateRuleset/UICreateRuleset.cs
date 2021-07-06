@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Solcery.Ruleset;
 using Solcery.Utils;
+using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,9 +18,11 @@ namespace Solcery.UI.Create
         [SerializeField] private RectTransform content = null;
         [SerializeField] private UICardsLineup initialCardsLineup = null;
         [SerializeField] private ScrollRect scrollRect = null;
+        [SerializeField] private CanvasGroup scrollCG = null;
         [SerializeField] private RectTransform placesRect = null;
         [SerializeField] private Button addPlaceButton = null;
         [SerializeField] private GameObject cardsLineupPrefab = null;
+        [SerializeField] private Button createRulesetButton = null;
 
         private List<UICardsLineup> _places;
 
@@ -35,6 +39,7 @@ namespace Solcery.UI.Create
 
             initialCardsLineup?.Init(() => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, null);
             addPlaceButton?.onClick.AddListener(CreatePlace);
+            createRulesetButton?.onClick.AddListener(CreateRuleset);
         }
 
         public void DeInit()
@@ -90,10 +95,58 @@ namespace Solcery.UI.Create
 
         private async UniTaskVoid RebuildScrollRect()
         {
+            scrollCG.alpha = 0;
             var vnp = scrollRect.verticalNormalizedPosition;
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             await UniTask.WaitForEndOfFrame();
             scrollRect.verticalNormalizedPosition = Mathf.Clamp(vnp, 0f, 1f);
+            scrollCG.alpha = 1;
+        }
+
+        private void CreateRuleset()
+        {
+            Debug.Log("Creating Ruleset");
+            var rulesetData = new RulesetData();
+
+            var cardMintAddresses = new List<string>();
+            var deck = new List<PlaceData>();
+            var displayData = new RulesetDisplayData();
+            displayData.PlaceDisplayDatas = new Dictionary<int, PlaceDisplayData>();
+
+            for (int p = 0; p < _places.Count; p++)
+            {
+                var place = _places[p];
+                var placeData = new PlaceData();
+                var placeDisplayData = new PlaceDisplayData();
+
+                for (int c = 0; c < place.Cards.Count; c++)
+                {
+                    var card = place.Cards[c];
+                    var cardData = card.Data;
+                    var cardMintAddress = cardData.CardType.MintAddress;
+                    int cardIndex;
+
+                    if (cardMintAddress.Contains(cardMintAddress))
+                    {
+                        cardIndex = cardMintAddresses.IndexOf(cardMintAddress);
+                    }
+                    else
+                    {
+                        cardIndex = cardMintAddresses.Count;
+                        cardMintAddresses.Add(cardMintAddress);
+                    }
+
+                    placeData.IndexAmount.Add(new Vector2Int(cardIndex, cardData.Amount));
+                }
+
+                deck.Add(placeData);
+                displayData.PlaceDisplayDatas.Add(p, placeDisplayData);
+            }
+
+
+
+            var rulesetJson = JsonUtility.ToJson(rulesetData);
+            UnityToReact.Instance.CallCreateRuleset(rulesetJson);
         }
     }
 }

@@ -8,5 +8,10 @@ namespace Solcery.Ruleset
     public class PlaceData
     {
         public List<Vector2Int> IndexAmount; //index is index in MintAddresses
+
+        public PlaceData()
+        {
+            IndexAmount = new List<Vector2Int>();
+        }
     }
 }

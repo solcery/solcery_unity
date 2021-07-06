@@ -7,6 +7,8 @@ namespace Solcery.UI.Create
 {
     public class UICardsLineup : MonoBehaviour
     {
+        public List<UILineupCard> Cards => _cards;
+
         [SerializeField] private GameObject lineupCardPrefab = null;
         [SerializeField] private Button deleteLineupButton = null;
         [SerializeField] private HorizontalLayoutGroup cardsLG = null;

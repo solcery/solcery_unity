@@ -8,19 +8,18 @@ namespace Solcery.WebGL
 {
     public class UnityToReact : Singleton<UnityToReact>
     {
-        [DllImport("__Internal")] private static extern void LogToConsole(string message);
-        [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
+        [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void CreateCard(string card, string cardName);
+        [DllImport("__Internal")] private static extern void CreateRuleset(string ruleset);
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
         [DllImport("__Internal")] private static extern void UseCard(string cardMintAddress, int card);
 
-
-        public void CallLogToConsole(string message)
+        public void CallOnUnityLoaded()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    LogToConsole (message);
+    OnUnityLoaded ("message");
 #endif
         }
 
@@ -31,10 +30,20 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallOnUnityLoaded()
+        public void CallCreateCard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    OnUnityLoaded ("message");
+            List<byte> buffer = new List<byte>();
+            UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
+            string buf = String.Join("|", buffer.ToArray());
+            CreateCard(buf, UINodeEditor.Instance?.BrickTree.MetaData.Name);
+#endif
+        }
+
+        public void CallCreateRuleset(string ruleset)
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            CreateRuleset(ruleset);
 #endif
         }
 
@@ -56,16 +65,6 @@ namespace Solcery.WebGL
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     UseCard(cardMintAddress, cardIndex);
-#endif
-        }
-
-        public void CallCreateCard()
-        {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            List<byte> buffer = new List<byte>();
-            UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
-            string buf = String.Join("|", buffer.ToArray());
-            CreateCard(buf, UINodeEditor.Instance?.BrickTree.MetaData.Name);
 #endif
         }
     }
