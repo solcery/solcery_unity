@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Solcery.Ruleset;
 using Solcery.Utils;
@@ -29,6 +30,7 @@ namespace Solcery.UI.Create
         public void Init(Action onRebuild)
         {
             _places = new List<UICardsLineup>();
+            _places.Add(initialCardsLineup);
 
             UICreate.Instance.OnGlobalRebuild += () =>
              {
@@ -110,14 +112,13 @@ namespace Solcery.UI.Create
 
             var cardMintAddresses = new List<string>();
             var deck = new List<PlaceData>();
-            var displayData = new RulesetDisplayData();
-            displayData.PlaceDisplayDatas = new Dictionary<int, PlaceDisplayData>();
+            var rulesetDisplayData = new RulesetDisplayData();
+            var playerDisplayDatasDict = new Dictionary<int, PlayerDisplayData>();
 
-            for (int p = 0; p < _places.Count; p++)
+            for (int placeId = 0; placeId < _places.Count; placeId++)
             {
-                var place = _places[p];
+                var place = _places[placeId];
                 var placeData = new PlaceData();
-                var placeDisplayData = new PlaceDisplayData();
 
                 for (int c = 0; c < place.Cards.Count; c++)
                 {
@@ -126,7 +127,7 @@ namespace Solcery.UI.Create
                     var cardMintAddress = cardData.CardType.MintAddress;
                     int cardIndex;
 
-                    if (cardMintAddress.Contains(cardMintAddress))
+                    if (cardMintAddresses.Contains(cardMintAddress))
                     {
                         cardIndex = cardMintAddresses.IndexOf(cardMintAddress);
                     }
@@ -136,16 +137,46 @@ namespace Solcery.UI.Create
                         cardMintAddresses.Add(cardMintAddress);
                     }
 
-                    placeData.IndexAmount.Add(new Vector2Int(cardIndex, cardData.Amount));
+                    placeData.IndexAmount.Add(new CardIndexAmount(cardIndex, cardData.Amount));
                 }
 
                 deck.Add(placeData);
-                displayData.PlaceDisplayDatas.Add(p, placeDisplayData);
+
+                var placeDisplayDatas = place.DisplayDatas;
+
+                foreach (var idDisplayData in placeDisplayDatas)
+                {
+                    var playerId = idDisplayData.Key;
+                    var placeDisplayData = idDisplayData.Value;
+                    placeDisplayData.PlaceId = placeId;
+
+                    if (!playerDisplayDatasDict.ContainsKey(playerId))
+                    {
+                        playerDisplayDatasDict.Add(playerId, new PlayerDisplayData()
+                        {
+                            PlayerId = playerId,
+                            PlaceDisplayData = new List<PlaceDisplayDataForPlayer>()
+                            {
+                                placeDisplayData
+                            }
+                        });
+                    }
+                    else
+                    {
+                        var playerDisplayData = playerDisplayDatasDict[playerId];
+                        playerDisplayData.PlaceDisplayData.Add(placeDisplayData);
+                    }
+                }
             }
 
+            rulesetDisplayData.PlayerDisplayDatas = playerDisplayDatasDict.Values.ToList();
 
+            rulesetData.CardMintAddresses = cardMintAddresses;
+            rulesetData.Deck = deck;
+            rulesetData.DisplayData = rulesetDisplayData;
 
             var rulesetJson = JsonUtility.ToJson(rulesetData);
+            Debug.Log(rulesetJson);
             UnityToReact.Instance.CallCreateRuleset(rulesetJson);
         }
     }

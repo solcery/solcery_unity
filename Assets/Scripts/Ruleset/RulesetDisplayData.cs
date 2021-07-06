@@ -6,6 +6,6 @@ namespace Solcery.Ruleset
     [Serializable]
     public class RulesetDisplayData
     {
-        public Dictionary<int, PlaceDisplayData> PlaceDisplayDatas;
+        public List<PlayerDisplayData> PlayerDisplayDatas;
     }
 }

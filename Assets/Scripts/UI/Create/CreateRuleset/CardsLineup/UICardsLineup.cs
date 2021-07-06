@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Solcery.Ruleset;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace Solcery.UI.Create
     public class UICardsLineup : MonoBehaviour
     {
         public List<UILineupCard> Cards => _cards;
+        public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDatas => _displayDatas;
 
         [SerializeField] private GameObject lineupCardPrefab = null;
         [SerializeField] private Button deleteLineupButton = null;
@@ -16,6 +18,7 @@ namespace Solcery.UI.Create
         [SerializeField] private UILineupCard fakeCardAfter = null;
 
         private List<UILineupCard> _cards;
+        private Dictionary<int, PlaceDisplayDataForPlayer> _displayDatas;
         private Action _onRebuild;
         private Action<UICardsLineup> _onPointerEnterLineup, _onPointerExitLineup, _onDeleteLineup;
         private UILineupCard _cardUnderPointer;
@@ -29,6 +32,27 @@ namespace Solcery.UI.Create
             _onDeleteLineup = onDeleteLineup;
 
             _cards = new List<UILineupCard>();
+            _displayDatas = new Dictionary<int, PlaceDisplayDataForPlayer>()
+            {
+                {0, new PlaceDisplayDataForPlayer()
+                    {
+                        IsVisible = true,
+                        HorizontalAnchors = new PlaceDisplayAnchors(0, 1),
+                        VecticalAnchors = new PlaceDisplayAnchors(0, 1),
+                        CardLayoutOption = CardLayoutOption.LayedOut,
+                        CardFaceOption = CardFaceOption.Up,
+                    }
+                },
+                {1, new PlaceDisplayDataForPlayer()
+                    {
+                        IsVisible = false,
+                        HorizontalAnchors = new PlaceDisplayAnchors(0.23f, 0.7f),
+                        VecticalAnchors = new PlaceDisplayAnchors(0, 1),
+                        CardLayoutOption = CardLayoutOption.LayedOut,
+                        CardFaceOption = CardFaceOption.Up,
+                    }
+                }
+            };
 
             fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);

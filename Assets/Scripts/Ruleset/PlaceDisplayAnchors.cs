@@ -7,5 +7,11 @@ namespace Solcery.Ruleset
     {
         public float Min;
         public float Max;
+
+        public PlaceDisplayAnchors(float min, float max)
+        {
+            Min = min;
+            Max = max;
+        }
     }
 }
