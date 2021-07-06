@@ -8,28 +8,34 @@ namespace Solcery.UI.Create
     public class UICardsLineup : MonoBehaviour
     {
         [SerializeField] private GameObject lineupCardPrefab = null;
-
+        [SerializeField] private Button deleteLineupButton = null;
         [SerializeField] private HorizontalLayoutGroup cardsLG = null;
-
         [SerializeField] private UILineupCard fakeCardBefore = null;
         [SerializeField] private UILineupCard fakeCardAfter = null;
 
         private List<UILineupCard> _cards;
         private Action _onRebuild;
-        private Action<UICardsLineup> _onPointerEnterLineup, _onPointerExitLineup;
+        private Action<UICardsLineup> _onPointerEnterLineup, _onPointerExitLineup, _onDeleteLineup;
         private UILineupCard _cardUnderPointer;
         private UIDroppableAreaOption _currentOption;
 
-        public void Init(Action onRebuild, Action<UICardsLineup> onPointerEnterLineup, Action<UICardsLineup> onPointerExitLineup)
+        public void Init(Action onRebuild, Action<UICardsLineup> onPointerEnterLineup, Action<UICardsLineup> onPointerExitLineup, Action<UICardsLineup> onDeleteLineup)
         {
             _onRebuild = onRebuild;
             _onPointerEnterLineup = onPointerEnterLineup;
             _onPointerExitLineup = onPointerExitLineup;
+            _onDeleteLineup = onDeleteLineup;
 
             _cards = new List<UILineupCard>();
 
             fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+            deleteLineupButton.onClick.AddListener(() => onDeleteLineup?.Invoke(this));
+        }
+
+        public void DeInit()
+        {
+            deleteLineupButton.onClick.RemoveAllListeners();
         }
 
         public void CreateCard(CollectionCardType cardType)

@@ -28,12 +28,12 @@ namespace Solcery.UI.Create
 
             UICreate.Instance.OnGlobalRebuild += () =>
              {
-                RebuildScrollRect().Forget();
+                 RebuildScroll();
                  LayoutRebuilder.ForceRebuildLayoutImmediate(content);
                  LayoutRebuilder.MarkLayoutForRebuild(content);
              };
 
-            initialCardsLineup?.Init(() => RebuildScrollRect().Forget(), OnPointerEnterLineup, OnPointerExitLineup);
+            initialCardsLineup?.Init(() => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, null);
             addPlaceButton?.onClick.AddListener(CreatePlace);
         }
 
@@ -68,20 +68,32 @@ namespace Solcery.UI.Create
         {
             var cardPlace = Instantiate(cardsLineupPrefab, placesRect).GetComponent<UICardsLineup>();
             cardPlace.transform.SetSiblingIndex(_places.Count);
-            cardPlace.Init(() => RebuildScrollRect().Forget(), OnPointerEnterLineup, OnPointerExitLineup);
+            cardPlace.Init(() => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, DeletePlace);
             _places.Add(cardPlace);
 
+            RebuildScroll();
+        }
+
+        private void DeletePlace(UICardsLineup place)
+        {
+            place.DeInit();
+            _places.Remove(place);
+            DestroyImmediate(place.gameObject);
+
+            RebuildScroll();
+        }
+
+        private void RebuildScroll()
+        {
             RebuildScrollRect().Forget();
         }
 
         private async UniTaskVoid RebuildScrollRect()
         {
-            Debug.Log("rebuilding");
             var vnp = scrollRect.verticalNormalizedPosition;
-            Debug.Log(vnp);
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             await UniTask.WaitForEndOfFrame();
-            scrollRect.verticalNormalizedPosition = vnp;
+            scrollRect.verticalNormalizedPosition = Mathf.Clamp(vnp, 0f, 1f);
         }
     }
 }
