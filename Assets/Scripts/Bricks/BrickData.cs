@@ -1,9 +1,12 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine;
+using Newtonsoft.Json;
 
 namespace Solcery
 {
+    // [Serializable]
     public class BrickData
     {
         public bool IsValid()
@@ -39,6 +42,9 @@ namespace Solcery
         public string StringField = null;
         public bool HasObjectSelection = false;
 
+        [HideInInspector]
+        // [NonSerialized]
+        // [Newtonsoft.Json.JsonIgnore]
         public BrickData[] Slots;
 
         public BrickData(BrickConfig config)
@@ -78,6 +84,7 @@ namespace Solcery
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
         public BrickData Clone
         {
             get
@@ -106,17 +113,17 @@ namespace Solcery
             }
         }
 
-        public void SerializeToBytes(ref List<byte> buffer)
-        {
-            buffer.AddRange(BitConverter.GetBytes(Type).ToList<byte>());
-            buffer.AddRange(BitConverter.GetBytes(Subtype).ToList<byte>());
-            if (HasObjectSelection)
-                buffer.AddRange(BitConverter.GetBytes(Object).ToList<byte>());
-            if (HasField)
-                buffer.AddRange(BitConverter.GetBytes(IntField).ToList<byte>());
-            foreach (BrickData child in Slots)
-                child?.SerializeToBytes(ref buffer);
-        }
+        // public void SerializeToBytes(ref List<byte> buffer)
+        // {
+        //     buffer.AddRange(BitConverter.GetBytes(Type).ToList<byte>());
+        //     buffer.AddRange(BitConverter.GetBytes(Subtype).ToList<byte>());
+        //     if (HasObjectSelection)
+        //         buffer.AddRange(BitConverter.GetBytes(Object).ToList<byte>());
+        //     if (HasField)
+        //         buffer.AddRange(BitConverter.GetBytes(IntField).ToList<byte>());
+        //     foreach (BrickData child in Slots)
+        //         child?.SerializeToBytes(ref buffer);
+        // }
 
         public int GetDepth()
         {

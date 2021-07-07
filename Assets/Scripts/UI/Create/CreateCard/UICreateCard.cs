@@ -7,11 +7,16 @@ using TMPro;
 using Solcery.Utils.Reactives;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Solcery.UI.Create
 {
     public class UICreateCard : Singleton<UICreateCard>
     {
+        //TODO: delete after testing
+        [Multiline(10)]
+        public string testBrickTreeJson;
+
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
         [SerializeField] private UICardDisplay cardDisplay = null;
@@ -71,6 +76,8 @@ namespace Solcery.UI.Create
         public void OpenCard(CollectionCardType cardType)
         {
             Debug.Log("Open Card");
+            var testBrickTree = JsonConvert.DeserializeObject<BrickTree>(testBrickTreeJson);
+            UINodeEditor.Instance.OpenBrickTree(testBrickTree);
         }
 
         private void OnBrickTreeValidityChange(bool isValid)

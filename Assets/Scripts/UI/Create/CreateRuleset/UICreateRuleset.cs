@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -42,14 +41,30 @@ namespace Solcery.UI.Create
 
             addPlaceButton?.onClick.AddListener(CreatePlaceOnButton);
 
-            CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
+            if (Collection.Instance.CollectionData != null && Collection.Instance.CollectionData.Value != null && Collection.Instance.CollectionData.Value.RulesetData != null)
+                CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
+
+            //TODO: delete when checked
+            // var emptyRulesetData = new RulesetData()
+            // {
+            //     CardMintAddresses = new List<string>(),
+            //     Deck = new List<PlaceData>()
+            //     {
+            //         new PlaceData()
+            //         {
+            //             PlaceId = 0,
+            //             IndexAmount = new List<CardIndexAmount>(),
+            //         }
+            //     },
+            //     DisplayData = new RulesetDisplayData(),
+            // };
+            // CreateFromRulesetData(emptyRulesetData);
         }
 
         private void CreateFromRulesetData(RulesetData rulesetData)
         {
             initialsPlace?.InitFromRulesetData(rulesetData, rulesetData.Deck[0], 0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
 
-            Debug.Log(rulesetData.Deck.Count);
             for (int p = 1; p < rulesetData.Deck.Count; p++)
             {
                 var placeData = rulesetData.Deck[p];
@@ -73,6 +88,7 @@ namespace Solcery.UI.Create
 
         public void Open()
         {
+            Debug.Log("open");
             canvas.enabled = true;
             canvasGroup.blocksRaycasts = true;
         }

@@ -10,6 +10,7 @@ namespace Solcery.FSM.Create
     {
         public override async UniTask Enter()
         {
+            Debug.Log("enter");
             await base.Enter();
             UICreateRuleset.Instance?.Open();
             UICollection.Instance?.SetMode(UICollectionMode.CreateRuleset);

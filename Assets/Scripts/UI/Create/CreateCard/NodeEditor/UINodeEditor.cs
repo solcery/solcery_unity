@@ -61,6 +61,21 @@ namespace Solcery.UI.Create.NodeEditor
             Rebuild();
         }
 
+        public void OpenBrickTree(BrickTree brickTree)
+        {
+            _brickTree = brickTree;
+            RebuildAll();
+
+            if (_brickTree != null && _brickTree.Genesis != null)
+            {
+                helperText.gameObject.SetActive(false);
+                scrollView.enabled = true;
+                contentBlocker.gameObject.SetActive(false);
+                contentBlockerButton.onClick.RemoveAllListeners();
+                subtypePopup.Close();
+            }
+        }
+
         public void Rebuild()
         {
             _brickTree?.CheckValidity();
