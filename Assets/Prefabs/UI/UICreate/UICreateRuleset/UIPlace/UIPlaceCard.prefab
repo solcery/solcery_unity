@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 800360777992291941}
   - component: {fileID: -6747527322068665913}
   m_Layer: 5
-  m_Name: UILineupCard
+  m_Name: UIPlaceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

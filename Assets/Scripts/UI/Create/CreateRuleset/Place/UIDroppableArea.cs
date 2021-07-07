@@ -6,11 +6,11 @@ namespace Solcery.UI.Create
 {
     public class UIDroppableArea : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        private UILineupCard _card;
+        private UIPlaceCard _card;
         private UIDroppableAreaOption _option;
-        private Action<UILineupCard, UIDroppableAreaOption> _onPointerEnter, _onPointerExit;
+        private Action<UIPlaceCard, UIDroppableAreaOption> _onPointerEnter, _onPointerExit;
 
-        public void Init(UILineupCard card, UIDroppableAreaOption option, Action<UILineupCard, UIDroppableAreaOption> onPointerEnter, Action<UILineupCard, UIDroppableAreaOption> onPointerExit)
+        public void Init(UIPlaceCard card, UIDroppableAreaOption option, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
             _card = card;
             _option = option;

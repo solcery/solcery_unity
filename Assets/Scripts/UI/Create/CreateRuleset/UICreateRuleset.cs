@@ -12,25 +12,25 @@ namespace Solcery.UI.Create
 {
     public class UICreateRuleset : Singleton<UICreateRuleset>
     {
-        public UICardsLineup LineupUnderPointer { get; private set; }
+        public UIPlace PlaceUnderPointer { get; private set; }
 
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
         [SerializeField] private RectTransform content = null;
-        [SerializeField] private UICardsLineup initialCardsLineup = null;
+        [SerializeField] private UIPlace initialsPlace = null;
         [SerializeField] private ScrollRect scrollRect = null;
         [SerializeField] private CanvasGroup scrollCG = null;
         [SerializeField] private RectTransform placesRect = null;
         [SerializeField] private Button addPlaceButton = null;
-        [SerializeField] private GameObject cardsLineupPrefab = null;
+        [SerializeField] private GameObject placePrefab = null;
         [SerializeField] private Button createRulesetButton = null;
 
-        private List<UICardsLineup> _places;
+        private List<UIPlace> _places;
 
         public void Init(Action onRebuild)
         {
-            _places = new List<UICardsLineup>();
-            _places.Add(initialCardsLineup);
+            _places = new List<UIPlace>();
+            _places.Add(initialsPlace);
 
             UICreate.Instance.OnGlobalRebuild += () =>
              {
@@ -39,7 +39,7 @@ namespace Solcery.UI.Create
                  LayoutRebuilder.MarkLayoutForRebuild(content);
              };
 
-            initialCardsLineup?.Init(0, () => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, null);
+            initialsPlace?.Init(0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
             addPlaceButton?.onClick.AddListener(CreatePlace);
             createRulesetButton?.onClick.AddListener(CreateRuleset);
         }
@@ -61,28 +61,28 @@ namespace Solcery.UI.Create
             canvasGroup.blocksRaycasts = false;
         }
 
-        private void OnPointerEnterLineup(UICardsLineup lineup)
+        private void OnPointerEnterPlace(UIPlace place)
         {
-            LineupUnderPointer = lineup;
+            PlaceUnderPointer = place;
         }
 
-        private void OnPointerExitLineup(UICardsLineup lineup)
+        private void OnPointerExitPlace(UIPlace place)
         {
-            LineupUnderPointer = null;
+            PlaceUnderPointer = null;
         }
 
         private void CreatePlace()
         {
-            var cardPlace = Instantiate(cardsLineupPrefab, placesRect).GetComponent<UICardsLineup>();
+            var cardPlace = Instantiate(placePrefab, placesRect).GetComponent<UIPlace>();
             cardPlace.transform.SetSiblingIndex(_places.Count - 1);
             var initialPlaceId = _places[_places.Count - 1].PlaceId + 1;
-            cardPlace.Init(initialPlaceId, () => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, DeletePlace);
+            cardPlace.Init(initialPlaceId, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, DeletePlace);
             _places.Add(cardPlace);
 
             RebuildScroll();
         }
 
-        private void DeletePlace(UICardsLineup place)
+        private void DeletePlace(UIPlace place)
         {
             place.DeInit();
             _places.Remove(place);

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 namespace Solcery.UI.Create
 {
-    public class UILineupCard : MonoBehaviour
+    public class UIPlaceCard : MonoBehaviour
     {
-        public UILineupCardData Data { get; private set; }
+        public UIPlaceCardData Data { get; private set; }
 
         [SerializeField] private UIDroppableArea before = null;
         [SerializeField] private UIDroppableArea after = null;
-        [SerializeField] private UILineupCardAmountSwitcher amountSwitcher = null;
+        [SerializeField] private UIPlaceCardAmountSwitcher amountSwitcher = null;
         [SerializeField] private Button deleteButton = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardPicture = null;
@@ -19,11 +19,11 @@ namespace Solcery.UI.Create
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
-        private Action<UILineupCard> _onDelete;
+        private Action<UIPlaceCard> _onDelete;
 
-        public void Init(CollectionCardType cardType, Action<UILineupCard> onDelete, Action<UILineupCard, UIDroppableAreaOption> onPointerEnter, Action<UILineupCard, UIDroppableAreaOption> onPointerExit)
+        public void Init(CollectionCardType cardType, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
-            Data = new UILineupCardData(cardType, 1);
+            Data = new UIPlaceCardData(cardType, 1);
             _onDelete = onDelete;
 
             before?.Init(this, UIDroppableAreaOption.Before, onPointerEnter, onPointerExit);

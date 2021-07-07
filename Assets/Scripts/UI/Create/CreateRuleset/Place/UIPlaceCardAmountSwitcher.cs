@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Solcery.UI.Create
 {
-    public class UILineupCardAmountSwitcher : MonoBehaviour
+    public class UIPlaceCardAmountSwitcher : MonoBehaviour
     {
         [SerializeField] private int min;
         [SerializeField] private int max;

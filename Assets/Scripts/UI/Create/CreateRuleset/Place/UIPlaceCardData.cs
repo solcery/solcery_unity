@@ -1,11 +1,11 @@
 namespace Solcery.UI.Create
 {
-    public class UILineupCardData
+    public class UIPlaceCardData
     {
         public CollectionCardType CardType;
         public int Amount;
 
-        public UILineupCardData(CollectionCardType cardType, int amount)
+        public UIPlaceCardData(CollectionCardType cardType, int amount)
         {
             CardType = cardType;
             Amount = amount;

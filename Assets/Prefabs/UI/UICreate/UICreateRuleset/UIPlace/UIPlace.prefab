@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 7414954038188069483}
   - component: {fileID: 5422456824924151312}
   m_Layer: 5
-  m_Name: DeleteLineupButtonArea
+  m_Name: DeletePlaceButtonArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 1165308858779677456}
   - component: {fileID: 131660485957395917}
   m_Layer: 5
-  m_Name: UICardsLineup
+  m_Name: UIPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,8 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18789db75e0817d459b7e6a987bb41df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineupCardPrefab: {fileID: 134190363533606351, guid: a15155ccf3065c547ae7f111f560a055, type: 3}
-  deleteLineupButton: {fileID: 1053460417637146218}
+  placeCardPrefab: {fileID: 134190363533606351, guid: a15155ccf3065c547ae7f111f560a055, type: 3}
+  deletePlaceButton: {fileID: 1053460417637146218}
   cardsLG: {fileID: 1165308859243034196}
   fakeCardBefore: {fileID: 4984067147798905909}
   fakeCardAfter: {fileID: 1089273661208433390}
@@ -1230,7 +1230,7 @@ GameObject:
   - component: {fileID: 4023333850275951448}
   - component: {fileID: 1053460417637146218}
   m_Layer: 5
-  m_Name: DeleteButton
+  m_Name: DeletePlaceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,7 +1483,7 @@ GameObject:
   - component: {fileID: 3346028431786834471}
   - component: {fileID: 5135161997808419713}
   m_Layer: 5
-  m_Name: DeleteButtonBackground
+  m_Name: DeletePlaceButtonBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

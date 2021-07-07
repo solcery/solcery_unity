@@ -7,35 +7,35 @@ using TMPro;
 
 namespace Solcery.UI.Create
 {
-    public class UICardsLineup : MonoBehaviour
+    public class UIPlace : MonoBehaviour
     {
-        public List<UILineupCard> Cards => _cards;
+        public List<UIPlaceCard> Cards => _cards;
         public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDatas => _displayDatas;
         public int PlaceId => _placeId;
 
-        [SerializeField] private GameObject lineupCardPrefab = null;
-        [SerializeField] private Button deleteLineupButton = null;
+        [SerializeField] private GameObject placeCardPrefab = null;
+        [SerializeField] private Button deletePlaceButton = null;
         [SerializeField] private HorizontalLayoutGroup cardsLG = null;
-        [SerializeField] private UILineupCard fakeCardBefore = null;
-        [SerializeField] private UILineupCard fakeCardAfter = null;
+        [SerializeField] private UIPlaceCard fakeCardBefore = null;
+        [SerializeField] private UIPlaceCard fakeCardAfter = null;
         [SerializeField] private TMP_InputField placeIdInputField = null;
 
         private int _placeId;
-        private List<UILineupCard> _cards;
+        private List<UIPlaceCard> _cards;
         private Dictionary<int, PlaceDisplayDataForPlayer> _displayDatas;
         private Action _onRebuild;
-        private Action<UICardsLineup> _onPointerEnterLineup, _onPointerExitLineup, _onDeleteLineup;
-        private UILineupCard _cardUnderPointer;
+        private Action<UIPlace> _onPointerEnterPlace, _onPointerExitPlace, _onDeletePlace;
+        private UIPlaceCard _cardUnderPointer;
         private UIDroppableAreaOption _currentOption;
 
-        public void Init(int initialPlaceId, Action onRebuild, Action<UICardsLineup> onPointerEnterLineup, Action<UICardsLineup> onPointerExitLineup, Action<UICardsLineup> onDeleteLineup)
+        public void Init(int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
         {
             _onRebuild = onRebuild;
-            _onPointerEnterLineup = onPointerEnterLineup;
-            _onPointerExitLineup = onPointerExitLineup;
-            _onDeleteLineup = onDeleteLineup;
+            _onPointerEnterPlace = onPointerEnterPlace;
+            _onPointerExitPlace = onPointerExitPlace;
+            _onDeletePlace = onDeletePlace;
 
-            _cards = new List<UILineupCard>();
+            _cards = new List<UIPlaceCard>();
             _placeId = initialPlaceId;
             if (placeIdInputField != null)
                 placeIdInputField.text = _placeId.ToString();
@@ -64,7 +64,7 @@ namespace Solcery.UI.Create
 
             fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
-            deleteLineupButton.onClick.AddListener(() => onDeleteLineup?.Invoke(this));
+            deletePlaceButton.onClick.AddListener(() => onDeletePlace?.Invoke(this));
             placeIdInputField.onValueChanged.AddListener(OnPlaceIdValueChanged);
         }
 
@@ -75,12 +75,12 @@ namespace Solcery.UI.Create
 
         public void DeInit()
         {
-            deleteLineupButton.onClick.RemoveAllListeners();
+            deletePlaceButton.onClick.RemoveAllListeners();
         }
 
         public void CreateCard(CollectionCardType cardType)
         {
-            var lineUpCard = Instantiate(lineupCardPrefab, cardsLG.transform).GetComponent<UILineupCard>();
+            var lineUpCard = Instantiate(placeCardPrefab, cardsLG.transform).GetComponent<UIPlaceCard>();
 
             lineUpCard.Init(cardType, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
 
@@ -108,24 +108,24 @@ namespace Solcery.UI.Create
             _onRebuild?.Invoke();
         }
 
-        private void DeleteCard(UILineupCard card)
+        private void DeleteCard(UIPlaceCard card)
         {
             _cards.Remove(card);
             DestroyImmediate(card.gameObject);
             _onRebuild?.Invoke();
         }
 
-        private void OnDroppableAreaPointerEnter(UILineupCard card, UIDroppableAreaOption option)
+        private void OnDroppableAreaPointerEnter(UIPlaceCard card, UIDroppableAreaOption option)
         {
             _cardUnderPointer = card;
             _currentOption = option;
-            _onPointerEnterLineup?.Invoke(this);
+            _onPointerEnterPlace?.Invoke(this);
         }
 
-        private void OnDroppableAreaPointerExit(UILineupCard card, UIDroppableAreaOption option)
+        private void OnDroppableAreaPointerExit(UIPlaceCard card, UIDroppableAreaOption option)
         {
             _cardUnderPointer = null;
-            _onPointerExitLineup?.Invoke(this);
+            _onPointerExitPlace?.Invoke(this);
         }
     }
 }
