@@ -1,4 +1,7 @@
 using System;
+using System.Linq;
+using Solcery.Modules.Collection;
+using Solcery.Ruleset;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +27,23 @@ namespace Solcery.UI.Create
         public void Init(CollectionCardType cardType, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
             Data = new UIPlaceCardData(cardType, 1);
+            _onDelete = onDelete;
+
+            before?.Init(this, UIDroppableAreaOption.Before, onPointerEnter, onPointerExit);
+            after?.Init(this, UIDroppableAreaOption.After, onPointerEnter, onPointerExit);
+            amountSwitcher?.Init(Data.Amount, (newAmount) => Data.Amount = newAmount);
+            deleteButton?.onClick.AddListener(DeleteCard);
+
+            ApplyCardType();
+        }
+
+        public void InitFromRulesetData(RulesetData rulesetData, CardIndexAmount indexAmount, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
+        {
+            var cardIndex = indexAmount.Index;
+            var cardMintAddress = rulesetData.CardMintAddresses[cardIndex];
+            var collectionCardType = Collection.Instance.CollectionData.Value.CardTypes.Where(c => c.MintAddress == cardMintAddress).First();
+
+            Data = new UIPlaceCardData(collectionCardType, indexAmount.Amount);
             _onDelete = onDelete;
 
             before?.Init(this, UIDroppableAreaOption.Before, onPointerEnter, onPointerExit);

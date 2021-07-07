@@ -30,37 +30,40 @@ namespace Solcery.UI.Create
 
         public void Init(int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
         {
+            _placeId = initialPlaceId;
+            _cards = new List<UIPlaceCard>();
+
             _onRebuild = onRebuild;
             _onPointerEnterPlace = onPointerEnterPlace;
             _onPointerExitPlace = onPointerExitPlace;
             _onDeletePlace = onDeletePlace;
 
-            _cards = new List<UIPlaceCard>();
-            _placeId = initialPlaceId;
             if (placeIdInputField != null)
                 placeIdInputField.text = _placeId.ToString();
 
-            _displayDatas = new Dictionary<int, PlaceDisplayDataForPlayer>()
+            fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+            fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+            deletePlaceButton.onClick.AddListener(() => onDeletePlace?.Invoke(this));
+            placeIdInputField.onValueChanged.AddListener(OnPlaceIdValueChanged);
+        }
+
+        public void InitFromRulesetData(RulesetData rulesetData, PlaceData placeData, int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
+        {
+            _placeId = placeData.PlaceId;
+            _cards = new List<UIPlaceCard>();
+
+            foreach (var indexAmount in placeData.IndexAmount)
             {
-                {0, new PlaceDisplayDataForPlayer()
-                    {
-                        IsVisible = true,
-                        HorizontalAnchors = new PlaceDisplayAnchors(0, 1),
-                        VecticalAnchors = new PlaceDisplayAnchors(0, 1),
-                        CardLayoutOption = CardLayoutOption.LayedOut,
-                        CardFaceOption = CardFaceOption.Up,
-                    }
-                },
-                {1, new PlaceDisplayDataForPlayer()
-                    {
-                        IsVisible = false,
-                        HorizontalAnchors = new PlaceDisplayAnchors(0.23f, 0.7f),
-                        VecticalAnchors = new PlaceDisplayAnchors(0, 1),
-                        CardLayoutOption = CardLayoutOption.LayedOut,
-                        CardFaceOption = CardFaceOption.Up,
-                    }
-                }
-            };
+                CreateCardFromIndexAmount(rulesetData, indexAmount);
+            }
+
+            _onRebuild = onRebuild;
+            _onPointerEnterPlace = onPointerEnterPlace;
+            _onPointerExitPlace = onPointerExitPlace;
+            _onDeletePlace = onDeletePlace;
+
+            if (placeIdInputField != null)
+                placeIdInputField.text = _placeId.ToString();
 
             fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
@@ -78,11 +81,19 @@ namespace Solcery.UI.Create
             deletePlaceButton.onClick.RemoveAllListeners();
         }
 
-        public void CreateCard(CollectionCardType cardType)
+        private void CreateCardFromIndexAmount(RulesetData rulesetData, CardIndexAmount indexAmount)
         {
-            var lineUpCard = Instantiate(placeCardPrefab, cardsLG.transform).GetComponent<UIPlaceCard>();
+            var placeCard = Instantiate(placeCardPrefab, cardsLG.transform).GetComponent<UIPlaceCard>();
+            placeCard.InitFromRulesetData(rulesetData, indexAmount, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+            placeCard.transform.SetSiblingIndex(_cards.Count + 1);
+            _cards.Add(placeCard);
+        }
 
-            lineUpCard.Init(cardType, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+        public void CreateCardOnDrop(CollectionCardType cardType)
+        {
+            var placeCard = Instantiate(placeCardPrefab, cardsLG.transform).GetComponent<UIPlaceCard>();
+
+            placeCard.Init(cardType, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
 
             var cardUnderPointerIndex = _cards.Count > 0 ? _cards.IndexOf(_cardUnderPointer) : 0;
             var newCardIndex = _currentOption switch
@@ -101,9 +112,9 @@ namespace Solcery.UI.Create
                 newCardIndex = _cards.Count;
             }
 
-            lineUpCard.transform.SetSiblingIndex(newCardIndex + 1);
+            placeCard.transform.SetSiblingIndex(newCardIndex + 1);
 
-            _cards.Insert(newCardIndex, lineUpCard);
+            _cards.Insert(newCardIndex, placeCard);
 
             _onRebuild?.Invoke();
         }

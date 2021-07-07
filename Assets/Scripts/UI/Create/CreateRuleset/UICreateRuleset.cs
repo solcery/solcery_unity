@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Solcery.Modules.Collection;
 using Solcery.Ruleset;
 using Solcery.Utils;
 using Solcery.WebGL;
@@ -13,6 +14,9 @@ namespace Solcery.UI.Create
     public class UICreateRuleset : Singleton<UICreateRuleset>
     {
         public UIPlace PlaceUnderPointer { get; private set; }
+
+        //TODO: Remove after test
+        public string rulesetJson;
 
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
@@ -27,11 +31,8 @@ namespace Solcery.UI.Create
 
         private List<UIPlace> _places;
 
-        public void Init(Action onRebuild)
+        public void Init()
         {
-            _places = new List<UIPlace>();
-            _places.Add(initialsPlace);
-
             UICreate.Instance.OnGlobalRebuild += () =>
              {
                  RebuildScroll();
@@ -39,9 +40,52 @@ namespace Solcery.UI.Create
                  LayoutRebuilder.MarkLayoutForRebuild(content);
              };
 
+            _places = new List<UIPlace>();
+            _places.Add(initialsPlace);
+
+            addPlaceButton?.onClick.AddListener(CreatePlaceOnButton);
+
+            // if (Collection.Instance.CollectionData.Value.RulesetData == null)
+            // {
+            // CreateFromScratch();
+            // }
+            // else
+            // {
+            // CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
+
+            var testRulesetData = JsonUtility.FromJson<RulesetData>(rulesetJson);
+            CreateFromRulesetData(testRulesetData);
+            // }
+        }
+
+        private void CreateFromScratch()
+        {
+            Debug.Log("Creating from scratch");
+
             initialsPlace?.Init(0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
-            addPlaceButton?.onClick.AddListener(CreatePlace);
+
             createRulesetButton?.onClick.AddListener(CreateRuleset);
+        }
+
+        private void CreateFromRulesetData(RulesetData rulesetData)
+        {
+            Debug.Log("creating from RulesetData");
+
+            initialsPlace?.InitFromRulesetData(rulesetData, rulesetData.Deck[0], 0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
+
+            Debug.Log(rulesetData.Deck.Count);
+            for (int p = 1; p < rulesetData.Deck.Count; p++)
+            {
+                var placeData = rulesetData.Deck[p];
+
+                var cardPlace = Instantiate(placePrefab, placesRect).GetComponent<UIPlace>();
+                cardPlace.transform.SetSiblingIndex(_places.Count - 1);
+                var initialPlaceId = _places[_places.Count - 1].PlaceId + 1;
+                cardPlace.InitFromRulesetData(rulesetData, placeData, initialPlaceId, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, DeletePlace);
+                _places.Add(cardPlace);
+            }
+
+            RebuildScroll();
         }
 
         public void DeInit()
@@ -71,7 +115,7 @@ namespace Solcery.UI.Create
             PlaceUnderPointer = null;
         }
 
-        private void CreatePlace()
+        private void CreatePlaceOnButton()
         {
             var cardPlace = Instantiate(placePrefab, placesRect).GetComponent<UIPlace>();
             cardPlace.transform.SetSiblingIndex(_places.Count - 1);
@@ -100,9 +144,12 @@ namespace Solcery.UI.Create
         {
             scrollCG.alpha = 0;
             var vnp = scrollRect.verticalNormalizedPosition;
+            var hnp = scrollRect.horizontalNormalizedPosition;
+
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             await UniTask.WaitForEndOfFrame();
             scrollRect.verticalNormalizedPosition = Mathf.Clamp(vnp, 0f, 1f);
+            scrollRect.horizontalNormalizedPosition = Mathf.Clamp(hnp, 0f, 1f);
             scrollCG.alpha = 1;
         }
 

@@ -18,7 +18,7 @@ namespace Solcery.UI.Create
 
             UICollection.Instance?.Init(canvas, GlobalRebuild);
             await UICreateCard.Instance.Init();
-            UICreateRuleset.Instance?.Init(OnGlobalRebuild);
+            UICreateRuleset.Instance?.Init();
         }
 
         public void DeInit()

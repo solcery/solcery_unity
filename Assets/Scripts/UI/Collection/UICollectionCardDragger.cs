@@ -51,7 +51,7 @@ namespace Solcery.UI
             if (Input.GetMouseButtonUp(0))
             {
                 if (UICreateRuleset.Instance?.PlaceUnderPointer != null)
-                    UICreateRuleset.Instance?.PlaceUnderPointer.CreateCard(_cardClone.CardType);
+                    UICreateRuleset.Instance?.PlaceUnderPointer.CreateCardOnDrop(_cardClone.CardType);
 
                 DestroyImmediate(_cardClone.gameObject);
                 _cardClone = null;
