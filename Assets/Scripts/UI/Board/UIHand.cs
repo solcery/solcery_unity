@@ -26,7 +26,7 @@ namespace Solcery.UI.Play
             }
         }
 
-        protected abstract void OnCardCasted(string cardMintAddress, int cardId);
+        protected abstract void OnCardCasted(int cardId);
 
         public void DeleteAllCards()
         {

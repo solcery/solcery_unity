@@ -18,7 +18,7 @@ namespace Solcery.UI
         private BoardCardData _cardData;
         private BoardCardType _cardType;
 
-        public void Init(BoardCardData cardData, bool isInteractable, Action<string, int> onCardCasted = null)
+        public void Init(BoardCardData cardData, bool isInteractable, Action<int> onCardCasted = null)
         {
             _cardData = cardData;
             _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardTypeId);
@@ -67,7 +67,7 @@ namespace Solcery.UI
                 cardDescription.text = description;
         }
 
-        private void SubsribeToButton(bool isInteractable, Action<string, int> onCardCasted = null)
+        private void SubsribeToButton(bool isInteractable, Action<int> onCardCasted = null)
         {
             if (button != null)
             {
@@ -76,7 +76,7 @@ namespace Solcery.UI
                 if (isInteractable)
                     button.onClick.AddListener(() =>
                     {
-                        onCardCasted?.Invoke(_cardType.MintAddress, _cardData.CardId);
+                        onCardCasted?.Invoke(_cardData.CardId);
                     });
             }
         }

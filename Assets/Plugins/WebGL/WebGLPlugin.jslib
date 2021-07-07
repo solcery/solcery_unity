@@ -18,6 +18,6 @@ mergeInto(LibraryManager.library, {
       ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
     UseCard: function (cardMintAddress, cardIndex) {
-      ReactUnityWebGL.UseCard(Pointer_stringify(cardMintAddress), cardIndex);
+      ReactUnityWebGL.UseCard(cardIndex);
     },
   });

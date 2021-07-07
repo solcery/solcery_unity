@@ -13,7 +13,7 @@ namespace Solcery.UI.Play
         protected override void OnCardCasted(string cardMintAddress, int cardId)
         {
             UnityEngine.Debug.Log($"card played from hand: {cardMintAddress} _ {cardId}");
-            UnityToReact.Instance.CallUseCard(cardMintAddress, cardId);
+            UnityToReact.Instance.CallUseCard(cardId);
         }
     }
 }

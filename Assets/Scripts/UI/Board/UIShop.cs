@@ -12,7 +12,7 @@ namespace Solcery.UI.Play
 
         protected override void OnCardCasted(string cardMintAddress, int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardMintAddress, cardId);
+            UnityToReact.Instance.CallUseCard(cardId);
         }
     }
 }
