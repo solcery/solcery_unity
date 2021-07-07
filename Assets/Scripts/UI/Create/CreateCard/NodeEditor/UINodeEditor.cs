@@ -73,6 +73,7 @@ namespace Solcery.UI.Create.NodeEditor
                 contentBlocker.gameObject.SetActive(false);
                 contentBlockerButton.onClick.RemoveAllListeners();
                 subtypePopup.Close();
+                _brickTree.CheckValidity();
             }
         }
 

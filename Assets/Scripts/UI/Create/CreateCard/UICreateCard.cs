@@ -15,7 +15,7 @@ namespace Solcery.UI.Create
     {
         //TODO: delete after testing
         [Multiline(10)]
-        public string testBrickTreeJson;
+        public string testCardJson;
 
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
@@ -27,9 +27,13 @@ namespace Solcery.UI.Create
 
         private CancellationTokenSource _cts;
 
+        private CollectionCardType _currentCard;
+
         public async UniTask Init()
         {
             _cts = new CancellationTokenSource();
+            _currentCard = new CollectionCardType();
+
             await UINodeEditor.Instance.Init();
             cardDisplay?.Init();
 
@@ -41,12 +45,15 @@ namespace Solcery.UI.Create
                 var cardDescription = string.IsNullOrEmpty(cardDisplay.CardDescriptionInput.text) ? "Description" : cardDisplay.CardDescriptionInput.text;
                 var cardPicture = cardDisplay.CurrentPictureIndex;
 
-                UINodeEditor.Instance.BrickTree.MetaData.Name = cardName;
-                UINodeEditor.Instance.BrickTree.MetaData.Description = cardDescription;
-                UINodeEditor.Instance.BrickTree.MetaData.Picture = cardPicture;
+                _currentCard.Metadata = new CardMetadata();
+                _currentCard.Metadata.Name = cardName;
+                _currentCard.Metadata.Description = cardDescription;
+                _currentCard.Metadata.Picture = cardPicture;
 
-                UICreatingCardPopup.Instance.Open(UINodeEditor.Instance.BrickTree.MetaData);
-                UnityToReact.Instance?.CallUpdateCard();
+                _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;
+
+                UICreatingCardPopup.Instance.Open(_currentCard.Metadata);
+                UnityToReact.Instance?.CallUpdateCard(_currentCard);
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }
@@ -76,8 +83,14 @@ namespace Solcery.UI.Create
         public void OpenCard(CollectionCardType cardType)
         {
             Debug.Log("Open Card");
-            var testBrickTree = JsonConvert.DeserializeObject<BrickTree>(testBrickTreeJson);
-            UINodeEditor.Instance.OpenBrickTree(testBrickTree);
+
+            _currentCard = JsonConvert.DeserializeObject<CollectionCardType>(testCardJson);
+            //TODO: use this in production
+            // _currentCard = cardType;
+
+            UINodeEditor.Instance.OpenBrickTree(_currentCard.BrickTree);
+            Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
+            cardDisplay?.Init(_currentCard.Metadata);
         }
 
         private void OnBrickTreeValidityChange(bool isValid)

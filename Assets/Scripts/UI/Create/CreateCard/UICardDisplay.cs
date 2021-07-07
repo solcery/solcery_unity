@@ -27,6 +27,13 @@ namespace Solcery.UI.Create
             nextPictureButton.onClick.AddListener(NextPicture);
         }
 
+        public void Init(CardMetadata metadata)
+        {
+            cardNameInput.text = metadata.Name;
+            cardDescriptionInput.text = metadata.Description;
+            cardPicture.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
+        }
+
         public void DeInit()
         {
             prevPictureButton.onClick.RemoveAllListeners();

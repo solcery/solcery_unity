@@ -32,25 +32,15 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallUpdateCard()
+        public void CallUpdateCard(CollectionCardType card)
         {
-            // Debug.Log(JsonUtility.ToJson(UINodeEditor.Instance.BrickTree));
-            // var serializer = new JsonSerializer();
-            // serializer.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
-            // serializer.Serialize(UINodeEditor.Instance.BrickTree);
+            var cardJson = JsonConvert.SerializeObject(card);
 
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            UpdateCard(cardJson);
+#endif
 
-            var settings = new JsonSerializerSettings();
-            // settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            settings.MaxDepth = 20;
-            Debug.Log(JsonConvert.SerializeObject(UINodeEditor.Instance.BrickTree, settings));
-
-            // #if (UNITY_WEBGL && !UNITY_EDITOR)
-            // List<byte> buffer = new List<byte>();
-            // UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
-            // string buf = String.Join("|", buffer.ToArray());
-            // UpdateCard(buf);
-            // #endif
+            Debug.Log(cardJson);
         }
 
         public void CallUpdateRuleset(string ruleset)
