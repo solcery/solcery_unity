@@ -39,7 +39,7 @@ namespace Solcery.UI.Create
                  LayoutRebuilder.MarkLayoutForRebuild(content);
              };
 
-            initialCardsLineup?.Init(() => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, null);
+            initialCardsLineup?.Init(0, () => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, null);
             addPlaceButton?.onClick.AddListener(CreatePlace);
             createRulesetButton?.onClick.AddListener(CreateRuleset);
         }
@@ -74,8 +74,9 @@ namespace Solcery.UI.Create
         private void CreatePlace()
         {
             var cardPlace = Instantiate(cardsLineupPrefab, placesRect).GetComponent<UICardsLineup>();
-            cardPlace.transform.SetSiblingIndex(_places.Count);
-            cardPlace.Init(() => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, DeletePlace);
+            cardPlace.transform.SetSiblingIndex(_places.Count - 1);
+            var initialPlaceId = _places[_places.Count - 1].PlaceId + 1;
+            cardPlace.Init(initialPlaceId, () => RebuildScroll(), OnPointerEnterLineup, OnPointerExitLineup, DeletePlace);
             _places.Add(cardPlace);
 
             RebuildScroll();
@@ -119,6 +120,7 @@ namespace Solcery.UI.Create
             {
                 var place = _places[placeId];
                 var placeData = new PlaceData();
+                placeData.PlaceId = place.PlaceId;
 
                 for (int c = 0; c < place.Cards.Count; c++)
                 {

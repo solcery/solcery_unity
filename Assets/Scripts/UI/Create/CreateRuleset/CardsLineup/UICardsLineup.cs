@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Solcery.Ruleset;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Solcery.UI.Create
 {
@@ -10,13 +11,16 @@ namespace Solcery.UI.Create
     {
         public List<UILineupCard> Cards => _cards;
         public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDatas => _displayDatas;
+        public int PlaceId => _placeId;
 
         [SerializeField] private GameObject lineupCardPrefab = null;
         [SerializeField] private Button deleteLineupButton = null;
         [SerializeField] private HorizontalLayoutGroup cardsLG = null;
         [SerializeField] private UILineupCard fakeCardBefore = null;
         [SerializeField] private UILineupCard fakeCardAfter = null;
+        [SerializeField] private TMP_InputField placeIdInputField = null;
 
+        private int _placeId;
         private List<UILineupCard> _cards;
         private Dictionary<int, PlaceDisplayDataForPlayer> _displayDatas;
         private Action _onRebuild;
@@ -24,7 +28,7 @@ namespace Solcery.UI.Create
         private UILineupCard _cardUnderPointer;
         private UIDroppableAreaOption _currentOption;
 
-        public void Init(Action onRebuild, Action<UICardsLineup> onPointerEnterLineup, Action<UICardsLineup> onPointerExitLineup, Action<UICardsLineup> onDeleteLineup)
+        public void Init(int initialPlaceId, Action onRebuild, Action<UICardsLineup> onPointerEnterLineup, Action<UICardsLineup> onPointerExitLineup, Action<UICardsLineup> onDeleteLineup)
         {
             _onRebuild = onRebuild;
             _onPointerEnterLineup = onPointerEnterLineup;
@@ -32,6 +36,10 @@ namespace Solcery.UI.Create
             _onDeleteLineup = onDeleteLineup;
 
             _cards = new List<UILineupCard>();
+            _placeId = initialPlaceId;
+            if (placeIdInputField != null)
+                placeIdInputField.text = _placeId.ToString();
+
             _displayDatas = new Dictionary<int, PlaceDisplayDataForPlayer>()
             {
                 {0, new PlaceDisplayDataForPlayer()
@@ -57,6 +65,12 @@ namespace Solcery.UI.Create
             fakeCardBefore?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             fakeCardAfter?.Init(null, null, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             deleteLineupButton.onClick.AddListener(() => onDeleteLineup?.Invoke(this));
+            placeIdInputField.onValueChanged.AddListener(OnPlaceIdValueChanged);
+        }
+
+        private void OnPlaceIdValueChanged(string newInput)
+        {
+            int.TryParse(newInput, out _placeId);
         }
 
         public void DeInit()
