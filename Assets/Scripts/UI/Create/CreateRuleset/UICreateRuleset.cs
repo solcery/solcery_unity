@@ -15,9 +15,6 @@ namespace Solcery.UI.Create
     {
         public UIPlace PlaceUnderPointer { get; private set; }
 
-        //TODO: Remove after test
-        public string rulesetJson;
-
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
         [SerializeField] private RectTransform content = null;
@@ -45,32 +42,11 @@ namespace Solcery.UI.Create
 
             addPlaceButton?.onClick.AddListener(CreatePlaceOnButton);
 
-            // if (Collection.Instance.CollectionData.Value.RulesetData == null)
-            // {
-            // CreateFromScratch();
-            // }
-            // else
-            // {
-            // CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
-
-            var testRulesetData = JsonUtility.FromJson<RulesetData>(rulesetJson);
-            CreateFromRulesetData(testRulesetData);
-            // }
-        }
-
-        private void CreateFromScratch()
-        {
-            Debug.Log("Creating from scratch");
-
-            initialsPlace?.Init(0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
-
-            createRulesetButton?.onClick.AddListener(CreateRuleset);
+            CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
         }
 
         private void CreateFromRulesetData(RulesetData rulesetData)
         {
-            Debug.Log("creating from RulesetData");
-
             initialsPlace?.InitFromRulesetData(rulesetData, rulesetData.Deck[0], 0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
 
             Debug.Log(rulesetData.Deck.Count);
@@ -86,6 +62,8 @@ namespace Solcery.UI.Create
             }
 
             RebuildScroll();
+
+            createRulesetButton?.onClick.AddListener(UpdateRuleset);
         }
 
         public void DeInit()
@@ -153,9 +131,8 @@ namespace Solcery.UI.Create
             scrollCG.alpha = 1;
         }
 
-        private void CreateRuleset()
+        private void UpdateRuleset()
         {
-            Debug.Log("Creating Ruleset");
             var rulesetData = new RulesetData();
 
             var cardMintAddresses = new List<string>();
@@ -226,7 +203,7 @@ namespace Solcery.UI.Create
 
             var rulesetJson = JsonUtility.ToJson(rulesetData);
             Debug.Log(rulesetJson);
-            UnityToReact.Instance.CallCreateRuleset(rulesetJson);
+            UnityToReact.Instance.CallUpdateRuleset(rulesetJson);
         }
     }
 }

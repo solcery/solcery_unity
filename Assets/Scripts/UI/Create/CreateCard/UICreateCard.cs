@@ -41,7 +41,7 @@ namespace Solcery.UI.Create
                 UINodeEditor.Instance.BrickTree.MetaData.Picture = cardPicture;
 
                 UICreatingCardPopup.Instance.Open(UINodeEditor.Instance.BrickTree.MetaData);
-                UnityToReact.Instance?.CallCreateCard();
+                UnityToReact.Instance?.CallUpdateCard();
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }

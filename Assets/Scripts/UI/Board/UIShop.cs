@@ -10,7 +10,7 @@ namespace Solcery.UI.Play
             base.UpdateCards(cards, areButtonsInteractable: true);
         }
 
-        protected override void OnCardCasted(string cardMintAddress, int cardId)
+        protected override void OnCardCasted(int cardId)
         {
             UnityToReact.Instance.CallUseCard(cardId);
         }

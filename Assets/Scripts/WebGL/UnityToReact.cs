@@ -10,8 +10,8 @@ namespace Solcery.WebGL
     {
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
-        [DllImport("__Internal")] private static extern void CreateCard(string card);
-        [DllImport("__Internal")] private static extern void CreateRuleset(string ruleset);
+        [DllImport("__Internal")] private static extern void UpdateCard(string card);
+        [DllImport("__Internal")] private static extern void UpdateRuleset(string ruleset);
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
         [DllImport("__Internal")] private static extern void UseCard(int card);
@@ -30,20 +30,20 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallCreateCard()
+        public void CallUpdateCard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
             List<byte> buffer = new List<byte>();
             UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
             string buf = String.Join("|", buffer.ToArray());
-            CreateCard(buf);
+            UpdateCard(buf);
 #endif
         }
 
-        public void CallCreateRuleset(string ruleset)
+        public void CallUpdateRuleset(string ruleset)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-            CreateRuleset(ruleset);
+            UpdateRuleset(ruleset);
 #endif
         }
 

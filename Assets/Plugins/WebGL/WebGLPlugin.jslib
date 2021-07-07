@@ -5,11 +5,11 @@ mergeInto(LibraryManager.library, {
     OpenLinkInNewTab: function (link) {
       ReactUnityWebGL.OpenLinkInNewTab(Pointer_stringify(link));
     },
-    CreateCard: function (card, cardName) {
-      ReactUnityWebGL.CreateCard(Pointer_stringify(card));
+    UpdateCard: function (card) {
+      ReactUnityWebGL.UpdateCard(Pointer_stringify(card));
     },
-    CreateRuleset: function (ruleset) {
-      ReactUnityWebGL.CreateRuleset(Pointer_stringify(ruleset));
+    UpdateRuleset: function (ruleset) {
+      ReactUnityWebGL.UpdateRuleset(Pointer_stringify(ruleset));
     },
     CreateBoard: function () {
       ReactUnityWebGL.CreateBoard();
