@@ -10,7 +10,7 @@ namespace Solcery.WebGL
     {
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
-        [DllImport("__Internal")] private static extern void CreateCard(string card, string cardName);
+        [DllImport("__Internal")] private static extern void CreateCard(string card);
         [DllImport("__Internal")] private static extern void CreateRuleset(string ruleset);
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
@@ -36,7 +36,7 @@ namespace Solcery.WebGL
             List<byte> buffer = new List<byte>();
             UINodeEditor.Instance?.BrickTree?.SerializeToBytes(ref buffer);
             string buf = String.Join("|", buffer.ToArray());
-            CreateCard(buf, UINodeEditor.Instance?.BrickTree.MetaData.Name);
+            CreateCard(buf);
 #endif
         }
 
