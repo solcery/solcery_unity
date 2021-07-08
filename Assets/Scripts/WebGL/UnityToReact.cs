@@ -66,6 +66,7 @@ namespace Solcery.WebGL
 
         public void CallUseCard(int cardIndex)
         {
+            Debug.Log("UseCard");
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     UseCard(cardIndex);
 #endif

@@ -81,7 +81,7 @@ namespace Solcery.WebGL
 
                 boardData.Players = new List<PlayerData>() {
                     new PlayerData() { IsMe = false, IsActive = true, HP = 15, Coins = 36 },
-                    new PlayerData() { IsMe = true, IsActive = false, HP = 7, Coins = 12 }
+                    new PlayerData() { IsMe = true, IsActive = true, HP = 7, Coins = 12 }
                 };
 
                 Board.Instance?.UpdateBoard(boardData.Prettify());
