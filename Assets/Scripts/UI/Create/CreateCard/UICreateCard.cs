@@ -90,9 +90,9 @@ namespace Solcery.UI.Create
 
         public void OpenCard(CollectionCardType cardType)
         {
-            _currentCard = JsonConvert.DeserializeObject<CollectionCardType>(testCardJson);
+            //_currentCard = JsonConvert.DeserializeObject<CollectionCardType>(testCardJson);
             //TODO: use this in production
-            // _currentCard = cardType;
+             _currentCard = cardType;
 
             UINodeEditor.Instance.OpenBrickTree(_currentCard.BrickTree);
             Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
