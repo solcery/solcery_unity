@@ -79,7 +79,7 @@ namespace Solcery.UI
             for (int i = 0; i < collectionData.CardTypes.Count; i++)
             {
                 var newCard = Instantiate(cardPrefab, content).GetComponent<UICollectionCard>();
-                newCard.Init(collectionData.CardTypes[i], i, OnCardClicked, OnPointerDown, OnPointerUp);
+                newCard.Init(collectionData.CardTypes[i], i, OnCardClicked, OnPointerDown);
 
                 _cards.Add(newCard);
             }
@@ -88,16 +88,6 @@ namespace Solcery.UI
         public void SetMode(UICollectionMode mode)
         {
             _mode = mode;
-
-            // switch (_mode)
-            // {
-            //     case UICollectionMode.CreateCard:
-            //         createNewCardButton.gameObject.SetActive(true);
-            //         break;
-            //     case UICollectionMode.CreateRuleset:
-            //         createNewCardButton.gameObject.SetActive(false);
-            //         break;
-            // }
         }
 
         private void OnCardClicked(int cardIndex)
@@ -122,11 +112,6 @@ namespace Solcery.UI
                     dragger.StartDragging(_cards[cardIndex]);
                     break;
             }
-        }
-
-        private void OnPointerUp(int cardIndex)
-        {
-
         }
 
         public void Open()

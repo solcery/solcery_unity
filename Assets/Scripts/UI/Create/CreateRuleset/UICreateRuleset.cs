@@ -43,24 +43,6 @@ namespace Solcery.UI.Create
 
             if (Collection.Instance.CollectionData != null && Collection.Instance.CollectionData.Value != null && Collection.Instance.CollectionData.Value.RulesetData != null)
                 CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
-            // var str = "{\"CardTypes\":[{\"MintAddress\":\"5WPpZN8gM9kTLyAwp96DvEeFquCZQ3PpgqrFhYw5paGF\",\"Metadata\":{\"Picture\":3,\"Coins\":0,\"Name\":\"Card Adf\",\"Description\":\"CArdadas\"},\"BrickTree\":{\"Type\":0,\"Subtype\":0,\"HasField\":false,\"IntField\":0,\"Slots\":[]}}],\"RulesetData\":{\"CardMintAddresses\":[],\"Deck\":[{\"PlaceId\":0,\"IndexAmount\":[]}],\"DisplayData\":[]}}";
-            // var col = JsonUtility.FromJson<CollectionData>(str);
-            // CreateFromRulesetData(col.RulesetData);
-            //TODO: delete when checked
-            // var emptyRulesetData = new RulesetData()
-            // {
-            //     CardMintAddresses = new List<string>(),
-            //     Deck = new List<PlaceData>()
-            //     {
-            //         new PlaceData()
-            //         {
-            //             PlaceId = 0,
-            //             IndexAmount = new List<CardIndexAmount>(),
-            //         }
-            //     },
-            //     DisplayData = new RulesetDisplayData(),
-            // };
-            // CreateFromRulesetData(emptyRulesetData);
         }
 
         private void CreateFromRulesetData(RulesetData rulesetData)

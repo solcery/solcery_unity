@@ -7,7 +7,7 @@ namespace Solcery.Ruleset
     {
         Stacked,
         LayedOut,
-        Map,
-        Title
+        Map, //card name : amount
+        Title //name of the top card
     }
 }

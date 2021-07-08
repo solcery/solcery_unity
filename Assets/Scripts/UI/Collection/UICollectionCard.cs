@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Solcery.UI
 {
-    public class UICollectionCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class UICollectionCard : MonoBehaviour, IPointerDownHandler
     {
         public CollectionCardType CardType => _cardType;
 
@@ -20,15 +20,14 @@ namespace Solcery.UI
 
         [HideInInspector] [SerializeField] private CollectionCardType _cardType;
         private int _indexInCollection;
-        private Action<int> _onClick, _onPointerDown, _onPointerUp;
+        private Action<int> _onClick, _onPointerDown;
 
-        public void Init(CollectionCardType cardType, int indexInCollection, Action<int> onClick, Action<int> onPointerDown, Action<int> onPointerUp)
+        public void Init(CollectionCardType cardType, int indexInCollection, Action<int> onClick, Action<int> onPointerDown)
         {
             _cardType = cardType;
             _indexInCollection = indexInCollection;
             _onClick = onClick;
             _onPointerDown = onPointerDown;
-            _onPointerUp = onPointerUp;
 
             if (_cardType != null)
             {
@@ -87,11 +86,6 @@ namespace Solcery.UI
         public void OnPointerDown(PointerEventData eventData)
         {
             _onPointerDown?.Invoke(_indexInCollection);
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            _onPointerUp?.Invoke(_indexInCollection);
         }
     }
 }

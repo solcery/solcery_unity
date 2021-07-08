@@ -31,6 +31,7 @@ namespace Solcery.UI.Create
         public void Init(int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
         {
             _placeId = initialPlaceId;
+
             _cards = new List<UIPlaceCard>();
 
             _onRebuild = onRebuild;
@@ -50,12 +51,13 @@ namespace Solcery.UI.Create
         public void InitFromRulesetData(RulesetData rulesetData, PlaceData placeData, int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
         {
             _placeId = placeData.PlaceId;
-            _cards = new List<UIPlaceCard>();
-
             foreach (var indexAmount in placeData.IndexAmount)
             {
                 CreateCardFromIndexAmount(rulesetData, indexAmount);
             }
+
+
+            _cards = new List<UIPlaceCard>();
 
             _onRebuild = onRebuild;
             _onPointerEnterPlace = onPointerEnterPlace;
