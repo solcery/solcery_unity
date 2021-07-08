@@ -43,7 +43,9 @@ namespace Solcery.UI.Create
 
             if (Collection.Instance.CollectionData != null && Collection.Instance.CollectionData.Value != null && Collection.Instance.CollectionData.Value.RulesetData != null)
                 CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
-
+            // var str = "{\"CardTypes\":[{\"MintAddress\":\"5WPpZN8gM9kTLyAwp96DvEeFquCZQ3PpgqrFhYw5paGF\",\"Metadata\":{\"Picture\":3,\"Coins\":0,\"Name\":\"Card Adf\",\"Description\":\"CArdadas\"},\"BrickTree\":{\"Type\":0,\"Subtype\":0,\"HasField\":false,\"IntField\":0,\"Slots\":[]}}],\"RulesetData\":{\"CardMintAddresses\":[],\"Deck\":[{\"PlaceId\":0,\"IndexAmount\":[]}],\"DisplayData\":[]}}";
+            // var col = JsonUtility.FromJson<CollectionData>(str);
+            // CreateFromRulesetData(col.RulesetData);
             //TODO: delete when checked
             // var emptyRulesetData = new RulesetData()
             // {
@@ -184,28 +186,29 @@ namespace Solcery.UI.Create
                 deck.Add(placeData);
 
                 var placeDisplayDatas = place.DisplayDatas;
-
-                foreach (var idDisplayData in placeDisplayDatas)
-                {
-                    var playerId = idDisplayData.Key;
-                    var placeDisplayData = idDisplayData.Value;
-                    placeDisplayData.PlaceId = placeId;
-
-                    if (!playerDisplayDatasDict.ContainsKey(playerId))
+                if (place.DisplayDatas != null) {
+                    foreach (var idDisplayData in placeDisplayDatas)
                     {
-                        playerDisplayDatasDict.Add(playerId, new PlayerDisplayData()
+                        var playerId = idDisplayData.Key;
+                        var placeDisplayData = idDisplayData.Value;
+                        placeDisplayData.PlaceId = placeId;
+
+                        if (!playerDisplayDatasDict.ContainsKey(playerId))
                         {
-                            PlayerId = playerId,
-                            PlaceDisplayData = new List<PlaceDisplayDataForPlayer>()
+                            playerDisplayDatasDict.Add(playerId, new PlayerDisplayData()
                             {
-                                placeDisplayData
-                            }
-                        });
-                    }
-                    else
-                    {
-                        var playerDisplayData = playerDisplayDatasDict[playerId];
-                        playerDisplayData.PlaceDisplayData.Add(placeDisplayData);
+                                PlayerId = playerId,
+                                PlaceDisplayData = new List<PlaceDisplayDataForPlayer>()
+                                {
+                                    placeDisplayData
+                                }
+                            });
+                        }
+                        else
+                        {
+                            var playerDisplayData = playerDisplayDatasDict[playerId];
+                            playerDisplayData.PlaceDisplayData.Add(placeDisplayData);
+                        }
                     }
                 }
             }
