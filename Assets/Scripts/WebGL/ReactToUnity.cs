@@ -5,6 +5,7 @@ using Solcery.Modules.Collection;
 using Solcery.Modules.Wallet;
 using Solcery.Utils;
 using UnityEngine;
+using Newtonsoft.Json;
 
 namespace Solcery.WebGL
 {
@@ -21,7 +22,7 @@ namespace Solcery.WebGL
 
         public void UpdateCollection(string collectionJson)
         {
-            var collectionData = JsonUtility.FromJson<CollectionData>(collectionJson);
+            var collectionData = JsonConvert.DeserializeObject<CollectionData>(collectionJson);
             Collection.Instance?.UpdateCollection(collectionData);
         }
 
