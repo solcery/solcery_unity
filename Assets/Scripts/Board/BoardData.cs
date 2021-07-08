@@ -16,8 +16,8 @@ namespace Solcery
         [NonSerialized] public BoardCardType EndTurnCardType;
         [NonSerialized] public PlayerData Me;
         [NonSerialized] public PlayerData Enemy;
-        [NonSerialized] public int MyIndex;
-        [NonSerialized] public int EnemyIndex;
+        [NonSerialized] public int MyIndex = -1;
+        [NonSerialized] public int EnemyIndex = -1;
 
         public BoardCardType GetCardType(int cardTypeId)
         {
@@ -73,19 +73,30 @@ namespace Solcery
 
         private void AssignPlayers()
         {
+            bool atLeastOneMe = false;
+            bool atLeastOneEnemy = false;
+
             for (int i = 0; i < Players.Count; i++)
             {
                 if (Players[i].IsMe)
                 {
                     Me = Players[i];
                     MyIndex = i;
+                    atLeastOneMe = true;
                 }
                 else
                 {
                     Enemy = Players[i];
                     EnemyIndex = i;
+                    atLeastOneEnemy = true;
                 }
             }
+
+            if (!atLeastOneMe)
+                MyIndex = -1;
+
+            if (!atLeastOneEnemy)
+                EnemyIndex = -1;
         }
 
         private void FindEndTurnCard()

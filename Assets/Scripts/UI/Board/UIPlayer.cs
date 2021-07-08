@@ -15,7 +15,7 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
-            if (boardData.Players.Count > playerIndex)
+            if (playerIndex >= 0 && boardData.Players.Count > playerIndex)
             {
                 _isPlayer = (playerIndex == boardData.MyIndex);
                 _isActive = boardData.Players[playerIndex].IsActive;
