@@ -39,6 +39,12 @@ namespace Solcery.UI.Create.NodeEditor
             CreateFirstButton();
         }
 
+        public void CreateNewBrickTree()
+        {
+            _brickTree = new BrickTree();
+            RebuildAll();
+        }
+
         public void DeInit()
         {
             clipboard?.DeInit();

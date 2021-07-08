@@ -37,13 +37,20 @@ namespace Solcery.UI.Create
 
         private void ApplyState()
         {
-            button.image.color = _state switch
+            switch (_state)
             {
-                UICreateTabState.Highlighted => highlightedColor,
-                UICreateTabState.Selected => selectedColor,
-                UICreateTabState.Unselected => unselectedColor,
-                _ => unselectedColor
-            };
+                case UICreateTabState.Highlighted:
+                    button.image.color = highlightedColor;
+                    break;
+                case UICreateTabState.Selected:
+                    button.image.color = selectedColor;
+                    button.interactable = false;
+                    break;
+                case UICreateTabState.Unselected:
+                    button.image.color = unselectedColor;
+                    button.interactable = true;
+                    break;
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)

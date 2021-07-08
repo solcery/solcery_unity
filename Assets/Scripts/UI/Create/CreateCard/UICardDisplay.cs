@@ -40,6 +40,13 @@ namespace Solcery.UI.Create
             nextPictureButton.onClick.RemoveAllListeners();
         }
 
+        public void CreateNewCard()
+        {
+            RandomizePicture();
+            cardNameInput.text = null;
+            cardDescriptionInput.text = null;
+        }
+
         private void RandomizePicture()
         {
             var random = cardPictures.GetRandomSpriteIndex();

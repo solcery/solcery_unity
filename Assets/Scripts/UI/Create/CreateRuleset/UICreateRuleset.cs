@@ -88,7 +88,6 @@ namespace Solcery.UI.Create
 
         public void Open()
         {
-            Debug.Log("open");
             canvas.enabled = true;
             canvasGroup.blocksRaycasts = true;
         }

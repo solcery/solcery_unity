@@ -58,6 +58,14 @@ namespace Solcery.UI.Create
             });
         }
 
+        public void CreateNewCard()
+        {
+            _currentCard = new CollectionCardType();
+            UINodeEditor.Instance.CreateNewBrickTree();
+            cardDisplay.CreateNewCard();
+            Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
+        }
+
         public void DeInit()
         {
             _cts.Cancel();
@@ -82,8 +90,6 @@ namespace Solcery.UI.Create
 
         public void OpenCard(CollectionCardType cardType)
         {
-            Debug.Log("Open Card");
-
             _currentCard = JsonConvert.DeserializeObject<CollectionCardType>(testCardJson);
             //TODO: use this in production
             // _currentCard = cardType;

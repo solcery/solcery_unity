@@ -8,6 +8,7 @@ namespace Solcery.UI.Create
     public class UICreate : Singleton<UICreate>
     {
         public Action OnGlobalRebuild;
+        public UICreateTabs Tabs => tabs;
 
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private UICreateTabs tabs = null;
@@ -32,7 +33,6 @@ namespace Solcery.UI.Create
 
         private void GlobalRebuild()
         {
-            Debug.Log("Global rebuild");
             OnGlobalRebuild?.Invoke();
         }
     }

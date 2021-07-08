@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Cysharp.Threading.Tasks;
+using Solcery.FSM.Create;
 using Solcery.Modules.Collection;
 using Solcery.UI.Create;
 using Solcery.Utils;
@@ -19,6 +21,8 @@ namespace Solcery.UI
         [SerializeField] private GameObject cardPrefab = null;
         [SerializeField] private Button openButton = null;
         [SerializeField] private Button closeButton = null;
+        [SerializeField] private Button createNewCardButton = null;
+        [SerializeField] private CreateTransition fromRulesetToCard = null;
 
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
@@ -37,7 +41,24 @@ namespace Solcery.UI
             openButton.onClick.AddListener(Open);
             closeButton.onClick.AddListener(Close);
 
+            createNewCardButton.onClick.AddListener(async () => await CreateNewCard());
+
             Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
+        }
+
+        private async UniTask CreateNewCard()
+        {
+            switch (_mode)
+            {
+                case UICollectionMode.CreateCard:
+                    break;
+                case UICollectionMode.CreateRuleset:
+                    UICreate.Instance.Tabs.OnTabClicked(1);
+                    await CreateSM.Instance.PerformTransition(fromRulesetToCard);
+                    break;
+            }
+
+            UICreateCard.Instance.CreateNewCard();
         }
 
         public void DeInit()
@@ -67,6 +88,16 @@ namespace Solcery.UI
         public void SetMode(UICollectionMode mode)
         {
             _mode = mode;
+
+            // switch (_mode)
+            // {
+            //     case UICollectionMode.CreateCard:
+            //         createNewCardButton.gameObject.SetActive(true);
+            //         break;
+            //     case UICollectionMode.CreateRuleset:
+            //         createNewCardButton.gameObject.SetActive(false);
+            //         break;
+            // }
         }
 
         private void OnCardClicked(int cardIndex)
@@ -98,7 +129,7 @@ namespace Solcery.UI
 
         }
 
-        private void Open()
+        public void Open()
         {
             le.preferredWidth = 300;
             openButton.gameObject.SetActive(false);

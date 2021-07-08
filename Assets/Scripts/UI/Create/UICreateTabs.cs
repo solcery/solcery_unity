@@ -29,7 +29,7 @@ namespace Solcery.UI.Create
                 }
         }
 
-        private void OnTabClicked(int clickedTabIndex)
+        public void OnTabClicked(int clickedTabIndex)
         {
             if (_currentlySelected != clickedTabIndex)
             {
