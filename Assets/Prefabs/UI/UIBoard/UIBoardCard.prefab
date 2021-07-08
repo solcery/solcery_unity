@@ -41,6 +41,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2539030272527690735, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539030272527690735, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSize
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539030272527690735, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539030272527690735, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910557, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -127,7 +143,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2539030273299910558, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Name
-      value: UIBoardCard 1
+      value: UIBoardCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSize
+      value: 28.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc305af7050d92f45996471175d1fda9, type: 3}

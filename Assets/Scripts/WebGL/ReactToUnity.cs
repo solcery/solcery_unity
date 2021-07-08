@@ -54,14 +54,14 @@ namespace Solcery.WebGL
 
                 boardData.CardTypes = new List<BoardCardType>()
                 {
-                    new BoardCardType() { CardTypeId = 0, Metadata = new CardMetadata() { Picture = 0, Name = "0", Coins = 0} },
-                    new BoardCardType() { CardTypeId = 1, Metadata = new CardMetadata() { Picture = 1, Name = "1", Coins = 1} },
-                    new BoardCardType() { CardTypeId = 2, Metadata = new CardMetadata() { Picture = 2, Name = "2", Coins = 2} },
-                    new BoardCardType() { CardTypeId = 3, Metadata = new CardMetadata() { Picture = 3, Name = "3", Coins = 3} },
-                    new BoardCardType() { CardTypeId = 4, Metadata = new CardMetadata() { Picture = 4, Name = "4", Coins = 4} },
-                    new BoardCardType() { CardTypeId = 5, Metadata = new CardMetadata() { Picture = 5, Name = "5", Coins = 5} },
-                    new BoardCardType() { CardTypeId = 6, Metadata = new CardMetadata() { Picture = 6, Name = "6", Coins = 6} },
-                    new BoardCardType() { CardTypeId = 7, Metadata = new CardMetadata() { Picture = 7, Name = "7", Coins = 7} },
+                    new BoardCardType() { CardTypeId = 0, Metadata = new CardMetadata() { Picture = 0, Name = "0", Coins = 0, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 1, Metadata = new CardMetadata() { Picture = 1, Name = "1", Coins = 1, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 2, Metadata = new CardMetadata() { Picture = 2, Name = "2", Coins = 2, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 3, Metadata = new CardMetadata() { Picture = 3, Name = "3", Coins = 3, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 4, Metadata = new CardMetadata() { Picture = 4, Name = "4", Coins = 4, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 5, Metadata = new CardMetadata() { Picture = 5, Name = "5", Coins = 5, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 6, Metadata = new CardMetadata() { Picture = 6, Name = "6", Coins = 6, Description = "Some longass description right here very very long so we can see how this font resizes"} },
+                    new BoardCardType() { CardTypeId = 7, Metadata = new CardMetadata() { Picture = 7, Name = "7", Coins = 7, Description = "Some longass description right here very very long so we can see how this font resizes"} },
                 };
 
                 boardData.Cards = new List<BoardCardData>() {
