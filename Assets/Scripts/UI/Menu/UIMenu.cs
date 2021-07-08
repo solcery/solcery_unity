@@ -9,17 +9,17 @@ namespace Solcery.UI.Menu
     {
         public UIMenuButtonTooltips Tooltips => tooltips;
 
+        [SerializeField] private UIMenuSocialButtons socialButtons = null;
         [SerializeField] private UIMenuButtonTooltips tooltips = null;
-        [SerializeField] private Button twitterButton = null;
 
         public void Init()
         {
-            twitterButton.onClick.AddListener(() => UnityToReact.Instance?.CallOpenLinkInNewTab("https://twitter.com/SolceryGames"));
+            socialButtons?.Init();
         }
 
         public void DeInit()
         {
-            twitterButton.onClick.RemoveAllListeners();
+            socialButtons?.DeInit();
         }
     }
 }
