@@ -243,6 +243,7 @@ MonoBehaviour:
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
   cardCoinsCount: {fileID: 0}
+  display: {fileID: 0}
 --- !u!114 &421700161523493189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,8 +635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 255, y: 0}
+  m_SizeDelta: {x: 1014.0282, y: 180}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1165308859243034196
 MonoBehaviour:
@@ -1053,6 +1054,7 @@ MonoBehaviour:
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
   cardCoinsCount: {fileID: 0}
+  display: {fileID: 0}
 --- !u!114 &5759321232859086744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,7 +1237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7742203067709103227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1250,10 +1252,10 @@ RectTransform:
   m_Father: {fileID: 1165308858779677460}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 150}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 405, y: -95}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5134752573358691112
 MonoBehaviour:
