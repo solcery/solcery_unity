@@ -8,8 +8,8 @@ namespace Solcery.Modules.Collection
 {
     public class Collection : Singleton<Collection>
     {
-        // [Multiline(20)]
-        // public string testJson;
+        [SerializeField] private bool initWithTestJson = false;
+        [Multiline(20)] [SerializeField] private string testJson;
 
         public AsyncReactiveProperty<CollectionData> CollectionData => _collectionData;
         private AsyncReactiveProperty<CollectionData> _collectionData = new AsyncReactiveProperty<CollectionData>(null);
@@ -21,6 +21,12 @@ namespace Solcery.Modules.Collection
 
         public void Init()
         {
+            if (initWithTestJson)
+            {
+                var collectionData = JsonConvert.DeserializeObject<CollectionData>(testJson);
+                UpdateCollection(collectionData);
+            }
+
             // var collectionData = new CollectionData();
 
             // collectionData.CardTypes = new List<CollectionCardType>() {
@@ -44,9 +50,6 @@ namespace Solcery.Modules.Collection
             // };
 
             // _collectionData.Value = collectionData;
-
-            // var collectionData = JsonConvert.DeserializeObject<CollectionData>(testJson);
-            // UpdateCollection(collectionData);
         }
 
         public void DeInit()
