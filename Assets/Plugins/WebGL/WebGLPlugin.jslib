@@ -17,7 +17,7 @@ mergeInto(LibraryManager.library, {
     JoinBoard: function (gameKey) {
       ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
-    UseCard: function (cardMintAddress, cardIndex) {
+    UseCard: function (cardIndex) {
       ReactUnityWebGL.UseCard(cardIndex);
     },
   });
