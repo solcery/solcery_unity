@@ -65,8 +65,8 @@ namespace Solcery.UI
         {
             dragger?.DeInit();
 
-            _cts.Cancel();
-            _cts.Dispose();
+            _cts?.Cancel();
+            _cts?.Dispose();
         }
 
         public void UpdateCollection(CollectionData collectionData)

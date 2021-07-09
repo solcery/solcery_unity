@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Solcery.Modules.Collection;
 using Solcery.Ruleset;
 using Solcery.Utils;
+using Solcery.Utils.Reactives;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,10 +27,13 @@ namespace Solcery.UI.Create
         [SerializeField] private GameObject placePrefab = null;
         [SerializeField] private Button createRulesetButton = null;
 
+        private CancellationTokenSource _cts;
         private List<UIPlace> _places;
 
         public void Init()
         {
+            _cts = new CancellationTokenSource();
+
             UICreate.Instance.OnGlobalRebuild += () =>
              {
                  RebuildScroll();
@@ -41,8 +46,15 @@ namespace Solcery.UI.Create
 
             addPlaceButton?.onClick.AddListener(CreatePlaceOnButton);
 
-            if (Collection.Instance.CollectionData != null && Collection.Instance.CollectionData.Value != null && Collection.Instance.CollectionData.Value.RulesetData != null)
-                CreateFromRulesetData(Collection.Instance.CollectionData.Value.RulesetData);
+            Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
+        }
+
+        private void UpdateCollection(CollectionData collectionData)
+        {
+            if (collectionData == null) return;
+            if (collectionData.RulesetData == null) return;
+
+            CreateFromRulesetData(collectionData.RulesetData);
         }
 
         private void CreateFromRulesetData(RulesetData rulesetData)
@@ -67,7 +79,8 @@ namespace Solcery.UI.Create
 
         public void DeInit()
         {
-
+            _cts?.Cancel();
+            _cts?.Dispose();
         }
 
         public void Open()
@@ -168,7 +181,8 @@ namespace Solcery.UI.Create
                 deck.Add(placeData);
 
                 var placeDisplayDatas = place.DisplayDatas;
-                if (place.DisplayDatas != null) {
+                if (place.DisplayDatas != null)
+                {
                     foreach (var idDisplayData in placeDisplayDatas)
                     {
                         var playerId = idDisplayData.Key;

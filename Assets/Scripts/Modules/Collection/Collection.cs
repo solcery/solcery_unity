@@ -21,7 +21,7 @@ namespace Solcery.Modules.Collection
 
         public void DeInit()
         {
-
+            
         }
     }
 }
