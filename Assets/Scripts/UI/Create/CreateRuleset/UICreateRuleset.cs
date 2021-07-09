@@ -51,8 +51,16 @@ namespace Solcery.UI.Create
 
         private void UpdateCollection(CollectionData collectionData)
         {
-            if (collectionData == null) return;
-            if (collectionData.RulesetData == null) return;
+
+            if (collectionData == null)
+            {
+                return;
+            }
+
+            if (collectionData.RulesetData == null)
+            {
+                return;
+            }
 
             CreateFromRulesetData(collectionData.RulesetData);
         }
