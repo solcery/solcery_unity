@@ -1,29 +1,17 @@
-using System.Collections.Generic;
-using Solcery.Ruleset;
 using UnityEngine;
 
 namespace Solcery.UI.Create
 {
     public class UIPlaceDisplay : MonoBehaviour
     {
-        private UIPlaceDisplayData _displayData;
+        private UIPlaceDisplayData _data;
 
-        public void Init()
+        public void Init(UIPlaceDisplayData data)
         {
-            _displayData = new UIPlaceDisplayData()
-            {
-                DisplayDataByPlayer = new Dictionary<int, UIPlaceDisplayDataForPlayer>()
-                {
-                    {0, new UIPlaceDisplayDataForPlayer()
-                    {
-                        IsVisible = false,
-                        HorizontalAnchors = new PlaceDisplayAnchors(0, 1),
-                        VecticalAnchors = new PlaceDisplayAnchors(0, 1),
-                        CardFaceOption = CardFaceOption.Up,
-                        CardLayoutOption = CardLayoutOption.LayedOut,
-                    }}
-                }
-            };
+            if (data == null)
+                data = new UIPlaceDisplayData();
+
+            _data = data;
         }
     }
 }
