@@ -5,5 +5,10 @@ namespace Solcery.UI.Create
     public class UIPlaceDisplayData
     {
         public Dictionary<int, UIPlaceDisplayDataForPlayer> DisplayDataByPlayer;
+
+        public UIPlaceDisplayData()
+        {
+            DisplayDataByPlayer = new Dictionary<int, UIPlaceDisplayDataForPlayer>();
+        }
     }
 }

@@ -9,5 +9,12 @@ namespace Solcery
     {
         public List<CollectionCardType> CardTypes;
         public RulesetData RulesetData;
+
+        public CollectionData Prettify()
+        {
+            RulesetData?.Prettify();
+
+            return this;
+        }
     }
 }

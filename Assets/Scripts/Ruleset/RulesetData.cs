@@ -9,5 +9,10 @@ namespace Solcery.Ruleset
         public List<string> CardMintAddresses;
         public List<PlaceData> Deck;
         public RulesetDisplayData DisplayData;
+
+        public void Prettify()
+        {
+            DisplayData?.Prettify();
+        }
     }
 }

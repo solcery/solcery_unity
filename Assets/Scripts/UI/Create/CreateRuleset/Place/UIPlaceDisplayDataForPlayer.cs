@@ -9,5 +9,16 @@ namespace Solcery.UI.Create
         public PlaceDisplayAnchors VecticalAnchors;
         public CardFaceOption CardFaceOption;
         public CardLayoutOption CardLayoutOption;
+
+        public UIPlaceDisplayDataForPlayer Populate(PlaceDisplayDataForPlayer origin)
+        {
+            IsVisible = origin.IsVisible;
+            HorizontalAnchors = origin.HorizontalAnchors;
+            VecticalAnchors = origin.VecticalAnchors;
+            CardFaceOption = origin.CardFaceOption;
+            CardLayoutOption = origin.CardLayoutOption;
+
+            return this;
+        }
     }
 }

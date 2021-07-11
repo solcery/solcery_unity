@@ -23,14 +23,13 @@ namespace Solcery.WebGL
         public void UpdateCollection(string collectionJson)
         {
             var collectionData = JsonConvert.DeserializeObject<CollectionData>(collectionJson);
-            Collection.Instance?.UpdateCollection(collectionData);
+            Collection.Instance?.UpdateCollection(collectionData.Prettify());
         }
 
         public void UpdateBoard(string boardJson)
         {
             var boardData = JsonUtility.FromJson<BoardData>(boardJson);
-            var prettifiedBoardData = boardData.Prettify();
-            Board.Instance?.UpdateBoard(prettifiedBoardData);
+            Board.Instance?.UpdateBoard(boardData.Prettify());
         }
 
         public void SetCardCreationSigned(string signJson)
