@@ -22,7 +22,7 @@ namespace Solcery.UI.Create.NodeEditor
             fieldInput.contentType = fieldType switch
             {
                 UIBrickFieldType.Int => TMP_InputField.ContentType.IntegerNumber,
-                UIBrickFieldType.String => TMP_InputField.ContentType.Name,
+                UIBrickFieldType.String => TMP_InputField.ContentType.Standard,
                 _ => TMP_InputField.ContentType.Name
             };
 

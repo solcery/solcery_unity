@@ -26,7 +26,7 @@ MonoBehaviour:
   Subtype: 2
   Description: Applies <b>positive</b> if <b>condition</b> is passed, otherwise applies
     <b>negative</b>.
-  HasField: 0
+  HasField: 1
   FieldType: 1
   FieldName: TestField
   HasObjectSelection: 0

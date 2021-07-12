@@ -38,6 +38,11 @@ namespace Solcery.UI.Create.NodeEditor
             _onHighlighted = onHighlighted;
             _onDeHighlighted = onDeHighlighted;
 
+            if (config == null)
+                Debug.Log("null config");
+            if (config.Slots == null)
+                Debug.Log("slots is null");
+
             NodeSlots = new UINode[config.Slots.Count];
             Arrows = new UINodeArrow[config.Slots.Count];
 

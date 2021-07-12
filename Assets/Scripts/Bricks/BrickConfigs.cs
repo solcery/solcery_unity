@@ -36,6 +36,7 @@ namespace Solcery
     [CreateAssetMenu(menuName = "Solcery/Bricks/BrickConfigs", fileName = "BrickConfigs")]
     public class BrickConfigs : SerializedScriptableObject
     {
+        [SerializeField] [Newtonsoft.Json.JsonIgnore] private bool loadFromJson;
         [SerializeField] private Dictionary<BrickType, Dictionary<int, BrickConfig>> TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
         public BrickConfigsData ToData()
@@ -132,7 +133,8 @@ namespace Solcery
 
         public async UniTask Init()
         {
-            await StreamingAsseter.LoadBrickConfigs(fileName, this);
+            if (loadFromJson)
+                await StreamingAsseter.LoadBrickConfigs(fileName, this);
         }
 
         [Button(ButtonSizes.Gigantic)]
