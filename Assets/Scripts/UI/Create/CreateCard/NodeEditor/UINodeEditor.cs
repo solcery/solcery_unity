@@ -10,6 +10,7 @@ namespace Solcery.UI.Create.NodeEditor
     {
         public BrickTree BrickTree => _brickTree;
 
+        [SerializeField] private UINodeEditorZoom zoom = null;
         [SerializeField] private float horizontalPadding;
         [SerializeField] private float verticalPadding;
         [SerializeField] private GameObject brickNodePrefab = null;
@@ -33,6 +34,7 @@ namespace Solcery.UI.Create.NodeEditor
             await brickConfigs.Init();
             clipboard?.Init(nodeSelector, RebuildAll);
             nodeSelector?.Init();
+            zoom.SetActive(true);
 
             _brickTree = new BrickTree();
 
@@ -79,6 +81,7 @@ namespace Solcery.UI.Create.NodeEditor
                 contentBlocker.gameObject.SetActive(false);
                 contentBlockerButton.onClick.RemoveAllListeners();
                 subtypePopup.Close();
+                zoom.SetActive(true);
                 _brickTree.CheckValidity();
             }
         }
@@ -114,10 +117,12 @@ namespace Solcery.UI.Create.NodeEditor
                 if (_brickTree.Genesis == null)
                     helperText.gameObject.SetActive(true);
                 subtypePopup.Close();
+                zoom.SetActive(true);
                 contentBlocker.SetActive(false);
             });
             subtypePopup.gameObject.SetActive(true);
             subtypePopup.Open(button, brickConfigs, OnBrickAdded);
+            zoom.SetActive(false);
         }
 
         private void OnBrickAdded(SubtypeNameConfig subtypeNameConfig, UISelectBrickNode button)
@@ -126,6 +131,7 @@ namespace Solcery.UI.Create.NodeEditor
             contentBlocker.gameObject.SetActive(false);
             contentBlockerButton.onClick.RemoveAllListeners();
             subtypePopup.Close();
+            zoom.SetActive(true);
             CreateBrickNode(subtypeNameConfig.Config, button);
         }
 

@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using Solcery.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI.Create.NodeEditor
 {
     public class UIBrickSubtypePopup : UpdateableBehaviour
     {
         [SerializeField] private GameObject optionPrefab = null;
+        [SerializeField] private Transform content = null;
+        [SerializeField] private ScrollRect scroll = null;
 
         private UISelectBrickNode _button;
         private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
@@ -28,6 +31,8 @@ namespace Solcery.UI.Create.NodeEditor
             if (subTypeConfigs != null && subTypeConfigs.Count > 0)
                 foreach (var subTypeConfig in subTypeConfigs)
                     AddOption(subTypeConfig);
+
+            scroll.verticalNormalizedPosition = 1;
 
             // this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth / 2, button.transform.position.y);
         }
@@ -54,7 +59,7 @@ namespace Solcery.UI.Create.NodeEditor
 
         private void AddOption(SubtypeNameConfig subTypeName)
         {
-            var newOption = Instantiate(optionPrefab, this.transform).GetComponent<UIBrickSubtypePopupOption>();
+            var newOption = Instantiate(optionPrefab, content).GetComponent<UIBrickSubtypePopupOption>();
             _options.Add(newOption);
             newOption?.Init(subTypeName, OnOptionSelected);
         }

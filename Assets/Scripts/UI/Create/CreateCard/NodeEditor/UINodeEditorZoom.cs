@@ -12,9 +12,18 @@ namespace Solcery.UI.Create.NodeEditor
         [SerializeField] private UINodeEditorInput input = null;
 
         private float _scrollDelta;
+        private bool _isActive;
+
+        public void SetActive(bool isActive)
+        {
+            _isActive = isActive;
+        }
 
         public override void PerformUpdate()
         {
+            if (!_isActive)
+                return;
+
             if (input.IsMouseOver)
             {
                 _scrollDelta = Input.mouseScrollDelta.y;
