@@ -24,7 +24,7 @@ namespace Solcery.Modules.Collection
             if (initWithTestJson)
             {
                 var collectionData = JsonConvert.DeserializeObject<CollectionData>(testJson);
-                UpdateCollection(collectionData);
+                UpdateCollection(collectionData.Prettify());
             }
 
             // var collectionData = new CollectionData();

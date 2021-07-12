@@ -48,7 +48,7 @@ namespace Solcery.UI.Create
             placeIdInputField.onValueChanged.AddListener(OnPlaceIdValueChanged);
         }
 
-        public void InitFromRulesetData(RulesetData rulesetData, PlaceData placeData, int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
+        public void InitFromRulesetData(CollectionData collectionData, RulesetData rulesetData, PlaceData placeData, int initialPlaceId, Action onRebuild, Action<UIPlace> onPointerEnterPlace, Action<UIPlace> onPointerExitPlace, Action<UIPlace> onDeletePlace)
         {
             _placeId = placeData.PlaceId;
 
@@ -56,7 +56,7 @@ namespace Solcery.UI.Create
 
             foreach (var indexAmount in placeData.IndexAmount)
             {
-                CreateCardFromIndexAmount(rulesetData, indexAmount);
+                CreateCardFromIndexAmount(collectionData, rulesetData, indexAmount);
             }
 
             _onRebuild = onRebuild;
@@ -85,10 +85,10 @@ namespace Solcery.UI.Create
             deletePlaceButton.onClick.RemoveAllListeners();
         }
 
-        private void CreateCardFromIndexAmount(RulesetData rulesetData, CardIndexAmount indexAmount)
+        private void CreateCardFromIndexAmount(CollectionData collectionData, RulesetData rulesetData, CardIndexAmount indexAmount)
         {
             var placeCard = Instantiate(placeCardPrefab, cardsLG.transform).GetComponent<UIPlaceCard>();
-            placeCard.InitFromRulesetData(rulesetData, indexAmount, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
+            placeCard.InitFromRulesetData(collectionData, rulesetData, indexAmount, DeleteCard, OnDroppableAreaPointerEnter, OnDroppableAreaPointerExit);
             placeCard.transform.SetSiblingIndex(_cards.Count + 1);
             _cards.Add(placeCard);
         }

@@ -62,12 +62,12 @@ namespace Solcery.UI.Create
                 return;
             }
 
-            CreateFromRulesetData(collectionData.RulesetData);
+            CreateFromRulesetData(collectionData, collectionData.RulesetData);
         }
 
-        private void CreateFromRulesetData(RulesetData rulesetData)
+        private void CreateFromRulesetData(CollectionData collectionData, RulesetData rulesetData)
         {
-            initialsPlace?.InitFromRulesetData(rulesetData, rulesetData.Deck[0], 0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
+            initialsPlace?.InitFromRulesetData(collectionData, rulesetData, rulesetData.Deck[0], 0, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, null);
 
             for (int p = 1; p < rulesetData.Deck.Count; p++)
             {
@@ -76,7 +76,7 @@ namespace Solcery.UI.Create
                 var cardPlace = Instantiate(placePrefab, placesRect).GetComponent<UIPlace>();
                 cardPlace.transform.SetSiblingIndex(_places.Count - 1);
                 var initialPlaceId = _places[_places.Count - 1].PlaceId + 1;
-                cardPlace.InitFromRulesetData(rulesetData, placeData, initialPlaceId, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, DeletePlace);
+                cardPlace.InitFromRulesetData(collectionData, rulesetData, placeData, initialPlaceId, () => RebuildScroll(), OnPointerEnterPlace, OnPointerExitPlace, DeletePlace);
                 _places.Add(cardPlace);
             }
 

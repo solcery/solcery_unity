@@ -39,12 +39,12 @@ namespace Solcery.UI.Create
             ApplyCardType();
         }
 
-        public void InitFromRulesetData(RulesetData rulesetData, CardIndexAmount indexAmount, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
+        public void InitFromRulesetData(CollectionData collectionData, RulesetData rulesetData, CardIndexAmount indexAmount, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
             display?.Init(null);
             var cardIndex = indexAmount.Index;
             var cardMintAddress = rulesetData.CardMintAddresses[cardIndex];
-            var collectionCardType = Collection.Instance.CollectionData.Value.CardTypes.Where(c => c.MintAddress == cardMintAddress).First();
+            var collectionCardType = collectionData.GetCardTypeByMintAddress(cardMintAddress);
 
             Data = new UIPlaceCardData(collectionCardType, indexAmount.Amount);
             _onDelete = onDelete;
