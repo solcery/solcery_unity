@@ -103,7 +103,7 @@ namespace Solcery.UI
         }
 
         private void OnPointerDown(int cardIndex)
-        {
+        {            
             switch (_mode)
             {
                 case UICollectionMode.CreateCard:

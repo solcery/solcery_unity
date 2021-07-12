@@ -85,7 +85,8 @@ namespace Solcery.UI
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _onPointerDown?.Invoke(_indexInCollection);
+            if (eventData.button == PointerEventData.InputButton.Left)
+                _onPointerDown?.Invoke(_indexInCollection);
         }
     }
 }
