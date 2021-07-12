@@ -60,6 +60,9 @@ namespace Solcery.UI.Create
                 CreateCardFromIndexAmount(collectionData, rulesetData, indexAmount);
             }
 
+            var uiPlaceDisplayData = rulesetData.DisplayData.GetDisplayDataByPlaceId(_placeId);
+            display?.Init(uiPlaceDisplayData);
+
             _onRebuild = onRebuild;
             _onPointerEnterPlace = onPointerEnterPlace;
             _onPointerExitPlace = onPointerExitPlace;

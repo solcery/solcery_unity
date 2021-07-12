@@ -23,6 +23,7 @@ namespace Solcery.Ruleset
 
         public void Prettify()
         {
+            UnityEngine.Debug.Log(PlayerDisplayDatas.Count);
             _placeDisplayDatas = new Dictionary<int, UIPlaceDisplayData>();
 
             foreach (var playerDisplayData in PlayerDisplayDatas)
