@@ -188,7 +188,7 @@ namespace Solcery.UI.Create
 
                 deck.Add(placeData);
 
-                var placeDisplayDatas = place.DisplayDatas;
+                var placeDisplayDatas = place.Display.Data.DisplayDataByPlayer;
                 if (placeDisplayDatas != null)
                 {
                     foreach (var idDisplayData in placeDisplayDatas)

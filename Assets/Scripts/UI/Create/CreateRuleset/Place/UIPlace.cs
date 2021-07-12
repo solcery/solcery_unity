@@ -10,7 +10,8 @@ namespace Solcery.UI.Create
     public class UIPlace : MonoBehaviour
     {
         public List<UIPlaceCard> Cards => _cards;
-        public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDatas => _displayDatas;
+        public UIPlaceDisplay Display => display;
+        // public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDatas => _displayDatas;
         public int PlaceId => _placeId;
 
         [SerializeField] private GameObject placeCardPrefab = null;
@@ -23,7 +24,7 @@ namespace Solcery.UI.Create
 
         private int _placeId;
         private List<UIPlaceCard> _cards;
-        private Dictionary<int, PlaceDisplayDataForPlayer> _displayDatas;
+        // private Dictionary<int, PlaceDisplayDataForPlayer> _displayDatas;
         private Action _onRebuild;
         private Action<UIPlace> _onPointerEnterPlace, _onPointerExitPlace, _onDeletePlace;
         private UIPlaceCard _cardUnderPointer;

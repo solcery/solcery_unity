@@ -1,14 +1,15 @@
 using System.Collections.Generic;
+using Solcery.Ruleset;
 
 namespace Solcery.UI.Create
 {
     public class UIPlaceDisplayData
     {
-        public Dictionary<int, UIPlaceDisplayDataForPlayer> DisplayDataByPlayer;
+        public Dictionary<int, PlaceDisplayDataForPlayer> DisplayDataByPlayer;
 
         public UIPlaceDisplayData()
         {
-            DisplayDataByPlayer = new Dictionary<int, UIPlaceDisplayDataForPlayer>();
+            DisplayDataByPlayer = new Dictionary<int, PlaceDisplayDataForPlayer>();
         }
     }
 }

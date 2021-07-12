@@ -23,7 +23,6 @@ namespace Solcery.Ruleset
 
         public void Prettify()
         {
-            UnityEngine.Debug.Log(PlayerDisplayDatas.Count);
             _placeDisplayDatas = new Dictionary<int, UIPlaceDisplayData>();
 
             foreach (var playerDisplayData in PlayerDisplayDatas)
@@ -48,16 +47,14 @@ namespace Solcery.Ruleset
 
                     var displayDataByPlayer = placeDisplayData.DisplayDataByPlayer;
 
-                    UIPlaceDisplayDataForPlayer uiPlaceDisplayDataForPlayer;
 
                     if (!displayDataByPlayer.ContainsKey(playerId))
                     {
-                        uiPlaceDisplayDataForPlayer = new UIPlaceDisplayDataForPlayer(placeDisplayDataForPlayer);
-                        displayDataByPlayer.Add(playerId, uiPlaceDisplayDataForPlayer);
+                        displayDataByPlayer.Add(playerId, placeDisplayDataForPlayer);
                     }
                     else
                     {
-                        uiPlaceDisplayDataForPlayer = displayDataByPlayer[playerId];
+                        displayDataByPlayer[playerId] = placeDisplayDataForPlayer;
                     }
                 }
             }
