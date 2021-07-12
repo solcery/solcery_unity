@@ -19,6 +19,7 @@ namespace Solcery.UI.Create
         [SerializeField] private UIPlaceCard fakeCardBefore = null;
         [SerializeField] private UIPlaceCard fakeCardAfter = null;
         [SerializeField] private TMP_InputField placeIdInputField = null;
+        [SerializeField] private UIPlaceDisplay display = null;
 
         private int _placeId;
         private List<UIPlaceCard> _cards;

@@ -51,15 +51,13 @@ namespace Solcery.Ruleset
 
                     if (!displayDataByPlayer.ContainsKey(playerId))
                     {
-                        uiPlaceDisplayDataForPlayer = new UIPlaceDisplayDataForPlayer();
+                        uiPlaceDisplayDataForPlayer = new UIPlaceDisplayDataForPlayer(placeDisplayDataForPlayer);
                         displayDataByPlayer.Add(playerId, uiPlaceDisplayDataForPlayer);
                     }
                     else
                     {
                         uiPlaceDisplayDataForPlayer = displayDataByPlayer[playerId];
                     }
-
-                    uiPlaceDisplayDataForPlayer.Populate(placeDisplayDataForPlayer);
                 }
             }
         }

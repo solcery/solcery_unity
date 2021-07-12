@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using Solcery.Modules.Collection;
 using Solcery.Ruleset;
 using TMPro;
 using UnityEngine;
@@ -21,13 +19,11 @@ namespace Solcery.UI.Create
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
-        [SerializeField] private UIPlaceDisplay display = null;
 
         private Action<UIPlaceCard> _onDelete;
 
         public void Init(CollectionCardType cardType, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
-            display?.Init(null);
             Data = new UIPlaceCardData(cardType, 1);
             _onDelete = onDelete;
 
@@ -41,7 +37,6 @@ namespace Solcery.UI.Create
 
         public void InitFromRulesetData(CollectionData collectionData, RulesetData rulesetData, CardIndexAmount indexAmount, Action<UIPlaceCard> onDelete, Action<UIPlaceCard, UIDroppableAreaOption> onPointerEnter, Action<UIPlaceCard, UIDroppableAreaOption> onPointerExit)
         {
-            display?.Init(null);
             var cardIndex = indexAmount.Index;
             var cardMintAddress = rulesetData.CardMintAddresses[cardIndex];
             var collectionCardType = collectionData.GetCardTypeByMintAddress(cardMintAddress);
