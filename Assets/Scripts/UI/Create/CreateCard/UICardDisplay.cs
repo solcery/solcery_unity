@@ -9,6 +9,7 @@ namespace Solcery.UI.Create
         public int CurrentPictureIndex => _currentPictureIndex;
         public TMP_InputField CardNameInput => cardNameInput;
         public TMP_InputField CardDescriptionInput => cardDescriptionInput;
+        public TMP_InputField CardCoinsInput => cardCoinsInput;
 
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardPicture = null;
@@ -16,6 +17,7 @@ namespace Solcery.UI.Create
         [SerializeField] private Button nextPictureButton = null;
         [SerializeField] private TMP_InputField cardNameInput = null;
         [SerializeField] private TMP_InputField cardDescriptionInput = null;
+        [SerializeField] private TMP_InputField cardCoinsInput = null;
 
         private int _currentPictureIndex = 0;
 
@@ -25,14 +27,21 @@ namespace Solcery.UI.Create
 
             prevPictureButton.onClick.AddListener(PrevPicture);
             nextPictureButton.onClick.AddListener(NextPicture);
+
+            var caret = transform.GetComponentInChildren<TMP_SelectionCaret>();
+            caret.maskable = false;
         }
 
         public void Init(CardMetadata metadata)
         {
             cardNameInput.text = metadata.Name;
             cardDescriptionInput.text = metadata.Description;
+            cardCoinsInput.text = metadata.Coins.ToString();
             _currentPictureIndex = metadata.Picture;
             cardPicture.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
+
+            var caret = transform.GetComponentInChildren<TMP_SelectionCaret>();
+            caret.maskable = false;
         }
 
         public void DeInit()
@@ -46,6 +55,7 @@ namespace Solcery.UI.Create
             RandomizePicture();
             cardNameInput.text = null;
             cardDescriptionInput.text = null;
+            cardCoinsInput.text = 0.ToString();
         }
 
         private void RandomizePicture()

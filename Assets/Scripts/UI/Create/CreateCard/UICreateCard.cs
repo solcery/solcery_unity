@@ -13,10 +13,6 @@ namespace Solcery.UI.Create
 {
     public class UICreateCard : Singleton<UICreateCard>
     {
-        //TODO: delete after testing
-        [Multiline(10)]
-        public string testCardJson;
-
         [SerializeField] private Canvas canvas = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
         [SerializeField] private UICardDisplay cardDisplay = null;
@@ -43,11 +39,17 @@ namespace Solcery.UI.Create
             {
                 var cardName = string.IsNullOrEmpty(cardDisplay.CardNameInput.text) ? "Card" : cardDisplay.CardNameInput.text;
                 var cardDescription = string.IsNullOrEmpty(cardDisplay.CardDescriptionInput.text) ? "Description" : cardDisplay.CardDescriptionInput.text;
+
+                int cardCoins = 0;
+                if (!string.IsNullOrEmpty(cardDisplay.CardCoinsInput.text))
+                    int.TryParse(cardDisplay.CardCoinsInput.text, out cardCoins);
+
                 var cardPicture = cardDisplay.CurrentPictureIndex;
 
                 _currentCard.Metadata = new CardMetadata();
                 _currentCard.Metadata.Name = cardName;
                 _currentCard.Metadata.Description = cardDescription;
+                _currentCard.Metadata.Coins = cardCoins;
                 _currentCard.Metadata.Picture = cardPicture;
 
                 _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;
@@ -90,9 +92,7 @@ namespace Solcery.UI.Create
 
         public void OpenCard(CollectionCardType cardType)
         {
-            //_currentCard = JsonConvert.DeserializeObject<CollectionCardType>(testCardJson);
-            //TODO: use this in production
-             _currentCard = cardType;
+            _currentCard = cardType;
 
             UINodeEditor.Instance.OpenBrickTree(_currentCard.BrickTree);
             Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _cts.Token);
