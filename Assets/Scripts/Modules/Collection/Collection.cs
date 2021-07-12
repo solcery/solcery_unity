@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Solcery.Modules.Collection
     public class Collection : Singleton<Collection>
     {
         [SerializeField] private bool initWithTestJson = false;
-        [Multiline(20)] [SerializeField] private string testJson;
+        [ShowIf("initWithTestJson")][Multiline(20)] [SerializeField] private string testJson;
 
         public AsyncReactiveProperty<CollectionData> CollectionData => _collectionData;
         private AsyncReactiveProperty<CollectionData> _collectionData = new AsyncReactiveProperty<CollectionData>(null);

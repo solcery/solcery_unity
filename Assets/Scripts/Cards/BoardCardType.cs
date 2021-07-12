@@ -5,7 +5,7 @@ namespace Solcery
     [Serializable]
     public class BoardCardType
     {
-        public int CardTypeId;
+        public int Id;
         // public string MintAddress;
         public CardMetadata Metadata;
     }

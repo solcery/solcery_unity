@@ -11,13 +11,13 @@ namespace Solcery
         public List<PlayerData> Players;
         public int EndTurnCardId;
 
-        [NonSerialized] public Dictionary<int, BoardCardType> CardTypesById;
-        [NonSerialized] public Dictionary<CardPlace, List<BoardCardData>> Places;
-        [NonSerialized] public BoardCardType EndTurnCardType;
-        [NonSerialized] public PlayerData Me;
-        [NonSerialized] public PlayerData Enemy;
-        [NonSerialized] public int MyIndex = -1;
-        [NonSerialized] public int EnemyIndex = -1;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<CardPlace, List<BoardCardData>> Places;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardCardType EndTurnCardType;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Me;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Enemy;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int MyIndex = -1;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int EnemyIndex = -1;
 
         public BoardCardType GetCardType(int cardTypeId)
         {
@@ -45,7 +45,7 @@ namespace Solcery
 
             foreach (var cardType in CardTypes)
             {
-                var cardTypeId = cardType.CardTypeId;
+                var cardTypeId = cardType.Id;
 
                 if (CardTypesById.ContainsKey(cardTypeId))
                     CardTypesById[cardTypeId] = cardType;
@@ -106,7 +106,7 @@ namespace Solcery
                 if (card.CardId == EndTurnCardId)
                 {
                     var endTurnCardData = card;
-                    EndTurnCardType = GetCardType(endTurnCardData.CardTypeId);
+                    EndTurnCardType = GetCardType(endTurnCardData.CardType);
                 }
             }
         }

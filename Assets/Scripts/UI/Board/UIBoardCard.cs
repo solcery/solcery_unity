@@ -20,11 +20,13 @@ namespace Solcery.UI
 
         public void Init(BoardCardData cardData, bool isInteractable, Action<int> onCardCasted = null)
         {
+            // Debug.Log(cardData.CardTypeId);            
             _cardData = cardData;
-            _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardTypeId);
+            _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardType);
 
             if (_cardType != null)
             {
+                // Debug.Log($"{_cardType.Metadata.Picture}");
                 SetPicture(_cardType.Metadata.Picture);
                 SetCoinsCount(_cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
@@ -33,6 +35,7 @@ namespace Solcery.UI
             }
             else
             {
+                Debug.Log("BoardCardType is null");
                 SetName("unknown card type!");
                 SetDescription("unknown card type!");
             }

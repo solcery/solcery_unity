@@ -1,5 +1,8 @@
 using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using Solcery.Utils;
+using UnityEngine;
 
 namespace Solcery.Modules.Board
 {
@@ -8,6 +11,9 @@ namespace Solcery.Modules.Board
         public AsyncReactiveProperty<BoardData> BoardData => _boardData;
         private AsyncReactiveProperty<BoardData> _boardData = new AsyncReactiveProperty<BoardData>(null);
 
+        [SerializeField] private bool initWithTestJson = false;
+        [ShowIf("initWithTestJson")][Multiline(20)] [SerializeField] private string testJson;
+
         public void UpdateBoard(BoardData boardData)
         {
             _boardData.Value = boardData;
@@ -15,7 +21,11 @@ namespace Solcery.Modules.Board
 
         public void Init()
         {
-            
+            if (initWithTestJson)
+            {
+                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
+                UpdateBoard(boardData.Prettify());
+            }
         }
 
         public void DeInit()

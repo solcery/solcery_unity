@@ -58,6 +58,7 @@ namespace Solcery.UI.Play
             }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
+            Debug.Log(cardPlace);
             playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer, _isActive);
         }
 

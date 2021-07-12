@@ -6,7 +6,7 @@ namespace Solcery
     public class BoardCardData
     {
         public int CardId;
-        public int CardTypeId;
+        public int CardType;
         public CardPlace CardPlace;
     }
 }
