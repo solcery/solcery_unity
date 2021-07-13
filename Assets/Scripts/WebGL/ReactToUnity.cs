@@ -49,6 +49,8 @@ namespace Solcery.WebGL
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
+                Debug.Log("1");
+
                 var boardData = new BoardData();
 
                 boardData.CardTypes = new List<BoardCardType>()
@@ -76,6 +78,9 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 5},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 5},
                 };
 
                 boardData.Players = new List<PlayerData>() {
@@ -88,6 +93,8 @@ namespace Solcery.WebGL
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
+                Debug.Log("2");
+
                 var boardData = new BoardData();
 
                 boardData.CardTypes = new List<BoardCardType>()
@@ -107,11 +114,15 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 4, CardPlace = CardPlace.DrawPile2, CardType = 4},
                     new BoardCardData() { CardId = 5, CardPlace = CardPlace.Shop, CardType = 4},
                     new BoardCardData() { CardId = 6, CardPlace = CardPlace.DrawPile2, CardType = 3},
-                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 3},
-                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 3},
-                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 4},
-                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 4},
-                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Hand2, CardType = 5},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.Hand2, CardType = 3},
+                    new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 3},
+                    new BoardCardData() { CardId = 9, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 10, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 11, CardPlace = CardPlace.Hand2, CardType = 5},
+                    new BoardCardData() { CardId = 12, CardPlace = CardPlace.Hand2, CardType = 3},
+                    new BoardCardData() { CardId = 13, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 14, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 15, CardPlace = CardPlace.Hand2, CardType = 5},
                 };
 
                 boardData.Players = new List<PlayerData>() {
@@ -124,6 +135,7 @@ namespace Solcery.WebGL
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
+                Debug.Log("3");
                 Board.Instance?.UpdateBoard(null);
             }
 

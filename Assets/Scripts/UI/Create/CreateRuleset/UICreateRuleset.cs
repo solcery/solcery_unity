@@ -197,15 +197,6 @@ namespace Solcery.UI.Create
 
                 deck.Add(placeData);
 
-                if (place.Display == null)
-                    Debug.Log("null Display");
-
-                if (place.Display.Data == null)
-                    Debug.Log("null DisplayData");
-
-                if (place.Display.Data.DisplayDataByPlayer == null)
-                    Debug.Log("null DisplayDataForPlayer");
-
                 var placeDisplayDatas = place.Display.Data.DisplayDataByPlayer;
                 if (placeDisplayDatas != null)
                 {
