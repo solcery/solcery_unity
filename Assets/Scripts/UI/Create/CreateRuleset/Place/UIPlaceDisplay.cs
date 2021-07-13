@@ -6,7 +6,10 @@ namespace Solcery.UI.Create
     {
         public UIPlaceDisplayData Data => _data;
 
+#pragma warning disable 0414
         [SerializeField] private GameObject displayForPlayerPrefab = null;
+#pragma warning restore 0414
+
         private UIPlaceDisplayData _data;
 
         public void Init(UIPlaceDisplayData data)

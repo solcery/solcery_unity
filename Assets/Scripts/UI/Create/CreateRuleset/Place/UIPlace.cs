@@ -36,6 +36,8 @@ namespace Solcery.UI.Create
 
             _cards = new List<UIPlaceCard>();
 
+            display?.Init(null);
+
             _onRebuild = onRebuild;
             _onPointerEnterPlace = onPointerEnterPlace;
             _onPointerExitPlace = onPointerExitPlace;

@@ -7,6 +7,7 @@ namespace Solcery.UI.Create
 {
     public class UIPlaceDisplayForPlayer : MonoBehaviour
     {
+#pragma warning disable 0414
         [SerializeField] private Toggle visibilityToggle = null;
         [SerializeField] private TMP_Dropdown cardFaceDropdown = null;
         [SerializeField] private TMP_Dropdown cardLayoutDropdown = null;
@@ -14,6 +15,7 @@ namespace Solcery.UI.Create
         [SerializeField] private TMP_InputField maxXInput = null;
         [SerializeField] private TMP_InputField minYInput = null;
         [SerializeField] private TMP_InputField maxYInput = null;
+#pragma warning restore 0414
 
         private PlaceDisplayDataForPlayer _data;
 
