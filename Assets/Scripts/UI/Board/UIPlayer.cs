@@ -58,7 +58,7 @@ namespace Solcery.UI.Play
             }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-            playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer, _isActive);
+            playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer);
         }
 
         private void SetHP(int hp)

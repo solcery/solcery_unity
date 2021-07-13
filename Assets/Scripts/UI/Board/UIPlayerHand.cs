@@ -5,9 +5,9 @@ namespace Solcery.UI.Play
 {
     public class UIPlayerHand : UIHand
     {
-        public void UpdateCards(List<BoardCardData> cards, bool isPlayer, bool isActive)
+        public void UpdateCards(List<BoardCardData> cards, bool isPlayer)
         {
-            base.UpdateCards(cards, areButtonsInteractable: isPlayer);
+            base.UpdateCards(cards, areButtonsInteractable: isPlayer, showCoins: false);
         }
 
         protected override void OnCardCasted(int cardId)

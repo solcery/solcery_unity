@@ -13,12 +13,13 @@ namespace Solcery.UI
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
+        [SerializeField] private GameObject cardCoins = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
 
         private BoardCardData _cardData;
         private BoardCardType _cardType;
 
-        public void Init(BoardCardData cardData, bool isInteractable, Action<int> onCardCasted = null)
+        public void Init(BoardCardData cardData, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
             // Debug.Log(cardData.CardTypeId);            
             _cardData = cardData;
@@ -28,7 +29,7 @@ namespace Solcery.UI
             {
                 // Debug.Log($"{_cardType.Metadata.Picture}");
                 SetPicture(_cardType.Metadata.Picture);
-                SetCoinsCount(_cardType.Metadata.Coins);
+                SetCoins(showCoins, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SubsribeToButton(isInteractable, onCardCasted);
@@ -38,6 +39,7 @@ namespace Solcery.UI
                 Debug.Log("BoardCardType is null");
                 SetName("unknown card type!");
                 SetDescription("unknown card type!");
+                SetCoins(false);
             }
         }
 
@@ -52,10 +54,16 @@ namespace Solcery.UI
                 cardPicture.sprite = cardPictures.GetSpriteByIndex(picture);
         }
 
-        private void SetCoinsCount(int coinsCount)
+        private void SetCoins(bool showCoins, int coinsCount = 0)
         {
-            if (cardCoinsCount != null)
-                cardCoinsCount.text = coinsCount.ToString();
+            if (!showCoins)
+                cardCoins.SetActive(false);
+            else
+            {
+                cardCoins.SetActive(true);
+                if (cardCoinsCount != null)
+                    cardCoinsCount.text = coinsCount.ToString();
+            }
         }
 
         private void SetName(string name)

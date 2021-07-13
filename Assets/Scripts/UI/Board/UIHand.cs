@@ -10,7 +10,7 @@ namespace Solcery.UI.Play
 
         private List<UIBoardCard> _cardsInHand;
 
-        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable)
+        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool showCoins)
         {
             DeleteAllCards();
 
@@ -20,7 +20,7 @@ namespace Solcery.UI.Play
             foreach (var cardData in cards)
             {
                 var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                card.Init(cardData, areButtonsInteractable, OnCardCasted);
+                card.Init(cardData, areButtonsInteractable, showCoins, OnCardCasted);
 
                 _cardsInHand.Add(card);
             }

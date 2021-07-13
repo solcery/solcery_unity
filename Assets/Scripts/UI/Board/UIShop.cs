@@ -7,7 +7,7 @@ namespace Solcery.UI.Play
     {
         public void UpdateCards(List<BoardCardData> cards)
         {
-            base.UpdateCards(cards, areButtonsInteractable: true);
+            base.UpdateCards(cards, areButtonsInteractable: true, showCoins: true);
         }
 
         protected override void OnCardCasted(int cardId)

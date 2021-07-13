@@ -17,6 +17,7 @@ MonoBehaviour:
   cardPicture: {fileID: 5132839314367815702}
   cardName: {fileID: 193537293598768024}
   cardDescription: {fileID: 7554450347796220223}
+  cardCoins: {fileID: 193537293207800331}
   cardCoinsCount: {fileID: 8287747703684669853}
 --- !u!1001 &5470393623768048336
 PrefabInstance:
@@ -161,6 +162,10 @@ PrefabInstance:
       propertyPath: m_fontSizeMin
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5279673558798215387, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc305af7050d92f45996471175d1fda9, type: 3}
 --- !u!1 &7554450346966297934 stripped
@@ -212,6 +217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &193537293207800331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5279673558798215387, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+  m_PrefabInstance: {fileID: 5470393623768048336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8287747703684669853 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4100880009830237005, guid: dc305af7050d92f45996471175d1fda9, type: 3}
