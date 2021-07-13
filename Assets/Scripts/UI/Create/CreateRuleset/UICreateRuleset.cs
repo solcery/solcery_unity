@@ -27,6 +27,8 @@ namespace Solcery.UI.Create
         [SerializeField] private GameObject placePrefab = null;
         [SerializeField] private Button createRulesetButton = null;
 
+        private bool hasBeenOpenedAtLeastOnce = false;
+
         private CancellationTokenSource _cts;
         private List<UIPlace> _places;
 
@@ -95,6 +97,13 @@ namespace Solcery.UI.Create
         {
             canvas.enabled = true;
             canvasGroup.blocksRaycasts = true;
+
+            if (!hasBeenOpenedAtLeastOnce)
+            {
+                Debug.Log("open collection for the first time");
+                hasBeenOpenedAtLeastOnce = true;
+                UICollection.Instance?.Open();
+            }
         }
 
         public void Close()

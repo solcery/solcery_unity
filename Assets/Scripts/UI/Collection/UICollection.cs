@@ -21,7 +21,8 @@ namespace Solcery.UI
         [SerializeField] private GameObject cardPrefab = null;
         [SerializeField] private Button openButton = null;
         [SerializeField] private Button closeButton = null;
-        [SerializeField] private Button createNewCardButton = null;
+        [SerializeField] private Button topCreateNewCardButton = null;
+        [SerializeField] private Button botCreateNewCardButton = null;
         [SerializeField] private CreateTransition fromRulesetToCard = null;
 
         private List<UICollectionCard> _cards;
@@ -41,7 +42,8 @@ namespace Solcery.UI
             openButton.onClick.AddListener(Open);
             closeButton.onClick.AddListener(Close);
 
-            createNewCardButton.onClick.AddListener(async () => await CreateNewCard());
+            topCreateNewCardButton.onClick.AddListener(async () => await CreateNewCard());
+            botCreateNewCardButton.onClick.AddListener(async () => await CreateNewCard());
 
             Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
@@ -74,11 +76,18 @@ namespace Solcery.UI
             DeleteAllCards();
             _cards = new List<UICollectionCard>();
 
-            if (collectionData == null) return;
+            if (collectionData == null)
+            {
+                botCreateNewCardButton.gameObject.SetActive(false);
+                return;
+            }
+
+            botCreateNewCardButton.gameObject.SetActive(!(collectionData.CardTypes.Count == 0));
 
             for (int i = 0; i < collectionData.CardTypes.Count; i++)
             {
                 var newCard = Instantiate(cardPrefab, content).GetComponent<UICollectionCard>();
+                newCard.transform.SetSiblingIndex(i + 1);
                 newCard.Init(collectionData.CardTypes[i], i, OnCardClicked, OnPointerDown);
 
                 _cards.Add(newCard);
@@ -103,7 +112,7 @@ namespace Solcery.UI
         }
 
         private void OnPointerDown(int cardIndex)
-        {            
+        {
             switch (_mode)
             {
                 case UICollectionMode.CreateCard:
