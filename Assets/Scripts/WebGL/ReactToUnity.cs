@@ -81,6 +81,13 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 5},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.PlayedThisTurn, CardType = 5},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 5},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 4},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 5},
                 };
 
                 boardData.Players = new List<PlayerData>() {

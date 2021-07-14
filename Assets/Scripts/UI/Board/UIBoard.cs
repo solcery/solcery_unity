@@ -10,7 +10,7 @@ namespace Solcery.UI.Play
         [SerializeField] private UIPlayer enemy = null;
         [SerializeField] private UIShop shop = null;
         [SerializeField] private UIDrawPile deck = null;
-        [SerializeField] private UIDrawPile playedThisTurn = null;
+        [SerializeField] private UIPlayedThisTurn playedThisTurn = null;
         [SerializeField] private Button endTurnButton = null;
 
         private BoardData _boardData;
@@ -34,11 +34,11 @@ namespace Solcery.UI.Play
             player?.OnBoardUpdate(boardData, boardData.MyIndex);
             enemy?.OnBoardUpdate(boardData, boardData.EnemyIndex);
 
-            deck.SetCardsCount(boardData.Places.ContainsKey(CardPlace.Deck) ? boardData.Places[CardPlace.Deck].Count : 0);
-            playedThisTurn.SetCardsCount(boardData.Places.ContainsKey(CardPlace.PlayedThisTurn) ? boardData.Places[CardPlace.PlayedThisTurn].Count : 0);
-            shop.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
+            deck?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.Deck) ? boardData.Places[CardPlace.Deck].Count : 0);
+            shop?.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
+            playedThisTurn?.UpdateCards(boardData.Places.ContainsKey(CardPlace.PlayedThisTurn) ? boardData.Places[CardPlace.PlayedThisTurn] : null);
 
-            endTurnButton.gameObject.SetActive(boardData.Me.IsActive);
+            endTurnButton?.gameObject.SetActive(boardData.Me.IsActive);
             endTurnButton.interactable = boardData.Me.IsActive;
         }
 
