@@ -45,7 +45,7 @@ namespace Solcery.UI
 
         public void DeInit()
         {
-            button.onClick.RemoveAllListeners();
+            button?.onClick?.RemoveAllListeners();
         }
 
         private void SetPicture(int picture)

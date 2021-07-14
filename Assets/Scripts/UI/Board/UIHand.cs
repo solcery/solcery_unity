@@ -6,11 +6,12 @@ namespace Solcery.UI.Play
     public abstract class UIHand : MonoBehaviour
     {
         [SerializeField] private GameObject cardPrefab = null;
+        [SerializeField] private GameObject cardFaceDownPrefab = null;
         [SerializeField] private Transform content = null;
 
         private List<UIBoardCard> _cardsInHand;
 
-        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool showCoins)
+        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {
             DeleteAllCards();
 
@@ -19,8 +20,17 @@ namespace Solcery.UI.Play
 
             foreach (var cardData in cards)
             {
-                var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                card.Init(cardData, areButtonsInteractable, showCoins, OnCardCasted);
+                UIBoardCard card;
+
+                if (!areCardsFaceDown)
+                {
+                    card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
+                    card.Init(cardData, areButtonsInteractable, showCoins, OnCardCasted);
+                }
+                else
+                {
+                    card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
+                }
 
                 _cardsInHand.Add(card);
             }

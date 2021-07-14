@@ -123,6 +123,10 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 13, CardPlace = CardPlace.Hand2, CardType = 4},
                     new BoardCardData() { CardId = 14, CardPlace = CardPlace.Hand2, CardType = 4},
                     new BoardCardData() { CardId = 15, CardPlace = CardPlace.Hand2, CardType = 5},
+                    new BoardCardData() { CardId = 16, CardPlace = CardPlace.Hand1, CardType = 3},
+                    new BoardCardData() { CardId = 17, CardPlace = CardPlace.Hand1, CardType = 4},
+                    new BoardCardData() { CardId = 18, CardPlace = CardPlace.Hand1, CardType = 4},
+                    new BoardCardData() { CardId = 19, CardPlace = CardPlace.Hand1, CardType = 5},
                 };
 
                 boardData.Players = new List<PlayerData>() {
