@@ -8,10 +8,16 @@ namespace Solcery.UI.Play
         [SerializeField] private UIPlayerHand playerHand = null;
         [SerializeField] private UIDrawPile playerDrawPile = null;
         [SerializeField] private TextMeshProUGUI hpText = null;
+        [SerializeField] private UIDiv hpDiv = null;
+        [SerializeField] private UIDiv coinsDiv = null;
         [SerializeField] private TextMeshProUGUI coinsText = null;
 
         private bool _isPlayer;
         private bool _isActive;
+        private int _currentHP;
+        private bool _isInitialHp = true;
+        private int _currentCoins;
+        private bool _isInitialCoins = true;
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
@@ -61,14 +67,34 @@ namespace Solcery.UI.Play
             playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer);
         }
 
-        private void SetHP(int hp)
+        private void SetHP(int newHP)
         {
-            if (hpText != null) hpText.text = hp.ToString();
+            if (_currentHP != newHP)
+            {
+                if (!_isInitialHp)
+                    hpDiv?.Show(newHP - _currentHP);
+            }
+
+            _currentHP = newHP;
+            _isInitialHp = false;
+
+            if (hpText != null)
+                hpText.text = newHP.ToString();
         }
 
-        private void SetCoins(int coins)
+        private void SetCoins(int newCoins)
         {
-            if (coinsText != null) coinsText.text = coins.ToString();
+            if (_currentCoins != newCoins)
+            {
+                if (!_isInitialCoins)
+                    coinsDiv?.Show(newCoins - _currentCoins);
+            }
+
+            _currentCoins = newCoins;
+            _isInitialCoins = false;
+
+            if (coinsText != null)
+                coinsText.text = newCoins.ToString();
         }
     }
 }
