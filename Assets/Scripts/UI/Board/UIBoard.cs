@@ -35,16 +35,16 @@ namespace Solcery.UI.Play
             shop.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
 
             endTurnButton.gameObject.SetActive(boardData.Me.IsActive);
+            endTurnButton?.onClick.RemoveAllListeners();
 
             if (boardData.Me.IsActive)
                 endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked(boardData));
-            else
-                endTurnButton?.onClick.RemoveAllListeners();
         }
 
         private void OnEndTurnButtonClicked(BoardData boardData)
         {
             UnityToReact.Instance.CallUseCard(boardData.EndTurnCardId);
+            endTurnButton?.onClick.RemoveAllListeners();
         }
     }
 }
