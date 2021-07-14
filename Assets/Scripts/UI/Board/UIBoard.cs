@@ -13,9 +13,11 @@ namespace Solcery.UI.Play
         [SerializeField] private UIDrawPile playedThisTurn = null;
         [SerializeField] private Button endTurnButton = null;
 
+        private BoardData _boardData;
+
         public void Init()
         {
-
+            endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked());
         }
 
         public void DeInit()
@@ -25,6 +27,8 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData)
         {
+            _boardData = boardData;
+
             this.gameObject.SetActive(true);
 
             player?.OnBoardUpdate(boardData, boardData.MyIndex);
@@ -35,16 +39,16 @@ namespace Solcery.UI.Play
             shop.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
 
             endTurnButton.gameObject.SetActive(boardData.Me.IsActive);
-            endTurnButton?.onClick.RemoveAllListeners();
-
-            if (boardData.Me.IsActive)
-                endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked(boardData));
+            endTurnButton.interactable = boardData.Me.IsActive;
         }
 
-        private void OnEndTurnButtonClicked(BoardData boardData)
+        private void OnEndTurnButtonClicked()
         {
-            UnityToReact.Instance.CallUseCard(boardData.EndTurnCardId);
-            endTurnButton?.onClick.RemoveAllListeners();
+            if (_boardData != null && _boardData.Me != null && _boardData.Me.IsActive)
+            {
+                UnityToReact.Instance.CallUseCard(_boardData.EndTurnCardId);
+                endTurnButton.interactable = false;
+            }
         }
     }
 }
