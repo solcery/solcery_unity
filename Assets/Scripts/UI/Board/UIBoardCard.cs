@@ -22,10 +22,13 @@ namespace Solcery.UI
         private BoardCardType _cardType;
         private Action<int> _onCardCasted;
 
+        private bool _isInteractable;
         private bool _hasBeenClicked = false;
 
         public void Init(BoardCardData cardData, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
+            _isInteractable = isInteractable;
+
             _cardData = cardData;
             _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardType);
             _onCardCasted = onCardCasted;
@@ -36,7 +39,7 @@ namespace Solcery.UI
                 SetCoins(showCoins, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
-                SubsribeToButton(isInteractable);
+                SubsribeToButton();
             }
             else
             {
@@ -82,9 +85,9 @@ namespace Solcery.UI
                 cardDescription.text = description;
         }
 
-        private void SubsribeToButton(bool isInteractable)
+        private void SubsribeToButton()
         {
-            if (isInteractable)
+            if (_isInteractable)
             {
                 pointerHandler.enabled = true;
                 pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown);
@@ -110,7 +113,8 @@ namespace Solcery.UI
             if (!_hasBeenClicked)
             {
                 _hasBeenClicked = true;
-                Debug.Log(_cardType.Metadata.Name);
+                animator?.SetTrigger("Pressed");
+                pointerHandler.enabled = false;
                 _onCardCasted?.Invoke(_cardData.CardId);
             }
         }
