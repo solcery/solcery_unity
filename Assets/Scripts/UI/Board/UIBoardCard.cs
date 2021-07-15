@@ -8,6 +8,8 @@ namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {
+        [SerializeField] private Animator animator = null;
+        [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Button button = null;
         [SerializeField] private Image cardPicture = null;
@@ -18,21 +20,23 @@ namespace Solcery.UI
 
         private BoardCardData _cardData;
         private BoardCardType _cardType;
+        private Action<int> _onCardCasted;
+
+        private bool _hasBeenClicked = false;
 
         public void Init(BoardCardData cardData, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
-            // Debug.Log(cardData.CardTypeId);            
             _cardData = cardData;
             _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardType);
+            _onCardCasted = onCardCasted;
 
             if (_cardType != null)
             {
-                // Debug.Log($"{_cardType.Metadata.Picture}");
                 SetPicture(_cardType.Metadata.Picture);
                 SetCoins(showCoins, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
-                SubsribeToButton(isInteractable, onCardCasted);
+                SubsribeToButton(isInteractable);
             }
             else
             {
@@ -78,17 +82,36 @@ namespace Solcery.UI
                 cardDescription.text = description;
         }
 
-        private void SubsribeToButton(bool isInteractable, Action<int> onCardCasted = null)
+        private void SubsribeToButton(bool isInteractable)
         {
-            if (button != null)
+            if (isInteractable)
             {
-                button.interactable = isInteractable;
+                pointerHandler.enabled = true;
+                pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown);
+            }
+            else
+            {
+                pointerHandler.enabled = false;
+            }
+        }
 
-                if (isInteractable)
-                    button.onClick.AddListener(() =>
-                    {
-                        onCardCasted?.Invoke(_cardData.CardId);
-                    });
+        private void OnPointerEnter()
+        {
+            animator?.SetTrigger("Highlighted");
+        }
+
+        private void OnPointerExit()
+        {
+            animator?.SetTrigger("Normal");
+        }
+
+        private void OnPointerDown()
+        {
+            if (!_hasBeenClicked)
+            {
+                _hasBeenClicked = true;
+                Debug.Log(_cardType.Metadata.Name);
+                _onCardCasted?.Invoke(_cardData.CardId);
             }
         }
     }
