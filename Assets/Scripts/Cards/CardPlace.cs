@@ -9,6 +9,7 @@ namespace Solcery
         Hand2,
         DrawPile1,
         DrawPile2,
-        PlayedThisTurn
+        PlayedThisTurn,
+        PlayedThisTurnTop
     }
 }

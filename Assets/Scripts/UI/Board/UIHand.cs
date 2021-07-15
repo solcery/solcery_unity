@@ -5,11 +5,11 @@ namespace Solcery.UI.Play
 {
     public abstract class UIHand : MonoBehaviour
     {
-        [SerializeField] private GameObject cardPrefab = null;
-        [SerializeField] private GameObject cardFaceDownPrefab = null;
-        [SerializeField] private Transform content = null;
+        [SerializeField] protected GameObject cardPrefab = null;
+        [SerializeField] protected GameObject cardFaceDownPrefab = null;
+        [SerializeField] protected Transform content = null;
 
-        private List<UIBoardCard> _cardsInHand;
+        protected List<UIBoardCard> _cardsInHand;
 
         protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {

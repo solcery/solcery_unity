@@ -88,6 +88,7 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 5},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 7},
                 };
 
                 boardData.Players = new List<PlayerData>() {
@@ -134,6 +135,10 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 17, CardPlace = CardPlace.Hand1, CardType = 4},
                     new BoardCardData() { CardId = 18, CardPlace = CardPlace.Hand1, CardType = 4},
                     new BoardCardData() { CardId = 19, CardPlace = CardPlace.Hand1, CardType = 5},
+                    new BoardCardData() { CardId = 20, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 20, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    new BoardCardData() { CardId = 20, CardPlace = CardPlace.PlayedThisTurn, CardType = 4},
+                    // new BoardCardData() { CardId = 20, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 4},
                 };
 
                 boardData.Players = new List<PlayerData>() {
