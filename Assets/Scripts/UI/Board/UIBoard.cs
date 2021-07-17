@@ -34,11 +34,11 @@ namespace Solcery.UI.Play
             player?.OnBoardUpdate(boardData, boardData.MyIndex);
             enemy?.OnBoardUpdate(boardData, boardData.EnemyIndex);
 
-            deck?.SetCardsCount(boardData.Places.ContainsKey(CardPlace.Deck) ? boardData.Places[CardPlace.Deck].Count : 0);
-            shop?.UpdateCards(boardData.Places.ContainsKey(CardPlace.Shop) ? boardData.Places[CardPlace.Shop] : null);
+            deck?.SetCardsCount(boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? boardData.CardsByPlace[CardPlace.Deck].Count : 0);
+            shop?.UpdateCards(boardData.CardsByPlace.ContainsKey(CardPlace.Shop) ? boardData.CardsByPlace[CardPlace.Shop] : null);
             playedThisTurn?.UpdateCards(
-                boardData.Places.ContainsKey(CardPlace.PlayedThisTurn) ? boardData.Places[CardPlace.PlayedThisTurn] : null,
-                boardData.Places.ContainsKey(CardPlace.PlayedThisTurnTop) ? boardData.Places[CardPlace.PlayedThisTurnTop] : null
+                boardData.CardsByPlace.ContainsKey(CardPlace.PlayedThisTurn) ? boardData.CardsByPlace[CardPlace.PlayedThisTurn] : null,
+                boardData.CardsByPlace.ContainsKey(CardPlace.PlayedThisTurnTop) ? boardData.CardsByPlace[CardPlace.PlayedThisTurnTop] : null
                 );
 
             endTurnButton?.gameObject.SetActive(boardData.Me.IsActive);

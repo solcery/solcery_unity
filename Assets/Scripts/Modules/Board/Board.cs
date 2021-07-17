@@ -11,8 +11,9 @@ namespace Solcery.Modules.Board
         public AsyncReactiveProperty<BoardData> BoardData => _boardData;
         private AsyncReactiveProperty<BoardData> _boardData = new AsyncReactiveProperty<BoardData>(null);
 
+        [SerializeField] private BoardDataTracker tracker = null;
         [SerializeField] private bool initWithTestJson = false;
-        [ShowIf("initWithTestJson")][Multiline(20)] [SerializeField] private string testJson;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
 
         public void UpdateBoard(BoardData boardData)
         {
@@ -21,6 +22,8 @@ namespace Solcery.Modules.Board
 
         public void Init()
         {
+            tracker?.Init();
+
             if (initWithTestJson)
             {
                 var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
@@ -30,6 +33,8 @@ namespace Solcery.Modules.Board
 
         public void DeInit()
         {
+            tracker?.DeInit();
+
             _boardData = null;
         }
     }

@@ -12,14 +12,15 @@ namespace Solcery
         public int EndTurnCardId;
 
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<CardPlace, List<BoardCardData>> Places;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<CardPlace, List<BoardCardData>> CardsByPlace;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardCardType EndTurnCardType;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Me;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Enemy;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int MyIndex = -1;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int EnemyIndex = -1;
 
-        public BoardCardType GetCardType(int cardTypeId)
+        public BoardCardType GetCardTypeById(int cardTypeId)
         {
             if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
             {
@@ -29,9 +30,20 @@ namespace Solcery
             return null;
         }
 
+        public BoardCardData GetCard(int cardId)
+        {
+            if (CardsById.TryGetValue(cardId, out var card))
+            {
+                return card;
+            }
+
+            return null;
+        }
+
         public BoardData Prettify()
         {
             CreateTypesDictionary();
+            CreateCardsDictionary();
             CreatePlacesDictionary();
             AssignPlayers();
             FindEndTurnCard();
@@ -54,19 +66,34 @@ namespace Solcery
             }
         }
 
-        private void CreatePlacesDictionary()
+        private void CreateCardsDictionary()
         {
-            Places = new Dictionary<CardPlace, List<BoardCardData>>();
+            CardsById = new Dictionary<int, BoardCardData>();
 
             foreach (var card in Cards)
             {
-                if (Places.ContainsKey(card.CardPlace))
+                var cardId = card.CardId;
+
+                if (CardsById.ContainsKey(cardId))
+                    CardsById[cardId] = card;
+                else
+                    CardsById.Add(cardId, card);
+            }
+        }
+
+        private void CreatePlacesDictionary()
+        {
+            CardsByPlace = new Dictionary<CardPlace, List<BoardCardData>>();
+
+            foreach (var card in Cards)
+            {
+                if (CardsByPlace.ContainsKey(card.CardPlace))
                 {
-                    Places[card.CardPlace].Add(card);
+                    CardsByPlace[card.CardPlace].Add(card);
                 }
                 else
                 {
-                    Places.Add(card.CardPlace, new List<BoardCardData>() { card });
+                    CardsByPlace.Add(card.CardPlace, new List<BoardCardData>() { card });
                 }
             }
         }
@@ -106,7 +133,7 @@ namespace Solcery
                 if (card.CardId == EndTurnCardId)
                 {
                     var endTurnCardData = card;
-                    EndTurnCardType = GetCardType(endTurnCardData.CardType);
+                    EndTurnCardType = GetCardTypeById(endTurnCardData.CardType);
                 }
             }
         }

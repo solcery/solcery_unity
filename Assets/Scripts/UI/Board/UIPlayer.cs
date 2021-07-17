@@ -22,8 +22,6 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
-            Debug.Log("Player BoardUpdate");
-
             if (playerIndex >= 0 && boardData.Players.Count > playerIndex)
             {
                 _isPlayer = (playerIndex == boardData.MyIndex);
@@ -56,7 +54,7 @@ namespace Solcery.UI.Play
             else
             {
                 CardPlace drawPile = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-                this.drawPile?.SetCardsCount(boardData.Places.ContainsKey(drawPile) ? boardData.Places[drawPile].Count : 0);
+                this.drawPile?.SetCardsCount(boardData.CardsByPlace.ContainsKey(drawPile) ? boardData.CardsByPlace[drawPile].Count : 0);
             }
         }
 
@@ -67,7 +65,7 @@ namespace Solcery.UI.Play
             else
             {
                 CardPlace discardPile = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
-                this.discardPile?.SetCardsCount(boardData.Places.ContainsKey(discardPile) ? boardData.Places[discardPile].Count : 0);
+                this.discardPile?.SetCardsCount(boardData.CardsByPlace.ContainsKey(discardPile) ? boardData.CardsByPlace[discardPile].Count : 0);
             }
         }
 
@@ -80,7 +78,7 @@ namespace Solcery.UI.Play
             }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-            hand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer);
+            hand?.UpdateCards(boardData.CardsByPlace.ContainsKey(cardPlace) ? boardData.CardsByPlace[cardPlace] : null, _isPlayer);
         }
 
         private void SetHP(int newHP)

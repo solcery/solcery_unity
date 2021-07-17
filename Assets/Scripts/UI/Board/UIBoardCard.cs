@@ -30,7 +30,7 @@ namespace Solcery.UI
             _isInteractable = isInteractable;
 
             _cardData = cardData;
-            _cardType = Board.Instance.BoardData.Value.GetCardType(_cardData.CardType);
+            _cardType = Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
 
             if (_cardType != null)
@@ -43,7 +43,8 @@ namespace Solcery.UI
             }
             else
             {
-                Debug.Log("BoardCardType is null");
+                Debug.LogError("BoardCardType from this BoardCardData doesn't exist in this BoardData");
+
                 SetName("unknown card type!");
                 SetDescription("unknown card type!");
                 SetCoins(false);
