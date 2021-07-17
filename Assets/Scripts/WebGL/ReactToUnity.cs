@@ -89,10 +89,14 @@ namespace Solcery.WebGL
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 4},
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Deck, CardType = 5},
                     new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 7},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.DiscardPile1, CardType = 7},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.DiscardPile1, CardType = 7},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.DiscardPile1, CardType = 7},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.DiscardPile2, CardType = 7},
                 };
 
                 boardData.Players = new List<PlayerData>() {
-                    // new PlayerData() { IsMe = false, IsActive = true, HP = 15, Coins = 36 },
+                    new PlayerData() { IsMe = false, IsActive = true, HP = 15, Coins = 36 },
                     new PlayerData() { IsMe = true, IsActive = true, HP = 7, Coins = 12 }
                 };
 

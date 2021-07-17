@@ -10,6 +10,8 @@ namespace Solcery
         DrawPile1,
         DrawPile2,
         PlayedThisTurn,
-        PlayedThisTurnTop
+        PlayedThisTurnTop,
+        DiscardPile1,
+        DiscardPile2
     }
 }

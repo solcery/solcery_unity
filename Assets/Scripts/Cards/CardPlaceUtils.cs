@@ -18,7 +18,17 @@ namespace Solcery
             {
                 0 => CardPlace.DrawPile1,
                 1 => CardPlace.DrawPile2,
-                _ => CardPlace.Nowhere,
+                _ => CardPlace.DrawPile1,
+            };
+        }
+
+        public static CardPlace PlayerDiscardPileFromPlayerIndex(int playerIndex)
+        {
+            return playerIndex switch
+            {
+                0 => CardPlace.DiscardPile1,
+                1 => CardPlace.DiscardPile2,
+                _ => CardPlace.DiscardPile1,
             };
         }
     }

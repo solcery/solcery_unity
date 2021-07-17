@@ -5,8 +5,9 @@ namespace Solcery.UI.Play
 {
     public class UIPlayer : MonoBehaviour
     {
-        [SerializeField] private UIPlayerHand playerHand = null;
-        [SerializeField] private UIDrawPile playerDrawPile = null;
+        [SerializeField] private UIPlayerHand hand = null;
+        [SerializeField] private UICardsPile discardPile = null;
+        [SerializeField] private UICardsPile drawPile = null;
         [SerializeField] private TextMeshProUGUI hpText = null;
         [SerializeField] private UIDiv hpDiv = null;
         [SerializeField] private UIDiv coinsDiv = null;
@@ -21,6 +22,8 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
+            Debug.Log("Player BoardUpdate");
+
             if (playerIndex >= 0 && boardData.Players.Count > playerIndex)
             {
                 _isPlayer = (playerIndex == boardData.MyIndex);
@@ -28,12 +31,14 @@ namespace Solcery.UI.Play
 
                 UpdatePlayerData(boardData.Players[playerIndex]);
                 UpdatePlayerDrawPile(boardData, playerIndex);
+                UpdatePlayerDiscardPile(boardData, playerIndex);
                 UpdatePlayerHand(boardData, playerIndex);
             }
             else
             {
                 UpdatePlayerData(null);
                 UpdatePlayerDrawPile(null);
+                UpdatePlayerDiscardPile(null);
                 UpdatePlayerHand(null);
             }
         }
@@ -47,11 +52,22 @@ namespace Solcery.UI.Play
         private void UpdatePlayerDrawPile(BoardData boardData, int playerIndex = 0)
         {
             if (boardData == null)
-                playerDrawPile?.SetCardsCount(0);
+                drawPile?.SetCardsCount(0);
             else
             {
                 CardPlace drawPile = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-                playerDrawPile?.SetCardsCount(boardData.Places.ContainsKey(drawPile) ? boardData.Places[drawPile].Count : 0);
+                this.drawPile?.SetCardsCount(boardData.Places.ContainsKey(drawPile) ? boardData.Places[drawPile].Count : 0);
+            }
+        }
+
+        private void UpdatePlayerDiscardPile(BoardData boardData, int playerIndex = 0)
+        {
+            if (boardData == null)
+                discardPile?.SetCardsCount(0);
+            else
+            {
+                CardPlace discardPile = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
+                this.discardPile?.SetCardsCount(boardData.Places.ContainsKey(discardPile) ? boardData.Places[discardPile].Count : 0);
             }
         }
 
@@ -59,12 +75,12 @@ namespace Solcery.UI.Play
         {
             if (boardData == null)
             {
-                playerHand?.DeleteAllCards();
+                hand?.DeleteAllCards();
                 return;
             }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-            playerHand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer);
+            hand?.UpdateCards(boardData.Places.ContainsKey(cardPlace) ? boardData.Places[cardPlace] : null, _isPlayer);
         }
 
         private void SetHP(int newHP)
