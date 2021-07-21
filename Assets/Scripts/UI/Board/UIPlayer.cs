@@ -5,6 +5,10 @@ namespace Solcery.UI.Play
 {
     public class UIPlayer : MonoBehaviour
     {
+        public UIPlayerHand Hand => hand;
+        public UICardsPile DiscardPile => discardPile;
+        public UICardsPile DrawPile => drawPile;
+
         [SerializeField] private UIPlayerHand hand = null;
         [SerializeField] private UICardsPile discardPile = null;
         [SerializeField] private UICardsPile drawPile = null;
@@ -78,7 +82,8 @@ namespace Solcery.UI.Play
             }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-            hand?.UpdateCards(boardData.CardsByPlace.ContainsKey(cardPlace) ? boardData.CardsByPlace[cardPlace] : null, _isPlayer);
+            // hand?.UpdateCards(boardData.CardsByPlace.ContainsKey(cardPlace) ? boardData.CardsByPlace[cardPlace] : null, _isPlayer);
+            hand?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(cardPlace) ? boardData.Div.CardPlaceDivs[cardPlace] : null, _isPlayer);
         }
 
         private void SetHP(int newHP)

@@ -1,18 +1,17 @@
 using System.Collections.Generic;
-using Solcery.WebGL;
 
 namespace Solcery.UI.Play
 {
-    public class UIShop : UIHand
+    public class UIPlayedThisTurnOnTop : UIHand
     {
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv)
         {
-            base.UpdateWithDiv(cardPlaceDiv, true, false, true);
+            base.UpdateWithDiv(cardPlaceDiv, false, false, false);
         }
 
         protected override void OnCardCasted(int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardId);
+            
         }
     }
 }

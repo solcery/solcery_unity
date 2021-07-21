@@ -9,7 +9,7 @@ namespace Solcery.UI.Play
         [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
 
-        protected List<UIBoardCard> _cardsInHand;
+        protected Dictionary<int, UIBoardCard> _cardsById;
 
         protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {
@@ -32,7 +32,52 @@ namespace Solcery.UI.Play
                     card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
                 }
 
-                _cardsInHand.Add(card);
+                if (_cardsById.ContainsKey(cardData.CardId))
+                    _cardsById[cardData.CardId] = card;
+                else
+                    _cardsById.Add(cardData.CardId, card);
+            }
+        }
+
+        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
+        {
+            if (cardPlaceDiv == null)
+                return;
+
+            if (_cardsById == null)
+                _cardsById = new Dictionary<int, UIBoardCard>();
+
+            if (cardPlaceDiv.Departed != null)
+            {
+                foreach (var departedCard in cardPlaceDiv.Departed)
+                {
+                    DeleteCardWithId(departedCard.CardData.CardId);
+                }
+            }
+
+            if (cardPlaceDiv.Arrived != null)
+            {
+                Debug.Log(cardPlaceDiv.Arrived.Count);
+
+                foreach (var arrivedCard in cardPlaceDiv.Arrived)
+                {
+                    UIBoardCard card;
+
+                    if (!areCardsFaceDown)
+                    {
+                        card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
+                        card.Init(arrivedCard.CardData, areButtonsInteractable, showCoins, OnCardCasted);
+                    }
+                    else
+                    {
+                        card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
+                    }
+
+                    if (_cardsById.ContainsKey(arrivedCard.CardData.CardId))
+                        _cardsById[arrivedCard.CardData.CardId] = card;
+                    else
+                        _cardsById.Add(arrivedCard.CardData.CardId, card);
+                }
             }
         }
 
@@ -40,16 +85,30 @@ namespace Solcery.UI.Play
 
         public void DeleteAllCards()
         {
-            if (_cardsInHand != null && _cardsInHand.Count > 0)
+            if (_cardsById != null && _cardsById.Count > 0)
             {
-                for (int i = _cardsInHand.Count - 1; i >= 0; i--)
+                foreach (var cardById in _cardsById)
                 {
-                    _cardsInHand[i].DeInit();
-                    DestroyImmediate(_cardsInHand[i].gameObject);
+                    DeleteCard(cardById.Value);
                 }
             }
 
-            _cardsInHand = new List<UIBoardCard>();
+            _cardsById = new Dictionary<int, UIBoardCard>();
+        }
+
+        private void DeleteCardWithId(int cardId)
+        {
+            if (_cardsById.TryGetValue(cardId, out var card))
+                DeleteCard(card);
+        }
+
+        private void DeleteCard(UIBoardCard card)
+        {
+            if (card != null)
+            {
+                card?.DeInit();
+                DestroyImmediate(card.gameObject);
+            }
         }
     }
 }

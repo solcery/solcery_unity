@@ -8,7 +8,7 @@ namespace Solcery.Modules.Board
 {
     public class BoardDataTracker : MonoBehaviour
     {
-        public AsyncReactiveProperty<BoardDataDiv> BoardDataDiv;
+        public AsyncReactiveProperty<BoardData> BoardDataWithDiv;
 
         private BoardData _currentBoardData;
         private BoardData _previousBoardData;
@@ -46,6 +46,7 @@ namespace Solcery.Modules.Board
             if (_currentBoardData == null || _currentBoardData.Cards == null)
             {
                 _cardsThatChangedPlaces = null;
+                BoardDataWithDiv.Value = null;
                 return;
             }
 
@@ -62,7 +63,7 @@ namespace Solcery.Modules.Board
                 {
                     _cardsThatChangedPlaces.Add(new BoardDataCardChangedPlace()
                     {
-                        CardId = cardId,
+                        CardData = card,
                         From = previousPlace ?? CardPlace.Nowhere,
                         To = currentPlace ?? CardPlace.Nowhere
                     });
@@ -86,7 +87,8 @@ namespace Solcery.Modules.Board
                     _cardPlaceDivs.Add(change.To, new CardPlaceDiv(null, new List<BoardDataCardChangedPlace>() { change }));
             }
 
-            BoardDataDiv.Value = new BoardDataDiv(_currentBoardData, _cardsThatChangedPlaces, _cardPlaceDivs);
+            _currentBoardData.Div = new BoardDataDiv(_cardsThatChangedPlaces, _cardPlaceDivs);
+            BoardDataWithDiv.Value = _currentBoardData;
         }
     }
 }

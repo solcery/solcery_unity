@@ -22,7 +22,7 @@ namespace Solcery.UI.Play
         {
             _cts = new CancellationTokenSource();
 
-            Reactives.Subscribe(Board.Instance?.Tracker?.BoardDataDiv, OnBoardUpdate, _cts.Token);
+            Reactives.Subscribe(Board.Instance?.Tracker?.BoardDataWithDiv, OnBoardUpdate, _cts.Token);
             board?.Init();
         }
 
@@ -36,12 +36,13 @@ namespace Solcery.UI.Play
             board?.DeInit();
         }
 
-        public void OnBoardUpdate(BoardDataDiv boardDataDiv)
+        public void OnBoardUpdate(BoardData boardData)
         {
             Debug.Log("OnBoardUpdate");
 
-            if (boardDataDiv == null || boardDataDiv.CurrentBoardData == null)
+            if (boardData == null)
             {
+                Debug.Log("BoardData is null");
                 createGameButton?.gameObject?.SetActive(true);
                 joinGameButton?.gameObject?.SetActive(true);
                 board?.gameObject?.SetActive(false);
@@ -57,7 +58,7 @@ namespace Solcery.UI.Play
 
                 createGameButton?.onClick?.RemoveAllListeners();
                 joinGameButton?.onClick?.RemoveAllListeners();
-                board?.OnBoardUpdate(boardDataDiv);
+                board?.OnBoardUpdate(boardData);
             }
         }
 

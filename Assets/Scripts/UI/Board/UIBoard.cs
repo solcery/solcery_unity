@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,9 +12,11 @@ namespace Solcery.UI.Play
         [SerializeField] private UIShop shop = null;
         [SerializeField] private UICardsPile deck = null;
         [SerializeField] private UIPlayedThisTurn playedThisTurn = null;
+        [SerializeField] private UIPlayedThisTurnOnTop playedThisTurnOnTop = null;
         [SerializeField] private Button endTurnButton = null;
 
         private BoardData _boardData;
+        private Dictionary<CardPlace, IBoardPlace> BoardPlaces;
 
         public void Init()
         {
@@ -25,25 +28,23 @@ namespace Solcery.UI.Play
             endTurnButton?.onClick.RemoveAllListeners();
         }
 
-        public void OnBoardUpdate(BoardDataDiv boardDataDiv)
+        public void OnBoardUpdate(BoardData boardData)
         {
-            var boardData = boardDataDiv.CurrentBoardData;
             _boardData = boardData;
+            AssignBoardPlaces(_boardData);
 
             this.gameObject.SetActive(true);
 
-            player?.OnBoardUpdate(boardData, boardData.MyIndex);
-            enemy?.OnBoardUpdate(boardData, boardData.EnemyIndex);
+            player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
+            enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
 
-            deck?.SetCardsCount(boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? boardData.CardsByPlace[CardPlace.Deck].Count : 0);
-            shop?.UpdateCards(boardData.CardsByPlace.ContainsKey(CardPlace.Shop) ? boardData.CardsByPlace[CardPlace.Shop] : null);
-            playedThisTurn?.UpdateCards(
-                boardData.CardsByPlace.ContainsKey(CardPlace.PlayedThisTurn) ? boardData.CardsByPlace[CardPlace.PlayedThisTurn] : null,
-                boardData.CardsByPlace.ContainsKey(CardPlace.PlayedThisTurnTop) ? boardData.CardsByPlace[CardPlace.PlayedThisTurnTop] : null
-                );
+            deck?.SetCardsCount(_boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0);
+            shop?.UpdateWithDiv(_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.Shop) ? _boardData.Div.CardPlaceDivs[CardPlace.Shop] : null);
+            playedThisTurn?.UpdateWithDiv(_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.PlayedThisTurn) ? _boardData.Div.CardPlaceDivs[CardPlace.PlayedThisTurn] : null);
+            playedThisTurnOnTop?.UpdateWithDiv(_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.PlayedThisTurnTop) ? _boardData.Div.CardPlaceDivs[CardPlace.PlayedThisTurnTop] : null);
 
-            endTurnButton?.gameObject.SetActive(boardData.Me.IsActive);
-            endTurnButton.interactable = boardData.Me.IsActive;
+            endTurnButton?.gameObject.SetActive(_boardData.Me.IsActive);
+            endTurnButton.interactable = _boardData.Me.IsActive;
         }
 
         private void OnEndTurnButtonClicked()
@@ -55,7 +56,7 @@ namespace Solcery.UI.Play
             }
         }
 
-        private void AssignPilesToPlaces(BoardData boardData)
+        private void AssignBoardPlaces(BoardData boardData)
         {
             var playerIndex = boardData.MyIndex;
             var playerHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
@@ -66,6 +67,24 @@ namespace Solcery.UI.Play
             var enemyHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(enemyIndex);
             var enemyDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(enemyIndex);
             var enemyDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(enemyIndex);
+
+            BoardPlaces = new Dictionary<CardPlace, IBoardPlace>()
+            {
+                { CardPlace.Deck, deck },
+                { CardPlace.Shop, shop },
+
+                { playerHandPlace, player.Hand },
+                { enemyHandPlace, enemy.Hand },
+
+                { playerDrawPilePlace, player.DrawPile },
+                { enemyDrawPilePlace, enemy.DrawPile },
+
+                { CardPlace.PlayedThisTurn, playedThisTurn },
+                { CardPlace.PlayedThisTurnTop, playedThisTurnOnTop },
+
+                { playerDiscardPilePlace, player.DiscardPile },
+                { enemyDiscardPilePlace, enemy.DiscardPile },
+            };
         }
     }
 }
