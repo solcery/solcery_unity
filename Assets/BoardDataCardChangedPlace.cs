@@ -1,4 +1,4 @@
-namespace Solcery.Modules.Board
+namespace Solcery
 {
     public struct BoardDataCardChangedPlace
     {

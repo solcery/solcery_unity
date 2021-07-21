@@ -8,6 +8,7 @@ namespace Solcery.Modules.Board
 {
     public class Board : Singleton<Board>
     {
+        public BoardDataTracker Tracker => tracker;
         public AsyncReactiveProperty<BoardData> BoardData => _boardData;
         private AsyncReactiveProperty<BoardData> _boardData = new AsyncReactiveProperty<BoardData>(null);
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Solcery.UI.Play
 {
-    public class UICardsPile : MonoBehaviour
+    public class UICardsPile : MonoBehaviour, IBoardPlace
     {
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
 

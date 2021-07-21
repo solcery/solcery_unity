@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Solcery.UI.Play
 {
-    public abstract class UIHand : MonoBehaviour
+    public abstract class UIHand : MonoBehaviour, IBoardPlace
     {
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected GameObject cardFaceDownPrefab = null;

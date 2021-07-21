@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using Solcery.Utils.Reactives;
 using UnityEngine;
 
@@ -7,12 +8,15 @@ namespace Solcery.Modules.Board
 {
     public class BoardDataTracker : MonoBehaviour
     {
+        public AsyncReactiveProperty<BoardDataDiv> BoardDataDiv;
+
         private BoardData _currentBoardData;
         private BoardData _previousBoardData;
 
         private CancellationTokenSource _cts;
 
         private List<BoardDataCardChangedPlace> _cardsThatChangedPlaces;
+        private Dictionary<CardPlace, CardPlaceDiv> _cardPlaceDivs;
 
         public void Init()
         {
@@ -37,7 +41,9 @@ namespace Solcery.Modules.Board
 
         private void TrackCardsThatChangedPlaces()
         {
-            if (_previousBoardData == null || _currentBoardData == null || _previousBoardData.Cards == null || _currentBoardData.Cards == null)
+            Debug.Log("Track");
+
+            if (_currentBoardData == null || _currentBoardData.Cards == null)
             {
                 _cardsThatChangedPlaces = null;
                 return;
@@ -49,27 +55,38 @@ namespace Solcery.Modules.Board
             {
                 var cardId = card.CardId;
 
-                var cardInPreviousBoardData = _previousBoardData.GetCard(cardId);
-                var cardInCurrentBoardData = _currentBoardData.GetCard(cardId);
-
-                if (cardInPreviousBoardData == null || cardInCurrentBoardData == null)
-                    continue;
-
-                var previousPlace = cardInPreviousBoardData.CardPlace;
-                var currentPlace = cardInCurrentBoardData.CardPlace;
+                var previousPlace = _previousBoardData?.GetCard(cardId)?.CardPlace;
+                var currentPlace = _currentBoardData?.GetCard(cardId)?.CardPlace;
 
                 if (previousPlace != currentPlace)
                 {
                     _cardsThatChangedPlaces.Add(new BoardDataCardChangedPlace()
                     {
                         CardId = cardId,
-                        From = previousPlace,
-                        To = currentPlace
+                        From = previousPlace ?? CardPlace.Nowhere,
+                        To = currentPlace ?? CardPlace.Nowhere
                     });
                 }
             }
 
             foreach (var change in _cardsThatChangedPlaces) Debug.Log(change.ToString());
+
+            _cardPlaceDivs = new Dictionary<CardPlace, CardPlaceDiv>();
+
+            foreach (var change in _cardsThatChangedPlaces)
+            {
+                if (_cardPlaceDivs.ContainsKey(change.From))
+                    _cardPlaceDivs[change.From].Departed.Add(change);
+                else
+                    _cardPlaceDivs.Add(change.From, new CardPlaceDiv(new List<BoardDataCardChangedPlace>() { change }, null));
+
+                if (_cardPlaceDivs.ContainsKey(change.To))
+                    _cardPlaceDivs[change.To].Arrived.Add(change);
+                else
+                    _cardPlaceDivs.Add(change.To, new CardPlaceDiv(null, new List<BoardDataCardChangedPlace>() { change }));
+            }
+
+            BoardDataDiv.Value = new BoardDataDiv(_currentBoardData, _cardsThatChangedPlaces, _cardPlaceDivs);
         }
     }
 }

@@ -25,8 +25,9 @@ namespace Solcery.UI.Play
             endTurnButton?.onClick.RemoveAllListeners();
         }
 
-        public void OnBoardUpdate(BoardData boardData)
+        public void OnBoardUpdate(BoardDataDiv boardDataDiv)
         {
+            var boardData = boardDataDiv.CurrentBoardData;
             _boardData = boardData;
 
             this.gameObject.SetActive(true);
@@ -52,6 +53,19 @@ namespace Solcery.UI.Play
                 UnityToReact.Instance.CallUseCard(_boardData.EndTurnCardId);
                 endTurnButton.interactable = false;
             }
+        }
+
+        private void AssignPilesToPlaces(BoardData boardData)
+        {
+            var playerIndex = boardData.MyIndex;
+            var playerHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
+            var playerDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
+            var playerDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
+
+            var enemyIndex = boardData.EnemyIndex;
+            var enemyHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(enemyIndex);
+            var enemyDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(enemyIndex);
+            var enemyDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(enemyIndex);
         }
     }
 }
