@@ -11,34 +11,6 @@ namespace Solcery.UI.Play
 
         protected Dictionary<int, UIBoardCard> _cardsById;
 
-        protected void UpdateCards(List<BoardCardData> cards, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
-        {
-            DeleteAllCards();
-
-            if (cards == null)
-                return;
-
-            foreach (var cardData in cards)
-            {
-                UIBoardCard card;
-
-                if (!areCardsFaceDown)
-                {
-                    card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                    card.Init(cardData, areButtonsInteractable, showCoins, OnCardCasted);
-                }
-                else
-                {
-                    card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
-                }
-
-                if (_cardsById.ContainsKey(cardData.CardId))
-                    _cardsById[cardData.CardId] = card;
-                else
-                    _cardsById.Add(cardData.CardId, card);
-            }
-        }
-
         protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {
             if (cardPlaceDiv == null)
