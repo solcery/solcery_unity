@@ -26,13 +26,13 @@ namespace Solcery.UI
 
         public void StartDragging(UICollectionCard card)
         {
-            _cardClone = Instantiate<UICollectionCard>(card, card.transform.position, Quaternion.identity);
+            _cardClone = Instantiate<UICollectionCard>(card, _canvas.transform, true);
 
             if (_cardClone != null)
             {
                 _cardClone.DetatchFromGroup();
                 _cardClone.GetComponent<Image>().raycastTarget = false;
-                _cardClone.transform.SetParent(_canvas.transform);
+                // _cardClone.transform.SetParent(_canvas.transform);
                 _cardClone.transform.SetAsLastSibling();
             }
         }
