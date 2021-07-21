@@ -63,7 +63,7 @@ namespace Solcery.UI
         {
             if (cg != null)
             {
-                cg.alpha = isVisible ? 1 : 0;
+                cg.alpha = isVisible ? 1f : 0;
                 cg.interactable = isVisible ? true : false;
                 cg.blocksRaycasts = isVisible ? true : false;
             }

@@ -5,7 +5,7 @@ namespace Solcery
     public interface IBoardPlace
     {
         Transform GetCardsParent();
-        Transform GetCardDestination(int cardId);
+        Vector3 GetCardDestination(int cardId);
         void OnCardArrival(int cardId);
     }
 }

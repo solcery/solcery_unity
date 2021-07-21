@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI.Play
 {
     public abstract class UIHand : MonoBehaviour, IBoardPlace
     {
+        public GameObject targetPrefab = null;
+
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
@@ -56,6 +59,8 @@ namespace Solcery.UI.Play
                         _cardsById.Add(arrivedCard.CardData.CardId, card);
                 }
             }
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
         }
 
         public void OnCardArrival(int cardId)
@@ -95,16 +100,16 @@ namespace Solcery.UI.Play
             }
         }
 
-        public Transform GetCardDestination(int cardId)
+        public Vector3 GetCardDestination(int cardId)
         {
             var card = GetCardById(cardId);
 
             if (card != null)
-                return card.transform;
+                return card.transform.position;
             else
             {
                 Debug.Log("destination card is null");
-                return this.transform;
+                return this.transform.position;
             }
         }
 

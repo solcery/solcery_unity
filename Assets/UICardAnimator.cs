@@ -21,6 +21,10 @@ namespace Solcery
             {
                 var destinationCardsParent = toPlace.GetCardsParent();
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
+
+                var target = Instantiate(targetPrefab, this.transform);
+                target.transform.position = cardToDelete.transform.position;
+
                 cardClone.gameObject.name = "1";
                 var le = cardClone.gameObject.AddComponent<LayoutElement>();
                 le.ignoreLayout = true;
@@ -46,9 +50,9 @@ namespace Solcery
                     {
                         var destination = toPlace.GetCardDestination(departedCard.CardData.CardId);
                         var target = Instantiate(targetPrefab, this.transform);
-                        target.transform.position = destination.transform.position;
+                        target.transform.position = destination;
 
-                        var tween = cardClone.transform.DOMove(destination.position, 1f);
+                        var tween = cardClone.transform.DOMove(destination, 1f);
 
                         tween.OnComplete(() =>
                         {

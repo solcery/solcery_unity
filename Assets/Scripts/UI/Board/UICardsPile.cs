@@ -8,9 +8,9 @@ namespace Solcery.UI.Play
         [SerializeField] private Transform content = null;
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
 
-        public Transform GetCardDestination(int cardId)
+        public Vector3 GetCardDestination(int cardId)
         {
-            return content;
+            return content.position;
         }
 
         public Transform GetCardsParent()
