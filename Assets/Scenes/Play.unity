@@ -3254,7 +3254,7 @@ RectTransform:
   m_AnchorMax: {x: 0.625, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007434552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5047,6 +5047,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  targetPrefab: {fileID: 2562348750061459241, guid: 0ecc975330cf7bd4da990b1ea43424da, type: 3}
 --- !u!1 &1725183805
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,7 +5406,7 @@ RectTransform:
   m_AnchorMax: {x: 0.625, y: 0.3}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1734575832
 MonoBehaviour:
   m_ObjectHideFlags: 0

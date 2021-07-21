@@ -23,8 +23,8 @@ namespace Solcery.UI.Play
             {
                 foreach (var departedCard in cardPlaceDiv.Departed)
                 {
-                    var cardToDelete = GetCardWithId(departedCard.CardData.CardId);
-                    UICardAnimator.Instance?.StartAnimating(cardToDelete, departedCard);
+                    var cardToDelete = GetCardById(departedCard.CardData.CardId);
+                    UICardAnimator.Instance?.Clone(cardToDelete, departedCard);
                     DeleteCard(cardToDelete);
                 }
             }
@@ -60,7 +60,7 @@ namespace Solcery.UI.Play
 
         public void OnCardArrival(int cardId)
         {
-            GetCardWithId(cardId).SetVisibility(true);
+            GetCardById(cardId).SetVisibility(true);
         }
 
         protected abstract void OnCardCasted(int cardId);
@@ -78,7 +78,7 @@ namespace Solcery.UI.Play
             _cardsById = new Dictionary<int, UIBoardCard>();
         }
 
-        private UIBoardCard GetCardWithId(int cardId)
+        private UIBoardCard GetCardById(int cardId)
         {
             if (_cardsById.TryGetValue(cardId, out var card))
                 return card;
@@ -97,7 +97,15 @@ namespace Solcery.UI.Play
 
         public Transform GetCardDestination(int cardId)
         {
-            return this.transform;
+            var card = GetCardById(cardId);
+
+            if (card != null)
+                return card.transform;
+            else
+            {
+                Debug.Log("destination card is null");
+                return this.transform;
+            }
         }
 
         public Transform GetCardsParent()
