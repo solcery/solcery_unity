@@ -8,10 +8,13 @@ namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {
+        public LayoutElement LE => le;
+
+        [SerializeField] private CanvasGroup cg = null;
+        [SerializeField] private LayoutElement le = null;
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
-        [SerializeField] private Button button = null;
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
@@ -53,7 +56,25 @@ namespace Solcery.UI
 
         public void DeInit()
         {
-            button?.onClick?.RemoveAllListeners();
+
+        }
+
+        public void SetVisibility(bool isVisible)
+        {
+            if (cg != null)
+            {
+                cg.alpha = isVisible ? 1 : 0;
+                cg.interactable = isVisible ? true : false;
+                cg.blocksRaycasts = isVisible ? true : false;
+            }
+        }
+
+        public void DetachFromLayout()
+        {
+            Debug.Log("Ignore layout");
+            cg.alpha = 0.5f;
+            le.ignoreLayout = true;
+            Debug.Log(le.ignoreLayout);
         }
 
         private void SetPicture(int picture)

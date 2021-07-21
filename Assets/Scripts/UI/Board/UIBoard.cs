@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Solcery.Utils;
 using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Solcery.UI.Play
 {
-    public class UIBoard : MonoBehaviour
+    public class UIBoard : Singleton<UIBoard>
     {
         [SerializeField] private UIPlayer player = null;
         [SerializeField] private UIPlayer enemy = null;
@@ -85,6 +86,18 @@ namespace Solcery.UI.Play
                 { playerDiscardPilePlace, player.DiscardPile },
                 { enemyDiscardPilePlace, enemy.DiscardPile },
             };
+        }
+
+        public bool GetBoardPlace(CardPlace cardPlace, out IBoardPlace place)
+        {
+            if (BoardPlaces.TryGetValue(cardPlace, out var boardPlace))
+            {
+                place = boardPlace;
+                return true;
+            }
+
+            place = null;
+            return false;
         }
     }
 }

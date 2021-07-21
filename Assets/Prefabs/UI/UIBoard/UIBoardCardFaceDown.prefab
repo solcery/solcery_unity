@@ -12,13 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f149321ad32e4a8c3a49fa3ed3c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 661887786662442181}
+  animator: {fileID: 0}
+  pointerHandler: {fileID: 0}
   cardPictures: {fileID: 0}
-  button: {fileID: 0}
   cardPicture: {fileID: 0}
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
   cardCoins: {fileID: 0}
   cardCoinsCount: {fileID: 0}
+--- !u!225 &661887786662442181
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554450346966297934}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &5470393623768048336
 PrefabInstance:
   m_ObjectHideFlags: 0

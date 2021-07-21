@@ -23,14 +23,14 @@ namespace Solcery.UI.Play
             {
                 foreach (var departedCard in cardPlaceDiv.Departed)
                 {
-                    DeleteCardWithId(departedCard.CardData.CardId);
+                    var cardToDelete = GetCardWithId(departedCard.CardData.CardId);
+                    UICardAnimator.Instance?.StartAnimating(cardToDelete, departedCard);
+                    DeleteCard(cardToDelete);
                 }
             }
 
             if (cardPlaceDiv.Arrived != null)
             {
-                Debug.Log(cardPlaceDiv.Arrived.Count);
-
                 foreach (var arrivedCard in cardPlaceDiv.Arrived)
                 {
                     UIBoardCard card;
@@ -45,12 +45,22 @@ namespace Solcery.UI.Play
                         card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
                     }
 
+                    if (arrivedCard.From == CardPlace.Nowhere)
+                        card.SetVisibility(true);
+                    else
+                        card.SetVisibility(false);
+
                     if (_cardsById.ContainsKey(arrivedCard.CardData.CardId))
                         _cardsById[arrivedCard.CardData.CardId] = card;
                     else
                         _cardsById.Add(arrivedCard.CardData.CardId, card);
                 }
             }
+        }
+
+        public void OnCardArrival(int cardId)
+        {
+            GetCardWithId(cardId).SetVisibility(true);
         }
 
         protected abstract void OnCardCasted(int cardId);
@@ -68,10 +78,12 @@ namespace Solcery.UI.Play
             _cardsById = new Dictionary<int, UIBoardCard>();
         }
 
-        private void DeleteCardWithId(int cardId)
+        private UIBoardCard GetCardWithId(int cardId)
         {
             if (_cardsById.TryGetValue(cardId, out var card))
-                DeleteCard(card);
+                return card;
+
+            return null;
         }
 
         private void DeleteCard(UIBoardCard card)
@@ -81,6 +93,16 @@ namespace Solcery.UI.Play
                 card?.DeInit();
                 DestroyImmediate(card.gameObject);
             }
+        }
+
+        public Transform GetCardDestination(int cardId)
+        {
+            return this.transform;
+        }
+
+        public Transform GetCardsParent()
+        {
+            return content;
         }
     }
 }
