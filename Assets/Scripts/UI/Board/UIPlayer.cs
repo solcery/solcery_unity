@@ -54,22 +54,22 @@ namespace Solcery.UI.Play
         private void UpdatePlayerDrawPile(BoardData boardData, int playerIndex = 0)
         {
             if (boardData == null)
-                drawPile?.SetCardsCount(0);
+                drawPile?.UpdateWithDiv(0);
             else
             {
                 CardPlace drawPile = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-                this.drawPile?.SetCardsCount(boardData.CardsByPlace.ContainsKey(drawPile) ? boardData.CardsByPlace[drawPile].Count : 0);
+                this.drawPile?.UpdateWithDiv(boardData.CardsByPlace.ContainsKey(drawPile) ? boardData.CardsByPlace[drawPile].Count : 0);
             }
         }
 
         private void UpdatePlayerDiscardPile(BoardData boardData, int playerIndex = 0)
         {
             if (boardData == null)
-                discardPile?.SetCardsCount(0);
+                discardPile?.UpdateWithDiv(0);
             else
             {
                 CardPlace discardPile = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
-                this.discardPile?.SetCardsCount(boardData.CardsByPlace.ContainsKey(discardPile) ? boardData.CardsByPlace[discardPile].Count : 0);
+                this.discardPile?.UpdateWithDiv(boardData.CardsByPlace.ContainsKey(discardPile) ? boardData.CardsByPlace[discardPile].Count : 0);
             }
         }
 

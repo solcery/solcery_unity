@@ -6,14 +6,20 @@ namespace Solcery.UI.Play
 {
     public abstract class UIHand : MonoBehaviour, IBoardPlace
     {
+        public bool AreCardsFaceDown => _areCardsFaceDown;
+
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
+
+        private bool _areCardsFaceDown;
 
         protected Dictionary<int, UIBoardCard> _cardsById;
 
         protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {
+            _areCardsFaceDown = areCardsFaceDown;
+
             if (cardPlaceDiv == null)
                 return;
 

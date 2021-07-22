@@ -11,7 +11,7 @@ namespace Solcery
     public class UICardAnimator : Singleton<UICardAnimator>
     {
         private List<BoardDataCardChangedPlace> _cardsToAnimate = new List<BoardDataCardChangedPlace>();
-        private Dictionary<int, GameObject> _clonedCards = new Dictionary<int, GameObject>();
+        private Dictionary<int, UIBoardCard> _clonedCards = new Dictionary<int, UIBoardCard>();
 
         public void Clone(UIBoardCard cardToDelete, BoardDataCardChangedPlace departedCard)
         {
@@ -20,19 +20,18 @@ namespace Solcery
                 var destinationCardsParent = toPlace.GetCardsParent();
 
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
-                cardClone.gameObject.name = "1";
+                cardClone.gameObject.name = "animated clone";
                 var le = cardClone.gameObject.AddComponent<LayoutElement>();
                 le.ignoreLayout = true;
                 cardClone.MakeUnmaskable();
                 cardClone.transform.SetParent(destinationCardsParent, true);
 
                 if (_clonedCards.ContainsKey(departedCard.CardData.CardId))
-                    _clonedCards[departedCard.CardData.CardId] = cardClone.gameObject;
+                    _clonedCards[departedCard.CardData.CardId] = cardClone;
                 else
-                    _clonedCards.Add(departedCard.CardData.CardId, cardClone.gameObject);
+                    _clonedCards.Add(departedCard.CardData.CardId, cardClone);
 
                 _cardsToAnimate.Add(departedCard);
-                // cardClone.GetComponent<Animator>().SetTrigger("Moving");
             }
         }
 
@@ -40,12 +39,15 @@ namespace Solcery
         {
             foreach (var departedCard in _cardsToAnimate)
             {
-                if (UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
+                if (UIBoard.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
                 {
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {
                         var destination = toPlace.GetCardDestination(departedCard.CardData.CardId);
-                        var tween = cardClone.transform.DOMove(destination, 1f);
+                        var tween = cardClone.transform.DOMove(destination, 0.5f);
+
+                        if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
+                            cardClone?.PlayTurningAnimation();
 
                         tween.OnComplete(() =>
                         {
@@ -58,7 +60,7 @@ namespace Solcery
             }
 
             _cardsToAnimate = new List<BoardDataCardChangedPlace>();
-            _clonedCards = new Dictionary<int, GameObject>();
+            _clonedCards = new Dictionary<int, UIBoardCard>();
         }
     }
 }

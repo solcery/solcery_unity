@@ -78,6 +78,11 @@ namespace Solcery.UI
             if (cardCoinsCount != null) cardCoinsCount.maskable = false;
         }
 
+        public void PlayTurningAnimation()
+        {
+            animator?.SetTrigger("Turn");
+        }
+
         private void SetPicture(int picture)
         {
             if (cardPicture != null)

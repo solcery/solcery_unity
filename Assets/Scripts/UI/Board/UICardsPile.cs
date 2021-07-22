@@ -8,6 +8,8 @@ namespace Solcery.UI.Play
         [SerializeField] private Transform content = null;
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
 
+        public bool AreCardsFaceDown => true;
+
         public Vector3 GetCardDestination(int cardId)
         {
             return content.position;
@@ -23,7 +25,7 @@ namespace Solcery.UI.Play
 
         }
 
-        public void SetCardsCount(int cardsCount)
+        public void UpdateWithDiv(int cardsCount)
         {
             if (cardsCount <= 0)
                 this.gameObject.SetActive(false);
