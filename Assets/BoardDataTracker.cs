@@ -41,8 +41,6 @@ namespace Solcery.Modules.Board
 
         private void TrackCardsThatChangedPlaces()
         {
-            Debug.Log("Track");
-
             if (_currentBoardData == null || _currentBoardData.Cards == null)
             {
                 _cardsThatChangedPlaces = null;

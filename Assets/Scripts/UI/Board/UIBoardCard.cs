@@ -8,18 +8,17 @@ namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {
-        public LayoutElement LE => le;
-
         [SerializeField] private CanvasGroup cg = null;
-        [SerializeField] private LayoutElement le = null;
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardPicture = null;
+        [SerializeField] private Image cardFrame = null;
+        [SerializeField] private Image cardCoinsBackground = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
-        [SerializeField] private GameObject cardCoins = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
+        [SerializeField] private GameObject cardCoins = null;
 
         private BoardCardData _cardData;
         private BoardCardType _cardType;
@@ -69,12 +68,14 @@ namespace Solcery.UI
             }
         }
 
-        public void DetachFromLayout()
+        public void MakeUnmaskable()
         {
-            Debug.Log("Ignore layout");
-            cg.alpha = 0.5f;
-            le.ignoreLayout = true;
-            Debug.Log(le.ignoreLayout);
+            if (cardPicture != null) cardPicture.maskable = false;
+            if (cardFrame != null) cardFrame.maskable = false;
+            if (cardCoinsBackground != null) cardCoinsBackground.maskable = false;
+            if (cardName != null) cardName.maskable = false;
+            if (cardDescription != null) cardDescription.maskable = false;
+            if (cardCoinsCount != null) cardCoinsCount.maskable = false;
         }
 
         private void SetPicture(int picture)

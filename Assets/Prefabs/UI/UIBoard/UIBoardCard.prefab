@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!225 &5736771745255424867
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554450346966297934}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &-3631919498730924043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554450346966297934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70f149321ad32e4a8c3a49fa3ed3c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cg: {fileID: 5736771745255424867}
+  animator: {fileID: 224994142928593493}
+  pointerHandler: {fileID: 5010473261412038821}
+  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
+  cardPicture: {fileID: 5132839314367815702}
+  cardFrame: {fileID: 193537293088234058}
+  cardCoinsBackground: {fileID: 193537293207800333}
+  cardName: {fileID: 193537293598768024}
+  cardDescription: {fileID: 7554450347796220223}
+  cardCoinsCount: {fileID: 8287747703684669853}
+  cardCoins: {fileID: 193537293207800331}
 --- !u!222 &6166472243913969515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50,40 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fb7d9cad4945c43a4f4f5aa495bef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &5736771745255424867
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554450346966297934}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &-3631919498730924043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554450346966297934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70f149321ad32e4a8c3a49fa3ed3c77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cg: {fileID: 5736771745255424867}
-  le: {fileID: 0}
-  animator: {fileID: 224994142928593493}
-  pointerHandler: {fileID: 5010473261412038821}
-  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
-  cardPicture: {fileID: 5132839314367815702}
-  cardName: {fileID: 193537293598768024}
-  cardDescription: {fileID: 7554450347796220223}
-  cardCoins: {fileID: 193537293207800331}
-  cardCoinsCount: {fileID: 8287747703684669853}
 --- !u!1001 &5470393623768048336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 923585563100709568, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Name
       value: CardPicture
+      objectReference: {fileID: 0}
+    - target: {fileID: 923585563100709568, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 923585563254932050, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -215,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIBoardCard
       objectReference: {fileID: 0}
+    - target: {fileID: 2539030273299910558, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_text
       value: 
@@ -229,6 +238,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5279673558190987592, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_fontSizeMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558517251239, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279673558678714520, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5279673558798215387, guid: dc305af7050d92f45996471175d1fda9, type: 3}
@@ -255,6 +272,17 @@ GameObject:
 --- !u!114 &5132839314367815702 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 923585563100709574, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+  m_PrefabInstance: {fileID: 5470393623768048336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &193537293088234058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5279673558678714522, guid: dc305af7050d92f45996471175d1fda9, type: 3}
   m_PrefabInstance: {fileID: 5470393623768048336}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -290,6 +318,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5279673558798215387, guid: dc305af7050d92f45996471175d1fda9, type: 3}
   m_PrefabInstance: {fileID: 5470393623768048336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &193537293207800333 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5279673558798215389, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+  m_PrefabInstance: {fileID: 5470393623768048336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193537293207800331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8287747703684669853 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4100880009830237005, guid: dc305af7050d92f45996471175d1fda9, type: 3}

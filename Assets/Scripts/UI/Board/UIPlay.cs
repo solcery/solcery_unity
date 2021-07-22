@@ -38,8 +38,6 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData)
         {
-            Debug.Log("OnBoardUpdate");
-
             if (boardData == null)
             {
                 Debug.Log("BoardData is null");

@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!225 &661887786662442181
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554450346966297934}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &9116563406741194372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,22 +29,12 @@ MonoBehaviour:
   pointerHandler: {fileID: 0}
   cardPictures: {fileID: 0}
   cardPicture: {fileID: 0}
+  cardFrame: {fileID: 193537293088234058}
+  cardCoinsBackground: {fileID: 0}
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
-  cardCoins: {fileID: 0}
   cardCoinsCount: {fileID: 0}
---- !u!225 &661887786662442181
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554450346966297934}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  cardCoins: {fileID: 0}
 --- !u!1001 &5470393623768048336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,6 +194,10 @@ PrefabInstance:
       propertyPath: m_fontSizeMin
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5279673558517251239, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5279673558678714522, guid: dc305af7050d92f45996471175d1fda9, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -210,3 +216,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2539030273299910558, guid: dc305af7050d92f45996471175d1fda9, type: 3}
   m_PrefabInstance: {fileID: 5470393623768048336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &193537293088234058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5279673558678714522, guid: dc305af7050d92f45996471175d1fda9, type: 3}
+  m_PrefabInstance: {fileID: 5470393623768048336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

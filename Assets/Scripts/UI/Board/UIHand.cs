@@ -6,8 +6,6 @@ namespace Solcery.UI.Play
 {
     public abstract class UIHand : MonoBehaviour, IBoardPlace
     {
-        public GameObject targetPrefab = null;
-
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
