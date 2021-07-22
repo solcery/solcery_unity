@@ -44,18 +44,7 @@ namespace Solcery.UI
             _cardType = Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
 
-            // animator?.SetBool("IsFaceDown", _isFaceDown);
             SetAnimator();
-
-            // Debug.Log("1");
-            // Debug.Log(_isFaceDown);
-            // if (faceUp == null || faceDown == null || faceUp.gameObject == null || faceDown.gameObject == null)
-            //     Debug.LogError("null");
-            // faceUp?.gameObject?.SetActive(!_isFaceDown);
-            // faceDown?.gameObject?.SetActive(_isFaceDown);
-            // Debug.Log("2");
-
-            // animator.enabled = true;
 
             if (_cardType != null)
             {
@@ -117,7 +106,6 @@ namespace Solcery.UI
         {
             if (animator != null)
             {
-                Debug.Log($"isFaceDown now: {_isFaceDown}");
                 animator.SetTrigger(_isFaceDown ? "TurnFaceUp" : "TurnFaceDown");
             }
         }
