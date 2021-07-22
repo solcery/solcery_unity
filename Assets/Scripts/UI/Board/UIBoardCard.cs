@@ -8,12 +8,18 @@ namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {
+        public bool IsFaceDown => _isFaceDown;
+
+        [SerializeField] private Transform faceUp = null;
+        [SerializeField] private Transform faceDown = null;
         [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
+        [SerializeField] private CardFrames cardFrames = null;
         [SerializeField] private Image cardPicture = null;
-        [SerializeField] private Image cardFrame = null;
+        [SerializeField] private Image cardFrameFaceUp = null;
+        [SerializeField] private Image cardFrameFaceDown = null;
         [SerializeField] private Image cardCoinsBackground = null;
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
@@ -24,16 +30,32 @@ namespace Solcery.UI
         private BoardCardType _cardType;
         private Action<int> _onCardCasted;
 
+        private bool _isFaceDown;
         private bool _isInteractable;
         private bool _hasBeenClicked = false;
 
-        public void Init(BoardCardData cardData, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
+        public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
+            Debug.Log("UIBoardCard Init");
+            _isFaceDown = isFaceDown;
             _isInteractable = isInteractable;
 
             _cardData = cardData;
             _cardType = Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
+
+            // animator?.SetBool("IsFaceDown", _isFaceDown);
+            SetAnimator();
+
+            // Debug.Log("1");
+            // Debug.Log(_isFaceDown);
+            // if (faceUp == null || faceDown == null || faceUp.gameObject == null || faceDown.gameObject == null)
+            //     Debug.LogError("null");
+            // faceUp?.gameObject?.SetActive(!_isFaceDown);
+            // faceDown?.gameObject?.SetActive(_isFaceDown);
+            // Debug.Log("2");
+
+            // animator.enabled = true;
 
             if (_cardType != null)
             {
@@ -51,6 +73,17 @@ namespace Solcery.UI
                 SetDescription("unknown card type!");
                 SetCoins(false);
             }
+        }
+
+        public void SetFaceDown(bool isFaceDown)
+        {
+            _isFaceDown = isFaceDown;
+            SetAnimator();
+        }
+
+        public void SetAnimator()
+        {
+            animator?.SetBool("IsFaceDown", _isFaceDown);
         }
 
         public void DeInit()
@@ -71,17 +104,22 @@ namespace Solcery.UI
         public void MakeUnmaskable()
         {
             if (cardPicture != null) cardPicture.maskable = false;
-            if (cardFrame != null) cardFrame.maskable = false;
+            if (cardFrameFaceUp != null) cardFrameFaceUp.maskable = false;
             if (cardCoinsBackground != null) cardCoinsBackground.maskable = false;
             if (cardName != null) cardName.maskable = false;
             if (cardDescription != null) cardDescription.maskable = false;
             if (cardCoinsCount != null) cardCoinsCount.maskable = false;
+
+            if (cardFrameFaceDown != null) cardFrameFaceDown.maskable = false;
         }
 
         public void PlayTurningAnimation()
         {
             if (animator != null)
-                animator.SetTrigger("Turn");
+            {
+                Debug.Log($"isFaceDown now: {_isFaceDown}");
+                animator.SetTrigger(_isFaceDown ? "TurnFaceUp" : "TurnFaceDown");
+            }
         }
 
         private void SetPicture(int picture)
@@ -134,7 +172,7 @@ namespace Solcery.UI
 
         private void OnPointerExit()
         {
-            animator?.SetTrigger("Normal");
+            animator?.SetTrigger("Idle");
         }
 
         private void OnPointerDown()

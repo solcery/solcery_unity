@@ -19,6 +19,9 @@ namespace Solcery
                 var destinationCardsParent = toPlace.GetCardsParent();
 
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
+                UnityEngine.Debug.Log(cardToDelete.IsFaceDown);
+                UnityEngine.Debug.Log(cardClone.IsFaceDown);
+                cardClone.SetFaceDown(cardToDelete.IsFaceDown);
                 cardClone.gameObject.name = "animated clone";
                 var le = cardClone.gameObject.AddComponent<LayoutElement>();
                 le.ignoreLayout = true;
@@ -43,7 +46,7 @@ namespace Solcery
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {
                         var destination = toPlace.GetCardDestination(departedCard.CardData.CardId);
-                        var tween = cardClone.transform.DOMove(destination, 0.5f);
+                        var tween = cardClone.transform.DOMove(destination, 5f);
 
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
                             cardClone?.PlayTurningAnimation();

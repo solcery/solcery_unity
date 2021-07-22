@@ -908,8 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3345501cb4044094695e297c77a0ed0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 2036016891}
 --- !u!114 &294634204
 MonoBehaviour:
@@ -1133,8 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5475de1f89a28f4d8e61e7297304f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 272227466}
 --- !u!222 &332026158
 CanvasRenderer:
@@ -2668,8 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d60676df4b67e4cb9b9d23f47f8086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 813772836}
 --- !u!114 &1007434553
 MonoBehaviour:
@@ -3673,7 +3670,7 @@ RectTransform:
   m_Children:
   - {fileID: 645023331}
   m_Father: {fileID: 1778633061}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.625, y: 0.35}
   m_AnchorMax: {x: 0.725, y: 0.65}
@@ -3692,8 +3689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cce8a13d336294408a81974cbbc7dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 645023331}
 --- !u!222 &1491141669
 CanvasRenderer:
@@ -4600,8 +4596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d60676df4b67e4cb9b9d23f47f8086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 1793680642}
 --- !u!222 &1734575834
 CanvasRenderer:
@@ -4648,8 +4643,8 @@ RectTransform:
   - {fileID: 952018166}
   - {fileID: 540845997}
   - {fileID: 294634202}
-  - {fileID: 1430411512}
   - {fileID: 1491141667}
+  - {fileID: 1430411512}
   - {fileID: 332026156}
   - {fileID: 1329980120}
   m_Father: {fileID: 21916637}

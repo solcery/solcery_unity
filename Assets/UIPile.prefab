@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c78a7f19790745468a57047591caad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7554450346966297934, guid: af51e5de8af8f9646a1a8378124851ea, type: 3}
-  cardFaceDownPrefab: {fileID: 7554450346966297934, guid: 47bb5ee4b818bbb4f98b5aa2e5428e41, type: 3}
+  cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 3143025930282575442}
   cardsCountText: {fileID: 3143025929730252714}
 --- !u!222 &3143025928819917209

@@ -9,7 +9,6 @@ namespace Solcery.UI.Play
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
         [SerializeField] protected GameObject cardPrefab = null;
-        [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
 
         protected bool _areCardsFaceDown;
@@ -42,15 +41,8 @@ namespace Solcery.UI.Play
                 {
                     UIBoardCard card;
 
-                    if (!areCardsFaceDown)
-                    {
-                        card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                        card.Init(arrivedCard.CardData, areButtonsInteractable, showCoins, OnCardCasted);
-                    }
-                    else
-                    {
-                        card = Instantiate(cardFaceDownPrefab, content).GetComponent<UIBoardCard>();
-                    }
+                    card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
+                    card.Init(arrivedCard.CardData, _areCardsFaceDown, areButtonsInteractable, showCoins, OnCardCasted);
 
                     if (arrivedCard.From == CardPlace.Nowhere)
                         card.SetVisibility(true);
