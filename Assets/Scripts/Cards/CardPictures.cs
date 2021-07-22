@@ -8,7 +8,8 @@ namespace Solcery
     public class CardPictures : SerializedScriptableObject
     {
         [ListDrawerSettings(NumberOfItemsPerPage = 100)]
-        public List<Sprite> AllSprites = new List<Sprite>();
+        [SerializeField]
+        private List<Sprite> AllSprites = new List<Sprite>();
 
         public Sprite GetSpriteByIndex(int index)
         {

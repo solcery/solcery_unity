@@ -11,7 +11,7 @@ namespace Solcery.UI.Play
         [SerializeField] private UIPlayer player = null;
         [SerializeField] private UIPlayer enemy = null;
         [SerializeField] private UIShop shop = null;
-        [SerializeField] private UICardsPile deck = null;
+        [SerializeField] private UIPile deck = null;
         [SerializeField] private UIPlayedThisTurn playedThisTurn = null;
         [SerializeField] private UIPlayedThisTurnOnTop playedThisTurnOnTop = null;
         [SerializeField] private Button endTurnButton = null;

@@ -3,30 +3,13 @@ using UnityEngine;
 
 namespace Solcery.UI.Play
 {
-    public class UICardsPile : MonoBehaviour, IBoardPlace
+    public class UIPile : UIHand, IBoardPlace
     {
-        [SerializeField] private Transform content = null;
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
-
-        public bool AreCardsFaceDown => true;
-
-        public Vector3 GetCardDestination(int cardId)
-        {
-            return content.position;
-        }
-
-        public Transform GetCardsParent()
-        {
-            return content;
-        }
-
-        public void OnCardArrival(int cardId)
-        {
-
-        }
 
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, int cardsCount)
         {
+            // TODO count +- count here from each div
             if (cardsCount <= 0)
                 this.gameObject.SetActive(false);
             else
@@ -34,6 +17,13 @@ namespace Solcery.UI.Play
                 this.gameObject.SetActive(true);
                 if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
             }
+
+            base.UpdateWithDiv(cardPlaceDiv, false, true, false);
+        }
+
+        protected override void OnCardCasted(int cardId)
+        {
+
         }
     }
 }

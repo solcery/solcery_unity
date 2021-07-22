@@ -6,12 +6,12 @@ namespace Solcery.UI.Play
     public class UIPlayer : MonoBehaviour
     {
         public UIPlayerHand Hand => hand;
-        public UICardsPile DiscardPile => discardPile;
-        public UICardsPile DrawPile => drawPile;
+        public UIPile DiscardPile => discardPile;
+        public UIPile DrawPile => drawPile;
 
         [SerializeField] private UIPlayerHand hand = null;
-        [SerializeField] private UICardsPile discardPile = null;
-        [SerializeField] private UICardsPile drawPile = null;
+        [SerializeField] private UIPile discardPile = null;
+        [SerializeField] private UIPile drawPile = null;
         [SerializeField] private TextMeshProUGUI hpText = null;
         [SerializeField] private UIDiv hpDiv = null;
         [SerializeField] private UIDiv coinsDiv = null;

@@ -80,7 +80,8 @@ namespace Solcery.UI
 
         public void PlayTurningAnimation()
         {
-            animator?.SetTrigger("Turn");
+            if (animator != null)
+                animator.SetTrigger("Turn");
         }
 
         private void SetPicture(int picture)

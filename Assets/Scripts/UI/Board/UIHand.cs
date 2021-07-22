@@ -12,7 +12,7 @@ namespace Solcery.UI.Play
         [SerializeField] protected GameObject cardFaceDownPrefab = null;
         [SerializeField] protected Transform content = null;
 
-        private bool _areCardsFaceDown;
+        protected bool _areCardsFaceDown;
 
         protected Dictionary<int, UIBoardCard> _cardsById;
 
