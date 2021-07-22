@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Solcery.Modules.Board;
 
 namespace Solcery
 {

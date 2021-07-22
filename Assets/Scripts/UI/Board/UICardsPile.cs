@@ -25,7 +25,7 @@ namespace Solcery.UI.Play
 
         }
 
-        public void UpdateWithDiv(int cardsCount)
+        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, int cardsCount)
         {
             if (cardsCount <= 0)
                 this.gameObject.SetActive(false);

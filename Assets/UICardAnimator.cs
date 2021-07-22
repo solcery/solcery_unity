@@ -2,7 +2,6 @@ using Solcery.UI;
 using Solcery.UI.Play;
 using Solcery.Utils;
 using DG.Tweening;
-using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
