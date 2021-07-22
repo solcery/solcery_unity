@@ -36,7 +36,6 @@ namespace Solcery.UI
 
         public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
-            Debug.Log("UIBoardCard Init");
             _isFaceDown = isFaceDown;
             _isInteractable = isInteractable;
 
