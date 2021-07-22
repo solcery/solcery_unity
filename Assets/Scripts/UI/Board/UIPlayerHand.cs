@@ -7,6 +7,7 @@ namespace Solcery.UI.Play
     {
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool isPlayer)
         {
+            UnityEngine.Debug.Log("UIPlayerHand UpdateWithDiv");
             base.UpdateWithDiv(cardPlaceDiv, isPlayer, !isPlayer, false);
         }
 

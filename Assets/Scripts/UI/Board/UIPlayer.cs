@@ -18,7 +18,7 @@ namespace Solcery.UI.Play
         [SerializeField] private TextMeshProUGUI coinsText = null;
 
         private bool _isPlayer;
-        private bool _isActive;
+        // private bool _isActive;
         private int _currentHP;
         private bool _isInitialHp = true;
         private int _currentCoins;
@@ -26,34 +26,62 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
-            if (playerIndex >= 0 && boardData.Players.Count > playerIndex)
+            Debug.Log($"UIPlayer OnBoardUpdate: {playerIndex}");
+            if (playerIndex >= 0)
             {
+                Debug.Log("e1");
                 _isPlayer = (playerIndex == boardData.MyIndex);
-                _isActive = boardData.Players[playerIndex].IsActive;
+                // var t = boardData.Players[playerIndex];
+                Debug.Log("ee1");
 
-                UpdatePlayerData(boardData.Players[playerIndex]);
+                UpdatePlayerData(boardData, playerIndex);
                 UpdatePlayerDrawPile(boardData, playerIndex);
                 UpdatePlayerDiscardPile(boardData, playerIndex);
                 UpdatePlayerHand(boardData, playerIndex);
             }
             else
             {
-                UpdatePlayerData(null);
+                Debug.Log("e2");
+                UpdatePlayerData(null, playerIndex);
+                Debug.Log("e3");
                 UpdatePlayerDrawPile(null);
+                Debug.Log("e4");
                 UpdatePlayerDiscardPile(null);
+                Debug.Log("e5");
                 UpdatePlayerHand(null);
+                Debug.Log("e6");
             }
         }
 
-        private void UpdatePlayerData(PlayerData playerData)
+        private void UpdatePlayerData(BoardData boardData, int playerIndex)
         {
-            SetHP(playerData != null ? playerData.HP : 0);
-            SetCoins(playerData != null ? playerData.Coins : 0);
+            Debug.Log("UpdatePlayerData");
+
+            if (boardData == null)
+                return;
+
+            if (boardData.Players.Count > playerIndex)
+            {
+                var playerData = boardData.Players[playerIndex];
+
+                SetHP(playerData != null ? playerData.HP : 0);
+                SetCoins(playerData != null ? playerData.Coins : 0);
+            }
+            else
+            {
+
+            }
         }
 
         private void UpdatePlayerDrawPile(BoardData boardData, int playerIndex = 0)
         {
+            Debug.Log("UpdatePlayerDrawPile");
+
+            if (boardData == null)
+                return;
+
             CardPlace drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
+            Debug.Log(drawPilePlace);
 
             if (boardData == null)
                 this.drawPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace) ? boardData.Div.CardPlaceDivs[drawPilePlace] : null, 0);
@@ -65,6 +93,11 @@ namespace Solcery.UI.Play
 
         private void UpdatePlayerDiscardPile(BoardData boardData, int playerIndex = 0)
         {
+            Debug.Log("UpdatePlayerDiscardPile");
+
+            if (boardData == null)
+                return;
+
             CardPlace discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
 
             if (boardData == null)
@@ -78,6 +111,10 @@ namespace Solcery.UI.Play
 
         private void UpdatePlayerHand(BoardData boardData, int playerIndex = 0)
         {
+            // if (boardData == null)
+            //     return;
+
+            Debug.Log("UIPlayer UpdatePlayerHand");
             if (boardData == null)
             {
                 hand?.DeleteAllCards();

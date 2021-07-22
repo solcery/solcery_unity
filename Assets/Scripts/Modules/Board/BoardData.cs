@@ -121,10 +121,10 @@ namespace Solcery
             }
 
             if (!atLeastOneMe)
-                MyIndex = -1;
+                MyIndex = 0;
 
             if (!atLeastOneEnemy)
-                EnemyIndex = -1;
+                EnemyIndex = 1 - MyIndex;
         }
 
         private void FindEndTurnCard()

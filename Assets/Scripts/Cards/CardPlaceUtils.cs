@@ -18,7 +18,7 @@ namespace Solcery
             {
                 0 => CardPlace.DrawPile1,
                 1 => CardPlace.DrawPile2,
-                _ => CardPlace.DrawPile1,
+                _ => CardPlace.Nowhere,
             };
         }
 
@@ -28,7 +28,7 @@ namespace Solcery
             {
                 0 => CardPlace.DiscardPile1,
                 1 => CardPlace.DiscardPile2,
-                _ => CardPlace.DiscardPile1,
+                _ => CardPlace.Nowhere,
             };
         }
     }

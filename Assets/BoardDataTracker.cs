@@ -33,6 +33,7 @@ namespace Solcery.Modules.Board
 
         public void OnBoardUpdate(BoardData boardData)
         {
+            Debug.Log("OnBoardUpdate");
             _previousBoardData = _currentBoardData;
             _currentBoardData = boardData;
 
@@ -41,6 +42,7 @@ namespace Solcery.Modules.Board
 
         private void TrackCardsThatChangedPlaces()
         {
+            Debug.Log("Track");
             if (_currentBoardData == null || _currentBoardData.Cards == null)
             {
                 _cardsThatChangedPlaces = null;

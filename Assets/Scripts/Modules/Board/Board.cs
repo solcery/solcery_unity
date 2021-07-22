@@ -14,7 +14,8 @@ namespace Solcery.Modules.Board
 
         [SerializeField] private BoardDataTracker tracker = null;
         [SerializeField] private bool initWithTestJson = false;
-        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson1;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson2;
 
         public void UpdateBoard(BoardData boardData)
         {
@@ -27,7 +28,7 @@ namespace Solcery.Modules.Board
 
             if (initWithTestJson)
             {
-                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
+                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson1);
                 UpdateBoard(boardData.Prettify());
             }
         }
@@ -37,6 +38,15 @@ namespace Solcery.Modules.Board
             tracker?.DeInit();
 
             _boardData = null;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson2);
+                UpdateBoard(boardData.Prettify());
+            }
         }
     }
 }

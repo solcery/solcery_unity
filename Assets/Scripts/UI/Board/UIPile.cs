@@ -9,6 +9,7 @@ namespace Solcery.UI.Play
 
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, int cardsCount)
         {
+            Debug.Log("UIPile UpdateWithDiv");
             // TODO count +- count here from each div
             if (cardsCount <= 0)
                 this.gameObject.SetActive(false);
