@@ -17,7 +17,6 @@ namespace Solcery.UI.Play
 
         public void Clear()
         {
-            Debug.Log("UIHand Clear");
             DeleteAllCards();
         }
 

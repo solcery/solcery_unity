@@ -14,6 +14,7 @@ namespace Solcery.UI.Play
         [SerializeField] private Button createGameButton = null;
         [SerializeField] private GameObject games = null;
         [SerializeField] private GameObject waitingStatus = null;
+        [SerializeField] private GameObject lookingForOpponent = null;
         [SerializeField] private Button joinGameButton = null;
         [SerializeField] private TextMeshProUGUI joinGameKey = null;
         [SerializeField] private UIBoard board = null;
@@ -47,6 +48,7 @@ namespace Solcery.UI.Play
                 games?.SetActive(true);
                 createGameButton?.gameObject?.SetActive(true);
                 waitingStatus?.SetActive(false);
+                lookingForOpponent?.SetActive(false);
                 // joinGameButton?.gameObject?.SetActive(true);
 
                 board?.Clear();
@@ -60,6 +62,7 @@ namespace Solcery.UI.Play
                 games.SetActive(false);
                 createGameButton?.gameObject?.SetActive(false);
                 waitingStatus?.SetActive(false);
+                lookingForOpponent?.SetActive(false);
                 // joinGameButton?.gameObject?.SetActive(false);
 
                 board?.gameObject?.SetActive(true);
@@ -75,6 +78,7 @@ namespace Solcery.UI.Play
             UnityToReact.Instance?.CallCreateBoard();
             createGameButton?.gameObject?.SetActive(false);
             waitingStatus?.SetActive(true);
+            lookingForOpponent?.SetActive(true);
             // joinGameButton?.gameObject?.SetActive(false);
         }
 
