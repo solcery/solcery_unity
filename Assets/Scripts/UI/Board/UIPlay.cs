@@ -12,6 +12,8 @@ namespace Solcery.UI.Play
     public class UIPlay : Singleton<UIPlay>
     {
         [SerializeField] private Button createGameButton = null;
+        [SerializeField] private GameObject games = null;
+        [SerializeField] private GameObject waitingStatus = null;
         [SerializeField] private Button joinGameButton = null;
         [SerializeField] private TextMeshProUGUI joinGameKey = null;
         [SerializeField] private UIBoard board = null;
@@ -42,21 +44,25 @@ namespace Solcery.UI.Play
 
             if (boardData == null)
             {
+                games?.SetActive(true);
                 createGameButton?.gameObject?.SetActive(true);
-                joinGameButton?.gameObject?.SetActive(true);
+                waitingStatus?.SetActive(false);
+                // joinGameButton?.gameObject?.SetActive(true);
                 board?.gameObject?.SetActive(false);
 
                 createGameButton?.onClick?.AddListener(OnCreateGameButtonClicked);
-                joinGameButton?.onClick?.AddListener(OnJoinGameButtonClicked);
+                // joinGameButton?.onClick?.AddListener(OnJoinGameButtonClicked);
             }
             else
             {
+                games.SetActive(false);
                 createGameButton?.gameObject?.SetActive(false);
-                joinGameButton?.gameObject?.SetActive(false);
+                waitingStatus?.SetActive(false);
+                // joinGameButton?.gameObject?.SetActive(false);
                 board?.gameObject?.SetActive(true);
 
                 createGameButton?.onClick?.RemoveAllListeners();
-                joinGameButton?.onClick?.RemoveAllListeners();
+                // joinGameButton?.onClick?.RemoveAllListeners();
                 board?.OnBoardUpdate(boardData);
             }
         }
@@ -65,7 +71,8 @@ namespace Solcery.UI.Play
         {
             UnityToReact.Instance?.CallCreateBoard();
             createGameButton?.gameObject?.SetActive(false);
-            joinGameButton?.gameObject?.SetActive(false);
+            waitingStatus?.SetActive(true);
+            // joinGameButton?.gameObject?.SetActive(false);
         }
 
         private void OnJoinGameButtonClicked()
@@ -74,7 +81,7 @@ namespace Solcery.UI.Play
             {
                 UnityToReact.Instance?.CallJoinBoard(joinGameKey.text);
                 createGameButton?.gameObject?.SetActive(false);
-                joinGameButton?.gameObject?.SetActive(false);
+                // joinGameButton?.gameObject?.SetActive(false);
             }
         }
     }

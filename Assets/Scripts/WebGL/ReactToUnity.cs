@@ -332,6 +332,11 @@ namespace Solcery.WebGL
 
                 Collection.Instance?.UpdateCollection(collectionData);
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                Board.Instance?.UpdateBoard(null);
+            }
         }
 #endif
     }
