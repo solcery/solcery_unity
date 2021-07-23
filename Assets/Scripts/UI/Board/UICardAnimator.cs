@@ -12,6 +12,17 @@ namespace Solcery
         private List<BoardDataCardChangedPlace> _cardsToAnimate = new List<BoardDataCardChangedPlace>();
         private Dictionary<int, UIBoardCard> _clonedCards = new Dictionary<int, UIBoardCard>();
 
+        public void Clear()
+        {
+            _cardsToAnimate = new List<BoardDataCardChangedPlace>();
+
+            foreach (var idCard in _clonedCards)
+            {
+                DestroyImmediate(idCard.Value.gameObject);
+            }
+            _clonedCards = new Dictionary<int, UIBoardCard>();
+        }
+
         public void Clone(UIBoardCard cardToDelete, BoardDataCardChangedPlace departedCard)
         {
             if (UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))

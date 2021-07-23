@@ -17,7 +17,7 @@ namespace Solcery.UI.Play
         [SerializeField] private Button endTurnButton = null;
 
         private BoardData _boardData;
-        private Dictionary<CardPlace, IBoardPlace> BoardPlaces;
+        private Dictionary<CardPlace, IBoardPlace> _boardPlaces;
 
         public void Init()
         {
@@ -29,12 +29,26 @@ namespace Solcery.UI.Play
             endTurnButton?.onClick.RemoveAllListeners();
         }
 
+        public void Clear()
+        {
+            _boardData = null;
+            _boardPlaces = null;
+
+            player?.Clear();
+            enemy?.Clear();
+            deck?.Clear();
+            shop?.Clear();
+            playedThisTurn?.Clear();
+            playedThisTurnOnTop?.Clear();
+
+            UICardAnimator.Instance?.Clear();
+            endTurnButton?.gameObject?.SetActive(false);
+        }
+
         public void OnBoardUpdate(BoardData boardData)
         {
             _boardData = boardData;
             AssignBoardPlaces(_boardData);
-
-            this.gameObject.SetActive(true);
 
             player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
             enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
@@ -67,7 +81,7 @@ namespace Solcery.UI.Play
             var playerIndex = boardData.MyIndex;
             var enemyIndex = boardData.EnemyIndex;
 
-            BoardPlaces = new Dictionary<CardPlace, IBoardPlace>()
+            _boardPlaces = new Dictionary<CardPlace, IBoardPlace>()
             {
                 { CardPlace.Deck, deck },
                 { CardPlace.Shop, shop },
@@ -82,9 +96,9 @@ namespace Solcery.UI.Play
                 var playerDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
                 var playerDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
 
-                BoardPlaces.Add(playerHandPlace, player.Hand);
-                BoardPlaces.Add(playerDrawPilePlace, player.DrawPile);
-                BoardPlaces.Add(playerDiscardPilePlace, player.DiscardPile);
+                _boardPlaces.Add(playerHandPlace, player.Hand);
+                _boardPlaces.Add(playerDrawPilePlace, player.DrawPile);
+                _boardPlaces.Add(playerDiscardPilePlace, player.DiscardPile);
             }
 
             if (enemyIndex >= 0)
@@ -93,15 +107,15 @@ namespace Solcery.UI.Play
                 var enemyDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(enemyIndex);
                 var enemyDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(enemyIndex);
 
-                BoardPlaces.Add(enemyHandPlace, enemy.Hand);
-                BoardPlaces.Add(enemyDrawPilePlace, enemy.DrawPile);
-                BoardPlaces.Add(enemyDiscardPilePlace, enemy.DiscardPile);
+                _boardPlaces.Add(enemyHandPlace, enemy.Hand);
+                _boardPlaces.Add(enemyDrawPilePlace, enemy.DrawPile);
+                _boardPlaces.Add(enemyDiscardPilePlace, enemy.DiscardPile);
             }
         }
 
         public bool GetBoardPlace(CardPlace cardPlace, out IBoardPlace place)
         {
-            if (BoardPlaces.TryGetValue(cardPlace, out var boardPlace))
+            if (_boardPlaces.TryGetValue(cardPlace, out var boardPlace))
             {
                 place = boardPlace;
                 return true;

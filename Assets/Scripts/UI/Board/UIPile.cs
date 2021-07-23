@@ -3,9 +3,15 @@ using UnityEngine;
 
 namespace Solcery.UI.Play
 {
-    public class UIPile : UIHand, IBoardPlace
+    public class UIPile : UIHand
     {
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
+
+        public new void Clear()
+        {
+            if (cardsCountText != null) cardsCountText.text = string.Empty;
+            base.Clear();
+        }
 
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, int cardsCount)
         {

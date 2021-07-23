@@ -48,6 +48,8 @@ namespace Solcery.UI.Play
                 createGameButton?.gameObject?.SetActive(true);
                 waitingStatus?.SetActive(false);
                 // joinGameButton?.gameObject?.SetActive(true);
+
+                board?.Clear();
                 board?.gameObject?.SetActive(false);
 
                 createGameButton?.onClick?.AddListener(OnCreateGameButtonClicked);
@@ -59,11 +61,12 @@ namespace Solcery.UI.Play
                 createGameButton?.gameObject?.SetActive(false);
                 waitingStatus?.SetActive(false);
                 // joinGameButton?.gameObject?.SetActive(false);
+
                 board?.gameObject?.SetActive(true);
+                board?.OnBoardUpdate(boardData);
 
                 createGameButton?.onClick?.RemoveAllListeners();
                 // joinGameButton?.onClick?.RemoveAllListeners();
-                board?.OnBoardUpdate(boardData);
             }
         }
 

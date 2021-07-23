@@ -15,6 +15,12 @@ namespace Solcery.UI.Play
 
         protected Dictionary<int, UIBoardCard> _cardsById;
 
+        public void Clear()
+        {
+            Debug.Log("UIHand Clear");
+            DeleteAllCards();
+        }
+
         protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
         {
             _areCardsFaceDown = areCardsFaceDown;
@@ -61,7 +67,8 @@ namespace Solcery.UI.Play
 
         public void OnCardArrival(int cardId)
         {
-            GetCardById(cardId).SetVisibility(true);
+            var card = GetCardById(cardId);
+            if (card != null) card.SetVisibility(true);
         }
 
         protected abstract void OnCardCasted(int cardId);

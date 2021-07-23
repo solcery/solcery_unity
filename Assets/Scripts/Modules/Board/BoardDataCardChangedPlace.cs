@@ -2,7 +2,6 @@ namespace Solcery
 {
     public struct BoardDataCardChangedPlace
     {
-        // public int CardId;
         public BoardCardData CardData;
         public CardPlace From;
         public CardPlace To;

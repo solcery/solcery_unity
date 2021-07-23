@@ -18,11 +18,26 @@ namespace Solcery.UI.Play
         [SerializeField] private TextMeshProUGUI coinsText = null;
 
         private bool _isPlayer;
-        // private bool _isActive;
         private int _currentHP;
-        private bool _isInitialHp = true;
         private int _currentCoins;
+        private bool _isInitialHp = true;
         private bool _isInitialCoins = true;
+
+        public void Clear()
+        {
+            _isPlayer = false;
+            _currentHP = 0;
+            _currentCoins = 0;
+            _isInitialHp = true;
+            _isInitialCoins = true;
+
+            hand?.Clear();
+            discardPile?.Clear();
+            drawPile?.Clear();
+
+            if (hpText != null) hpText.text = string.Empty;
+            if (coinsText != null) coinsText.text = string.Empty;
+        }
 
         public void OnBoardUpdate(BoardData boardData, int playerIndex)
         {
@@ -56,10 +71,6 @@ namespace Solcery.UI.Play
                 SetHP(playerData != null ? playerData.HP : 0);
                 SetCoins(playerData != null ? playerData.Coins : 0);
             }
-            else
-            {
-
-            }
         }
 
         private void UpdatePlayerDrawPile(BoardData boardData, int playerIndex = 0)
@@ -68,13 +79,7 @@ namespace Solcery.UI.Play
                 return;
 
             CardPlace drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-
-            if (boardData == null)
-                this.drawPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace) ? boardData.Div.CardPlaceDivs[drawPilePlace] : null, 0);
-            else
-            {
-                this.drawPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace) ? boardData.Div.CardPlaceDivs[drawPilePlace] : null, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
-            }
+            this.drawPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace) ? boardData.Div.CardPlaceDivs[drawPilePlace] : null, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
         }
 
         private void UpdatePlayerDiscardPile(BoardData boardData, int playerIndex = 0)
@@ -83,23 +88,13 @@ namespace Solcery.UI.Play
                 return;
 
             CardPlace discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
-
-            if (boardData == null)
-                this.discardPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace) ? boardData.Div.CardPlaceDivs[discardPilePlace] : null, 0);
-            else
-            {
-
-                this.discardPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace) ? boardData.Div.CardPlaceDivs[discardPilePlace] : null, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
-            }
+            this.discardPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace) ? boardData.Div.CardPlaceDivs[discardPilePlace] : null, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
         }
 
         private void UpdatePlayerHand(BoardData boardData, int playerIndex = 0)
         {
             if (boardData == null)
-            {
-                hand?.DeleteAllCards();
                 return;
-            }
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
             hand?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(cardPlace) ? boardData.Div.CardPlaceDivs[cardPlace] : null, _isPlayer);
