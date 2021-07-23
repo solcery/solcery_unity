@@ -7,6 +7,7 @@ using Solcery.Utils;
 using UnityEngine;
 using Newtonsoft.Json;
 using Solcery.UI.Play;
+using Cysharp.Threading.Tasks;
 
 namespace Solcery.WebGL
 {
@@ -49,11 +50,14 @@ namespace Solcery.WebGL
         public void SetGameOver(string gameOverJson)
         {
             var gameOverData = JsonConvert.DeserializeObject<GameOverData>(gameOverJson);
-            OnGameOver?.Invoke(gameOverData);
-            UIGameOverPopup.Instance?.Open(gameOverData);
-            Board.Instance?.UpdateBoard(null);
+            GameOverPopupWithDelay(gameOverData).Forget();
         }
 
+        private async UniTaskVoid GameOverPopupWithDelay(GameOverData gameOverData)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
+            UIGameOverPopup.Instance?.Open(gameOverData);
+        }
 
 #if UNITY_EDITOR
         void Update()
@@ -289,8 +293,8 @@ namespace Solcery.WebGL
                     Description = "You demolished your opponent. Gratz!",
                     Callback = "callback"
                 };
-                UIGameOverPopup.Instance?.Open(gameOverData);
-                Board.Instance?.UpdateBoard(null);
+
+                GameOverPopupWithDelay(gameOverData).Forget();
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha7))

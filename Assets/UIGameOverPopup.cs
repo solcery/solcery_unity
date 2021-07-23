@@ -1,3 +1,4 @@
+using Solcery.Modules.Board;
 using Solcery.Utils;
 using Solcery.WebGL;
 using TMPro;
@@ -30,6 +31,7 @@ namespace Solcery.UI.Play
         private void Close()
         {
             if (canvas != null) canvas.enabled = false;
+            Board.Instance?.UpdateBoard(null);
             UnityToReact.Instance.CallGameOverCallback(_data.Callback);
         }
     }
