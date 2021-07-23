@@ -23,7 +23,6 @@ namespace Solcery.UI.Create
         {
             if (data == null)
             {
-                Debug.Log("new PlaceDisplayDataForPlayer");
                 data = new PlaceDisplayDataForPlayer();
             }
 

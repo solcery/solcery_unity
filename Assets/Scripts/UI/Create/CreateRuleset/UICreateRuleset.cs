@@ -100,7 +100,6 @@ namespace Solcery.UI.Create
 
             if (!hasBeenOpenedAtLeastOnce)
             {
-                Debug.Log("open collection for the first time");
                 hasBeenOpenedAtLeastOnce = true;
                 UICollection.Instance?.Open();
             }
@@ -233,7 +232,6 @@ namespace Solcery.UI.Create
             rulesetData.DisplayData = rulesetDisplayData;
 
             var rulesetJson = JsonUtility.ToJson(rulesetData);
-            Debug.Log(rulesetJson);
             UnityToReact.Instance.CallUpdateRuleset(rulesetJson);
         }
     }

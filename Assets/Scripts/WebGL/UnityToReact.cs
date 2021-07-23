@@ -39,8 +39,6 @@ namespace Solcery.WebGL
 #if (UNITY_WEBGL && !UNITY_EDITOR)
             UpdateCard(cardJson);
 #endif
-
-            Debug.Log(cardJson);
         }
 
         public void CallUpdateRuleset(string ruleset)

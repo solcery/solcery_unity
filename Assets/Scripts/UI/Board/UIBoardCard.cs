@@ -10,13 +10,10 @@ namespace Solcery.UI
     {
         public bool IsFaceDown => _isFaceDown;
 
-        [SerializeField] private Transform faceUp = null;
-        [SerializeField] private Transform faceDown = null;
         [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
-        [SerializeField] private CardFrames cardFrames = null;
         [SerializeField] private Image cardPicture = null;
         [SerializeField] private Image cardFrameFaceUp = null;
         [SerializeField] private Image cardFrameFaceDown = null;

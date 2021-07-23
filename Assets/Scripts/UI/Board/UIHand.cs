@@ -104,7 +104,6 @@ namespace Solcery.UI.Play
                 return card.transform.position;
             else
             {
-                Debug.Log("destination card is null");
                 return this.transform.position;
             }
         }

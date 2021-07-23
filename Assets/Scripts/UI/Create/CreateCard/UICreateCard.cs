@@ -7,7 +7,6 @@ using TMPro;
 using Solcery.Utils.Reactives;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Solcery.UI.Create
 {
@@ -54,7 +53,7 @@ namespace Solcery.UI.Create
 
                 _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;
 
-                UICreatingCardPopup.Instance.Open(_currentCard.Metadata);
+                UICreatingCardPopup.Instance?.Open(_currentCard.Metadata);
                 UnityToReact.Instance?.CallUpdateCard(_currentCard);
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
