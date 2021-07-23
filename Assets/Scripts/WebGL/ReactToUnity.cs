@@ -6,6 +6,7 @@ using Solcery.Modules.Wallet;
 using Solcery.Utils;
 using UnityEngine;
 using Newtonsoft.Json;
+using Solcery.UI.Play;
 
 namespace Solcery.WebGL
 {
@@ -13,6 +14,7 @@ namespace Solcery.WebGL
     {
         public static Action<CardCreationSignData> OnCardCreationSignDataChanged;
         public static Action<CardCreationConfirmData> OnCardCreationConfirmDataChanged;
+        public static Action<GameOverData> OnGameOver;
 
         public void SetWalletConnected(string data)
         {
@@ -43,6 +45,15 @@ namespace Solcery.WebGL
             var confirmData = JsonUtility.FromJson<CardCreationConfirmData>(confirmJson);
             OnCardCreationConfirmDataChanged?.Invoke(confirmData);
         }
+
+        public void SetGameOver(string gameOverJson)
+        {
+            var gameOverData = JsonConvert.DeserializeObject<GameOverData>(gameOverJson);
+            OnGameOver?.Invoke(gameOverData);
+            UIGameOverPopup.Instance?.Open(gameOverData);
+            Board.Instance?.UpdateBoard(null);
+        }
+
 
 #if UNITY_EDITOR
         void Update()
@@ -267,6 +278,19 @@ namespace Solcery.WebGL
                 };
 
                 Board.Instance?.UpdateBoard(boardData.Prettify());
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                Debug.Log("Game Over");
+                var gameOverData = new GameOverData()
+                {
+                    Title = "El victory",
+                    Description = "You demolished your opponent. Gratz!",
+                    Callback = "callback"
+                };
+                UIGameOverPopup.Instance?.Open(gameOverData);
+                Board.Instance?.UpdateBoard(null);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha7))

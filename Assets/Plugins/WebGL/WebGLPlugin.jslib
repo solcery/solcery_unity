@@ -20,4 +20,7 @@ mergeInto(LibraryManager.library, {
     UseCard: function (cardIndex) {
       ReactUnityWebGL.UseCard(cardIndex);
     },
+    GameOverCallback: function (callback) {
+      ReactUnityWebGL.GameOverCallback(Pointer_stringify(callback));
+    }
   });

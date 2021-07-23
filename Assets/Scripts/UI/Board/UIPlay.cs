@@ -36,8 +36,10 @@ namespace Solcery.UI.Play
             board?.DeInit();
         }
 
-        public void OnBoardUpdate(BoardData boardData)
+        private void OnBoardUpdate(BoardData boardData)
         {
+            Debug.Log("UIPlay OnBoardUpdate");
+
             if (boardData == null)
             {
                 createGameButton?.gameObject?.SetActive(true);

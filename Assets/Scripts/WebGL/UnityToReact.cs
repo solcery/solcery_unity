@@ -17,6 +17,7 @@ namespace Solcery.WebGL
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
         [DllImport("__Internal")] private static extern void UseCard(int card);
+        [DllImport("__Internal")] private static extern void GameOverCallback(string callback);
 
         public void CallOnUnityLoaded()
         {
@@ -65,8 +66,16 @@ namespace Solcery.WebGL
         public void CallUseCard(int cardIndex)
         {
             Debug.Log("UseCard");
+
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     UseCard(cardIndex);
+#endif
+        }
+
+        public void CallGameOverCallback(string callback)
+        {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            GameOverCallback(callback);
 #endif
         }
     }
