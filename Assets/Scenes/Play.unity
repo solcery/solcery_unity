@@ -7161,7 +7161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8934130984887702009, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_ScrollSensitivity
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8934130984887702010, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_Pivot.x
