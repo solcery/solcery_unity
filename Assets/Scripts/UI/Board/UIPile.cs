@@ -24,7 +24,10 @@ namespace Solcery.UI.Play
                 if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
             }
 
-            base.UpdateWithDiv(cardPlaceDiv, false, true, false);
+            base.UpdateWithDiv(cardPlaceDiv, false, true, false, true);
+
+            var lastChild = content.GetChild(content.childCount - 1);
+            cardsCountText.transform.localPosition = lastChild.transform.localPosition;
         }
 
         protected override void OnCardCasted(int cardId)

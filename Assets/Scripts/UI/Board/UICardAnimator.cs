@@ -55,7 +55,9 @@ namespace Solcery
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {
                         var destination = toPlace.GetCardDestination(departedCard.CardData.CardId);
+                        var rotation = toPlace.GetCardRotation(departedCard.CardData.CardId);
                         var tween = cardClone.transform.DOMove(destination, 0.5f);
+                        cardClone.transform.DORotate(rotation, 0.25f);
 
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
                             cardClone?.PlayTurningAnimation();

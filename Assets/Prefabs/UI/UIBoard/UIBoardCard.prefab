@@ -195,7 +195,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 217f0bd1d7fa2a147a815ef5bc5030c8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -225,13 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f149321ad32e4a8c3a49fa3ed3c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceUp: {fileID: 7137022758997706453}
-  faceDown: {fileID: 5272270672153570919}
   cg: {fileID: 4440240633767081101}
   animator: {fileID: 8150576541526316475}
   pointerHandler: {fileID: 4002356702728752971}
   cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
-  cardFrames: {fileID: 11400000, guid: bff714fd482af0c4eab95942ec8b0608, type: 2}
   cardPicture: {fileID: 3834954703965132792}
   cardFrameFaceUp: {fileID: 8118980715419479460}
   cardFrameFaceDown: {fileID: 5222789459842261255}

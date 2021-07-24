@@ -4,7 +4,7 @@ namespace Solcery.UI.Play
     {
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv)
         {
-            base.UpdateWithDiv(cardPlaceDiv, false, false, false);
+            base.UpdateWithDiv(cardPlaceDiv, false, false, false, true);
         }
 
         protected override void OnCardCasted(int cardId)

@@ -20,7 +20,7 @@ namespace Solcery.UI.Play
             DeleteAllCards();
         }
 
-        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins)
+        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
 
@@ -48,6 +48,14 @@ namespace Solcery.UI.Play
 
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
                     card.Init(arrivedCard.CardData, _areCardsFaceDown, areButtonsInteractable, showCoins, OnCardCasted);
+                    if (areCardsScattered && arrivedCard.To != CardPlace.PlayedThisTurn)
+                    {
+                        var localPos = card.transform.localPosition;
+                        localPos.x += Random.Range(-2f, 2f);
+                        localPos.y += Random.Range(-2f, 2f);
+                        card.transform.localPosition = localPos;
+                        card.transform.Rotate(new Vector3(0, 0, Random.Range(-3f, 3f)), Space.Self);
+                    }
 
                     if (arrivedCard.From == CardPlace.Nowhere)
                         card.SetVisibility(true);
@@ -111,6 +119,18 @@ namespace Solcery.UI.Play
             else
             {
                 return this.transform.position;
+            }
+        }
+
+        public Vector3 GetCardRotation(int cardId)
+        {
+            var card = GetCardById(cardId);
+
+            if (card != null)
+                return card.transform.localRotation.eulerAngles;
+            else
+            {
+                return this.transform.localRotation.eulerAngles;
             }
         }
 
