@@ -97,7 +97,9 @@ namespace Solcery.UI.Play
                 return;
 
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-            hand?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(cardPlace) ? boardData.Div.CardPlaceDivs[cardPlace] : null, _isPlayer);
+            var areCardsInteractable = _isPlayer && boardData != null && boardData.Me != null && boardData.Me.IsActive;
+            var areCardsFaceDown = !_isPlayer;
+            hand?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(cardPlace) ? boardData.Div.CardPlaceDivs[cardPlace] : null, areCardsInteractable, areCardsFaceDown);
         }
 
         private void SetHP(int newHP)

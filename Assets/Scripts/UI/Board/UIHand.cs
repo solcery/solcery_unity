@@ -20,15 +20,22 @@ namespace Solcery.UI.Play
             DeleteAllCards();
         }
 
-        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areButtonsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
+        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
 
-            if (cardPlaceDiv == null)
-                return;
-
             if (_cardsById == null)
                 _cardsById = new Dictionary<int, UIBoardCard>();
+            else
+            {
+                foreach (var idCard in _cardsById)
+                {
+                    idCard.Value.SetInteractabe(areCardsInteractable);
+                }
+            }
+
+            if (cardPlaceDiv == null)
+                return;
 
             if (cardPlaceDiv.Departed != null)
             {
@@ -47,7 +54,7 @@ namespace Solcery.UI.Play
                     UIBoardCard card;
 
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                    card.Init(arrivedCard.CardData, _areCardsFaceDown, areButtonsInteractable, showCoins, OnCardCasted);
+                    card.Init(arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
                     if (areCardsScattered && arrivedCard.To != CardPlace.PlayedThisTurn)
                     {
                         var localPos = card.transform.localPosition;

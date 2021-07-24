@@ -30,11 +30,14 @@ namespace Solcery.UI
         private bool _isFaceDown;
         private bool _isInteractable;
         private bool _pointerDown = false;
+        private bool _isPointerOver = false;
 
         public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
+            Debug.Log("Init");
             _isFaceDown = isFaceDown;
-            _isInteractable = isInteractable;
+            // _isInteractable = isInteractable;
+            SetInteractabe(isInteractable);
 
             _cardData = cardData;
             _cardType = Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
@@ -64,6 +67,25 @@ namespace Solcery.UI
         {
             _isFaceDown = isFaceDown;
             SetAnimator();
+        }
+
+        public void SetInteractabe(bool isInteractable)
+        {
+            _isInteractable = isInteractable;
+            _pointerDown = false;
+
+            if (animator != null)
+            {
+                if (!_isInteractable)
+                    animator?.SetTrigger("Idle");
+                else
+                {
+                    if (_isPointerOver)
+                        animator?.SetTrigger("Highlighted");
+                    else
+                        animator?.SetTrigger("Idle");
+                }
+            }
         }
 
         public void SetAnimator()
@@ -138,33 +160,35 @@ namespace Solcery.UI
 
         private void SubsribeToButton()
         {
-            if (_isInteractable)
-            {
-                pointerHandler.enabled = true;
-                pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
-            }
-            else
-            {
-                pointerHandler.enabled = false;
-            }
+            pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
         }
 
         private void OnPointerEnter()
         {
-            // Debug.Log("OnPointerEnter");
+            _isPointerOver = true;
+
+            if (!_isInteractable)
+                return;
+
             animator?.SetTrigger("Highlighted");
         }
 
         private void OnPointerExit()
         {
-            // Debug.Log("OnPointerExit");
+            _isPointerOver = false;
+
+            if (!_isInteractable)
+                return;
+
             animator?.SetTrigger("Idle");
             _pointerDown = false;
         }
 
         private void OnPointerDown()
         {
-            // Debug.Log("OnPointerDown");
+            if (!_isInteractable)
+                return;
+
             if (!_pointerDown)
             {
                 _pointerDown = true;
@@ -173,7 +197,8 @@ namespace Solcery.UI
 
         private void OnPointerUp()
         {
-            // Debug.Log("OnPointerUp");
+            if (!_isInteractable)
+                return;
 
             if (_pointerDown)
             {
@@ -185,7 +210,8 @@ namespace Solcery.UI
 
         private void OnDrag()
         {
-            // Debug.Log("OnDrag");
+            if (!_isInteractable)
+                return;
         }
     }
 }
