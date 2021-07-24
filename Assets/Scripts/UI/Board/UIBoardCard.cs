@@ -29,7 +29,7 @@ namespace Solcery.UI
 
         private bool _isFaceDown;
         private bool _isInteractable;
-        private bool _hasBeenClicked = false;
+        private bool _pointerDown = false;
 
         public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
@@ -141,7 +141,7 @@ namespace Solcery.UI
             if (_isInteractable)
             {
                 pointerHandler.enabled = true;
-                pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown);
+                pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
             }
             else
             {
@@ -151,23 +151,41 @@ namespace Solcery.UI
 
         private void OnPointerEnter()
         {
+            // Debug.Log("OnPointerEnter");
             animator?.SetTrigger("Highlighted");
         }
 
         private void OnPointerExit()
         {
+            // Debug.Log("OnPointerExit");
             animator?.SetTrigger("Idle");
+            _pointerDown = false;
         }
 
         private void OnPointerDown()
         {
-            if (!_hasBeenClicked)
+            // Debug.Log("OnPointerDown");
+            if (!_pointerDown)
             {
-                _hasBeenClicked = true;
+                _pointerDown = true;
+            }
+        }
+
+        private void OnPointerUp()
+        {
+            // Debug.Log("OnPointerUp");
+
+            if (_pointerDown)
+            {
                 animator?.SetTrigger("Pressed");
                 pointerHandler.enabled = false;
                 _onCardCasted?.Invoke(_cardData.CardId);
             }
+        }
+
+        private void OnDrag()
+        {
+            // Debug.Log("OnDrag");
         }
     }
 }

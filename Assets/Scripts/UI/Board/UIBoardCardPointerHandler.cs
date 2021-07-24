@@ -4,15 +4,17 @@ using UnityEngine.EventSystems;
 
 namespace Solcery.UI
 {
-    public class UIBoardCardPointerHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+    public class UIBoardCardPointerHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
-        Action _onPointerEnter, _onPointerExit, _onPointerDown;
+        Action _onPointerEnter, _onPointerExit, _onPointerDown, _onPointerUp, _onDrag;
 
-        public void Init(Action onPointerEnter, Action onPointerExit, Action onPointerDown)
+        public void Init(Action onPointerEnter, Action onPointerExit, Action onPointerDown, Action onPointerUp, Action onDrag)
         {
             _onPointerEnter = onPointerEnter;
             _onPointerExit = onPointerExit;
             _onPointerDown = onPointerDown;
+            _onPointerUp = onPointerUp;
+            _onDrag = onDrag;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -31,9 +33,21 @@ namespace Solcery.UI
                 _onPointerDown?.Invoke();
         }
 
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Left)
+                _onPointerUp?.Invoke();
+        }
+
         void OnDisable()
         {
 
+        }
+        
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Left)
+                _onDrag?.Invoke();
         }
     }
 }
