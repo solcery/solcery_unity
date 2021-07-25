@@ -7,8 +7,6 @@ namespace Solcery.UI.Play
     {
         public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areCardsInteractable)
         {
-            UnityEngine.Debug.Log($"shop cards interactable: {areCardsInteractable}");
-            UnityEngine.Debug.Log(_cardsById.Count);
             base.UpdateWithDiv(cardPlaceDiv, areCardsInteractable, false, true);
         }
 

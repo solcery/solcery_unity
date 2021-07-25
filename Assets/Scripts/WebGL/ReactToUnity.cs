@@ -87,22 +87,22 @@ namespace Solcery.WebGL
 
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Shop, CardType = 1},
 
-                    new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
-                    new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
-                    new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
+                    // new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
+                    // new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
+                    // new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
 
-                    new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
-                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.Hand2, CardType = 5},
-                    new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
+                    // new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
+                    // new BoardCardData() { CardId = 7, CardPlace = CardPlace.Hand2, CardType = 5},
+                    // new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
 
                     new BoardCardData() { CardId = 9, CardPlace = CardPlace.DrawPile1, CardType = 1},
 
                     new BoardCardData() { CardId = 10, CardPlace = CardPlace.DrawPile2, CardType = 1},
 
-                    new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
-                    new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
+                    // new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    // new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
 
-                    new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 1},
+                    // new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 1},
 
                     new BoardCardData() { CardId = 14, CardPlace = CardPlace.DiscardPile1, CardType = 1},
 
@@ -142,22 +142,22 @@ namespace Solcery.WebGL
 
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Shop, CardType = 1},
 
-                    new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
-                    new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
-                    new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
+                    // new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
+                    // new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
+                    // new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
 
-                    new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
-                    new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
+                    // new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
+                    // new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
 
                     new BoardCardData() { CardId = 9, CardPlace = CardPlace.DrawPile1, CardType = 1},
 
                     new BoardCardData() { CardId = 10, CardPlace = CardPlace.DrawPile2, CardType = 1},
 
-                    new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
-                    new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
-                    new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    // new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    // new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
+                    // new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
 
-                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 5},
+                    // new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 5},
 
                     new BoardCardData() { CardId = 14, CardPlace = CardPlace.DiscardPile1, CardType = 1},
 

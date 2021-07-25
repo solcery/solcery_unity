@@ -34,9 +34,7 @@ namespace Solcery.UI
 
         public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
-            Debug.Log("Init");
             _isFaceDown = isFaceDown;
-            // _isInteractable = isInteractable;
             SetInteractabe(isInteractable);
 
             _cardData = cardData;
@@ -73,17 +71,24 @@ namespace Solcery.UI
         {
             _isInteractable = isInteractable;
             _pointerDown = false;
+            pointerHandler.enabled = true;
 
             if (animator != null)
             {
                 if (!_isInteractable)
+                {
                     animator?.SetTrigger("Idle");
+                }
                 else
                 {
                     if (_isPointerOver)
+                    {
                         animator?.SetTrigger("Highlighted");
+                    }
                     else
+                    {
                         animator?.SetTrigger("Idle");
+                    }
                 }
             }
         }
@@ -204,6 +209,7 @@ namespace Solcery.UI
             {
                 animator?.SetTrigger("Pressed");
                 pointerHandler.enabled = false;
+                _isPointerOver = false;
                 _onCardCasted?.Invoke(_cardData.CardId);
             }
         }

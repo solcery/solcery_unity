@@ -41,8 +41,6 @@ namespace Solcery.UI.Play
 
         private void OnBoardUpdate(BoardData boardData)
         {
-            Debug.Log("UIPlay OnBoardUpdate");
-
             if (boardData == null)
             {
                 games?.SetActive(true);
