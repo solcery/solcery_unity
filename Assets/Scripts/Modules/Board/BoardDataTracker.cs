@@ -8,6 +8,7 @@ namespace Solcery.Modules.Board
 {
     public class BoardDataTracker : MonoBehaviour
     {
+        [HideInInspector]
         public AsyncReactiveProperty<BoardData> BoardDataWithDiv;
 
         private BoardData _currentBoardData;
