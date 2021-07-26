@@ -11,12 +11,12 @@ namespace Solcery
 #if UNITY_WEBGL && !UNITY_EDITOR
             WebGLInput.captureAllKeyboardInput = false;
 #endif
-            Game.Instance?.Init();
+            Dapp.Instance?.Init();
         }
 
         void OnDestroy()
         {
-            Game.Instance?.DeInit();
+            Dapp.Instance?.DeInit();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Solcery.FSM.Game
 {
-    public abstract class GameState : State
+    public abstract class DappState : State
     {
         [SerializeField] private string _sceneName;
 
@@ -12,7 +12,7 @@ namespace Solcery.FSM.Game
         {
             if (string.IsNullOrEmpty(_sceneName))
             {
-                Debug.LogError("Empty scene name in GameState");
+                Debug.LogError("Empty scene name in DappState");
                 return;
             }
 
@@ -23,7 +23,7 @@ namespace Solcery.FSM.Game
         {
             if (string.IsNullOrEmpty(_sceneName))
             {
-                Debug.LogError("Empty scene name in GameState");
+                Debug.LogError("Empty scene name in DappState");
                 return;
             }
 

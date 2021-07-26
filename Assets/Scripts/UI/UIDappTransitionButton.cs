@@ -5,14 +5,14 @@ using UnityEngine.UI;
 namespace Solcery.UI
 {
     [RequireComponent(typeof(Button))]
-    public class UIGameTransitionButton : MonoBehaviour
+    public class UIDappTransitionButton : MonoBehaviour
     {
-        [SerializeField] private GameTransition transition = null;
+        [SerializeField] private DappTransition transition = null;
         [SerializeField] protected Button button = null;
 
         protected virtual void OnEnable()
         {
-            button.onClick.AddListener(() => { GameSM.Instance?.PerformTransition(transition); });
+            button.onClick.AddListener(() => { DappSM.Instance?.PerformTransition(transition); });
         }
 
         private void OnDisable()

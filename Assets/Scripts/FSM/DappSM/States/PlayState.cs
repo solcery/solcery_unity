@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Solcery.FSM.Game
 {
-    [CreateAssetMenu(menuName = "Solcery/FSM/Game/States/Play", fileName = "Play")]
-    public class PlayState : GameState
+    [CreateAssetMenu(menuName = "Solcery/FSM/Dapp/States/Play", fileName = "Play")]
+    public class PlayState : DappState
     {
         public override async UniTask Enter()
         {

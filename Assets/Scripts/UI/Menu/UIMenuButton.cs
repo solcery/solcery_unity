@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Solcery.UI.Menu
 {
-    public class UIMenuButton : UIGameTransitionButton, IPointerEnterHandler, IPointerExitHandler
+    public class UIMenuButton : UIDappTransitionButton, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private Color titleHighlightedColor;

@@ -7,7 +7,7 @@ using Solcery.WebGL;
 
 namespace Solcery
 {
-    public class Game : Singleton<Game>
+    public class Dapp : Singleton<Dapp>
     {
         public void Init()
         {
@@ -15,7 +15,7 @@ namespace Solcery
             Collection.Instance?.Init();
             Board.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
-            GameSM.Instance?.PerformInitialTransition();
+            DappSM.Instance?.PerformInitialTransition();
         }
 
         public void DeInit()
