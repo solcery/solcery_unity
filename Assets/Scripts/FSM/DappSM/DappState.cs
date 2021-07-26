@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Solcery.FSM.Game
+namespace Solcery.FSM.Dapp
 {
     public abstract class DappState : State
     {

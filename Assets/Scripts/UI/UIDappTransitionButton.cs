@@ -1,5 +1,5 @@
 using UnityEngine;
-using Solcery.FSM.Game;
+using Solcery.FSM.Dapp;
 using UnityEngine.UI;
 
 namespace Solcery.UI

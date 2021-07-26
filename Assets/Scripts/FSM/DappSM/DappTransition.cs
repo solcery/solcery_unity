@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Solcery.FSM.Game
+namespace Solcery.FSM.Dapp
 {
     [CreateAssetMenu(menuName = "Solcery/FSM/Dapp/Transitions/Base", fileName = "BaseDappTransition")]
     public class DappTransition : Transition<DappState>

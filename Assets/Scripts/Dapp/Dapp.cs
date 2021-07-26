@@ -1,4 +1,4 @@
-using Solcery.FSM.Game;
+using Solcery.FSM.Dapp;
 using Solcery.Utils;
 using Solcery.Modules.Wallet;
 using Solcery.Modules.Collection;

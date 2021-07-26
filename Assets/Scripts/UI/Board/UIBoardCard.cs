@@ -71,7 +71,8 @@ namespace Solcery.UI
         {
             _isInteractable = isInteractable;
             _pointerDown = false;
-            pointerHandler.enabled = true;
+            if (pointerHandler != null)
+                pointerHandler.enabled = true;
 
             if (animator != null)
             {
