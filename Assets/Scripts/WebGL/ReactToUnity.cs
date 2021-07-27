@@ -29,6 +29,14 @@ namespace Solcery.WebGL
             Collection.Instance?.UpdateCollection(collectionData.Prettify());
         }
 
+        public void UpdateLog(string logJson)
+        {
+            // var logData = 
+            var oldBoardData = Board.Instance.BoardData.Value;
+            // var boardData = LogApplyer.Instance.ApplyLogStep(oldBoardData, );
+            // Board.Instance?.UpdateBoard(boardData.Prettify());
+        }
+
         public void UpdateBoard(string boardJson)
         {
             var boardData = JsonConvert.DeserializeObject<BoardData>(boardJson);
@@ -290,8 +298,10 @@ namespace Solcery.WebGL
 
                 var boardData = new BoardData();
 
-                var cardAction = new BrickTree {
-                    Genesis = new BrickData {
+                var cardAction = new BrickTree
+                {
+                    Genesis = new BrickData
+                    {
                         Type = 0,
                         Subtype = 100,
                         Slots = new BrickData[] {
@@ -319,10 +329,11 @@ namespace Solcery.WebGL
                 };
 
                 Board.Instance?.UpdateBoard(boardData.Prettify());
-                var step = new LogStepData () {
+                var step = new LogStepData()
+                {
                     actionType = 0,
                     playerId = 1,
-                    cardId = 0,  
+                    cardId = 0,
                 };
 
                 Debug.Log(JsonUtility.ToJson(boardData));
