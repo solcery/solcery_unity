@@ -284,6 +284,52 @@ namespace Solcery.WebGL
                 Board.Instance?.UpdateBoard(boardData.Prettify());
             }
 
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                Debug.Log("Testing client brickTree runtime");
+
+                var boardData = new BoardData();
+
+                var cardAction = new BrickTree {
+                    Genesis = new BrickData {
+                        Type = 0,
+                        Subtype = 100,
+                        Slots = new BrickData[] {
+                            new BrickData {
+                                Type = 2,
+                                Subtype = 0,
+                                IntField = 2, // Move to place 2
+                            }
+                        }
+                    }
+                };
+
+                boardData.CardTypes = new List<BoardCardType>()
+                {
+                    new BoardCardType() { BrickTree = cardAction, Id = 0, Metadata = new CardMetadata() { Picture = 0, Name = "Name 0", Coins = 0, Description = "Description 0"} },
+                };
+
+                boardData.Cards = new List<BoardCardData>() {
+                    new BoardCardData() { CardId = 0, CardPlace = CardPlace.Nowhere, CardType = 0},
+                };
+
+                boardData.Players = new List<PlayerData>() {
+                    new PlayerData() { IsMe = false, IsActive = true, HP = 20, Coins = 0 },
+                    new PlayerData() { IsMe = true, IsActive = false, HP = 20, Coins = 0 }
+                };
+
+                Board.Instance?.UpdateBoard(boardData.Prettify());
+                var step = new LogStepData () {
+                    actionType = 0,
+                    playerId = 1,
+                    cardId = 0,  
+                };
+
+                Debug.Log(JsonUtility.ToJson(boardData));
+                LogApplyer.Instance.ApplyLogStep(boardData, step);
+                Debug.Log(JsonUtility.ToJson(boardData));
+            }
+
             if (Input.GetKeyDown(KeyCode.Alpha6))
             {
                 Debug.Log("Game Over");
