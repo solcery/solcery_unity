@@ -24,7 +24,7 @@ namespace Solcery.Modules.Board
 
         public void Init()
         {
-            tracker?.Init();
+            // tracker?.Init();
 
             if (initWithTestJson)
             {
@@ -35,7 +35,7 @@ namespace Solcery.Modules.Board
 
         public void DeInit()
         {
-            tracker?.DeInit();
+            // tracker?.DeInit();
 
             _boardData = null;
         }

@@ -14,7 +14,8 @@ namespace Solcery
             // TODO: Proper action type parsing. Casting is just a particular type
             //return CastCard(ref origin, logStep.playerId, logStep.cardId);
             var currentStep = origin.Step;
-            for (int i = origin.Step; i < log.Steps.Count; i ++) {
+            for (int i = origin.Step; i < log.Steps.Count; i++)
+            {
                 ApplyLogStep(ref origin, log.Steps[i]);
             }
             origin.Step = log.Steps.Count;
@@ -27,15 +28,14 @@ namespace Solcery
             CastCard(ref origin, logStep.playerId, logStep.cardId);
         }
 
-        public void CastCard(ref BoardData origin, int casterId, int cardId) 
+        public void CastCard(ref BoardData origin, int casterId, int cardId)
         {
-
             var ctx = new BrickRuntime.Context(ref origin, cardId, casterId);
             var cardData = origin.GetCard(cardId);
             var cardTypeData = origin.GetCardTypeById(cardData.CardType);
             var brickTree = cardTypeData.BrickTree;
-            BrickRuntime.Action.Run(brickTree.Genesis, ref ctx); 
-            origin = ctx.boardData; 
+            BrickRuntime.Action.Run(brickTree.Genesis, ref ctx);
+            origin = ctx.boardData;
         }
     }
 }

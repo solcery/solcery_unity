@@ -98,22 +98,22 @@ namespace Solcery.WebGL
 
                     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Shop, CardType = 1},
 
-                    // new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
-                    // new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
-                    // new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
+                    new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
+                    new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
+                    new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
 
-                    // new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
-                    // new BoardCardData() { CardId = 7, CardPlace = CardPlace.Hand2, CardType = 5},
-                    // new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
+                    new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.Hand2, CardType = 5},
+                    new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
 
                     new BoardCardData() { CardId = 9, CardPlace = CardPlace.DrawPile1, CardType = 1},
 
                     new BoardCardData() { CardId = 10, CardPlace = CardPlace.DrawPile2, CardType = 1},
 
-                    // new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
-                    // new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
+                    new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
 
-                    // new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 1},
+                    new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 1},
 
                     new BoardCardData() { CardId = 14, CardPlace = CardPlace.DiscardPile1, CardType = 1},
 
@@ -125,65 +125,67 @@ namespace Solcery.WebGL
                     new PlayerData() { IsMe = true, IsActive = false, HP = 20, Coins = 0 }
                 };
 
-                UpdateBoard(testJson);
-                Log.Instance?.Init();
-                Log.Instance?.CastCard(1, 0);
+                Board.Instance?.UpdateBoard(boardData.Prettify());
+
+                // UpdateBoard(testJson);
+                // Log.Instance?.Init();
+                // Log.Instance?.CastCard(1, 0);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Log.Instance?.CastCard(2, 1);
+                // Log.Instance?.CastCard(2, 1);
                 Debug.Log("Test BoardData 2: (played a card, dealt some damage, gained some coins");
 
-                // var boardData = new BoardData();
+                var boardData = new BoardData();
 
-                // boardData.CardTypes = new List<BoardCardType>()
-                // {
-                //     new BoardCardType() { Id = 0, Metadata = new CardMetadata() { Picture = 0, Name = "Name 0", Coins = 0, Description = "Description 0"} },
-                //     new BoardCardType() { Id = 1, Metadata = new CardMetadata() { Picture = 1, Name = "Name 1", Coins = 1, Description = "Description 1"} },
-                //     new BoardCardType() { Id = 2, Metadata = new CardMetadata() { Picture = 2, Name = "Name 2", Coins = 2, Description = "Description 2"} },
-                //     new BoardCardType() { Id = 3, Metadata = new CardMetadata() { Picture = 3, Name = "Name 3", Coins = 3, Description = "Description 3"} },
-                //     new BoardCardType() { Id = 4, Metadata = new CardMetadata() { Picture = 4, Name = "Name 4", Coins = 4, Description = "Description 4"} },
-                //     new BoardCardType() { Id = 5, Metadata = new CardMetadata() { Picture = 5, Name = "Name 5", Coins = 5, Description = "Description 5"} },
-                //     new BoardCardType() { Id = 6, Metadata = new CardMetadata() { Picture = 6, Name = "Name 6", Coins = 6, Description = "Description 6"} },
-                //     new BoardCardType() { Id = 7, Metadata = new CardMetadata() { Picture = 7, Name = "Name 7", Coins = 7, Description = "Description 7"} },
-                // };
+                boardData.CardTypes = new List<BoardCardType>()
+                {
+                    new BoardCardType() { Id = 0, Metadata = new CardMetadata() { Picture = 0, Name = "Name 0", Coins = 0, Description = "Description 0"} },
+                    new BoardCardType() { Id = 1, Metadata = new CardMetadata() { Picture = 1, Name = "Name 1", Coins = 1, Description = "Description 1"} },
+                    new BoardCardType() { Id = 2, Metadata = new CardMetadata() { Picture = 2, Name = "Name 2", Coins = 2, Description = "Description 2"} },
+                    new BoardCardType() { Id = 3, Metadata = new CardMetadata() { Picture = 3, Name = "Name 3", Coins = 3, Description = "Description 3"} },
+                    new BoardCardType() { Id = 4, Metadata = new CardMetadata() { Picture = 4, Name = "Name 4", Coins = 4, Description = "Description 4"} },
+                    new BoardCardType() { Id = 5, Metadata = new CardMetadata() { Picture = 5, Name = "Name 5", Coins = 5, Description = "Description 5"} },
+                    new BoardCardType() { Id = 6, Metadata = new CardMetadata() { Picture = 6, Name = "Name 6", Coins = 6, Description = "Description 6"} },
+                    new BoardCardType() { Id = 7, Metadata = new CardMetadata() { Picture = 7, Name = "Name 7", Coins = 7, Description = "Description 7"} },
+                };
 
-                // boardData.Cards = new List<BoardCardData>() {
-                //     new BoardCardData() { CardId = 0, CardPlace = CardPlace.Nowhere, CardType = 0},
+                boardData.Cards = new List<BoardCardData>() {
+                    new BoardCardData() { CardId = 0, CardPlace = CardPlace.Nowhere, CardType = 0},
 
-                //     new BoardCardData() { CardId = 1, CardPlace = CardPlace.Deck, CardType = 1},
+                    new BoardCardData() { CardId = 1, CardPlace = CardPlace.Deck, CardType = 1},
 
-                //     new BoardCardData() { CardId = 2, CardPlace = CardPlace.Shop, CardType = 1},
+                    new BoardCardData() { CardId = 2, CardPlace = CardPlace.Shop, CardType = 1},
 
-                //     // new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
-                //     // new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
-                //     // new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
+                    new BoardCardData() { CardId = 3, CardPlace = CardPlace.Hand1, CardType = 1},
+                    new BoardCardData() { CardId = 4, CardPlace = CardPlace.Hand1, CardType = 2},
+                    new BoardCardData() { CardId = 5, CardPlace = CardPlace.Hand1, CardType = 3},
 
-                //     // new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
-                //     // new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
+                    new BoardCardData() { CardId = 6, CardPlace = CardPlace.Hand2, CardType = 4},
+                    new BoardCardData() { CardId = 8, CardPlace = CardPlace.Hand2, CardType = 6},
 
-                //     //new BoardCardData() { CardId = 9, CardPlace = CardPlace.DrawPile1, CardType = 1},
+                    new BoardCardData() { CardId = 9, CardPlace = CardPlace.DrawPile1, CardType = 1},
 
-                //     //new BoardCardData() { CardId = 10, CardPlace = CardPlace.DrawPile2, CardType = 1},
+                    new BoardCardData() { CardId = 10, CardPlace = CardPlace.DrawPile2, CardType = 1},
 
-                //     // new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
-                //     // new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
-                //     // new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    new BoardCardData() { CardId = 11, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
+                    new BoardCardData() { CardId = 12, CardPlace = CardPlace.PlayedThisTurn, CardType = 2},
+                    new BoardCardData() { CardId = 13, CardPlace = CardPlace.PlayedThisTurn, CardType = 1},
 
-                //     // new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 5},
+                    new BoardCardData() { CardId = 7, CardPlace = CardPlace.PlayedThisTurnTop, CardType = 5},
 
-                //     //new BoardCardData() { CardId = 14, CardPlace = CardPlace.DiscardPile1, CardType = 1},
+                    new BoardCardData() { CardId = 14, CardPlace = CardPlace.DiscardPile1, CardType = 1},
 
-                //     //new BoardCardData() { CardId = 15, CardPlace = CardPlace.DiscardPile2, CardType = 1},
-                // };
+                    new BoardCardData() { CardId = 15, CardPlace = CardPlace.DiscardPile2, CardType = 1},
+                };
 
-                // boardData.Players = new List<PlayerData>() {
-                //     new PlayerData() { IsMe = false, IsActive = false, HP = 17, Coins = 0 },
-                //     new PlayerData() { IsMe = true, IsActive = true, HP = 20, Coins = 2 }
-                // };
+                boardData.Players = new List<PlayerData>() {
+                    new PlayerData() { IsMe = false, IsActive = false, HP = 17, Coins = 0 },
+                    new PlayerData() { IsMe = true, IsActive = true, HP = 20, Coins = 2 }
+                };
 
-                // Board.Instance?.UpdateBoard(boardData.Prettify());
+                Board.Instance?.UpdateBoard(boardData.Prettify());
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))

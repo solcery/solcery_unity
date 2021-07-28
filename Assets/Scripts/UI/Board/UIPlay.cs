@@ -15,7 +15,6 @@ namespace Solcery.UI.Play
         [SerializeField] private GameObject games = null;
         [SerializeField] private GameObject waitingStatus = null;
         [SerializeField] private GameObject lookingForOpponent = null;
-        [SerializeField] private Button joinGameButton = null;
         [SerializeField] private TextMeshProUGUI joinGameKey = null;
         [SerializeField] private UIBoard board = null;
 
@@ -23,6 +22,7 @@ namespace Solcery.UI.Play
 
         public void Init()
         {
+            Debug.Log("Init");
             _cts = new CancellationTokenSource();
 
             Reactives.Subscribe(Board.Instance?.Tracker?.BoardDataWithDiv, OnBoardUpdate, _cts.Token);
@@ -35,7 +35,6 @@ namespace Solcery.UI.Play
             _cts?.Dispose();
 
             createGameButton?.onClick?.RemoveAllListeners();
-            joinGameButton?.onClick?.RemoveAllListeners();
             board?.DeInit();
         }
 
@@ -47,13 +46,11 @@ namespace Solcery.UI.Play
                 createGameButton?.gameObject?.SetActive(true);
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
-                // joinGameButton?.gameObject?.SetActive(true);
 
                 board?.Clear();
                 board?.gameObject?.SetActive(false);
 
                 createGameButton?.onClick?.AddListener(OnCreateGameButtonClicked);
-                // joinGameButton?.onClick?.AddListener(OnJoinGameButtonClicked);
             }
             else
             {
@@ -61,13 +58,11 @@ namespace Solcery.UI.Play
                 createGameButton?.gameObject?.SetActive(false);
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
-                // joinGameButton?.gameObject?.SetActive(false);
 
                 board?.gameObject?.SetActive(true);
                 board?.OnBoardUpdate(boardData);
 
                 createGameButton?.onClick?.RemoveAllListeners();
-                // joinGameButton?.onClick?.RemoveAllListeners();
             }
         }
 
@@ -77,7 +72,6 @@ namespace Solcery.UI.Play
             createGameButton?.gameObject?.SetActive(false);
             waitingStatus?.SetActive(true);
             lookingForOpponent?.SetActive(true);
-            // joinGameButton?.gameObject?.SetActive(false);
         }
 
         private void OnJoinGameButtonClicked()
@@ -86,7 +80,6 @@ namespace Solcery.UI.Play
             {
                 UnityToReact.Instance?.CallJoinBoard(joinGameKey.text);
                 createGameButton?.gameObject?.SetActive(false);
-                // joinGameButton?.gameObject?.SetActive(false);
             }
         }
     }

@@ -5,6 +5,7 @@ namespace Solcery
         public BoardCardData CardData;
         public CardPlace From;
         public CardPlace To;
+        public CardPlace StayedIn;
 
 
         public override string ToString()
