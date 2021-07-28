@@ -6,9 +6,11 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
+        public int Step;
         public List<BoardCardType> CardTypes;
         public List<BoardCardData> Cards;
-        public List<PlayerData> Players;
+        public List<PlayerData> Players; // TODO: to Dictionary
+        public BrickRuntime.Random Random;
         public int EndTurnCardId;
 
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiv Div;

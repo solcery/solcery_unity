@@ -7,16 +7,16 @@ namespace Solcery
     namespace BrickRuntime {
 		public class Context 
 		{
-			public List<BoardCardData> objects; // Stack of context objects
+			public BoardCardData obj; // Stack of context objects
 			public BoardData boardData; // TODO: BoardData passed to buildContext by reference, mutable?
 			public int casterId;
 			public Dictionary<String, int> vars;
 
-			public Context(BoardData origin, int cardId, int casterId) {
+			public Context(ref BoardData origin, int cardId, int casterPlayerId) {
 				boardData = origin;
-				casterId = casterId;
+				casterId = casterPlayerId;
 				vars = new Dictionary<String, int>(); 
-				objects = new List<BoardCardData> { origin.GetCard(cardId) }; 
+				obj = origin.GetCard(cardId); 
 			}
 		}
 	}

@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solcery
 {
     [Serializable]
     public class LogData
     {
-		public LogStepData[] steps;        
+		public List<LogStepData> Steps;        
     }
 }

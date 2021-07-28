@@ -16,8 +16,17 @@ namespace Solcery
                     { 0, True },
                     { 1, False },
                     { 2, Or },
+                    { 3, And },
+                    { 4, Not },
+                    { 5, Equal },
+                    { 6, GreaterThan },
+                    { 7, LesserThan },
                     { 100, IsAtPlace }
                 };
+            }
+
+            public static bool Run(BrickData brick, ref Context ctx) {
+                return Funcs[brick.Subtype](brick, ref ctx);
             }
 
             static bool True(BrickData brick, ref Context ctx) {
@@ -29,33 +38,36 @@ namespace Solcery
             }
 
             static bool Or(BrickData brick, ref Context ctx) {
+                return Run(brick.Slots[0], ref ctx) || Run(brick.Slots[1], ref ctx);
+            }
+
+            static bool And(BrickData brick, ref Context ctx) {
                 return Run(brick.Slots[0], ref ctx) && Run(brick.Slots[1], ref ctx);
             }
 
-            public static bool Run(BrickData brick, ref Context ctx) {
-                if (!Funcs.ContainsKey(brick.Subtype))
-                    return false;
-                return Funcs[brick.Subtype](brick, ref ctx);
+            static bool Not(BrickData brick, ref Context ctx) {
+                return !Run(brick.Slots[0], ref ctx);
+            }
+
+            public static bool Equal(BrickData brick, ref Context ctx) {
+                return Value.Run(brick.Slots[0], ref ctx) == Value.Run(brick.Slots[1], ref ctx);
+            }
+
+            public static bool GreaterThan(BrickData brick, ref Context ctx) {
+                return Value.Run(brick.Slots[0], ref ctx) > Value.Run(brick.Slots[1], ref ctx);
+            }
+
+            public static bool LesserThan(BrickData brick, ref Context ctx) {
+                return Value.Run(brick.Slots[0], ref ctx) < Value.Run(brick.Slots[1], ref ctx);
             }
 
             public static bool IsAtPlace(BrickData brick, ref Context ctx) {
-                var placeId = Value.Run(brick.Slots[0], ref ctx);
-                return (int)ctx.objects[ctx.objects.Count - 1].CardPlace == placeId;
+                var place = Value.Run(brick.Slots[0], ref ctx);
+                return (int)ctx.obj.CardPlace == place;
             }
 
         }
 
     }
-
-            // 0u32 => Ok(Box::new(True::deserialize(buf)?)),
-            // 1u32 => Ok(Box::new(False::deserialize(buf)?)),
-            // 2u32 => Ok(Box::new(Or::deserialize(buf)?)),
-            // 3u32 => Ok(Box::new(And::deserialize(buf)?)),
-            // 4u32 => Ok(Box::new(Not::deserialize(buf)?)),
-            // 5u32 => Ok(Box::new(Equal::deserialize(buf)?)),
-            // 6u32 => Ok(Box::new(GreaterThan::deserialize(buf)?)),
-            // 7u32 => Ok(Box::new(LesserThan::deserialize(buf)?)),
-            // 100u32 => Ok(Box::new(IsAtPlace::deserialize(buf)?)),
-            // _ => Ok(Box::new(True::deserialize(buf)?)),
 
 }

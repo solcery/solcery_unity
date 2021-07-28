@@ -1101,9 +1101,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardDataWithDiv:
     latestValue:
+      Step: 0
       CardTypes: []
       Cards: []
       Players: []
+      Random:
+        x: 0
+        y: 0
+        z: 0
+        w: 0
       EndTurnCardId: 0
 --- !u!1 &1721250333
 GameObject:
@@ -1151,6 +1157,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959602857}
+  - component: {fileID: 1959602859}
+  - component: {fileID: 1959602858}
   m_Layer: 0
   m_Name: Log
   m_TagString: Untagged
@@ -1172,6 +1180,50 @@ Transform:
   m_Father: {fileID: 124550284}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1959602858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959602856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6ca9a595583a744aeffaeb4c0386a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+--- !u!114 &1959602859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959602856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4704a86bc3a5eeb4ba5ed7c3e55bf5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  testLog:
+    Steps: []
 --- !u!1 &2124447753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1262,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  testJson: '{"Step":0,"CardTypes":[{"Id":0,"Metadata":{"Picture":41,"Coins":0,"Name":"MoveToShop","Description":"Description
+    0"},"BrickTree":{"Genesis":{"Type":0,"Subtype":100,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"Slots":[]}]}}}],"Cards":[{"CardId":2,"CardType":0,"CardPlace":3}],"Players":[{"PlayerId":1,"IsMe":true,"Address":null,"IsActive":true,"HP":20,"Coins":0,"Attrs":[0,0,0,0,0,0,0,0,0,0]},{"PlayerId":2,"IsMe":false,"Address":null,"IsActive":false,"HP":20,"Coins":0,"Attrs":[0,0,0,0,0,0,0,0,0,0]}],"Random":{"x":1170934941,"y":3415147940,"z":1172383566,"w":809739616},"EndTurnCardId":0}'
 --- !u!4 &2124447755
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using Solcery.Utils;
 using System;
 using System.Collections.Generic;
+using Solcery.Modules.Log;
 using Solcery.UI.Create.NodeEditor;
 using UnityEngine;
 using Newtonsoft.Json;
@@ -65,10 +66,10 @@ namespace Solcery.WebGL
 
         public void CallUseCard(int cardIndex)
         {
-            Debug.Log("UseCard");
-
 #if (UNITY_WEBGL && !UNITY_EDITOR)
     UseCard(cardIndex);
+#else
+    Log.Instance?.CastCard(1, cardIndex);
 #endif
         }
 

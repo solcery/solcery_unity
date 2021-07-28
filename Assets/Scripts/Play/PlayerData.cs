@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class PlayerData
@@ -9,4 +10,5 @@ public class PlayerData
     public bool IsActive;
     public int HP;
     public int Coins;
+    public List<int> Attrs; // TODO: key = string?
 }

@@ -44,7 +44,6 @@ namespace Solcery.UI.Play
             if (playerIndex >= 0)
             {
                 _isPlayer = (playerIndex == boardData.MyIndex);
-
                 UpdatePlayerData(boardData, playerIndex);
                 UpdatePlayerDrawPile(boardData, playerIndex);
                 UpdatePlayerDiscardPile(boardData, playerIndex);
@@ -77,9 +76,11 @@ namespace Solcery.UI.Play
         {
             if (boardData == null)
                 return;
-
             CardPlace drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-            this.drawPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace) ? boardData.Div.CardPlaceDivs[drawPilePlace] : null, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
+            if (boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace)) {
+                var drawPileDiv = boardData.Div.CardPlaceDivs[drawPilePlace];
+                this.drawPile?.UpdateWithDiv(drawPileDiv,  boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
+            }
         }
 
         private void UpdatePlayerDiscardPile(BoardData boardData, int playerIndex = 0)
@@ -88,7 +89,10 @@ namespace Solcery.UI.Play
                 return;
 
             CardPlace discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
-            this.discardPile?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace) ? boardData.Div.CardPlaceDivs[discardPilePlace] : null, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
+            if (boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace)) {
+                var discardPileDiv = boardData.Div.CardPlaceDivs[discardPilePlace];
+                this.discardPile?.UpdateWithDiv(discardPileDiv, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
+            }
         }
 
         private void UpdatePlayerHand(BoardData boardData, int playerIndex = 0)
