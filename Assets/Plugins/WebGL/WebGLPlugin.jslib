@@ -17,8 +17,8 @@ mergeInto(LibraryManager.library, {
     JoinBoard: function (gameKey) {
       ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
-    UseCard: function (cardIndex) {
-      ReactUnityWebGL.UseCard(cardIndex);
+    UseCard: function (cardId) {
+      ReactUnityWebGL.UseCard(cardId);
     },
     GameOverCallback: function (callback) {
       ReactUnityWebGL.GameOverCallback(Pointer_stringify(callback));

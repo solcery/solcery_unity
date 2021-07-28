@@ -1,9 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Solcery.Utils;
-using Solcery.WebGL;
-using Newtonsoft.Json;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Solcery.Modules.Log
 {
@@ -12,29 +9,36 @@ namespace Solcery.Modules.Log
         public AsyncReactiveProperty<LogData> LogData => _logData;
         private AsyncReactiveProperty<LogData> _logData = new AsyncReactiveProperty<LogData>(null);
 
-        public LogData testLog;
+        public void FakeCastCard(int playerId, int cardId)
+        {
+            Debug.Log("Log.FakeCastCard");
 
-        public void CastCard(int playerId, int cardId) {// TODO: delete
-            
-            testLog.Steps.Add(new LogStepData {
+            var newLogData = new LogData(_logData.Value);
+
+            newLogData.Steps.Add(new LogStepData
+            {
                 actionType = 0, // always 0 for now
                 playerId = playerId,
                 cardId = cardId,
             });
 
-            ReactToUnity.Instance.UpdateLog(JsonConvert.SerializeObject(testLog));
+            UpdateLog(newLogData);
+        }
+
+        public void UpdateLog(LogData logData)
+        {
+            Debug.Log("Log.UpdateLog");
+            _logData.Value = logData;
         }
 
         public void Init()
         {
-            testLog = new LogData() {
-                Steps = new List<LogStepData>(),
-            };
+            
         }
 
         public void DeInit()
         {
-
+            _logData = null;
         }
     }
 }

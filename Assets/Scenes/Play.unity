@@ -255,7 +255,6 @@ MonoBehaviour:
   games: {fileID: 1899106979}
   waitingStatus: {fileID: 1839133352}
   lookingForOpponent: {fileID: 781966105}
-  joinGameButton: {fileID: 264001786}
   joinGameKey: {fileID: 1581204378}
   board: {fileID: 1778633062}
 --- !u!1 &175091383
@@ -4690,6 +4689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550020994}
   - component: {fileID: 1550020995}
+  - component: {fileID: 1550020996}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -4732,6 +4732,39 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+--- !u!114 &1550020996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550020993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9509c8f49049d5458689596d6eaca6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  BoardDataWithDiv:
+    latestValue:
+      Step: 0
+      CardTypes: []
+      Cards: []
+      Players: []
+      Random:
+        x: 0
+        y: 0
+        z: 0
+        w: 0
+      EndTurnCardId: 0
 --- !u!1 &1574383792
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,8 +16,6 @@ namespace Solcery.WebGL
     {
         public static Action<CardCreationSignData> OnCardCreationSignDataChanged;
         public static Action<CardCreationConfirmData> OnCardCreationConfirmDataChanged;
-        public static Action<GameOverData> OnGameOver;
-        [Multiline(20)] [SerializeField] private string testJson;
 
         public void SetWalletConnected(string data)
         {
@@ -34,10 +32,7 @@ namespace Solcery.WebGL
         public void UpdateLog(string logJson)
         {
             var logData = JsonConvert.DeserializeObject<LogData>(logJson);
-            var oldBoardData = Board.Instance.BoardData.Value;
-            var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(oldBoardData)).Prettify(); //Cloning via JSON
-            LogApplyer.Instance.ApplyLog(ref newBoardData, logData);
-            Board.Instance?.UpdateBoard(newBoardData.Prettify());
+            Log.Instance?.UpdateLog(logData);
         }
 
         public void UpdateBoard(string boardJson)

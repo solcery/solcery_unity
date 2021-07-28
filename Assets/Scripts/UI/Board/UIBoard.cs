@@ -51,18 +51,18 @@ namespace Solcery.UI.Play
             AssignBoardPlaces(_boardData);
 
             player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
-            Debug.Log("1");
+            // Debug.Log("1");
             enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
-            Debug.Log("2");
+            // Debug.Log("2");
 
             deck?.UpdateWithDiv(
                 _boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.Deck) ? _boardData.Div.CardPlaceDivs[CardPlace.Deck] : null,
                 _boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0
                 );
-            Debug.Log("3");
+            // Debug.Log("3");
 
             shop?.UpdateWithDiv(_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.Shop) ? _boardData.Div.CardPlaceDivs[CardPlace.Shop] : null, boardData.Me.IsActive);
-            Debug.Log("4");
+            // Debug.Log("4");
 
             if (_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.PlayedThisTurn))
                 playedThisTurn?.UpdateWithDiv(_boardData.Div.CardPlaceDivs[CardPlace.PlayedThisTurn]);

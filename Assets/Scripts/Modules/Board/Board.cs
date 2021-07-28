@@ -8,43 +8,33 @@ namespace Solcery.Modules.Board
 {
     public class Board : Singleton<Board>
     {
-        public BoardDataTracker Tracker => tracker;
         public AsyncReactiveProperty<BoardData> BoardData => _boardData;
         private AsyncReactiveProperty<BoardData> _boardData = new AsyncReactiveProperty<BoardData>(null);
 
-        [SerializeField] private BoardDataTracker tracker = null;
         [SerializeField] private bool initWithTestJson = false;
-        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson1;
-        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson2;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string initJson;
 
         public void UpdateBoard(BoardData boardData)
         {
+            Debug.Log("Board.UpdateBoard");
             _boardData.Value = boardData;
         }
 
         public void Init()
         {
-            // tracker?.Init();
-
-            if (initWithTestJson)
-            {
-                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson1);
-                UpdateBoard(boardData.Prettify());
-            }
+            InitWithJson();
         }
 
         public void DeInit()
         {
-            // tracker?.DeInit();
-
             _boardData = null;
         }
 
-        private void Update()
+        private void InitWithJson()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha5))
+            if (initWithTestJson)
             {
-                var boardData = JsonConvert.DeserializeObject<BoardData>(testJson2);
+                var boardData = JsonConvert.DeserializeObject<BoardData>(initJson);
                 UpdateBoard(boardData.Prettify());
             }
         }

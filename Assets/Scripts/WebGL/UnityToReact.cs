@@ -17,20 +17,20 @@ namespace Solcery.WebGL
         [DllImport("__Internal")] private static extern void UpdateRuleset(string ruleset);
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
-        [DllImport("__Internal")] private static extern void UseCard(int card);
+        [DllImport("__Internal")] private static extern void UseCard(int cardId);
         [DllImport("__Internal")] private static extern void GameOverCallback(string callback);
 
         public void CallOnUnityLoaded()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    OnUnityLoaded ("message");
+            OnUnityLoaded ("message");
 #endif
         }
 
         public void CallOpenLinkInNewTab(string link)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    OpenLinkInNewTab (link);
+            OpenLinkInNewTab (link);
 #endif
         }
 
@@ -53,23 +53,23 @@ namespace Solcery.WebGL
         public void CallCreateBoard()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    CreateBoard();
+            CreateBoard();
 #endif
         }
 
         public void CallJoinBoard(string gameKey)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    JoinBoard(gameKey);
+            JoinBoard(gameKey);
 #endif
         }
 
-        public void CallUseCard(int cardIndex)
+        public void CallUseCard(int cardId)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-    UseCard(cardIndex);
+            UseCard(cardId);
 #else
-    Log.Instance?.CastCard(1, cardIndex);
+            Log.Instance?.FakeCastCard(1, cardId);
 #endif
         }
 

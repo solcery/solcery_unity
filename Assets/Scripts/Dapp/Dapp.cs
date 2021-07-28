@@ -14,6 +14,7 @@ namespace Solcery
         {
             Wallet.Instance?.Init();
             Collection.Instance?.Init();
+            LogApplyer.Instance?.Init();
             Board.Instance?.Init();
             Log.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
@@ -24,6 +25,7 @@ namespace Solcery
         {
             Wallet.Instance?.DeInit();
             Collection.Instance?.DeInit();
+            LogApplyer.Instance?.DeInit();
             Board.Instance?.DeInit();
             Log.Instance?.DeInit();
         }

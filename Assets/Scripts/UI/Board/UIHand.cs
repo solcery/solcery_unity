@@ -50,7 +50,7 @@ namespace Solcery.UI.Play
                 }
             }
 
-            Debug.Log("hand 1");
+            // Debug.Log("hand 1");
 
             if (cardPlaceDiv.Departed != null)
             {
@@ -62,7 +62,7 @@ namespace Solcery.UI.Play
                 }
             }
 
-            Debug.Log("hand 2");
+            // Debug.Log("hand 2");
 
             if (cardPlaceDiv.Arrived != null)
             {
@@ -93,7 +93,7 @@ namespace Solcery.UI.Play
                 }
             }
             
-            Debug.Log("hand 3");
+            // Debug.Log("hand 3");
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
         }
