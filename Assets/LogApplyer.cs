@@ -18,7 +18,7 @@ namespace Solcery
 
             _cts = new CancellationTokenSource();
 
-            Reactives.SubscribeWithoutCurrent(Log.Instance.LogData, OnLogUpdate, _cts.Token);
+            Reactives.Subscribe(Log.Instance.LogData, OnLogUpdate, _cts.Token);
         }
 
         public void DeInit()
@@ -30,6 +30,8 @@ namespace Solcery
         private void OnLogUpdate(LogData logData)
         {
             Debug.Log("LogApplyer.OnLogUpdate");
+            if (logData == null)
+                return;
 
             var currentBoardData = Board.Instance.BoardData.Value;
             var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(currentBoardData)).Prettify(); //Cloning via JSON
