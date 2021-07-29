@@ -61,7 +61,7 @@ namespace Solcery
 
         private void CastCard(BoardData origin, int casterId, int cardId)
         {
-            var ctx = new BrickRuntime.Context(origin, cardId, casterId);
+            var ctx = new Solcery.BrickRuntime.Context(origin, cardId, casterId);
             var cardData = origin.GetCard(cardId);
             var cardTypeData = origin.GetCardTypeById(cardData.CardType);
             var brickTree = cardTypeData.BrickTree;

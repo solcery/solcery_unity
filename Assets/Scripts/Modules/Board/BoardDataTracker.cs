@@ -40,6 +40,8 @@ namespace Solcery.Modules.Board
 
         public void OnBoardUpdate(BoardData boardData)
         {
+            Debug.Log("BoardDataTracker.OnBoardUpdate");
+
             _previousBoardData = _currentBoardData;
             _currentBoardData = boardData;
 
@@ -84,6 +86,11 @@ namespace Solcery.Modules.Board
                     });
                 }
             }
+
+            if (_currentBoardData.CardsByPlace.TryGetValue(CardPlace.Shop, out var shopCards))
+                Debug.Log($"cards in shop: {shopCards.Count}");
+            else
+                Debug.Log("cards in shop: 0");
 
             _cardPlaceDivs = new Dictionary<CardPlace, CardPlaceDiv>();
 

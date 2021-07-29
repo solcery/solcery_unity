@@ -17,6 +17,12 @@ namespace Solcery.Modules.Board
         public void UpdateBoard(BoardData boardData)
         {
             Debug.Log("Board.UpdateBoard");
+
+            if (boardData.CardsByPlace.TryGetValue(CardPlace.Shop, out var shopCards))
+                Debug.Log($"cards in shop: {shopCards.Count}");
+            else
+                Debug.Log("cards in shop: 0");
+
             _boardData.Value = boardData;
         }
 

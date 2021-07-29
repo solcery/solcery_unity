@@ -1,4 +1,6 @@
 using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
@@ -8,6 +10,9 @@ namespace Solcery.Modules.Log
     {
         public AsyncReactiveProperty<LogData> LogData => _logData;
         private AsyncReactiveProperty<LogData> _logData = new AsyncReactiveProperty<LogData>(null);
+
+        [SerializeField] private bool initWithTestJson = false;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string initJson;
 
         public void FakeCastCard(int playerId, int cardId)
         {
@@ -33,12 +38,30 @@ namespace Solcery.Modules.Log
 
         public void Init()
         {
-            
+            // InitWithJson();
         }
 
         public void DeInit()
         {
             _logData = null;
+        }
+
+        private void InitWithJson()
+        {
+            if (initWithTestJson)
+            {
+                var logData = JsonConvert.DeserializeObject<LogData>(initJson);
+                UpdateLog(logData);
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                var logData = JsonConvert.DeserializeObject<LogData>(initJson);
+                UpdateLog(logData);
+            }
         }
     }
 }
