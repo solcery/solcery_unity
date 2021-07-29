@@ -1,6 +1,6 @@
 using System;
 
-namespace Solcery
+namespace Solcery.Modules
 {
     [Serializable]
     public class LogStepData

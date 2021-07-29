@@ -1,9 +1,9 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Solcery
+namespace Solcery.UI
 {
-    public class CustomScrollRect : ScrollRect
+    public class UICustomScrollRect : ScrollRect
     {
         public override void OnBeginDrag(PointerEventData eventData) { }
         public override void OnDrag(PointerEventData eventData) { }

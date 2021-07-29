@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8599335461611375453}
   - component: {fileID: 8599335461611375454}
   m_Layer: 5
-  m_Name: Waiting
+  m_Name: UIWaitingSpinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Solcery
+namespace Solcery.Modules
 {
     [Serializable]
     public class LogData
