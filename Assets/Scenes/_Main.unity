@@ -1184,7 +1184,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   initWithTestJson: 1
-  initJson: '{"Steps":[{"actionType":0,"playerId":1,"cardId":0}]}'
+  initJson: '{"Steps":[{"actionType":0,"playerId":1,"cardId":0},{"actionType":0,"playerId":1,"cardId":1}]}'
 --- !u!1 &2124447753
 GameObject:
   m_ObjectHideFlags: 0

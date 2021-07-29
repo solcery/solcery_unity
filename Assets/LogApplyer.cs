@@ -55,6 +55,7 @@ namespace Solcery
 
         private void ApplyLogStep(BoardData origin, LogStepData logStep)
         {
+            origin.Prettify();
             // TODO: Proper action type parsing. Casting is just a particular type
             CastCard(origin, logStep.playerId, logStep.cardId);
         }
