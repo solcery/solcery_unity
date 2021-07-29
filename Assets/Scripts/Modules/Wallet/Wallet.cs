@@ -1,7 +1,7 @@
 using Solcery.UI.Wallet;
 using Solcery.Utils;
 
-namespace Solcery.Modules.Wallet
+namespace Solcery.Modules
 {
     public class Wallet : Singleton<Wallet>
     {

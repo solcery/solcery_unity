@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
-namespace Solcery.Modules.Log
+namespace Solcery.Modules
 {
     public class Log : Singleton<Log>
     {

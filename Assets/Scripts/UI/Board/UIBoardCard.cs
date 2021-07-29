@@ -1,5 +1,5 @@
 using System;
-using Solcery.Modules.Board;
+using Solcery.Modules;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

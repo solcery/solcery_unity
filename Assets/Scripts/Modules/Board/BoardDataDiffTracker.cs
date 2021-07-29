@@ -5,7 +5,7 @@ using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
 
-namespace Solcery.Modules.Board
+namespace Solcery.Modules
 {
     public class BoardDataDiffTracker : Singleton<BoardDataDiffTracker>
     {

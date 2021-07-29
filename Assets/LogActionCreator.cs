@@ -1,13 +1,15 @@
 using Newtonsoft.Json;
-using Solcery.Modules.Board;
-using Solcery.Modules.Log;
+using Solcery.Utils;
 using Solcery.WebGL;
 
-namespace Solcery
+namespace Solcery.Modules
 {
-    public static class LogActionCreator
+    public class LogActionCreator : Singleton<LogActionCreator>
     {
-        public static void CastCard(int cardId)
+        public void Init() { }
+        public void DeInit() { }
+
+        public void CastCard(int cardId)
         {
             var casterId = Board.Instance.BoardData.Value.MyIndex + 1;
             var logStepData = new LogStepData()

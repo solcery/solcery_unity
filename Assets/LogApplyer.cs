@@ -2,11 +2,10 @@ using Solcery.Utils;
 using Newtonsoft.Json;
 using System.Threading;
 using Solcery.Utils.Reactives;
-using Solcery.Modules.Log;
-using Solcery.Modules.Board;
+using Solcery.Modules;
 using UnityEngine;
 
-namespace Solcery
+namespace Solcery.Modules
 {
     public class LogApplyer : Singleton<LogApplyer>
     {

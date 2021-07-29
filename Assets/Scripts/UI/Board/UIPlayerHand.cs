@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Solcery.Modules;
 using Solcery.WebGL;
 
 namespace Solcery.UI.Play
@@ -12,7 +13,7 @@ namespace Solcery.UI.Play
 
         protected override void OnCardCasted(int cardId)
         {
-            LogActionCreator.CastCard(cardId);
+            LogActionCreator.Instance?.CastCard(cardId);
         }
     }
 }

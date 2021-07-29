@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Solcery.Modules.Wallet
+namespace Solcery.Modules
 {
     public class WalletData
     {

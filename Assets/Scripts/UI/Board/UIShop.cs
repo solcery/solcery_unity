@@ -1,3 +1,5 @@
+using Solcery.Modules;
+
 namespace Solcery.UI.Play
 {
     public class UIShop : UIHand
@@ -9,7 +11,7 @@ namespace Solcery.UI.Play
 
         protected override void OnCardCasted(int cardId)
         {
-            LogActionCreator.CastCard(cardId);
+            LogActionCreator.Instance?.CastCard(cardId);
         }
     }
 }

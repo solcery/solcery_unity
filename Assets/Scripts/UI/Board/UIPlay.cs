@@ -1,4 +1,4 @@
-using Solcery.Modules.Board;
+using Solcery.Modules;
 using Solcery.Utils;
 using Solcery.WebGL;
 using UnityEngine;

@@ -1,4 +1,4 @@
-using Solcery.Modules.Board;
+using Solcery.Modules;
 using Solcery.UI.Play;
 using Solcery.Utils;
 

@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
-namespace Solcery.Modules.Collection
+namespace Solcery.Modules
 {
     public class Collection : Singleton<Collection>
     {

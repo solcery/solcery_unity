@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Solcery.Modules.Collection;
+using Solcery.Modules;
 using Solcery.Ruleset;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;

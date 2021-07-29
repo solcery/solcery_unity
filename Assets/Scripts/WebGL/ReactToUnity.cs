@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Solcery.Modules.Board;
-using Solcery.Modules.Collection;
-using Solcery.Modules.Wallet;
-using Solcery.Modules.Log;
+using Solcery.Modules;
 using Solcery.Utils;
 using UnityEngine;
 using Newtonsoft.Json;

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using Solcery.Modules;
 using Solcery.Utils;
-using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,18 +51,14 @@ namespace Solcery.UI.Play
             AssignBoardPlaces(_boardData);
 
             player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
-            // Debug.Log("1");
             enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
-            // Debug.Log("2");
 
             deck?.UpdateWithDiff(
                 _boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Deck) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Deck] : null,
                 _boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0
                 );
-            // Debug.Log("3");
 
             shop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Shop) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Shop] : null, boardData.Me.IsActive);
-            // Debug.Log("4");
 
             if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurn))
                 playedThisTurn?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurn]);
@@ -78,7 +74,7 @@ namespace Solcery.UI.Play
         {
             if (_boardData != null && _boardData.Me != null && _boardData.Me.IsActive)
             {
-                LogActionCreator.CastCard(_boardData.EndTurnCardId);
+                LogActionCreator.Instance?.CastCard(_boardData.EndTurnCardId);
                 endTurnButton.interactable = false;
             }
         }

@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
-namespace Solcery.Modules.Board
+namespace Solcery.Modules
 {
     public class Board : Singleton<Board>
     {
