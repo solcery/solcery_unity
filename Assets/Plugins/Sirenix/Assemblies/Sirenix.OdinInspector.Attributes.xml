@@ -2605,6 +2605,11 @@
             Gets or sets a value indicating whether this instance is read only.
             </summary>
         </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.KeyColumnWidth">
+            <summary>
+            Gets or sets a value indicating the default key column width of the dictionary.
+            </summary>
+        </member>
         <member name="T:Sirenix.OdinInspector.DisableContextMenuAttribute">
             <summary>
             <para>DisableContextMenu is used on any property and disables the context menu for that property.</para>
