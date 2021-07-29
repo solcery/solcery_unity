@@ -18,7 +18,7 @@ mergeInto(LibraryManager.library, {
       ReactUnityWebGL.JoinBoard(Pointer_stringify(gameKey));
     },
     LogAction: function (logStepData) {
-      ReactUnityWebGL.LogAction(logStepData);
+      ReactUnityWebGL.LogAction(Pointer_stringify(logStepData));
     },
     GameOverCallback: function (callback) {
       ReactUnityWebGL.GameOverCallback(Pointer_stringify(callback));
