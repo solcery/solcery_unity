@@ -12,20 +12,14 @@ namespace Solcery.Modules.Log
         private AsyncReactiveProperty<LogData> _logData = new AsyncReactiveProperty<LogData>(null);
 
         [SerializeField] private bool initWithTestJson = false;
-        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string initJson;
+        [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
 
-        public void FakeCastCard(int playerId, int cardId)
+        public void FakeCastCard(LogStepData logStepData)
         {
             Debug.Log("Log.FakeCastCard");
 
             var newLogData = new LogData(_logData.Value);
-
-            newLogData.Steps.Add(new LogStepData
-            {
-                actionType = 0, // always 0 for now
-                playerId = playerId,
-                cardId = cardId,
-            });
+            newLogData.Steps.Add(logStepData);
 
             UpdateLog(newLogData);
         }
@@ -38,7 +32,7 @@ namespace Solcery.Modules.Log
 
         public void Init()
         {
-            // InitWithJson();
+            InitWithJson();
         }
 
         public void DeInit()
@@ -50,7 +44,7 @@ namespace Solcery.Modules.Log
         {
             if (initWithTestJson)
             {
-                var logData = JsonConvert.DeserializeObject<LogData>(initJson);
+                var logData = JsonConvert.DeserializeObject<LogData>(testJson);
                 UpdateLog(logData);
             }
         }
@@ -59,7 +53,7 @@ namespace Solcery.Modules.Log
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                var logData = JsonConvert.DeserializeObject<LogData>(initJson);
+                var logData = JsonConvert.DeserializeObject<LogData>(testJson);
                 UpdateLog(logData);
             }
         }

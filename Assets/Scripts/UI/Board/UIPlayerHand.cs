@@ -5,14 +5,14 @@ namespace Solcery.UI.Play
 {
     public class UIPlayerHand : UIHand
     {
-        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areCardsInteractable, bool areCardsFaceDown)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown)
         {
-            base.UpdateWithDiv(cardPlaceDiv, areCardsInteractable, areCardsFaceDown, false);
+            base.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, false);
         }
 
         protected override void OnCardCasted(int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardId);
+            LogActionCreator.CastCard(cardId);
         }
     }
 }

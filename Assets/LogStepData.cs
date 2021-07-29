@@ -7,6 +7,6 @@ namespace Solcery
     {
     	public int actionType; // always 0 for now
     	public int playerId;
-    	public int cardId;
+    	public int data;
     }
 }

@@ -20,7 +20,7 @@ namespace Solcery.UI.Play
             DeleteAllCards();
         }
 
-        protected void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
+        protected void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
 
@@ -34,12 +34,12 @@ namespace Solcery.UI.Play
                 }
             }
 
-            if (cardPlaceDiv == null)
+            if (cardPlaceDiff == null)
                 return;
 
-            if (cardPlaceDiv.Stayed != null)
+            if (cardPlaceDiff.Stayed != null)
             {
-                foreach (var stayedCard in cardPlaceDiv.Stayed)
+                foreach (var stayedCard in cardPlaceDiff.Stayed)
                 {
                     if (!_cardsById.ContainsKey(stayedCard.CardData.CardId))
                     {
@@ -52,9 +52,9 @@ namespace Solcery.UI.Play
 
             // Debug.Log("hand 1");
 
-            if (cardPlaceDiv.Departed != null)
+            if (cardPlaceDiff.Departed != null)
             {
-                foreach (var departedCard in cardPlaceDiv.Departed)
+                foreach (var departedCard in cardPlaceDiff.Departed)
                 {
                     var cardToDelete = GetCardById(departedCard.CardData.CardId);
                     UICardAnimator.Instance?.Clone(cardToDelete, departedCard);
@@ -64,9 +64,9 @@ namespace Solcery.UI.Play
 
             // Debug.Log("hand 2");
 
-            if (cardPlaceDiv.Arrived != null)
+            if (cardPlaceDiff.Arrived != null)
             {
-                foreach (var arrivedCard in cardPlaceDiv.Arrived)
+                foreach (var arrivedCard in cardPlaceDiff.Arrived)
                 {
                     UIBoardCard card;
 

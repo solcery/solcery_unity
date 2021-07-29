@@ -13,7 +13,7 @@ namespace Solcery
         public BrickRuntime.Random Random;
         public int EndTurnCardId;
 
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiv Div;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiff Diff;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<CardPlace, List<BoardCardData>> CardsByPlace;

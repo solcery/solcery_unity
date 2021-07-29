@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace Solcery.Modules.Board
 {
-    public class BoardDataTracker : Singleton<BoardDataTracker>
+    public class BoardDataDiffTracker : Singleton<BoardDataDiffTracker>
     {
         [HideInInspector]
-        public AsyncReactiveProperty<BoardData> BoardDataWithDiv;
+        public AsyncReactiveProperty<BoardData> BoardDataWithDiff;
 
         private BoardData _currentBoardData;
         private BoardData _previousBoardData;
@@ -19,7 +19,7 @@ namespace Solcery.Modules.Board
 
         private List<BoardDataCardChangedPlace> _cardsThatChangedPlaces;
         private List<BoardDataCardChangedPlace> _cardsThatStayed;
-        private Dictionary<CardPlace, CardPlaceDiv> _cardPlaceDivs;
+        private Dictionary<CardPlace, CardPlaceDiff> _cardPlaceDiffs;
 
         public void Init()
         {
@@ -54,7 +54,7 @@ namespace Solcery.Modules.Board
             {
                 _cardsThatChangedPlaces = null;
                 _cardsThatStayed = null;
-                BoardDataWithDiv.Value = null;
+                BoardDataWithDiff.Value = null;
                 return;
             }
 
@@ -87,36 +87,31 @@ namespace Solcery.Modules.Board
                 }
             }
 
-            if (_currentBoardData.CardsByPlace.TryGetValue(CardPlace.Shop, out var shopCards))
-                Debug.Log($"cards in shop: {shopCards.Count}");
-            else
-                Debug.Log("cards in shop: 0");
-
-            _cardPlaceDivs = new Dictionary<CardPlace, CardPlaceDiv>();
+            _cardPlaceDiffs = new Dictionary<CardPlace, CardPlaceDiff>();
 
             foreach (var change in _cardsThatChangedPlaces)
             {
-                if (_cardPlaceDivs.ContainsKey(change.From))
-                    _cardPlaceDivs[change.From].Departed.Add(change);
+                if (_cardPlaceDiffs.ContainsKey(change.From))
+                    _cardPlaceDiffs[change.From].Departed.Add(change);
                 else
-                    _cardPlaceDivs.Add(change.From, new CardPlaceDiv(null, new List<BoardDataCardChangedPlace>() { change }, null));
+                    _cardPlaceDiffs.Add(change.From, new CardPlaceDiff(null, new List<BoardDataCardChangedPlace>() { change }, null));
 
-                if (_cardPlaceDivs.ContainsKey(change.To))
-                    _cardPlaceDivs[change.To].Arrived.Add(change);
+                if (_cardPlaceDiffs.ContainsKey(change.To))
+                    _cardPlaceDiffs[change.To].Arrived.Add(change);
                 else
-                    _cardPlaceDivs.Add(change.To, new CardPlaceDiv(null, null, new List<BoardDataCardChangedPlace>() { change }));
+                    _cardPlaceDiffs.Add(change.To, new CardPlaceDiff(null, null, new List<BoardDataCardChangedPlace>() { change }));
             }
 
             foreach (var stay in _cardsThatStayed)
             {
-                if (_cardPlaceDivs.ContainsKey(stay.StayedIn))
-                    _cardPlaceDivs[stay.StayedIn].Stayed.Add(stay);
+                if (_cardPlaceDiffs.ContainsKey(stay.StayedIn))
+                    _cardPlaceDiffs[stay.StayedIn].Stayed.Add(stay);
                 else
-                    _cardPlaceDivs.Add(stay.StayedIn, new CardPlaceDiv(new List<BoardDataCardChangedPlace>() { stay }, null, null));
+                    _cardPlaceDiffs.Add(stay.StayedIn, new CardPlaceDiff(new List<BoardDataCardChangedPlace>() { stay }, null, null));
             }
 
-            _currentBoardData.Div = new BoardDataDiv(_cardPlaceDivs);
-            BoardDataWithDiv.Value = _currentBoardData;
+            _currentBoardData.Diff = new BoardDataDiff(_cardPlaceDiffs);
+            BoardDataWithDiff.Value = _currentBoardData;
         }
     }
 }

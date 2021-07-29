@@ -55,19 +55,19 @@ namespace Solcery.UI.Play
             enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
             // Debug.Log("2");
 
-            deck?.UpdateWithDiv(
-                _boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.Deck) ? _boardData.Div.CardPlaceDivs[CardPlace.Deck] : null,
+            deck?.UpdateWithDiff(
+                _boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Deck) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Deck] : null,
                 _boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0
                 );
             // Debug.Log("3");
 
-            shop?.UpdateWithDiv(_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.Shop) ? _boardData.Div.CardPlaceDivs[CardPlace.Shop] : null, boardData.Me.IsActive);
+            shop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Shop) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Shop] : null, boardData.Me.IsActive);
             // Debug.Log("4");
 
-            if (_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.PlayedThisTurn))
-                playedThisTurn?.UpdateWithDiv(_boardData.Div.CardPlaceDivs[CardPlace.PlayedThisTurn]);
-            if (_boardData.Div.CardPlaceDivs.ContainsKey(CardPlace.PlayedThisTurnTop))
-                playedThisTurnOnTop?.UpdateWithDiv(_boardData.Div.CardPlaceDivs[CardPlace.PlayedThisTurnTop]);
+            if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurn))
+                playedThisTurn?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurn]);
+            if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurnTop))
+                playedThisTurnOnTop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurnTop]);
             UICardAnimator.Instance?.LaunchAll();
 
             endTurnButton?.gameObject.SetActive(_boardData.Me.IsActive);
@@ -78,7 +78,7 @@ namespace Solcery.UI.Play
         {
             if (_boardData != null && _boardData.Me != null && _boardData.Me.IsActive)
             {
-                UnityToReact.Instance.CallUseCard(_boardData.EndTurnCardId);
+                LogActionCreator.CastCard(_boardData.EndTurnCardId);
                 endTurnButton.interactable = false;
             }
         }

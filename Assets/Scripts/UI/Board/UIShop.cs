@@ -1,18 +1,15 @@
-using System.Collections.Generic;
-using Solcery.WebGL;
-
 namespace Solcery.UI.Play
 {
     public class UIShop : UIHand
     {
-        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, bool areCardsInteractable)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable)
         {
-            base.UpdateWithDiv(cardPlaceDiv, areCardsInteractable, false, true);
+            base.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, false, true);
         }
 
         protected override void OnCardCasted(int cardId)
         {
-            UnityToReact.Instance.CallUseCard(cardId);
+            LogActionCreator.CastCard(cardId);
         }
     }
 }

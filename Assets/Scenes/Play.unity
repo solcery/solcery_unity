@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 225374191}
   - component: {fileID: 225374190}
   m_Layer: 5
-  m_Name: DivText
+  m_Name: DiffText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 242291283}
   - component: {fileID: 242291282}
   m_Layer: 5
-  m_Name: DivText
+  m_Name: DiffText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1822,7 +1822,7 @@ GameObject:
   - component: {fileID: 443719244}
   - component: {fileID: 443719243}
   m_Layer: 5
-  m_Name: CoinsDiv
+  m_Name: CoinsDiff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 443719244}
-  hpDivText: {fileID: 225374190}
+  hpDiffText: {fileID: 225374190}
 --- !u!95 &443719244
 Animator:
   serializedVersion: 3
@@ -2290,7 +2290,7 @@ GameObject:
   - component: {fileID: 650769372}
   - component: {fileID: 650769371}
   m_Layer: 5
-  m_Name: DivText
+  m_Name: DiffText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3858,7 +3858,7 @@ GameObject:
   - component: {fileID: 1129024146}
   - component: {fileID: 1129024145}
   m_Layer: 5
-  m_Name: HPDiv
+  m_Name: HPDiff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1129024146}
-  hpDivText: {fileID: 1544084010}
+  hpDiffText: {fileID: 1544084010}
 --- !u!95 &1129024146
 Animator:
   serializedVersion: 3
@@ -3991,8 +3991,8 @@ MonoBehaviour:
   discardPile: {fileID: 952018167}
   drawPile: {fileID: 540845998}
   hpText: {fileID: 421190999}
-  hpDiv: {fileID: 1129024145}
-  coinsDiv: {fileID: 1904869129}
+  hpDiff: {fileID: 1129024145}
+  coinsDiff: {fileID: 1904869129}
   coinsText: {fileID: 1915693413}
 --- !u!1 &1165444370
 GameObject:
@@ -4091,8 +4091,8 @@ MonoBehaviour:
   discardPile: {fileID: 1120574958}
   drawPile: {fileID: 555980033}
   hpText: {fileID: 317028834}
-  hpDiv: {fileID: 2044958316}
-  coinsDiv: {fileID: 443719243}
+  hpDiff: {fileID: 2044958316}
+  coinsDiff: {fileID: 443719243}
   coinsText: {fileID: 1846732438}
 --- !u!1 &1219664970
 GameObject:
@@ -5082,7 +5082,7 @@ GameObject:
   - component: {fileID: 1544084011}
   - component: {fileID: 1544084010}
   m_Layer: 5
-  m_Name: DivText
+  m_Name: DiffText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5278,7 +5278,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  BoardDataWithDiv:
+  BoardDataWithDiff:
     latestValue:
       Step: 0
       CardTypes: []
@@ -6728,7 +6728,7 @@ GameObject:
   - component: {fileID: 1904869130}
   - component: {fileID: 1904869129}
   m_Layer: 5
-  m_Name: 'CoinsDiv '
+  m_Name: CoinsDiff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6767,7 +6767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1904869130}
-  hpDivText: {fileID: 242291282}
+  hpDiffText: {fileID: 242291282}
 --- !u!95 &1904869130
 Animator:
   serializedVersion: 3
@@ -7512,7 +7512,7 @@ GameObject:
   - component: {fileID: 2044958314}
   - component: {fileID: 2044958316}
   m_Layer: 5
-  m_Name: HPDiv
+  m_Name: HPDiff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7578,7 +7578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2044958314}
-  hpDivText: {fileID: 650769371}
+  hpDiffText: {fileID: 650769371}
 --- !u!1 &2055433681
 GameObject:
   m_ObjectHideFlags: 0

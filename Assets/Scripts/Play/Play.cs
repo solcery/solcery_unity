@@ -8,13 +8,13 @@ namespace Solcery
     {
         public void Init()
         {
-            BoardDataTracker.Instance?.Init();
+            BoardDataDiffTracker.Instance?.Init();
             UIPlay.Instance?.Init();
         }
 
         public void DeInit()
         {
-            BoardDataTracker.Instance?.DeInit();
+            BoardDataDiffTracker.Instance?.DeInit();
             UIPlay.Instance?.DeInit();
         }
     }

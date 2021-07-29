@@ -4,9 +4,9 @@ namespace Solcery.UI.Play
 {
     public class UIPlayedThisTurnOnTop : UIHand
     {
-        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff)
         {
-            base.UpdateWithDiv(cardPlaceDiv, false, false, false);
+            base.UpdateWithDiff(cardPlaceDiff, false, false, false);
         }
 
         protected override void OnCardCasted(int cardId)

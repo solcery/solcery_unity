@@ -2,9 +2,9 @@ namespace Solcery.UI.Play
 {
     public class UIPlayedThisTurn : UIHand
     {
-        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff)
         {
-            base.UpdateWithDiv(cardPlaceDiv, false, false, false, true);
+            base.UpdateWithDiff(cardPlaceDiff, false, false, false, true);
         }
 
         protected override void OnCardCasted(int cardId)

@@ -13,8 +13,8 @@ namespace Solcery.UI.Play
         [SerializeField] private UIPile discardPile = null;
         [SerializeField] private UIPile drawPile = null;
         [SerializeField] private TextMeshProUGUI hpText = null;
-        [SerializeField] private UIDiv hpDiv = null;
-        [SerializeField] private UIDiv coinsDiv = null;
+        [SerializeField] private UIDiff hpDiff = null;
+        [SerializeField] private UIDiff coinsDiff = null;
         [SerializeField] private TextMeshProUGUI coinsText = null;
 
         private bool _isPlayer;
@@ -81,10 +81,10 @@ namespace Solcery.UI.Play
             if (boardData == null)
                 return;
             CardPlace drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-            if (boardData.Div.CardPlaceDivs.ContainsKey(drawPilePlace))
+            if (boardData.Diff.CardPlaceDiffs.ContainsKey(drawPilePlace))
             {
-                var drawPileDiv = boardData.Div.CardPlaceDivs[drawPilePlace];
-                this.drawPile?.UpdateWithDiv(drawPileDiv, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
+                var drawPileDiff = boardData.Diff.CardPlaceDiffs[drawPilePlace];
+                this.drawPile?.UpdateWithDiff(drawPileDiff, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
             }
         }
 
@@ -94,10 +94,10 @@ namespace Solcery.UI.Play
                 return;
 
             CardPlace discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
-            if (boardData.Div.CardPlaceDivs.ContainsKey(discardPilePlace))
+            if (boardData.Diff.CardPlaceDiffs.ContainsKey(discardPilePlace))
             {
-                var discardPileDiv = boardData.Div.CardPlaceDivs[discardPilePlace];
-                this.discardPile?.UpdateWithDiv(discardPileDiv, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
+                var discardPileDiff = boardData.Diff.CardPlaceDiffs[discardPilePlace];
+                this.discardPile?.UpdateWithDiff(discardPileDiff, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
             }
         }
 
@@ -109,7 +109,7 @@ namespace Solcery.UI.Play
             CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
             var areCardsInteractable = _isPlayer && boardData != null && boardData.Me != null && boardData.Me.IsActive;
             var areCardsFaceDown = !_isPlayer;
-            hand?.UpdateWithDiv(boardData.Div.CardPlaceDivs.ContainsKey(cardPlace) ? boardData.Div.CardPlaceDivs[cardPlace] : null, areCardsInteractable, areCardsFaceDown);
+            hand?.UpdateWithDiff(boardData.Diff.CardPlaceDiffs.ContainsKey(cardPlace) ? boardData.Diff.CardPlaceDiffs[cardPlace] : null, areCardsInteractable, areCardsFaceDown);
         }
 
         private void SetHP(int newHP)
@@ -117,7 +117,7 @@ namespace Solcery.UI.Play
             if (_currentHP != newHP)
             {
                 if (!_isInitialHp)
-                    hpDiv?.Show(newHP - _currentHP);
+                    hpDiff?.Show(newHP - _currentHP);
             }
 
             _currentHP = newHP;
@@ -132,7 +132,7 @@ namespace Solcery.UI.Play
             if (_currentCoins != newCoins)
             {
                 if (!_isInitialCoins)
-                    coinsDiv?.Show(newCoins - _currentCoins);
+                    coinsDiff?.Show(newCoins - _currentCoins);
             }
 
             _currentCoins = newCoins;

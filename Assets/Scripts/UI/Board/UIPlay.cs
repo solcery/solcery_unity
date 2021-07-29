@@ -22,10 +22,9 @@ namespace Solcery.UI.Play
 
         public void Init()
         {
-            Debug.Log("Init");
             _cts = new CancellationTokenSource();
 
-            Reactives.Subscribe(BoardDataTracker.Instance?.BoardDataWithDiv, OnBoardUpdate, _cts.Token);
+            Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _cts.Token);
             board?.Init();
         }
 

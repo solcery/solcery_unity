@@ -13,9 +13,9 @@ namespace Solcery.UI.Play
             base.Clear();
         }
 
-        public void UpdateWithDiv(CardPlaceDiv cardPlaceDiv, int cardsCount)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, int cardsCount)
         {
-            // TODO: count +- count here from each div
+            // TODO: count +- count here from each diff
             if (cardsCount <= 0) 
             {
                 this.gameObject.SetActive(false);
@@ -26,7 +26,7 @@ namespace Solcery.UI.Play
                 if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
             }
 
-            base.UpdateWithDiv(cardPlaceDiv, false, true, false, true);
+            base.UpdateWithDiff(cardPlaceDiff, false, true, false, true);
             if (content.childCount > 0) {
                 var lastChild = content.GetChild(content.childCount - 1);
                 cardsCountText.transform.localPosition = lastChild.transform.localPosition;

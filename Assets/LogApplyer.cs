@@ -57,7 +57,7 @@ namespace Solcery
         {
             origin.Prettify();
             // TODO: Proper action type parsing. Casting is just a particular type
-            CastCard(origin, logStep.playerId, logStep.cardId);
+            CastCard(origin, logStep.playerId, logStep.data);
         }
 
         private void CastCard(BoardData origin, int casterId, int cardId)
