@@ -11,7 +11,9 @@ namespace Solcery.Modules
 
         public void CastCard(int cardId)
         {
-            var myId = Board.Instance.BoardData.Value.Me.PlayerId;
+            //TODO: use real id
+            var myId = Board.Instance.BoardData.Value.MyIndex + 1;
+            // var myId = Board.Instance.BoardData.Value.Me.PlayerId;
             var castStep = new LogStepData(0, myId, cardId);
 
             SendLogAction(castStep);

@@ -36,7 +36,7 @@ namespace Solcery.Modules
             if (initWithTestJson)
             {
                 var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
-                UpdateBoard(boardData.Prettify());
+                UpdateBoard(boardData.Prettify(isVirgin: true));
             }
         }
     }

@@ -34,7 +34,7 @@ namespace Solcery.WebGL
         public void UpdateBoard(string boardJson)
         {
             var boardData = JsonConvert.DeserializeObject<BoardData>(boardJson);
-            Board.Instance?.UpdateBoard(boardData.Prettify());
+            Board.Instance?.UpdateBoard(boardData.Prettify(isVirgin: true));
         }
 
         public void SetCardCreationSigned(string signJson)

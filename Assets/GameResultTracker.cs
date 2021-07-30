@@ -25,6 +25,7 @@ namespace Solcery
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;
+            if (boardData.IsVirgin) return;
 
             var me = boardData.Me;
             if (me == null) return;
@@ -32,12 +33,19 @@ namespace Solcery
             var enemy = boardData.Enemy;
             if (enemy == null) return;
 
-            var myId = boardData.Me.PlayerId;
-            var enemyId = boardData.Enemy.PlayerId;
+            var myIndex = boardData.MyIndex;
+            var enemyIndex = boardData.EnemyIndex;
+
+            //TODO: get real ids instead of index + 1
+            // var myId = boardData.Me.PlayerId;
+            var myId = myIndex + 1;
+            // var enemyId = boardData.Enemy.PlayerId;
+            var enemyId = enemyIndex + 1;
 
             if (enemy.HP <= 0)
             {
                 // Victory
+                UnityEngine.Debug.Log($"Enemy has 0 HP. Declaring victory");
                 LogActionCreator.Instance?.DeclareVictory(myId);
                 return;
             }
@@ -45,22 +53,41 @@ namespace Solcery
             if (me.HP <= 0)
             {
                 // Defeat
+                UnityEngine.Debug.Log($"I have 0 HP. Declaring defeat");
                 LogActionCreator.Instance?.DeclareDefeat(myId);
                 return;
             }
 
             /// BOTH HAVE POSITIVE HP, CHECK WHAT'S UP
 
+            UnityEngine.Debug.Log($"My Status: {me.Status}");
+            UnityEngine.Debug.Log($"My Outcome: {me.Outcome}");
+            UnityEngine.Debug.Log($"Enemy Status: {enemy.Status}");
+            UnityEngine.Debug.Log($"Enemy Outcome: {enemy.Outcome}");
+
             if (me.Status == PlayerStatus.Undefined)
             {
                 // My status is undefined. ???. Leave game
+                UnityEngine.Debug.Log("Leave game");
                 return;
             }
 
             if (me.Status == PlayerStatus.Offline)
             {
                 // My status is offline. I was probably AFK. ???. Leave game if enemy declared victory or defeat, otherwise set status to Online and play.
-                return;
+                if (enemy.Outcome != PlayerOutcome.Undefined)
+                {
+                    // Leave game.
+                    UnityEngine.Debug.Log("I was AFK and enemy declared outcome. Leave game");
+                    return;
+                }
+                else
+                {
+                    // Set status to Online and game goes on
+                    UnityEngine.Debug.Log("I WAS FORGIVEN FOR AFK. GAME GOES ON!");
+                    LogActionCreator.Instance?.SetStatus(myId, PlayerStatus.Online);
+                    return;
+                }
             }
 
             /// MY STATUS IS ONLINE FROM HERE
