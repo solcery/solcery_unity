@@ -3,8 +3,6 @@ using Solcery.Modules;
 using Solcery.Utils;
 using UnityEngine;
 using Newtonsoft.Json;
-using Solcery.UI.Play;
-using Cysharp.Threading.Tasks;
 
 namespace Solcery.WebGL
 {
@@ -48,27 +46,5 @@ namespace Solcery.WebGL
             var confirmData = JsonUtility.FromJson<CardCreationConfirmData>(confirmJson);
             OnCardCreationConfirmDataChanged?.Invoke(confirmData);
         }
-
-        // public void SetGameOver(string gameOverJson)
-        // {
-        //     var gameOverData = JsonConvert.DeserializeObject<GameOverData>(gameOverJson);
-        //     GameOverPopupWithDelay(gameOverData).Forget();
-        // }
-
-        // private async UniTaskVoid GameOverPopupWithDelay(GameOverData gameOverData)
-        // {
-        //     await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
-        //     UIGameOverPopup.Instance?.Open(gameOverData);
-        // }
-
-        // Debug.Log("Game Over");
-        //         var gameOverData = new GameOverData()
-        //         {
-        //             Title = "El victory",
-        //             Description = "You demolished your opponent. Gratz!",
-        //             Callback = "callback"
-        //         };
-
-        //         GameOverPopupWithDelay(gameOverData).Forget();
     }
 }

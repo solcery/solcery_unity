@@ -14,12 +14,12 @@ namespace Solcery.Modules
         [SerializeField] private bool initWithTestJson = false;
         [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
 
-        public void FakeLogAction(LogStepData logStepData)
+        public void FakeLogAction(LogData logData)
         {
             Debug.Log("Log.FakeCastCard");
 
             var newLogData = new LogData(_logData.Value);
-            newLogData.Steps.Add(logStepData);
+            newLogData.Steps.AddRange(logData.Steps);
 
             UpdateLog(newLogData);
         }

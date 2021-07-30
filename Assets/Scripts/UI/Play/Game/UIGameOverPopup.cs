@@ -1,6 +1,6 @@
-using Solcery.Modules;
+using System;
+using Cysharp.Threading.Tasks;
 using Solcery.Utils;
-using Solcery.WebGL;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +15,12 @@ namespace Solcery.UI.Play
         [SerializeField] private Button okButton = null;
 
         private GameOverData _data;
+
+        public async UniTaskVoid OpenWithDelay(float delay, GameOverData data)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(delay));
+            Open(data);
+        }
 
         public void Open(GameOverData data)
         {
@@ -31,8 +37,7 @@ namespace Solcery.UI.Play
         private void Close()
         {
             if (canvas != null) canvas.enabled = false;
-            Board.Instance?.UpdateBoard(null);
-            UnityToReact.Instance.CallGameOverCallback(_data.Callback);
+            _data?.Callback?.Invoke();
         }
     }
 }

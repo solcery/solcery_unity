@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Collections.Generic;
 using Solcery.Utils;
 using Solcery.WebGL;
 
@@ -11,46 +11,41 @@ namespace Solcery.Modules
 
         public void CastCard(int cardId)
         {
+            SendLogAction(new LogData(CastCardStep(cardId)));
+        }
+
+        public void LeaveGame(int playerId, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
+        {
+            var steps = new List<LogStepData>();
+
+            if (hasOutcome)
+                steps.Add(OutcomeStep(playerId, outcome));
+
+            steps.Add(StatusStep(playerId, PlayerStatus.Offline));
+
+            SendLogAction(new LogData(steps));
+        }
+
+        public static LogStepData CastCardStep(int cardId)
+        {
             //TODO: use real id
-            var myId = Board.Instance.BoardData.Value.MyIndex + 1;
-            // var myId = Board.Instance.BoardData.Value.Me.PlayerId;
-            var castStep = new LogStepData(0, myId, cardId);
-
-            SendLogAction(castStep);
+            var myId = Board.Instance.BoardData.Value.MyIndex + 1; // var myId = Board.Instance.BoardData.Value.Me.PlayerId;
+            return new LogStepData(0, myId, cardId);
         }
 
-        public void DeclareVictory(int playerId)
+        public static LogStepData StatusStep(int playerId, PlayerStatus status)
         {
-            SetOutcome(playerId, PlayerOutcome.Victory);
-            SetStatus(playerId, PlayerStatus.Offline);
+            return new LogStepData(1, playerId, (int)status);
         }
 
-        public void DeclareDefeat(int playerId)
+        public static LogStepData OutcomeStep(int playerId, PlayerOutcome outcome)
         {
-            SetOutcome(playerId, PlayerOutcome.Defeat);
-            SetStatus(playerId, PlayerStatus.Offline);
+            return new LogStepData(2, playerId, (int)outcome);
         }
 
-        public void SetStatus(int playerId, PlayerStatus status)
+        private void SendLogAction(LogData logData)
         {
-            var statusStep = new LogStepData(1, playerId, (int)status);
-            SendLogAction(statusStep);
-        }
-
-        public void SetOutcome(int playerId, PlayerOutcome outcome)
-        {
-            var outcomeStep = new LogStepData(2, playerId, (int)outcome);
-            SendLogAction(outcomeStep);
-        }
-
-        private void SendLogAction(LogStepData logStepData)
-        {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            var logStepDataJson = JsonConvert.SerializeObject(logStepData);
-            UnityToReact.Instance?.CallLogAction(logStepDataJson);
-#else
-            Log.Instance?.FakeLogAction(logStepData);
-#endif
+            UnityToReact.Instance?.CallLogAction(logData);
         }
     }
 }

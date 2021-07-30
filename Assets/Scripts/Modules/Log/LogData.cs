@@ -13,16 +13,27 @@ namespace Solcery.Modules
 
         }
 
+        public LogData(LogStepData singleStep)
+        {
+            Steps = new List<LogStepData>();
+            if (singleStep != null)
+                Steps.Add(singleStep);
+        }
+
+        public LogData(List<LogStepData> steps)
+        {
+            if (steps == null)
+                Steps = new List<LogStepData>();
+            else
+                Steps = steps;
+        }
+
         public LogData(LogData origin)
         {
             if (origin == null)
-            {
                 Steps = new List<LogStepData>();
-            }
             else
-            {
                 Steps = origin.Steps;
-            }
         }
     }
 }

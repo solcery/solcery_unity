@@ -25,7 +25,6 @@ namespace Solcery
         public void Init()
         {
             _cts = new CancellationTokenSource();
-
             _previousBoardData = null;
             Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
         }
@@ -41,7 +40,7 @@ namespace Solcery
 
         private void OnBoardUpdate(BoardData boardData)
         {
-            Debug.Log("BoardDataTracker.OnBoardUpdate");
+            Debug.Log("BoardDataDiffTracker.OnBoardUpdate");
 
             _previousBoardData = _currentBoardData;
             _currentBoardData = boardData;

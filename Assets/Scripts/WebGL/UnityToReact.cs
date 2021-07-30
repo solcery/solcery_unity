@@ -17,7 +17,7 @@ namespace Solcery.WebGL
         [DllImport("__Internal")] private static extern void UpdateRuleset(string ruleset);
         [DllImport("__Internal")] private static extern void CreateBoard();
         [DllImport("__Internal")] private static extern void JoinBoard(string gameKey);
-        [DllImport("__Internal")] private static extern void LogAction(string logStepData);
+        [DllImport("__Internal")] private static extern void LogAction(string logData);
         [DllImport("__Internal")] private static extern void GameOverCallback(string callback);
 
         public void CallOnUnityLoaded()
@@ -64,10 +64,13 @@ namespace Solcery.WebGL
 #endif
         }
 
-        public void CallLogAction(string logStepData)
+        public void CallLogAction(LogData logData)
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-            LogAction(logStepData);
+            var logDataJson = JsonConvert.SerializeObject(logData);
+            LogAction(logDataJson);
+#else
+            Log.Instance?.FakeLogAction(logData);
 #endif
         }
 

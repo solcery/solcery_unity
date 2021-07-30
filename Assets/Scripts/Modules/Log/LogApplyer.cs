@@ -28,10 +28,14 @@ namespace Solcery.Modules
         private void OnLogUpdate(LogData logData)
         {
             Debug.Log("LogApplyer.OnLogUpdate");
+
             if (logData == null)
                 return;
 
             var currentBoardData = Board.Instance.BoardData.Value;
+            if (currentBoardData == null)
+                return;
+
             var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(currentBoardData)).Prettify(); //Cloning via JSON
 
             ApplyLog(newBoardData, logData);
