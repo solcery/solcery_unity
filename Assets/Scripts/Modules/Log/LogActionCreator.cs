@@ -11,7 +11,16 @@ namespace Solcery.Modules
 
         public void CastCard(int cardId)
         {
-            SendLogAction(new LogData(CastCardStep(cardId)));
+            //TODO: use real player id
+            var myId = Board.Instance.BoardData.Value.MyIndex + 1;
+            SendLogAction(new LogData(CastCardStep(myId, cardId)));
+        }
+
+        public void EnemyCastCard(int cardId)
+        {
+            //TODO: use real player id
+            var enemyId = Board.Instance.BoardData.Value.EnemyIndex + 1;
+            SendLogAction(new LogData(CastCardStep(enemyId, cardId)));
         }
 
         public void LeaveGame(int playerId, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
@@ -26,11 +35,9 @@ namespace Solcery.Modules
             SendLogAction(new LogData(steps));
         }
 
-        public static LogStepData CastCardStep(int cardId)
+        public static LogStepData CastCardStep(int playerId, int cardId)
         {
-            //TODO: use real id
-            var myId = Board.Instance.BoardData.Value.MyIndex + 1; // var myId = Board.Instance.BoardData.Value.Me.PlayerId;
-            return new LogStepData(0, myId, cardId);
+            return new LogStepData(0, playerId, cardId);
         }
 
         public static LogStepData StatusStep(int playerId, PlayerStatus status)

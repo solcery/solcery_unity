@@ -211,6 +211,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &508910922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508910923}
+  - component: {fileID: 508910924}
+  m_Layer: 0
+  m_Name: Hotkeys
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508910923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508910922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508910924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508910922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987a6947ec4aca14d986f98263bb1f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!1 &637987419
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646564183
 GameObject:
@@ -1120,7 +1172,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  initWithTestJson: 1
+  initWithTestJson: 0
   testJson: '{"LastUpdate":1627513274,"Players":[{"Address":"e82TbfCLbPdhDRm7EE7fL3h7WHtNMyF73XQtVcLNS1c","IsActive":false,"HP":0,"Coins":0,"IsMe":true,"Attrs":[0,0,0,0,0,0,0,0,0,0]},{"Address":"A5Q2A1q8yVH19YwBP78N7mf2g6TFLAdFgBwpjUwWnEH3","IsActive":false,"HP":0,"Coins":0,"IsMe":false,"Attrs":[0,0,0,0,0,0,0,0,0,1]}],"Cards":[{"CardId":0,"CardType":0,"CardPlace":0},{"CardId":1,"CardType":1,"CardPlace":998},{"CardId":2,"CardType":2,"CardPlace":998},{"CardId":3,"CardType":3,"CardPlace":998},{"CardId":4,"CardType":4,"CardPlace":998},{"CardId":5,"CardType":5,"CardPlace":998},{"CardId":6,"CardType":6,"CardPlace":998},{"CardId":7,"CardType":7,"CardPlace":998},{"CardId":8,"CardType":8,"CardPlace":998},{"CardId":9,"CardType":9,"CardPlace":998},{"CardId":10,"CardType":10,"CardPlace":998},{"CardId":11,"CardType":11,"CardPlace":998},{"CardId":12,"CardType":12,"CardPlace":998},{"CardId":13,"CardType":13,"CardPlace":998},{"CardId":14,"CardType":14,"CardPlace":998},{"CardId":15,"CardType":15,"CardPlace":998},{"CardId":16,"CardType":16,"CardPlace":998},{"CardId":17,"CardType":17,"CardPlace":1},{"CardId":18,"CardType":17,"CardPlace":1},{"CardId":19,"CardType":17,"CardPlace":1},{"CardId":20,"CardType":17,"CardPlace":1},{"CardId":21,"CardType":18,"CardPlace":1},{"CardId":22,"CardType":18,"CardPlace":1},{"CardId":23,"CardType":19,"CardPlace":1},{"CardId":24,"CardType":19,"CardPlace":1},{"CardId":25,"CardType":19,"CardPlace":1},{"CardId":26,"CardType":19,"CardPlace":1},{"CardId":27,"CardType":20,"CardPlace":1},{"CardId":28,"CardType":20,"CardPlace":1},{"CardId":29,"CardType":21,"CardPlace":1},{"CardId":30,"CardType":21,"CardPlace":1},{"CardId":31,"CardType":21,"CardPlace":1},{"CardId":32,"CardType":22,"CardPlace":1},{"CardId":33,"CardType":22,"CardPlace":1},{"CardId":34,"CardType":22,"CardPlace":1},{"CardId":35,"CardType":22,"CardPlace":1},{"CardId":36,"CardType":23,"CardPlace":1},{"CardId":37,"CardType":23,"CardPlace":1},{"CardId":38,"CardType":23,"CardPlace":1},{"CardId":39,"CardType":24,"CardPlace":1},{"CardId":40,"CardType":24,"CardPlace":1},{"CardId":41,"CardType":24,"CardPlace":1},{"CardId":42,"CardType":24,"CardPlace":1},{"CardId":43,"CardType":25,"CardPlace":1},{"CardId":44,"CardType":25,"CardPlace":1},{"CardId":45,"CardType":25,"CardPlace":1},{"CardId":46,"CardType":26,"CardPlace":1},{"CardId":47,"CardType":26,"CardPlace":1},{"CardId":48,"CardType":26,"CardPlace":1},{"CardId":49,"CardType":27,"CardPlace":1},{"CardId":50,"CardType":27,"CardPlace":1},{"CardId":51,"CardType":27,"CardPlace":1},{"CardId":52,"CardType":28,"CardPlace":1},{"CardId":53,"CardType":28,"CardPlace":1},{"CardId":54,"CardType":29,"CardPlace":1},{"CardId":55,"CardType":30,"CardPlace":1},{"CardId":56,"CardType":30,"CardPlace":1},{"CardId":57,"CardType":31,"CardPlace":1},{"CardId":58,"CardType":31,"CardPlace":1},{"CardId":59,"CardType":31,"CardPlace":1},{"CardId":60,"CardType":31,"CardPlace":1},{"CardId":61,"CardType":32,"CardPlace":1},{"CardId":62,"CardType":32,"CardPlace":1},{"CardId":63,"CardType":33,"CardPlace":1},{"CardId":64,"CardType":33,"CardPlace":1},{"CardId":65,"CardType":34,"CardPlace":1},{"CardId":66,"CardType":34,"CardPlace":1},{"CardId":67,"CardType":35,"CardPlace":1},{"CardId":68,"CardType":35,"CardPlace":1},{"CardId":69,"CardType":36,"CardPlace":1},{"CardId":70,"CardType":36,"CardPlace":1},{"CardId":71,"CardType":37,"CardPlace":1},{"CardId":72,"CardType":38,"CardPlace":1},{"CardId":73,"CardType":39,"CardPlace":1},{"CardId":74,"CardType":40,"CardPlace":1},{"CardId":75,"CardType":41,"CardPlace":1},{"CardId":76,"CardType":42,"CardPlace":1},{"CardId":77,"CardType":43,"CardPlace":5},{"CardId":78,"CardType":43,"CardPlace":5},{"CardId":79,"CardType":43,"CardPlace":5},{"CardId":80,"CardType":44,"CardPlace":5},{"CardId":81,"CardType":45,"CardPlace":5},{"CardId":82,"CardType":45,"CardPlace":5},{"CardId":83,"CardType":45,"CardPlace":5},{"CardId":84,"CardType":45,"CardPlace":5},{"CardId":85,"CardType":45,"CardPlace":5},{"CardId":86,"CardType":45,"CardPlace":5},{"CardId":87,"CardType":43,"CardPlace":6},{"CardId":88,"CardType":43,"CardPlace":6},{"CardId":89,"CardType":43,"CardPlace":6},{"CardId":90,"CardType":44,"CardPlace":6},{"CardId":91,"CardType":45,"CardPlace":6},{"CardId":92,"CardType":45,"CardPlace":6},{"CardId":93,"CardType":45,"CardPlace":6},{"CardId":94,"CardType":45,"CardPlace":6},{"CardId":95,"CardType":45,"CardPlace":6},{"CardId":96,"CardType":45,"CardPlace":6},{"CardId":97,"CardType":43,"CardPlace":500},{"CardId":98,"CardType":43,"CardPlace":500},{"CardId":99,"CardType":43,"CardPlace":500},{"CardId":100,"CardType":43,"CardPlace":500},{"CardId":101,"CardType":43,"CardPlace":500},{"CardId":102,"CardType":43,"CardPlace":500},{"CardId":103,"CardType":43,"CardPlace":500},{"CardId":104,"CardType":43,"CardPlace":500},{"CardId":105,"CardType":43,"CardPlace":500},{"CardId":106,"CardType":43,"CardPlace":500},{"CardId":107,"CardType":43,"CardPlace":500},{"CardId":108,"CardType":43,"CardPlace":500},{"CardId":109,"CardType":43,"CardPlace":500},{"CardId":110,"CardType":43,"CardPlace":500},{"CardId":111,"CardType":43,"CardPlace":500},{"CardId":112,"CardType":43,"CardPlace":500},{"CardId":113,"CardType":43,"CardPlace":500},{"CardId":114,"CardType":43,"CardPlace":500},{"CardId":115,"CardType":43,"CardPlace":500},{"CardId":116,"CardType":43,"CardPlace":500},{"CardId":117,"CardType":43,"CardPlace":500},{"CardId":118,"CardType":43,"CardPlace":500},{"CardId":119,"CardType":43,"CardPlace":500},{"CardId":120,"CardType":43,"CardPlace":500},{"CardId":121,"CardType":43,"CardPlace":500}],"CardTypes":[{"Id":0,"Metadata":{"Picture":29,"Coins":0,"Name":"[0]
     Init","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}}},{"Id":1,"Metadata":{"Picture":75,"Coins":1,"Name":"[1]
     End Turn","Description":"Ends turn"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":9,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"END
@@ -1268,7 +1320,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  initWithTestJson: 1
+  initWithTestJson: 0
   testJson: '{"Steps":[{"actionType":0,"playerId":1,"cardId":0}]}'
 --- !u!1 &2124447753
 GameObject:

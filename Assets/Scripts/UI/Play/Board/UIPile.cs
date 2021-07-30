@@ -27,10 +27,6 @@ namespace Solcery.UI.Play
             }
 
             base.UpdateWithDiff(cardPlaceDiff, false, true, false, true);
-            if (content.childCount > 0) {
-                var lastChild = content.GetChild(content.childCount - 1);
-                cardsCountText.transform.localPosition = lastChild.transform.localPosition;
-            }
         }
 
         protected override void OnCardCasted(int cardId)

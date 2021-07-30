@@ -58,8 +58,19 @@ namespace Solcery.Modules
         private void ApplyLogStep(BoardData origin, LogStepData logStep)
         {
             origin.Prettify();
-            // TODO: Proper action type parsing. Casting is just a particular type
-            CastCard(origin, logStep.playerId, logStep.data);
+
+            switch (logStep.actionType)
+            {
+                case 0:
+                    CastCard(origin, logStep.playerId, logStep.data);
+                    break;
+                case 1:
+                    SetStatus(origin, logStep.playerId, logStep.data);
+                    break;
+                case 2:
+                    SetOutcome(origin, logStep.playerId, logStep.data);
+                    break;
+            }
         }
 
         private void CastCard(BoardData origin, int casterId, int cardId)
@@ -70,6 +81,18 @@ namespace Solcery.Modules
             var brickTree = cardTypeData.BrickTree;
             BrickRuntime.Action.Run(brickTree.Genesis, ref ctx);
             origin = ctx.boardData;
+        }
+
+        private void SetStatus(BoardData origin, int playerId, int status)
+        {
+            var playerData = origin.Players[playerId - 1];
+            playerData.Status = (PlayerStatus)status;
+        }
+
+        private void SetOutcome(BoardData origin, int playerId, int outcome)
+        {
+            var playerData = origin.Players[playerId - 1];
+            playerData.Outcome = (PlayerOutcome)outcome;
         }
     }
 }

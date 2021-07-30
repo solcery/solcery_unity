@@ -16,7 +16,7 @@ namespace Solcery.Modules
 
         public void FakeLogAction(LogData logData)
         {
-            Debug.Log("Log.FakeCastCard");
+            Debug.Log("Log.FakeLogAction");
 
             var newLogData = new LogData(_logData.Value);
             newLogData.Steps.AddRange(logData.Steps);
@@ -51,7 +51,7 @@ namespace Solcery.Modules
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 var logData = JsonConvert.DeserializeObject<LogData>(testJson);
                 UpdateLog(logData);
