@@ -14,7 +14,7 @@ namespace Solcery.Modules
         [SerializeField] private bool initWithTestJson = false;
         [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
 
-        public void FakeCastCard(LogStepData logStepData)
+        public void FakeLogAction(LogStepData logStepData)
         {
             Debug.Log("Log.FakeCastCard");
 

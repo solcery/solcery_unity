@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Solcery.Modules;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
 
-namespace Solcery.Modules
+namespace Solcery
 {
     public class BoardDataDiffTracker : Singleton<BoardDataDiffTracker>
     {
@@ -38,7 +39,7 @@ namespace Solcery.Modules
             _currentBoardData = null;
         }
 
-        public void OnBoardUpdate(BoardData boardData)
+        private void OnBoardUpdate(BoardData boardData)
         {
             Debug.Log("BoardDataTracker.OnBoardUpdate");
 

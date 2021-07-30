@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerStatus : MonoBehaviour
+namespace Solcery
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum PlayerStatus
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Undefined = 0,
+        Offline = 1,
+        Online = 2
     }
 }

@@ -2,7 +2,6 @@ using Solcery.Utils;
 using Newtonsoft.Json;
 using System.Threading;
 using Solcery.Utils.Reactives;
-using Solcery.Modules;
 using UnityEngine;
 
 namespace Solcery.Modules
