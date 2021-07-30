@@ -49,17 +49,17 @@ namespace Solcery.WebGL
             OnCardCreationConfirmDataChanged?.Invoke(confirmData);
         }
 
-        public void SetGameOver(string gameOverJson)
-        {
-            var gameOverData = JsonConvert.DeserializeObject<GameOverData>(gameOverJson);
-            GameOverPopupWithDelay(gameOverData).Forget();
-        }
+        // public void SetGameOver(string gameOverJson)
+        // {
+        //     var gameOverData = JsonConvert.DeserializeObject<GameOverData>(gameOverJson);
+        //     GameOverPopupWithDelay(gameOverData).Forget();
+        // }
 
-        private async UniTaskVoid GameOverPopupWithDelay(GameOverData gameOverData)
-        {
-            await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
-            UIGameOverPopup.Instance?.Open(gameOverData);
-        }
+        // private async UniTaskVoid GameOverPopupWithDelay(GameOverData gameOverData)
+        // {
+        //     await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
+        //     UIGameOverPopup.Instance?.Open(gameOverData);
+        // }
 
         // Debug.Log("Game Over");
         //         var gameOverData = new GameOverData()
