@@ -40,7 +40,8 @@ namespace Solcery.UI.Play
             if (boardData == null)
             {
                 games?.SetActive(true);
-                createGameButton?.gameObject?.SetActive(true);
+                // createGameButton?.gameObject?.SetActive(true);
+                createGameButton.interactable = true;
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
 
@@ -52,7 +53,8 @@ namespace Solcery.UI.Play
             else
             {
                 games.SetActive(false);
-                createGameButton?.gameObject?.SetActive(false);
+                // createGameButton?.gameObject?.SetActive(false);
+                createGameButton.interactable = false;
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
 
@@ -66,7 +68,8 @@ namespace Solcery.UI.Play
         private void OnCreateGameButtonClicked()
         {
             UnityToReact.Instance?.CallCreateBoard();
-            createGameButton?.gameObject?.SetActive(false);
+            // createGameButton?.gameObject?.SetActive(false);
+            createGameButton.interactable = false;
             waitingStatus?.SetActive(true);
             lookingForOpponent?.SetActive(true);
         }
