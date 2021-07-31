@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class PlacesController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class PlacesController : MonoBehaviour
 {
     [Header("Prefabs"), SerializeField]
     private PlaceObject placePrefab;
@@ -16,7 +13,6 @@ public class PlacesController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     [SerializeField]
     private RectTransform placesHolder;
 
-    private bool isPlaceCreating = false;
     private List<PlaceInfo> createdPlaces = new List<PlaceInfo>();
 
     private void Start()
@@ -27,24 +23,28 @@ public class PlacesController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnAddNewPlaceClicked()
     {
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(placesHolder, Input.mousePosition, Camera.main, out Vector2 mousePoint) && !isPlaceCreating)
+        var newPlaceInfo = new PlaceInfo()
         {
-            isPlaceCreating = true;
+            IsVisible = true
+        };
 
-            CreateNewPlaceInfo(mousePoint);
+        var newPlace = Instantiate(placePrefab, placesHolder);
+        newPlaceInfo.Object = newPlace;
 
-            StartCoroutine(ChangePlaceSize());
-        }
+        var newPlaceListObject = Instantiate(placeListObjectPrefab, listContent);
+        newPlaceInfo.ListObject = newPlaceListObject;
+
+        newPlace.Set(newPlaceInfo);
+        newPlaceListObject.Set(newPlaceInfo);
+
+        createdPlaces.Add(newPlaceInfo);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public bool IsIdFree(string idToCheck)
     {
-        isPlaceCreating = false;
-
-        createdPlaces.Last().Width = createdPlaces.Last().Object.GetComponent<RectTransform>().sizeDelta.x;
-        createdPlaces.Last().Height = createdPlaces.Last().Object.GetComponent<RectTransform>().sizeDelta.y;
+        return createdPlaces.Find(x => x.Id == idToCheck) == null;
     }
 
     public void DeletePlace(PlaceInfo infoToDelete)
@@ -70,54 +70,6 @@ public class PlacesController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             createdPlaces[infoId] = infoToUpdate;
 
             createdPlaces[infoId].Object.gameObject.SetActive(info.IsVisible);
-        }
-    }
-
-    private void CreateNewPlaceInfo(Vector2 mousePoint)
-    {
-        var newId = Mathf.Max(createdPlaces.Select(x => x.Id).ToArray()) + 1;
-        var newPlaceInfo = new PlaceInfo()
-        {
-            Id = newId,
-            Name = $"Place_{newId}",
-            IsVisible = true
-        };
-
-        var newPlace = Instantiate(placePrefab, placesHolder);
-        newPlace.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
-        newPlaceInfo.Object = newPlace;
-
-        var newPlaceListObject = Instantiate(placeListObjectPrefab, listContent);
-        newPlaceInfo.ListObject = newPlaceListObject;
-
-        newPlace.Set(newPlaceInfo);
-        newPlaceListObject.Set(newPlaceInfo);
-
-        createdPlaces.Add(newPlaceInfo);
-
-        newPlace.GetComponent<RectTransform>().localPosition = new Vector3(mousePoint.x, mousePoint.y, 0);
-    }
-
-    private IEnumerator ChangePlaceSize()
-    {
-        PlaceInfo currentPlace = createdPlaces.Last();
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(currentPlace.Object.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out Vector2 startMousePos);
-
-        while (isPlaceCreating)
-        {
-            Vector2 sizeDelta = currentPlace.Object.GetComponent<RectTransform>().sizeDelta;
-
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(currentPlace.Object.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out Vector2 mousePos);
-            Vector2 resizeValue = mousePos - startMousePos;
-
-            sizeDelta += new Vector2(resizeValue.x, -resizeValue.y);
-            sizeDelta = new Vector2(Mathf.Clamp(sizeDelta.x, 0, sizeDelta.x), Mathf.Clamp(sizeDelta.y, 0, sizeDelta.y));
-
-            currentPlace.Object.GetComponent<RectTransform>().sizeDelta = sizeDelta;
-
-            startMousePos = mousePos;
-
-            yield return null;
         }
     }
 }

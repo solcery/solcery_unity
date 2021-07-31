@@ -1,9 +1,10 @@
 public class PlaceInfo
 {
-    public int Id {get;set;}
-    public float Height {get;set;}
-    public float Width {get;set;}
-    public string Name {get;set;}
+    public string Id {get;set;}
+    public float TopPad { get; set; }
+    public float BottomPad { get; set; }
+    public float RightPad { get; set; }
+    public float LeftPad { get; set; }
     public bool IsVisible {get;set; }
     public PlaceObject Object {get;set;}
     public PlaceListObject ListObject {get;set;}
