@@ -45,13 +45,9 @@ namespace Solcery.UI.Play
             {
                 _isPlayer = (playerIndex == boardData.MyIndex);
                 UpdatePlayerData(boardData, playerIndex);
-                // Debug.Log("1.1");
                 UpdatePlayerDrawPile(boardData, playerIndex);
-                // Debug.Log("1.2");
                 UpdatePlayerDiscardPile(boardData, playerIndex);
-                // Debug.Log("1.3");
                 UpdatePlayerHand(boardData, playerIndex);
-                // Debug.Log("1.4");
             }
             else
             {

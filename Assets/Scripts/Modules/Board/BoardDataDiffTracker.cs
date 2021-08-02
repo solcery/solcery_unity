@@ -40,8 +40,6 @@ namespace Solcery
 
         private void OnBoardUpdate(BoardData boardData)
         {
-            Debug.Log("BoardDataDiffTracker.OnBoardUpdate");
-
             _previousBoardData = _currentBoardData;
             _currentBoardData = boardData;
 

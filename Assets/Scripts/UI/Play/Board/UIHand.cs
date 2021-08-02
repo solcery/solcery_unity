@@ -50,8 +50,6 @@ namespace Solcery.UI.Play
                 }
             }
 
-            // Debug.Log("hand 1");
-
             if (cardPlaceDiff.Departed != null)
             {
                 foreach (var departedCard in cardPlaceDiff.Departed)
@@ -61,8 +59,6 @@ namespace Solcery.UI.Play
                     DeleteCard(cardToDelete);
                 }
             }
-
-            // Debug.Log("hand 2");
 
             if (cardPlaceDiff.Arrived != null)
             {
@@ -92,8 +88,6 @@ namespace Solcery.UI.Play
                         _cardsById.Add(arrivedCard.CardData.CardId, card);
                 }
             }
-            
-            // Debug.Log("hand 3");
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
         }

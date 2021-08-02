@@ -74,7 +74,7 @@ namespace Solcery
 
             static void ShowMessage(BrickData brick, ref Context ctx)
             {
-                //Debug.Log("Ingame message: " + brick.StringField);
+                
             }
 
             static void SetCtxVar(BrickData brick, ref Context ctx)

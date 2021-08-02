@@ -16,8 +16,6 @@ namespace Solcery.Modules
 
         public void FakeLogAction(LogData logData)
         {
-            Debug.Log("Log.FakeLogAction");
-
             var newLogData = new LogData(_logData.Value);
             newLogData.Steps.AddRange(logData.Steps);
 
@@ -26,7 +24,6 @@ namespace Solcery.Modules
 
         public void UpdateLog(LogData logData)
         {
-            Debug.Log("Log.UpdateLog");
             _logData.Value = logData;
         }
 

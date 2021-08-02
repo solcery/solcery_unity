@@ -16,8 +16,6 @@ namespace Solcery.Modules
 
         public void UpdateBoard(BoardData boardData)
         {
-            Debug.Log("Board.UpdateBoard");
-
             _boardData.Value = boardData;
         }
 

@@ -12,8 +12,6 @@ namespace Solcery.Modules
 
         public void Init()
         {
-            Debug.Log("LogApplyer.Init");
-
             _cts = new CancellationTokenSource();
 
             Reactives.Subscribe(Log.Instance.LogData, OnLogUpdate, _cts.Token);
@@ -27,8 +25,6 @@ namespace Solcery.Modules
 
         private void OnLogUpdate(LogData logData)
         {
-            Debug.Log("LogApplyer.OnLogUpdate");
-
             if (logData == null)
                 return;
 
