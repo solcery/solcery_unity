@@ -8,6 +8,8 @@ namespace Solcery.UI.Play
 {
     public class UIBoard : Singleton<UIBoard>
     {
+        [SerializeField] private Button gameRulesButton = null;
+
         [SerializeField] private UIPlayer player = null;
         [SerializeField] private UIPlayer enemy = null;
         [SerializeField] private UIShop shop = null;
@@ -22,11 +24,13 @@ namespace Solcery.UI.Play
         public void Init()
         {
             endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked());
+            gameRulesButton?.onClick.AddListener(() => UIGameRulesPopup.Instance?.Open());
         }
 
         public void DeInit()
         {
             endTurnButton?.onClick.RemoveAllListeners();
+            gameRulesButton?.onClick.RemoveAllListeners();
         }
 
         public void Clear()
@@ -47,6 +51,8 @@ namespace Solcery.UI.Play
 
         public void OnBoardUpdate(BoardData boardData)
         {
+            SetGameRulesButton(boardData);
+
             _boardData = boardData;
             AssignBoardPlaces(_boardData);
 
@@ -126,6 +132,21 @@ namespace Solcery.UI.Play
 
             place = null;
             return false;
+        }
+
+        private void SetGameRulesButton(BoardData boardData)
+        {
+            if (gameRulesButton == null)
+                return;
+
+            if (boardData != null)
+            {
+                gameRulesButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                gameRulesButton.gameObject.SetActive(false);
+            }
         }
     }
 }

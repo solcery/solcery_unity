@@ -1,4 +1,3 @@
-using Solcery.Modules;
 using Solcery.Utils;
 using Solcery.WebGL;
 using UnityEngine;
@@ -10,7 +9,8 @@ namespace Solcery.UI.Play
 {
     public class UIPlay : Singleton<UIPlay>
     {
-        [SerializeField] private Button createGameButton = null;
+        [SerializeField] private Button summonerGameButton = null;
+        [SerializeField] private Button summonerRulesButton = null;
         [SerializeField] private GameObject games = null;
         [SerializeField] private GameObject waitingStatus = null;
         [SerializeField] private GameObject lookingForOpponent = null;
@@ -22,6 +22,7 @@ namespace Solcery.UI.Play
         {
             _cts = new CancellationTokenSource();
 
+            summonerRulesButton?.onClick.AddListener(() => UIGameRulesPopup.Instance?.Open());
             Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _cts.Token);
             board?.Init();
         }
@@ -31,7 +32,8 @@ namespace Solcery.UI.Play
             _cts?.Cancel();
             _cts?.Dispose();
 
-            createGameButton?.onClick?.RemoveAllListeners();
+            summonerGameButton?.onClick?.RemoveAllListeners();
+            summonerRulesButton?.onClick.RemoveAllListeners();
             board?.DeInit();
         }
 
@@ -41,27 +43,29 @@ namespace Solcery.UI.Play
             {
                 games?.SetActive(true);
                 // createGameButton?.gameObject?.SetActive(true);
-                createGameButton.interactable = true;
+                summonerGameButton.interactable = true;
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
+                summonerRulesButton?.gameObject.SetActive(false);
 
                 board?.Clear();
                 board?.gameObject?.SetActive(false);
 
-                createGameButton?.onClick?.AddListener(OnCreateGameButtonClicked);
+                summonerGameButton?.onClick?.AddListener(OnCreateGameButtonClicked);
             }
             else
             {
                 games.SetActive(false);
                 // createGameButton?.gameObject?.SetActive(false);
-                createGameButton.interactable = false;
+                summonerGameButton.interactable = false;
                 waitingStatus?.SetActive(false);
                 lookingForOpponent?.SetActive(false);
+                summonerRulesButton?.gameObject.SetActive(false);
 
                 board?.gameObject?.SetActive(true);
                 board?.OnBoardUpdate(boardData);
 
-                createGameButton?.onClick?.RemoveAllListeners();
+                summonerGameButton?.onClick?.RemoveAllListeners();
             }
         }
 
@@ -69,9 +73,10 @@ namespace Solcery.UI.Play
         {
             UnityToReact.Instance?.CallCreateBoard();
             // createGameButton?.gameObject?.SetActive(false);
-            createGameButton.interactable = false;
+            summonerGameButton.interactable = false;
             waitingStatus?.SetActive(true);
             lookingForOpponent?.SetActive(true);
+            summonerRulesButton?.gameObject.SetActive(true);
         }
     }
 }

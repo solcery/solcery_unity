@@ -90,7 +90,7 @@ namespace Solcery
 
         private void GameOverPopup(float delay = 1.5f, string title = null, string description = null, int playerId = 0, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
         {
-            UIGameOverPopup.Instance?.OpenWithDelay(1.5f, new GameOverData(title, description, () =>
+            UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverData(title, description, () =>
             {
                 Board.Instance?.UpdateBoard(null);
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
