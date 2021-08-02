@@ -11,22 +11,24 @@ namespace Solcery
 {
     public class GameResultTracker : Singleton<GameResultTracker>
     {
-        [SerializeField] private EnemyAFKTimer enemyAFKTimer = null;
+        [SerializeField] private PlayerAFKTimer enemyAFKTimer = null;
+        [SerializeField] private PlayerAFKTimer playerAFKTimer = null;
 
         private AsyncReactiveProperty<bool> _isEnemyActive = new AsyncReactiveProperty<bool>(false);
-        private CancellationTokenSource _cts;
+        private AsyncReactiveProperty<bool> _isPlayerActive = new AsyncReactiveProperty<bool>(false);
 
+        private CancellationTokenSource _cts;
         private int _myId;
         private int _enemyId;
-
         public void Init()
         {
             _cts = new CancellationTokenSource();
 
             enemyAFKTimer?.Init(_isEnemyActive, () => GameOverPopup(0f, "Victory", "Your opponent was inactive for far too long", _myId, true, PlayerOutcome.Victory));
+            playerAFKTimer?.Init(_isPlayerActive, null);
+
             Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
         }
-
         public void DeInit()
         {
             _cts?.Cancel();
@@ -34,7 +36,6 @@ namespace Solcery
 
             enemyAFKTimer?.DeInit();
         }
-
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;
@@ -48,6 +49,9 @@ namespace Solcery
 
             if (_isEnemyActive.Value != boardData.Enemy.IsActive)
                 _isEnemyActive.Value = boardData.Enemy.IsActive;
+
+            if (_isPlayerActive.Value != boardData.Me.IsActive)
+                _isPlayerActive.Value = boardData.Me.IsActive;
 
             var myIndex = boardData.MyIndex;
             var enemyIndex = boardData.EnemyIndex;

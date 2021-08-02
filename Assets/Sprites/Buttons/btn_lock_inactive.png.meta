@@ -4,7 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2339694606618353635
-    second: btn_lock_n 1_0
+    second: lock
+  - first:
+      213: -6945055844723016351
+    second: btn_lock_inactive_full
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btn_lock_n 1_0
+      name: lock
       rect:
         serializedVersion: 2
         x: 19
@@ -114,7 +117,7 @@ TextureImporter:
         width: 78
         height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,6 +125,27 @@ TextureImporter:
       bones: []
       spriteID: 3ef526639d3487020800000000000000
       internalID: 2339694606618353635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btn_lock_inactive_full
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 116
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16db80671843e9f90800000000000000
+      internalID: -6945055844723016351
       vertices: []
       indices: 
       edges: []
