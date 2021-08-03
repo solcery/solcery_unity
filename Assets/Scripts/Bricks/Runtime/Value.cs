@@ -97,10 +97,13 @@ namespace Solcery
             }
 
             static int GetCardsAmount(BrickData brick, ref Context ctx) {
+                int result = 0;
                 var place = (CardPlace)Value.Run(brick.Slots[0], ref ctx);
-                if (!ctx.boardData.CardsByPlace.ContainsKey(place))
-                    return 0;
-                return ctx.boardData.CardsByPlace[place].Count;
+                foreach (var card in ctx.boardData.Cards) {
+                    if (card.CardPlace == place)
+                        result++;
+                }
+                return result;
             }
 
             static int CurrentPlace(BrickData brick, ref Context ctx) {
