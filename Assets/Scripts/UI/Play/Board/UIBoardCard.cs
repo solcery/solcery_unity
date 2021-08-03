@@ -94,6 +94,11 @@ namespace Solcery.UI
             }
         }
 
+        public void StopShaking()
+        {
+            animator?.SetBool("IsPressed", false);
+        }
+
         public void SetAnimator()
         {
             animator?.SetBool("IsFaceDown", _isFaceDown);
@@ -208,7 +213,7 @@ namespace Solcery.UI
 
             if (_pointerDown)
             {
-                animator?.SetTrigger("Pressed");
+                animator?.SetBool("IsPressed", true);
                 pointerHandler.enabled = false;
                 _isPointerOver = false;
                 _onCardCasted?.Invoke(_cardData.CardId);

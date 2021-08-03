@@ -47,6 +47,11 @@ namespace Solcery.UI.Play
                         card.Init(stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
                         _cardsById.Add(stayedCard.CardData.CardId, card);
                     }
+                    else
+                    {
+                        if (_cardsById.TryGetValue(stayedCard.CardData.CardId, out var existringCard))
+                            existringCard.StopShaking();
+                    }
                 }
             }
 
