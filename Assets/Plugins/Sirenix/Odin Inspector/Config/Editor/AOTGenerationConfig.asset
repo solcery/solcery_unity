@@ -16,44 +16,8 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637635526246835018
+  lastScan: 637635575306916175
   supportSerializedTypes:
-  - TypeName: System.Action, mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.BrickConfig, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.BrickType, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[System.Int32,
-      mscorlib],[Solcery.BrickConfig, Assembly-CSharp]], mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Solcery.BrickConfig,
-      Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
-      Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
-      mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.BrickType,
-      Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
-      mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Int32, mscorlib
-    IsCustom: 0
-    Emit: 1
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
     IsCustom: 0
     Emit: 1
