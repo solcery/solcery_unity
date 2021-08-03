@@ -74,7 +74,7 @@ namespace Solcery.UI.Play
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
                     card.Init(arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
 
-                    if (arrivedCard.From == CardPlace.Nowhere)
+                    if (arrivedCard.From == CardPlace.Nowhere || !UIBoard.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
                         card.SetVisibility(true);
                     else
                         card.SetVisibility(false);
