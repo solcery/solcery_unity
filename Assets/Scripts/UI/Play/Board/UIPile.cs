@@ -16,7 +16,7 @@ namespace Solcery.UI.Play
         public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, int cardsCount)
         {
             // TODO: count +- count here from each diff
-            if (cardsCount <= 0) 
+            if (cardsCount <= 0)
             {
                 this.gameObject.SetActive(false);
             }
