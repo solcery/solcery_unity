@@ -557,11 +557,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 11400000, guid: dc18827ce6a9b124da7e261caad39a5f, type: 2}
   button: {fileID: 300940413}
+  highlighTitle: 1
   title: {fileID: 81393444}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
-  tooltip: Test your freshly minted cards in a sandbox duel. All game logic is written
-    on chain.
+  tooltip: Explore a collection of on-chain games made in our editor. All of them
+    will be a part of a vast metaverse yet to come.
 --- !u!114 &300940413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,19 +1408,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429419822}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42ee7ffdf1fea16428000d70dd224b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 11400000, guid: 6505320a6f809b943ac3747ad192542f, type: 2}
   button: {fileID: 1429419825}
+  highlighTitle: 0
   title: {fileID: 1358893642}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
-  tooltip: Create your own cards using basic logic blocks and customize them. Each
-    card created is minted  on chain and transferred to your wallet. Use them to
-    play, grow your collection or trade with other players.
+  tooltip: Game editor that all our games have been created with. We are working
+    hard to open it to general public and let you craft your masterpieces asap.
 --- !u!114 &1429419825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,10 +1611,10 @@ RectTransform:
   m_Father: {fileID: 727772911}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -362}
-  m_SizeDelta: {x: 1000, y: 80}
+  m_AnchorMin: {x: 0.16334552, y: 0.06875937}
+  m_AnchorMax: {x: 0.8366545, y: 0.13751873}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514940999
 MonoBehaviour:
@@ -1778,6 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
   button: {fileID: 1593928670}
+  highlighTitle: 0
   title: {fileID: 202503150}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
