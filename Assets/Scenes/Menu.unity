@@ -557,12 +557,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 11400000, guid: dc18827ce6a9b124da7e261caad39a5f, type: 2}
   button: {fileID: 300940413}
-  highlighTitle: 1
+  highlighTitle: 0
   title: {fileID: 81393444}
   titleHighlightedColor: {r: 0.76862746, g: 0.45882353, b: 0.12941177, a: 1}
   titleUnhighlightedColor: {r: 0.36862746, g: 0.30588236, b: 0.24313726, a: 1}
-  tooltip: Explore a collection of on-chain games made in our editor. All of them
-    will be a part of a vast metaverse yet to come.
+  tooltip: First playtest will be conducted on Friday, 6 August, from 11:00am to
+    1:00pm UTC.
 --- !u!114 &300940413
 MonoBehaviour:
   m_ObjectHideFlags: 0
