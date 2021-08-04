@@ -12,17 +12,21 @@ namespace Solcery.UI.Play
         [SerializeField] protected Transform content = null;
 
         protected bool _areCardsFaceDown;
+        private int _cardsToArrive;
 
         protected Dictionary<int, UIBoardCard> _cardsById;
+
+        private bool _hideAllButTop;
 
         public void Clear()
         {
             DeleteAllCards();
         }
 
-        protected void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false)
+        protected void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
+            _hideAllButTop = hideAllButTop;
 
             if (_cardsById == null)
                 _cardsById = new Dictionary<int, UIBoardCard>();
@@ -39,18 +43,25 @@ namespace Solcery.UI.Play
 
             if (cardPlaceDiff.Stayed != null)
             {
-                foreach (var stayedCard in cardPlaceDiff.Stayed)
+                for (int i = 0; i < cardPlaceDiff.Stayed.Count; i++)
                 {
+                    var stayedCard = cardPlaceDiff.Stayed[i];
+
                     if (!_cardsById.ContainsKey(stayedCard.CardData.CardId))
                     {
                         var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
                         card.Init(stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
+
+                        // if (hideAllButTop && i != cardPlaceDiff.Stayed.Count - 1)
+                        //     card.SetVisibility(false);
+
                         _cardsById.Add(stayedCard.CardData.CardId, card);
                     }
-                    else
+                    else if (_cardsById.TryGetValue(stayedCard.CardData.CardId, out var existringCard))
                     {
-                        if (_cardsById.TryGetValue(stayedCard.CardData.CardId, out var existringCard))
-                            existringCard.StopShaking();
+                        existringCard.StopShaking();
+                        if (hideAllButTop && i != cardPlaceDiff.Stayed.Count - 1)
+                            existringCard.SetVisibility(false);
                     }
                 }
             }
@@ -65,8 +76,10 @@ namespace Solcery.UI.Play
                 }
             }
 
-            if (cardPlaceDiff.Arrived != null)
+            if (cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0)
             {
+                _cardsToArrive = 0;
+
                 foreach (var arrivedCard in cardPlaceDiff.Arrived)
                 {
                     UIBoardCard card;
@@ -77,13 +90,23 @@ namespace Solcery.UI.Play
                     if (arrivedCard.From == CardPlace.Nowhere || !UIBoard.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
                         card.SetVisibility(true);
                     else
+                    {
+                        _cardsToArrive += 1;
                         card.SetVisibility(false);
+                    }
 
                     if (_cardsById.ContainsKey(arrivedCard.CardData.CardId))
                         _cardsById[arrivedCard.CardData.CardId] = card;
                     else
                         _cardsById.Add(arrivedCard.CardData.CardId, card);
                 }
+
+                if (_cardsToArrive <= 0 && _hideAllButTop)
+                    HideAllButTop();
+            }
+            else if (_hideAllButTop)
+            {
+                HideAllButTop();
             }
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
@@ -93,8 +116,32 @@ namespace Solcery.UI.Play
 
         public void OnCardArrival(int cardId)
         {
+            _cardsToArrive -= 1;
+
             var card = GetCardById(cardId);
             if (card != null) card.SetVisibility(true);
+
+            if (_cardsToArrive <= 0 && _hideAllButTop)
+            {
+                HideAllButTop();
+                _cardsToArrive = 0;
+            }
+        }
+
+        private void HideAllButTop()
+        {
+            var childCount = content.childCount;
+
+            if (childCount > 0)
+            {
+                var lastCardId = content.GetChild(childCount - 1).GetComponent<UIBoardCard>().CardData.CardId;
+
+                foreach (var pair in _cardsById)
+                {
+                    if (pair.Key != lastCardId)
+                        pair.Value.SetVisibility(false);
+                }
+            }
         }
 
         protected abstract void OnCardCasted(int cardId);

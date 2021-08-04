@@ -26,7 +26,7 @@ namespace Solcery.UI.Play
                 if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
             }
 
-            base.UpdateWithDiff(cardPlaceDiff, false, true, false, true);
+            base.UpdateWithDiff(cardPlaceDiff, false, true, false, true, true);
         }
 
         protected override void OnCardCasted(int cardId)

@@ -8,6 +8,7 @@ namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {
+        public BoardCardData CardData => _cardData;
         public bool IsFaceDown => _isFaceDown;
         public AspectRatioFitter ARF => arf;
 

@@ -30,6 +30,7 @@ namespace Solcery
                 var destinationCardsParent = toPlace.GetCardsParent();
 
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
+                cardClone.SetVisibility(true);
                 cardClone.SetFaceDown(cardToDelete.IsFaceDown);
                 // cardClone.ARF.enabled = false;
                 cardClone.gameObject.name = "animated clone";
@@ -66,8 +67,8 @@ namespace Solcery
                         tween.OnComplete(() =>
                         {
                             DestroyImmediate(cardClone.gameObject);
-                            toPlace.OnCardArrival(departedCard.CardData.CardId);
                             _clonedCards.Remove(departedCard.CardData.CardId);
+                            toPlace.OnCardArrival(departedCard.CardData.CardId);
                         });
                     }
                 }
