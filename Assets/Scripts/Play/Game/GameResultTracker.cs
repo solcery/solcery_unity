@@ -67,32 +67,32 @@ namespace Solcery
 
             if (me.Status == PlayerStatus.Offline || enemy.Status == PlayerStatus.Offline)
             {
-                GameOverPopup(default, "Game Over", "This game has ended");
+                GameOverPopup(2f, "Game Over", "This game has ended");
                 return;
             }
 
             if (me.Outcome != PlayerOutcome.Undefined)
             {
-                GameOverPopup(default, "Game Over", "This game has ended");
+                GameOverPopup(2f, "Game Over", "This game has ended");
                 return;
             }
 
             if (enemy.HP <= 0)
             {
-                GameOverPopup(default, "Victory", "You have won!", _myId, true, PlayerOutcome.Victory);
+                GameOverPopup(2f, "Victory", "You have won!", _myId, true, PlayerOutcome.Victory);
                 return;
             }
 
             if (me.HP <= 0)
             {
-                GameOverPopup(default, "Defeat", "You have lost...", _myId, true, PlayerOutcome.Defeat);
+                GameOverPopup(2f, "Defeat", "You have lost...", _myId, true, PlayerOutcome.Defeat);
                 return;
             }
 
             /// BOTH ARE ONLINE, BOTH HAVE UNDEFINED OUTCOMES AND BOTH HAVE HP > 0. LET THE GAME CONTINUE.
         }
 
-        private void GameOverPopup(float delay = 1.5f, string title = null, string description = null, int playerId = 0, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
+        private void GameOverPopup(float delay, string title = null, string description = null, int playerId = 0, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
         {
             UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverData(title, description, () =>
             {
