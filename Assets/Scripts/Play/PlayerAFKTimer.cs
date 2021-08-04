@@ -51,9 +51,6 @@ namespace Solcery
 
             if (_timeSinceBecameActive >= afkTime)
             {
-                // _timeSinceBecameActive = 0f;
-                // _isActive = false;
-
                 if (_onTimerFinished != null)
                     _onTimerFinished?.Invoke();
             }
