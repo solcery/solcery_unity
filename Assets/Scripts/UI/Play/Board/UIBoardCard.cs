@@ -9,7 +9,9 @@ namespace Solcery.UI
     public class UIBoardCard : MonoBehaviour
     {
         public bool IsFaceDown => _isFaceDown;
+        public AspectRatioFitter ARF => arf;
 
+        [SerializeField] private AspectRatioFitter arf = null;
         [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;

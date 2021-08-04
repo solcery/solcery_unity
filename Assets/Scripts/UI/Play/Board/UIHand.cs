@@ -87,6 +87,8 @@ namespace Solcery.UI.Play
             }
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
         }
 
         public void OnCardArrival(int cardId)

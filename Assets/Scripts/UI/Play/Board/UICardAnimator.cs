@@ -31,6 +31,7 @@ namespace Solcery
 
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
                 cardClone.SetFaceDown(cardToDelete.IsFaceDown);
+                // cardClone.ARF.enabled = false;
                 cardClone.gameObject.name = "animated clone";
                 var le = cardClone.gameObject.AddComponent<LayoutElement>();
                 le.ignoreLayout = true;
