@@ -7593,7 +7593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778633061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8456,7 +8456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8848,7 +8848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9732,7 +9732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8934130985711265885, guid: 06b14636af374544a9ff034045281681, type: 3}
       propertyPath: m_SizeDelta.y
