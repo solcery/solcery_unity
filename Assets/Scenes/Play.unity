@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1069492312}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.37302956
+  m_Size: 0.37269852
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3035,7 +3035,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
