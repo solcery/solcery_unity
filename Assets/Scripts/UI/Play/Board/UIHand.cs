@@ -134,13 +134,16 @@ namespace Solcery.UI.Play
 
             if (childCount > 0)
             {
-                var lastCardId = content.GetChild(childCount - 1).GetComponent<UIBoardCard>().CardData.CardId;
+                var lastCard = content?.GetChild(childCount - 1)?.GetComponent<UIBoardCard>();
+                var lastCardId = lastCard?.CardData?.CardId;
 
                 foreach (var pair in _cardsById)
                 {
                     if (pair.Key != lastCardId)
-                        pair.Value.SetVisibility(false);
+                        pair.Value?.SetVisibility(false);
                 }
+
+                lastCard.SetVisibility(true);
             }
         }
 

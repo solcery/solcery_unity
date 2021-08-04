@@ -5,6 +5,7 @@ namespace Solcery.Utils
     public class Updater : Singleton<Updater>
     {
         public List<IUpdateable> _updateables = new List<IUpdateable>();
+        private List<IUpdateable> _updateablesLock;
 
         public void Register(IUpdateable updateable)
         {
@@ -18,9 +19,12 @@ namespace Solcery.Utils
 
         void Update()
         {
-            foreach(var u in _updateables)
+            _updateablesLock = new List<IUpdateable>(_updateables);
+
+            foreach (var u in _updateablesLock)
             {
-                u?.PerformUpdate();
+                if (u != null)
+                    u?.PerformUpdate();
             }
         }
     }

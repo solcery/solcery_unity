@@ -120,7 +120,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 21300000, guid: 060add608bb041e4e813ea69079f129b, type: 3}
   - {fileID: 21300000, guid: ebec13096e1433d4cb2f2f6971b54cd7, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: db28f2ec4f5cb5a4684ac29679c2aa60, type: 3}
   - {fileID: 21300000, guid: 61670d3f7fe01c44283e6f7168b892bd, type: 3}
   - {fileID: 0}
   - {fileID: 0}

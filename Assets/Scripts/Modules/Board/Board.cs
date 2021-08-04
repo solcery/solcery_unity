@@ -19,6 +19,12 @@ namespace Solcery.Modules
             _boardData.Value = boardData;
         }
 
+        public void UpdateWithTestJson()
+        {
+            var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
+            UpdateBoard(boardData.Prettify(isVirgin: true));
+        }
+
         public void Init()
         {
             InitWithJson();

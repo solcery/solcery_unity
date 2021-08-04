@@ -8,11 +8,19 @@ namespace Solcery
     {
         public override void PerformUpdate()
         {
+#if (UNITY_EDITOR)
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (Board.Instance.BoardData.Value.Enemy.IsActive)
                     LogActionCreator.Instance?.EnemyCastCard(Board.Instance.BoardData.Value.EndTurnCardId);
             }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Board.Instance?.UpdateWithTestJson();
+                Log.Instance?.UpdateWithTestJson();
+            }
+#endif
         }
     }
 }

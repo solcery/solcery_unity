@@ -27,6 +27,12 @@ namespace Solcery.Modules
             _logData.Value = logData;
         }
 
+        public void UpdateWithTestJson()
+        {
+            var logData = JsonConvert.DeserializeObject<LogData>(testJson);
+            UpdateLog(logData);
+        }
+
         public void Init()
         {
             InitWithJson();

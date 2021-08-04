@@ -1,3 +1,5 @@
+using System;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +8,8 @@ namespace Solcery.UI.Play
     public class UIPile : UIHand
     {
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
+
+        private int _currentCardsCount;
 
         public new void Clear()
         {
@@ -23,10 +27,25 @@ namespace Solcery.UI.Play
             else
             {
                 this.gameObject.SetActive(true);
-                if (cardsCountText != null) cardsCountText.text = cardsCount.ToString();
+
+                if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
+                    SetCardsCountText(cardsCount).Forget();
             }
 
+            _currentCardsCount = cardsCount;
+
             base.UpdateWithDiff(cardPlaceDiff, false, true, false, true, true);
+        }
+
+        private async UniTaskVoid SetCardsCountText(int newCardsCount)
+        {
+            if (cardsCountText != null)
+            {
+                cardsCountText.gameObject.SetActive(false);
+                await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
+                cardsCountText.text = newCardsCount.ToString();
+                cardsCountText.gameObject.SetActive(true);
+            }
         }
 
         protected override void OnCardCasted(int cardId)
