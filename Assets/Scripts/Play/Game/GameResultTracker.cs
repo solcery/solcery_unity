@@ -35,6 +35,7 @@ namespace Solcery
             _cts?.Dispose();
 
             enemyAFKTimer?.DeInit();
+            playerAFKTimer?.DeInit();
         }
         private void OnBoardUpdate(BoardData boardData)
         {
@@ -98,6 +99,7 @@ namespace Solcery
             {
                 Board.Instance?.UpdateBoard(null);
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
+                Log.Instance?.UpdateLog(null);
             }));
         }
     }
