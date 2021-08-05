@@ -13,6 +13,7 @@ namespace Solcery.Modules
 
         [SerializeField] private bool initWithTestJson = false;
         [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
+        [Multiline(20)] [SerializeField] private string json1;
 
         public void FakeLogAction(LogData logData)
         {
@@ -33,6 +34,12 @@ namespace Solcery.Modules
             UpdateLog(logData);
         }
 
+        public void UpdateWithJson1()
+        {
+            var logData = JsonConvert.DeserializeObject<LogData>(json1);
+            UpdateLog(logData);
+        }
+
         public void Init()
         {
             InitWithJson();
@@ -46,15 +53,6 @@ namespace Solcery.Modules
         private void InitWithJson()
         {
             if (initWithTestJson)
-            {
-                var logData = JsonConvert.DeserializeObject<LogData>(testJson);
-                UpdateLog(logData);
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.L))
             {
                 var logData = JsonConvert.DeserializeObject<LogData>(testJson);
                 UpdateLog(logData);

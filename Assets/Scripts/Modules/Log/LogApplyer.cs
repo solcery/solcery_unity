@@ -28,7 +28,7 @@ namespace Solcery.Modules
             if (logData == null)
                 return;
 
-            var currentBoardData = Board.Instance.BoardData.Value;
+            var currentBoardData = Board.Instance?.BoardData?.Value;
             if (currentBoardData == null)
                 return;
 
