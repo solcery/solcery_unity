@@ -29,7 +29,7 @@ namespace Solcery.Modules
                 return;
 
             var currentBoardData = Board.Instance?.BoardData?.Value;
-            if (currentBoardData == null)
+            if (currentBoardData == null || currentBoardData.Players == null || currentBoardData.Players.Count < 2)
                 return;
 
             var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(currentBoardData)).Prettify(); //Cloning via JSON
