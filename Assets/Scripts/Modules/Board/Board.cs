@@ -18,7 +18,14 @@ namespace Solcery.Modules
 
         public void UpdateBoard(BoardData boardData)
         {
-            _boardData.Value = boardData;
+            if (boardData.IsVirgin)
+            {
+                _boardData.Value = LogApplyer.Instance.ApplyCurrentLog(boardData);
+            }
+            else
+            {
+                _boardData.Value = boardData;
+            }
         }
 
         public void UpdateWithTestJson()

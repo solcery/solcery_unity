@@ -23,6 +23,22 @@ namespace Solcery.Modules
             _cts?.Dispose();
         }
 
+        public BoardData ApplyCurrentLog(BoardData origin)
+        {
+            if (origin == null || origin.Players == null || origin.Players.Count < 2)
+                return origin;
+
+            var currentLog = Log.Instance?.LogData?.Value;
+
+            if (currentLog == null)
+                return origin;
+
+            var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(origin)).Prettify(); //Cloning via JSON
+            ApplyLog(newBoardData, currentLog);
+
+            return newBoardData.Prettify(isVirgin: true);
+        }
+
         private void OnLogUpdate(LogData logData)
         {
             if (logData == null)
