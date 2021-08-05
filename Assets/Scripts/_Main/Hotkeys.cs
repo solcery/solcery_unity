@@ -31,11 +31,6 @@ namespace Solcery
                 Board.Instance?.UpdateWithJson2();
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                Board.Instance?.UpdateWithJson2();
-            }
-
             if (Input.GetKeyDown(KeyCode.L))
             {
                 Log.Instance?.UpdateWithJson1();
