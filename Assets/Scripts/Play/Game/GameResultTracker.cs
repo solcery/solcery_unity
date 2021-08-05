@@ -40,7 +40,6 @@ namespace Solcery
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;
-            if (boardData.IsVirgin) return;
 
             var me = boardData.Me;
             if (me == null) return;
@@ -53,6 +52,9 @@ namespace Solcery
 
             if (_isPlayerActive.Value != boardData.Me.IsActive)
                 _isPlayerActive.Value = boardData.Me.IsActive;
+
+            //TODO: pizdec
+            if (boardData.IsVirgin) return;
 
             var myIndex = boardData.MyIndex;
             var enemyIndex = boardData.EnemyIndex;

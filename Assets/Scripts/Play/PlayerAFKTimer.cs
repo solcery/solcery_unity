@@ -30,6 +30,9 @@ namespace Solcery
         {
             _cts?.Cancel();
             _cts?.Dispose();
+
+            _isActive = false;
+            _timeSinceBecameActive = 0f;
         }
 
         private void OnPlayerActiveChanged(bool isPlayerActive)
