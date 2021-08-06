@@ -1,17 +1,16 @@
 using System;
-using System.Collections;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Solcery
 {
-    public class PlayerAFKTimer : MonoBehaviour
+    public class PlayerAFKTimer : UpdateableBehaviour
     {
         [SerializeField] private float afkTime;
-        [SerializeField] private float timerStep;
         [SerializeField] private Image image = null;
 
         private CancellationTokenSource _cts;
@@ -38,42 +37,32 @@ namespace Solcery
             _timeSinceBecameActive = 0f;
         }
 
-        private IEnumerator Count()
+        public override void PerformUpdate()
         {
-            while (_isActive)
+            if (!_isActive)
             {
-                yield return new WaitForSecondsRealtime(timerStep);
-                _timeSinceBecameActive += timerStep;
-
-                if (_timeSinceBecameActive >= afkTime)
-                {
-                    _isActive = false;
-
-                    if (_onTimerFinished != null)
-                        _onTimerFinished?.Invoke();
-                }
-
-                SetFillAmount((float)(_timeSinceBecameActive / afkTime));
+                _timeSinceBecameActive = 0f;
+                _isActive = false;
+                SetFillAmount(0f);
+                return;
             }
+
+            _timeSinceBecameActive += Time.deltaTime;
+
+            if (_timeSinceBecameActive >= afkTime)
+            {
+                _isActive = false;
+
+                if (_onTimerFinished != null)
+                    _onTimerFinished?.Invoke();
+            }
+
+            SetFillAmount((float)(_timeSinceBecameActive / afkTime));
         }
 
         private void OnPlayerActiveChanged(bool isPlayerActive)
         {
             _isActive = isPlayerActive;
-
-            if (!_isActive)
-            {
-                if (_timer != null)
-                    StopCoroutine(_timer);
-
-                _timeSinceBecameActive = 0f;
-                _isActive = false;
-                SetFillAmount(0f);
-            }
-            else
-            {
-                _timer = StartCoroutine(Count());
-            }
         }
 
         private void SetFillAmount(float fillAmount)

@@ -7,9 +7,9 @@ namespace Solcery
     {
         public void Init()
         {
+            UIPlay.Instance?.Init();
             BoardDataDiffTracker.Instance?.Init();
             GameResultTracker.Instance?.Init();
-            UIPlay.Instance?.Init();
         }
 
         public void DeInit()
