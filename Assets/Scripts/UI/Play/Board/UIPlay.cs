@@ -41,7 +41,7 @@ namespace Solcery.UI.Play
         {
             if (boardData == null)
             {
-                Debug.Log("1");
+                // Debug.Log("1");
                 games?.SetActive(true);
                 summonerGameButton.interactable = true;
                 waitingStatus?.SetActive(false);
@@ -55,7 +55,7 @@ namespace Solcery.UI.Play
             }
             else if (boardData.Players != null && boardData.Players.Count < 2)
             {
-                Debug.Log("2");
+                // Debug.Log("2");
                 games?.SetActive(true);
                 summonerGameButton.interactable = false;
                 waitingStatus?.SetActive(true);
@@ -66,7 +66,7 @@ namespace Solcery.UI.Play
             }
             else
             {
-                Debug.Log("3");
+                // Debug.Log("3");
                 games.SetActive(false);
                 summonerGameButton.interactable = false;
                 waitingStatus?.SetActive(false);
