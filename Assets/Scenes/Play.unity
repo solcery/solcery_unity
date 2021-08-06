@@ -5288,7 +5288,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  afkTime: 5
+  afkTime: 120
   image: {fileID: 1160555482}
 --- !u!1 &1165444370
 GameObject:

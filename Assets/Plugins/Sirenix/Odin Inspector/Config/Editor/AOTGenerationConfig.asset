@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637637219937296261
+  lastScan: 637638109151052673
   supportSerializedTypes:
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
     IsCustom: 0
