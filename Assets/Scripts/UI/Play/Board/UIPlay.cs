@@ -33,7 +33,7 @@ namespace Solcery.UI.Play
             _cts?.Dispose();
 
             summonerGameButton?.onClick?.RemoveAllListeners();
-            summonerRulesButton?.onClick.RemoveAllListeners();
+            summonerRulesButton?.onClick?.RemoveAllListeners();
             board?.DeInit();
         }
 

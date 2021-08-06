@@ -29,8 +29,8 @@ namespace Solcery.UI.Play
 
         public void DeInit()
         {
-            endTurnButton?.onClick.RemoveAllListeners();
-            gameRulesButton?.onClick.RemoveAllListeners();
+            endTurnButton?.onClick?.RemoveAllListeners();
+            gameRulesButton?.onClick?.RemoveAllListeners();
         }
 
         public void Clear()
