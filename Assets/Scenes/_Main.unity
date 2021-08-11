@@ -542,6 +542,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  hasInitialTransition: 1
   _initialTransition: {fileID: 11400000, guid: d88259997a8fe6340922de536ae8c06b, type: 2}
 --- !u!4 &717586809
 Transform:

@@ -228,7 +228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.1
+  m_fontSize: 16.1
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -988,6 +988,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  hasInitialTransition: 1
   _initialTransition: {fileID: 11400000, guid: 5b7246cbe8f646a489347e726eb5c977, type: 2}
 --- !u!1 &261614795
 GameObject:
@@ -2442,8 +2443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 820.5741, y: 0}
-  m_SizeDelta: {x: 1541.1482, y: 0}
+  m_AnchoredPosition: {x: 702.94666, y: 0}
+  m_SizeDelta: {x: 1305.8933, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554225537
 MonoBehaviour:
@@ -6923,7 +6924,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.5
+  m_fontSize: 10.95
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8980,7 +8981,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1641.1482, y: 0}
+  m_SizeDelta: {x: 1405.8933, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1945817614
 MonoBehaviour:
@@ -10302,7 +10303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165308858779677460, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1541.1482
+      value: 1305.8933
       objectReference: {fileID: 0}
     - target: {fileID: 1165308858779677460, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10370,7 +10371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165308859243034202, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1381.1482
+      value: 1145.8933
       objectReference: {fileID: 0}
     - target: {fileID: 1165308859243034202, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_AnchoredPosition.x

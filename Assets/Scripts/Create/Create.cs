@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using Solcery.FSM.Create;
 using Solcery.UI.Create;
 using Solcery.Utils;
-using UnityEngine;
 
 namespace Solcery
 {

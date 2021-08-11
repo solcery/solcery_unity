@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
@@ -9,12 +10,13 @@ namespace Solcery.FSM
     where TState : State
     where TTransition : Transition<TState>
     {
-        [SerializeField] private TTransition _initialTransition = null;
+        [SerializeField] private bool hasInitialTransition;
+        [ShowIf("hasInitialTransition")] [SerializeField] private TTransition _initialTransition = null;
         private TState _currentState;
 
         public async UniTask PerformInitialTransition()
         {
-            if (_initialTransition != null)
+            if (hasInitialTransition && _initialTransition != null)
                 await PerformTransition(_initialTransition);
         }
 
@@ -53,6 +55,12 @@ namespace Solcery.FSM
         public override void PerformUpdate()
         {
             _currentState?.PerformUpdate();
+        }
+
+        public async UniTask Finish()
+        {
+            if (_currentState != null)
+                await _currentState.Exit();
         }
     }
 }
