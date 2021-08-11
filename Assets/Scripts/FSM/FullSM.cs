@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Solcery.FSM
 {
-    public class SM<TSM, TState, TTransition, TTrigger> : UpdateableSingleton<TSM>
-    where TSM : SM<TSM, TState, TTransition, TTrigger>
+    public class FullSM<TSM, TState, TTransition, TTrigger> : UpdateableSingleton<TSM>
+    where TSM : FullSM<TSM, TState, TTransition, TTrigger>
     where TState : State<TState, TTrigger, TTransition>
     where TTransition : Transition<TTransition, TState, TTrigger>
     where TTrigger : Trigger
@@ -21,34 +21,24 @@ namespace Solcery.FSM
                 await PerformTransition(_initialTransition);
         }
 
-        public async UniTask<bool> PerformTransition(TTransition transition)
+        private async UniTask<bool> PerformTransition(TTransition transition)
         {
-            if (_currentState != null)
-            {
-                if (transition.From != null)
-                {
-                    if (_currentState != transition.From)
-                    {
-                        Debug.LogError("Current state is different from transition.From!");
-                        return false;
-                    }
-                }
-                else
-                    await _currentState.Exit();
-            }
+            if (_currentState == null)
+                return false;
 
-            await transition.PerformTransition();
+            if (transition.From == null)
+                return false;
 
             if (transition.To == null)
-            {
-                Debug.LogError("Transition.To is null!");
                 return false;
-            }
-            else
-            {
-                _currentState = transition.To;
-                await transition.To.Enter();
-            }
+
+            if (_currentState != transition.From)
+                return false;
+
+            await _currentState.Exit();
+            await transition.PerformTransition();
+            _currentState = transition.To;
+            await _currentState.Enter();
 
             return true;
         }

@@ -1,14 +1,18 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 
 namespace Solcery.FSM
 {
-    public abstract class State : SerializedScriptableObject
+    public abstract class State<TState, TTrigger, TTransition> : SerializedScriptableObject
+    where TState : State<TState, TTrigger, TTransition>
+    where TTrigger : Trigger
+    where TTransition : Transition<TTransition, TState, TTrigger>
     {
-#pragma warning disable 1998
+        public Dictionary<TTrigger, TTransition> Transitions;
+
         public abstract UniTask Enter();
         public abstract UniTask Exit();
-#pragma warning restore 1998
 
         public virtual void PerformUpdate() { }
     }

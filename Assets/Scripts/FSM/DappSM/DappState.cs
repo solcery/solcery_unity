@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Solcery.FSM.Dapp
 {
-    public abstract class DappState : State
+    public abstract class DappState : State<DappState, DappTrigger, DappTransition>
     {
         [SerializeField] private string _sceneName;
 

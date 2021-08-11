@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Solcery.FSM.Play
 {
-    public abstract class PlayState : State
+    public abstract class PlayState : State<PlayState, PlayTrigger, PlayTransition>
     {
         [SerializeField] private string _sceneName;
 
