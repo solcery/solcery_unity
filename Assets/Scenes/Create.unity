@@ -228,7 +228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.1
+  m_fontSize: 22.1
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c534a644fcbbf44b9efafc2c737b3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: d88259997a8fe6340922de536ae8c06b, type: 2}
+  trigger: {fileID: 11400000, guid: 144f84873fe60ab45816d49ec0ab010d, type: 2}
   button: {fileID: 225007144}
 --- !u!114 &225007144
 MonoBehaviour:
@@ -2443,8 +2443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 702.94666, y: 0}
-  m_SizeDelta: {x: 1305.8933, y: 0}
+  m_AnchoredPosition: {x: 820.86163, y: 0}
+  m_SizeDelta: {x: 1541.7233, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554225537
 MonoBehaviour:
@@ -4638,7 +4638,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2099358809}
   m_HandleRect: {fileID: 2099358808}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6924,7 +6924,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.95
+  m_fontSize: 14.5
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8981,7 +8981,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1405.8933, y: 0}
+  m_SizeDelta: {x: 1641.7233, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1945817614
 MonoBehaviour:
@@ -10303,7 +10303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165308858779677460, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1305.8933
+      value: 1541.7233
       objectReference: {fileID: 0}
     - target: {fileID: 1165308858779677460, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10371,7 +10371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165308859243034202, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1145.8933
+      value: 1381.7233
       objectReference: {fileID: 0}
     - target: {fileID: 1165308859243034202, guid: a6dc7ff9fcd526a498080b3227c9197d, type: 3}
       propertyPath: m_AnchoredPosition.x

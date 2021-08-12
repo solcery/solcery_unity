@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1069492312}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3901352
+  m_Size: 0.3798973
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9440,7 +9440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c534a644fcbbf44b9efafc2c737b3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: d88259997a8fe6340922de536ae8c06b, type: 2}
+  trigger: {fileID: 11400000, guid: 144f84873fe60ab45816d49ec0ab010d, type: 2}
   button: {fileID: 2055433684}
 --- !u!114 &2055433684
 MonoBehaviour:

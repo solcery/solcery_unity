@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Solcery.Utils;
@@ -11,14 +13,19 @@ namespace Solcery.FSM
     where TTransition : Transition<TTransition, TState, TTrigger>
     where TTrigger : Trigger
     {
-        [SerializeField] private bool hasInitialTransition;
-        [ShowIf("hasInitialTransition")] [SerializeField] private TTransition _initialTransition = null;
-        private TState _currentState;
+        [SerializeField] private TState _entryState = null;
 
-        public async UniTask PerformInitialTransition()
+        private TState _currentState;
+        private Dictionary<TTrigger, Action> _triggerSubscriptions;
+
+        public async UniTask Enter()
         {
-            if (hasInitialTransition && _initialTransition != null)
-                await PerformTransition(_initialTransition);
+            if (_entryState != null)
+            {
+                _currentState = _entryState;
+                await _currentState.Enter();
+                SubscribeToStateTriggers();
+            }
         }
 
         private async UniTask<bool> PerformTransition(TTransition transition)
@@ -26,21 +33,71 @@ namespace Solcery.FSM
             if (_currentState == null)
                 return false;
 
-            if (transition.From == null)
-                return false;
+            // if (transition.From == null)
+            //     return false;
+
+            // if (_currentState != transition.From)
+            //     return false;
 
             if (transition.To == null)
                 return false;
 
-            if (_currentState != transition.From)
-                return false;
 
+            UnsubscribeFromStateTriggers();
             await _currentState.Exit();
             await transition.PerformTransition();
             _currentState = transition.To;
             await _currentState.Enter();
+            SubscribeToStateTriggers();
 
             return true;
+        }
+
+        private void SubscribeToStateTriggers()
+        {
+            if (_currentState == null)
+                return;
+
+            if (_currentState.Transitions == null || _currentState.Transitions.Count <= 0)
+                return;
+
+            _triggerSubscriptions = new Dictionary<TTrigger, Action>();
+
+            foreach (var triggerTransition in _currentState.Transitions)
+            {
+                var trigger = triggerTransition.Key;
+                var transition = triggerTransition.Value;
+
+                if (trigger == null || transition == null)
+                    continue;
+
+                var onTriggerAction = UniTask.Action(async () =>
+                {
+                    await PerformTransition(transition);
+                });
+                trigger.OnActivated += onTriggerAction;
+                _triggerSubscriptions.Add(trigger, onTriggerAction);
+            }
+        }
+
+        private void UnsubscribeFromStateTriggers()
+        {
+            if (_triggerSubscriptions == null)
+                return;
+
+            if (_triggerSubscriptions.Count <= 0)
+                return;
+
+            foreach (var triggerAction in _triggerSubscriptions)
+            {
+                var trigger = triggerAction.Key;
+                var onTriggerAction = triggerAction.Value;
+
+                if (trigger == null || onTriggerAction == null)
+                    continue;
+
+                trigger.OnActivated -= onTriggerAction;
+            }
         }
 
         public override void PerformUpdate()
@@ -48,7 +105,7 @@ namespace Solcery.FSM
             _currentState?.PerformUpdate();
         }
 
-        public async UniTask Finish()
+        public async UniTask Exit()
         {
             if (_currentState != null)
                 await _currentState.Exit();

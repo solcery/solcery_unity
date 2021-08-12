@@ -1,6 +1,6 @@
 namespace Solcery.FSM.Dapp
 {
-    public class DappSM : SM<DappSM, DappState, DappTransition, DappTrigger>
+    public class DappSM : FullSM<DappSM, DappState, DappTransition, DappTrigger>
     {
         
     }

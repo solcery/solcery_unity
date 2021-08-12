@@ -15,10 +15,58 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: b95f9558b03242a4e853226f18d6b6ff, type: 2}
+    - {fileID: 11400000, guid: dc18827ce6a9b124da7e261caad39a5f, type: 2}
+    - {fileID: 11400000, guid: 0f14928e9fea68d4c936f4b3cb5da859, type: 2}
+    - {fileID: 11400000, guid: 6505320a6f809b943ac3747ad192542f, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: transitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Solcery.FSM.Dapp.DappTrigger,
+        Assembly-CSharp],[Solcery.FSM.Dapp.DappTransition, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Solcery.FSM.Dapp.DappTrigger,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   _sceneName: Menu

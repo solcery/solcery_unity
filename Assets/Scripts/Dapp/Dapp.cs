@@ -16,7 +16,7 @@ namespace Solcery
             Board.Instance?.Init();
             Log.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
-            DappSM.Instance?.PerformInitialTransition();
+            DappSM.Instance?.Enter();
         }
 
         public void DeInit()

@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ee7ffdf1fea16428000d70dd224b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: dc18827ce6a9b124da7e261caad39a5f, type: 2}
+  trigger: {fileID: 11400000, guid: b95f9558b03242a4e853226f18d6b6ff, type: 2}
   button: {fileID: 300940413}
   highlighTitle: 0
   title: {fileID: 81393444}
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ee7ffdf1fea16428000d70dd224b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: 6505320a6f809b943ac3747ad192542f, type: 2}
+  trigger: {fileID: 11400000, guid: 0f14928e9fea68d4c936f4b3cb5da859, type: 2}
   button: {fileID: 1429419825}
   highlighTitle: 0
   title: {fileID: 1358893642}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ee7ffdf1fea16428000d70dd224b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  trigger: {fileID: 0}
   button: {fileID: 1593928670}
   highlighTitle: 0
   title: {fileID: 202503150}

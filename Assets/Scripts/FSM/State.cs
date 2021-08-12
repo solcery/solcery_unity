@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Solcery.FSM
 {
@@ -9,7 +10,8 @@ namespace Solcery.FSM
     where TTrigger : Trigger
     where TTransition : Transition<TTransition, TState, TTrigger>
     {
-        public Dictionary<TTrigger, TTransition> Transitions;
+        public Dictionary<TTrigger, TTransition> Transitions => transitions;
+        [SerializeField] private Dictionary<TTrigger, TTransition> transitions = new Dictionary<TTrigger, TTransition>();
 
         public abstract UniTask Enter();
         public abstract UniTask Exit();

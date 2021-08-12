@@ -7,12 +7,13 @@ namespace Solcery.UI
     [RequireComponent(typeof(Button))]
     public class UIDappTransitionButton : MonoBehaviour
     {
-        [SerializeField] private DappTransition transition = null;
+        // [SerializeField] private DappTransition transition = null;
+        [SerializeField] private DappTrigger trigger = null;
         [SerializeField] protected Button button = null;
 
         protected virtual void OnEnable()
         {
-            button.onClick.AddListener(() => { DappSM.Instance?.PerformTransition(transition); });
+            button.onClick.AddListener(() => { trigger?.Activate(); });
         }
 
         private void OnDisable()
