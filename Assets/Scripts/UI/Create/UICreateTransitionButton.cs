@@ -7,12 +7,14 @@ namespace Solcery.UI.Create
     [RequireComponent(typeof(Button))]
     public class UICreateTransitionButton : MonoBehaviour
     {
-        [SerializeField] private CreateTransition transition = null;
+        // [SerializeField] private CreateTransition transition = null;
+        [SerializeField] private CreateTrigger trigger = null;
         [SerializeField] protected Button button = null;
 
         protected virtual void OnButtonClicked()
         {
-            CreateSM.Instance?.PerformTransition(transition);
+            // CreateSM.Instance?.PerformTransition(transition);
+            trigger?.Activate();
         }
 
         void OnEnable()

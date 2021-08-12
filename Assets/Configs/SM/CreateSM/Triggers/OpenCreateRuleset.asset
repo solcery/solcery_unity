@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafa873743040d945a44a9c2f79c3b47, type: 3}
-  m_Name: FromRulesetToCard
+  m_Script: {fileID: 11500000, guid: 555f2df1b4a8cc9408954c6643428005, type: 3}
+  m_Name: OpenCreateRuleset
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,5 +21,3 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  from: {fileID: 11400000, guid: 055c802f0d701c34aa5d066515ac3f8b, type: 2}
-  to: {fileID: 11400000, guid: 4546eeb73ff80c24d835acc8f4bddef9, type: 2}

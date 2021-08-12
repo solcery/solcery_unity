@@ -23,7 +23,8 @@ namespace Solcery.UI
         [SerializeField] private Button closeButton = null;
         [SerializeField] private Button topCreateNewCardButton = null;
         [SerializeField] private Button botCreateNewCardButton = null;
-        [SerializeField] private CreateTransition fromRulesetToCard = null;
+        // [SerializeField] private CreateTransition fromRulesetToCard = null;
+        [SerializeField] private CreateTrigger openCreateCardTrigger = null;
 
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
@@ -42,13 +43,13 @@ namespace Solcery.UI
             openButton.onClick.AddListener(Open);
             closeButton.onClick.AddListener(Close);
 
-            topCreateNewCardButton.onClick.AddListener(async () => await CreateNewCard());
-            botCreateNewCardButton.onClick.AddListener(async () => await CreateNewCard());
+            topCreateNewCardButton.onClick.AddListener(CreateNewCard);
+            botCreateNewCardButton.onClick.AddListener(CreateNewCard);
 
             Reactives.Subscribe(Collection.Instance?.CollectionData, UpdateCollection, _cts.Token);
         }
 
-        private async UniTask CreateNewCard()
+        private void CreateNewCard()
         {
             switch (_mode)
             {
@@ -56,7 +57,8 @@ namespace Solcery.UI
                     break;
                 case UICollectionMode.CreateRuleset:
                     UICreate.Instance.Tabs.OnTabClicked(1);
-                    await CreateSM.Instance.PerformTransition(fromRulesetToCard);
+                    // await CreateSM.Instance.PerformTransition(fromRulesetToCard);
+                    openCreateCardTrigger?.Activate();
                     break;
             }
 

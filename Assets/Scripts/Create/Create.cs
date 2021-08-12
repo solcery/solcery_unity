@@ -10,7 +10,7 @@ namespace Solcery
         public async UniTask Init()
         {
             await UICreate.Instance.Init();
-            CreateSM.Instance?.PerformInitialTransition();
+            CreateSM.Instance?.Enter();
         }
 
         public void DeInit()

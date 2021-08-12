@@ -988,8 +988,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  hasInitialTransition: 1
-  _initialTransition: {fileID: 11400000, guid: 5b7246cbe8f646a489347e726eb5c977, type: 2}
+  _entryState: {fileID: 11400000, guid: 055c802f0d701c34aa5d066515ac3f8b, type: 2}
 --- !u!1 &261614795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1234,7 @@ MonoBehaviour:
   closeButton: {fileID: 2143883906}
   topCreateNewCardButton: {fileID: 2439438801950990532}
   botCreateNewCardButton: {fileID: 435035708}
-  fromRulesetToCard: {fileID: 11400000, guid: 0c9990bdb3a06134c80ec490a82ebc66, type: 2}
+  openCreateCardTrigger: {fileID: 11400000, guid: d406daa3039e7ee42b62cdb2feaf8f31, type: 2}
 --- !u!114 &358028411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9308,6 +9307,10 @@ PrefabInstance:
       value: UICreateRulesetTab
       objectReference: {fileID: 0}
     - target: {fileID: 5197060536914317581, guid: 3a61da895e2dff140babaae798ad8e61, type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 11400000, guid: bb0691c2cf968464cae55f4244e72ca8, type: 2}
+    - target: {fileID: 5197060536914317581, guid: 3a61da895e2dff140babaae798ad8e61, type: 3}
       propertyPath: transition
       value: 
       objectReference: {fileID: 11400000, guid: 5b7246cbe8f646a489347e726eb5c977, type: 2}
@@ -11142,6 +11145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICreateCardTab
       objectReference: {fileID: 0}
+    - target: {fileID: 5197060536914317581, guid: 3a61da895e2dff140babaae798ad8e61, type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 11400000, guid: d406daa3039e7ee42b62cdb2feaf8f31, type: 2}
     - target: {fileID: 5197060536914317581, guid: 3a61da895e2dff140babaae798ad8e61, type: 3}
       propertyPath: transition
       value: 
