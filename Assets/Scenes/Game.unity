@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1798683606}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.38010854
+  m_Size: 0.3804674
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3326,7 +3326,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  afkTime: 120
+  afkTime: 5
   image: {fileID: 907956618}
 --- !u!114 &907956618
 MonoBehaviour:

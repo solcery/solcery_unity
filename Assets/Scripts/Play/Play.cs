@@ -16,7 +16,6 @@ namespace Solcery
             Board.Instance?.Init();
             BoardDataDiffTracker.Instance?.Init();
             Log.Instance?.Init();
-            PlayerGameStatusTracker.Instance?.Init();
 
             UnityToReact.Instance?.CallOnUnityLoaded();
 
@@ -34,7 +33,6 @@ namespace Solcery
             Board.Instance?.DeInit();
             BoardDataDiffTracker.Instance?.DeInit();
             Log.Instance?.DeInit();
-            PlayerGameStatusTracker.Instance?.DeInit();
         }
     }
 }

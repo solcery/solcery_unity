@@ -20,7 +20,7 @@ namespace Solcery.FSM.Play
             UILobby.Instance?.Init();
 
             _cts = new CancellationTokenSource();
-            Reactives.Subscribe(PlayerGameStatusTracker.Instance?.PlayerStatus, OnPlayerStatusUpdate, _cts.Token);
+            Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _cts.Token);
         }
 
         public override async UniTask Exit()
@@ -33,15 +33,20 @@ namespace Solcery.FSM.Play
             await base.Exit();
         }
 
-        private void OnPlayerStatusUpdate(PlayerGameStatus playerStatus)
+        private void OnBoardUpdate(BoardData boardData)
         {
-            if (playerStatus == PlayerGameStatus.NotInGame)
+            if (boardData == null)
+            {
                 UILobby.Instance?.NotInGame();
-            else if (playerStatus == PlayerGameStatus.WaitingForOpponent)
+            }
+            else if (boardData.Players != null && boardData.Players.Count < 2)
+            {
                 UILobby.Instance?.WaitingForOpponent();
-            else if (playerStatus == PlayerGameStatus.InGame)
+            }
+            else
+            {
                 openGameTrigger?.Activate();
+            }
         }
-
     }
 }

@@ -13,13 +13,17 @@ namespace Solcery.FSM.Play
         {
             await base.Enter();
 
-            var playerGameStatus = PlayerGameStatusTracker.Instance?.PlayerStatus.Value;
+            var boardData = BoardDataDiffTracker.Instance?.BoardDataWithDiff?.Value;
 
-            if (playerGameStatus == PlayerGameStatus.NotInGame || playerGameStatus == PlayerGameStatus.WaitingForOpponent)
+            if (boardData == null)
             {
                 openLobby?.Activate();
             }
-            else if (playerGameStatus == PlayerGameStatus.InGame)
+            else if (boardData.Players != null && boardData.Players.Count < 2)
+            {
+                openLobby?.Activate();
+            }
+            else
             {
                 openGame?.Activate();
             }

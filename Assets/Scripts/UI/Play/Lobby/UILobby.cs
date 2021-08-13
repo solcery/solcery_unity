@@ -9,7 +9,6 @@ namespace Solcery.UI.Play.Lobby
     {
         [SerializeField] private Button summonerGameButton = null;
         [SerializeField] private Button summonerRulesButton = null;
-        [SerializeField] private GameObject games = null;
         [SerializeField] private GameObject waitingStatus = null;
         [SerializeField] private GameObject lookingForOpponent = null;
 
