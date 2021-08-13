@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
     public class UIPile : UIHand
     {
@@ -22,11 +22,11 @@ namespace Solcery.UI.Play
             // TODO: count +- count here from each diff
             if (cardsCount <= 0)
             {
-                this.gameObject.SetActive(false);
+                this.gameObject?.SetActive(false);
             }
             else
             {
-                this.gameObject.SetActive(true);
+                this.gameObject?.SetActive(true);
 
                 if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
                     SetCardsCountText(cardsCount).Forget();
@@ -41,10 +41,10 @@ namespace Solcery.UI.Play
         {
             if (cardsCountText != null)
             {
-                cardsCountText.gameObject.SetActive(false);
+                cardsCountText.gameObject?.SetActive(false);
                 await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
                 cardsCountText.text = newCardsCount.ToString();
-                cardsCountText.gameObject.SetActive(true);
+                cardsCountText.gameObject?.SetActive(true);
             }
         }
 

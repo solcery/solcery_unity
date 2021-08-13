@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2866b257d839c84eae54fc7fc3750eb, type: 3}
-  m_Name: Game
+  m_Script: {fileID: 11500000, guid: 0d62b1d3398fe374892e289671ef5915, type: 3}
+  m_Name: Init
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}
+    - {fileID: 11400000, guid: a500bd88aaa71e34e954fd3ad8a93534, type: 2}
     - {fileID: 11400000, guid: ad4fcf57eb1c6254983889ea8a94cf17, type: 2}
     - {fileID: 11400000, guid: 75e3841ca4a3d394b85bed07531bb260, type: 2}
     SerializedBytesString: 
@@ -36,7 +38,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 
@@ -50,11 +52,24 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  hasScene: 1
-  sceneName: Game
+  hasScene: 0
+  sceneName: 
   openLobby: {fileID: 11400000, guid: ad4fcf57eb1c6254983889ea8a94cf17, type: 2}
+  openGame: {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}

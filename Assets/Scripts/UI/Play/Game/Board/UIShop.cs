@@ -1,6 +1,6 @@
 using Solcery.Modules;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
     public class UIShop : UIHand
     {

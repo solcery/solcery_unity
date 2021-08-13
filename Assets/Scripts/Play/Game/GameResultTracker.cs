@@ -2,6 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Solcery.Modules;
 using Solcery.UI.Play;
+using Solcery.UI.Play.Game;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace Solcery
         private CancellationTokenSource _cts;
         private int _myId;
         private int _enemyId;
+
         public void Init()
         {
             _cts = new CancellationTokenSource();
@@ -29,6 +31,7 @@ namespace Solcery
 
             Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
         }
+
         public void DeInit()
         {
             _cts?.Cancel();
@@ -37,6 +40,7 @@ namespace Solcery
             enemyAFKTimer?.DeInit();
             playerAFKTimer?.DeInit();
         }
+
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;

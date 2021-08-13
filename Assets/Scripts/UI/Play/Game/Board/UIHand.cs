@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
     public abstract class UIHand : MonoBehaviour, IBoardPlace
     {

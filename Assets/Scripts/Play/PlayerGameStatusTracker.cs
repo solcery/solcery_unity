@@ -1,49 +1,43 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Solcery.UI.Play.Game;
+using Solcery.Utils;
 using Solcery.Utils.Reactives;
-using UnityEngine;
 
 namespace Solcery.FSM.Play
 {
-    [CreateAssetMenu(menuName = "Solcery/FSM/Play/States/Game", fileName = "Game")]
-    public class GameState : PlayState
+    public class PlayerGameStatusTracker : Singleton<PlayerGameStatusTracker>
     {
-        [SerializeField] private PlayTrigger openLobby = null;
+        public AsyncReactiveProperty<PlayerGameStatus> PlayerStatus => _playerStatus;
+        private AsyncReactiveProperty<PlayerGameStatus> _playerStatus = new AsyncReactiveProperty<PlayerGameStatus>(PlayerGameStatus.NotInGame);
 
         private CancellationTokenSource _cts;
 
-        public override async UniTask Enter()
+        public void Init()
         {
-            await base.Enter();
-
-            GameResultTracker.Instance?.Init();
-            UIGame.Instance?.Init();
-
             _cts = new CancellationTokenSource();
+
             Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _cts.Token);
         }
 
-        public override async UniTask Exit()
+        public void DeInit()
         {
-            GameResultTracker.Instance?.DeInit();
-
-            await base.Exit();
+            _cts?.Cancel();
+            _cts?.Dispose();
         }
 
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null)
             {
-                openLobby?.Activate();
+                _playerStatus.Value = PlayerGameStatus.NotInGame;
             }
             else if (boardData.Players != null && boardData.Players.Count < 2)
             {
-                openLobby?.Activate();
+                _playerStatus.Value = PlayerGameStatus.WaitingForOpponent;
             }
             else
             {
-                UIGame.Instance?.OnBoardUpdate(boardData);
+                _playerStatus.Value = PlayerGameStatus.InGame;
             }
         }
     }

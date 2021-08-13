@@ -23,8 +23,8 @@ namespace Solcery.FSM
             if (_entryState != null)
             {
                 _currentState = _entryState;
-                await _currentState.Enter();
                 SubscribeToStateTriggers();
+                await _currentState.Enter();
             }
         }
 
@@ -41,7 +41,6 @@ namespace Solcery.FSM
 
             if (transition.To == null)
                 return false;
-
 
             UnsubscribeFromStateTriggers();
             await _currentState.Exit();

@@ -15,10 +15,46 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}
+    - {fileID: 11400000, guid: a500bd88aaa71e34e954fd3ad8a93534, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _sceneName: 
+    SerializationNodes:
+    - Name: transitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Solcery.FSM.Play.PlayTrigger,
+        Assembly-CSharp],[Solcery.FSM.Play.PlayTransition, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Solcery.FSM.Play.PlayTrigger,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  hasScene: 1
+  sceneName: Lobby
+  openGameTrigger: {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}

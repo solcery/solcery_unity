@@ -9,12 +9,12 @@ namespace Solcery.FSM.Dapp
         public override async UniTask Enter()
         {
             await base.Enter();
-            Solcery.Play.Instance?.Init();
+            // Solcery.Play.Instance?.Init();
         }
 
         public override async UniTask Exit()
         {
-            Solcery.Play.Instance?.DeInit();
+            // Solcery.Play.Instance?.DeInit();
             await base.Exit();
         }
     }

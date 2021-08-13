@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,28 +7,38 @@ namespace Solcery.FSM.Play
 {
     public abstract class PlayState : State<PlayState, PlayTrigger, PlayTransition>
     {
-        [SerializeField] private string _sceneName;
+        [SerializeField] private bool hasScene;
+        [ShowIf("hasScene")] [SerializeField] private string sceneName;
 
         public override async UniTask Enter()
         {
-            if (string.IsNullOrEmpty(_sceneName))
+            if (hasScene)
             {
-                Debug.LogError("Empty scene name in PlayState");
-                return;
+                if (string.IsNullOrEmpty(sceneName))
+                {
+                    Debug.LogError("Empty scene name in PlayState");
+                }
+                else
+                {
+                    Debug.Log($"Open {sceneName}");
+                    await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+                }
             }
-
-            await SceneManager.LoadSceneAsync(_sceneName, LoadSceneMode.Additive);
         }
 
         public override async UniTask Exit()
         {
-            if (string.IsNullOrEmpty(_sceneName))
+            if (hasScene)
             {
-                Debug.LogError("Empty scene name in PlayState");
-                return;
+                if (string.IsNullOrEmpty(sceneName))
+                {
+                    Debug.LogError("Empty scene name in PlayState");
+                }
+                else
+                {
+                    await SceneManager.UnloadSceneAsync(sceneName);
+                }
             }
-
-            await SceneManager.UnloadSceneAsync(_sceneName);
         }
     }
 }

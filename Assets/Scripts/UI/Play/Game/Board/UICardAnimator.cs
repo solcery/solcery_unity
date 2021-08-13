@@ -1,11 +1,9 @@
-using Solcery.UI;
-using Solcery.UI.Play;
 using Solcery.Utils;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-namespace Solcery
+namespace Solcery.UI.Play.Game.Board
 {
     public class UICardAnimator : Singleton<UICardAnimator>
     {

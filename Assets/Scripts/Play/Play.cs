@@ -1,22 +1,40 @@
-using Solcery.UI.Play;
+using Solcery.FSM.Play;
+using Solcery.Modules;
 using Solcery.Utils;
+using Solcery.WebGL;
 
 namespace Solcery
 {
     public class Play : Singleton<Play>
     {
-        public void Init()
+        public void Start()
         {
-            UIPlay.Instance?.Init();
+            Wallet.Instance?.Init();
+            Collection.Instance?.Init();
+            LogApplyer.Instance?.Init();
+            LogActionCreator.Instance?.Init();
+            Board.Instance?.Init();
             BoardDataDiffTracker.Instance?.Init();
-            GameResultTracker.Instance?.Init();
+            Log.Instance?.Init();
+            PlayerGameStatusTracker.Instance?.Init();
+
+            UnityToReact.Instance?.CallOnUnityLoaded();
+
+            PlaySM.Instance?.Enter();
         }
 
-        public void DeInit()
+        public void OnDisable()
         {
+            PlaySM.Instance?.Exit();
+
+            Wallet.Instance?.DeInit();
+            Collection.Instance?.DeInit();
+            LogApplyer.Instance?.DeInit();
+            LogActionCreator.Instance?.DeInit();
+            Board.Instance?.DeInit();
             BoardDataDiffTracker.Instance?.DeInit();
-            GameResultTracker.Instance?.DeInit();
-            UIPlay.Instance?.DeInit();
+            Log.Instance?.DeInit();
+            PlayerGameStatusTracker.Instance?.DeInit();
         }
     }
 }

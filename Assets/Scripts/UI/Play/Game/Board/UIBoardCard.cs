@@ -1,10 +1,9 @@
 using System;
-using Solcery.Modules;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI
+namespace Solcery.UI.Play.Game.Board
 {
     public class UIBoardCard : MonoBehaviour
     {
@@ -41,7 +40,7 @@ namespace Solcery.UI
             SetInteractabe(isInteractable);
 
             _cardData = cardData;
-            _cardType = Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
+            _cardType = Solcery.Modules.Board.Instance.BoardData.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
 
             SetAnimator();

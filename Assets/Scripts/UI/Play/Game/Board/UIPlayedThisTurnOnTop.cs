@@ -1,10 +1,10 @@
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
-    public class UIPlayedThisTurn : UIHand
+    public class UIPlayedThisTurnOnTop : UIHand
     {
         public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff)
         {
-            base.UpdateWithDiff(cardPlaceDiff, false, false, false, true);
+            base.UpdateWithDiff(cardPlaceDiff, false, false, false);
         }
 
         protected override void OnCardCasted(int cardId)

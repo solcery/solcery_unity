@@ -7,8 +7,6 @@ namespace Solcery.UI.Play
     public class UIGameRulesPopup : Singleton<UIGameRulesPopup>
     {
         [SerializeField] Canvas canvas = null;
-        // [SerializeField] TextMeshProUGUI titleText = null;
-        // [SerializeField] TextMeshProUGUI descriptionText = null;
         [SerializeField] private Button closeButton = null;
 
         public void Open()

@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using Solcery.Modules;
-using Solcery.WebGL;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
     public class UIPlayerHand : UIHand
     {

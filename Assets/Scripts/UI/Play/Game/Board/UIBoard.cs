@@ -4,7 +4,7 @@ using Solcery.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game.Board
 {
     public class UIBoard : Singleton<UIBoard>
     {

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Play
+namespace Solcery.UI.Play.Game
 {
     public class UIGameOverPopup : Singleton<UIGameOverPopup>
     {
