@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Solcery.FSM
 {
-    public abstract class State<TState, TTrigger, TTransition> : SerializedScriptableObject
-    where TState : State<TState, TTrigger, TTransition>
-    where TTrigger : Trigger
-    where TTransition : Transition<TTransition, TState, TTrigger>
+    public abstract class State<TState, TParameter, TTransition> : SerializedScriptableObject
+    where TState : State<TState, TParameter, TTransition>
+    where TParameter : Parameter
+    where TTransition : Transition<TTransition, TState, TParameter>
     {
-        public Dictionary<TTrigger, TTransition> Transitions => transitions;
-        [SerializeField] private Dictionary<TTrigger, TTransition> transitions = new Dictionary<TTrigger, TTransition>();
+        public Dictionary<TParameter, TTransition> Transitions => transitions;
+        [SerializeField] private Dictionary<TParameter, TTransition> transitions = new Dictionary<TParameter, TTransition>();
 
         public abstract UniTask Enter();
         public abstract UniTask Exit();

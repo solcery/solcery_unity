@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Solcery.FSM
 {
-    public abstract class Transition<TTransition, TState, TTrigger> : SerializedScriptableObject
-    where TTransition : Transition<TTransition, TState, TTrigger>
-    where TState : State<TState, TTrigger, TTransition>
-    where TTrigger : Trigger
+    public abstract class Transition<TTransition, TState, TParameter> : SerializedScriptableObject
+    where TTransition : Transition<TTransition, TState, TParameter>
+    where TState : State<TState, TParameter, TTransition>
+    where TParameter : Parameter
     {
         [SerializeField] private TState from;
         [SerializeField] private TState to;

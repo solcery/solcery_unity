@@ -1,17 +1,14 @@
-using System;
-using Sirenix.OdinInspector;
-
 namespace Solcery.FSM
 {
-    public abstract class Trigger : SerializedScriptableObject
+    public abstract class Trigger : Parameter
     {
-        [NonSerialized] public Action OnActivated;
+        // [NonSerialized] public Action OnActivated;
 
         public void Activate()
         {
-            if (OnActivated != null)
+            if (OnPassed != null)
             {
-                OnActivated?.Invoke();
+                OnPassed?.Invoke();
             }
         }
     }

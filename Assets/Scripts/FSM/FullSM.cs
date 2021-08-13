@@ -1,22 +1,21 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
 
 namespace Solcery.FSM
 {
-    public class FullSM<TSM, TState, TTransition, TTrigger> : UpdateableSingleton<TSM>
-    where TSM : FullSM<TSM, TState, TTransition, TTrigger>
-    where TState : State<TState, TTrigger, TTransition>
-    where TTransition : Transition<TTransition, TState, TTrigger>
-    where TTrigger : Trigger
+    public class FullSM<TSM, TState, TTransition, TParameter> : UpdateableSingleton<TSM>
+    where TSM : FullSM<TSM, TState, TTransition, TParameter>
+    where TState : State<TState, TParameter, TTransition>
+    where TTransition : Transition<TTransition, TState, TParameter>
+    where TParameter : Parameter
     {
         [SerializeField] private TState _entryState = null;
 
         private TState _currentState;
-        private Dictionary<TTrigger, Action> _triggerSubscriptions;
+        private Dictionary<TParameter, Action> _triggerSubscriptions;
 
         public async UniTask Enter()
         {
@@ -32,12 +31,6 @@ namespace Solcery.FSM
         {
             if (_currentState == null)
                 return false;
-
-            // if (transition.From == null)
-            //     return false;
-
-            // if (_currentState != transition.From)
-            //     return false;
 
             if (transition.To == null)
                 return false;
@@ -60,7 +53,7 @@ namespace Solcery.FSM
             if (_currentState.Transitions == null || _currentState.Transitions.Count <= 0)
                 return;
 
-            _triggerSubscriptions = new Dictionary<TTrigger, Action>();
+            _triggerSubscriptions = new Dictionary<TParameter, Action>();
 
             foreach (var triggerTransition in _currentState.Transitions)
             {
@@ -74,7 +67,7 @@ namespace Solcery.FSM
                 {
                     await PerformTransition(transition);
                 });
-                trigger.OnActivated += onTriggerAction;
+                trigger.OnPassed += onTriggerAction;
                 _triggerSubscriptions.Add(trigger, onTriggerAction);
             }
         }
@@ -95,7 +88,7 @@ namespace Solcery.FSM
                 if (trigger == null || onTriggerAction == null)
                     continue;
 
-                trigger.OnActivated -= onTriggerAction;
+                trigger.OnPassed -= onTriggerAction;
             }
         }
 

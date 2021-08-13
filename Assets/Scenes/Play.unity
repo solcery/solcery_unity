@@ -208,8 +208,83 @@ Transform:
   - {fileID: 1066118092}
   - {fileID: 119806944}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &112661934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112661935}
+  - component: {fileID: 112661937}
+  - component: {fileID: 112661936}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &112661935
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112661934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1063787745}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &112661936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112661934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2627451, g: 0.2627451, b: 0.2627451, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: eda48b7fc41be467ebbc27f02d3b86cd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &112661937
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112661934}
+  m_CullTransparentMesh: 1
 --- !u!1 &116069305
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,8 +442,353 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &353137750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353137751}
+  - component: {fileID: 353137752}
+  - component: {fileID: 353137753}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &353137751
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353137750}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1841885301}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &353137752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353137750}
+  m_CullTransparentMesh: 1
+--- !u!114 &353137753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353137750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18823531, g: 0.15686275, b: 0.12941177, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: 3bd81325bd62cfb46bf1b99c21170784, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &389633513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389633514}
+  - component: {fileID: 389633516}
+  - component: {fileID: 389633515}
+  m_Layer: 5
+  m_Name: TitleText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &389633514
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389633513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1264684756}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 175, y: 54.70916}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &389633515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389633513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Summoner
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_sharedMaterial: {fileID: 644716123368233633, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4287668654
+  m_fontColor: {r: 0.68235296, g: 0.6313726, b: 0.5647059, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 33.65
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 40
+  m_fontStyle: 32
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 0
+  m_parseCtrlCharacters: 0
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 0
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &389633516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389633513}
+  m_CullTransparentMesh: 0
+--- !u!1 &467339849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467339850}
+  - component: {fileID: 467339852}
+  - component: {fileID: 467339851}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &467339850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467339849}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1063787745}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.25, y: 0.3}
+  m_AnchorMax: {x: 0.75, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &467339851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467339849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Please connect your wallet
+
+    (devnet)'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_sharedMaterial: {fileID: 644716123368233633, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 55
+  m_fontSizeBase: 55
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &467339852
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467339849}
+  m_CullTransparentMesh: 1
 --- !u!1 &490852463
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +841,182 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+--- !u!1 &545979983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545979984}
+  - component: {fileID: 545979986}
+  - component: {fileID: 545979985}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &545979984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545979983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 554374883}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &545979985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545979983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &545979986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545979983}
+  m_CullTransparentMesh: 1
+--- !u!1 &554374882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554374883}
+  - component: {fileID: 554374886}
+  - component: {fileID: 554374885}
+  - component: {fileID: 554374884}
+  m_Layer: 5
+  m_Name: UIGameRulesPopup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &554374883
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554374882}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 545979984}
+  - {fileID: 1233172562}
+  m_Father: {fileID: 981869011}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &554374884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554374882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35f4ebaf89ccbd4598b671cabe0ad2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  canvas: {fileID: 554374886}
+  closeButton: {fileID: 2027582123}
+--- !u!114 &554374885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554374882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
+--- !u!223 &554374886
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554374882}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &556219476
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +1069,132 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+--- !u!1 &577375114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577375118}
+  - component: {fileID: 577375117}
+  - component: {fileID: 577375116}
+  - component: {fileID: 577375115}
+  m_Layer: 5
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577375115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577375114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 353137753}
+  m_HandleRect: {fileID: 353137751}
+  m_Direction: 2
+  m_Value: 1
+  m_Size: 0.36229008
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &577375116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577375114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: 3bd81325bd62cfb46bf1b99c21170784, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &577375117
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577375114}
+  m_CullTransparentMesh: 1
+--- !u!224 &577375118
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577375114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99998516, y: 0.99998516, z: 0.99998516}
+  m_Children:
+  - {fileID: 1841885301}
+  m_Father: {fileID: 2093097453}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -7.5, y: -17.175049}
+  m_SizeDelta: {x: 7, y: -31.262}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &830012423
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,8 +1259,131 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &877893482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877893487}
+  - component: {fileID: 877893486}
+  - component: {fileID: 877893485}
+  - component: {fileID: 877893484}
+  - component: {fileID: 877893483}
+  m_Layer: 5
+  m_Name: UIWallet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &877893483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877893482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e35243cbfe6a9409abc9c2aa6cd153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  connectWalletPopup: {fileID: 1063787744}
+--- !u!114 &877893484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877893482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
+--- !u!114 &877893485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877893482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 900}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &877893486
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877893482}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
+--- !u!224 &877893487
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877893482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1063787745}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &902002165
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +1436,106 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+--- !u!1 &981869007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981869011}
+  - component: {fileID: 981869010}
+  - component: {fileID: 981869009}
+  - component: {fileID: 981869008}
+  m_Layer: 5
+  m_Name: UIPlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &981869008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981869007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
+--- !u!114 &981869009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981869007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 900}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &981869010
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981869007}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
+--- !u!224 &981869011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981869007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 554374883}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1048787314
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +1599,45 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1063787744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063787745}
+  m_Layer: 5
+  m_Name: ConnectWalletPopup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1063787745
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063787744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 112661935}
+  - {fileID: 467339850}
+  m_Father: {fileID: 877893487}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1066118091
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,64 +1691,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   initWithTestJson: 0
-  testJson: '{"LastUpdate":1627513274,"Players":[{"Address":"e82TbfCLbPdhDRm7EE7fL3h7WHtNMyF73XQtVcLNS1c","IsActive":false,"HP":0,"Coins":0,"IsMe":true,"Attrs":[0,0,0,0,0,0,0,0,0,0]},{"Address":"A5Q2A1q8yVH19YwBP78N7mf2g6TFLAdFgBwpjUwWnEH3","IsActive":false,"HP":0,"Coins":0,"IsMe":false,"Attrs":[0,0,0,0,0,0,0,0,0,1]}],"Cards":[{"CardId":0,"CardType":0,"CardPlace":0},{"CardId":1,"CardType":1,"CardPlace":998},{"CardId":2,"CardType":2,"CardPlace":998},{"CardId":3,"CardType":3,"CardPlace":998},{"CardId":4,"CardType":4,"CardPlace":998},{"CardId":5,"CardType":5,"CardPlace":998},{"CardId":6,"CardType":6,"CardPlace":998},{"CardId":7,"CardType":7,"CardPlace":998},{"CardId":8,"CardType":8,"CardPlace":998},{"CardId":9,"CardType":9,"CardPlace":998},{"CardId":10,"CardType":10,"CardPlace":998},{"CardId":11,"CardType":11,"CardPlace":998},{"CardId":12,"CardType":12,"CardPlace":998},{"CardId":13,"CardType":13,"CardPlace":998},{"CardId":14,"CardType":14,"CardPlace":998},{"CardId":15,"CardType":15,"CardPlace":998},{"CardId":16,"CardType":16,"CardPlace":998},{"CardId":17,"CardType":17,"CardPlace":1},{"CardId":18,"CardType":17,"CardPlace":1},{"CardId":19,"CardType":17,"CardPlace":1},{"CardId":20,"CardType":17,"CardPlace":1},{"CardId":21,"CardType":18,"CardPlace":1},{"CardId":22,"CardType":18,"CardPlace":1},{"CardId":23,"CardType":19,"CardPlace":1},{"CardId":24,"CardType":19,"CardPlace":1},{"CardId":25,"CardType":19,"CardPlace":1},{"CardId":26,"CardType":19,"CardPlace":1},{"CardId":27,"CardType":20,"CardPlace":1},{"CardId":28,"CardType":20,"CardPlace":1},{"CardId":29,"CardType":21,"CardPlace":1},{"CardId":30,"CardType":21,"CardPlace":1},{"CardId":31,"CardType":21,"CardPlace":1},{"CardId":32,"CardType":22,"CardPlace":1},{"CardId":33,"CardType":22,"CardPlace":1},{"CardId":34,"CardType":22,"CardPlace":1},{"CardId":35,"CardType":22,"CardPlace":1},{"CardId":36,"CardType":23,"CardPlace":1},{"CardId":37,"CardType":23,"CardPlace":1},{"CardId":38,"CardType":23,"CardPlace":1},{"CardId":39,"CardType":24,"CardPlace":1},{"CardId":40,"CardType":24,"CardPlace":1},{"CardId":41,"CardType":24,"CardPlace":1},{"CardId":42,"CardType":24,"CardPlace":1},{"CardId":43,"CardType":25,"CardPlace":1},{"CardId":44,"CardType":25,"CardPlace":1},{"CardId":45,"CardType":25,"CardPlace":1},{"CardId":46,"CardType":26,"CardPlace":1},{"CardId":47,"CardType":26,"CardPlace":1},{"CardId":48,"CardType":26,"CardPlace":1},{"CardId":49,"CardType":27,"CardPlace":1},{"CardId":50,"CardType":27,"CardPlace":1},{"CardId":51,"CardType":27,"CardPlace":1},{"CardId":52,"CardType":28,"CardPlace":1},{"CardId":53,"CardType":28,"CardPlace":1},{"CardId":54,"CardType":29,"CardPlace":1},{"CardId":55,"CardType":30,"CardPlace":1},{"CardId":56,"CardType":30,"CardPlace":1},{"CardId":57,"CardType":31,"CardPlace":1},{"CardId":58,"CardType":31,"CardPlace":1},{"CardId":59,"CardType":31,"CardPlace":1},{"CardId":60,"CardType":31,"CardPlace":1},{"CardId":61,"CardType":32,"CardPlace":1},{"CardId":62,"CardType":32,"CardPlace":1},{"CardId":63,"CardType":33,"CardPlace":1},{"CardId":64,"CardType":33,"CardPlace":1},{"CardId":65,"CardType":34,"CardPlace":1},{"CardId":66,"CardType":34,"CardPlace":1},{"CardId":67,"CardType":35,"CardPlace":1},{"CardId":68,"CardType":35,"CardPlace":1},{"CardId":69,"CardType":36,"CardPlace":1},{"CardId":70,"CardType":36,"CardPlace":1},{"CardId":71,"CardType":37,"CardPlace":1},{"CardId":72,"CardType":38,"CardPlace":1},{"CardId":73,"CardType":39,"CardPlace":1},{"CardId":74,"CardType":40,"CardPlace":1},{"CardId":75,"CardType":41,"CardPlace":1},{"CardId":76,"CardType":42,"CardPlace":1},{"CardId":77,"CardType":43,"CardPlace":5},{"CardId":78,"CardType":43,"CardPlace":5},{"CardId":79,"CardType":43,"CardPlace":5},{"CardId":80,"CardType":44,"CardPlace":5},{"CardId":81,"CardType":45,"CardPlace":5},{"CardId":82,"CardType":45,"CardPlace":5},{"CardId":83,"CardType":45,"CardPlace":5},{"CardId":84,"CardType":45,"CardPlace":5},{"CardId":85,"CardType":45,"CardPlace":5},{"CardId":86,"CardType":45,"CardPlace":5},{"CardId":87,"CardType":43,"CardPlace":6},{"CardId":88,"CardType":43,"CardPlace":6},{"CardId":89,"CardType":43,"CardPlace":6},{"CardId":90,"CardType":44,"CardPlace":6},{"CardId":91,"CardType":45,"CardPlace":6},{"CardId":92,"CardType":45,"CardPlace":6},{"CardId":93,"CardType":45,"CardPlace":6},{"CardId":94,"CardType":45,"CardPlace":6},{"CardId":95,"CardType":45,"CardPlace":6},{"CardId":96,"CardType":45,"CardPlace":6},{"CardId":97,"CardType":43,"CardPlace":500},{"CardId":98,"CardType":43,"CardPlace":500},{"CardId":99,"CardType":43,"CardPlace":500},{"CardId":100,"CardType":43,"CardPlace":500},{"CardId":101,"CardType":43,"CardPlace":500},{"CardId":102,"CardType":43,"CardPlace":500},{"CardId":103,"CardType":43,"CardPlace":500},{"CardId":104,"CardType":43,"CardPlace":500},{"CardId":105,"CardType":43,"CardPlace":500},{"CardId":106,"CardType":43,"CardPlace":500},{"CardId":107,"CardType":43,"CardPlace":500},{"CardId":108,"CardType":43,"CardPlace":500},{"CardId":109,"CardType":43,"CardPlace":500},{"CardId":110,"CardType":43,"CardPlace":500},{"CardId":111,"CardType":43,"CardPlace":500},{"CardId":112,"CardType":43,"CardPlace":500},{"CardId":113,"CardType":43,"CardPlace":500},{"CardId":114,"CardType":43,"CardPlace":500},{"CardId":115,"CardType":43,"CardPlace":500},{"CardId":116,"CardType":43,"CardPlace":500},{"CardId":117,"CardType":43,"CardPlace":500},{"CardId":118,"CardType":43,"CardPlace":500},{"CardId":119,"CardType":43,"CardPlace":500},{"CardId":120,"CardType":43,"CardPlace":500},{"CardId":121,"CardType":43,"CardPlace":500}],"CardTypes":[{"Id":0,"Metadata":{"Picture":29,"Coins":0,"Name":"[0]
-    Init","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}}},{"Id":1,"Metadata":{"Picture":75,"Coins":1,"Name":"[1]
-    End Turn","Description":"Ends turn"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":9,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"END
-    TURN","Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]}]}}},{"Id":2,"Metadata":{"Picture":95,"Coins":2,"Name":"[2]
-    Discard This Card","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"ownerDeck","Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":101,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"ownerDeck","Slots":[]}]}]}}},{"Id":3,"Metadata":{"Picture":90,"Coins":3,"Name":"[3]
-    Draw Cards","Description":"Draw [amount] cards"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"myHand","Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"deckSize","Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myHand","Slots":[]}]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"amount","Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":5,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"amount","Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"deckSize","Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myHand","Slots":[]}]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"amount","Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"deckSize","Slots":[]}]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]}}},{"Id":4,"Metadata":{"Picture":59,"Coins":4,"Name":"[4]
-    Discard Hand","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}}},{"Id":5,"Metadata":{"Picture":83,"Coins":5,"Name":"[5]
-    Refresh Display","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cardsToAdd","Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"cardsToAdd","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":11,"StringField":null,"Slots":[]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"cardsToAdd","Slots":[]}]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}}},{"Id":6,"Metadata":{"Picture":66,"Coins":6,"Name":"[6]
-    Discard Display","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}}},{"Id":7,"Metadata":{"Picture":14,"Coins":7,"Name":"[7]
-    Add Money","Description":"Adds [money] money"},"BrickTree":{"Genesis":{"Type":0,"Subtype":102,"HasField":true,"IntField":2,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"money","Slots":[]}]}}},{"Id":8,"Metadata":{"Picture":13,"Coins":8,"Name":"[8]
-    Remove Money","Description":"Removes [money] money"},"BrickTree":{"Genesis":{"Type":0,"Subtype":104,"HasField":true,"IntField":2,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"money","Slots":[]}]}}},{"Id":9,"Metadata":{"Picture":20,"Coins":9,"Name":"[9]
-    Clear Money","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":101,"HasField":true,"IntField":2,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}}},{"Id":10,"Metadata":{"Picture":36,"Coins":10,"Name":"[10]
-    Game Over (Health)","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":4,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Player
-    2 WON!","Slots":[]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Player
-    1 WON!","Slots":[]}]}}},{"Id":11,"Metadata":{"Picture":11,"Coins":11,"Name":"[11]
-    Game Over (Shop)","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Shop
-    is empty! Player 2 WON!","Slots":[]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Shop
-    is empty! Player 1 WION!","Slots":[]}]}}},{"Id":12,"Metadata":{"Picture":39,"Coins":12,"Name":"[12]
-    Heal","Description":"Heals for [hp]"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":102,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"hp","Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}}},{"Id":13,"Metadata":{"Picture":3,"Coins":13,"Name":"[13]
-    Deal DAMAGE","Description":"Deals [dmg] damage to enemy. If [self] > 0 deals
-    dmg to yourself."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"target","Slots":[{"Type":2,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"self","Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":104,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"target","Slots":[]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":4,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"target","Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":10,"StringField":null,"Slots":[]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}}},{"Id":14,"Metadata":{"Picture":34,"Coins":14,"Name":"[14]
-    Display Action","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":4,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":2,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"cost","Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"cost","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":8,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":15,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Card
-    purchased!","Slots":[]}]},{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Not
-    enough Gold!","Slots":[]}]}}},{"Id":15,"Metadata":{"Picture":4,"Coins":15,"Name":"[15]
-    Get Card from Shop","Description":"to myDeck"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]}]}]}}},{"Id":16,"Metadata":{"Picture":92,"Coins":16,"Name":"[16]
-    Play Card","Description":"Moves card to stack (place 7)"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]}]}]}}},{"Id":17,"Metadata":{"Picture":26,"Coins":2,"Name":"Sleepless
-    Fisherman","Description":"Get 2 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Received
-    2 Gold!","Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}]}}},{"Id":18,"Metadata":{"Picture":91,"Coins":2,"Name":"Adventurer","Description":"Draw
-    1 card. Heal for 1 HP."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"hp","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":19,"Metadata":{"Picture":45,"Coins":3,"Name":"Long
-    Tom","Description":"Gives 1-3 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":5,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":20,"Metadata":{"Picture":99,"Coins":3,"Name":"Albino
-    Yeti","Description":"Deal 2 Dmg. Heal for 2 HP."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"hp","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":21,"Metadata":{"Picture":30,"Coins":3,"Name":"Vengeful
-    Ghost","Description":"Get 1 Gold. If enemy has more HP than you, get 2 more Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":22,"Metadata":{"Picture":97,"Coins":3,"Name":"Nekomancer","Description":"Get
-    1 gold. Both players draw a card."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":23,"Metadata":{"Picture":84,"Coins":3,"Name":"Mind
-    Games","Description":"Get 1 Gold. Draw 3 cards, then discard 2."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}]}]}]}}},{"Id":24,"Metadata":{"Picture":31,"Coins":3,"Name":"Ex-witcher","Description":"Get
-    1 Gold. Deal 3 Dmg."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":25,"Metadata":{"Picture":77,"Coins":3,"Name":"Hungry
-    Snail","Description":"Get 1 Gold. Destroy random card in you hand."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":666,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":26,"Metadata":{"Picture":52,"Coins":4,"Name":"Dashing
-    Brigand","Description":"Get 2 Gold. Discard 1 card then draw 2."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]}]}]}]}]}}},{"Id":27,"Metadata":{"Picture":98,"Coins":4,"Name":"Friendly
-    neighbor","Description":"Get 2 Gold. Shuffle random card from your hand to enemy
-    deck."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":28,"Metadata":{"Picture":87,"Coins":4,"Name":"The
-    Good Boy","Description":"Get 1 Gold. Deal 2 Dmg. Add a Cutie Puff to enemy hand."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":500,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}]}]}]}}},{"Id":29,"Metadata":{"Picture":82,"Coins":4,"Name":"Gear
-    up!","Description":"Heal 3 HP. If you have more HP than enemy, deal 3 Dmg."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"hp","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":6,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":30,"Metadata":{"Picture":32,"Coins":4,"Name":"Lone
-    Survivor","Description":"Get 2 Gold. If HP < 10 draw 2 cards."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":10,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":0,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":31,"Metadata":{"Picture":21,"Coins":5,"Name":"Fish
-    hunter","Description":"Get 3 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":32,"Metadata":{"Picture":63,"Coins":5,"Name":"Dark
-    Pact","Description":"Take 4 damage. Draw 3 cards."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"self","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":33,"Metadata":{"Picture":6,"Coins":5,"Name":"Very
-    old yogurt","Description":"Get 4 Gold. Get 2 less Gold if you have < 15 HP."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":7,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":100,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":15,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":34,"Metadata":{"Picture":94,"Coins":5,"Name":"Sneaky
-    Imp","Description":"Get 2 Gold. Discard random card from enemy hand."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":35,"Metadata":{"Picture":16,"Coins":5,"Name":"Plague
-    Burglar","Description":"Get 1 Gold.\nSteal a random Card from the Shop."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"myDeck","Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Received
-    1 Gold and a Shop Card!","Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}]}}},{"Id":36,"Metadata":{"Picture":68,"Coins":5,"Name":"Old
-    smuggler","Description":"Get 2 gold. Refresh shop."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":6,"StringField":null,"Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":37,"Metadata":{"Picture":81,"Coins":6,"Name":"Stone
-    skin","Description":"Get 1 Gold. Heal 1 HP for each card in your hand."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"hp","Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":38,"Metadata":{"Picture":54,"Coins":7,"Name":"Inquisitor","Description":"Get
-    1 Gold. Deals 1 Dmg for each card in enemy hand."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":102,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":39,"Metadata":{"Picture":0,"Coins":6,"Name":"Sharpshooter","Description":"Deal
-    3 Dmg. Destroy random card in enemy hand,"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":666,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":40,"Metadata":{"Picture":18,"Coins":7,"Name":"Demon
-    Gladiator","Description":"Get 3 Gold. Deal 4 Dmg."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":41,"Metadata":{"Picture":96,"Coins":7,"Name":"Gang
-    leader","Description":"Get 5 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}]}}},{"Id":42,"Metadata":{"Picture":9,"Coins":9,"Name":"Dreams
-    Fulfilled","Description":"Get 3 Gold. Draw 3 cards. Heal 3 HP. Deal 3 Dmg."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":9,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"hp","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":12,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]}]}]}]}]}]}}},{"Id":43,"Metadata":{"Picture":72,"Coins":0,"Name":"Cutie
-    Puff","Description":"Absolutely useless. But so cute!"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":5,"HasField":true,"IntField":0,"StringField":"Baa-a-a!","Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}}},{"Id":44,"Metadata":{"Picture":8,"Coins":0,"Name":"Savage
-    Crow","Description":"Get 1 Gold.\nDeal 1 Damage."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":45,"Metadata":{"Picture":46,"Coins":0,"Name":"Dismayed
-    Miner","Description":"Get 1 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]}}}],"Message":{"Nonce":0,"Message":"","Duration":5},"Random":{"x":123257460,"y":362371716,"z":521288629,"w":88675123},"EndTurnCardId":1}'
+  testJson: 
   json1: '{"LastUpdate":1628122444,"Players":[{"Address":"Fq94dgHo7Lq27TH23r8rEQpywrAJaNk16RSoW3A7djf1","IsActive":false,"HP":0,"Coins":0,"IsMe":true,"Attrs":[0,0,0,0,0,0,0,0,0,0]}],"Cards":[{"CardId":0,"CardType":0,"CardPlace":0},{"CardId":1,"CardType":1,"CardPlace":998},{"CardId":2,"CardType":2,"CardPlace":998},{"CardId":3,"CardType":3,"CardPlace":998},{"CardId":4,"CardType":4,"CardPlace":998},{"CardId":5,"CardType":5,"CardPlace":998},{"CardId":6,"CardType":6,"CardPlace":998},{"CardId":7,"CardType":7,"CardPlace":998},{"CardId":8,"CardType":8,"CardPlace":998},{"CardId":9,"CardType":9,"CardPlace":998},{"CardId":10,"CardType":10,"CardPlace":998},{"CardId":11,"CardType":11,"CardPlace":998},{"CardId":12,"CardType":12,"CardPlace":998},{"CardId":13,"CardType":13,"CardPlace":998},{"CardId":14,"CardType":14,"CardPlace":998},{"CardId":15,"CardType":15,"CardPlace":998},{"CardId":16,"CardType":16,"CardPlace":998},{"CardId":17,"CardType":17,"CardPlace":1},{"CardId":18,"CardType":17,"CardPlace":1},{"CardId":19,"CardType":18,"CardPlace":1},{"CardId":20,"CardType":18,"CardPlace":1},{"CardId":21,"CardType":18,"CardPlace":1},{"CardId":22,"CardType":18,"CardPlace":1},{"CardId":23,"CardType":19,"CardPlace":1},{"CardId":24,"CardType":19,"CardPlace":1},{"CardId":25,"CardType":20,"CardPlace":1},{"CardId":26,"CardType":20,"CardPlace":1},{"CardId":27,"CardType":20,"CardPlace":1},{"CardId":28,"CardType":20,"CardPlace":1},{"CardId":29,"CardType":21,"CardPlace":1},{"CardId":30,"CardType":21,"CardPlace":1},{"CardId":31,"CardType":21,"CardPlace":1},{"CardId":32,"CardType":21,"CardPlace":1},{"CardId":33,"CardType":22,"CardPlace":1},{"CardId":34,"CardType":22,"CardPlace":1},{"CardId":35,"CardType":22,"CardPlace":1},{"CardId":36,"CardType":22,"CardPlace":1},{"CardId":37,"CardType":23,"CardPlace":1},{"CardId":38,"CardType":23,"CardPlace":1},{"CardId":39,"CardType":23,"CardPlace":1},{"CardId":40,"CardType":24,"CardPlace":1},{"CardId":41,"CardType":24,"CardPlace":1},{"CardId":42,"CardType":24,"CardPlace":1},{"CardId":43,"CardType":24,"CardPlace":1},{"CardId":44,"CardType":25,"CardPlace":1},{"CardId":45,"CardType":25,"CardPlace":1},{"CardId":46,"CardType":25,"CardPlace":1},{"CardId":47,"CardType":26,"CardPlace":1},{"CardId":48,"CardType":26,"CardPlace":1},{"CardId":49,"CardType":26,"CardPlace":1},{"CardId":50,"CardType":26,"CardPlace":1},{"CardId":51,"CardType":27,"CardPlace":1},{"CardId":52,"CardType":27,"CardPlace":1},{"CardId":53,"CardType":27,"CardPlace":1},{"CardId":54,"CardType":28,"CardPlace":1},{"CardId":55,"CardType":28,"CardPlace":1},{"CardId":56,"CardType":28,"CardPlace":1},{"CardId":57,"CardType":29,"CardPlace":1},{"CardId":58,"CardType":29,"CardPlace":1},{"CardId":59,"CardType":29,"CardPlace":1},{"CardId":60,"CardType":30,"CardPlace":1},{"CardId":61,"CardType":30,"CardPlace":1},{"CardId":62,"CardType":30,"CardPlace":1},{"CardId":63,"CardType":31,"CardPlace":1},{"CardId":64,"CardType":31,"CardPlace":1},{"CardId":65,"CardType":32,"CardPlace":1},{"CardId":66,"CardType":32,"CardPlace":1},{"CardId":67,"CardType":33,"CardPlace":1},{"CardId":68,"CardType":33,"CardPlace":1},{"CardId":69,"CardType":34,"CardPlace":1},{"CardId":70,"CardType":34,"CardPlace":1},{"CardId":71,"CardType":35,"CardPlace":1},{"CardId":72,"CardType":35,"CardPlace":1},{"CardId":73,"CardType":35,"CardPlace":1},{"CardId":74,"CardType":36,"CardPlace":1},{"CardId":75,"CardType":37,"CardPlace":1},{"CardId":76,"CardType":38,"CardPlace":1},{"CardId":77,"CardType":39,"CardPlace":1},{"CardId":78,"CardType":40,"CardPlace":1},{"CardId":79,"CardType":41,"CardPlace":1},{"CardId":80,"CardType":42,"CardPlace":1},{"CardId":81,"CardType":43,"CardPlace":1},{"CardId":82,"CardType":44,"CardPlace":1},{"CardId":83,"CardType":45,"CardPlace":1},{"CardId":84,"CardType":46,"CardPlace":1},{"CardId":85,"CardType":47,"CardPlace":1},{"CardId":86,"CardType":48,"CardPlace":1},{"CardId":87,"CardType":49,"CardPlace":1},{"CardId":88,"CardType":50,"CardPlace":5},{"CardId":89,"CardType":50,"CardPlace":5},{"CardId":90,"CardType":50,"CardPlace":5},{"CardId":91,"CardType":51,"CardPlace":5},{"CardId":92,"CardType":52,"CardPlace":5},{"CardId":93,"CardType":52,"CardPlace":5},{"CardId":94,"CardType":52,"CardPlace":5},{"CardId":95,"CardType":52,"CardPlace":5},{"CardId":96,"CardType":52,"CardPlace":5},{"CardId":97,"CardType":52,"CardPlace":5},{"CardId":98,"CardType":50,"CardPlace":6},{"CardId":99,"CardType":50,"CardPlace":6},{"CardId":100,"CardType":50,"CardPlace":6},{"CardId":101,"CardType":51,"CardPlace":6},{"CardId":102,"CardType":52,"CardPlace":6},{"CardId":103,"CardType":52,"CardPlace":6},{"CardId":104,"CardType":52,"CardPlace":6},{"CardId":105,"CardType":52,"CardPlace":6},{"CardId":106,"CardType":52,"CardPlace":6},{"CardId":107,"CardType":52,"CardPlace":6},{"CardId":108,"CardType":50,"CardPlace":500},{"CardId":109,"CardType":50,"CardPlace":500},{"CardId":110,"CardType":50,"CardPlace":500},{"CardId":111,"CardType":50,"CardPlace":500},{"CardId":112,"CardType":50,"CardPlace":500},{"CardId":113,"CardType":50,"CardPlace":500},{"CardId":114,"CardType":50,"CardPlace":500},{"CardId":115,"CardType":50,"CardPlace":500},{"CardId":116,"CardType":50,"CardPlace":500},{"CardId":117,"CardType":50,"CardPlace":500},{"CardId":118,"CardType":50,"CardPlace":500},{"CardId":119,"CardType":50,"CardPlace":500},{"CardId":120,"CardType":50,"CardPlace":500},{"CardId":121,"CardType":50,"CardPlace":500},{"CardId":122,"CardType":50,"CardPlace":500},{"CardId":123,"CardType":50,"CardPlace":500},{"CardId":124,"CardType":50,"CardPlace":500},{"CardId":125,"CardType":50,"CardPlace":500},{"CardId":126,"CardType":50,"CardPlace":500},{"CardId":127,"CardType":50,"CardPlace":500},{"CardId":128,"CardType":50,"CardPlace":500},{"CardId":129,"CardType":50,"CardPlace":500},{"CardId":130,"CardType":50,"CardPlace":500},{"CardId":131,"CardType":50,"CardPlace":500},{"CardId":132,"CardType":50,"CardPlace":500}],"CardTypes":[{"Id":0,"Metadata":{"Picture":29,"Coins":0,"Name":"[0]
     Init","Description":"Description"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":6,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":4,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":1,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":25,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]}]}}},{"Id":1,"Metadata":{"Picture":75,"Coins":1,"Name":"[1]
     End Turn","Description":"Ends turn"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":5,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":4,"StringField":null,"Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":9,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"amount","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":3,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":103,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":7,"StringField":null,"Slots":[]},{"Type":0,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":8,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]}]}]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]},{"Type":2,"Subtype":0,"HasField":true,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":101,"HasField":true,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":3,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":3,"StringField":null,"Slots":[]},{"Type":2,"Subtype":105,"HasField":false,"IntField":0,"StringField":null,"Slots":[]}]},{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":5,"StringField":null,"Slots":[]}]}]}}},{"Id":2,"Metadata":{"Picture":95,"Coins":2,"Name":"[2]
@@ -897,6 +1822,249 @@ MonoBehaviour:
     Puff","Description":"Absolutely useless. But so cute!"},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]}]}]}}},{"Id":51,"Metadata":{"Picture":8,"Coins":1,"Name":"Savage
     Crow","Description":"Get 1 Gold.\nDeal 1 Damage."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"dmg","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":13,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]}]}]}]}}},{"Id":52,"Metadata":{"Picture":46,"Coins":1,"Name":"Dismayed
     Miner","Description":"Get 1 Gold."},"BrickTree":{"Genesis":{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"display","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":2,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"cost","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]}]},{"Type":0,"Subtype":2,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":1,"Subtype":100,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":2,"Subtype":4,"HasField":true,"IntField":0,"StringField":"display","Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":14,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":4,"HasField":true,"IntField":16,"StringField":null,"Slots":[]},{"Type":0,"Subtype":1,"HasField":false,"IntField":0,"StringField":null,"Slots":[{"Type":0,"Subtype":6,"HasField":true,"IntField":0,"StringField":"money","Slots":[{"Type":2,"Subtype":0,"HasField":true,"IntField":1,"StringField":null,"Slots":[]}]},{"Type":0,"Subtype":4,"HasField":true,"IntField":7,"StringField":null,"Slots":[]}]}]}]}]}}}],"Message":{"Nonce":0,"Message":"","Duration":5},"Random":{"x":123691089,"y":362739873,"z":521288629,"w":88675123},"EndTurnCardId":1}'
+--- !u!1 &1233172561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233172562}
+  - component: {fileID: 1233172564}
+  - component: {fileID: 1233172563}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1233172562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233172561}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1264684756}
+  - {fileID: 2093097453}
+  m_Father: {fileID: 554374883}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.15, y: 0.1}
+  m_AnchorMax: {x: 0.85, y: 0.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1233172563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233172561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -8915993984176844037, guid: b7370361704ef4247beb3935deb5c578, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1233172564
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233172561}
+  m_CullTransparentMesh: 0
+--- !u!1 &1255152819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255152820}
+  - component: {fileID: 1255152823}
+  - component: {fileID: 1255152822}
+  - component: {fileID: 1255152821}
+  m_Layer: 5
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1255152820
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255152819}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1597620409}
+  m_Father: {fileID: 1709805788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1255152821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255152819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &1255152822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255152819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1255152823
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255152819}
+  m_CullTransparentMesh: 1
+--- !u!1 &1264684755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264684756}
+  - component: {fileID: 1264684758}
+  - component: {fileID: 1264684757}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1264684756
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264684755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 389633514}
+  m_Father: {fileID: 1233172562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -36.5}
+  m_SizeDelta: {x: 280.6034, y: 73}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1264684757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264684755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 47a44d42dba8c4bc6bee487450f2136b, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1264684758
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264684755}
+  m_CullTransparentMesh: 0
 --- !u!1 &1549657162
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +2094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1549657164
 MonoBehaviour:
@@ -979,7 +2147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1550020995
 MonoBehaviour:
@@ -1002,6 +2170,409 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+--- !u!1 &1597620408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597620409}
+  - component: {fileID: 1597620412}
+  - component: {fileID: 1597620411}
+  - component: {fileID: 1597620410}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1597620409
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597620408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1255152820}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1597620410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597620408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "<b>Overview:\r\n</b>\r\nSummoner is a deckbuilding duel game. You will
+    be building a deck from cards presented in the center of the game board and aim
+    to defeat your opponent with them.\r\nThe goal is to reduce your Opponent's Health
+    to 0 - the first player who does that, wins.\r\n\r\n<b>Game board\r\n</b>\r\nHere's
+    a short summary of all card places in the game:\r\n<b>- Shop:</b> a set of 5
+    cards in the center of the game board. Each Shop Card has a Price listed in the
+    top left corner: a player can buy it on his turn, if he has enough Gold.\r\n<b>-
+    Shop Deck:</b> a 'warehouse' of sorts that stores all the Cards yet to be displayed
+    in the Shop. After a player buys a Card from the Shop, a new one gets drawn from
+    the Shop Deck to replace it.\r\n<b>- Player's Hand:</b> a set of cards (usually
+    5) a player can cast on his Turn. Your opponent's Hand is always shown face down.\r\n<b>-
+    Player's Deck:</b> your card library, that gets bigger and bigger as you buy
+    more and more Cards from the Shop.\r\n<b>- Player's Grave:</b> cards that have
+    already been played OR new cards that were just bought from the Shop. After you
+    exhaust all Cards in your Deck, your Grave is emptied, and all the Cards stored
+    there are shuffled back into your Deck.\r\n<b>- Stack:</b> cards that have been
+    played this Turn. Both players can see the topmost one, with the others stacked
+    right under it. Stack is emptied at the end of each Turn, and all the Cards played
+    are moved to the respective player's Grave.\r\n<b>- Player's Health:</b> a 'Heart'
+    indicator next to a player's portrait. That's your most important resource -
+    if it hits 0, you will lose the game!\r\n<b>- Player's Gold:</b> a 'Coin' indicator
+    next to a player's portrait. It shows how much Gold you've gained this Turn.\r\n\r\n<b>Turn
+    Sequence</b>\r\nWe'll begin at the moment when you start your Turn.\r\n<b>1.
+    Refresh Shop:</b> After your Turn starts, the Shop updates its range of Cards.
+    For each Card missing from the Shop, a new one is drawn from the Shop Deck to
+    replace it. That repeats until there are 5 Cards in the Shop.\r\n<b>2. Play Cards
+    From Hand:</b> That's your main phase. What can you do?\r\n    <b>1. Play Cards:</b>
+    you can play each Card you have in Hand (they don't have a Cost, so usually you'll
+    want to play your entire Hand until the end of your Turn). Be mindful of the
+    order you play your Cards - some Cards are more advantageous when played first,
+    and some are best saved for last.\r\n    <b>2. Buy Cards from Shop:</b> if you
+    have enough Gold, you can (and should!) buy a Card from the Shop. Simply clicking
+    on it will move it from the Shop to your Grave (usually, you won't be able to
+    play a Card you just bought right on the following turn - you'll have to wait
+    a bit). \r\n<b>3. End Turn:</b> After you're sure that you've done all you wanted,
+    you press End Turn to pass a turn to your Opponent.\r\n<b>4. Discard Hand:</b>
+    All Cards that are still in your Hand are moved to your Grave.\r\n<b>5. Clear
+    Stack:</b> All Cards that you Played this turn are move to your Grave, too.\r\n<b>6.
+    Lose Gold:</b> All your unspent Gold disappears (that's why it's important to
+    buy Cards as soon as you can afford them!)\r\n<b>7. Draw a new Hand:</b> draw
+    5 new Cards from your Deck. You will have time to devise a strategy for the next
+    Turn while you wait for your Opponent's move.\r\n\r\nAfter that, it's your Opponent's
+    turn to refresh the Shop.\r\n\r\nWell, that about sums it up. Enjoy the game
+    and feel free to share your thoughts and impressions with us - we will greatly
+    appreciate it =)"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 874560d5bcffb419bab31a19d2f698bc, type: 2}
+  m_sharedMaterial: {fileID: 6481687907097080353, guid: 874560d5bcffb419bab31a19d2f698bc, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4291940817
+  m_fontColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 22
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 40
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1597620411
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597620408}
+  m_CullTransparentMesh: 1
+--- !u!114 &1597620412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597620408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!1 &1709805787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709805788}
+  - component: {fileID: 1709805790}
+  - component: {fileID: 1709805789}
+  m_Layer: 5
+  m_Name: Scroll View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1709805788
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709805787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1255152820}
+  m_Father: {fileID: 2093097453}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.05, y: 0.2}
+  m_AnchorMax: {x: 0.95, y: 0.89}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1709805789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709805787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1597620409}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 2
+  m_Elasticity: 0.1
+  m_Inertia: 0
+  m_DecelerationRate: 0
+  m_ScrollSensitivity: 20
+  m_Viewport: {fileID: 1255152820}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 577375115}
+  m_HorizontalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 1
+  m_HorizontalScrollbarSpacing: -3
+  m_VerticalScrollbarSpacing: -3
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!222 &1709805790
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709805787}
+  m_CullTransparentMesh: 1
+--- !u!1 &1738685930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738685931}
+  - component: {fileID: 1738685933}
+  - component: {fileID: 1738685932}
+  m_Layer: 5
+  m_Name: CloseButtonText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1738685931
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738685930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2027582122}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 296.5362, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1738685932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738685930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: CLOSE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_sharedMaterial: {fileID: 644716123368233633, guid: 98ae539f0ab864f65b5fc85d09757eb2, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4287668654
+  m_fontColor: {r: 0.68235296, g: 0.6313726, b: 0.5647059, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 64.5
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1738685933
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738685930}
+  m_CullTransparentMesh: 0
 --- !u!1 &1841832952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,8 +2603,44 @@ Transform:
   - {fileID: 6782727}
   - {fileID: 490852464}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1841885300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841885301}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1841885301
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841885300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 353137751}
+  m_Father: {fileID: 577375118}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1953242413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,5 +2746,164 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2027582121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027582122}
+  - component: {fileID: 2027582125}
+  - component: {fileID: 2027582124}
+  - component: {fileID: 2027582123}
+  m_Layer: 5
+  m_Name: CloseButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2027582122
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027582121}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1738685931}
+  m_Father: {fileID: 2093097453}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.1}
+  m_AnchorMax: {x: 0.5, y: 0.1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2027582123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027582121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 5c35daed1099ead498b9464f72fe6717, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 5c35daed1099ead498b9464f72fe6717, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2027582124}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2027582124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027582121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f527e7d2f16d82545b14d4aa2a707236, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 3
+--- !u!222 &2027582125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027582121}
+  m_CullTransparentMesh: 0
+--- !u!1 &2093097452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093097453}
+  m_Layer: 5
+  m_Name: Main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2093097453
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093097452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 577375118}
+  - {fileID: 1709805788}
+  - {fileID: 2027582122}
+  m_Father: {fileID: 1233172562}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -8}
+  m_SizeDelta: {x: -32, y: -48}
+  m_Pivot: {x: 0.5, y: 0.5}

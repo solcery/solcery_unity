@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.6
+  m_fontSize: 14.6
   m_fontSizeBase: 11.27
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 22.1
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56da3730b5c784d46b23d87ccee4f883, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8139076e7296f24ab0762816a1af84e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -718,7 +718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41ee302c57716544ea65faa0e865e6ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 014ae2413836471438add16f459d0db3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 08fa50c7f85ffe347a9415bc11d460f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccce351ec59fd814ca7d19f418d509da, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
