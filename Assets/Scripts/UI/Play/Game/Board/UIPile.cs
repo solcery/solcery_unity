@@ -21,16 +21,10 @@ namespace Solcery.UI.Play.Game.Board
         {
             // TODO: count +- count here from each diff
             if (cardsCount <= 0)
-            {
-                this.gameObject?.SetActive(false);
-            }
-            else
-            {
-                this.gameObject?.SetActive(true);
+                cardsCountText.text = string.Empty;
 
-                if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
-                    SetCardsCountText(cardsCount).Forget();
-            }
+            if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
+                SetCardsCountText(cardsCount).Forget();
 
             _currentCardsCount = cardsCount;
 
@@ -50,7 +44,7 @@ namespace Solcery.UI.Play.Game.Board
 
         protected override void OnCardCasted(int cardId)
         {
-
+            
         }
     }
 }

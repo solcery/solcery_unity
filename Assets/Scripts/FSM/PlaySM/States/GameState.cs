@@ -17,6 +17,7 @@ namespace Solcery.FSM.Play
         {
             await base.Enter();
 
+            BoardDataDiffTracker.Instance?.Init();
             GameResultTracker.Instance?.Init();
             UIGame.Instance?.Init();
 
@@ -26,7 +27,9 @@ namespace Solcery.FSM.Play
 
         public override async UniTask Exit()
         {
+            BoardDataDiffTracker.Instance?.DeInit();
             GameResultTracker.Instance?.DeInit();
+            UIGame.Instance?.DeInit();
 
             await base.Exit();
         }

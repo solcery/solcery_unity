@@ -1,5 +1,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Solcery.Modules;
 using Solcery.UI.Play.Lobby;
 using Solcery.Utils.Reactives;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace Solcery.FSM.Play
             UILobby.Instance?.Init();
 
             _cts = new CancellationTokenSource();
-            Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _cts.Token);
+            Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
         }
 
         public override async UniTask Exit()

@@ -14,7 +14,6 @@ namespace Solcery
             LogApplyer.Instance?.Init();
             LogActionCreator.Instance?.Init();
             Board.Instance?.Init();
-            BoardDataDiffTracker.Instance?.Init();
             Log.Instance?.Init();
 
             UnityToReact.Instance?.CallOnUnityLoaded();
@@ -31,7 +30,6 @@ namespace Solcery
             LogApplyer.Instance?.DeInit();
             LogActionCreator.Instance?.DeInit();
             Board.Instance?.DeInit();
-            BoardDataDiffTracker.Instance?.DeInit();
             Log.Instance?.DeInit();
         }
     }

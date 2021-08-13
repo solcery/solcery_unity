@@ -1,10 +1,11 @@
 using Cysharp.Threading.Tasks;
+using Solcery.Modules;
 using UnityEngine;
 
 namespace Solcery.FSM.Play
 {
-    [CreateAssetMenu(menuName = "Solcery/FSM/Play/States/Init", fileName = "Init")]
-    public class InitState : PlayState
+    [CreateAssetMenu(menuName = "Solcery/FSM/Play/States/_Init", fileName = "_Init")]
+    public class _InitState : PlayState
     {
         [SerializeField] private PlayTrigger openLobby = null;
         [SerializeField] private PlayTrigger openGame = null;
@@ -13,7 +14,7 @@ namespace Solcery.FSM.Play
         {
             await base.Enter();
 
-            var boardData = BoardDataDiffTracker.Instance?.BoardDataWithDiff?.Value;
+            var boardData = Board.Instance?.BoardData?.Value;
 
             if (boardData == null)
             {

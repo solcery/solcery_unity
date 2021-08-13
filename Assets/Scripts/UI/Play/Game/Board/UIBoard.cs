@@ -29,11 +29,13 @@ namespace Solcery.UI.Play.Game.Board
 
         public void DeInit()
         {
+            Clear();
+            
             endTurnButton?.onClick?.RemoveAllListeners();
             gameRulesButton?.onClick?.RemoveAllListeners();
         }
 
-        public void Clear()
+        private void Clear()
         {
             _boardData = null;
             _boardPlaces = null;

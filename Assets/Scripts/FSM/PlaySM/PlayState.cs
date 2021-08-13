@@ -20,7 +20,6 @@ namespace Solcery.FSM.Play
                 }
                 else
                 {
-                    Debug.Log($"Open {sceneName}");
                     await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
                 }
             }
