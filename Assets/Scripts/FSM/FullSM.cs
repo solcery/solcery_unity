@@ -69,7 +69,6 @@ namespace Solcery.FSM
                 });
 
                 param.OnPassed += onParamAction;
-                param.StartTracking();
                 _paramSubscriptions.Add(param, onParamAction);
             }
         }
