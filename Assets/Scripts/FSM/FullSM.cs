@@ -15,14 +15,14 @@ namespace Solcery.FSM
         [SerializeField] private TState _entryState = null;
 
         private TState _currentState;
-        private Dictionary<TParameter, Action> _triggerSubscriptions;
+        private Dictionary<TParameter, Action> _paramSubscriptions;
 
         public async UniTask Enter()
         {
             if (_entryState != null)
             {
                 _currentState = _entryState;
-                SubscribeToStateTriggers();
+                SubscribeToStateParams();
                 await _currentState.Enter();
             }
         }
@@ -35,17 +35,17 @@ namespace Solcery.FSM
             if (transition.To == null)
                 return false;
 
-            UnsubscribeFromStateTriggers();
+            UnsubscribeFromStateParams();
             await _currentState.Exit();
             await transition.PerformTransition();
             _currentState = transition.To;
             await _currentState.Enter();
-            SubscribeToStateTriggers();
+            SubscribeToStateParams();
 
             return true;
         }
 
-        private void SubscribeToStateTriggers()
+        private void SubscribeToStateParams()
         {
             if (_currentState == null)
                 return;
@@ -53,42 +53,49 @@ namespace Solcery.FSM
             if (_currentState.Transitions == null || _currentState.Transitions.Count <= 0)
                 return;
 
-            _triggerSubscriptions = new Dictionary<TParameter, Action>();
+            _paramSubscriptions = new Dictionary<TParameter, Action>();
 
-            foreach (var triggerTransition in _currentState.Transitions)
+            foreach (var paramTransition in _currentState.Transitions)
             {
-                var trigger = triggerTransition.Key;
-                var transition = triggerTransition.Value;
+                var param = paramTransition.Key;
+                var transition = paramTransition.Value;
 
-                if (trigger == null || transition == null)
+                if (param == null || transition == null)
                     continue;
 
-                var onTriggerAction = UniTask.Action(async () =>
+                var onParamAction = UniTask.Action(async () =>
                 {
                     await PerformTransition(transition);
                 });
-                trigger.OnPassed += onTriggerAction;
-                _triggerSubscriptions.Add(trigger, onTriggerAction);
+
+                param.OnPassed += onParamAction;
+                param.StartTracking();
+                _paramSubscriptions.Add(param, onParamAction);
             }
         }
 
-        private void UnsubscribeFromStateTriggers()
+        private void SubscribeActionToParam()
         {
-            if (_triggerSubscriptions == null)
+
+        }
+
+        private void UnsubscribeFromStateParams()
+        {
+            if (_paramSubscriptions == null)
                 return;
 
-            if (_triggerSubscriptions.Count <= 0)
+            if (_paramSubscriptions.Count <= 0)
                 return;
 
-            foreach (var triggerAction in _triggerSubscriptions)
+            foreach (var paramAction in _paramSubscriptions)
             {
-                var trigger = triggerAction.Key;
-                var onTriggerAction = triggerAction.Value;
+                var param = paramAction.Key;
+                var onParamAction = paramAction.Value;
 
-                if (trigger == null || onTriggerAction == null)
+                if (param == null || onParamAction == null)
                     continue;
 
-                trigger.OnPassed -= onTriggerAction;
+                param.OnPassed -= onParamAction;
             }
         }
 
