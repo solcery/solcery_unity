@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +9,10 @@ namespace Solcery.FSM.Dapp
     {
         [SerializeField] private string _sceneName;
 
-        public override async UniTask Enter()
+        public override async UniTask Enter(Action<DappTransition> performTransition)
         {
+            await base.Enter(performTransition);
+
             if (string.IsNullOrEmpty(_sceneName))
             {
                 Debug.LogError("Empty scene name in DappState");
@@ -21,6 +24,8 @@ namespace Solcery.FSM.Dapp
 
         public override async UniTask Exit()
         {
+            await base.Exit();
+
             if (string.IsNullOrEmpty(_sceneName))
             {
                 Debug.LogError("Empty scene name in DappState");

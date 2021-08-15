@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -6,9 +7,9 @@ namespace Solcery.FSM.Dapp
     [CreateAssetMenu(menuName = "Solcery/FSM/Dapp/States/Create", fileName = "Create")]
     public class CreateState : DappState
     {
-        public override async UniTask Enter()
+        public override async UniTask Enter(Action<DappTransition> performTransition)
         {
-            await base.Enter();
+            await base.Enter(performTransition);
             await Solcery.Create.Instance.Init();
         }
 

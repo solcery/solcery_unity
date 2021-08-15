@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Solcery.UI.Play.Game;
@@ -13,9 +14,9 @@ namespace Solcery.FSM.Play
 
         private CancellationTokenSource _cts;
 
-        public override async UniTask Enter()
+        public override async UniTask Enter(Action<PlayTransition> performTransition)
         {
-            await base.Enter();
+            await base.Enter(performTransition);
 
             BoardDataDiffTracker.Instance?.Init();
             GameResultTracker.Instance?.Init();

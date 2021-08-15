@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Solcery.Modules;
 using UnityEngine;
@@ -10,9 +11,9 @@ namespace Solcery.FSM.Play
         [SerializeField] private PlayTrigger openLobby = null;
         [SerializeField] private PlayTrigger openGame = null;
 
-        public override async UniTask Enter()
+        public override async UniTask Enter(Action<PlayTransition> performTransition)
         {
-            await base.Enter();
+            await base.Enter(performTransition);
 
             var boardData = Board.Instance?.BoardData?.Value;
 

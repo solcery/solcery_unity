@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Solcery.UI;
 using Solcery.UI.Create;
@@ -8,9 +9,9 @@ namespace Solcery.FSM.Create
     [CreateAssetMenu(menuName = "Solcery/FSM/Create/States/CreateCard", fileName = "CreateCard")]
     public class CreateCardState : CreateState
     {
-        public override async UniTask Enter()
+        public override async UniTask Enter(Action<CreateTransition> performTransition)
         {
-            await base.Enter();
+            await base.Enter(performTransition);
             UICreateCard.Instance?.Open();
             UICollection.Instance?.SetMode(UICollectionMode.CreateCard);
         }

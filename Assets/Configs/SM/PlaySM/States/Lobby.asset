@@ -16,8 +16,8 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}
     - {fileID: 11400000, guid: a500bd88aaa71e34e954fd3ad8a93534, type: 2}
+    - {fileID: 11400000, guid: ba3b6880200942343979ae1fe61a7565, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -25,11 +25,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: transitions
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Solcery.FSM.Play.PlayTrigger,
-        Assembly-CSharp],[Solcery.FSM.Play.PlayTransition, Assembly-CSharp]], mscorlib
+      Data: 0|UnityEngine.Rendering.SerializedDictionary`2[[Solcery.FSM.Play.PlayTransition,
+        Assembly-CSharp],[Solcery.FSM.Parameter, Assembly-CSharp]], Unity.RenderPipelines.Core.Runtime
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Solcery.FSM.Play.PlayTrigger,
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Solcery.FSM.Play.PlayTransition,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
