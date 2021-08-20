@@ -15,18 +15,12 @@ namespace Solcery.FSM.Play
         {
             // Debug.Log("Subscribe");
 
-            // if (!_isTracking)
-            // {
-                // _isTracking = true;
+            if (!_isTracking)
+            {
+                _isTracking = true;
                 _cts = new CancellationTokenSource();
                 Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
-            // }
-        }
-
-        private void SetOutcome(bool value)
-        {
-            if (outcome == value)
-                OnPassed?.Invoke();
+            }
         }
 
         private void OnBoardUpdate(BoardData boardData)

@@ -19,8 +19,6 @@ namespace Solcery.FSM
 
         public virtual async UniTask Enter(Action<TTransition> performTransition)
         {
-            Debug.Log($"enter {this.name}");
-            
             _performTransition = performTransition;
 
             if (transitions == null || transitions.Count <= 0)
@@ -38,7 +36,6 @@ namespace Solcery.FSM
 
                 Action onParamAction = () =>
                 {
-                    Debug.Log($"{transition.name}");
                     _performTransition.Invoke(transition);
                 };
 
@@ -46,15 +43,15 @@ namespace Solcery.FSM
                 param.OnPassed += onParamAction;
                 param.Subscribe();
             }
+
+            await UniTask.WaitForEndOfFrame();
         }
 
         public virtual async UniTask Exit()
         {
-            Debug.Log($"exit {this.name}");
             if (_paramSubscriptions == null || _paramSubscriptions.Count <= 0)
                 return;
 
-            Debug.Log(_paramSubscriptions.Count);
             foreach (var paramAction in _paramSubscriptions)
             {
                 var param = paramAction.Param;
@@ -67,6 +64,8 @@ namespace Solcery.FSM
             }
 
             _paramSubscriptions = null;
+
+            await UniTask.WaitForEndOfFrame();
         }
 
         public virtual void PerformUpdate() { }
