@@ -11,16 +11,10 @@ namespace Solcery.FSM.Play
         private CancellationTokenSource _cts;
         private bool _isTracking;
 
-        public override void Subscribe()
+        public override void StartTracking()
         {
-            // Debug.Log("Subscribe");
-
-            if (!_isTracking)
-            {
-                _isTracking = true;
-                _cts = new CancellationTokenSource();
-                Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
-            }
+            _cts = new CancellationTokenSource();
+            Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
         }
 
         private void OnBoardUpdate(BoardData boardData)

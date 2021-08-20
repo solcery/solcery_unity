@@ -41,7 +41,7 @@ namespace Solcery.FSM
 
                 _paramSubscriptions.Add(new ParamAction(param, onParamAction));
                 param.OnPassed += onParamAction;
-                param.Subscribe();
+                param.StartTracking();
             }
 
             await UniTask.WaitForEndOfFrame();

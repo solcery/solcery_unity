@@ -7,6 +7,6 @@ namespace Solcery.FSM
     {
         [NonSerialized] public Action OnPassed;
 
-        public virtual void Subscribe() { }
+        public virtual void StartTracking() { }
     }
 }
