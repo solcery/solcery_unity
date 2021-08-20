@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using Cysharp.Threading.Tasks;
     using UnityEngine;
     using UnityEngine.Events;
 
@@ -287,13 +288,13 @@
             // This can happen for transitions between states, which are called instantly and from OnEnterState, e.g.
             // StateA->StateB-StateC->StateA
             // If each of these states uses OnEnterState to trigger the next, this would cause an infite loop of method calls...
-            if(loopOrigin==string.Empty)
+            if (loopOrigin == string.Empty)
             {
                 loopOrigin = transition.OriginID;
             }
-            else if(transition.OriginID == loopOrigin)
+            else if (transition.OriginID == loopOrigin)
             {
-                Debug.LogWarning("Stopped executing transition '"+transition.ID+"' due to a transition loop outgoing from state '"+loopOrigin+ "'. Make sure you have no circular transitions triggered by OnEnterState, e.g. StateA->StateB-StateC->StateA", this);
+                Debug.LogWarning("Stopped executing transition '" + transition.ID + "' due to a transition loop outgoing from state '" + loopOrigin + "'. Make sure you have no circular transitions triggered by OnEnterState, e.g. StateA->StateB-StateC->StateA", this);
                 return;
             }
 
@@ -302,7 +303,7 @@
             // Use a coroutine to execute the transition if the transition has a duration > 0 seconds
             if (transition.Duration > 0.0f)
             {
-                StartCoroutine(ExecuteTransitionCoroutine(transition));
+                ExecuteTransitionCoroutine(transition).Forget();
             }
             // Execute the transition instantly otherwise
             else
@@ -335,14 +336,14 @@
         /// </summary>
         /// <param name="transition"></param>
         /// <returns></returns>
-        IEnumerator ExecuteTransitionCoroutine(Transition transition)
+        async UniTaskVoid ExecuteTransitionCoroutine(Transition transition)
         {
             TryExitTransitionOriginState(transition);
 
             OnEnterTransition?.Invoke(transition);
             transition.OnEnterTransition.Invoke();
 
-            yield return WaitForTransitionDuration(transition);
+            await WaitForTransitionDuration(transition);
 
             OnExitTransition?.Invoke(transition);
             transition.OnExitTransition.Invoke();
@@ -350,15 +351,15 @@
             TryEnterTransitionTargetState(transition);
         }
 
-        private IEnumerator WaitForTransitionDuration(Transition transition)
+        private async UniTask WaitForTransitionDuration(Transition transition)
         {
             if (transition.TimeMode == TimeMode.Scaled)
             {
-                yield return new WaitForSeconds(transition.Duration);
+                await UniTask.Delay(TimeSpan.FromSeconds(transition.Duration), ignoreTimeScale: false);
             }
             else
             {
-                yield return new WaitForSecondsRealtime(transition.Duration);
+                await UniTask.Delay(TimeSpan.FromSeconds(transition.Duration), ignoreTimeScale: true);
             }
         }
 
