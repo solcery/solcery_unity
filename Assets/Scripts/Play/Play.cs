@@ -18,12 +18,12 @@ namespace Solcery
 
             UnityToReact.Instance?.CallOnUnityLoaded();
 
-            PlaySM.Instance?.Enter();
+            // PlaySM.Instance?.Enter();
         }
 
         public void OnDisable()
         {
-            PlaySM.Instance?.Exit();
+            // PlaySM.Instance?.Exit();
 
             Wallet.Instance?.DeInit();
             Collection.Instance?.DeInit();

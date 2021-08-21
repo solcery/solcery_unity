@@ -1,6 +1,9 @@
 ﻿namespace Ilumisoft.VisualStateMachine
 {
+    using System.Threading;
+    using Cysharp.Threading.Tasks;
     using UnityEngine;
+    using UnityEngine.Events;
 
     /// <summary>
     /// Base class to create custom behaviours for states
@@ -8,7 +11,7 @@
     public abstract class StateBehaviour : MonoBehaviour
     {
         [SerializeField]
-        StateMachine stateMachine;
+        protected StateMachine stateMachine;
 
         State state = null;
 
@@ -22,6 +25,10 @@
         /// </summary>
         public StateMachine StateMachine { get => this.stateMachine; set => this.stateMachine = value; }
 
+        protected CancellationTokenSource _stateCTS;
+        private UnityAction _onEnterAciton;
+        private UnityAction _onExitAciton;
+
         protected virtual void Awake()
         {
             if (StateMachine != null)
@@ -32,8 +39,12 @@
                 // Add listeners to enter, exit and update events of the state
                 if (state != null)
                 {
-                    state.OnEnterState.AddListener(OnEnterState);
-                    state.OnExitState.AddListener(OnExitState);
+                    _onEnterAciton = UniTask.UnityAction(async () => { await OnEnterState(); });
+                    _onExitAciton = UniTask.UnityAction(async () => { await OnExitState(); });
+
+                    // state.OnEnterState.AddListener(OnEnterState);
+                    state.OnEnterState.AddListener(_onEnterAciton);
+                    state.OnExitState.AddListener(_onExitAciton);
                     state.OnUpdateState.AddListener(OnUpdateState);
                 }
                 else
@@ -45,11 +56,13 @@
 
         protected virtual void OnDestroy()
         {
+            _stateCTS?.Dispose();
+
             // Stop listening to state events when the behaviour gets destroyed
             if (StateMachine != null && state != null)
             {
-                state.OnEnterState.RemoveListener(OnExitState);
-                state.OnExitState.RemoveListener(OnExitState);
+                state.OnEnterState.RemoveListener(_onEnterAciton);
+                state.OnExitState.RemoveListener(_onExitAciton);
                 state.OnUpdateState.RemoveListener(OnUpdateState);
             }
         }
@@ -70,15 +83,26 @@
         /// </summary>
         public bool IsActiveState => StateMachine.CurrentState == StateID;
 
+#pragma warning disable 1998
         /// <summary>
         /// Callback invoked when the state is entered
         /// </summary>
-        protected virtual void OnEnterState() { }
+        protected virtual async UniTask OnEnterState()
+        {
+            if (_stateCTS != null)
+                _stateCTS?.Dispose();
+
+            _stateCTS = new CancellationTokenSource();
+        }
 
         /// <summary>
         /// Callback invoked when the state is exit
         /// </summary>
-        protected virtual void OnExitState() { }
+        protected virtual async UniTask OnExitState()
+        {
+            _stateCTS?.Cancel();
+            _stateCTS?.Dispose();  
+        }
 
         /// <summary>
         /// Callback invoked when the state is active and updated
