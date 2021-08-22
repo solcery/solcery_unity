@@ -94,7 +94,7 @@ namespace Solcery.UI.Create.NodeEditor
             _maxHeight = _genesisNode.GetMaxHeight();
 
             rect.sizeDelta = new Vector2(_maxWidth + horizontalPadding, _maxHeight + verticalPadding);
-            _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y);
+            _genesisNode.rect.localPosition = new Vector2(-_genesisNode.Width / 2, _genesisNode.rect.localPosition.y - 50);
             _genesisNode.Rebuild();
         }
 

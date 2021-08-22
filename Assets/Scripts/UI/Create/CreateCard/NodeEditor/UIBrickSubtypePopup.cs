@@ -47,9 +47,9 @@ namespace Solcery.UI.Create.NodeEditor
 
         public override void PerformUpdate()
         {
-            if (_isOpen)
-                if (_button != null)
-                    this.transform.position = new Vector2(_button.transform.position.x + _button.BrickWidth / 2, _button.transform.position.y);
+            // if (_isOpen)
+            //     if (_button != null)
+            //         this.transform.position = new Vector2(_button.Center.transform.position.x, _button.transform.position.y);
         }
 
         private void OnOptionSelected(SubtypeNameConfig subtypeNameConfig)

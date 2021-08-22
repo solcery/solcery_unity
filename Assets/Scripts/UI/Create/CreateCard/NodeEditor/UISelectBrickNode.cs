@@ -10,7 +10,9 @@ namespace Solcery.UI.Create.NodeEditor
         public UIBrickNode Parent { get; private set; }
         public Transform ParentTransform { get; private set; }
         public int IndexInParentSlots { get; private set; }
+        public RectTransform Center => center;
 
+        [SerializeField] private RectTransform center = null;
         [SerializeField] private Button button = null;
         [SerializeField] private Image buttonImage = null;
         [SerializeField] private Sprite activeButtonSprite = null;
