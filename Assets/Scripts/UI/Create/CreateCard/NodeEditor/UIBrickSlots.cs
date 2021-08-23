@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
     public class UIBrickSlots : MonoBehaviour
     {

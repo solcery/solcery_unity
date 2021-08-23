@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditor : UpdateableSingleton<UINodeEditor>
     {

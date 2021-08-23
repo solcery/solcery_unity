@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
     public class UIBrickSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

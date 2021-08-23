@@ -2,7 +2,7 @@ using System;
 using Solcery.Utils;
 using UnityEngine;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditorClipboardInput : UpdateableBehaviour
     {

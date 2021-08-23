@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Solcery.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
-    public class UIBrickSubtypePopup : UpdateableBehaviour
+    public class UIBrickSubtypePopup : MonoBehaviour
     {
         [SerializeField] private GameObject optionPrefab = null;
         [SerializeField] private Transform content = null;
@@ -14,13 +13,10 @@ namespace Solcery.UI.Create.NodeEditor
 
         private UISelectBrickNode _button;
         private Action<SubtypeNameConfig, UISelectBrickNode> _onOptionSelected;
-        private bool _isOpen;
         private List<UIBrickSubtypePopupOption> _options = new List<UIBrickSubtypePopupOption>();
 
         public void Open(UISelectBrickNode button, BrickConfigs brickConfigs, Action<SubtypeNameConfig, UISelectBrickNode> onOptionSelected)
         {
-            _isOpen = true;
-
             this.transform.SetAsLastSibling();
 
             _button = button;
@@ -33,23 +29,12 @@ namespace Solcery.UI.Create.NodeEditor
                     AddOption(subTypeConfig);
 
             scroll.verticalNormalizedPosition = 1;
-
-            // this.transform.position = new Vector2(button.transform.position.x + button.BrickWidth / 2, button.transform.position.y);
         }
 
         public void Close()
         {
-            _isOpen = false;
-
             this.gameObject.SetActive(false);
             ClearAllOptions();
-        }
-
-        public override void PerformUpdate()
-        {
-            // if (_isOpen)
-            //     if (_button != null)
-            //         this.transform.position = new Vector2(_button.Center.transform.position.x, _button.transform.position.y);
         }
 
         private void OnOptionSelected(SubtypeNameConfig subtypeNameConfig)

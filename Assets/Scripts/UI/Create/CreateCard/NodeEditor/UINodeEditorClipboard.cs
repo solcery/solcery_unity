@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Solcery.UI.Create.NodeEditor
+namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditorClipboard : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using Ilumisoft.VisualStateMachine;
 using UnityEngine;
 
-namespace Solcery.SM.NodeEditor
+namespace Solcery.NodeEditor.SM
 {
     public class NodeEditorStateBehaviour : StateBehaviour
     {

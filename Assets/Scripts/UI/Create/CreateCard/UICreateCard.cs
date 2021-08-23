@@ -7,6 +7,7 @@ using TMPro;
 using Solcery.Utils.Reactives;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Solcery.UI.NodeEditor;
 
 namespace Solcery.UI.Create
 {
