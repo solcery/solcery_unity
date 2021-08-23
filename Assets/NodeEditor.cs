@@ -10,8 +10,7 @@ namespace Solcery.NodeEditor
 
         public void UpdateData(NodeEditorData nodeEditorData)
         {
-            if (nodeEditorData != null && nodeEditorData.BrickConfigsData != null)
-                _nodeEditorData.Value = nodeEditorData;
+            _nodeEditorData.Value = nodeEditorData;
         }
     }
 }

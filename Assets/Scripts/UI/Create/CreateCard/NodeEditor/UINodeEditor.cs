@@ -41,6 +41,29 @@ namespace Solcery.UI.NodeEditor
             CreateFirstButton();
         }
 
+        private void CreateFirstButton()
+        {
+            CreateFromBrickData(_brickTree.Genesis, null, null, 0);
+            Rebuild();
+        }
+
+        public void OpenBrickTree(BrickTree brickTree)
+        {
+            _brickTree = brickTree;
+            RebuildAll();
+
+            if (_brickTree != null && _brickTree.Genesis != null)
+            {
+                helperText.gameObject.SetActive(false);
+                scrollView.enabled = true;
+                contentBlocker.gameObject.SetActive(false);
+                contentBlockerButton.onClick.RemoveAllListeners();
+                subtypePopup.Close();
+                zoom.SetActive(true);
+                _brickTree.CheckValidity();
+            }
+        }
+
         public void CreateNewBrickTree()
         {
             _brickTree = new BrickTree();
@@ -67,23 +90,6 @@ namespace Solcery.UI.NodeEditor
             _genesisNode = CreateFromBrickData(_brickTree.Genesis, null, content, 0);
 
             Rebuild();
-        }
-
-        public void OpenBrickTree(BrickTree brickTree)
-        {
-            _brickTree = brickTree;
-            RebuildAll();
-
-            if (_brickTree != null && _brickTree.Genesis != null)
-            {
-                helperText.gameObject.SetActive(false);
-                scrollView.enabled = true;
-                contentBlocker.gameObject.SetActive(false);
-                contentBlockerButton.onClick.RemoveAllListeners();
-                subtypePopup.Close();
-                zoom.SetActive(true);
-                _brickTree.CheckValidity();
-            }
         }
 
         public void Rebuild()
@@ -133,12 +139,6 @@ namespace Solcery.UI.NodeEditor
             subtypePopup.Close();
             zoom.SetActive(true);
             CreateBrickNode(subtypeNameConfig.Config, button);
-        }
-
-        private void CreateFirstButton()
-        {
-            CreateFromBrickData(_brickTree.Genesis, null, null, 0);
-            Rebuild();
         }
 
         private UINode CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
