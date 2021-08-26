@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Solcery.NodeEditor.SM
 {
-    public class InitState : NodeEditorStateBehaviour
+    public class WaitingForDataState : NodeEditorStateBehaviour
     {
         [SerializeField] private BrickConfigs brickConfigs = null;
 

@@ -6,6 +6,13 @@ namespace Solcery.Editor
 {
     public static class EditorMenu
     {
+        [MenuItem("Solcery/NodeEditor", false, -1)]
+        static async UniTask NodeEditor()
+        {
+            await StopPlayingAndOpenScene("Assets/NodeEditor/NodeEditor.unity");
+            EditorApplication.EnterPlaymode();
+        }
+
         [MenuItem("Solcery/Play", false, -1)]
         static async UniTask Play()
         {
@@ -18,6 +25,12 @@ namespace Solcery.Editor
         {
             await StopPlayingAndOpenScene("Assets/Scenes/Create.unity");
             EditorApplication.EnterPlaymode();
+        }
+
+        [MenuItem("Solcery/Scene/NodeEditor", false, 0)]
+        static async UniTask OpenNodeEditorScene()
+        {
+            await StopPlayingAndOpenScene("Assets/NodeEditor/NodeEditor.unity");
         }
 
         [MenuItem("Solcery/Scene/Play", false, 1)]

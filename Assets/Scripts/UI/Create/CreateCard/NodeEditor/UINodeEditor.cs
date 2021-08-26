@@ -24,7 +24,8 @@ namespace Solcery.UI.NodeEditor
         [SerializeField] private GameObject contentBlocker = null;
         [SerializeField] private Button contentBlockerButton = null;
         [SerializeField] private UIBrickSubtypePopup subtypePopup = null;
-        [SerializeField] private TextMeshProUGUI helperText = null;
+        [SerializeField] private TextMeshProUGUI waitingForDataText = null;
+        [SerializeField] private TextMeshProUGUI startHereText = null;
 
         private BrickTree _brickTree;
         private UINode _genesisNode;
@@ -54,7 +55,7 @@ namespace Solcery.UI.NodeEditor
 
             if (_brickTree != null && _brickTree.Genesis != null)
             {
-                helperText.gameObject.SetActive(false);
+                startHereText.gameObject.SetActive(false);
                 scrollView.enabled = true;
                 contentBlocker.gameObject.SetActive(false);
                 contentBlockerButton.onClick.RemoveAllListeners();
@@ -115,13 +116,13 @@ namespace Solcery.UI.NodeEditor
 
         public void OpenSubtypePopup(UISelectBrickNode button)
         {
-            helperText.gameObject.SetActive(false);
+            startHereText.gameObject.SetActive(false);
             contentBlocker.SetActive(true);
             contentBlocker.transform.SetAsLastSibling();
             contentBlockerButton.onClick.AddListener(() =>
             {
                 if (_brickTree.Genesis == null)
-                    helperText.gameObject.SetActive(true);
+                    startHereText.gameObject.SetActive(true);
                 subtypePopup.Close();
                 zoom.SetActive(true);
                 contentBlocker.SetActive(false);
@@ -208,7 +209,7 @@ namespace Solcery.UI.NodeEditor
                 _genesisNode = selectBrickButton;
                 _brickTree.SetGenesis(null);
                 selectBrickButton.Init(BrickType.Action, content);
-                helperText.gameObject.SetActive(true);
+                startHereText.gameObject.SetActive(true);
                 DisableScrollView().Forget();
             }
             else
