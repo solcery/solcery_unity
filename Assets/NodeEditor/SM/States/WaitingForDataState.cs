@@ -26,7 +26,7 @@ namespace Solcery.NodeEditor.SM
 
             brickConfigs?.PopulateFromData(nodeEditorData.BrickConfigsData);
             UINodeEditor.Instance?.SetWaitingForData(false);
-            UINodeEditor.Instance.Init(nodeEditorData.BrickTree);
+            UINodeEditor.Instance.Init(nodeEditorData.BrickTree, true);
             await UniTask.WaitForEndOfFrame();
             stateMachine.Trigger("EditBrickTree");
         }

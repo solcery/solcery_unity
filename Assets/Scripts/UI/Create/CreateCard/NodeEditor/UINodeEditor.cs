@@ -31,6 +31,7 @@ namespace Solcery.UI.NodeEditor
 
         private BrickTree _brickTree;
         private UINode _genesisNode;
+        private bool _isNullGenesisValid;
 
         public void SetWaitingForData(bool isWaiting)
         {
@@ -47,8 +48,10 @@ namespace Solcery.UI.NodeEditor
             CreateFirstButton();
         }
 
-        public void Init(BrickTree brickTree)
+        public void Init(BrickTree brickTree, bool isNullGenesisValid)
         {
+            _isNullGenesisValid = isNullGenesisValid;
+
             clipboard?.Init(nodeSelector, RebuildAll);
             nodeSelector?.Init();
             zoom.SetActive(true);
@@ -80,7 +83,7 @@ namespace Solcery.UI.NodeEditor
                 contentBlockerButton.onClick.RemoveAllListeners();
                 subtypePopup.Close();
                 zoom.SetActive(true);
-                _brickTree.CheckValidity();
+                _brickTree.CheckValidity(_isNullGenesisValid);
             }
             else
                 startHereText?.gameObject?.SetActive(true);
@@ -116,7 +119,7 @@ namespace Solcery.UI.NodeEditor
 
         public void Rebuild()
         {
-            _brickTree?.CheckValidity();
+            _brickTree?.CheckValidity(_isNullGenesisValid);
 
             _maxWidth = _genesisNode.GetMaxWidth();
             _maxHeight = _genesisNode.GetMaxHeight();
@@ -162,7 +165,7 @@ namespace Solcery.UI.NodeEditor
             zoom.SetActive(true);
             CreateBrickNode(subtypeNameConfig.Config, button);
         }
-        
+
         private UINode CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
         {
             if (brickData != null)

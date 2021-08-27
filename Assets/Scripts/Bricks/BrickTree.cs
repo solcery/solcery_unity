@@ -18,10 +18,10 @@ namespace Solcery
             Genesis = data;
         }
 
-        public void CheckValidity()
+        public void CheckValidity(bool isNullGenesisValid = false)
         {
             if (Genesis == null)
-                IsValid.Value = false;
+                IsValid.Value = isNullGenesisValid;
             else
                 IsValid.Value = Genesis.IsValid();
         }
