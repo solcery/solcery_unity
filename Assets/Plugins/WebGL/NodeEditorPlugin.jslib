@@ -1,5 +1,8 @@
 mergeInto(LibraryManager.library, {
-      SaveBrickTree: function (brickTree) {
-        ReactUnityWebGL.SaveBrickTree(Pointer_stringify(brickTree));
-      },
-    });
+  OnNodeEditorLoaded: function () {
+    ReactUnityWebGL.OnNodeEditorLoaded();
+  },
+  SaveBrickTree: function (brickTree) {
+    ReactUnityWebGL.SaveBrickTree(Pointer_stringify(brickTree));
+  }
+  });

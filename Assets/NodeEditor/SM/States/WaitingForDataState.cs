@@ -12,6 +12,7 @@ namespace Solcery.NodeEditor.SM
         protected override async UniTask OnEnterState()
         {
             await base.OnEnterState();
+            NodeEditorUnityToReact.Instance?.CallOnNodeEditorLoaded();
             UINodeEditor.Instance?.SetWaitingForData(true);
             Reactives.Subscribe(NodeEditor.Instance?.NodeEditorData, (nodeEditorData) => OnNodeEditorDataUpdate(nodeEditorData).Forget(), _stateCTS.Token);
         }

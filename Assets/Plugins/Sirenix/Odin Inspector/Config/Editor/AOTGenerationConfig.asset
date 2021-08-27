@@ -16,14 +16,42 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637644720232404063
+  lastScan: 637656891770130971
   supportSerializedTypes:
-  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.FSM.Play.PlayTrigger,
-      Assembly-CSharp],[Solcery.FSM.Play.PlayTransition, Assembly-CSharp]], mscorlib
+  - TypeName: System.Action, mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.FSM.Play.PlayTrigger,
+  - TypeName: Solcery.BrickConfig, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Solcery.BrickType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[System.Int32,
+      mscorlib],[Solcery.BrickConfig, Assembly-CSharp]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Solcery.BrickConfig,
       Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.BrickType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
@@ -31,15 +59,5 @@ MonoBehaviour:
     Emit: 1
   - TypeName: System.Collections.Generic.List`1[[Solcery.Utils.IUpdateable, Assembly-CSharp]],
       mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.ObjectEqualityComparer`1[[Solcery.FSM.Play.PlayTrigger,
-      Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.FSM.Play.PlayTransition, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Solcery.FSM.Play.PlayTrigger, Assembly-CSharp
     IsCustom: 0
     Emit: 1

@@ -5,6 +5,7 @@ using Solcery.UI.Play.Game;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Solcery
 {
