@@ -26,7 +26,7 @@ namespace Solcery.UI.NodeEditor
 
         private Action<UIBrickNode> _onHighlighted, _onDeHighlighted;
 
-        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted)
+        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted, Action brickInputChanged)
         {
             highligter?.Init(() => { onHighlighted?.Invoke(this); }, () => { onDeHighlighted?.Invoke(this); });
 
@@ -46,7 +46,7 @@ namespace Solcery.UI.NodeEditor
             description.text = config.Description;
 
             field.gameObject.SetActive(config.HasField);
-            if (config.HasField) field.Init(config.FieldName, config.FieldType, data);
+            if (config.HasField) field.Init(config.FieldName, config.FieldType, data, brickInputChanged);
 
             objectSwitcher.gameObject.SetActive(config.HasObjectSelection);
             objectSwitcher.Init(data);

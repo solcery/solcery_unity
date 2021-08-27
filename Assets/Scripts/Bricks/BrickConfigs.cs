@@ -45,8 +45,10 @@ namespace Solcery
             return brickConfigsData.Create(TypeSubtype);
         }
 
-        public void FromData(BrickConfigsData data)
+        public void PopulateFromData(BrickConfigsData data)
         {
+            Debug.Log("PopulateFromData");
+            
             TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
             foreach (KeyValuePair<BrickType, List<BrickConfigData>> entry in data.ConfigsByType)

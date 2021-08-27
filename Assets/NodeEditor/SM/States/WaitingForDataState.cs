@@ -12,20 +12,23 @@ namespace Solcery.NodeEditor.SM
         protected override async UniTask OnEnterState()
         {
             await base.OnEnterState();
+            UINodeEditor.Instance?.SetWaitingForData(true);
             Reactives.Subscribe(NodeEditor.Instance?.NodeEditorData, (nodeEditorData) => OnNodeEditorDataUpdate(nodeEditorData).Forget(), _stateCTS.Token);
         }
 
         private async UniTaskVoid OnNodeEditorDataUpdate(NodeEditorData nodeEditorData)
         {
-            UnityEngine.Debug.Log("Update start");
+            if (nodeEditorData == null)
+                return;
 
-            // setup the brickconfigs
-            // open the brick tree
-            await UniTask.Delay(System.TimeSpan.FromSeconds(2f));
-            // need init and open bricktree at the same time
-            await UINodeEditor.Instance.Init();
+            if (nodeEditorData.BrickConfigsData == null)
+                return;
 
-            UnityEngine.Debug.Log("Update end");
+            brickConfigs?.PopulateFromData(nodeEditorData.BrickConfigsData);
+            UINodeEditor.Instance?.SetWaitingForData(false);
+            UINodeEditor.Instance.Init(nodeEditorData.BrickTree);
+            await UniTask.WaitForEndOfFrame();
+            stateMachine.Trigger("EditBrickTree");
         }
     }
 }

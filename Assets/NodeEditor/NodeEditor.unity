@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graph:
     states:
-    - position: {x: 230, y: 174}
+    - position: {x: 286, y: 149}
       id: WaitingForData
       onEnterState:
         m_PersistentCalls:
@@ -165,8 +165,31 @@ MonoBehaviour:
       onUpdateState:
         m_PersistentCalls:
           m_Calls: []
+    - position: {x: 479, y: 149}
+      id: EditingBrickTree
+      onEnterState:
+        m_PersistentCalls:
+          m_Calls: []
+      onExitState:
+        m_PersistentCalls:
+          m_Calls: []
+      onUpdateState:
+        m_PersistentCalls:
+          m_Calls: []
     anyStates: []
-    transitions: []
+    transitions:
+    - id: EditBrickTree
+      label: 
+      originID: WaitingForData
+      targetID: EditingBrickTree
+      onEnterTransition:
+        m_PersistentCalls:
+          m_Calls: []
+      onExitTransition:
+        m_PersistentCalls:
+          m_Calls: []
+      duration: 0
+      timeMode: 0
     preferences:
       zoomSettings:
         zoomFactor: 1
@@ -189,9 +212,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 662205573}
+  - {fileID: 758198952}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &244327192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244327193}
+  - component: {fileID: 244327194}
+  m_Layer: 0
+  m_Name: NodeEditorUnityToReact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244327193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244327192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244327194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244327192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655743f967caecc498fc0f63137de7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!1 &499434696
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,8 +318,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &571725091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571725092}
+  - component: {fileID: 571725093}
+  m_Layer: 0
+  m_Name: NodeEditorBrickTreeSaver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571725092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571725091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571725093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571725091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425f655a987f26a40a75a97707055969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &615426016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 172695550}
   stateId: WaitingForData
-  brickConfigs: {fileID: 0}
+  brickConfigs: {fileID: 11400000, guid: fa53cc1778961aa4c8cc98b2b03c0f3a, type: 2}
 --- !u!1 &723915196
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +633,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723915196}
   m_CullTransparentMesh: 1
+--- !u!1 &758198951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758198952}
+  - component: {fileID: 758198953}
+  m_Layer: 0
+  m_Name: EditingBrickTree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758198952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758198951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 172695551}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758198953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758198951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dce648f41e31fd4baacef87b15169e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 172695550}
+  stateId: EditingBrickTree
 --- !u!1 &765117642
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +808,7 @@ RectTransform:
   - {fileID: 1520103435}
   - {fileID: 615426017}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -763,7 +927,7 @@ MonoBehaviour:
   selectBrickNodePrefab: {fileID: 3059688946991341019, guid: 8adceb043006a434b913314ace2f6443, type: 3}
   content: {fileID: 1454656437}
   scrollView: {fileID: 1520103436}
-  brickConfigs: {fileID: 11400000, guid: 9a49934e07b9d824bb8dfd0f1eba1d17, type: 2}
+  brickConfigs: {fileID: 11400000, guid: fa53cc1778961aa4c8cc98b2b03c0f3a, type: 2}
   clipboard: {fileID: 924536173}
   nodeSelector: {fileID: 924536171}
   rect: {fileID: 1454656437}
@@ -833,6 +997,208 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1 &989988405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989988407}
+  - component: {fileID: 989988406}
+  m_Layer: 0
+  m_Name: NodeEditorHotkeys
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &989988406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989988405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c48f1f9a12c3394ba3effdc972720a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  testNodeEditorDataJson: '{   "BrickTree": null,   "BrickConfigsData": {     "ConfigsByType":
+    {       "Action": [         {           "Name": "Void",           "Type": 0,          
+    "Subtype": 0,           "Description": "Does nothing",           "HasField":
+    false,           "FieldType": 0,           "FieldName": "",           "HasObjectSelection":
+    false,           "Slots": []         },         {           "Name": "Set",          
+    "Type": 0,           "Subtype": 1,           "Description": "Runs all containing
+    <b>actions</b> one by one.",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 0,               "Name": "Action
+    #1"             },             {               "Type": 0,               "Name":
+    "Action #2"             }           ]         },         {           "Name":
+    "Conditional",           "Type": 0,           "Subtype": 2,           "Description":
+    "Applies <b>positive</b> if <b>condition</b> is passed, otherwise applies <b>negative</b>.",          
+    "HasField": false,           "FieldType": 1,           "FieldName": "TestField",          
+    "HasObjectSelection": false,           "Slots": [             {              
+    "Type": 1,               "Name": "Condition"             },             {              
+    "Type": 0,               "Name": "Positive"             },             {              
+    "Type": 0,               "Name": "Negative"             }           ]        
+    },         {           "Name": "Loop",           "Type": 0,           "Subtype":
+    3,           "Description": "Applies <b>action</b> if <b>amount</b> times.",          
+    "HasField": false,           "FieldType": 1,           "FieldName": "TestField",          
+    "HasObjectSelection": false,           "Slots": [             {              
+    "Type": 2,               "Name": "Amount"             },             {              
+    "Type": 0,               "Name": "Action"             }           ]         },        
+    {           "Name": "Card",           "Type": 0,           "Subtype": 4,          
+    "Description": "Applies <b>action</b> if <b>amount</b> times.",           "HasField":
+    true,           "FieldType": 0,           "FieldName": "TestField",          
+    "HasObjectSelection": false,           "Slots": []         },         {          
+    "Name": "MoveTo",           "Type": 0,           "Subtype": 100,           "Description":
+    "Moves current card to place",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 2,               "Name": "Player
+    index"             }           ]         },         {           "Name": "SetPlayerAttr",          
+    "Type": 0,           "Subtype": 101,           "Description": "0 - active, 1
+    - hp, 2 - mana",           "HasField": true,           "FieldType": 0,          
+    "FieldName": "AttrIndex",           "HasObjectSelection": false,           "Slots":
+    [             {               "Type": 2,               "Name": "PlayerIndex"            
+    },             {               "Type": 2,               "Name": "AttrValue"            
+    }           ]         },         {           "Name": "AddPlayerAttr",          
+    "Type": 0,           "Subtype": 102,           "Description": "0 - active, 1
+    - hp, 2 - mana",           "HasField": true,           "FieldType": 0,          
+    "FieldName": "AttrIndex",           "HasObjectSelection": false,           "Slots":
+    [             {               "Type": 2,               "Name": "PlayerIndex"            
+    },             {               "Type": 2,               "Name": "AttrValue"            
+    }           ]         },         {           "Name": "ApplyToPlace",          
+    "Type": 0,           "Subtype": 103,           "Description": "Applies action
+    to random card in place",           "HasField": false,           "FieldType":
+    0,           "FieldName": "AttrIndex",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 2,               "Name": "Place
+    index"             },             {               "Type": 0,               "Name":
+    "Action"             },             {               "Type": 2,              
+    "Name": "Limit (0 = no limit)"             }           ]         }       ],      
+    "Condition": [         {           "Name": "True",           "Type": 1,          
+    "Subtype": 0,           "Description": "Returns true.",           "HasField":
+    false,           "FieldType": 0,           "FieldName": "",           "HasObjectSelection":
+    false,           "Slots": []         },         {           "Name": "False",          
+    "Type": 1,           "Subtype": 1,           "Description": "Returns false.",          
+    "HasField": false,           "FieldType": 0,           "FieldName": "",          
+    "HasObjectSelection": false,           "Slots": []         },         {          
+    "Name": "Or",           "Type": 1,           "Subtype": 2,           "Description":
+    "Logical \"or\". Returns true if one of containing <b>conditions</b> return true,
+    otherwise returns false.",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 1,               "Name": "Condition
+    #1"             },             {               "Type": 1,               "Name":
+    "Condition #2"             }           ]         },         {           "Name":
+    "And",           "Type": 1,           "Subtype": 3,           "Description":
+    "Logical \"and\". Returns true if all of containing <b>conditions</b> return
+    true, otherwise returns false.",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 1,               "Name": "Condition
+    #1"             },             {               "Type": 1,               "Name":
+    "Condition #2"             }           ]         },         {           "Name":
+    "Not",           "Type": 1,           "Subtype": 4,           "Description":
+    "Logical \"not\". Returns the opposite on corresponding <b>condition</b> result.",          
+    "HasField": false,           "FieldType": 0,           "FieldName": "",          
+    "HasObjectSelection": false,           "Slots": [             {              
+    "Type": 1,               "Name": "Condition"             }           ]        
+    },         {           "Name": "Equal",           "Type": 1,           "Subtype":
+    5,           "Description": "Returns true if <b>values</b> are equal.",          
+    "HasField": false,           "FieldType": 0,           "FieldName": "",          
+    "HasObjectSelection": false,           "Slots": [             {              
+    "Type": 2,               "Name": "Value #1"             },             {              
+    "Type": 2,               "Name": "Value #2"             }           ]        
+    },         {           "Name": "Greater than",           "Type": 1,          
+    "Subtype": 6,           "Description": "Returns true if <b>value#1</b> is greater
+    than <b>value#2</b>.",           "HasField": false,           "FieldType": 0,          
+    "FieldName": "",           "HasObjectSelection": false,           "Slots": [            
+    {               "Type": 2,               "Name": "Value #1"             },            
+    {               "Type": 2,               "Name": "Value #2"             }          
+    ]         },         {           "Name": "Less than",           "Type": 1,          
+    "Subtype": 7,           "Description": "Returns true if <b>value#1</b> is lesser
+    than <b>value#2</b>.",           "HasField": false,           "FieldType": 0,          
+    "FieldName": "",           "HasObjectSelection": false,           "Slots": [            
+    {               "Type": 2,               "Name": "Value #1"             },            
+    {               "Type": 2,               "Name": "Value #2"             }          
+    ]         },         {           "Name": "Is at place",           "Type": 1,          
+    "Subtype": 100,           "Description": "Returns true card is at given place",          
+    "HasField": false,           "FieldType": 0,           "FieldName": "Place Index",          
+    "HasObjectSelection": false,           "Slots": [             {              
+    "Type": 2,               "Name": "Value #1"             }           ]        
+    }       ],       "Value": [         {           "Name": "Constant",          
+    "Type": 2,           "Subtype": 0,           "Description": "Returns given integer
+    <b>value</b>.",           "HasField": true,           "FieldType": 0,          
+    "FieldName": "Value",           "HasObjectSelection": false,           "Slots":
+    []         },         {           "Name": "Conditional",           "Type": 2,          
+    "Subtype": 1,           "Description": "Returns <b>positive</b> brick value if
+    <b>condition</b> is passed, otherwise returns <b>negative</b>.",           "HasField":
+    false,           "FieldType": 0,           "FieldName": "",           "HasObjectSelection":
+    false,           "Slots": [             {               "Type": 1,              
+    "Name": "Condition"             },             {               "Type": 2,              
+    "Name": "Positive"             },             {               "Type": 2,              
+    "Name": "Negative"             }           ]         },         {           "Name":
+    "Add",           "Type": 2,           "Subtype": 2,           "Description":
+    "Returns sum of <b>values</b>",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 2,               "Name": "Value
+    #1"             },             {               "Type": 2,               "Name":
+    "Value #2"             }           ]         },         {           "Name": "Substract",          
+    "Type": 2,           "Subtype": 3,           "Description": "Returns <b>value
+    #1</b> minus <b>value #2</b>",           "HasField": false,           "FieldType":
+    0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 2,               "Name": "Value
+    #1"             },             {               "Type": 2,               "Name":
+    "Value #2"             }           ]         },         {           "Name": "Get
+    player attr",           "Type": 2,           "Subtype": 100,           "Description":
+    "0 - active, 1 - hp, 2 - mana",           "HasField": true,           "FieldType":
+    0,           "FieldName": "Attr index",           "HasObjectSelection": false,          
+    "Slots": [             {               "Type": 2,               "Name": "Player
+    index"             }           ]         },         {           "Name": "Get
+    owner index",           "Type": 2,           "Subtype": 101,           "Description":
+    "Returns owner''s index (1 or 2) or 0 if neutral",           "HasField": false,          
+    "FieldType": 0,           "FieldName": "",           "HasObjectSelection": false,          
+    "Slots": []         },         {           "Name": "Get cards amount",          
+    "Type": 2,           "Subtype": 102,           "Description": "Returns cards
+    amount at place",           "HasField": false,           "FieldType": 0,          
+    "FieldName": "",           "HasObjectSelection": false,           "Slots": [            
+    {               "Type": 2,               "Name": "Place index"             }          
+    ]         },         {           "Name": "Get current place",           "Type":
+    2,           "Subtype": 103,           "Description": "Returns current place
+    of card",           "HasField": false,           "FieldType": 0,           "FieldName":
+    "",           "HasObjectSelection": false,           "Slots": []         },        
+    {           "Name": "GetCtxVar (WIP)",           "Type": 2,           "Subtype":
+    104,           "Description": "Returns id of player casted the card",          
+    "HasField": true,           "FieldType": 0,           "FieldName": "Var index",          
+    "HasObjectSelection": false,           "Slots": []         },         {          
+    "Name": "CasterPlayerIndex",           "Type": 2,           "Subtype": 105,          
+    "Description": "Returns id of player casted the card",           "HasField":
+    false,           "FieldType": 0,           "FieldName": "",           "HasObjectSelection":
+    false,           "Slots": []         }       ]     }   } }'
+--- !u!4 &989988407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989988405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005206751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1614,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1599512402
 MonoBehaviour:

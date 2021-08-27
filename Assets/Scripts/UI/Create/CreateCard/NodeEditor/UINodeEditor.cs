@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Solcery.Utils;
 using TMPro;
@@ -8,6 +9,7 @@ namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditor : UpdateableSingleton<UINodeEditor>
     {
+        public Action OnBrickInputChanged;
         public BrickTree BrickTree => _brickTree;
 
         [SerializeField] private UINodeEditorZoom zoom = null;
@@ -30,6 +32,11 @@ namespace Solcery.UI.NodeEditor
         private BrickTree _brickTree;
         private UINode _genesisNode;
 
+        public void SetWaitingForData(bool isWaiting)
+        {
+            waitingForDataText?.gameObject.SetActive(isWaiting);
+        }
+
         public async UniTask Init()
         {
             await brickConfigs.Init();
@@ -37,13 +44,25 @@ namespace Solcery.UI.NodeEditor
             nodeSelector?.Init();
             zoom.SetActive(true);
 
-            _brickTree = new BrickTree();
-
             CreateFirstButton();
+        }
+
+        public void Init(BrickTree brickTree)
+        {
+            clipboard?.Init(nodeSelector, RebuildAll);
+            nodeSelector?.Init();
+            zoom.SetActive(true);
+
+            if (brickTree == null)
+                CreateFirstButton();
+            else
+                OpenBrickTree(brickTree);
         }
 
         private void CreateFirstButton()
         {
+            _brickTree = new BrickTree();
+            startHereText?.gameObject?.SetActive(true);
             CreateFromBrickData(_brickTree.Genesis, null, null, 0);
             Rebuild();
         }
@@ -55,7 +74,7 @@ namespace Solcery.UI.NodeEditor
 
             if (_brickTree != null && _brickTree.Genesis != null)
             {
-                startHereText.gameObject.SetActive(false);
+                startHereText?.gameObject?.SetActive(false);
                 scrollView.enabled = true;
                 contentBlocker.gameObject.SetActive(false);
                 contentBlockerButton.onClick.RemoveAllListeners();
@@ -63,6 +82,8 @@ namespace Solcery.UI.NodeEditor
                 zoom.SetActive(true);
                 _brickTree.CheckValidity();
             }
+            else
+                startHereText?.gameObject?.SetActive(true);
         }
 
         public void CreateNewBrickTree()
@@ -141,7 +162,7 @@ namespace Solcery.UI.NodeEditor
             zoom.SetActive(true);
             CreateBrickNode(subtypeNameConfig.Config, button);
         }
-
+        
         private UINode CreateFromBrickData(BrickData brickData, UIBrickNode parentNode, Transform parentTransform, int indexInParentSlots)
         {
             if (brickData != null)
@@ -152,7 +173,7 @@ namespace Solcery.UI.NodeEditor
                 if (parentNode == null)
                     _genesisNode = brickNode;
 
-                brickNode.Init(config, brickData, parentNode, indexInParentSlots, nodeSelector.OnBrickNodeHighlighted, nodeSelector.OnBrickNodeDeHighlighted);
+                brickNode.Init(config, brickData, parentNode, indexInParentSlots, nodeSelector.OnBrickNodeHighlighted, nodeSelector.OnBrickNodeDeHighlighted, OnBrickInputChanged);
 
                 if (brickData.Slots != null && brickData.Slots.Length > 0)
                 {

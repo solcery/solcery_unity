@@ -15,7 +15,35 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -68,8 +96,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -80,8 +108,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -92,8 +120,8 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -104,8 +132,8 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -116,8 +144,8 @@ MonoBehaviour:
       Entry: 3
       Data: 4
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -128,8 +156,8 @@ MonoBehaviour:
       Entry: 3
       Data: 100
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -140,8 +168,8 @@ MonoBehaviour:
       Entry: 3
       Data: 101
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -152,8 +180,8 @@ MonoBehaviour:
       Entry: 3
       Data: 102
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -164,8 +192,8 @@ MonoBehaviour:
       Entry: 3
       Data: 103
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -201,8 +229,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: 
       Entry: 8
       Data: 
@@ -213,8 +241,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -225,8 +253,8 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -237,8 +265,8 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 12
     - Name: 
       Entry: 8
       Data: 
@@ -249,8 +277,8 @@ MonoBehaviour:
       Entry: 3
       Data: 4
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 13
     - Name: 
       Entry: 8
       Data: 
@@ -261,8 +289,8 @@ MonoBehaviour:
       Entry: 3
       Data: 5
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 14
     - Name: 
       Entry: 8
       Data: 
@@ -273,8 +301,8 @@ MonoBehaviour:
       Entry: 3
       Data: 6
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -285,8 +313,8 @@ MonoBehaviour:
       Entry: 3
       Data: 7
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 16
     - Name: 
       Entry: 8
       Data: 
@@ -297,8 +325,8 @@ MonoBehaviour:
       Entry: 3
       Data: 100
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 17
     - Name: 
       Entry: 8
       Data: 
@@ -334,8 +362,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 18
     - Name: 
       Entry: 8
       Data: 
@@ -346,8 +374,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 19
     - Name: 
       Entry: 8
       Data: 
@@ -358,8 +386,8 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -370,8 +398,8 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 21
     - Name: 
       Entry: 8
       Data: 
@@ -382,8 +410,8 @@ MonoBehaviour:
       Entry: 3
       Data: 100
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 22
     - Name: 
       Entry: 8
       Data: 
@@ -394,8 +422,8 @@ MonoBehaviour:
       Entry: 3
       Data: 101
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 23
     - Name: 
       Entry: 8
       Data: 
@@ -406,8 +434,8 @@ MonoBehaviour:
       Entry: 3
       Data: 102
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 24
     - Name: 
       Entry: 8
       Data: 
@@ -418,8 +446,8 @@ MonoBehaviour:
       Entry: 3
       Data: 103
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 25
     - Name: 
       Entry: 8
       Data: 
@@ -430,8 +458,8 @@ MonoBehaviour:
       Entry: 3
       Data: 104
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 26
     - Name: 
       Entry: 8
       Data: 
@@ -442,8 +470,8 @@ MonoBehaviour:
       Entry: 3
       Data: 105
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 27
     - Name: 
       Entry: 8
       Data: 
@@ -463,4 +491,4 @@ MonoBehaviour:
       Entry: 8
       Data: 
   loadFromJson: 1
-  fileName: BrickConfigs
+  fileName: NodeEditorData

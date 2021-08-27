@@ -12,6 +12,11 @@ namespace Solcery.Utils
         {
             var filePath = Application.streamingAssetsPath + "/" + fileName + ".json";
 
+            // var nodeEditorData = new NodeEditor.NodeEditorData();
+            // nodeEditorData.BrickTree = null;
+            // nodeEditorData.BrickConfigsData = brickConfigs.ToData();
+
+            // string json = JsonConvert.SerializeObject(nodeEditorData, Formatting.Indented);
             string json = JsonConvert.SerializeObject(brickConfigs.ToData(), Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
@@ -22,7 +27,7 @@ namespace Solcery.Utils
 
             var txt = (await UnityWebRequest.Get(filePath).SendWebRequest()).downloadHandler.text;
             var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(txt);
-            brickConfigs.FromData(brickConfigsData);
+            brickConfigs.PopulateFromData(brickConfigsData);
         }
     }
 }
