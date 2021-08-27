@@ -14,7 +14,7 @@ namespace Solcery.NodeEditor.SM
 
             if (UINodeEditor.Instance != null)
             {
-                Reactives.Subscribe(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _stateCTS.Token);
+                Reactives.SubscribeWithoutCurrent(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _stateCTS.Token);
                 UINodeEditor.Instance.OnBrickInputChanged += OnBrickInputChanged;
             }
         }
