@@ -1,4 +1,3 @@
-using Solcery.FSM.Dapp;
 using Solcery.Utils;
 using Solcery.Modules;
 using Solcery.WebGL;
@@ -16,7 +15,6 @@ namespace Solcery
             Board.Instance?.Init();
             Log.Instance?.Init();
             UnityToReact.Instance?.CallOnUnityLoaded();
-            DappSM.Instance?.Enter();
         }
 
         public void DeInit()

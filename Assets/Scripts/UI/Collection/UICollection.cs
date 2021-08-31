@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Cysharp.Threading.Tasks;
-using Solcery.FSM.Create;
 using Solcery.Modules;
 using Solcery.UI.Create;
 using Solcery.Utils;
@@ -24,7 +22,7 @@ namespace Solcery.UI
         [SerializeField] private Button topCreateNewCardButton = null;
         [SerializeField] private Button botCreateNewCardButton = null;
         // [SerializeField] private CreateTransition fromRulesetToCard = null;
-        [SerializeField] private CreateTrigger openCreateCardTrigger = null;
+        // [SerializeField] private CreateTrigger openCreateCardTrigger = null;
 
         private List<UICollectionCard> _cards;
         private CancellationTokenSource _cts;
@@ -56,9 +54,9 @@ namespace Solcery.UI
                 case UICollectionMode.CreateCard:
                     break;
                 case UICollectionMode.CreateRuleset:
-                    UICreate.Instance.Tabs.OnTabClicked(1);
+                    // UICreate.Instance.Tabs.OnTabClicked(1);
                     // await CreateSM.Instance.PerformTransition(fromRulesetToCard);
-                    openCreateCardTrigger?.Activate();
+                    // openCreateCardTrigger?.Activate();
                     break;
             }
 

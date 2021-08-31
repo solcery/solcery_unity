@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Solcery.UI.Menu
 {
-    public class UIMenuButton : UIDappTransitionButton, IPointerEnterHandler, IPointerExitHandler
+    public class UIMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private bool highlighTitle;
         [ShowIf("highlighTitle")] [SerializeField] private TextMeshProUGUI title;
@@ -27,11 +27,6 @@ namespace Solcery.UI.Menu
                 title.color = titleUnhighlightedColor;
 
             UIMenu.Instance.Tooltips.Disable();
-        }
-
-        protected override void OnEnable()
-        {
-            base.OnEnable();
         }
     }
 }
