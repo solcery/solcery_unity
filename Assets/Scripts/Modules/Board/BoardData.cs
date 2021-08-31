@@ -13,7 +13,7 @@ namespace Solcery
         public BrickRuntime.Random Random;
         public int EndTurnCardId;
 
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool IsVirgin;
+        // [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool IsVirgin;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiff Diff;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
@@ -44,10 +44,8 @@ namespace Solcery
             return null;
         }
 
-        public BoardData Prettify(bool isVirgin = false)
+        public BoardData Prettify()
         {
-            IsVirgin = isVirgin;
-
             CreateTypesDictionary();
             CreateCardsDictionary();
             CreatePlacesDictionary();

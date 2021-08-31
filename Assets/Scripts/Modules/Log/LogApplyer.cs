@@ -31,12 +31,14 @@ namespace Solcery.Modules
             var currentLog = Log.Instance?.LogData?.Value;
 
             if (currentLog == null)
+            {
+                Debug.Log("current log is null");
                 return origin;
+            }
 
             var newBoardData = JsonConvert.DeserializeObject<BoardData>(JsonConvert.SerializeObject(origin)).Prettify(); //Cloning via JSON
             ApplyLog(newBoardData, currentLog);
-
-            return newBoardData.Prettify(isVirgin: true);
+            return newBoardData.Prettify();
         }
 
         private void OnLogUpdate(LogData logData)

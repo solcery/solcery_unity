@@ -40,7 +40,7 @@ namespace Solcery
 
         private void OnBoardUpdate(BoardData boardData)
         {
-            _previousBoardData = (boardData == null || boardData.IsVirgin) ? null : _currentBoardData;
+            _previousBoardData = (boardData == null) ? null : _currentBoardData;
             _currentBoardData = boardData;
 
             TrackCardsThatChangedPlaces();

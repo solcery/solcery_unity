@@ -43,6 +43,7 @@ namespace Solcery
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;
+            if (boardData.Step == 0) return;
 
             var me = boardData.Me;
             if (me == null) return;
@@ -55,9 +56,6 @@ namespace Solcery
 
             if (_isPlayerActive.Value != boardData.Me.IsActive)
                 _isPlayerActive.Value = boardData.Me.IsActive;
-
-            //TODO: pizdec
-            if (boardData.IsVirgin) return;
 
             var myIndex = boardData.MyIndex;
             var enemyIndex = boardData.EnemyIndex;
@@ -102,9 +100,9 @@ namespace Solcery
         {
             UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverData(title, description, () =>
             {
-                Board.Instance?.UpdateBoard(null);
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
                 Log.Instance?.UpdateLog(null);
+                Board.Instance?.UpdateBoard(null);
             }));
         }
     }

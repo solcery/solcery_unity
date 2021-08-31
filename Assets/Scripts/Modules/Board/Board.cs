@@ -18,7 +18,7 @@ namespace Solcery.Modules
 
         public void UpdateBoard(BoardData boardData)
         {
-            if (boardData != null && boardData.IsVirgin)
+            if (boardData != null)
             {
                 _boardData.Value = LogApplyer.Instance.ApplyCurrentLog(boardData);
             }
@@ -31,19 +31,19 @@ namespace Solcery.Modules
         public void UpdateWithTestJson()
         {
             var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
-            UpdateBoard(boardData.Prettify(isVirgin: true));
+            UpdateBoard(boardData.Prettify());
         }
 
         public void UpdateWithJson1()
         {
             var boardData = JsonConvert.DeserializeObject<BoardData>(json1);
-            UpdateBoard(boardData.Prettify(isVirgin: true));
+            UpdateBoard(boardData.Prettify());
         }
 
         public void UpdateWithJson2()
         {
             var boardData = JsonConvert.DeserializeObject<BoardData>(json2);
-            UpdateBoard(boardData.Prettify(isVirgin: true));
+            UpdateBoard(boardData.Prettify());
         }
 
         public void Init()
@@ -61,7 +61,7 @@ namespace Solcery.Modules
             if (initWithTestJson)
             {
                 var boardData = JsonConvert.DeserializeObject<BoardData>(testJson);
-                UpdateBoard(boardData.Prettify(isVirgin: true));
+                UpdateBoard(boardData.Prettify());
             }
         }
     }
