@@ -38,8 +38,11 @@ namespace Solcery.UI.Play.Game.Board
                 {
                     cardsCountText.gameObject?.SetActive(false);
                     await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
-                    cardsCountText.text = newCardsCount.ToString();
-                    cardsCountText.gameObject?.SetActive(true);
+                    if (cardsCountText != null)
+                    {
+                        cardsCountText.text = newCardsCount.ToString();
+                        cardsCountText.gameObject?.SetActive(true);
+                    }
                 }
             }
         }
