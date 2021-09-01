@@ -3,12 +3,12 @@ using System;
 namespace Solcery
 {
     [Serializable]
-    public class GameOverData
+    public class GameOverPopupData
     {
         public string Title;
         public string Description;
         public Action Callback;
-        public GameOverData(string title, string description, Action callback)
+        public GameOverPopupData(string title, string description, Action callback)
         {
             Title = title;
             Description = description;

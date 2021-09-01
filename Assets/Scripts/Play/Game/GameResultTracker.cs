@@ -40,6 +40,11 @@ namespace Solcery
             playerAFKTimer?.DeInit();
         }
 
+        public void ExitGamePopup()
+        {
+            GameOverPopup(0f, "Exit", "Are you sure you want to exit this game?\n\nIf your opponent is AFK, wait for his turn timer to run out and claim the victory instead.", _myId, true, PlayerOutcome.Defeat);
+        }
+
         private void OnBoardUpdate(BoardData boardData)
         {
             if (boardData == null) return;
@@ -98,7 +103,7 @@ namespace Solcery
 
         private void GameOverPopup(float delay, string title = null, string description = null, int playerId = 0, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
         {
-            UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverData(title, description, () =>
+            UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverPopupData(title, description, () =>
             {
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
                 Log.Instance?.UpdateLog(null);

@@ -14,15 +14,15 @@ namespace Solcery.UI.Play.Game
         [SerializeField] TextMeshProUGUI descriptionText = null;
         [SerializeField] private Button okButton = null;
 
-        private GameOverData _data;
+        private GameOverPopupData _data;
 
-        public async UniTaskVoid OpenWithDelay(float delay, GameOverData data)
+        public async UniTaskVoid OpenWithDelay(float delay, GameOverPopupData data)
         {
             await UniTask.Delay(TimeSpan.FromSeconds(delay));
             Open(data);
         }
 
-        public void Open(GameOverData data)
+        public void Open(GameOverPopupData data)
         {
             _data = data;
 

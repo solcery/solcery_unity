@@ -218,7 +218,6 @@ namespace Solcery.UI.Play.Game.Board
                 pointerHandler.enabled = false;
                 animator?.SetBool("IsPressed", true);
                 _isPointerOver = false;
-                Debug.Log("cast");
                 _onCardCasted?.Invoke(_cardData.CardId);
             }
         }
