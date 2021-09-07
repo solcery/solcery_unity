@@ -1,4 +1,5 @@
-﻿namespace Ilumisoft.VisualStateMachine
+﻿#pragma warning disable 1998
+namespace Ilumisoft.VisualStateMachine
 {
     using System.Threading;
     using Cysharp.Threading.Tasks;
@@ -83,7 +84,7 @@
         /// </summary>
         public bool IsActiveState => StateMachine.CurrentState == StateID;
 
-#pragma warning disable 1998
+
         /// <summary>
         /// Callback invoked when the state is entered
         /// </summary>
@@ -101,7 +102,7 @@
         protected virtual async UniTask OnExitState()
         {
             _stateCTS?.Cancel();
-            _stateCTS?.Dispose();  
+            _stateCTS?.Dispose();
         }
 
         /// <summary>
@@ -110,3 +111,4 @@
         protected virtual void OnUpdateState() { }
     }
 }
+#pragma warning restore 1998

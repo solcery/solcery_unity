@@ -32,7 +32,7 @@ namespace Solcery.Modules
 
             if (currentLog == null)
             {
-                Debug.Log("current log is null");
+                // Debug.Log("current log is null");
                 return origin;
             }
 
@@ -105,8 +105,11 @@ namespace Solcery.Modules
 
         private void SetOutcome(BoardData origin, int playerId, int outcome)
         {
-            var playerData = origin.Players[playerId - 1];
-            playerData.Outcome = (PlayerOutcome)outcome;
+            if (origin != null && origin.Players != null)
+            {
+                var playerData = origin.Players[playerId - 1];
+                playerData.Outcome = (PlayerOutcome)outcome;
+            }
         }
     }
 }
