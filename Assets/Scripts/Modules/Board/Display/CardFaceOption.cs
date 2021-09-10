@@ -1,6 +1,6 @@
 using System;
 
-namespace Solcery.Ruleset
+namespace Solcery
 {
     [Serializable]
     public enum CardFaceOption
