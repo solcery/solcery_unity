@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Solcery.Utils;
+using UnityEngine;
 
 namespace Solcery.NodeEditor
 {
@@ -7,6 +8,13 @@ namespace Solcery.NodeEditor
     {
         public AsyncReactiveProperty<NodeEditorData> NodeEditorData => _nodeEditorData;
         private AsyncReactiveProperty<NodeEditorData> _nodeEditorData = new AsyncReactiveProperty<NodeEditorData>(null);
+
+        void Start()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            WebGLInput.captureAllKeyboardInput = false;
+#endif
+        }
 
         public void UpdateData(NodeEditorData nodeEditorData)
         {
