@@ -35,6 +35,16 @@ namespace Solcery
             {
                 Log.Instance?.UpdateWithJson1();
             }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Board.Instance?.SaveBoardData1();
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Board.Instance?.SaveBoardData2();
+            }
 #endif
         }
     }

@@ -46,6 +46,72 @@ namespace Solcery.Modules
             UpdateBoard(boardData.Prettify());
         }
 
+        public void SaveBoardData1()
+        {
+            Debug.Log("Saving");
+
+            var boardData = JsonConvert.DeserializeObject<BoardData>(json1);
+            boardData.DisplayData = new BoardDisplayData();
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayerHand",
+                PlaceId = 3,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.3f, 0.7f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.1f, 0.4f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.LayedOut
+            });
+            var filePath = Application.streamingAssetsPath + "/" + "BoardDataWithDisplay1" + ".json";
+            string json = JsonConvert.SerializeObject(boardData, Formatting.Indented);
+            System.IO.File.WriteAllText(filePath, json);
+        }
+
+        public void SaveBoardData2()
+        {
+            Debug.Log("Saving");
+
+            var boardData = JsonConvert.DeserializeObject<BoardData>(json2);
+            boardData.DisplayData = new BoardDisplayData();
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "Shop",
+                PlaceId = 2,
+                Player = PlacePlayer.Common,
+                IsVisible = true,
+                AreCardsInteractableIfMeIsActive = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.0f, 0.6f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.375f, 0.7f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.LayedOut
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayerHand",
+                PlaceId = 3,
+                Player = PlacePlayer.Player,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.0f, 0.6f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.025f, 0.35f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.LayedOut
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "EnemyHand",
+                PlaceId = 4,
+                Player = PlacePlayer.Enemy,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.0f, 0.6f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.75f, 1.0f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.LayedOut
+            });
+            var filePath = Application.streamingAssetsPath + "/" + "BoardDataWithDisplay2" + ".json";
+            string json = JsonConvert.SerializeObject(boardData, Formatting.Indented);
+            System.IO.File.WriteAllText(filePath, json);
+        }
+
         public void Init()
         {
             InitWithJson();

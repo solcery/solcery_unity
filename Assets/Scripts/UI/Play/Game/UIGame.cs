@@ -8,7 +8,7 @@ namespace Solcery.UI.Play.Game
     public class UIGame : Singleton<UIGame>
     {
         [SerializeField] private Button exitGameButton = null;
-        [SerializeField] private UIBoard board = null;
+        [SerializeField] private UIBoardNew board = null;
 
         public void Init()
         {

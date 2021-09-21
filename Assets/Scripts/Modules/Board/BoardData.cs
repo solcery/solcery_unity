@@ -6,6 +6,7 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
+        public BoardDisplayData DisplayData;
         public int Step;
         public List<BoardCardType> CardTypes;
         public List<BoardCardData> Cards;
@@ -23,6 +24,8 @@ namespace Solcery
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Enemy;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int MyIndex = -1;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int EnemyIndex = -1;
+        public int MyId => MyIndex + 1;
+        public int EnemyId => EnemyIndex + 1;
 
         public BoardCardType GetCardTypeById(int cardTypeId)
         {
@@ -46,6 +49,8 @@ namespace Solcery
 
         public BoardData Prettify()
         {
+            DisplayData?.Prettify();
+
             CreateTypesDictionary();
             CreateCardsDictionary();
             CreatePlacesDictionary();

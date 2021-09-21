@@ -23,7 +23,7 @@ namespace Solcery.UI.Play.Game.Board
             DeleteAllCards();
         }
 
-        protected void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
+        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
             _hideAllButTop = hideAllButTop;
