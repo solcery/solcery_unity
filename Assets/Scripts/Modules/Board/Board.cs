@@ -92,7 +92,7 @@ namespace Solcery.Modules
                 Player = PlacePlayer.Player,
                 IsVisible = true,
                 HorizontalAnchors = new PlaceDisplayAnchors(0.0f, 0.6f),
-                VerticalAnchors = new PlaceDisplayAnchors(0.025f, 0.35f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.03f, 0.35f),
                 CardFaceOption = CardFaceOption.Up,
                 CardLayoutOption = CardLayoutOption.LayedOut
             });
@@ -104,8 +104,74 @@ namespace Solcery.Modules
                 IsVisible = true,
                 HorizontalAnchors = new PlaceDisplayAnchors(0.0f, 0.6f),
                 VerticalAnchors = new PlaceDisplayAnchors(0.75f, 1.0f),
-                CardFaceOption = CardFaceOption.Up,
+                CardFaceOption = CardFaceOption.Down,
                 CardLayoutOption = CardLayoutOption.LayedOut
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayerDrawPile",
+                PlaceId = 5,
+                Player = PlacePlayer.Player,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.75f, 0.85f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.03f, 0.35f),
+                CardFaceOption = CardFaceOption.Down,
+                CardLayoutOption = CardLayoutOption.Stacked
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "EnemyDrawPile",
+                PlaceId = 6,
+                Player = PlacePlayer.Enemy,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.75f, 0.85f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.75f, 1.0f),
+                CardFaceOption = CardFaceOption.Down,
+                CardLayoutOption = CardLayoutOption.Stacked
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayedThisTurn",
+                PlaceId = 7,
+                Player = PlacePlayer.Common,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.64f, 0.74f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.375f, 0.7f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.Stacked
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayedThisTurnTop",
+                PlaceId = 8,
+                Player = PlacePlayer.Common,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.64f, 0.74f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.375f, 0.7f),
+                CardFaceOption = CardFaceOption.Up,
+                CardLayoutOption = CardLayoutOption.Stacked
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "PlayerDiscardPile",
+                PlaceId = 9,
+                Player = PlacePlayer.Player,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.64f, 0.74f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.03f, 0.35f),
+                CardFaceOption = CardFaceOption.Down,
+                CardLayoutOption = CardLayoutOption.Stacked
+            });
+            boardData.DisplayData.PlaceDisplayDatas.Add(new PlaceDisplayData()
+            {
+                PlaceName = "EnemyDiscardPile",
+                PlaceId = 10,
+                Player = PlacePlayer.Enemy,
+                IsVisible = true,
+                HorizontalAnchors = new PlaceDisplayAnchors(0.64f, 0.74f),
+                VerticalAnchors = new PlaceDisplayAnchors(0.75f, 1.0f),
+                CardFaceOption = CardFaceOption.Down,
+                CardLayoutOption = CardLayoutOption.Stacked
             });
             var filePath = Application.streamingAssetsPath + "/" + "BoardDataWithDisplay2" + ".json";
             string json = JsonConvert.SerializeObject(boardData, Formatting.Indented);

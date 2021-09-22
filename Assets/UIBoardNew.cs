@@ -41,7 +41,7 @@ namespace Solcery.UI.Play.Game.Board
                     {
                         var placeGO = Instantiate(placePrefab, this.transform);
                         var place = placeGO.GetComponent<IBoardPlace>();
-                        var hand = placeGO.GetComponent<UIHand>();
+
                         _placesById.Add(placeId, place);
 #if UNITY_EDITOR
                         placeGO.name = displayData.PlaceName;
@@ -52,7 +52,19 @@ namespace Solcery.UI.Play.Game.Board
 
                         var finalPlaceId = DisplayDataUtils.GetFinalPlaceId(displayData, myId);
 
-                        hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey((CardPlace)finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[(CardPlace)finalPlaceId] : null, boardData.Me.IsActive, false, true);
+                        switch (displayData.CardLayoutOption)
+                        {
+                            case CardLayoutOption.LayedOut:
+                                var hand = placeGO.GetComponent<UIHand>();
+                                hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey((CardPlace)finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[(CardPlace)finalPlaceId] : null, boardData.Me.IsActive, false, true);
+                                break;
+                            case CardLayoutOption.Stacked:
+                                break;
+                            case CardLayoutOption.Map:
+                                break;
+                            case CardLayoutOption.Title:
+                                break;
+                        }
                     }
                     else
                     {
