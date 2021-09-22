@@ -21,8 +21,6 @@ namespace Solcery.UI.Play.Game.Board
 
         public void OnBoardUpdate(BoardData boardData)
         {
-            Debug.Log("UIBoardNew.OnBoardUpdate");
-
             _boardData = boardData;
             _boardDisplayData = _boardData.DisplayData;
 
@@ -41,7 +39,7 @@ namespace Solcery.UI.Play.Game.Board
                     switch (displayData.CardLayoutOption)
                     {
                         case CardLayoutOption.LayedOut:
-                            var hand = place as UIShop;
+                            var hand = place as UIHand;
                             // var hand = place.GetComponent<UIShop>();
                             hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, boardData.Me.IsActive, false, true);
                             break;

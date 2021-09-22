@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Solcery.Modules;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Solcery.UI.Play.Game.Board
 {
-    public abstract class UIHand : MonoBehaviour, IBoardPlace
+    public class UIHand : MonoBehaviour, IBoardPlace
     {
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
@@ -148,7 +149,10 @@ namespace Solcery.UI.Play.Game.Board
             }
         }
 
-        protected abstract void OnCardCasted(int cardId);
+        protected virtual void OnCardCasted(int cardId)
+        {
+            LogActionCreator.Instance?.CastCard(cardId);
+        }
 
         public void DeleteAllCards()
         {
