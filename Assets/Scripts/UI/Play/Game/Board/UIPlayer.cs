@@ -76,7 +76,7 @@ namespace Solcery.UI.Play.Game.Board
         {
             if (boardData == null)
                 return;
-            CardPlace drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
+            int drawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
             if (boardData.Diff.CardPlaceDiffs.ContainsKey(drawPilePlace))
             {
                 var drawPileDiff = boardData.Diff.CardPlaceDiffs[drawPilePlace];
@@ -89,7 +89,7 @@ namespace Solcery.UI.Play.Game.Board
             if (boardData == null)
                 return;
 
-            CardPlace discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
+            int discardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
             if (boardData.Diff.CardPlaceDiffs.ContainsKey(discardPilePlace))
             {
                 var discardPileDiff = boardData.Diff.CardPlaceDiffs[discardPilePlace];
@@ -102,7 +102,7 @@ namespace Solcery.UI.Play.Game.Board
             if (boardData == null)
                 return;
 
-            CardPlace cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
+            int cardPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
             var areCardsInteractable = _isPlayer && boardData != null && boardData.Me != null && boardData.Me.IsActive;
             var areCardsFaceDown = !_isPlayer;
             hand?.UpdateWithDiff(boardData.Diff.CardPlaceDiffs.ContainsKey(cardPlace) ? boardData.Diff.CardPlaceDiffs[cardPlace] : null, areCardsInteractable, areCardsFaceDown);

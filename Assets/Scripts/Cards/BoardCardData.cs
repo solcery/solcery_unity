@@ -7,6 +7,6 @@ namespace Solcery
     {
         public int CardId;
         public int CardType;
-        public CardPlace CardPlace;
+        public int CardPlace;
     }
 }

@@ -2,18 +2,174 @@
   "DisplayData": {
     "PlaceDisplayDatas": [
       {
-        "Place": 3,
+        "PlaceName": "Deck",
+        "PlaceId": 1,
+        "Player": 0,
+        "AreCardsInteractableIfMeIsActive": false,
         "IsVisible": true,
         "HorizontalAnchors": {
-          "Min": 0.3,
-          "Max": 0.7
+          "Min": 0.75,
+          "Max": 0.85
         },
         "VerticalAnchors": {
-          "Min": 0.1,
-          "Max": 0.4
+          "Min": 0.375,
+          "Max": 0.7
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "Shop",
+        "PlaceId": 2,
+        "Player": 0,
+        "AreCardsInteractableIfMeIsActive": true,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.0,
+          "Max": 0.6
+        },
+        "VerticalAnchors": {
+          "Min": 0.375,
+          "Max": 0.7
         },
         "CardFaceOption": 0,
         "CardLayoutOption": 1
+      },
+      {
+        "PlaceName": "PlayerHand",
+        "PlaceId": 3,
+        "Player": 1,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.0,
+          "Max": 0.6
+        },
+        "VerticalAnchors": {
+          "Min": 0.03,
+          "Max": 0.35
+        },
+        "CardFaceOption": 0,
+        "CardLayoutOption": 1
+      },
+      {
+        "PlaceName": "EnemyHand",
+        "PlaceId": 4,
+        "Player": 2,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.0,
+          "Max": 0.6
+        },
+        "VerticalAnchors": {
+          "Min": 0.75,
+          "Max": 1.0
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 1
+      },
+      {
+        "PlaceName": "PlayerDrawPile",
+        "PlaceId": 5,
+        "Player": 1,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.75,
+          "Max": 0.85
+        },
+        "VerticalAnchors": {
+          "Min": 0.03,
+          "Max": 0.35
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "EnemyDrawPile",
+        "PlaceId": 6,
+        "Player": 2,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.75,
+          "Max": 0.85
+        },
+        "VerticalAnchors": {
+          "Min": 0.75,
+          "Max": 1.0
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "PlayedThisTurn",
+        "PlaceId": 7,
+        "Player": 0,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.64,
+          "Max": 0.74
+        },
+        "VerticalAnchors": {
+          "Min": 0.375,
+          "Max": 0.7
+        },
+        "CardFaceOption": 0,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "PlayedThisTurnTop",
+        "PlaceId": 8,
+        "Player": 0,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.64,
+          "Max": 0.74
+        },
+        "VerticalAnchors": {
+          "Min": 0.375,
+          "Max": 0.7
+        },
+        "CardFaceOption": 0,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "PlayerDiscardPile",
+        "PlaceId": 9,
+        "Player": 1,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.64,
+          "Max": 0.74
+        },
+        "VerticalAnchors": {
+          "Min": 0.03,
+          "Max": 0.35
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
+      },
+      {
+        "PlaceName": "EnemyDiscardPile",
+        "PlaceId": 10,
+        "Player": 2,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.64,
+          "Max": 0.74
+        },
+        "VerticalAnchors": {
+          "Min": 0.75,
+          "Max": 1.0
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
       }
     ]
   },
@@ -12667,5 +12823,7 @@
     "z": 521288629,
     "w": 88675123
   },
-  "EndTurnCardId": 1
+  "EndTurnCardId": 1,
+  "MyId": 0,
+  "EnemyId": 0
 }

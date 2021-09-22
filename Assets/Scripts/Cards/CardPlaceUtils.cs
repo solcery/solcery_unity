@@ -2,33 +2,33 @@ namespace Solcery
 {
     public static class CardPlaceUtils
     {
-        public static CardPlace PlayerHandFromPlayerIndex(int playerIndex)
+        public static int PlayerHandFromPlayerIndex(int playerIndex)
         {
             return playerIndex switch
             {
-                0 => CardPlace.Hand1,
-                1 => CardPlace.Hand2,
-                _ => CardPlace.Nowhere,
+                0 => 3,
+                1 => 4,
+                _ => 0,
             };
         }
 
-        public static CardPlace PlayerDrawPileFromPlayerIndex(int playerIndex)
+        public static int PlayerDrawPileFromPlayerIndex(int playerIndex)
         {
             return playerIndex switch
             {
-                0 => CardPlace.DrawPile1,
-                1 => CardPlace.DrawPile2,
-                _ => CardPlace.Nowhere,
+                0 => 5,
+                1 => 6,
+                _ => 0,
             };
         }
 
-        public static CardPlace PlayerDiscardPileFromPlayerIndex(int playerIndex)
+        public static int PlayerDiscardPileFromPlayerIndex(int playerIndex)
         {
             return playerIndex switch
             {
-                0 => CardPlace.DiscardPile1,
-                1 => CardPlace.DiscardPile2,
-                _ => CardPlace.Nowhere,
+                0 => 9,
+                1 => 10,
+                _ => 0,
             };
         }
     }

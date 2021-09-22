@@ -18,7 +18,7 @@ namespace Solcery
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiff Diff;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<CardPlace, List<BoardCardData>> CardsByPlace;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<BoardCardData>> CardsByPlace;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardCardType EndTurnCardType;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Me;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Enemy;
@@ -92,7 +92,7 @@ namespace Solcery
 
         private void CreatePlacesDictionary()
         {
-            CardsByPlace = new Dictionary<CardPlace, List<BoardCardData>>();
+            CardsByPlace = new Dictionary<int, List<BoardCardData>>();
 
             foreach (var card in Cards)
             {

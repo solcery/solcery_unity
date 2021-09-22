@@ -3,9 +3,9 @@ namespace Solcery
     public struct BoardDataCardChangedPlace
     {
         public BoardCardData CardData;
-        public CardPlace From;
-        public CardPlace To;
-        public CardPlace StayedIn;
+        public int From;
+        public int To;
+        public int StayedIn;
 
 
         public override string ToString()

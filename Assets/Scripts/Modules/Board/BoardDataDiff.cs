@@ -4,9 +4,9 @@ namespace Solcery
 {
     public class BoardDataDiff
     {
-        public Dictionary<CardPlace, CardPlaceDiff> CardPlaceDiffs;
+        public Dictionary<int, CardPlaceDiff> CardPlaceDiffs;
 
-        public BoardDataDiff(Dictionary<CardPlace, CardPlaceDiff> cardPlaceDiffs)
+        public BoardDataDiff(Dictionary<int, CardPlaceDiff> cardPlaceDiffs)
         {
             CardPlaceDiffs = cardPlaceDiffs;
         }

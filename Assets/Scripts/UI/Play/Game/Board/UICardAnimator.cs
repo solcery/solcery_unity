@@ -23,7 +23,7 @@ namespace Solcery.UI.Play.Game.Board
 
         public void Clone(UIBoardCard cardToDelete, BoardDataCardChangedPlace departedCard)
         {
-            if (UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
+            if (UIBoardNew.Instance.GetBoardPlace(departedCard.To, out var toPlace))
             {
                 var destinationCardsParent = toPlace.GetCardsParent();
 
@@ -50,7 +50,7 @@ namespace Solcery.UI.Play.Game.Board
         {
             foreach (var departedCard in _cardsToAnimate)
             {
-                if (UIBoard.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
+                if (UIBoardNew.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoardNew.Instance.GetBoardPlace(departedCard.To, out var toPlace))
                 {
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {

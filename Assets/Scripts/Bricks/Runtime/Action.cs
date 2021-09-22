@@ -84,7 +84,7 @@ namespace Solcery
 
             public static void MoveTo(BrickData brick, ref Context ctx)
             {
-                var place = (CardPlace)Value.Run(brick.Slots[0], ref ctx);
+                var place = Value.Run(brick.Slots[0], ref ctx);
                 ctx.obj.CardPlace = place; // TODO: remove enum
             }
 
@@ -139,7 +139,7 @@ namespace Solcery
 
             static void ApplyToPlace(BrickData brick, ref Context ctx)
             {
-                var place = (CardPlace)Value.Run(brick.Slots[0], ref ctx);
+                var place = Value.Run(brick.Slots[0], ref ctx);
                 var cardsList = new List<BoardCardData>();
                 foreach (var card in ctx.boardData.Cards)
                 {

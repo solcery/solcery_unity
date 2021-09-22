@@ -2,6 +2,23 @@
   "DisplayData": {
     "PlaceDisplayDatas": [
       {
+        "PlaceName": "Deck",
+        "PlaceId": 1,
+        "Player": 0,
+        "AreCardsInteractableIfMeIsActive": false,
+        "IsVisible": true,
+        "HorizontalAnchors": {
+          "Min": 0.75,
+          "Max": 0.85
+        },
+        "VerticalAnchors": {
+          "Min": 0.375,
+          "Max": 0.7
+        },
+        "CardFaceOption": 1,
+        "CardLayoutOption": 0
+      },
+      {
         "PlaceName": "Shop",
         "PlaceId": 2,
         "Player": 0,

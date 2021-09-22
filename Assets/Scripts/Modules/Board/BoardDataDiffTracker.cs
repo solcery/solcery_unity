@@ -20,7 +20,7 @@ namespace Solcery
 
         private List<BoardDataCardChangedPlace> _cardsThatChangedPlaces;
         private List<BoardDataCardChangedPlace> _cardsThatStayed;
-        private Dictionary<CardPlace, CardPlaceDiff> _cardPlaceDiffs;
+        private Dictionary<int, CardPlaceDiff> _cardPlaceDiffs;
 
         public void Init()
         {
@@ -71,8 +71,8 @@ namespace Solcery
                     _cardsThatChangedPlaces.Add(new BoardDataCardChangedPlace()
                     {
                         CardData = card,
-                        From = previousPlace ?? CardPlace.Nowhere,
-                        To = currentPlace ?? CardPlace.Nowhere
+                        From = previousPlace ?? 0,
+                        To = currentPlace ?? 0
                     });
                 }
                 else if (currentPlace != null)
@@ -80,12 +80,12 @@ namespace Solcery
                     _cardsThatStayed.Add(new BoardDataCardChangedPlace()
                     {
                         CardData = card,
-                        StayedIn = currentPlace ?? CardPlace.Nowhere
+                        StayedIn = currentPlace ?? 0
                     });
                 }
             }
 
-            _cardPlaceDiffs = new Dictionary<CardPlace, CardPlaceDiff>();
+            _cardPlaceDiffs = new Dictionary<int, CardPlaceDiff>();
 
             foreach (var change in _cardsThatChangedPlaces)
             {

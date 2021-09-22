@@ -87,7 +87,7 @@ namespace Solcery.UI.Play.Game.Board
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
                     card.Init(arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
 
-                    if (arrivedCard.From == CardPlace.Nowhere || !UIBoard.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
+                    if (arrivedCard.From == 0 || !UIBoardNew.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
                         card.SetVisibility(true);
                     else
                     {
@@ -108,6 +108,7 @@ namespace Solcery.UI.Play.Game.Board
             {
                 HideAllButTop();
             }
+
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);

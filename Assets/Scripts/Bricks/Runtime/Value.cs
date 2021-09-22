@@ -98,7 +98,7 @@ namespace Solcery
 
             static int GetCardsAmount(BrickData brick, ref Context ctx) {
                 int result = 0;
-                var place = (CardPlace)Value.Run(brick.Slots[0], ref ctx);
+                var place = Value.Run(brick.Slots[0], ref ctx);
                 foreach (var card in ctx.boardData.Cards) {
                     if (card.CardPlace == place)
                         result++;

@@ -19,12 +19,12 @@ namespace Solcery.UI.Play.Game.Board
         [SerializeField] private Button endTurnButton = null;
 
         private BoardData _boardData;
-        private Dictionary<CardPlace, IBoardPlace> _boardPlaces;
+        private Dictionary<int, IBoardPlace> _boardPlaces;
 
         public void Init()
         {
-            endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked());
-            gameRulesButton?.onClick.AddListener(() => UIGameRulesPopup.Instance?.Open());
+            // endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked());
+            // gameRulesButton?.onClick.AddListener(() => UIGameRulesPopup.Instance?.Open());
         }
 
         public void DeInit()
@@ -51,104 +51,104 @@ namespace Solcery.UI.Play.Game.Board
             endTurnButton?.gameObject?.SetActive(false);
         }
 
-        public void OnBoardUpdate(BoardData boardData)
-        {
-            SetGameRulesButton(boardData);
+        // public void OnBoardUpdate(BoardData boardData)
+        // {
+        //     SetGameRulesButton(boardData);
 
-            _boardData = boardData;
-            AssignBoardPlaces(_boardData);
+        //     _boardData = boardData;
+        //     AssignBoardPlaces(_boardData);
 
-            player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
-            enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
+        //     player?.OnBoardUpdate(_boardData, _boardData.MyIndex);
+        //     enemy?.OnBoardUpdate(_boardData, _boardData.EnemyIndex);
 
-            deck?.UpdateWithDiff(
-                _boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Deck) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Deck] : null,
-                _boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0
-                );
+        //     deck?.UpdateWithDiff(
+        //         _boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Deck) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Deck] : null,
+        //         _boardData.CardsByPlace.ContainsKey(CardPlace.Deck) ? _boardData.CardsByPlace[CardPlace.Deck].Count : 0
+        //         );
 
-            shop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Shop) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Shop] : null, boardData.Me.IsActive);
+        //     shop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.Shop) ? _boardData.Diff.CardPlaceDiffs[CardPlace.Shop] : null, boardData.Me.IsActive);
 
-            if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurn))
-                playedThisTurn?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurn]);
-            if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurnTop))
-                playedThisTurnOnTop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurnTop]);
-            UICardAnimator.Instance?.LaunchAll();
+        //     if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurn))
+        //         playedThisTurn?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurn]);
+        //     if (_boardData.Diff.CardPlaceDiffs.ContainsKey(CardPlace.PlayedThisTurnTop))
+        //         playedThisTurnOnTop?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs[CardPlace.PlayedThisTurnTop]);
+        //     UICardAnimator.Instance?.LaunchAll();
 
-            endTurnButton?.gameObject.SetActive(_boardData.Me.IsActive);
-            endTurnButton.interactable = _boardData.Me.IsActive;
-        }
+        //     endTurnButton?.gameObject.SetActive(_boardData.Me.IsActive);
+        //     endTurnButton.interactable = _boardData.Me.IsActive;
+        // }
 
-        private void OnEndTurnButtonClicked()
-        {
-            if (_boardData != null && _boardData.Me != null && _boardData.Me.IsActive)
-            {
-                LogActionCreator.Instance?.CastCard(_boardData.EndTurnCardId);
-                endTurnButton.interactable = false;
-            }
-        }
+        // private void OnEndTurnButtonClicked()
+        // {
+        //     if (_boardData != null && _boardData.Me != null && _boardData.Me.IsActive)
+        //     {
+        //         LogActionCreator.Instance?.CastCard(_boardData.EndTurnCardId);
+        //         endTurnButton.interactable = false;
+        //     }
+        // }
 
-        private void AssignBoardPlaces(BoardData boardData)
-        {
-            var playerIndex = boardData.MyIndex;
-            var enemyIndex = boardData.EnemyIndex;
+        // private void AssignBoardPlaces(BoardData boardData)
+        // {
+        //     var playerIndex = boardData.MyIndex;
+        //     var enemyIndex = boardData.EnemyIndex;
 
-            _boardPlaces = new Dictionary<CardPlace, IBoardPlace>()
-            {
-                { CardPlace.Deck, deck },
-                { CardPlace.Shop, shop },
+        //     _boardPlaces = new Dictionary<CardPlace, IBoardPlace>()
+        //     {
+        //         { CardPlace.Deck, deck },
+        //         { CardPlace.Shop, shop },
 
-                { CardPlace.PlayedThisTurn, playedThisTurn },
-                { CardPlace.PlayedThisTurnTop, playedThisTurnOnTop },
-            };
+        //         { CardPlace.PlayedThisTurn, playedThisTurn },
+        //         { CardPlace.PlayedThisTurnTop, playedThisTurnOnTop },
+        //     };
 
-            if (playerIndex >= 0)
-            {
-                var playerHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
-                var playerDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
-                var playerDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
+        //     if (playerIndex >= 0)
+        //     {
+        //         var playerHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(playerIndex);
+        //         var playerDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(playerIndex);
+        //         var playerDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(playerIndex);
 
-                _boardPlaces.Add(playerHandPlace, player.Hand);
-                _boardPlaces.Add(playerDrawPilePlace, player.DrawPile);
-                _boardPlaces.Add(playerDiscardPilePlace, player.DiscardPile);
-            }
+        //         _boardPlaces.Add(playerHandPlace, player.Hand);
+        //         _boardPlaces.Add(playerDrawPilePlace, player.DrawPile);
+        //         _boardPlaces.Add(playerDiscardPilePlace, player.DiscardPile);
+        //     }
 
-            if (enemyIndex >= 0)
-            {
-                var enemyHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(enemyIndex);
-                var enemyDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(enemyIndex);
-                var enemyDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(enemyIndex);
+        //     if (enemyIndex >= 0)
+        //     {
+        //         var enemyHandPlace = CardPlaceUtils.PlayerHandFromPlayerIndex(enemyIndex);
+        //         var enemyDrawPilePlace = CardPlaceUtils.PlayerDrawPileFromPlayerIndex(enemyIndex);
+        //         var enemyDiscardPilePlace = CardPlaceUtils.PlayerDiscardPileFromPlayerIndex(enemyIndex);
 
-                _boardPlaces.Add(enemyHandPlace, enemy.Hand);
-                _boardPlaces.Add(enemyDrawPilePlace, enemy.DrawPile);
-                _boardPlaces.Add(enemyDiscardPilePlace, enemy.DiscardPile);
-            }
-        }
+        //         _boardPlaces.Add(enemyHandPlace, enemy.Hand);
+        //         _boardPlaces.Add(enemyDrawPilePlace, enemy.DrawPile);
+        //         _boardPlaces.Add(enemyDiscardPilePlace, enemy.DiscardPile);
+        //     }
+        // }
 
-        public bool GetBoardPlace(CardPlace cardPlace, out IBoardPlace place)
-        {
-            if (_boardPlaces.TryGetValue(cardPlace, out var boardPlace))
-            {
-                place = boardPlace;
-                return true;
-            }
+        // public bool GetBoardPlace(CardPlace cardPlace, out IBoardPlace place)
+        // {
+        //     if (_boardPlaces.TryGetValue(cardPlace, out var boardPlace))
+        //     {
+        //         place = boardPlace;
+        //         return true;
+        //     }
 
-            place = null;
-            return false;
-        }
+        //     place = null;
+        //     return false;
+        // }
 
-        private void SetGameRulesButton(BoardData boardData)
-        {
-            if (gameRulesButton == null)
-                return;
+        // private void SetGameRulesButton(BoardData boardData)
+        // {
+        //     if (gameRulesButton == null)
+        //         return;
 
-            if (boardData != null)
-            {
-                gameRulesButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                gameRulesButton.gameObject.SetActive(false);
-            }
-        }
+        //     if (boardData != null)
+        //     {
+        //         gameRulesButton.gameObject.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         gameRulesButton.gameObject.SetActive(false);
+        //     }
+        // }
     }
 }
