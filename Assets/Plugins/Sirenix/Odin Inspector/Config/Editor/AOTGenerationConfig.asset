@@ -16,34 +16,24 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637678483917307564
+  lastScan: 637679134284280731
   supportSerializedTypes:
-  - TypeName: System.Action, mscorlib
+  - TypeName: Solcery.CardLayoutOption, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Solcery.BrickConfig, Assembly-CSharp
+  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.CardLayoutOption,
+      Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: Solcery.BrickType, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[System.Int32,
-      mscorlib],[Solcery.BrickConfig, Assembly-CSharp]], mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Solcery.BrickConfig,
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
-      Assembly-CSharp]], mscorlib
+  - TypeName: UnityEngine.GameObject, UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.BrickType,
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Int32, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
@@ -51,5 +41,9 @@ MonoBehaviour:
     Emit: 1
   - TypeName: System.Collections.Generic.List`1[[Solcery.Utils.IUpdateable, Assembly-CSharp]],
       mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Rendering.SerializedDictionary`2[[Solcery.CardLayoutOption,
+      Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], Unity.RenderPipelines.Core.Runtime
     IsCustom: 0
     Emit: 1
