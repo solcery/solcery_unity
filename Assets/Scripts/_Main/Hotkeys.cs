@@ -45,6 +45,11 @@ namespace Solcery
             {
                 Board.Instance?.SaveBoardData2();
             }
+
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Game.Instance?.UpdateWithGameContent1();
+            }
 #endif
         }
     }

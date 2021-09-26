@@ -46,6 +46,20 @@ namespace Solcery.Modules
             UpdateBoard(boardData.Prettify());
         }
 
+        public void SaveGameContent1()
+        {
+            Debug.Log("Saving GameContent");
+
+            var boardData = JsonConvert.DeserializeObject<BoardData>(json1);
+            var gameContent = new GameContent();
+            gameContent.DisplayData = boardData.DisplayData;
+            gameContent.CardTypes = boardData.CardTypes;
+
+            var filePath = Application.streamingAssetsPath + "/" + "GameContent" + ".json";
+            string json = JsonConvert.SerializeObject(gameContent, Formatting.Indented);
+            System.IO.File.WriteAllText(filePath, json);
+        }
+
         public void SaveBoardData1()
         {
             Debug.Log("Saving");

@@ -35,6 +35,11 @@ namespace Solcery.WebGL
             Board.Instance?.UpdateBoard(boardData.Prettify());
         }
 
+        public void UpdateGameContent(string gameContentJson)
+        {
+            Game.Instance?.UpdateWithJson(gameContentJson);
+        }
+
         public void SetCardCreationSigned(string signJson)
         {
             var signData = JsonUtility.FromJson<CardCreationSignData>(signJson);
