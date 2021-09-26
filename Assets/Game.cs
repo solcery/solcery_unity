@@ -28,7 +28,7 @@ namespace Solcery
         public void UpdateWithJson(string json)
         {
             var gameContent = JsonConvert.DeserializeObject<GameContent>(json);
-            UpdateGameContent(gameContent);
+            UpdateGameContent(gameContent.Prettify());
         }
 
         private void UpdateGameContent(GameContent gameContent)

@@ -6,6 +6,8 @@ namespace Solcery
 {
     public class Hotkeys : UpdateableSingleton<Hotkeys>
     {
+        [Multiline(20)] [SerializeField] private string gameContent1;
+
         public override void PerformUpdate()
         {
 #if (UNITY_EDITOR)
@@ -48,7 +50,7 @@ namespace Solcery
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                Game.Instance?.UpdateWithGameContent1();
+                Game.Instance?.UpdateWithJson(gameContent1);
             }
 #endif
         }
