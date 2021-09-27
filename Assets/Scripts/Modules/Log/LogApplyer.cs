@@ -105,7 +105,7 @@ namespace Solcery.Modules
 
         private void SetOutcome(BoardData origin, int playerId, int outcome)
         {
-            if (origin != null && origin.Players != null)
+            if (origin != null && origin.Players != null && origin.Players.Count >= playerId)
             {
                 var playerData = origin.Players[playerId - 1];
                 playerData.Outcome = (PlayerOutcome)outcome;

@@ -247,11 +247,12 @@
         /// </summary>
         /// <param name="transitionID"></param>
         public void Trigger(string transitionID)
-        {
+        {            
             if (TryTrigger(transitionID) == false)
             {
                 if (graph.TryGetTransition(transitionID, out Transition transition))
                 {
+                    Debug.Log(transition.OriginID);
                     if (transition.OriginID != CurrentState)
                     {
                         Debug.LogWarningFormat("Failed to trigger transition with id {0}, because the current state is not its origin", transitionID);

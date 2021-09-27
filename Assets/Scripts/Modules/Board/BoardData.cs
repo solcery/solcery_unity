@@ -6,7 +6,7 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
-        public BoardDisplayData DisplayData;
+        // public BoardDisplayData DisplayData;
         public int Step;
         public List<BoardCardType> CardTypes;
         public List<BoardCardData> Cards;
@@ -49,7 +49,7 @@ namespace Solcery
 
         public BoardData Prettify()
         {
-            DisplayData?.Prettify();
+            // DisplayData?.Prettify();
 
             CreateTypesDictionary();
             CreateCardsDictionary();

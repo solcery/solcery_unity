@@ -33,8 +33,11 @@ namespace Solcery
 
         public void DeInit()
         {
-            _cts?.Cancel();
-            _cts?.Dispose();
+            if (_cts != null && !_cts.IsCancellationRequested)
+            {
+                _cts?.Cancel();
+                _cts?.Dispose();
+            }
 
             enemyAFKTimer?.DeInit();
             playerAFKTimer?.DeInit();
@@ -108,6 +111,7 @@ namespace Solcery
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
                 Log.Instance?.UpdateLog(null);
                 Board.Instance?.UpdateBoard(null);
+                Game.Instance?.UpdateGameContent(null);
             }));
         }
     }

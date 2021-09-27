@@ -22,6 +22,11 @@ namespace Solcery.UI.Play.Game
             board?.DeInit();
         }
 
+        public void OnGameContentUpdate(GameContent gameContent)
+        {
+            board?.OnGameContentUpdate(gameContent);
+        }
+
         public void OnBoardUpdate(BoardData boardData)
         {
             board?.OnBoardUpdate(boardData);

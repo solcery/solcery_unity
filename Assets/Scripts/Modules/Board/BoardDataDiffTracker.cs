@@ -33,6 +33,7 @@ namespace Solcery
         {
             _cts?.Cancel();
             _cts?.Dispose();
+            _cts = null;
 
             _previousBoardData = null;
             _currentBoardData = null;

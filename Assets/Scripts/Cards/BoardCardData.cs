@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solcery
 {
@@ -8,5 +9,6 @@ namespace Solcery
         public int CardId;
         public int CardType;
         public int CardPlace;
+        public Dictionary<string, int> Attrs;
     }
 }

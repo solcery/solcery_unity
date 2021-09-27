@@ -18,9 +18,6 @@ namespace Solcery.UI.Play.Game.Board
         [SerializeField] private UIPlayedThisTurnOnTop playedThisTurnOnTop = null;
         [SerializeField] private Button endTurnButton = null;
 
-        private BoardData _boardData;
-        private Dictionary<int, IBoardPlace> _boardPlaces;
-
         public void Init()
         {
             // endTurnButton?.onClick.AddListener(() => OnEndTurnButtonClicked());
@@ -37,8 +34,6 @@ namespace Solcery.UI.Play.Game.Board
 
         private void Clear()
         {
-            _boardData = null;
-            _boardPlaces = null;
 
             player?.Clear();
             enemy?.Clear();

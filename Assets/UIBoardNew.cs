@@ -8,6 +8,7 @@ namespace Solcery.UI.Play.Game.Board
     {
         [SerializeField] private Places places = null;
 
+        private GameContent _gameContent;
         private BoardData _boardData;
         private BoardDisplayData _boardDisplayData;
         private Dictionary<int, IBoardPlace> _placesById;
@@ -19,12 +20,16 @@ namespace Solcery.UI.Play.Game.Board
 
         public void DeInit() { }
 
+        public void OnGameContentUpdate(GameContent gameContent)
+        {
+            _gameContent = gameContent;
+            _boardDisplayData = _gameContent?.DisplayData;
+            ProcessDisplayData();
+        }
+
         public void OnBoardUpdate(BoardData boardData)
         {
             _boardData = boardData;
-            _boardDisplayData = _boardData.DisplayData;
-
-            AssignBoardPlaces();
 
             var myId = _boardData.MyId;
 
@@ -40,12 +45,10 @@ namespace Solcery.UI.Play.Game.Board
                     {
                         case CardLayoutOption.LayedOut:
                             var hand = place as UIHand;
-                            // var hand = place.GetComponent<UIShop>();
                             hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, boardData.Me.IsActive, false, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;
-                            // var pile = placeGO.GetComponent<UIPile>();
                             pile?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, _boardData.CardsByPlace.ContainsKey(finalPlaceId) ? _boardData.CardsByPlace[finalPlaceId].Count : 0);
                             break;
                         case CardLayoutOption.Map:
@@ -54,58 +57,16 @@ namespace Solcery.UI.Play.Game.Board
                             break;
                     }
                 }
-
-                //                 if (_placesById.ContainsKey(placeId))
-                //                 {
-                //                     // make sure it is the same place
-                //                     // update cards in place
-                //                 }
-                //                 else
-                //                 {
-                //                     // create a new place
-                //                     if (places.PlacePrefabs.TryGetValue(displayData.CardLayoutOption, out var placePrefab))
-                //                     {
-                //                         var placeGO = Instantiate(placePrefab, this.transform);
-                //                         var place = placeGO.GetComponent<IBoardPlace>();
-
-                //                         _placesById.Add(placeId, place);
-                // #if UNITY_EDITOR
-                //                         placeGO.name = displayData.PlaceName;
-                // #endif
-                //                         var placeRect = placeGO.GetComponent<RectTransform>();
-                //                         placeRect.anchorMin = new Vector2(displayData.HorizontalAnchors.Min, displayData.VerticalAnchors.Min);
-                //                         placeRect.anchorMax = new Vector2(displayData.HorizontalAnchors.Max, displayData.VerticalAnchors.Max);
-
-                //                         var finalPlaceId = DisplayDataUtils.GetFinalPlaceId(displayData, myId);
-
-                //                         switch (displayData.CardLayoutOption)
-                //                         {
-                //                             case CardLayoutOption.LayedOut:
-                //                                 var hand = placeGO.GetComponent<UIShop>();
-                //                                 hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, boardData.Me.IsActive, false, true);
-                //                                 break;
-                //                             case CardLayoutOption.Stacked:
-                //                                 var pile = placeGO.GetComponent<UIPile>();
-                //                                 pile?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, _boardData.CardsByPlace.ContainsKey(finalPlaceId) ? _boardData.CardsByPlace[finalPlaceId].Count : 0);
-                //                                 break;
-                //                             case CardLayoutOption.Map:
-                //                                 break;
-                //                             case CardLayoutOption.Title:
-                //                                 break;
-                //                         }
-                //                     }
-                //                     else
-                //                     {
-                //                         Debug.Log("no prefab for this place");
-                //                     }
-                // }
             }
 
             UICardAnimator.Instance?.LaunchAll();
         }
 
-        private void AssignBoardPlaces()
+        private void ProcessDisplayData()
         {
+            if (_boardDisplayData == null)
+                return;
+
             foreach (var displayData in _boardDisplayData.PlaceDisplayDatas)
             {
                 var placeId = displayData.PlaceId;

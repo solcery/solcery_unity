@@ -52,8 +52,11 @@ namespace Ilumisoft.VisualStateMachine
 
         public virtual async UniTask ExitTransition()
         {
-            _transitionCTS?.Cancel();
-            _transitionCTS?.Dispose();
+            if (_transitionCTS != null && !_transitionCTS.IsCancellationRequested)
+            {
+                _transitionCTS?.Cancel();
+                _transitionCTS?.Dispose();
+            }
         }
     }
 }

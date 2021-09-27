@@ -7,11 +7,15 @@ namespace Solcery
 {
     public class LobbyStateBehaviour : PlayStateBehaviour
     {
+        private GameContent _gameContent;
+
         protected override async UniTask OnEnterState()
         {
             await base.OnEnterState();
 
             UILobby.Instance?.Init();
+
+            Reactives.Subscribe(Game.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
             Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _stateCTS.Token);
         }
 
@@ -22,9 +26,14 @@ namespace Solcery
             await base.OnExitState();
         }
 
+        private void OnGameContentUpdate(GameContent gameContent)
+        {
+            _gameContent = gameContent;
+        }
+
         private void OnBoardUpdate(BoardData boardData)
         {
-            if (boardData == null)
+            if (boardData == null || _gameContent == null)
             {
                 UILobby.Instance?.NotInGame();
             }

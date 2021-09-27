@@ -27,6 +27,9 @@ namespace Solcery.UI.Play.Game.Board
             {
                 var destinationCardsParent = toPlace.GetCardsParent();
 
+                if (cardToDelete == null)
+                    return;
+
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
                 cardClone.SetVisibility(true);
                 cardClone.SetFaceDown(cardToDelete.IsFaceDown);

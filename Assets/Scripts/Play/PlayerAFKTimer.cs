@@ -30,8 +30,11 @@ namespace Solcery
 
         public void DeInit()
         {
-            _cts?.Cancel();
-            _cts?.Dispose();
+            if (_cts != null && !_cts.IsCancellationRequested)
+            {
+                _cts?.Cancel();
+                _cts?.Dispose();
+            }
 
             _isActive = false;
             _timeSinceBecameActive = 0f;

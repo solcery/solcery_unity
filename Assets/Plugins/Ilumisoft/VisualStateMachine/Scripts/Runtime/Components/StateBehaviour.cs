@@ -101,8 +101,11 @@ namespace Ilumisoft.VisualStateMachine
         /// </summary>
         protected virtual async UniTask OnExitState()
         {
-            _stateCTS?.Cancel();
-            _stateCTS?.Dispose();
+            if (_stateCTS != null && !_stateCTS.IsCancellationRequested)
+            {
+                _stateCTS?.Cancel();
+                _stateCTS?.Dispose();
+            }
         }
 
         /// <summary>

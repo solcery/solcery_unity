@@ -31,7 +31,7 @@ namespace Solcery
             UpdateGameContent(gameContent.Prettify());
         }
 
-        private void UpdateGameContent(GameContent gameContent)
+        public void UpdateGameContent(GameContent gameContent)
         {
             _gameContent.Value = gameContent;
         }
