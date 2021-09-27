@@ -67,14 +67,14 @@ namespace Solcery
             {
                 int cardId = brick.IntField;
                 var cardData = ctx.boardData.GetCard(cardId);
-                var cardTypeData = ctx.boardData.GetCardTypeById(cardData.CardType);
+                var cardTypeData = ctx.gameContent.GetCardTypeById(cardData.CardType);
                 var brickTree = cardTypeData.BrickTree;
                 Action.Run(brickTree.Genesis, ref ctx);
             }
 
             static void ShowMessage(BrickData brick, ref Context ctx)
             {
-                
+
             }
 
             static void SetCtxVar(BrickData brick, ref Context ctx)

@@ -6,17 +6,13 @@ namespace Solcery
     [Serializable]
     public class BoardData
     {
-        // public BoardDisplayData DisplayData;
         public int Step;
-        public List<BoardCardType> CardTypes;
         public List<BoardCardData> Cards;
-        public List<PlayerData> Players; // TODO: to Dictionary
+        public List<PlayerData> Players;
         public BrickRuntime.Random Random;
         public int EndTurnCardId;
 
-        // [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool IsVirgin;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiff Diff;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<BoardCardData>> CardsByPlace;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardCardType EndTurnCardType;
@@ -26,16 +22,6 @@ namespace Solcery
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int EnemyIndex = -1;
         public int MyId => MyIndex + 1;
         public int EnemyId => EnemyIndex + 1;
-
-        public BoardCardType GetCardTypeById(int cardTypeId)
-        {
-            if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
-            {
-                return cardType;
-            }
-
-            return null;
-        }
 
         public BoardCardData GetCard(int cardId)
         {
@@ -49,30 +35,12 @@ namespace Solcery
 
         public BoardData Prettify()
         {
-            // DisplayData?.Prettify();
-
-            CreateTypesDictionary();
             CreateCardsDictionary();
             CreatePlacesDictionary();
             AssignPlayers();
             FindEndTurnCard();
 
             return this;
-        }
-
-        private void CreateTypesDictionary()
-        {
-            CardTypesById = new Dictionary<int, BoardCardType>();
-
-            foreach (var cardType in CardTypes)
-            {
-                var cardTypeId = cardType.Id;
-
-                if (CardTypesById.ContainsKey(cardTypeId))
-                    CardTypesById[cardTypeId] = cardType;
-                else
-                    CardTypesById.Add(cardTypeId, cardType);
-            }
         }
 
         private void CreateCardsDictionary()
@@ -142,7 +110,7 @@ namespace Solcery
                 if (card.CardId == EndTurnCardId)
                 {
                     var endTurnCardData = card;
-                    EndTurnCardType = GetCardTypeById(endTurnCardData.CardType);
+                    EndTurnCardType = Game.Instance?.GameContent?.Value?.GetCardTypeById(endTurnCardData.CardType);
                 }
             }
         }

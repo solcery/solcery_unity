@@ -19,6 +19,16 @@ namespace Solcery
             return this;
         }
 
+        public BoardCardType GetCardTypeById(int cardTypeId)
+        {
+            if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
+            {
+                return cardType;
+            }
+
+            return null;
+        }
+
         private void CreateTypesDictionary()
         {
             CardTypesById = new Dictionary<int, BoardCardType>();
