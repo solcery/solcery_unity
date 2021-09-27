@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Solcery.Utils;
@@ -8,16 +9,20 @@ namespace Solcery
 {
     public class CardPicturesFromUrl : Singleton<CardPicturesFromUrl>
     {
-        public Dictionary<string, Texture> TexturesByUrl;
+        public Dictionary<string, Sprite> SpritesByUrl;
+        public Dictionary<string, List<Action<Sprite>>> Subscriptions = new Dictionary<string, List<Action<Sprite>>>();
 
-        private Texture _texture;
-
-        public Texture GetTextureByUrl(string url)
+        public void GetTextureByUrl(string url, Action<Sprite> onSpriteReady)
         {
-            if (TexturesByUrl.TryGetValue(url, out _texture))
-                return _texture;
-
-            return null;
+            if (SpritesByUrl.TryGetValue(url, out var sprite))
+                onSpriteReady?.Invoke(sprite);
+            else
+            {
+                if (Subscriptions.TryGetValue(url, out var subsriptionsForUrl))
+                    subsriptionsForUrl.Add(onSpriteReady);
+                else
+                    Subscriptions.Add(url, new List<Action<Sprite>>() { onSpriteReady });
+            }
         }
 
         public async UniTask BasicLoad(GameContent gameContent)
@@ -25,10 +30,12 @@ namespace Solcery
             if (gameContent == null || gameContent.CardTypes == null)
                 return;
 
-            Debug.Log("Loading started");
-
-            TexturesByUrl = new Dictionary<string, Texture>();
+            SpritesByUrl = new Dictionary<string, Sprite>();
             var cardTypes = gameContent.CardTypes;
+
+            var tasks = new List<UniTask>();
+
+            Debug.Log("Loading started");
 
             foreach (var cardType in cardTypes)
             {
@@ -37,14 +44,33 @@ namespace Solcery
 
                 if (!string.IsNullOrEmpty(pictureUrl))
                 {
-                    Debug.Log("start...");
-                    var texture = ((DownloadHandlerTexture)(await UnityWebRequestTexture.GetTexture(pictureUrl).SendWebRequest()).downloadHandler).texture;
-                    TexturesByUrl.Add(pictureUrl, texture);
-                    Debug.Log("finish...");
+                    tasks.Add(GetSpriteAsync(pictureUrl));
                 }
             }
 
-            Debug.Log("Loading finished");
+            await UniTask.WhenAll(tasks).ContinueWith(() => { Debug.Log("Loading finished"); });
+        }
+
+        async UniTask GetSpriteAsync(string pictureUrl)
+        {
+            // Debug.Log("start loading...");
+            var req = UnityWebRequestTexture.GetTexture(pictureUrl);
+            var op = await req.SendWebRequest();
+            var tex = ((DownloadHandlerTexture)(op.downloadHandler)).texture;
+            // Debug.Log("finished loading...");
+
+            var sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
+            SpritesByUrl.Add(pictureUrl, sprite);
+
+            if (Subscriptions.TryGetValue(pictureUrl, out var subsriptionsForUrl))
+            {
+                foreach (var sub in subsriptionsForUrl)
+                {
+                    sub?.Invoke(sprite);
+                }
+
+                Subscriptions[pictureUrl] = new List<Action<Sprite>>();
+            }
         }
     }
 }

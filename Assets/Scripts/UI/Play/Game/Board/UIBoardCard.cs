@@ -17,7 +17,6 @@ namespace Solcery.UI.Play.Game.Board
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardImage = null;
-        [SerializeField] private RawImage cardRawImage = null;
         [SerializeField] private Image cardFrameFaceUp = null;
         [SerializeField] private Image cardFrameFaceDown = null;
         [SerializeField] private Image cardCoinsBackground = null;
@@ -144,22 +143,15 @@ namespace Solcery.UI.Play.Game.Board
 
         private void SetPicture(CardMetadata metadata)
         {
+            if (cardImage == null)
+                return;
+
             if (!string.IsNullOrEmpty(metadata.PictureUrl))
             {
-                cardImage?.gameObject?.SetActive(false);
-                cardRawImage?.gameObject?.SetActive(true);
-
-                if (cardRawImage != null)
-                    cardRawImage.texture = CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl);
+                CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl, (sprite) => { cardImage.sprite = sprite; });
             }
             else
-            {
-                cardImage?.gameObject?.SetActive(true);
-                cardRawImage?.gameObject?.SetActive(false);
-
-                if (cardImage != null)
-                    cardImage.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
-            }
+                cardImage.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
         }
 
         private void SetCoins(bool showCoins, int coinsCount = 0)
