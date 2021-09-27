@@ -16,7 +16,8 @@ namespace Solcery.UI.Play.Game.Board
         [SerializeField] private Animator animator = null;
         [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
-        [SerializeField] private Image cardPicture = null;
+        [SerializeField] private Image cardImage = null;
+        [SerializeField] private RawImage cardRawImage = null;
         [SerializeField] private Image cardFrameFaceUp = null;
         [SerializeField] private Image cardFrameFaceDown = null;
         [SerializeField] private Image cardCoinsBackground = null;
@@ -47,7 +48,7 @@ namespace Solcery.UI.Play.Game.Board
 
             if (_cardType != null)
             {
-                SetPicture(_cardType.Metadata.Picture);
+                SetPicture(_cardType.Metadata);
                 SetCoins(showCoins, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
@@ -123,7 +124,7 @@ namespace Solcery.UI.Play.Game.Board
 
         public void MakeUnmaskable()
         {
-            if (cardPicture != null) cardPicture.maskable = false;
+            if (cardImage != null) cardImage.maskable = false;
             if (cardFrameFaceUp != null) cardFrameFaceUp.maskable = false;
             if (cardCoinsBackground != null) cardCoinsBackground.maskable = false;
             if (cardName != null) cardName.maskable = false;
@@ -141,10 +142,24 @@ namespace Solcery.UI.Play.Game.Board
             }
         }
 
-        private void SetPicture(int picture)
+        private void SetPicture(CardMetadata metadata)
         {
-            if (cardPicture != null)
-                cardPicture.sprite = cardPictures.GetSpriteByIndex(picture);
+            if (!string.IsNullOrEmpty(metadata.PictureUrl))
+            {
+                cardImage?.gameObject?.SetActive(false);
+                cardRawImage?.gameObject?.SetActive(true);
+
+                if (cardRawImage != null)
+                    cardRawImage.texture = CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl);
+            }
+            else
+            {
+                cardImage?.gameObject?.SetActive(true);
+                cardRawImage?.gameObject?.SetActive(false);
+
+                if (cardImage != null)
+                    cardImage.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
+            }
         }
 
         private void SetCoins(bool showCoins, int coinsCount = 0)

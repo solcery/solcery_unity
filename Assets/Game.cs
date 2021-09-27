@@ -28,12 +28,13 @@ namespace Solcery
         public void UpdateWithJson(string json)
         {
             var gameContent = JsonConvert.DeserializeObject<GameContent>(json);
-            UpdateGameContent(gameContent.Prettify());
+            UpdateGameContent(gameContent.Prettify()).Forget();
         }
 
-        public void UpdateGameContent(GameContent gameContent)
+        public async UniTaskVoid UpdateGameContent(GameContent gameContent)
         {
             _gameContent.Value = gameContent;
+            await CardPicturesFromUrl.Instance.BasicLoad(gameContent);
         }
     }
 }
