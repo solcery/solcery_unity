@@ -40,36 +40,43 @@ namespace Solcery
             foreach (var cardType in cardTypes)
             {
                 var metadata = cardType.Metadata;
-                var pictureUrl = metadata.PictureUrl;
+                var url = metadata.PictureUrl;
 
-                if (!string.IsNullOrEmpty(pictureUrl))
+                if (!string.IsNullOrEmpty(url))
                 {
-                    tasks.Add(GetSpriteAsync(pictureUrl));
+                    tasks.Add(GetSpriteAsync(url));
                 }
             }
 
             await UniTask.WhenAll(tasks).ContinueWith(() => { Debug.Log("Loading finished"); });
         }
 
-        async UniTask GetSpriteAsync(string pictureUrl)
+        async UniTask GetSpriteAsync(string url)
         {
             // Debug.Log("start loading...");
-            var req = UnityWebRequestTexture.GetTexture(pictureUrl);
+            var req = UnityWebRequestTexture.GetTexture(url);
             var op = await req.SendWebRequest();
             var tex = ((DownloadHandlerTexture)(op.downloadHandler)).texture;
             // Debug.Log("finished loading...");
+            // Debug.Log(Time.realtimeSinceStartup);
 
+            tex.filterMode = FilterMode.Point;
             var sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
-            SpritesByUrl.Add(pictureUrl, sprite);
+            SpritesByUrl.Add(url, sprite);
 
-            if (Subscriptions.TryGetValue(pictureUrl, out var subsriptionsForUrl))
+            NotifySubscribers(url, sprite);
+        }
+
+        private void NotifySubscribers(string url, Sprite sprite)
+        {
+            if (Subscriptions.TryGetValue(url, out var subsriptionsForUrl))
             {
                 foreach (var sub in subsriptionsForUrl)
                 {
                     sub?.Invoke(sprite);
                 }
 
-                Subscriptions[pictureUrl] = new List<Action<Sprite>>();
+                Subscriptions[url] = new List<Action<Sprite>>();
             }
         }
     }
