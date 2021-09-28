@@ -61,6 +61,7 @@ namespace Solcery
             // Debug.Log(Time.realtimeSinceStartup);
 
             tex.filterMode = FilterMode.Point;
+
             var sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
             SpritesByUrl.Add(url, sprite);
 

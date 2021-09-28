@@ -16,13 +16,24 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637679134284280731
+  lastScan: 637684015709400065
   supportSerializedTypes:
+  - TypeName: System.Action`1[[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: Solcery.CardLayoutOption, Assembly-CSharp
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.CardLayoutOption,
       Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[System.Action`1[[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardLayoutOption,
@@ -32,11 +43,23 @@ MonoBehaviour:
   - TypeName: UnityEngine.GameObject, UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[System.Action`1[[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.List`1[[Solcery.Utils.IUpdateable, Assembly-CSharp]],
@@ -45,5 +68,11 @@ MonoBehaviour:
     Emit: 1
   - TypeName: UnityEngine.Rendering.SerializedDictionary`2[[Solcery.CardLayoutOption,
       Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], Unity.RenderPipelines.Core.Runtime
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
     IsCustom: 0
     Emit: 1
