@@ -35,8 +35,6 @@ namespace Solcery
 
             var tasks = new List<UniTask>();
 
-            Debug.Log("Loading started");
-
             foreach (var cardType in cardTypes)
             {
                 var metadata = cardType.Metadata;
@@ -48,7 +46,7 @@ namespace Solcery
                 }
             }
 
-            await UniTask.WhenAll(tasks).ContinueWith(() => { Debug.Log("Loading finished"); });
+            await UniTask.WhenAll(tasks);
         }
 
         async UniTask GetSpriteAsync(string url)

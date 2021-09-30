@@ -12,7 +12,8 @@ namespace Solcery.UI.Play.Game
         [SerializeField] Canvas canvas = null;
         [SerializeField] TextMeshProUGUI titleText = null;
         [SerializeField] TextMeshProUGUI descriptionText = null;
-        [SerializeField] private Button okButton = null;
+        [SerializeField] private Button stayButton = null;
+        [SerializeField] private Button exitButton = null;
 
         private GameOverPopupData _data;
 
@@ -31,13 +32,19 @@ namespace Solcery.UI.Play.Game
             if (titleText != null) titleText.text = _data.Title;
             if (descriptionText != null) descriptionText.text = _data.Description;
 
-            okButton?.onClick?.AddListener(Close);
+            exitButton?.onClick?.AddListener(Exit);
+            stayButton?.onClick?.AddListener(Stay);
         }
 
-        private void Close()
+        private void Exit()
         {
             if (canvas != null) canvas.enabled = false;
             _data?.Callback?.Invoke();
+        }
+
+        private void Stay()
+        {
+            if (canvas != null) canvas.enabled = false;
         }
     }
 }
