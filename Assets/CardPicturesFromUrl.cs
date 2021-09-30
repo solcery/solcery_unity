@@ -54,13 +54,24 @@ namespace Solcery
             // Debug.Log("start loading...");
             var req = UnityWebRequestTexture.GetTexture(url);
             var op = await req.SendWebRequest();
-            var tex = ((DownloadHandlerTexture)(op.downloadHandler)).texture;
+            var www = (DownloadHandlerTexture)(op.downloadHandler);
+
+            Texture2D wwwTex = DownloadHandlerTexture.GetContent(req);
+            Texture2D newTex = new Texture2D(wwwTex.width, wwwTex.height);
+            newTex.SetPixels(wwwTex.GetPixels(0));
+            newTex.Apply(true); // default is to update mipmaps
+
+            // var tex = www.texture;
+            // tex.SetPixels(tex.GetPixels(0, 0, tex.width, tex.height));
             // Debug.Log("finished loading...");
             // Debug.Log(Time.realtimeSinceStartup);
 
-            tex.filterMode = FilterMode.Point;
+            // tex.filterMode = FilterMode.Point;
 
-            var sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
+            // tex.SetPixels(tex.GetPixels(1));
+            // tex.Apply(true);
+
+            var sprite = Sprite.Create(newTex, new Rect(0.0f, 0.0f, newTex.width, newTex.height), new Vector2(0.5f, 0.5f), 100.0f);
             SpritesByUrl.Add(url, sprite);
 
             NotifySubscribers(url, sprite);

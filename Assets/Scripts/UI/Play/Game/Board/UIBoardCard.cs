@@ -148,10 +148,15 @@ namespace Solcery.UI.Play.Game.Board
 
             if (!string.IsNullOrEmpty(metadata.PictureUrl))
             {
-                CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl, (sprite) => { cardImage.sprite = sprite; });
+                CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl, (sprite) => SetSprite(sprite));
             }
             else
-                cardImage.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
+                SetSprite(cardPictures.GetSpriteByIndex(metadata.Picture));
+        }
+
+        private void SetSprite(Sprite sprite)
+        {
+            cardImage.sprite = sprite;
         }
 
         private void SetCoins(bool showCoins, int coinsCount = 0)
