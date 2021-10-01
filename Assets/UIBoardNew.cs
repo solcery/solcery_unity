@@ -40,16 +40,19 @@ namespace Solcery.UI.Play.Game.Board
                 if (_placesById.TryGetValue(placeId, out var place))
                 {
                     var finalPlaceId = DisplayDataUtils.GetFinalPlaceId(displayData, myId);
+                    var cardPlaceDiff = _boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null;
 
                     switch (displayData.CardLayoutOption)
                     {
                         case CardLayoutOption.LayedOut:
                             var hand = place as UIHand;
-                            hand?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, boardData.Me.IsActive, false, true);
+                            var areCardsFaceDown = displayData.Player == PlacePlayer.Enemy;
+                            hand?.UpdateWithDiff(cardPlaceDiff, boardData.Me.IsActive, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;
-                            pile?.UpdateWithDiff(_boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null, _boardData.CardsByPlace.ContainsKey(finalPlaceId) ? _boardData.CardsByPlace[finalPlaceId].Count : 0);
+                            var cardsCount = _boardData.CardsByPlace.ContainsKey(finalPlaceId) ? _boardData.CardsByPlace[finalPlaceId].Count : 0;
+                            pile?.UpdateWithDiff(cardPlaceDiff, cardsCount);
                             break;
                         case CardLayoutOption.Map:
                             break;
