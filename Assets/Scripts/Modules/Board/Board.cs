@@ -15,6 +15,7 @@ namespace Solcery.Modules
         [ShowIf("initWithTestJson")] [Multiline(20)] [SerializeField] private string testJson;
         [Multiline(20)] [SerializeField] private string json1;
         [Multiline(20)] [SerializeField] private string json2;
+        [Multiline(20)] [SerializeField] private string json3;
 
         public void UpdateBoard(BoardData boardData)
         {
@@ -45,7 +46,13 @@ namespace Solcery.Modules
             var boardData = JsonConvert.DeserializeObject<BoardData>(json2);
             UpdateBoard(boardData.Prettify());
         }
-        
+
+        public void UpdateWithJson3()
+        {
+            var boardData = JsonConvert.DeserializeObject<BoardData>(json3);
+            UpdateBoard(boardData.Prettify());
+        }
+
         public void Init()
         {
             InitWithJson();
