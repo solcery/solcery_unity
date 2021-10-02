@@ -1,5 +1,6 @@
 using System;
 using Solcery.Utils;
+using UnityEngine;
 
 namespace Solcery.NodeEditor
 {

@@ -40,6 +40,7 @@ namespace Solcery.UI.NodeEditor
 
         public void Init()
         {
+            // Debug.Log("Init");
             brickConfigs.Init();
             clipboard?.Init(nodeSelector, RebuildAll);
             nodeSelector?.Init();
@@ -50,6 +51,7 @@ namespace Solcery.UI.NodeEditor
 
         public void Init(BrickTree brickTree, bool isNullGenesisValid)
         {
+            // Debug.Log("Init with brickTree");
             _isNullGenesisValid = isNullGenesisValid;
 
             clipboard?.Init(nodeSelector, RebuildAll);

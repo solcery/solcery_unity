@@ -47,6 +47,9 @@ namespace Solcery
 
         public void PopulateFromData(BrickConfigsData data)
         {
+            // Debug.Log("PopulateFromData");
+            // Debug.Log(data == null);
+
             TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
             foreach (KeyValuePair<BrickType, List<BrickConfigData>> entry in data.ConfigsByType)
@@ -133,8 +136,9 @@ namespace Solcery
 
         public void Init()
         {
+            Debug.Log("Init");
             if (loadFromJson)
-                StreamingAsseter.Instance.Load(fileName, this, PopulateFromData);
+                StreamingAsseter.Instance?.Load(fileName, this, PopulateFromData);
         }
 
         [Button(ButtonSizes.Gigantic)]

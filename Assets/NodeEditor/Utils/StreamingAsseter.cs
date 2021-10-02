@@ -33,6 +33,7 @@ namespace Solcery.Utils
 
         public void Load(string fileName, BrickConfigs brickConfigs, Action<BrickConfigsData> onLoaded)
         {
+            Debug.Log("Load");
             StartCoroutine(LoadBrickConfigs(fileName, brickConfigs, onLoaded));
         }
 
@@ -44,6 +45,7 @@ namespace Solcery.Utils
             yield return www;
             var txt = www.downloadHandler.text;
             var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(txt);
+            Debug.Log("onLoaded");
             onLoaded?.Invoke(brickConfigsData);
             // brickConfigs.PopulateFromData(brickConfigsData);
         }
