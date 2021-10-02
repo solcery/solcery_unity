@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using Ilumisoft.VisualStateMachine;
 using UnityEngine;
 
@@ -9,14 +8,14 @@ namespace Solcery.NodeEditor.SM
         public override string StateID => stateId;
         [SerializeField] private string stateId;
 
-        protected override async UniTask OnEnterState()
+        protected override void OnEnterState()
         {
-            await base.OnEnterState();
+            base.OnEnterState();
         }
 
-        protected override async UniTask OnExitState()
+        protected override void OnExitState()
         {
-            await base.OnExitState();
+            base.OnExitState();
         }
     }
 }

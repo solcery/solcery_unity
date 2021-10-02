@@ -9,15 +9,17 @@ namespace Solcery.NodeEditor.SM
     {
         [SerializeField] private BrickConfigs brickConfigs = null;
 
-        protected override async UniTask OnEnterState()
+        protected override void OnEnterState()
         {
-            await base.OnEnterState();
+            base.OnEnterState();
             NodeEditorUnityToReact.Instance?.CallOnNodeEditorLoaded();
             UINodeEditor.Instance?.SetWaitingForData(true);
-            Reactives.Subscribe(NodeEditor.Instance?.NodeEditorData, (nodeEditorData) => OnNodeEditorDataUpdate(nodeEditorData).Forget(), _stateCTS.Token);
+            // Reactives.Subscribe(NodeEditor.Instance?.NodeEditorData, (nodeEditorData) => OnNodeEditorDataUpdate(nodeEditorData).Forget(), _stateCTS.Token);
+            if (NodeEditor.Instance != null)
+                NodeEditor.Instance.OnNodeEditorDataChanged += OnNodeEditorDataUpdate;
         }
 
-        private async UniTaskVoid OnNodeEditorDataUpdate(NodeEditorData nodeEditorData)
+        private void OnNodeEditorDataUpdate(NodeEditorData nodeEditorData)
         {
             if (nodeEditorData == null)
                 return;
@@ -28,7 +30,7 @@ namespace Solcery.NodeEditor.SM
             brickConfigs?.PopulateFromData(nodeEditorData.BrickConfigsData);
             UINodeEditor.Instance?.SetWaitingForData(false);
             UINodeEditor.Instance.Init(nodeEditorData.BrickTree, true);
-            await UniTask.WaitForEndOfFrame();
+            // await UniTask.WaitForEndOfFrame();
             stateMachine.Trigger("EditBrickTree");
         }
     }

@@ -1,6 +1,4 @@
-using Cysharp.Threading.Tasks;
 using Solcery.UI.NodeEditor;
-using Solcery.Utils.Reactives;
 
 namespace Solcery.NodeEditor.SM
 {
@@ -8,14 +6,19 @@ namespace Solcery.NodeEditor.SM
     {
         private bool _isCurrentBrickTreeValid;
 
-        protected override async UniTask OnEnterState()
+        protected override void OnEnterState()
         {
-            await base.OnEnterState();
+            base.OnEnterState();
 
             if (UINodeEditor.Instance != null)
             {
-                Reactives.SubscribeWithoutCurrent(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _stateCTS.Token);
-                UINodeEditor.Instance.OnBrickInputChanged += OnBrickInputChanged;
+                // Reactives.SubscribeWithoutCurrent(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _stateCTS.Token);
+
+                if (UINodeEditor.Instance != null)
+                {
+                    UINodeEditor.Instance.BrickTree.OnValidityChanged += OnBrickTreeValidityChange;
+                    UINodeEditor.Instance.OnBrickInputChanged += OnBrickInputChanged;
+                }
             }
         }
 

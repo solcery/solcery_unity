@@ -11,7 +11,11 @@ namespace Solcery
 
         [NonSerialized]
         [Newtonsoft.Json.JsonIgnore]
-        public AsyncReactiveProperty<bool> IsValid = new AsyncReactiveProperty<bool>(false);
+        // public AsyncReactiveProperty<bool> IsValid = new AsyncReactiveProperty<bool>(false);
+
+        public Action<bool> OnValidityChanged;
+        public bool IsValid { get { return _isValid; } set { _isValid = value; OnValidityChanged?.Invoke(_isValid); } }
+        private bool _isValid;
 
         public void SetGenesis(BrickData data)
         {
@@ -21,9 +25,9 @@ namespace Solcery
         public void CheckValidity(bool isNullGenesisValid = false)
         {
             if (Genesis == null)
-                IsValid.Value = isNullGenesisValid;
+                IsValid = isNullGenesisValid;
             else
-                IsValid.Value = Genesis.IsValid();
+                IsValid = Genesis.IsValid();
         }
 
         public int GetDepth()

@@ -1,13 +1,13 @@
-using Cysharp.Threading.Tasks;
+using System;
 using Solcery.Utils;
-using UnityEngine;
 
 namespace Solcery.NodeEditor
 {
     public class NodeEditor : Singleton<NodeEditor>
     {
-        public AsyncReactiveProperty<NodeEditorData> NodeEditorData => _nodeEditorData;
-        private AsyncReactiveProperty<NodeEditorData> _nodeEditorData = new AsyncReactiveProperty<NodeEditorData>(null);
+        public Action<NodeEditorData> OnNodeEditorDataChanged;
+        public NodeEditorData NodeEditorData => _nodeEditorData;
+        private NodeEditorData _nodeEditorData;
 
         void Start()
         {
@@ -18,7 +18,8 @@ namespace Solcery.NodeEditor
 
         public void UpdateData(NodeEditorData nodeEditorData)
         {
-            _nodeEditorData.Value = nodeEditorData;
+            _nodeEditorData = nodeEditorData;
+            OnNodeEditorDataChanged?.Invoke(_nodeEditorData);
         }
     }
 }

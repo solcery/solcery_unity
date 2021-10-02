@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections;
-    using Cysharp.Threading.Tasks;
     using UnityEngine;
     using UnityEngine.Events;
 
@@ -89,7 +88,7 @@
                 if (node is State state)
                 {
                     OnEnterState?.Invoke(state);
-                    state?.OnEnterState?.Invoke();
+                    state.OnEnterState.Invoke();
                 }
             }
             else
@@ -247,12 +246,11 @@
         /// </summary>
         /// <param name="transitionID"></param>
         public void Trigger(string transitionID)
-        {            
+        {
             if (TryTrigger(transitionID) == false)
             {
                 if (graph.TryGetTransition(transitionID, out Transition transition))
                 {
-                    Debug.Log(transition.OriginID);
                     if (transition.OriginID != CurrentState)
                     {
                         Debug.LogWarningFormat("Failed to trigger transition with id {0}, because the current state is not its origin", transitionID);
@@ -289,28 +287,28 @@
             // This can happen for transitions between states, which are called instantly and from OnEnterState, e.g.
             // StateA->StateB-StateC->StateA
             // If each of these states uses OnEnterState to trigger the next, this would cause an infite loop of method calls...
-            if (loopOrigin == string.Empty)
+            if(loopOrigin==string.Empty)
             {
                 loopOrigin = transition.OriginID;
             }
-            else if (transition.OriginID == loopOrigin)
+            else if(transition.OriginID == loopOrigin)
             {
-                Debug.LogWarning("Stopped executing transition '" + transition.ID + "' due to a transition loop outgoing from state '" + loopOrigin + "'. Make sure you have no circular transitions triggered by OnEnterState, e.g. StateA->StateB-StateC->StateA", this);
+                Debug.LogWarning("Stopped executing transition '"+transition.ID+"' due to a transition loop outgoing from state '"+loopOrigin+ "'. Make sure you have no circular transitions triggered by OnEnterState, e.g. StateA->StateB-StateC->StateA", this);
                 return;
             }
 
             OnTriggerTransition?.Invoke(transition);
 
             // Use a coroutine to execute the transition if the transition has a duration > 0 seconds
-            // if (transition.Duration > 0.0f)
-            // {
-            ExecuteTransitionCoroutine(transition).Forget();
-            // }
-            // // Execute the transition instantly otherwise
-            // else
-            // {
-            //     ExecuteTransitionInstantly(transition);
-            // }
+            if (transition.Duration > 0.0f)
+            {
+                StartCoroutine(ExecuteTransitionCoroutine(transition));
+            }
+            // Execute the transition instantly otherwise
+            else
+            {
+                ExecuteTransitionInstantly(transition);
+            }
 
             loopOrigin = string.Empty;
         }
@@ -319,51 +317,48 @@
         /// Executes the given transition without a delay (used when the transition has no duration)
         /// </summary>
         /// <param name="transition"></param>
-        // private void ExecuteTransitionInstantly(Transition transition)
-        // {
-        //     TryExitTransitionOriginState(transition);
+        private void ExecuteTransitionInstantly(Transition transition)
+        {
+            TryExitTransitionOriginState(transition);
 
-        //     OnEnterTransition?.Invoke(transition);
-        //     transition.OnEnterTransition.Invoke();
+            OnEnterTransition?.Invoke(transition);
+            transition.OnEnterTransition.Invoke();
 
-        //     OnExitTransition?.Invoke(transition);
-        //     transition.OnExitTransition.Invoke();
+            OnExitTransition?.Invoke(transition);
+            transition.OnExitTransition.Invoke();
 
-        //     TryEnterTransitionTargetState(transition);
-        // }
+            TryEnterTransitionTargetState(transition);
+        }
 
         /// <summary>
         /// Executes the transition and waits for the transition duration before entering the target state
         /// </summary>
         /// <param name="transition"></param>
         /// <returns></returns>
-        async UniTaskVoid ExecuteTransitionCoroutine(Transition transition)
+        IEnumerator ExecuteTransitionCoroutine(Transition transition)
         {
             TryExitTransitionOriginState(transition);
 
             OnEnterTransition?.Invoke(transition);
+            transition.OnEnterTransition.Invoke();
 
-            if (transition != null && transition.behaviour != null)
-            {
-                await transition.behaviour.EnterTransition();
-                await WaitForTransitionDuration(transition);
-                await transition.behaviour.ExitTransition();
-            }
+            yield return WaitForTransitionDuration(transition);
 
             OnExitTransition?.Invoke(transition);
+            transition.OnExitTransition.Invoke();
 
             TryEnterTransitionTargetState(transition);
         }
 
-        private async UniTask WaitForTransitionDuration(Transition transition)
+        private IEnumerator WaitForTransitionDuration(Transition transition)
         {
             if (transition.TimeMode == TimeMode.Scaled)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(transition.Duration), ignoreTimeScale: false);
+                yield return new WaitForSeconds(transition.Duration);
             }
             else
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(transition.Duration), ignoreTimeScale: true);
+                yield return new WaitForSecondsRealtime(transition.Duration);
             }
         }
 
@@ -485,37 +480,37 @@
             return null;
         }
 
-        // /// <summary>
-        // /// Returns the OnEnterTransition event of the transition with the given name, null if the transition does not exist 
-        // /// </summary>
-        // /// <param name="transitionName"></param>
-        // /// <returns></returns>
-        // [Obsolete("This method is obsolete. Call Graph.GetTransition instead.")]
-        // public UnityEvent GetOnEnterTransitionEvent(string transitionName)
-        // {
-        //     if (graph.TryGetTransition(transitionName, out Transition transition))
-        //     {
-        //         return transition.OnEnterTransition;
-        //     }
+        /// <summary>
+        /// Returns the OnEnterTransition event of the transition with the given name, null if the transition does not exist 
+        /// </summary>
+        /// <param name="transitionName"></param>
+        /// <returns></returns>
+        [Obsolete("This method is obsolete. Call Graph.GetTransition instead.")]
+        public UnityEvent GetOnEnterTransitionEvent(string transitionName)
+        {
+            if (graph.TryGetTransition(transitionName, out Transition transition))
+            {
+                return transition.OnEnterTransition;
+            }
 
-        //     return null;
-        // }
+            return null;
+        }
 
-        // /// <summary>
-        // /// Returns the OnExitTransition event of the transition with the given name, null if the transition does not exist 
-        // /// </summary>
-        // /// <param name="transitionName"></param>
-        // /// <returns></returns>
-        // [Obsolete("This method is obsolete. Call Graph.GetTransition instead.")]
-        // public UnityEvent GetOnExitTransitionEvent(string transitionName)
-        // {
-        //     if (graph.TryGetTransition(transitionName, out Transition transition))
-        //     {
-        //         return transition.OnExitTransition;
-        //     }
+        /// <summary>
+        /// Returns the OnExitTransition event of the transition with the given name, null if the transition does not exist 
+        /// </summary>
+        /// <param name="transitionName"></param>
+        /// <returns></returns>
+        [Obsolete("This method is obsolete. Call Graph.GetTransition instead.")]
+        public UnityEvent GetOnExitTransitionEvent(string transitionName)
+        {
+            if (graph.TryGetTransition(transitionName, out Transition transition))
+            {
+                return transition.OnExitTransition;
+            }
 
-        //     return null;
-        // }
+            return null;
+        }
         #endregion
     }
 }

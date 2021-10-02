@@ -1,7 +1,5 @@
-﻿#pragma warning disable 1998
-namespace Ilumisoft.VisualStateMachine
+﻿namespace Ilumisoft.VisualStateMachine
 {
-    using Cysharp.Threading.Tasks;
     using UnityEngine;
     using UnityEngine.Events;
     using UnityEngine.Serialization;
@@ -15,7 +13,7 @@ namespace Ilumisoft.VisualStateMachine
         [SerializeField]
         private string label = string.Empty;
 
-        [SerializeField, FormerlySerializedAs("origin")]
+        [SerializeField, FormerlySerializedAs("origin")] 
         private string originID = string.Empty;
 
         [SerializeField, FormerlySerializedAs("target")]
@@ -49,7 +47,7 @@ namespace Ilumisoft.VisualStateMachine
         public float Duration
         {
             get => duration;
-            set => duration = Mathf.Max(0, value);
+            set => duration = Mathf.Max(0,value);
         }
 
         /// <summary>
@@ -69,10 +67,16 @@ namespace Ilumisoft.VisualStateMachine
             get => this.label;
             set => this.label = value;
         }
-
-        // public UniTask EnterTransition;
-        public Ilumisoft.VisualStateMachine.TransitionBehaviour behaviour;
-        // public UniTask ExitTransition;
+        
+        /// <summary>
+        /// Gets the event which is invoked when the transition is entered
+        /// </summary>
+        public UnityEvent OnEnterTransition => this.onEnterTransition;
+        
+        /// <summary>
+        /// Gets the event which is invoked when the transition is exited
+        /// </summary>
+        public UnityEvent OnExitTransition => this.onExitTransition;
 
         /// <summary>
         /// The name of the origin state of the transition
@@ -93,4 +97,3 @@ namespace Ilumisoft.VisualStateMachine
         }
     }
 }
-#pragma warning restore 1998
