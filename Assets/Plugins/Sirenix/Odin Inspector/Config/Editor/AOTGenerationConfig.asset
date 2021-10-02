@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
   automateBeforeBuilds: 1
-  deleteDllAfterBuilds: 1
+  deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637687457743247235
+  lastScan: 637688034221741036
   supportSerializedTypes:
   - TypeName: System.Action, mscorlib
     IsCustom: 0
