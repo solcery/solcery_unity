@@ -16,7 +16,7 @@ MonoBehaviour:
   HidePrefabCautionaryMessage: 1
   HideOdinSerializeAttributeWarningMessages: 0
   HideNonSerializedShowInInspectorWarningMessages: 0
-  buildSerializationFormat: 1
+  buildSerializationFormat: 0
   editorSerializationFormat: 2
   loggingPolicy: 1
   errorHandlingPolicy: 2
