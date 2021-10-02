@@ -25,8 +25,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: PlacePrefabs
       Entry: 7
-      Data: 0|UnityEngine.Rendering.SerializedDictionary`2[[Solcery.CardLayoutOption,
-        Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], Unity.RenderPipelines.Core.Runtime
+      Data: 0|System.Collections.Generic.Dictionary`2[[Solcery.CardLayoutOption,
+        Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardLayoutOption,
@@ -42,31 +42,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
       Data: 2
-    - Name: $v
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
       Data: 

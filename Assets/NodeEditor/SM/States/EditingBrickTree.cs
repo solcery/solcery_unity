@@ -21,14 +21,12 @@ namespace Solcery.NodeEditor.SM
 
         private void OnBrickTreeValidityChange(bool isValid)
         {
-            UnityEngine.Debug.Log($"Validity changed: {isValid}");
             _isCurrentBrickTreeValid = isValid;
             SaveIfValid();
         }
 
         private void OnBrickInputChanged()
         {
-            UnityEngine.Debug.Log("Input changed");
             SaveIfValid();
         }
 

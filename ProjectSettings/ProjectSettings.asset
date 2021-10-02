@@ -152,7 +152,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.Solcery.Solcery
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -598,13 +599,14 @@ PlayerSettings:
   scriptingDefineSymbols:
     0: ODIN_INSPECTOR;ODIN_INSPECTOR_3
     1: ODIN_INSPECTOR;ODIN_INSPECTOR_3
+    13: ODIN_INSPECTOR;ODIN_INSPECTOR_3
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration:
     WebGL: 1
   managedStrippingLevel:
-    WebGL: 4
+    WebGL: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
   allowUnsafeCode: 1
