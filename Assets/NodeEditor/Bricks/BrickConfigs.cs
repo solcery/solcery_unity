@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
+// using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Solcery.Utils;
 using UnityEngine;
@@ -46,7 +46,7 @@ namespace Solcery
         }
 
         public void PopulateFromData(BrickConfigsData data)
-        {            
+        {
             TypeSubtype = new Dictionary<BrickType, Dictionary<int, BrickConfig>>();
 
             foreach (KeyValuePair<BrickType, List<BrickConfigData>> entry in data.ConfigsByType)
@@ -131,10 +131,10 @@ namespace Solcery
             };
         }
 
-        public async UniTask Init()
+        public void Init()
         {
             if (loadFromJson)
-                await StreamingAsseter.LoadBrickConfigs(fileName, this);
+                StreamingAsseter.Instance.Load(fileName, this, PopulateFromData);
         }
 
         [Button(ButtonSizes.Gigantic)]
@@ -146,7 +146,7 @@ namespace Solcery
         [Button(ButtonSizes.Gigantic)]
         private void LoadFromStreamingAssets()
         {
-            StreamingAsseter.LoadBrickConfigs(fileName, this).Forget();
+            StreamingAsseter.Instance?.Load(fileName, this, PopulateFromData);
         }
 
         [SerializeField] private string fileName;

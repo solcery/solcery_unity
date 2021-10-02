@@ -1,5 +1,5 @@
 using System;
-using Cysharp.Threading.Tasks;
+// using Cysharp.Threading.Tasks;
 using Solcery.Utils;
 using TMPro;
 using UnityEngine;
@@ -38,9 +38,9 @@ namespace Solcery.UI.NodeEditor
             waitingForDataText?.gameObject.SetActive(isWaiting);
         }
 
-        public async UniTask Init()
+        public void Init()
         {
-            await brickConfigs.Init();
+            brickConfigs.Init();
             clipboard?.Init(nodeSelector, RebuildAll);
             nodeSelector?.Init();
             zoom.SetActive(true);
@@ -234,7 +234,7 @@ namespace Solcery.UI.NodeEditor
                 _brickTree.SetGenesis(null);
                 selectBrickButton.Init(BrickType.Action, content);
                 startHereText.gameObject.SetActive(true);
-                DisableScrollView().Forget();
+                DisableScrollView();
             }
             else
             {
@@ -249,11 +249,11 @@ namespace Solcery.UI.NodeEditor
             Rebuild();
         }
 
-        private async UniTaskVoid DisableScrollView()
+        private void DisableScrollView()
         {
             var currentElasticity = scrollView.elasticity;
             scrollView.elasticity = 0;
-            await UniTask.NextFrame();
+            // await UniTask.NextFrame();
             scrollView.enabled = false;
             scrollView.elasticity = currentElasticity;
         }

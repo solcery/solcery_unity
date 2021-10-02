@@ -1,12 +1,13 @@
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 using UnityEngine.Networking;
+using System.Collections;
+using System;
 
 namespace Solcery.Utils
 {
-    public static class StreamingAsseter
+    public class StreamingAsseter : Singleton<StreamingAsseter>
     {
         public static void SaveBrickConfigs(string fileName, BrickConfigs brickConfigs)
         {
@@ -21,13 +22,30 @@ namespace Solcery.Utils
             File.WriteAllText(filePath, json);
         }
 
-        public static async UniTask LoadBrickConfigs(string fileName, BrickConfigs brickConfigs)
+        // public static void LoadBrickConfigs(string fileName, BrickConfigs brickConfigs)
+        // {
+        //     var filePath = Application.streamingAssetsPath + "/" + fileName + ".json";
+
+        //     var txt = (await UnityWebRequest.Get(filePath).SendWebRequest()).downloadHandler.text;
+        //     var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(txt);
+        //     brickConfigs.PopulateFromData(brickConfigsData);
+        // }
+
+        public void Load(string fileName, BrickConfigs brickConfigs, Action<BrickConfigsData> onLoaded)
+        {
+            StartCoroutine(LoadBrickConfigs(fileName, brickConfigs, onLoaded));
+        }
+
+        private IEnumerator LoadBrickConfigs(string fileName, BrickConfigs brickConfigs, Action<BrickConfigsData> onLoaded)
         {
             var filePath = Application.streamingAssetsPath + "/" + fileName + ".json";
 
-            var txt = (await UnityWebRequest.Get(filePath).SendWebRequest()).downloadHandler.text;
+            UnityWebRequest www = new UnityWebRequest(filePath);
+            yield return www;
+            var txt = www.downloadHandler.text;
             var brickConfigsData = JsonConvert.DeserializeObject<BrickConfigsData>(txt);
-            brickConfigs.PopulateFromData(brickConfigsData);
+            onLoaded?.Invoke(brickConfigsData);
+            // brickConfigs.PopulateFromData(brickConfigsData);
         }
     }
 }

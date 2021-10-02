@@ -9,7 +9,6 @@
     }
   ],
   "dependencies": {
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.vscode": "1.2.4",
     "com.unity.mathematics": "1.2.1",
