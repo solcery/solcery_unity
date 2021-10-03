@@ -35,7 +35,6 @@ namespace Solcery.UI.Play.Game.Board
 
             foreach (var displayData in _boardDisplayData.PlaceDisplayDatas)
             {
-                Debug.Log("here");
                 var placeId = displayData.PlaceId;
 
                 if (_placesById.TryGetValue(placeId, out var place))
