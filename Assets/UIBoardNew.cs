@@ -39,14 +39,15 @@ namespace Solcery.UI.Play.Game.Board
 
                 if (_placesById.TryGetValue(placeId, out var place))
                 {
-                    var finalPlaceId = DisplayDataUtils.GetFinalPlaceId(displayData, myId);
-                    var cardPlaceDiff = _boardData.Diff.CardPlaceDiffs.ContainsKey(finalPlaceId) ? _boardData.Diff.CardPlaceDiffs[finalPlaceId] : null;
+                    var finalPlaceId = displayData.PlaceId;
+                    var cardPlaceDiff = _boardData.Diff.GetDiffForPlace(finalPlaceId);
 
                     switch (displayData.CardLayoutOption)
                     {
                         case CardLayoutOption.LayedOut:
                             var hand = place as UIHand;
-                            var areCardsFaceDown = displayData.Player == PlacePlayer.Enemy;
+                            var areCardsFaceDown = displayData.CardFaceOption == CardFaceOption.Down;
+
                             hand?.UpdateWithDiff(cardPlaceDiff, boardData.Me.IsActive, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
