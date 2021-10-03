@@ -13,7 +13,7 @@ namespace Solcery.NodeEditor
         void Start()
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
-            WebGLInput.captureAllKeyboardInput = false;
+            WebGLInput.captureAllKeyboardInput = true;
 #endif
         }
 
