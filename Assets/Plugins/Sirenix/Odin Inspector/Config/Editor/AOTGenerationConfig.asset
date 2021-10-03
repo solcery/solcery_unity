@@ -16,42 +16,53 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637687457743247235
+  lastScan: 637688796294779380
   supportSerializedTypes:
-  - TypeName: System.Action, mscorlib
+  - TypeName: System.Action`1[[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: Solcery.BrickConfig, Assembly-CSharp
+  - TypeName: Solcery.CardLayoutOption, Assembly-CSharp
     IsCustom: 0
     Emit: 1
-  - TypeName: Solcery.BrickType, Assembly-CSharp
+  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.CardLayoutOption,
+      Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.BrickType, Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[System.Int32,
-      mscorlib],[Solcery.BrickConfig, Assembly-CSharp]], mscorlib]], mscorlib
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[System.Action`1[[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib]], mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Solcery.BrickConfig,
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.BrickType,
-      Assembly-CSharp]], mscorlib
+  - TypeName: UnityEngine.GameObject, UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
       mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.BrickType,
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Int32, mscorlib
+  - TypeName: System.Collections.Generic.List`1[[System.Action`1[[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: Solcery.Utils.IUpdateable, Assembly-CSharp
