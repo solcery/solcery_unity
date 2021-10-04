@@ -46,9 +46,10 @@ namespace Solcery.UI.Play.Game.Board
                     {
                         case CardLayoutOption.LayedOut:
                             var hand = place as UIHand;
-                            var areCardsFaceDown = displayData.CardFaceOption == CardFaceOption.Down;
+                            var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
+                            var areCardsInteractable = displayData.IsInteractable;
 
-                            hand?.UpdateWithDiff(cardPlaceDiff, boardData.Me.IsActive, areCardsFaceDown, true);
+                            hand?.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;

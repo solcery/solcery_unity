@@ -11,7 +11,7 @@ namespace Solcery
 
         // id +- (playerId - 1) * number
         // common = 0, player = 1, enemy = 2
-        public bool AreCardsInteractableIfMeIsActive; // bool BehaveAsSummonerShop => cards are interactable if Me is active player
+        // public bool AreCardsInteractableIfMeIsActive; // bool BehaveAsSummonerShop => cards are interactable if Me is active player
         public bool IsInteractable;
         public bool IsVisible;
         public PlaceDisplayAnchors HorizontalAnchors;
