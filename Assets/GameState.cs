@@ -7,6 +7,7 @@ namespace Solcery
     public class GameState
     {
         public List<CardData> Cards;
+        public BrickRuntime.Random Random;
 
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardData> CardsById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<CardData>> CardsByPlace;
