@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Play.Game.Board
+namespace Solcery.UI
 {
     public class UIBoardCard : MonoBehaviour
     {

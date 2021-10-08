@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Solcery.UI.Play.Game.Board
+namespace Solcery.UI
 {
     public interface IBoardPlace
     {

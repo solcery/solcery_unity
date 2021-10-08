@@ -19,7 +19,7 @@ namespace Solcery
             if (canvas != null) canvas.enabled = true;
         }
 
-        private void DeInit()
+        public void DeInit()
         {
             if (canvas != null) canvas.enabled = false;
         }

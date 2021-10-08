@@ -72,7 +72,9 @@ namespace Solcery.Modules
             // tex.Apply(true);
 
             var sprite = Sprite.Create(newTex, new Rect(0.0f, 0.0f, newTex.width, newTex.height), new Vector2(0.5f, 0.5f), 100.0f);
-            SpritesByUrl.Add(url, sprite);
+
+            // if (!SpritesByUrl.ContainsKey(url))
+                SpritesByUrl.Add(url, sprite);
 
             NotifySubscribers(url, sprite);
         }

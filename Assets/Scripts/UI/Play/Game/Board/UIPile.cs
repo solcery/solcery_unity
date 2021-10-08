@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
-namespace Solcery.UI.Play.Game.Board
+namespace Solcery.UI
 {
     public class UIPile : UIHand
     {

@@ -3,7 +3,7 @@ using Solcery.Modules;
 
 namespace Solcery
 {
-    public class InitStateBehaviour : PlayStateBehaviour
+    public class OldInitStateBehaviour : PlayStateBehaviour
     {
         protected override async UniTask OnEnterState()
         {

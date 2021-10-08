@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Solcery.Utils;
 using UnityEngine;
 
-namespace Solcery.UI.Play.Game.Board
+namespace Solcery.UI
 {
-    public class UIBoardNew : Singleton<UIBoardNew>
+    public class UIBoard : Singleton<UIBoard>
     {
         [SerializeField] private Places places = null;
 

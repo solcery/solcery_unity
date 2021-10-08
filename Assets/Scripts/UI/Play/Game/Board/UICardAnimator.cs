@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-namespace Solcery.UI.Play.Game.Board
+namespace Solcery.UI
 {
     public class UICardAnimator : Singleton<UICardAnimator>
     {
@@ -23,7 +23,7 @@ namespace Solcery.UI.Play.Game.Board
 
         public void Clone(UIBoardCard cardToDelete, BoardDataCardChangedPlace departedCard)
         {
-            if (UIBoardNew.Instance.GetBoardPlace(departedCard.To, out var toPlace))
+            if (UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
             {
                 var destinationCardsParent = toPlace.GetCardsParent();
 
@@ -53,7 +53,7 @@ namespace Solcery.UI.Play.Game.Board
         {
             foreach (var departedCard in _cardsToAnimate)
             {
-                if (UIBoardNew.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoardNew.Instance.GetBoardPlace(departedCard.To, out var toPlace))
+                if (UIBoard.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
                 {
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {

@@ -21,7 +21,7 @@ namespace Ilumisoft.VisualStateMachine
             if (StateMachine != null)
             {
                 _transition = stateMachine.Graph.GetTransition(TransitionId);
-
+                
                 if (_transition != null)
                 {
                     _transition.behaviour = this;

@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using Solcery.Modules;
 using Solcery.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Solcery.UI.Play.Game.Board
 {
-    public class UIBoard : Singleton<UIBoard>
+    public class UIBoardOld : Singleton<UIBoardOld>
     {
         [SerializeField] private Button gameRulesButton = null;
 
