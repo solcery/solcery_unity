@@ -9,8 +9,8 @@ namespace Solcery
 {
     public class OldGame : Singleton<OldGame>
     {
-        public AsyncReactiveProperty<GameContent> GameContent => _gameContent;
-        private AsyncReactiveProperty<GameContent> _gameContent = new AsyncReactiveProperty<GameContent>(null);
+        public AsyncReactiveProperty<OldGameContent> GameContent => _gameContent;
+        private AsyncReactiveProperty<OldGameContent> _gameContent = new AsyncReactiveProperty<OldGameContent>(null);
 
         [SerializeField] private bool initWithTestGameContent = false;
         [ShowIf("initWithTestGameContent")] [Multiline(20)] [SerializeField] private string testGameContent;
@@ -28,14 +28,14 @@ namespace Solcery
 
         public void UpdateWithJson(string json)
         {
-            var gameContent = JsonConvert.DeserializeObject<GameContent>(json);
-            UpdateGameContent(gameContent.Prettify()).Forget();
+            var gameContent = JsonConvert.DeserializeObject<OldGameContent>(json);
+            UpdateGameContent(gameContent.Prettify());
         }
 
-        public async UniTaskVoid UpdateGameContent(GameContent gameContent)
+        public void UpdateGameContent(OldGameContent gameContent)
         {
             _gameContent.Value = gameContent;
-            await CardPicturesFromUrl.Instance.BasicLoad(gameContent);
+            // await CardPicturesFromUrl.Instance.BasicLoad(gameContent);
         }
     }
 }

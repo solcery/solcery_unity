@@ -13,20 +13,20 @@ namespace Solcery
 
         public void UpdateGameContent(string gameContentJson)
         {
-            var gameContent = JsonConvert.DeserializeObject<GameContent>(gameContentJson).Prettify();
+            var gameContent = JsonConvert.DeserializeObject<GameContent>(gameContentJson)?.Prettify();
             GameContent.Value = gameContent;
             CardPicturesFromUrl.Instance.BasicLoad(gameContent).Forget();
         }
 
         public void UpdateGameDisplay(string gameDisplayJson)
         {
-            var gameDisplay = JsonConvert.DeserializeObject<GameDisplay>(gameDisplayJson).Prettify();
+            var gameDisplay = JsonConvert.DeserializeObject<GameDisplay>(gameDisplayJson)?.Prettify();
             GameDisplay.Value = gameDisplay;
         }
 
         public void UpdateGameState(string gameStateJson)
         {
-            var gameState = JsonConvert.DeserializeObject<GameState>(gameStateJson).Prettify();
+            var gameState = JsonConvert.DeserializeObject<GameState>(gameStateJson)?.Prettify();
             GameState.Value = gameState;
         }
     }

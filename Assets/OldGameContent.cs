@@ -4,14 +4,16 @@ using System.Collections.Generic;
 namespace Solcery
 {
     [Serializable]
-    public class GameContent
+    public class OldGameContent
     {
+        public BoardDisplayData DisplayData;
         public List<CardType> CardTypes;
 
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardType> CardTypesById;
 
-        public GameContent Prettify()
+        public OldGameContent Prettify()
         {
+            DisplayData?.Prettify();
             CreateTypesDictionary();
 
             return this;

@@ -8,7 +8,7 @@ namespace Solcery.UI.Play.Game.Board
     {
         [SerializeField] private Places places = null;
 
-        private GameContent _gameContent;
+        private OldGameContent _gameContent;
         private BoardData _boardData;
         private BoardDisplayData _boardDisplayData;
         private Dictionary<int, IBoardPlace> _placesById;
@@ -20,7 +20,7 @@ namespace Solcery.UI.Play.Game.Board
 
         public void DeInit() { }
 
-        public void OnGameContentUpdate(GameContent gameContent)
+        public void OnGameContentUpdate(OldGameContent gameContent)
         {
             _gameContent = gameContent;
             _boardDisplayData = _gameContent?.DisplayData;

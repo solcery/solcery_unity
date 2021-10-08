@@ -7,7 +7,7 @@ namespace Solcery
 {
     public class LobbyStateBehaviour : PlayStateBehaviour
     {
-        private GameContent _gameContent;
+        private OldGameContent _gameContent;
 
         protected override async UniTask OnEnterState()
         {
@@ -26,7 +26,7 @@ namespace Solcery
             await base.OnExitState();
         }
 
-        private void OnGameContentUpdate(GameContent gameContent)
+        private void OnGameContentUpdate(OldGameContent gameContent)
         {
             _gameContent = gameContent;
         }

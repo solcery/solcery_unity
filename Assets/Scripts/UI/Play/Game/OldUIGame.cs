@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Solcery.UI.Play.Game
 {
-    public class UIGame : Singleton<UIGame>
+    public class OldUIGame : Singleton<OldUIGame>
     {
         [SerializeField] private Button exitGameButton = null;
         [SerializeField] private UIBoardNew board = null;
@@ -22,7 +22,7 @@ namespace Solcery.UI.Play.Game
             board?.DeInit();
         }
 
-        public void OnGameContentUpdate(GameContent gameContent)
+        public void OnGameContentUpdate(OldGameContent gameContent)
         {
             board?.OnGameContentUpdate(gameContent);
         }

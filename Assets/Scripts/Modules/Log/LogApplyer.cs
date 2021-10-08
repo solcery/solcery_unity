@@ -59,7 +59,7 @@ namespace Solcery.Modules
             Board.Instance?.UpdateBoard(newBoardData.Prettify());
         }
 
-        private void ApplyLog(BoardData origin, LogData log, GameContent gameContent)
+        private void ApplyLog(BoardData origin, LogData log, OldGameContent gameContent)
         {
             // TODO: Proper action type parsing. Casting is just a particular type
             //return CastCard(ref origin, logStep.playerId, logStep.cardId);
@@ -72,7 +72,7 @@ namespace Solcery.Modules
             // return origin;
         }
 
-        private void ApplyLogStep(BoardData origin, LogStepData logStep, GameContent gameContent)
+        private void ApplyLogStep(BoardData origin, LogStepData logStep, OldGameContent gameContent)
         {
             origin.Prettify();
 
@@ -90,7 +90,7 @@ namespace Solcery.Modules
             }
         }
 
-        private void CastCard(BoardData origin, GameContent gameContent, int casterId, int cardId)
+        private void CastCard(BoardData origin, OldGameContent gameContent, int casterId, int cardId)
         {
             var ctx = new Solcery.BrickRuntime.Context(origin, gameContent, cardId, casterId);
             var cardData = origin.GetCard(cardId);
@@ -100,13 +100,13 @@ namespace Solcery.Modules
             origin = ctx.boardData;
         }
 
-        private void SetStatus(BoardData origin, GameContent gameContent, int playerId, int status)
+        private void SetStatus(BoardData origin, OldGameContent gameContent, int playerId, int status)
         {
             var playerData = origin.Players[playerId - 1];
             playerData.Status = (PlayerStatus)status;
         }
 
-        private void SetOutcome(BoardData origin, GameContent gameContent, int playerId, int outcome)
+        private void SetOutcome(BoardData origin, OldGameContent gameContent, int playerId, int outcome)
         {
             if (origin != null && origin.Players != null && origin.Players.Count >= playerId)
             {

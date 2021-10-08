@@ -12,7 +12,7 @@ namespace Solcery
 
             GameStateDiffTracker.Instance?.Init();
             GameResultTracker.Instance?.Init();
-            UIGame.Instance?.Init();
+            OldUIGame.Instance?.Init();
 
             Reactives.Subscribe(OldGame.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
             Reactives.Subscribe(GameStateDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _stateCTS.Token);
@@ -22,14 +22,14 @@ namespace Solcery
         {
             GameStateDiffTracker.Instance?.DeInit();
             GameResultTracker.Instance?.DeInit();
-            UIGame.Instance?.DeInit();
+            OldUIGame.Instance?.DeInit();
 
             await base.OnExitState();
         }
 
-        private void OnGameContentUpdate(GameContent gameContent)
+        private void OnGameContentUpdate(OldGameContent gameContent)
         {
-            UIGame.Instance?.OnGameContentUpdate(gameContent);
+            OldUIGame.Instance?.OnGameContentUpdate(gameContent);
         }
 
         private void OnBoardUpdate(BoardData boardData)
@@ -39,7 +39,7 @@ namespace Solcery
             else if (boardData.Players != null && boardData.Players.Count < 2)
                 stateMachine.Trigger("GameToLobby");
             else
-                UIGame.Instance?.OnBoardUpdate(boardData);
+                OldUIGame.Instance?.OnBoardUpdate(boardData);
         }
     }
 }
