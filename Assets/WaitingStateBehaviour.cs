@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using Solcery.Utils.Reactives;
+using Cysharp.Threading.Tasks.Linq;
 
 namespace Solcery
 {
@@ -15,44 +15,19 @@ namespace Solcery
 
             UIWaiting.Instance?.Init();
 
-            Reactives.Subscribe(Game.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
-            Reactives.Subscribe(Game.Instance?.GameDisplay, OnGameDisplayUpdate, _stateCTS.Token);
-            Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _stateCTS.Token);
+            var combined = Game.Instance?.GameContent.CombineLatest(Game.Instance?.GameDisplay, Game.Instance?.GameState, (x, y, z) => (x, y, z)).ToReadOnlyAsyncReactiveProperty(_stateCTS.Token);
+            combined?.ForEachAsync(p => OnUpdate(p.x, p.y, p.z), _stateCTS.Token);
         }
 
-        protected override async UniTask OnExitState()
+        private void OnUpdate(GameContent gameContent, GameDisplay gameDisplay, GameState gameState)
         {
-            UIWaiting.Instance?.DeInit();
-
-            await base.OnExitState();
-        }
-
-        private void OnGameContentUpdate(GameContent gameContent)
-        {
-            _gameContent = gameContent;
             UIWaiting.Instance?.GameContentWaitingElement?.SetWaiting(gameContent == null);
-            CheckIfCanStartGame();
-        }
-
-        private void OnGameDisplayUpdate(GameDisplay gameDisplay)
-        {
-            _gameDisplay = gameDisplay;
             UIWaiting.Instance?.GameDisplayWaitingElement?.SetWaiting(gameDisplay == null);
-            CheckIfCanStartGame();
-        }
-
-        private void OnGameStateUpdate(GameState gameState)
-        {
-            _gameState = gameState;
             UIWaiting.Instance?.GameStateWaitingElement?.SetWaiting(gameState == null);
-            CheckIfCanStartGame();
-        }
 
-        private void CheckIfCanStartGame()
-        {
-            if (_gameContent == null) return;
-            if (_gameDisplay == null) return;
-            if (_gameState == null) return;
+            if (gameContent == null) return;
+            if (gameDisplay == null) return;
+            if (gameState == null) return;
 
             stateMachine?.Trigger("Init");
         }

@@ -417,6 +417,7 @@ Transform:
   m_Children:
   - {fileID: 27923146}
   - {fileID: 1711342658}
+  - {fileID: 427075262}
   - {fileID: 632641845}
   - {fileID: 1490571174}
   m_Father: {fileID: 1432915053}
@@ -626,6 +627,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &427075261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427075262}
+  - component: {fileID: 427075263}
+  m_Layer: 0
+  m_Name: DeInit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &427075262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427075261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 298485635}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &427075263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427075261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cb9ff5f416a9f4589e6f047e6b1bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 1432915052}
+  stateId: DeInit
 --- !u!1 &527275141
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298485635}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &632641846
 MonoBehaviour:
@@ -1680,6 +1726,17 @@ MonoBehaviour:
       onUpdateState:
         m_PersistentCalls:
           m_Calls: []
+    - position: {x: 216.76466, y: 240.11765}
+      id: DeInit
+      onEnterState:
+        m_PersistentCalls:
+          m_Calls: []
+      onExitState:
+        m_PersistentCalls:
+          m_Calls: []
+      onUpdateState:
+        m_PersistentCalls:
+          m_Calls: []
     anyStates: []
     transitions:
     - id: Animate
@@ -1737,6 +1794,19 @@ MonoBehaviour:
     - id: ExitGame
       label: 
       originID: Idle
+      targetID: DeInit
+      onEnterTransition:
+        m_PersistentCalls:
+          m_Calls: []
+      onExitTransition:
+        m_PersistentCalls:
+          m_Calls: []
+      duration: 0
+      timeMode: 0
+      behaviour: {fileID: 0}
+    - id: DeInit
+      label: 
+      originID: DeInit
       targetID: Waiting
       onEnterTransition:
         m_PersistentCalls:
@@ -1751,7 +1821,7 @@ MonoBehaviour:
       zoomSettings:
         zoomFactor: 1
       dragSettings:
-        dragOffset: {x: 135.23534, y: 48.88236}
+        dragOffset: {x: 139.23534, y: 53.88236}
       gridSettings:
         isEnabled: 1
       labelSettings:
@@ -7478,7 +7548,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298485635}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1490571175
 MonoBehaviour:

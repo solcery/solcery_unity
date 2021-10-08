@@ -10,12 +10,13 @@ namespace Solcery.UI
         public void Init()
         {
             if (canvas != null) canvas.enabled = true;
-
             UIBoard.Instance?.Init();
         }
 
         public void DeInit()
         {
+
+            UIBoard.Instance?.DeInit();
             if (canvas != null) canvas.enabled = false;
         }
     }
