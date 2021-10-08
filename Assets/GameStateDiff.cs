@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Solcery
 {
-    public class BoardDataDiff
+    public class GameStateDiff
     {
         public Dictionary<int, CardPlaceDiff> CardPlaceDiffs;
 
@@ -14,7 +14,7 @@ namespace Solcery
             return null;
         }
 
-        public BoardDataDiff(Dictionary<int, CardPlaceDiff> cardPlaceDiffs)
+        public GameStateDiff(Dictionary<int, CardPlaceDiff> cardPlaceDiffs)
         {
             CardPlaceDiffs = cardPlaceDiffs;
         }

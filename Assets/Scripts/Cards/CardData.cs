@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Solcery
 {
     [Serializable]
-    public class BoardCardData
+    public class CardData
     {
         public int CardId;
         public int CardType;

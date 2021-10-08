@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Solcery
 {
-    public class BoardDataDiffTracker : Singleton<BoardDataDiffTracker>
+    public class GameStateDiffTracker : Singleton<GameStateDiffTracker>
     {
         [HideInInspector]
         public AsyncReactiveProperty<BoardData> BoardDataWithDiff;
@@ -109,7 +109,7 @@ namespace Solcery
                     _cardPlaceDiffs.Add(stay.StayedIn, new CardPlaceDiff(new List<BoardDataCardChangedPlace>() { stay }, null, null));
             }
 
-            _currentBoardData.Diff = new BoardDataDiff(_cardPlaceDiffs);
+            _currentBoardData.Diff = new GameStateDiff(_cardPlaceDiffs);
             BoardDataWithDiff.Value = _currentBoardData;
         }
     }

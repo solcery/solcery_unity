@@ -7,15 +7,15 @@ namespace Solcery
     public class BoardData
     {
         public int Step;
-        public List<BoardCardData> Cards;
+        public List<CardData> Cards;
         public List<PlayerData> Players;
         public BrickRuntime.Random Random;
         public int EndTurnCardId;
 
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardDataDiff Diff;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardData> CardsById;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<BoardCardData>> CardsByPlace;
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public BoardCardType EndTurnCardType;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public GameStateDiff Diff;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardData> CardsById;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<CardData>> CardsByPlace;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public CardType EndTurnCardType;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Me;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public PlayerData Enemy;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public int MyIndex = -1;
@@ -23,7 +23,7 @@ namespace Solcery
         public int MyId => MyIndex + 1;
         public int EnemyId => EnemyIndex + 1;
 
-        public BoardCardData GetCard(int cardId)
+        public CardData GetCard(int cardId)
         {
             if (CardsById.TryGetValue(cardId, out var card))
             {
@@ -45,7 +45,7 @@ namespace Solcery
 
         private void CreateCardsDictionary()
         {
-            CardsById = new Dictionary<int, BoardCardData>();
+            CardsById = new Dictionary<int, CardData>();
 
             foreach (var card in Cards)
             {
@@ -60,7 +60,7 @@ namespace Solcery
 
         private void CreatePlacesDictionary()
         {
-            CardsByPlace = new Dictionary<int, List<BoardCardData>>();
+            CardsByPlace = new Dictionary<int, List<CardData>>();
 
             foreach (var card in Cards)
             {
@@ -70,7 +70,7 @@ namespace Solcery
                 }
                 else
                 {
-                    CardsByPlace.Add(card.CardPlace, new List<BoardCardData>() { card });
+                    CardsByPlace.Add(card.CardPlace, new List<CardData>() { card });
                 }
             }
         }
@@ -110,7 +110,7 @@ namespace Solcery
                 if (card.CardId == EndTurnCardId)
                 {
                     var endTurnCardData = card;
-                    EndTurnCardType = Game.Instance?.GameContent?.Value?.GetCardTypeById(endTurnCardData.CardType);
+                    EndTurnCardType = OldGame.Instance?.GameContent?.Value?.GetCardTypeById(endTurnCardData.CardType);
                 }
             }
         }

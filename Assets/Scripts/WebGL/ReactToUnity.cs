@@ -37,7 +37,7 @@ namespace Solcery.WebGL
 
         public void UpdateGameContent(string gameContentJson)
         {
-            Game.Instance?.UpdateWithJson(gameContentJson);
+            OldGame.Instance?.UpdateWithJson(gameContentJson);
         }
 
         public void SetCardCreationSigned(string signJson)

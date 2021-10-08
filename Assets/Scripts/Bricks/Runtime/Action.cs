@@ -140,7 +140,7 @@ namespace Solcery
             static void ApplyToPlace(BrickData brick, ref Context ctx)
             {
                 var place = Value.Run(brick.Slots[0], ref ctx);
-                var cardsList = new List<BoardCardData>();
+                var cardsList = new List<CardData>();
                 foreach (var card in ctx.boardData.Cards)
                 {
                     if (card.CardPlace == place)

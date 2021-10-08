@@ -29,7 +29,7 @@ namespace Solcery.Modules
                 return origin;
 
             var currentLog = Log.Instance?.LogData?.Value;
-            var gameContent = Game.Instance?.GameContent?.Value;
+            var gameContent = OldGame.Instance?.GameContent?.Value;
 
             if (currentLog == null || gameContent == null)
                 return origin;
@@ -44,7 +44,7 @@ namespace Solcery.Modules
             if (logData == null)
                 return;
 
-            var gameContent = Game.Instance?.GameContent?.Value;
+            var gameContent = OldGame.Instance?.GameContent?.Value;
 
             if (gameContent == null)
                 return;

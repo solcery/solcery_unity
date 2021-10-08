@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Solcery
 {
-    public class Game : Singleton<Game>
+    public class OldGame : Singleton<OldGame>
     {
         public AsyncReactiveProperty<GameContent> GameContent => _gameContent;
         private AsyncReactiveProperty<GameContent> _gameContent = new AsyncReactiveProperty<GameContent>(null);

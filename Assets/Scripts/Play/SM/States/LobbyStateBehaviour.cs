@@ -15,7 +15,7 @@ namespace Solcery
 
             UILobby.Instance?.Init();
 
-            Reactives.Subscribe(Game.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
+            Reactives.Subscribe(OldGame.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
             Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _stateCTS.Token);
         }
 

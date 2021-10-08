@@ -1,4 +1,4 @@
-using System;
+    using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ namespace Solcery.UI.Play.Game.Board
 {
     public class UIBoardCard : MonoBehaviour
     {
-        public BoardCardData CardData => _cardData;
+        public CardData CardData => _cardData;
         public bool IsFaceDown => _isFaceDown;
         public AspectRatioFitter ARF => arf;
 
@@ -25,8 +25,8 @@ namespace Solcery.UI.Play.Game.Board
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
         [SerializeField] private GameObject cardCoins = null;
 
-        private BoardCardData _cardData;
-        private BoardCardType _cardType;
+        private CardData _cardData;
+        private CardType _cardType;
         private Action<int> _onCardCasted;
 
         private bool _isFaceDown;
@@ -34,13 +34,13 @@ namespace Solcery.UI.Play.Game.Board
         private bool _pointerDown = false;
         private bool _isPointerOver = false;
 
-        public void Init(BoardCardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
+        public void Init(CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
             _isFaceDown = isFaceDown;
             SetInteractabe(isInteractable);
 
             _cardData = cardData;
-            _cardType = Solcery.Game.Instance.GameContent.Value.GetCardTypeById(_cardData.CardType);
+            _cardType = Solcery.OldGame.Instance.GameContent.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
 
             SetAnimator();

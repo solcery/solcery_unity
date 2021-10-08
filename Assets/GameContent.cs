@@ -7,9 +7,9 @@ namespace Solcery
     public class GameContent
     {
         public BoardDisplayData DisplayData;
-        public List<BoardCardType> CardTypes;
+        public List<CardType> CardTypes;
 
-        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, BoardCardType> CardTypesById;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardType> CardTypesById;
 
         public GameContent Prettify()
         {
@@ -19,7 +19,7 @@ namespace Solcery
             return this;
         }
 
-        public BoardCardType GetCardTypeById(int cardTypeId)
+        public CardType GetCardTypeById(int cardTypeId)
         {
             if (CardTypesById.TryGetValue(cardTypeId, out var cardType))
             {
@@ -31,7 +31,7 @@ namespace Solcery
 
         private void CreateTypesDictionary()
         {
-            CardTypesById = new Dictionary<int, BoardCardType>();
+            CardTypesById = new Dictionary<int, CardType>();
 
             foreach (var cardType in CardTypes)
             {

@@ -3,7 +3,7 @@ using System;
 namespace Solcery
 {
     [Serializable]
-    public class BoardCardType
+    public class CardType
     {
         public int Id;
         public CardMetadata Metadata;

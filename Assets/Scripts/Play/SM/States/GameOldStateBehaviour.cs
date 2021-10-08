@@ -4,23 +4,23 @@ using Solcery.Utils.Reactives;
 
 namespace Solcery
 {
-    public class GameStateBehaviour : PlayStateBehaviour
+    public class GameOldStateBehaviour : PlayStateBehaviour
     {
         protected override async UniTask OnEnterState()
         {
             await base.OnEnterState();
 
-            BoardDataDiffTracker.Instance?.Init();
+            GameStateDiffTracker.Instance?.Init();
             GameResultTracker.Instance?.Init();
             UIGame.Instance?.Init();
 
-            Reactives.Subscribe(Game.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
-            Reactives.Subscribe(BoardDataDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _stateCTS.Token);
+            Reactives.Subscribe(OldGame.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
+            Reactives.Subscribe(GameStateDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _stateCTS.Token);
         }
 
         protected override async UniTask OnExitState()
         {
-            BoardDataDiffTracker.Instance?.DeInit();
+            GameStateDiffTracker.Instance?.DeInit();
             GameResultTracker.Instance?.DeInit();
             UIGame.Instance?.DeInit();
 

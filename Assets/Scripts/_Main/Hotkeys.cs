@@ -45,7 +45,7 @@ namespace Solcery
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                Game.Instance?.UpdateWithJson(gameContent1);
+                OldGame.Instance?.UpdateWithJson(gameContent1);
             }
 #endif
         }

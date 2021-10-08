@@ -111,7 +111,7 @@ namespace Solcery
                 LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
                 Log.Instance?.UpdateLog(null);
                 Board.Instance?.UpdateBoard(null);
-                Game.Instance?.UpdateGameContent(null);
+                OldGame.Instance?.UpdateGameContent(null);
             }));
         }
     }
