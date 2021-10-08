@@ -55,7 +55,7 @@ namespace Solcery.UI.Create
                 _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;
 
                 UICreatingCardPopup.Instance?.Open(_currentCard.Metadata);
-                UnityToReact.Instance?.CallUpdateCard(_currentCard);
+                OldUnityToReact.Instance?.CallUpdateCard(_currentCard);
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }

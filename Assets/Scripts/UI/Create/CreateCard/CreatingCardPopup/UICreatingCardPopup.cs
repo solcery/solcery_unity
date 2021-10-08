@@ -34,16 +34,16 @@ namespace Solcery.UI.Create
             signTransactionStatus?.SetState(UIStatusState.Waiting);
             confirmTransactionStatus?.SetState(UIStatusState.Waiting);
 
-            ReactToUnity.OnCardCreationSignDataChanged += OnCardCreationSignDataChanged;
-            ReactToUnity.OnCardCreationConfirmDataChanged += OnCardCreationConfirmDataChanged;
+            OldReactToUnity.OnCardCreationSignDataChanged += OnCardCreationSignDataChanged;
+            OldReactToUnity.OnCardCreationConfirmDataChanged += OnCardCreationConfirmDataChanged;
 
             okButton.onClick.AddListener(() => { Close(); });
         }
 
         private void Close()
         {
-            ReactToUnity.OnCardCreationSignDataChanged -= OnCardCreationSignDataChanged;
-            ReactToUnity.OnCardCreationConfirmDataChanged -= OnCardCreationConfirmDataChanged;
+            OldReactToUnity.OnCardCreationSignDataChanged -= OnCardCreationSignDataChanged;
+            OldReactToUnity.OnCardCreationConfirmDataChanged -= OnCardCreationConfirmDataChanged;
 
             okButton.onClick.RemoveAllListeners();
             canvas.enabled = false;

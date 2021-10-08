@@ -5,11 +5,11 @@ using Solcery.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Solcery
+namespace Solcery.Modules
 {
     public class CardPicturesFromUrl : Singleton<CardPicturesFromUrl>
     {
-        public Dictionary<string, Sprite> SpritesByUrl;
+        [HideInInspector] public Dictionary<string, Sprite> SpritesByUrl;
         public Dictionary<string, List<Action<Sprite>>> Subscriptions = new Dictionary<string, List<Action<Sprite>>>();
 
         public void GetTextureByUrl(string url, Action<Sprite> onSpriteReady)

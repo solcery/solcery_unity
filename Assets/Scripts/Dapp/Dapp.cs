@@ -14,7 +14,7 @@ namespace Solcery
             LogActionCreator.Instance?.Init();
             Board.Instance?.Init();
             Log.Instance?.Init();
-            UnityToReact.Instance?.CallOnUnityLoaded();
+            OldUnityToReact.Instance?.CallOnUnityLoaded();
         }
 
         public void DeInit()

@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
 using Sirenix.OdinInspector;
+using Solcery.Modules;
 using Solcery.Utils;
 using UnityEngine;
 

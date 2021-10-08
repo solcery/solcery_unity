@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Solcery
 {
-    public class Hotkeys : UpdateableSingleton<Hotkeys>
+    public class OldHotkeys : UpdateableSingleton<OldHotkeys>
     {
         [Multiline(20)] [SerializeField] private string gameContent1;
 

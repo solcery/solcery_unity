@@ -43,7 +43,7 @@ namespace Solcery.UI.Play.Lobby
 
         private void OnCreateGameButtonClicked()
         {
-            UnityToReact.Instance?.CallCreateBoard();
+            OldUnityToReact.Instance?.CallCreateBoard();
 
             summonerGameButton.interactable = false;
             waitingStatus?.SetActive(true);

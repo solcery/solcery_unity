@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Solcery.WebGL
 {
-    public class ReactToUnity : Singleton<ReactToUnity>
+    public class OldReactToUnity : Singleton<OldReactToUnity>
     {
         public static Action<CardCreationSignData> OnCardCreationSignDataChanged;
         public static Action<CardCreationConfirmData> OnCardCreationConfirmDataChanged;

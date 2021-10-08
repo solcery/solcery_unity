@@ -46,7 +46,7 @@ namespace Solcery.UI.Menu
         private void OnButtonClicked()
         {
             if (!string.IsNullOrEmpty(link))
-                UnityToReact.Instance?.CallOpenLinkInNewTab(link);
+                OldUnityToReact.Instance?.CallOpenLinkInNewTab(link);
         }
 
         private void ChangeFrameColor(Color newColor)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Solcery.NodeEditor
 {
-    public class NodeEditorHotkeys : UpdateableSingleton<Hotkeys>
+    public class NodeEditorHotkeys : UpdateableSingleton<NodeEditorHotkeys>
     {
         [SerializeField] private string testNodeEditorDataJson = null;
 

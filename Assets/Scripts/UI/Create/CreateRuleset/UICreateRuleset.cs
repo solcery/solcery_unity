@@ -232,7 +232,7 @@ namespace Solcery.UI.Create
             rulesetData.DisplayData = rulesetDisplayData;
 
             var rulesetJson = JsonUtility.ToJson(rulesetData);
-            UnityToReact.Instance.CallUpdateRuleset(rulesetJson);
+            OldUnityToReact.Instance.CallUpdateRuleset(rulesetJson);
         }
     }
 }

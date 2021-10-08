@@ -15,7 +15,7 @@ namespace Solcery
             Board.Instance?.Init();
             Log.Instance?.Init();
 
-            UnityToReact.Instance?.CallOnUnityLoaded();
+            OldUnityToReact.Instance?.CallOnUnityLoaded();
 
             // PlaySM.Instance?.Enter();
         }

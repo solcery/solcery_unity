@@ -52,7 +52,7 @@ namespace Solcery.Modules
 
         private void SendLogAction(LogData logData)
         {
-            UnityToReact.Instance?.CallLogAction(logData);
+            OldUnityToReact.Instance?.CallLogAction(logData);
         }
     }
 }

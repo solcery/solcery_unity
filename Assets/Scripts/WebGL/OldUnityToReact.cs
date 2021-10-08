@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Solcery.WebGL
 {
-    public class UnityToReact : Singleton<UnityToReact>
+    public class OldUnityToReact : Singleton<OldUnityToReact>
     {
         [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
