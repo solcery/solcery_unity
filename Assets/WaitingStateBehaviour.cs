@@ -36,7 +36,6 @@ namespace Solcery
 
         private void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
-            UnityEngine.Debug.Log("OnGameDisplayUpdate");
             _gameDisplay = gameDisplay;
             UIWaiting.Instance?.GameDisplayWaitingElement?.SetWaiting(gameDisplay == null);
             CheckIfCanStartGame();

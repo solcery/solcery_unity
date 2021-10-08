@@ -24,10 +24,8 @@ namespace Solcery
 
         public void UpdateGameDisplay(string gameDisplayJson)
         {
-            UnityEngine.Debug.Log("UpdateGameDisplay");
             var gameDisplay = JsonConvert.DeserializeObject<GameDisplay>(gameDisplayJson)?.Prettify();
             _gameDisplay.Value = gameDisplay;
-            UnityEngine.Debug.Log(_gameDisplay.Value == null);
         }
 
         public void UpdateGameState(string gameStateJson)
