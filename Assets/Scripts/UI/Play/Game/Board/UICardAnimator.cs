@@ -57,9 +57,15 @@ namespace Solcery.UI
         {
             UnityEngine.Debug.Log($"started: {UnityEngine.Time.realtimeSinceStartup}");
 
+            if (_cardsToAnimate == null || _cardsToAnimate.Count <= 0)
+            {
+                UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
+                return;
+            }
+
             var ct = this.GetCancellationTokenOnDestroy();
 
-            List<UniTask> tasks = new List<UniTask>();
+            // List<UniTask> tasks = new List<UniTask>();
             List<UniTask> processingTasks = new List<UniTask>();
             // tasks.Add(transform.DOMoveX(10, 3).WithCancellation(ct));
 
@@ -87,11 +93,14 @@ namespace Solcery.UI
                         var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);
 
                         var tweenMove = cardClone?.transform?.DOMove(destination, 0.5f);
-                        var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
-                        if (tweenMove != null)
-                            tasks.Add(tweenMove.WithCancellation(ct));
+                        processingTasks.Add(ProcessMoveTask(tweenMove.WithCancellation(ct), cardClone.gameObject, toPlace, departedCard.CardData.CardId));
 
-                        processingTasks.Add(AwaitAndProcessAsync(tweenMove.WithCancellation(ct), cardClone.gameObject, toPlace, departedCard.CardData.CardId));
+                        var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
+                        processingTasks.Add(ProcessScaleTask(tweenScale.WithCancellation(ct)));
+
+                        // if (tweenMove != null)
+                        //     tasks.Add(tweenMove.WithCancellation(ct));
+
 
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
                             cardClone?.PlayTurningAnimation();
@@ -114,12 +123,18 @@ namespace Solcery.UI
             _clonedCards = new Dictionary<int, UIBoardCard>();
         }
 
-        async UniTask AwaitAndProcessAsync(UniTask task, GameObject go, IBoardPlace toPlace, int cardId)
+        async UniTask ProcessMoveTask(UniTask task, GameObject go, IBoardPlace toPlace, int cardId)
         {
             await task;
             DestroyImmediate(go);
             toPlace.OnCardArrival(cardId);
-            Debug.Log("processed");
+            Debug.Log("processed move task");
+        }
+
+        async UniTask ProcessScaleTask(UniTask task)
+        {
+            await task;
+            Debug.Log("processed scale task");
         }
     }
 }
