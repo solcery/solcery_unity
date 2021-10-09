@@ -33,7 +33,6 @@ namespace Solcery.UI
                     return;
 
                 var cardToDeleteRect = cardToDelete.GetComponent<RectTransform>();
-                Debug.Log($"cardToDelete size: {cardToDeleteRect.rect.size}");
 
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
                 cardClone.SetVisibility(true);
@@ -61,6 +60,7 @@ namespace Solcery.UI
             var ct = this.GetCancellationTokenOnDestroy();
 
             List<UniTask> tasks = new List<UniTask>();
+            List<UniTask> processingTasks = new List<UniTask>();
             // tasks.Add(transform.DOMoveX(10, 3).WithCancellation(ct));
 
 
@@ -79,36 +79,47 @@ namespace Solcery.UI
                         var cardId = departedCard.CardData.CardId;
                         var cardRect = cardClone.GetComponent<RectTransform>();
                         var cardSize = cardRect.rect.size;
-                        Debug.Log($"size: {cardSize}");
+
                         var destination = toPlace.GetCardDestination(cardId);
                         // var rotation = toPlace.GetCardRotation(cardId);
                         var finalSize = toPlace.GetCardSize(cardId);
-                        Debug.Log($"final size: {finalSize}");
+
                         var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);
-                        Debug.Log($"scale to: {scaleTo}");
+
                         var tweenMove = cardClone?.transform?.DOMove(destination, 0.5f);
                         var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
                         if (tweenMove != null)
                             tasks.Add(tweenMove.WithCancellation(ct));
 
+                        processingTasks.Add(AwaitAndProcessAsync(tweenMove.WithCancellation(ct), cardClone.gameObject, toPlace, departedCard.CardData.CardId));
+
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
                             cardClone?.PlayTurningAnimation();
 
-                        tweenMove.OnComplete(() =>
-                        {
-                            DestroyImmediate(cardClone.gameObject);
-                            _clonedCards.Remove(departedCard.CardData.CardId);
-                            toPlace.OnCardArrival(departedCard.CardData.CardId);
-                        });
+                        // tweenMove.OnComplete(() =>
+                        // {
+                        //     DestroyImmediate(cardClone.gameObject);
+                        //     _clonedCards.Remove(departedCard.CardData.CardId);
+                        //     toPlace.OnCardArrival(departedCard.CardData.CardId);
+                        // });
                     }
                 }
             }
 
-            await UniTask.WhenAll(tasks);
+            await UniTask.WhenAll(processingTasks);
+
             UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
 
             _cardsToAnimate = new List<BoardDataCardChangedPlace>();
             _clonedCards = new Dictionary<int, UIBoardCard>();
+        }
+
+        async UniTask AwaitAndProcessAsync(UniTask task, GameObject go, IBoardPlace toPlace, int cardId)
+        {
+            await task;
+            DestroyImmediate(go);
+            toPlace.OnCardArrival(cardId);
+            Debug.Log("processed");
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Solcery
 
         private void OnGameStateDiffUpdate(GameState gameState)
         {
+            UnityEngine.Debug.Log("OnGameStateDiffUpdate");
             if (gameState == null) { ExitGame(); return; }
             UIGame.Instance?.OnGameStateUpdate(gameState);
         }
