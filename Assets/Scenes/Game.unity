@@ -930,6 +930,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  StatesProcessed: 0
   GameStateWithDiff:
     latestValue:
       Cards: []
@@ -1704,7 +1705,7 @@ MonoBehaviour:
       onUpdateState:
         m_PersistentCalls:
           m_Calls: []
-    - position: {x: 383.58813, y: 263.35294}
+    - position: {x: 380.58813, y: 257.35294}
       id: Animating
       onEnterState:
         m_PersistentCalls:
@@ -7229,46 +7230,23 @@ MonoBehaviour:
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
     \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
+  gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
+    \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
+    \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Shop\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    true,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
+    \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.575,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"EnemyHand\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 2,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
     \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.75,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"PlayerDrawPile\",\r\n      \"PlaceId\": 5,\r\n      \"Player\": 1,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.03,\r\n        \"Max\":
-    0.35\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"EnemyDrawPile\",\r\n      \"PlaceId\":
-    6,\r\n      \"Player\": 2,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n       
-    \"Max\": 0.85\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.75,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\": 1,\r\n     
-    \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayedThisTurn\",\r\n     
-    \"PlaceId\": 7,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.64,\r\n        \"Max\": 0.74\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"PlayedThisTurnTop\",\r\n      \"PlaceId\": 8,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.64,\r\n        \"Max\": 0.74\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayerDiscardPile\",\r\n     
-    \"PlaceId\": 9,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.64,\r\n        \"Max\": 0.74\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"EnemyDiscardPile\",\r\n      \"PlaceId\": 10,\r\n      \"Player\": 2,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.64,\r\n        \"Max\": 0.74\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\":
-    1.0\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    }\r\n  ]\r\n}\r"
-  gameDisplay2: 
+    0,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
   gameDisplay3: 
   gameDisplay4: 
   gameState1: "{\r\n    \"Cards\": [\r\n      {\r\n        \"CardId\": 0,\r\n       

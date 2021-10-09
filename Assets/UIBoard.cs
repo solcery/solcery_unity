@@ -71,32 +71,52 @@ namespace Solcery.UI
             {
                 var placeId = displayData.PlaceId;
 
-                if (_placesById.ContainsKey(placeId))
+                if (_placesById.TryGetValue(placeId, out var existingPlace))
                 {
-                    // make sure it is the same place
-                    // update cards in place
+                    if (existingPlace.Equals(displayData))
+                        continue;
+                    else
+                    {
+                        var monobeh = existingPlace as MonoBehaviour;
+                        if (monobeh != null)
+                            DestroyImmediate(monobeh.gameObject);
+
+                        var place = CreatePlace(displayData, placeId);
+                        if (place != null)
+                            _placesById[placeId] = place;
+                        else
+                            _placesById.Remove(placeId);
+                    }
                 }
                 else
                 {
-                    // create a new place
-                    if (places.PlacePrefabs.TryGetValue(displayData.CardLayoutOption, out var placePrefab))
-                    {
-                        var placeGO = Instantiate(placePrefab, this.transform);
-                        var place = placeGO.GetComponent<IBoardPlace>();
-
+                    var place = CreatePlace(displayData, placeId);
+                    if (place != null)
                         _placesById.Add(placeId, place);
-#if UNITY_EDITOR
-                        placeGO.name = displayData.PlaceName;
-#endif
-                        var placeRect = placeGO.GetComponent<RectTransform>();
-                        placeRect.anchorMin = new Vector2(displayData.HorizontalAnchors.Min, displayData.VerticalAnchors.Min);
-                        placeRect.anchorMax = new Vector2(displayData.HorizontalAnchors.Max, displayData.VerticalAnchors.Max);
-                    }
-                    else
-                    {
-                        Debug.Log("no prefab for this place");
-                    }
                 }
+            }
+        }
+
+        private IBoardPlace CreatePlace(PlaceDisplayData displayData, int placeId)
+        {
+            if (places.PlacePrefabs.TryGetValue(displayData.CardLayoutOption, out var placePrefab))
+            {
+                var placeGO = Instantiate(placePrefab, this.transform);
+                var place = placeGO.GetComponent<IBoardPlace>();
+
+#if UNITY_EDITOR
+                placeGO.name = displayData.PlaceName;
+#endif
+                var placeRect = placeGO.GetComponent<RectTransform>();
+                placeRect.anchorMin = new Vector2(displayData.HorizontalAnchors.Min, displayData.VerticalAnchors.Min);
+                placeRect.anchorMax = new Vector2(displayData.HorizontalAnchors.Max, displayData.VerticalAnchors.Max);
+
+                return place;
+            }
+            else
+            {
+                Debug.Log("no prefab for this place");
+                return null;
             }
         }
 
