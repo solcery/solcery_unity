@@ -9,6 +9,8 @@ namespace Solcery
 {
     public class GameStateDiffTracker : Singleton<GameStateDiffTracker>
     {
+        public int StatesProcessed = 0;
+
         [HideInInspector]
         public AsyncReactiveProperty<GameState> GameStateWithDiff;
 
@@ -109,6 +111,7 @@ namespace Solcery
             }
 
             _currentGameState.Diff = new GameStateDiff(_cardPlaceDiffs);
+            StatesProcessed += 1;
             GameStateWithDiff.Value = _currentGameState;
         }
     }

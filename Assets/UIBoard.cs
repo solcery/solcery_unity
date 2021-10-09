@@ -59,7 +59,7 @@ namespace Solcery.UI
                 }
             }
 
-            UICardAnimator.Instance?.LaunchAll();
+            // UICardAnimator.Instance?.LaunchAll();
         }
 
         private void ProcessDisplayData()

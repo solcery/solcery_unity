@@ -53,9 +53,11 @@ namespace Solcery.UI
             }
         }
 
-        public async UniTaskVoid LaunchAll()
+        public bool HasSomethingToAnimate => (_cardsToAnimate != null && _cardsToAnimate.Count > 0);
+
+        public async UniTask LaunchAll()
         {
-            UnityEngine.Debug.Log($"started: {UnityEngine.Time.realtimeSinceStartup}");
+            // UnityEngine.Debug.Log($"started: {UnityEngine.Time.realtimeSinceStartup}");
 
             if (_cardsToAnimate == null || _cardsToAnimate.Count <= 0)
             {
@@ -117,7 +119,7 @@ namespace Solcery.UI
 
             await UniTask.WhenAll(processingTasks);
 
-            UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
+            // UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
 
             _cardsToAnimate = new List<BoardDataCardChangedPlace>();
             _clonedCards = new Dictionary<int, UIBoardCard>();
@@ -128,13 +130,13 @@ namespace Solcery.UI
             await task;
             DestroyImmediate(go);
             toPlace.OnCardArrival(cardId);
-            Debug.Log("processed move task");
+            // Debug.Log("processed move task");
         }
 
         async UniTask ProcessScaleTask(UniTask task)
         {
             await task;
-            Debug.Log("processed scale task");
+            // Debug.Log("processed scale task");
         }
     }
 }

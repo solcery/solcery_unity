@@ -1,4 +1,4 @@
-    using System;
+using System;
 using Solcery.Modules;
 using TMPro;
 using UnityEngine;
@@ -81,17 +81,20 @@ namespace Solcery.UI
             {
                 if (!_isInteractable)
                 {
-                    animator?.SetTrigger("Idle");
+                    if (animator != null)
+                        animator?.SetTrigger("Idle");
                 }
                 else
                 {
                     if (_isPointerOver)
                     {
-                        animator?.SetTrigger("Highlighted");
+                        if (animator != null)
+                            animator?.SetTrigger("Highlighted");
                     }
                     else
                     {
-                        animator?.SetTrigger("Idle");
+                        if (animator != null)
+                            animator?.SetTrigger("Idle");
                     }
                 }
             }
@@ -99,12 +102,14 @@ namespace Solcery.UI
 
         public void StopShaking()
         {
-            animator?.SetBool("IsPressed", false);
+            if (animator != null)
+                animator?.SetBool("IsPressed", false);
         }
 
         public void SetAnimator()
         {
-            animator?.SetBool("IsFaceDown", _isFaceDown);
+            if (animator != null)
+                animator?.SetBool("IsFaceDown", _isFaceDown);
         }
 
         public void DeInit()

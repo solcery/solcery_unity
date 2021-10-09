@@ -6,6 +6,8 @@ namespace Solcery
 {
     public class IdleStateBehaviour : GameStateBehaviour
     {
+        private int _lastStatesProcessed;
+
         protected override async UniTask OnEnterState()
         {
             await base.OnEnterState();
@@ -18,9 +20,17 @@ namespace Solcery
 
         private void OnGameStateDiffUpdate(GameState gameState)
         {
+            if (GameStateDiffTracker.Instance.StatesProcessed == _lastStatesProcessed)
+                return;
+
+            _lastStatesProcessed = GameStateDiffTracker.Instance.StatesProcessed;
+
             UnityEngine.Debug.Log("OnGameStateDiffUpdate");
             if (gameState == null) { ExitGame(); return; }
             UIGame.Instance?.OnGameStateUpdate(gameState);
+
+            if (UICardAnimator.Instance.HasSomethingToAnimate)
+                stateMachine?.Trigger("Animate");
         }
 
         private void OnGameContentUpdate(GameContent gameContent)
