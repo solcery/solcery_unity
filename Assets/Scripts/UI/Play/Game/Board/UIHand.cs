@@ -190,10 +190,8 @@ namespace Solcery.UI
 
             if (card != null)
                 return card.transform.position;
-            else
-            {
-                return this.transform.position;
-            }
+
+            return this.transform.position;
         }
 
         public Vector3 GetCardRotation(int cardId)
@@ -202,10 +200,23 @@ namespace Solcery.UI
 
             if (card != null)
                 return card.transform.localRotation.eulerAngles;
-            else
+
+
+            return this.transform.localRotation.eulerAngles;
+        }
+
+        public Vector2 GetCardSize(int cardId)
+        {
+            var card = GetCardById(cardId);
+
+            if (card != null)
             {
-                return this.transform.localRotation.eulerAngles;
+                var rect = card?.GetComponent<RectTransform>();
+                if (rect != null)
+                    return rect.rect.size;
             }
+
+            return Vector2.one;
         }
 
         public Transform GetCardsParent()

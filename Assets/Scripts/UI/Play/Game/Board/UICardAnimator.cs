@@ -2,6 +2,8 @@ using Solcery.Utils;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Solcery.UI
 {
@@ -30,6 +32,9 @@ namespace Solcery.UI
                 if (cardToDelete == null)
                     return;
 
+                var cardToDeleteRect = cardToDelete.GetComponent<RectTransform>();
+                Debug.Log($"cardToDelete size: {cardToDeleteRect.rect.size}");
+
                 var cardClone = Instantiate<UIBoardCard>(cardToDelete, this.transform, true);
                 cardClone.SetVisibility(true);
                 cardClone.SetFaceDown(cardToDelete.IsFaceDown);
@@ -49,23 +54,47 @@ namespace Solcery.UI
             }
         }
 
-        public void LaunchAll()
+        public async UniTaskVoid LaunchAll()
         {
+            UnityEngine.Debug.Log($"started: {UnityEngine.Time.realtimeSinceStartup}");
+
+            var ct = this.GetCancellationTokenOnDestroy();
+
+            List<UniTask> tasks = new List<UniTask>();
+            // tasks.Add(transform.DOMoveX(10, 3).WithCancellation(ct));
+
+
+
+            // await UniTask.WhenAll(
+            //     transform.DOMoveX(10, 3).WithCancellation(ct),
+            //     transform.DOScale(10, 3).WithCancellation(ct));
+
+
             foreach (var departedCard in _cardsToAnimate)
             {
                 if (UIBoard.Instance.GetBoardPlace(departedCard.From, out var fromPlace) && UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
                 {
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {
-                        var destination = toPlace.GetCardDestination(departedCard.CardData.CardId);
-                        var rotation = toPlace.GetCardRotation(departedCard.CardData.CardId);
-                        var tween = cardClone.transform.DOMove(destination, 0.5f);
-                        cardClone.transform.DORotate(rotation, 0.25f);
+                        var cardId = departedCard.CardData.CardId;
+                        var cardRect = cardClone.GetComponent<RectTransform>();
+                        var cardSize = cardRect.rect.size;
+                        Debug.Log($"size: {cardSize}");
+                        var destination = toPlace.GetCardDestination(cardId);
+                        // var rotation = toPlace.GetCardRotation(cardId);
+                        var finalSize = toPlace.GetCardSize(cardId);
+                        Debug.Log($"final size: {finalSize}");
+                        var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);
+                        Debug.Log($"scale to: {scaleTo}");
+                        var tweenMove = cardClone?.transform?.DOMove(destination, 0.5f);
+                        var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
+                        if (tweenMove != null)
+                            tasks.Add(tweenMove.WithCancellation(ct));
 
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
                             cardClone?.PlayTurningAnimation();
 
-                        tween.OnComplete(() =>
+                        tweenMove.OnComplete(() =>
                         {
                             DestroyImmediate(cardClone.gameObject);
                             _clonedCards.Remove(departedCard.CardData.CardId);
@@ -74,6 +103,9 @@ namespace Solcery.UI
                     }
                 }
             }
+
+            await UniTask.WhenAll(tasks);
+            UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
 
             _cardsToAnimate = new List<BoardDataCardChangedPlace>();
             _clonedCards = new Dictionary<int, UIBoardCard>();

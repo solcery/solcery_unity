@@ -599,7 +599,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     0: ODIN_INSPECTOR;ODIN_INSPECTOR_3
     1: ODIN_INSPECTOR;ODIN_INSPECTOR_3
-    13: ODIN_INSPECTOR;ODIN_INSPECTOR_3
+    13: ODIN_INSPECTOR;ODIN_INSPECTOR_3;UNITASK_DOTWEEN_SUPPORT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
