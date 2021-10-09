@@ -21,6 +21,16 @@ namespace Solcery
             return this;
         }
 
+        public CardData GetCard(int cardId)
+        {
+            if (CardsById.TryGetValue(cardId, out var card))
+            {
+                return card;
+            }
+
+            return null;
+        }
+
         private void CreateCardsDictionary()
         {
             CardsById = new Dictionary<int, CardData>();

@@ -6,18 +6,28 @@ namespace Solcery.UI
     public class UIGame : Singleton<UIGame>
     {
         [SerializeField] Canvas canvas = null;
+        [SerializeField] private UIBoard board = null;
 
         public void Init()
         {
             if (canvas != null) canvas.enabled = true;
-            UIBoard.Instance?.Init();
+            board?.Init();
         }
 
         public void DeInit()
         {
-
-            UIBoard.Instance?.DeInit();
+            board?.DeInit();
             if (canvas != null) canvas.enabled = false;
+        }
+
+        public void OnGameDisplayUpdate(GameDisplay gameDisplay)
+        {
+            board?.OnGameDisplayUpdate(gameDisplay);
+        }
+
+        public void OnGameStateUpdate(GameState gameState)
+        {
+            board?.OnGameStateUpdate(gameState);
         }
     }
 }

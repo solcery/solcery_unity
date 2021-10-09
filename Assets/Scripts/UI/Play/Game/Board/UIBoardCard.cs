@@ -41,7 +41,7 @@ namespace Solcery.UI
             SetInteractabe(isInteractable);
 
             _cardData = cardData;
-            _cardType = Solcery.OldGame.Instance.GameContent.Value.GetCardTypeById(_cardData.CardType);
+            _cardType = Game.Instance.GameContent.Value.GetCardTypeById(_cardData.CardType);
             _onCardCasted = onCardCasted;
 
             SetAnimator();

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Solcery.Modules;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
 using UnityEngine;
@@ -11,10 +10,10 @@ namespace Solcery
     public class GameStateDiffTracker : Singleton<GameStateDiffTracker>
     {
         [HideInInspector]
-        public AsyncReactiveProperty<BoardData> BoardDataWithDiff;
+        public AsyncReactiveProperty<GameState> GameStateWithDiff;
 
-        private BoardData _currentBoardData;
-        private BoardData _previousBoardData;
+        private GameState _currentGameState;
+        private GameState _previousGameState;
 
         private CancellationTokenSource _cts;
 
@@ -25,8 +24,8 @@ namespace Solcery
         public void Init()
         {
             _cts = new CancellationTokenSource();
-            _previousBoardData = null;
-            Reactives.Subscribe(Board.Instance?.BoardData, OnBoardUpdate, _cts.Token);
+            _previousGameState = null;
+            Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _cts.Token);
         }
 
         public void DeInit()
@@ -35,37 +34,37 @@ namespace Solcery
             _cts?.Dispose();
             _cts = null;
 
-            _previousBoardData = null;
-            _currentBoardData = null;
+            _previousGameState = null;
+            _currentGameState = null;
         }
 
-        private void OnBoardUpdate(BoardData boardData)
+        private void OnGameStateUpdate(GameState boardData)
         {
-            _previousBoardData = (boardData == null) ? null : _currentBoardData;
-            _currentBoardData = boardData;
+            _previousGameState = (boardData == null) ? null : _currentGameState;
+            _currentGameState = boardData;
 
             TrackCardsThatChangedPlaces();
         }
 
         private void TrackCardsThatChangedPlaces()
         {
-            if (_currentBoardData == null || _currentBoardData.Cards == null)
+            if (_currentGameState == null || _currentGameState.Cards == null)
             {
                 _cardsThatChangedPlaces = null;
                 _cardsThatStayed = null;
-                BoardDataWithDiff.Value = null;
+                GameStateWithDiff.Value = null;
                 return;
             }
 
             _cardsThatChangedPlaces = new List<BoardDataCardChangedPlace>();
             _cardsThatStayed = new List<BoardDataCardChangedPlace>();
 
-            foreach (var card in _currentBoardData.Cards)
+            foreach (var card in _currentGameState.Cards)
             {
                 var cardId = card.CardId;
 
-                var previousPlace = _previousBoardData?.GetCard(cardId)?.CardPlace;
-                var currentPlace = _currentBoardData?.GetCard(cardId)?.CardPlace;
+                var previousPlace = _previousGameState?.GetCard(cardId)?.CardPlace;
+                var currentPlace = _currentGameState?.GetCard(cardId)?.CardPlace;
 
                 if (previousPlace != currentPlace)
                 {
@@ -109,8 +108,8 @@ namespace Solcery
                     _cardPlaceDiffs.Add(stay.StayedIn, new CardPlaceDiff(new List<BoardDataCardChangedPlace>() { stay }, null, null));
             }
 
-            _currentBoardData.Diff = new GameStateDiff(_cardPlaceDiffs);
-            BoardDataWithDiff.Value = _currentBoardData;
+            _currentGameState.Diff = new GameStateDiff(_cardPlaceDiffs);
+            GameStateWithDiff.Value = _currentGameState;
         }
     }
 }

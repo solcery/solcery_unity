@@ -24,12 +24,12 @@ namespace Solcery.UI.Play.Game
 
         public void OnGameContentUpdate(OldGameContent gameContent)
         {
-            board?.OnGameContentUpdate(gameContent);
+            // board?.OnGameContentUpdate(gameContent);
         }
 
         public void OnBoardUpdate(BoardData boardData)
         {
-            board?.OnBoardUpdate(boardData);
+            // board?.OnBoardUpdate(boardData);
         }
     }
 }

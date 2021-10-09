@@ -15,7 +15,7 @@ namespace Solcery
             OldUIGame.Instance?.Init();
 
             Reactives.Subscribe(OldGame.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
-            Reactives.Subscribe(GameStateDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _stateCTS.Token);
+            // Reactives.Subscribe(GameStateDiffTracker.Instance?.BoardDataWithDiff, OnBoardUpdate, _stateCTS.Token);
         }
 
         protected override async UniTask OnExitState()

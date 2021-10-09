@@ -758,7 +758,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: _placesById
+      Entry: 6
+      Data: 
   places: {fileID: 11400000, guid: 5dd3cb03f6fcdf44e9666db42256910b, type: 2}
 --- !u!1 &592665500
 GameObject:
@@ -927,17 +930,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  BoardDataWithDiff:
+  GameStateWithDiff:
     latestValue:
-      Step: 0
       Cards: []
-      Players: []
       Random:
         x: 0
         y: 0
         z: 0
         w: 0
-      EndTurnCardId: 0
 --- !u!4 &776755491
 Transform:
   m_ObjectHideFlags: 0
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graph:
     states:
-    - position: {x: 63.8235, y: 169.29408}
+    - position: {x: 56.8235, y: 165.29408}
       id: Waiting
       onEnterState:
         m_PersistentCalls:
@@ -1726,7 +1726,7 @@ MonoBehaviour:
       onUpdateState:
         m_PersistentCalls:
           m_Calls: []
-    - position: {x: 216.76466, y: 240.11765}
+    - position: {x: 214.76466, y: 239.11765}
       id: DeInit
       onEnterState:
         m_PersistentCalls:
@@ -7271,165 +7271,366 @@ MonoBehaviour:
   gameDisplay2: 
   gameDisplay3: 
   gameDisplay4: 
-  gameState1: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    0,\r\n      \"CardPlace\": 0\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
-    \"CardType\": 1,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\":
-    2,\r\n      \"CardType\": 2,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n     
-    \"CardId\": 3,\r\n      \"CardType\": 3,\r\n      \"CardPlace\": 998\r\n    },\r\n   
-    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 4,\r\n      \"CardPlace\": 998\r\n   
-    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 5,\r\n      \"CardPlace\":
-    998\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 6,\r\n     
-    \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    7,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n     
-    \"CardType\": 8,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\":
-    9,\r\n      \"CardType\": 9,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n     
-    \"CardId\": 10,\r\n      \"CardType\": 10,\r\n      \"CardPlace\": 998\r\n   
-    },\r\n    {\r\n      \"CardId\": 11,\r\n      \"CardType\": 11,\r\n      \"CardPlace\":
-    998\r\n    },\r\n    {\r\n      \"CardId\": 12,\r\n      \"CardType\": 12,\r\n     
-    \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\": 13,\r\n      \"CardType\":
-    13,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n     
-    \"CardType\": 14,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n      \"CardId\":
-    15,\r\n      \"CardType\": 15,\r\n      \"CardPlace\": 998\r\n    },\r\n    {\r\n     
-    \"CardId\": 16,\r\n      \"CardType\": 16,\r\n      \"CardPlace\": 998\r\n   
-    },\r\n    {\r\n      \"CardId\": 17,\r\n      \"CardType\": 17,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 18,\r\n      \"CardType\": 17,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 19,\r\n      \"CardType\":
-    18,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 20,\r\n     
-    \"CardType\": 18,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    21,\r\n      \"CardType\": 18,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 22,\r\n      \"CardType\": 18,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 23,\r\n      \"CardType\": 19,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 24,\r\n      \"CardType\": 19,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 25,\r\n      \"CardType\":
-    20,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 26,\r\n     
-    \"CardType\": 20,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    27,\r\n      \"CardType\": 20,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 28,\r\n      \"CardType\": 20,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 29,\r\n      \"CardType\": 21,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 30,\r\n      \"CardType\": 21,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 31,\r\n      \"CardType\":
-    21,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 32,\r\n     
-    \"CardType\": 21,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    33,\r\n      \"CardType\": 22,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 34,\r\n      \"CardType\": 22,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 35,\r\n      \"CardType\": 22,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 36,\r\n      \"CardType\": 22,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 37,\r\n      \"CardType\":
-    23,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 38,\r\n     
-    \"CardType\": 23,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    39,\r\n      \"CardType\": 23,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 40,\r\n      \"CardType\": 24,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 41,\r\n      \"CardType\": 24,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 42,\r\n      \"CardType\": 24,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 43,\r\n      \"CardType\":
-    24,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 44,\r\n     
-    \"CardType\": 25,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    45,\r\n      \"CardType\": 25,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 46,\r\n      \"CardType\": 25,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 47,\r\n      \"CardType\": 26,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 48,\r\n      \"CardType\": 26,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 49,\r\n      \"CardType\":
-    26,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 50,\r\n     
-    \"CardType\": 26,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    51,\r\n      \"CardType\": 27,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 52,\r\n      \"CardType\": 27,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 53,\r\n      \"CardType\": 27,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 54,\r\n      \"CardType\": 28,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 55,\r\n      \"CardType\":
-    28,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 56,\r\n     
-    \"CardType\": 28,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    57,\r\n      \"CardType\": 29,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 58,\r\n      \"CardType\": 29,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 59,\r\n      \"CardType\": 29,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 60,\r\n      \"CardType\": 30,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 61,\r\n      \"CardType\":
-    30,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 62,\r\n     
-    \"CardType\": 30,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    63,\r\n      \"CardType\": 31,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 64,\r\n      \"CardType\": 31,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 65,\r\n      \"CardType\": 32,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 66,\r\n      \"CardType\": 32,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 67,\r\n      \"CardType\":
-    33,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 68,\r\n     
-    \"CardType\": 33,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    69,\r\n      \"CardType\": 34,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 70,\r\n      \"CardType\": 34,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 71,\r\n      \"CardType\": 35,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 72,\r\n      \"CardType\": 35,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 73,\r\n      \"CardType\":
-    35,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 74,\r\n     
-    \"CardType\": 36,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    75,\r\n      \"CardType\": 37,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 76,\r\n      \"CardType\": 38,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 77,\r\n      \"CardType\": 39,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 78,\r\n      \"CardType\": 40,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 79,\r\n      \"CardType\":
-    41,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 80,\r\n     
-    \"CardType\": 42,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    81,\r\n      \"CardType\": 43,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 82,\r\n      \"CardType\": 44,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 83,\r\n      \"CardType\": 45,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 84,\r\n      \"CardType\": 46,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 85,\r\n      \"CardType\":
-    47,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 86,\r\n     
-    \"CardType\": 48,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    87,\r\n      \"CardType\": 49,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 88,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 5\r\n    },\r\n   
-    {\r\n      \"CardId\": 89,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    5\r\n    },\r\n    {\r\n      \"CardId\": 90,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\": 91,\r\n      \"CardType\":
-    51,\r\n      \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\": 92,\r\n     
-    \"CardType\": 52,\r\n      \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\":
-    93,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 5\r\n    },\r\n    {\r\n     
-    \"CardId\": 94,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 5\r\n    },\r\n   
-    {\r\n      \"CardId\": 95,\r\n      \"CardType\": 52,\r\n      \"CardPlace\":
-    5\r\n    },\r\n    {\r\n      \"CardId\": 96,\r\n      \"CardType\": 52,\r\n     
-    \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\": 97,\r\n      \"CardType\":
-    52,\r\n      \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\": 98,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 6\r\n    },\r\n    {\r\n      \"CardId\":
-    99,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 6\r\n    },\r\n    {\r\n     
-    \"CardId\": 100,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 6\r\n   
-    },\r\n    {\r\n      \"CardId\": 101,\r\n      \"CardType\": 51,\r\n      \"CardPlace\":
-    6\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n      \"CardType\": 52,\r\n     
-    \"CardPlace\": 6\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n      \"CardType\":
-    52,\r\n      \"CardPlace\": 6\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n     
-    \"CardType\": 52,\r\n      \"CardPlace\": 6\r\n    },\r\n    {\r\n      \"CardId\":
-    105,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 6\r\n    },\r\n    {\r\n     
-    \"CardId\": 106,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 6\r\n   
-    },\r\n    {\r\n      \"CardId\": 107,\r\n      \"CardType\": 52,\r\n      \"CardPlace\":
-    6\r\n    },\r\n    {\r\n      \"CardId\": 108,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 109,\r\n      \"CardType\":
-    50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 110,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\":
-    111,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n   
-    {\r\n      \"CardId\": 112,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    500\r\n    },\r\n    {\r\n      \"CardId\": 113,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 114,\r\n      \"CardType\":
-    50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 115,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\":
-    116,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n   
-    {\r\n      \"CardId\": 117,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    500\r\n    },\r\n    {\r\n      \"CardId\": 118,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 119,\r\n      \"CardType\":
-    50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 120,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\":
-    121,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n   
-    {\r\n      \"CardId\": 122,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    500\r\n    },\r\n    {\r\n      \"CardId\": 123,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 124,\r\n      \"CardType\":
-    50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 125,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\":
-    126,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n   
-    {\r\n      \"CardId\": 127,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    500\r\n    },\r\n    {\r\n      \"CardId\": 128,\r\n      \"CardType\": 50,\r\n     
-    \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 129,\r\n      \"CardType\":
-    50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\": 130,\r\n     
-    \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n    {\r\n      \"CardId\":
-    131,\r\n      \"CardType\": 50,\r\n      \"CardPlace\": 500\r\n    },\r\n   
-    {\r\n      \"CardId\": 132,\r\n      \"CardType\": 50,\r\n      \"CardPlace\":
-    500\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
-    362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r"
-  gameState2: 
+  gameState1: "{\r\n    \"Cards\": [\r\n      {\r\n        \"CardId\": 0,\r\n       
+    \"CardType\": 0,\r\n        \"CardPlace\": 0\r\n      },\r\n      {\r\n       
+    \"CardId\": 1,\r\n        \"CardType\": 1,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 2,\r\n        \"CardType\": 2,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 3,\r\n       
+    \"CardType\": 3,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 4,\r\n        \"CardType\": 4,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 5,\r\n        \"CardType\": 5,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 6,\r\n       
+    \"CardType\": 6,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 7,\r\n        \"CardType\": 7,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 8,\r\n        \"CardType\": 8,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 9,\r\n       
+    \"CardType\": 9,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 10,\r\n        \"CardType\": 10,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 11,\r\n        \"CardType\": 11,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 12,\r\n       
+    \"CardType\": 12,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 13,\r\n        \"CardType\": 13,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 14,\r\n        \"CardType\": 14,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 15,\r\n       
+    \"CardType\": 15,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 16,\r\n        \"CardType\": 16,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 17,\r\n        \"CardType\": 17,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 18,\r\n       
+    \"CardType\": 17,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 19,\r\n        \"CardType\": 18,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 20,\r\n        \"CardType\": 18,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 21,\r\n       
+    \"CardType\": 18,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 22,\r\n        \"CardType\": 18,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 23,\r\n        \"CardType\": 19,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 24,\r\n       
+    \"CardType\": 19,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 25,\r\n        \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 26,\r\n        \"CardType\": 20,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 27,\r\n       
+    \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 28,\r\n        \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 29,\r\n        \"CardType\": 21,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 30,\r\n       
+    \"CardType\": 21,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 31,\r\n        \"CardType\": 21,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 32,\r\n        \"CardType\": 21,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 33,\r\n       
+    \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 34,\r\n        \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 35,\r\n        \"CardType\": 22,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 36,\r\n       
+    \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 37,\r\n        \"CardType\": 23,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 38,\r\n        \"CardType\": 23,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 39,\r\n       
+    \"CardType\": 23,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 40,\r\n        \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 41,\r\n        \"CardType\": 24,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 42,\r\n       
+    \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 43,\r\n        \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 44,\r\n        \"CardType\": 25,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 45,\r\n       
+    \"CardType\": 25,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 46,\r\n        \"CardType\": 25,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 47,\r\n        \"CardType\": 26,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 48,\r\n       
+    \"CardType\": 26,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 49,\r\n        \"CardType\": 26,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 50,\r\n        \"CardType\": 26,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 51,\r\n       
+    \"CardType\": 27,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 52,\r\n        \"CardType\": 27,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 53,\r\n        \"CardType\": 27,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 54,\r\n       
+    \"CardType\": 28,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 55,\r\n        \"CardType\": 28,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 56,\r\n        \"CardType\": 28,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 57,\r\n       
+    \"CardType\": 29,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 58,\r\n        \"CardType\": 29,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 59,\r\n        \"CardType\": 29,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 60,\r\n       
+    \"CardType\": 30,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 61,\r\n        \"CardType\": 30,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 62,\r\n        \"CardType\": 30,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 63,\r\n       
+    \"CardType\": 31,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 64,\r\n        \"CardType\": 31,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 65,\r\n        \"CardType\": 32,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 66,\r\n       
+    \"CardType\": 32,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 67,\r\n        \"CardType\": 33,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 68,\r\n        \"CardType\": 33,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 69,\r\n       
+    \"CardType\": 34,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 70,\r\n        \"CardType\": 34,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 71,\r\n        \"CardType\": 35,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 72,\r\n       
+    \"CardType\": 35,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 73,\r\n        \"CardType\": 35,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 74,\r\n        \"CardType\": 36,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 75,\r\n       
+    \"CardType\": 37,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 76,\r\n        \"CardType\": 38,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 77,\r\n        \"CardType\": 39,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 78,\r\n       
+    \"CardType\": 40,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 79,\r\n        \"CardType\": 41,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 80,\r\n        \"CardType\": 42,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 81,\r\n       
+    \"CardType\": 43,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 82,\r\n        \"CardType\": 44,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 83,\r\n        \"CardType\": 45,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 84,\r\n       
+    \"CardType\": 46,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 85,\r\n        \"CardType\": 47,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 86,\r\n        \"CardType\": 48,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 87,\r\n       
+    \"CardType\": 49,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 88,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 89,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 90,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 91,\r\n        \"CardType\": 51,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 92,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 93,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 94,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 95,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 96,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 97,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 98,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 99,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 100,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 101,\r\n        \"CardType\": 51,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 102,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 103,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 104,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 105,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 106,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 107,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 108,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 109,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 110,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 111,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 112,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 113,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 114,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 115,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 116,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 117,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 118,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 119,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 120,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 121,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 122,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 123,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 124,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 125,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 126,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 127,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 128,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 129,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 130,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 131,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 132,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      }\r\n    ],\r\n    \"Random\":
+    {\r\n      \"x\": 123691089,\r\n      \"y\": 362739873,\r\n      \"z\": 521288629,\r\n     
+    \"w\": 88675123\r\n    }\r\n  }"
+  gameState2: "{\r\n    \"Cards\": [\r\n      {\r\n        \"CardId\": 0,\r\n       
+    \"CardType\": 0,\r\n        \"CardPlace\": 0\r\n      },\r\n      {\r\n       
+    \"CardId\": 1,\r\n        \"CardType\": 1,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 2,\r\n        \"CardType\": 2,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 3,\r\n       
+    \"CardType\": 3,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 4,\r\n        \"CardType\": 4,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 5,\r\n        \"CardType\": 5,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 6,\r\n       
+    \"CardType\": 6,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 7,\r\n        \"CardType\": 7,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 8,\r\n        \"CardType\": 8,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 9,\r\n       
+    \"CardType\": 9,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 10,\r\n        \"CardType\": 10,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 11,\r\n        \"CardType\": 11,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 12,\r\n       
+    \"CardType\": 12,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 13,\r\n        \"CardType\": 13,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 14,\r\n        \"CardType\": 14,\r\n       
+    \"CardPlace\": 998\r\n      },\r\n      {\r\n        \"CardId\": 15,\r\n       
+    \"CardType\": 15,\r\n        \"CardPlace\": 998\r\n      },\r\n      {\r\n       
+    \"CardId\": 16,\r\n        \"CardType\": 16,\r\n        \"CardPlace\": 998\r\n     
+    },\r\n      {\r\n        \"CardId\": 17,\r\n        \"CardType\": 17,\r\n       
+    \"CardPlace\": 3\r\n      },\r\n      {\r\n        \"CardId\": 18,\r\n       
+    \"CardType\": 17,\r\n        \"CardPlace\": 3\r\n      },\r\n      {\r\n       
+    \"CardId\": 19,\r\n        \"CardType\": 18,\r\n        \"CardPlace\": 3\r\n     
+    },\r\n      {\r\n        \"CardId\": 20,\r\n        \"CardType\": 18,\r\n       
+    \"CardPlace\": 4\r\n      },\r\n      {\r\n        \"CardId\": 21,\r\n       
+    \"CardType\": 18,\r\n        \"CardPlace\": 4\r\n      },\r\n      {\r\n       
+    \"CardId\": 22,\r\n        \"CardType\": 18,\r\n        \"CardPlace\": 4\r\n     
+    },\r\n      {\r\n        \"CardId\": 23,\r\n        \"CardType\": 19,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 24,\r\n       
+    \"CardType\": 19,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 25,\r\n        \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 26,\r\n        \"CardType\": 20,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 27,\r\n       
+    \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 28,\r\n        \"CardType\": 20,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 29,\r\n        \"CardType\": 21,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 30,\r\n       
+    \"CardType\": 21,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 31,\r\n        \"CardType\": 21,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 32,\r\n        \"CardType\": 21,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 33,\r\n       
+    \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 34,\r\n        \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 35,\r\n        \"CardType\": 22,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 36,\r\n       
+    \"CardType\": 22,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 37,\r\n        \"CardType\": 23,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 38,\r\n        \"CardType\": 23,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 39,\r\n       
+    \"CardType\": 23,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 40,\r\n        \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 41,\r\n        \"CardType\": 24,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 42,\r\n       
+    \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 43,\r\n        \"CardType\": 24,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 44,\r\n        \"CardType\": 25,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 45,\r\n       
+    \"CardType\": 25,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 46,\r\n        \"CardType\": 25,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 47,\r\n        \"CardType\": 26,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 48,\r\n       
+    \"CardType\": 26,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 49,\r\n        \"CardType\": 26,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 50,\r\n        \"CardType\": 26,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 51,\r\n       
+    \"CardType\": 27,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 52,\r\n        \"CardType\": 27,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 53,\r\n        \"CardType\": 27,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 54,\r\n       
+    \"CardType\": 28,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 55,\r\n        \"CardType\": 28,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 56,\r\n        \"CardType\": 28,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 57,\r\n       
+    \"CardType\": 29,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 58,\r\n        \"CardType\": 29,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 59,\r\n        \"CardType\": 29,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 60,\r\n       
+    \"CardType\": 30,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 61,\r\n        \"CardType\": 30,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 62,\r\n        \"CardType\": 30,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 63,\r\n       
+    \"CardType\": 31,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 64,\r\n        \"CardType\": 31,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 65,\r\n        \"CardType\": 32,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 66,\r\n       
+    \"CardType\": 32,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 67,\r\n        \"CardType\": 33,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 68,\r\n        \"CardType\": 33,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 69,\r\n       
+    \"CardType\": 34,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 70,\r\n        \"CardType\": 34,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 71,\r\n        \"CardType\": 35,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 72,\r\n       
+    \"CardType\": 35,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 73,\r\n        \"CardType\": 35,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 74,\r\n        \"CardType\": 36,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 75,\r\n       
+    \"CardType\": 37,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 76,\r\n        \"CardType\": 38,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 77,\r\n        \"CardType\": 39,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 78,\r\n       
+    \"CardType\": 40,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 79,\r\n        \"CardType\": 41,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 80,\r\n        \"CardType\": 42,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 81,\r\n       
+    \"CardType\": 43,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 82,\r\n        \"CardType\": 44,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 83,\r\n        \"CardType\": 45,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 84,\r\n       
+    \"CardType\": 46,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 85,\r\n        \"CardType\": 47,\r\n        \"CardPlace\": 1\r\n     
+    },\r\n      {\r\n        \"CardId\": 86,\r\n        \"CardType\": 48,\r\n       
+    \"CardPlace\": 1\r\n      },\r\n      {\r\n        \"CardId\": 87,\r\n       
+    \"CardType\": 49,\r\n        \"CardPlace\": 1\r\n      },\r\n      {\r\n       
+    \"CardId\": 88,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 89,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 90,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 91,\r\n        \"CardType\": 51,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 92,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 93,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 94,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 95,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 5\r\n      },\r\n      {\r\n        \"CardId\": 96,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n      },\r\n      {\r\n       
+    \"CardId\": 97,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 5\r\n     
+    },\r\n      {\r\n        \"CardId\": 98,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 99,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 100,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 101,\r\n        \"CardType\": 51,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 102,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 103,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 104,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 105,\r\n       
+    \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n      },\r\n      {\r\n       
+    \"CardId\": 106,\r\n        \"CardType\": 52,\r\n        \"CardPlace\": 6\r\n     
+    },\r\n      {\r\n        \"CardId\": 107,\r\n        \"CardType\": 52,\r\n       
+    \"CardPlace\": 6\r\n      },\r\n      {\r\n        \"CardId\": 108,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 109,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 110,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 111,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 112,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 113,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 114,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 115,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 116,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 117,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 118,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 119,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 120,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 121,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 122,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 123,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 124,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 125,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 126,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 127,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 128,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 129,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      },\r\n      {\r\n       
+    \"CardId\": 130,\r\n        \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n     
+    },\r\n      {\r\n        \"CardId\": 131,\r\n        \"CardType\": 50,\r\n       
+    \"CardPlace\": 500\r\n      },\r\n      {\r\n        \"CardId\": 132,\r\n       
+    \"CardType\": 50,\r\n        \"CardPlace\": 500\r\n      }\r\n    ],\r\n    \"Random\":
+    {\r\n      \"x\": 123691089,\r\n      \"y\": 362739873,\r\n      \"z\": 521288629,\r\n     
+    \"w\": 88675123\r\n    }\r\n  }"
   gameState3: 
   gameState4: 
 --- !u!4 &1444101897
@@ -7681,6 +7882,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   canvas: {fileID: 1603733013}
+  board: {fileID: 550124342}
 --- !u!114 &1603733011
 MonoBehaviour:
   m_ObjectHideFlags: 0

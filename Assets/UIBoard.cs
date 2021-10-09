@@ -8,10 +8,10 @@ namespace Solcery.UI
     {
         [SerializeField] private Places places = null;
 
-        private OldGameContent _gameContent;
-        private BoardData _boardData;
-        private BoardDisplayData _boardDisplayData;
-        private Dictionary<int, IBoardPlace> _placesById;
+        private GameDisplay _gameDisplay;
+        private GameState _gameState;
+
+        public Dictionary<int, IBoardPlace> _placesById;
 
         public void Init()
         {
@@ -20,27 +20,23 @@ namespace Solcery.UI
 
         public void DeInit() { }
 
-        public void OnGameContentUpdate(OldGameContent gameContent)
+        public void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
-            _gameContent = gameContent;
-            _boardDisplayData = _gameContent?.DisplayData;
+            _gameDisplay = gameDisplay;
             ProcessDisplayData();
         }
 
-        public void OnBoardUpdate(BoardData boardData)
+        public void OnGameStateUpdate(GameState gameState)
         {
-            _boardData = boardData;
+            _gameState = gameState;
 
-            var myId = _boardData.MyId;
-
-            foreach (var displayData in _boardDisplayData.PlaceDisplayDatas)
+            foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
             {
                 var placeId = displayData.PlaceId;
 
                 if (_placesById.TryGetValue(placeId, out var place))
                 {
-                    var finalPlaceId = displayData.PlaceId;
-                    var cardPlaceDiff = _boardData.Diff.GetDiffForPlace(finalPlaceId);
+                    var cardPlaceDiff = _gameState.Diff.GetDiffForPlace(placeId);
 
                     switch (displayData.CardLayoutOption)
                     {
@@ -48,12 +44,11 @@ namespace Solcery.UI
                             var hand = place as UIHand;
                             var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
                             var areCardsInteractable = displayData.IsInteractable;
-
                             hand?.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;
-                            var cardsCount = _boardData.CardsByPlace.ContainsKey(finalPlaceId) ? _boardData.CardsByPlace[finalPlaceId].Count : 0;
+                            var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
                             pile?.UpdateWithDiff(cardPlaceDiff, cardsCount);
                             break;
                         case CardLayoutOption.Map:
@@ -69,10 +64,10 @@ namespace Solcery.UI
 
         private void ProcessDisplayData()
         {
-            if (_boardDisplayData == null)
+            if (_gameDisplay == null)
                 return;
 
-            foreach (var displayData in _boardDisplayData.PlaceDisplayDatas)
+            foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
             {
                 var placeId = displayData.PlaceId;
 
