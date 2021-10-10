@@ -7,6 +7,7 @@ namespace Solcery
 {
     public class IdleStateBehaviour : GameStateBehaviour
     {
+        private GameContent _lastGameContent;
         private GameDisplay _lastGameDisplay;
         private GameState _lastGameState;
 
@@ -19,18 +20,28 @@ namespace Solcery
             Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _stateCTS.Token);
         }
 
-        private void OnGameAllUpdate(GameAll gameAll)
-        {
-
-        }
-
         private void OnGameContentUpdate(GameContent gameContent)
         {
+            Debug.Log("OnGameContentUpdate");
+
             if (gameContent == null) { ExitGame(); return; }
+
+            if (gameContent.HasBeenProcessed)
+            {
+                Debug.Log("GameContent has been processed");
+                return;
+            }
+
+            _lastGameContent = gameContent;
+            _lastGameContent.HasBeenProcessed = true;
+
+            UIGame.Instance?.OnGameContentUpdate(gameContent);
         }
 
         private void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
+            Debug.Log("OnGameDisplayUpdate");
+
             if (gameDisplay == null) { ExitGame(); return; }
 
             if (gameDisplay.HasBeenProcessed)
@@ -43,7 +54,13 @@ namespace Solcery
             _lastGameDisplay.HasBeenProcessed = true;
             UIGame.Instance?.OnGameDisplayUpdate(gameDisplay);
             var gameStateWithDiff = GameStateDiffTracker.Instance?.GetGameStateDiff(null, _lastGameState);
-            UIGame.Instance?.OnGameStateDiffUpdate(gameStateWithDiff);
+
+            if (gameStateWithDiff != null)
+            {
+                UIGame.Instance?.OnGameStateDiffUpdate(gameStateWithDiff);
+                if (UICardAnimator.Instance.HasSomethingToAnimate)
+                    stateMachine?.Trigger("Animate");
+            }
         }
 
         private void OnGameStateUpdate(GameState gameState)

@@ -32,24 +32,18 @@ namespace Solcery.UI
 
         private bool _isFaceDown;
         private bool _isInteractable;
+        private bool _showCoins;
         private bool _pointerDown = false;
         private bool _isPointerOver = false;
 
-        public void Init(CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
+        public void UpdateGameContent(GameContent gameContent)
         {
-            _isFaceDown = isFaceDown;
-            SetInteractabe(isInteractable);
-
-            _cardData = cardData;
-            _cardType = Game.Instance.GameContent.Value.GetCardTypeById(_cardData.CardType);
-            _onCardCasted = onCardCasted;
-
-            SetAnimator();
+            _cardType = gameContent.GetCardTypeById(_cardData.CardType);
 
             if (_cardType != null)
             {
                 SetPicture(_cardType.Metadata);
-                SetCoins(showCoins, _cardType.Metadata.Coins);
+                SetCoins(_showCoins, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SubsribeToButton();
@@ -62,6 +56,18 @@ namespace Solcery.UI
                 SetDescription("unknown card type!");
                 SetCoins(false);
             }
+        }
+
+        public void Init(GameContent gameContent, CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
+        {
+            _showCoins = showCoins;
+            _isFaceDown = isFaceDown;
+            _onCardCasted = onCardCasted;
+            _cardData = cardData;
+
+            SetInteractabe(isInteractable);
+            SetAnimator();
+            UpdateGameContent(gameContent);
         }
 
         public void SetFaceDown(bool isFaceDown)
@@ -167,6 +173,9 @@ namespace Solcery.UI
 
         private void SetCoins(bool showCoins, int coinsCount = 0)
         {
+            if (cardCoins == null || cardCoinsCount == null)
+                return;
+
             if (!showCoins)
                 cardCoins.SetActive(false);
             else

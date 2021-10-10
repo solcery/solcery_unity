@@ -11,5 +11,6 @@ namespace Solcery.UI
         Vector3 GetCardRotation(int cardId);
         Vector2 GetCardSize(int cardId);
         void OnCardArrival(int cardId);
+        void UpdateGameContent(GameContent gameContent);
     }
 }

@@ -17,7 +17,7 @@ namespace Solcery.UI
             base.Clear();
         }
 
-        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, int cardsCount)
+        public void UpdateWithDiff(GameContent gameContent, CardPlaceDiff cardPlaceDiff, int cardsCount)
         {
             // TODO: count +- count here from each diff
             if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
@@ -25,7 +25,7 @@ namespace Solcery.UI
 
             _currentCardsCount = cardsCount;
 
-            base.UpdateWithDiff(cardPlaceDiff, false, true, false, true, true);
+            base.UpdateWithDiff(gameContent, cardPlaceDiff, false, true, false, true, true);
         }
 
         private async UniTaskVoid SetCardsCountText(int newCardsCount)

@@ -80,7 +80,7 @@ namespace Solcery.UI.Play.Game.Board
             if (boardData.Diff.CardPlaceDiffs.ContainsKey(drawPilePlace))
             {
                 var drawPileDiff = boardData.Diff.CardPlaceDiffs[drawPilePlace];
-                this.drawPile?.UpdateWithDiff(drawPileDiff, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
+                // this.drawPile?.UpdateWithDiff(drawPileDiff, boardData.CardsByPlace.ContainsKey(drawPilePlace) ? boardData.CardsByPlace[drawPilePlace].Count : 0);
             }
         }
 
@@ -93,7 +93,7 @@ namespace Solcery.UI.Play.Game.Board
             if (boardData.Diff.CardPlaceDiffs.ContainsKey(discardPilePlace))
             {
                 var discardPileDiff = boardData.Diff.CardPlaceDiffs[discardPilePlace];
-                this.discardPile?.UpdateWithDiff(discardPileDiff, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
+                // this.discardPile?.UpdateWithDiff(discardPileDiff, boardData.CardsByPlace.ContainsKey(discardPilePlace) ? boardData.CardsByPlace[discardPilePlace].Count : 0);
             }
         }
 

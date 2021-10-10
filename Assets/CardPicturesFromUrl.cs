@@ -59,22 +59,14 @@ namespace Solcery.Modules
             Texture2D wwwTex = DownloadHandlerTexture.GetContent(req);
             Texture2D newTex = new Texture2D(wwwTex.width, wwwTex.height);
             newTex.SetPixels(wwwTex.GetPixels(0));
-            newTex.Apply(true); // default is to update mipmaps
-
-            // var tex = www.texture;
-            // tex.SetPixels(tex.GetPixels(0, 0, tex.width, tex.height));
-            // Debug.Log("finished loading...");
-            // Debug.Log(Time.realtimeSinceStartup);
-
-            // tex.filterMode = FilterMode.Point;
-
-            // tex.SetPixels(tex.GetPixels(1));
-            // tex.Apply(true);
+            newTex.Apply(true);
 
             var sprite = Sprite.Create(newTex, new Rect(0.0f, 0.0f, newTex.width, newTex.height), new Vector2(0.5f, 0.5f), 100.0f);
 
-            // if (!SpritesByUrl.ContainsKey(url))
+            if (!SpritesByUrl.ContainsKey(url))
                 SpritesByUrl.Add(url, sprite);
+            else
+                SpritesByUrl[url] = sprite;
 
             NotifySubscribers(url, sprite);
         }

@@ -10,7 +10,7 @@ namespace Solcery
             await base.OnEnterState();
 
             // GameStateDiffTracker.Instance?.Init();
-            GameTracker.Instance?.Init();
+            // GameTracker.Instance?.Init();
             UIGame.Instance?.Init();
 
             stateMachine.Trigger("StartGame");

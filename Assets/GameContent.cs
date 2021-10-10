@@ -8,6 +8,7 @@ namespace Solcery
     {
         public List<CardType> CardTypes;
 
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool HasBeenProcessed;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardType> CardTypesById;
 
         public GameContent Prettify()

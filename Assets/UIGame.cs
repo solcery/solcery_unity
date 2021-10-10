@@ -20,6 +20,11 @@ namespace Solcery.UI
             if (canvas != null) canvas.enabled = false;
         }
 
+        public void OnGameContentUpdate(GameContent gameContent)
+        {
+            board?.OnGameContentUpdate(gameContent);
+        }
+
         public void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
             board?.OnGameDisplayUpdate(gameDisplay);

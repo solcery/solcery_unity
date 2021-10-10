@@ -27,7 +27,15 @@ namespace Solcery.UI
             DeleteAllCards();
         }
 
-        public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
+        public void UpdateGameContent(GameContent gameContent)
+        {
+            foreach (var card in _cardsById.Values)
+            {
+                card.UpdateGameContent(gameContent);
+            }
+        }
+
+        public void UpdateWithDiff(GameContent gameContent, CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
         {
             _areCardsFaceDown = areCardsFaceDown;
             _hideAllButTop = hideAllButTop;
@@ -54,7 +62,7 @@ namespace Solcery.UI
                     if (!_cardsById.ContainsKey(stayedCard.CardData.CardId))
                     {
                         var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                        card.Init(stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
+                        card.Init(gameContent, stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
 
                         // if (hideAllButTop && i != cardPlaceDiff.Stayed.Count - 1)
                         //     card.SetVisibility(false);
@@ -89,7 +97,7 @@ namespace Solcery.UI
                     UIBoardCard card;
 
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                    card.Init(arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
+                    card.Init(gameContent, arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
 
                     if (arrivedCard.From == 0 || !UIBoard.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
                         card.SetVisibility(true);

@@ -6,7 +6,7 @@ namespace Solcery.UI.Play.Game.Board
     {
         public void UpdateWithDiff(CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown)
         {
-            base.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, false);
+            // base.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, false);
         }
 
         protected override void OnCardCasted(int cardId)

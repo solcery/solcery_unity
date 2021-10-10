@@ -8,6 +8,7 @@ namespace Solcery.UI
     {
         [SerializeField] private Places places = null;
 
+        private GameContent _gameContent;
         private GameDisplay _gameDisplay;
         private GameState _gameState;
 
@@ -31,6 +32,12 @@ namespace Solcery.UI
             }
 
             _placesById = null;
+        }
+
+        public void OnGameContentUpdate(GameContent gameContent)
+        {
+            _gameContent = gameContent;
+            ProcessGameContent();
         }
 
         public void OnGameDisplayUpdate(GameDisplay gameDisplay)
@@ -61,12 +68,12 @@ namespace Solcery.UI
                             var hand = place as UIHand;
                             var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
                             var areCardsInteractable = displayData.IsInteractable;
-                            hand?.UpdateWithDiff(placeDiff, areCardsInteractable, areCardsFaceDown, true);
+                            hand?.UpdateWithDiff(_gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;
                             var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
-                            pile?.UpdateWithDiff(placeDiff, cardsCount);
+                            pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount);
                             break;
                         case CardLayoutOption.Map:
                             break;
@@ -77,8 +84,19 @@ namespace Solcery.UI
             }
         }
 
+        private void ProcessGameContent()
+        {
+            foreach (var place in _placesById.Values)
+            {
+                if (place != null)
+                    place?.UpdateGameContent(_gameContent);
+            }
+        }
+
         private void ProcessDisplayData()
         {
+            Debug.Log("ProcessDisplayData");
+
             if (_gameDisplay == null)
                 return;
 
@@ -88,22 +106,15 @@ namespace Solcery.UI
 
                 if (_placesById.TryGetValue(placeId, out var existingPlace))
                 {
-                    if (existingPlace.DisplayData == displayData)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        var monobeh = existingPlace as MonoBehaviour;
-                        if (monobeh != null)
-                            DestroyImmediate(monobeh.gameObject);
+                    var monobeh = existingPlace as MonoBehaviour;
+                    if (monobeh != null)
+                        DestroyImmediate(monobeh.gameObject);
 
-                        var place = CreatePlace(displayData, placeId);
-                        if (place != null)
-                            _placesById[placeId] = place;
-                        else
-                            _placesById.Remove(placeId);
-                    }
+                    var place = CreatePlace(displayData, placeId);
+                    if (place != null)
+                        _placesById[placeId] = place;
+                    else
+                        _placesById.Remove(placeId);
                 }
                 else
                 {
