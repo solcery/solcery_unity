@@ -1099,14 +1099,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  testNodeEditorDataJson: '{   "BrickTree": null,   "BrickConfigsData": {     "ConfigsByType":
-    {       "Action": [         {           "Name": "Void",           "Type": 0,          
-    "Subtype": 0,           "Description": "Does nothing",           "HasField":
-    false,           "FieldType": 0,           "FieldName": "",           "HasObjectSelection":
-    false,           "Slots": []         },         {           "Name": "Set",          
-    "Type": 0,           "Subtype": 1,           "Description": "Runs all containing
-    <b>actions</b> one by one.",           "HasField": false,           "FieldType":
-    0,           "FieldName": "",           "HasObjectSelection": false,          
+  testNodeEditorDataJson: '{   "GenesisBrickType": 2, "BrickTree": null,   "BrickConfigsData":
+    {     "ConfigsByType": {       "Action": [         {           "Name": "Void",          
+    "Type": 0,           "Subtype": 0,           "Description": "Does nothing",          
+    "HasField": false,           "FieldType": 0,           "FieldName": "",          
+    "HasObjectSelection": false,           "Slots": []         },         {          
+    "Name": "Set",           "Type": 0,           "Subtype": 1,           "Description":
+    "Runs all containing <b>actions</b> one by one.",           "HasField": false,          
+    "FieldType": 0,           "FieldName": "",           "HasObjectSelection": false,          
     "Slots": [             {               "Type": 0,               "Name": "Action
     #1"             },             {               "Type": 0,               "Name":
     "Action #2"             }           ]         },         {           "Name":

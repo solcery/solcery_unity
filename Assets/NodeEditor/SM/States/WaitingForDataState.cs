@@ -28,7 +28,7 @@ namespace Solcery.NodeEditor.SM
 
             brickConfigs?.PopulateFromData(nodeEditorData.BrickConfigsData);
             UINodeEditor.Instance?.SetWaitingForData(false);
-            UINodeEditor.Instance.Init(nodeEditorData.BrickTree, true);
+            UINodeEditor.Instance.Init(nodeEditorData.BrickTree, nodeEditorData.GenesisBrickType, true);
             stateMachine.Trigger("EditBrickTree");
         }
     }

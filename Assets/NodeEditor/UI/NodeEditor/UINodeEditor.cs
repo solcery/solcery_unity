@@ -32,27 +32,29 @@ namespace Solcery.UI.NodeEditor
         private BrickTree _brickTree;
         private UINode _genesisNode;
         private bool _isNullGenesisValid;
+        private BrickType _genesisBrickType;
 
         public void SetWaitingForData(bool isWaiting)
         {
             waitingForDataText?.gameObject.SetActive(isWaiting);
         }
 
-        public void Init()
-        {
-            // Debug.Log("Init");
-            brickConfigs.Init();
-            clipboard?.Init(nodeSelector, RebuildAll);
-            nodeSelector?.Init();
-            zoom.SetActive(true);
+        // public void Init()
+        // {
+        //     // Debug.Log("Init");
+        //     brickConfigs.Init();
+        //     clipboard?.Init(nodeSelector, RebuildAll);
+        //     nodeSelector?.Init();
+        //     zoom.SetActive(true);
 
-            CreateFirstButton();
-        }
+        //     CreateFirstButton();
+        // }
 
-        public void Init(BrickTree brickTree, bool isNullGenesisValid)
+        public void Init(BrickTree brickTree, BrickType genesisBrickType, bool isNullGenesisValid)
         {
             // Debug.Log("Init with brickTree");
             _isNullGenesisValid = isNullGenesisValid;
+            _genesisBrickType = genesisBrickType;
 
             clipboard?.Init(nodeSelector, RebuildAll);
             nodeSelector?.Init();
@@ -198,7 +200,7 @@ namespace Solcery.UI.NodeEditor
                 {
                     selectBrickNode = Instantiate(selectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
                     _genesisNode = selectBrickNode;
-                    selectBrickNode.Init(BrickType.Action, content);
+                    selectBrickNode.Init(_genesisBrickType, content);
                 }
                 else
                 {
@@ -234,7 +236,7 @@ namespace Solcery.UI.NodeEditor
                 var selectBrickButton = Instantiate(selectBrickNodePrefab, content).GetComponent<UISelectBrickNode>();
                 _genesisNode = selectBrickButton;
                 _brickTree.SetGenesis(null);
-                selectBrickButton.Init(BrickType.Action, content);
+                selectBrickButton.Init(_genesisBrickType, content);
                 startHereText.gameObject.SetActive(true);
                 DisableScrollView();
             }

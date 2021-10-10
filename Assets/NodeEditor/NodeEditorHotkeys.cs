@@ -5,7 +5,7 @@ namespace Solcery.NodeEditor
 {
     public class NodeEditorHotkeys : UpdateableSingleton<NodeEditorHotkeys>
     {
-        [SerializeField] private string testNodeEditorDataJson = null;
+        [SerializeField] [Multiline(20)] private string testNodeEditorDataJson = null;
 
         public override void PerformUpdate()
         {
