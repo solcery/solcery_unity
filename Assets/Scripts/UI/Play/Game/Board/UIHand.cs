@@ -9,6 +9,9 @@ namespace Solcery.UI
     {
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
+        private PlaceDisplayData _displayData;
+
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected Transform content = null;
 

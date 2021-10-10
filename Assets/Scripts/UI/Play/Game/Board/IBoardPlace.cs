@@ -4,6 +4,7 @@ namespace Solcery.UI
 {
     public interface IBoardPlace
     {
+        PlaceDisplayData DisplayData { get; set; }
         bool AreCardsFaceDown { get; }
         Transform GetCardsParent();
         Vector3 GetCardDestination(int cardId);

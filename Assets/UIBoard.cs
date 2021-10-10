@@ -28,6 +28,7 @@ namespace Solcery.UI
 
         public void OnGameStateUpdate(GameState gameState)
         {
+            Debug.Log("UIBoard.OnGameStateUpdate");
             _gameState = gameState;
 
             foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
@@ -36,6 +37,9 @@ namespace Solcery.UI
 
                 if (_placesById.TryGetValue(placeId, out var place))
                 {
+                    if (place == null)
+                        continue;
+
                     var cardPlaceDiff = _gameState.Diff.GetDiffForPlace(placeId);
 
                     switch (displayData.CardLayoutOption)
@@ -73,10 +77,14 @@ namespace Solcery.UI
 
                 if (_placesById.TryGetValue(placeId, out var existingPlace))
                 {
-                    if (existingPlace.Equals(displayData))
+                    if (existingPlace.DisplayData == displayData)
+                    {
+                        Debug.Log("same display data");
                         continue;
+                    }
                     else
                     {
+                        Debug.Log("not the same display data");
                         var monobeh = existingPlace as MonoBehaviour;
                         if (monobeh != null)
                             DestroyImmediate(monobeh.gameObject);
@@ -103,6 +111,7 @@ namespace Solcery.UI
             {
                 var placeGO = Instantiate(placePrefab, this.transform);
                 var place = placeGO.GetComponent<IBoardPlace>();
+                place.DisplayData = displayData;
 
 #if UNITY_EDITOR
                 placeGO.name = displayData.PlaceName;

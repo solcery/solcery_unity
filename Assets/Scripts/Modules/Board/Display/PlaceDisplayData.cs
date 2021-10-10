@@ -14,6 +14,8 @@ namespace Solcery
         public CardFaceOption CardFaceOption;
         public CardLayoutOption CardLayoutOption;
 
+        public override bool Equals(object obj) => this.Equals(obj as PlaceDisplayData);
+
         public bool Equals(PlaceDisplayData other)
         {
             if (other is null)
@@ -42,5 +44,23 @@ namespace Solcery
             CardFaceOption == other.CardFaceOption &&
             CardLayoutOption == other.CardLayoutOption;
         }
+
+        public static bool operator ==(PlaceDisplayData lhs, PlaceDisplayData rhs)
+        {
+            if (lhs is null)
+            {
+                if (rhs is null)
+                {
+                    return true;
+                }
+
+                // Only the left side is null.
+                return false;
+            }
+            // Equals handles case of null on right side.
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator !=(PlaceDisplayData lhs, PlaceDisplayData rhs) => !(lhs == rhs);
     }
 }

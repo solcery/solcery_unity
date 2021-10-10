@@ -57,11 +57,10 @@ namespace Solcery.UI
 
         public async UniTask LaunchAll()
         {
-            // UnityEngine.Debug.Log($"started: {UnityEngine.Time.realtimeSinceStartup}");
+            UnityEngine.Debug.Log($"LaunchAll");
 
             if (_cardsToAnimate == null || _cardsToAnimate.Count <= 0)
             {
-                UnityEngine.Debug.Log($"finished: {UnityEngine.Time.realtimeSinceStartup}");
                 return;
             }
 
@@ -92,13 +91,17 @@ namespace Solcery.UI
                         // var rotation = toPlace.GetCardRotation(cardId);
                         var finalSize = toPlace.GetCardSize(cardId);
 
-                        var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);
+
 
                         var tweenMove = cardClone?.transform?.DOMove(destination, 0.5f);
                         processingTasks.Add(ProcessMoveTask(tweenMove.WithCancellation(ct), cardClone.gameObject, toPlace, departedCard.CardData.CardId));
 
-                        var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
-                        processingTasks.Add(ProcessScaleTask(tweenScale.WithCancellation(ct)));
+                        var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);
+                        if (scaleTo != Vector3.one)
+                        {
+                            var tweenScale = cardClone?.transform?.DOScale(scaleTo, 0.4f);
+                            processingTasks.Add(ProcessScaleTask(tweenScale.WithCancellation(ct)));
+                        }
 
                         // if (tweenMove != null)
                         //     tasks.Add(tweenMove.WithCancellation(ct));

@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using Solcery.UI;
 using Solcery.Utils.Reactives;
+using UnityEngine;
 
 namespace Solcery
 {
@@ -20,8 +21,13 @@ namespace Solcery
 
         private void OnGameStateDiffUpdate(GameState gameState)
         {
+            Debug.Log($"states processed : {GameStateDiffTracker.Instance.StatesProcessed}");
+            Debug.Log($"lastStatesProcessed : {_lastStatesProcessed}");
             if (GameStateDiffTracker.Instance.StatesProcessed == _lastStatesProcessed)
+            {
+                UnityEngine.Debug.Log($"already processed state #: {_lastStatesProcessed}");
                 return;
+            }
 
             _lastStatesProcessed = GameStateDiffTracker.Instance.StatesProcessed;
 
