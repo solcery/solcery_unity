@@ -25,9 +25,9 @@ namespace Solcery.UI
             board?.OnGameDisplayUpdate(gameDisplay);
         }
 
-        public void OnGameStateUpdate(GameState gameState)
+        public void OnGameStateDiffUpdate(GameState gameState)
         {
-            board?.OnGameStateUpdate(gameState);
+            board?.OnGameStateDiffUpdate(gameState);
         }
     }
 }

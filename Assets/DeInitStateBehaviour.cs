@@ -9,8 +9,9 @@ namespace Solcery
         {
             await base.OnEnterState();
 
-            GameStateDiffTracker.Instance?.DeInit();
+            // GameStateDiffTracker.Instance?.DeInit();
             UIGame.Instance?.DeInit();
+            GameTracker.Instance?.DeInit();
 
             stateMachine.Trigger("DeInit");
         }

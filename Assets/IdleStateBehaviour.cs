@@ -7,6 +7,7 @@ namespace Solcery
 {
     public class IdleStateBehaviour : GameStateBehaviour
     {
+        private GameDisplay _lastGameDisplay;
         private GameState _lastGameState;
 
         protected override async UniTask OnEnterState()
@@ -18,6 +19,11 @@ namespace Solcery
             Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _stateCTS.Token);
         }
 
+        private void OnGameAllUpdate(GameAll gameAll)
+        {
+
+        }
+
         private void OnGameContentUpdate(GameContent gameContent)
         {
             if (gameContent == null) { ExitGame(); return; }
@@ -26,7 +32,18 @@ namespace Solcery
         private void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
             if (gameDisplay == null) { ExitGame(); return; }
+
+            if (gameDisplay.HasBeenProcessed)
+            {
+                Debug.Log("GameDisplay has been processed");
+                return;
+            }
+
+            _lastGameDisplay = gameDisplay;
+            _lastGameDisplay.HasBeenProcessed = true;
             UIGame.Instance?.OnGameDisplayUpdate(gameDisplay);
+            var gameStateWithDiff = GameStateDiffTracker.Instance?.GetGameStateDiff(null, _lastGameState);
+            UIGame.Instance?.OnGameStateDiffUpdate(gameStateWithDiff);
         }
 
         private void OnGameStateUpdate(GameState gameState)
@@ -35,7 +52,7 @@ namespace Solcery
 
             if (gameState.HasBeenProcessed)
             {
-                Debug.Log("has been processed");
+                Debug.Log("GameState has been processed");
                 return;
             }
 
@@ -45,7 +62,7 @@ namespace Solcery
             {
                 _lastGameState = gameStateWithDiff;
                 _lastGameState.HasBeenProcessed = true;
-                UIGame.Instance?.OnGameStateUpdate(gameStateWithDiff);
+                UIGame.Instance?.OnGameStateDiffUpdate(gameStateWithDiff);
                 if (UICardAnimator.Instance.HasSomethingToAnimate)
                     stateMachine?.Trigger("Animate");
             }

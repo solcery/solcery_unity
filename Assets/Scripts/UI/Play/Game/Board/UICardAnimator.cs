@@ -93,7 +93,7 @@ namespace Solcery.UI
 
 
 
-                        var tweenMove = cardClone?.transform?.DOMove(destination, 5f);
+                        var tweenMove = cardClone?.transform?.DOMove(destination, 0.5f);
                         processingTasks.Add(ProcessMoveTask(tweenMove.WithCancellation(ct), cardClone.gameObject, toPlace, departedCard.CardData.CardId));
 
                         var scaleTo = new Vector3(finalSize.x / cardSize.x, finalSize.y / cardSize.y, 1);

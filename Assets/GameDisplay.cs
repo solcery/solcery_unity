@@ -8,6 +8,7 @@ namespace Solcery
     {
         public List<PlaceDisplayData> PlaceDisplayDatas = new List<PlaceDisplayData>();
 
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool HasBeenProcessed;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, PlaceDisplayData> DisplayDataByPlaceId;
 
         public GameDisplay Prettify()

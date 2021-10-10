@@ -26,7 +26,7 @@ namespace Solcery.UI
             ProcessDisplayData();
         }
 
-        public void OnGameStateUpdate(GameState gameState)
+        public void OnGameStateDiffUpdate(GameState gameState)
         {
             Debug.Log("UIBoard.OnGameStateUpdate");
             _gameState = gameState;
@@ -40,7 +40,7 @@ namespace Solcery.UI
                     if (place == null)
                         continue;
 
-                    var cardPlaceDiff = _gameState.Diff.GetDiffForPlace(placeId);
+                    var placeDiff = _gameState.Diff.GetDiffForPlace(placeId);
 
                     switch (displayData.CardLayoutOption)
                     {
@@ -48,12 +48,12 @@ namespace Solcery.UI
                             var hand = place as UIHand;
                             var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
                             var areCardsInteractable = displayData.IsInteractable;
-                            hand?.UpdateWithDiff(cardPlaceDiff, areCardsInteractable, areCardsFaceDown, true);
+                            hand?.UpdateWithDiff(placeDiff, areCardsInteractable, areCardsFaceDown, true);
                             break;
                         case CardLayoutOption.Stacked:
                             var pile = place as UIPile;
                             var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
-                            pile?.UpdateWithDiff(cardPlaceDiff, cardsCount);
+                            pile?.UpdateWithDiff(placeDiff, cardsCount);
                             break;
                         case CardLayoutOption.Map:
                             break;
@@ -62,8 +62,6 @@ namespace Solcery.UI
                     }
                 }
             }
-
-            // UICardAnimator.Instance?.LaunchAll();
         }
 
         private void ProcessDisplayData()
