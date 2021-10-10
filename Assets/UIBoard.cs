@@ -18,7 +18,20 @@ namespace Solcery.UI
             _placesById = new Dictionary<int, IBoardPlace>();
         }
 
-        public void DeInit() { }
+        public void DeInit()
+        {
+            foreach (var idPlace in _placesById)
+            {
+                if (idPlace.Value != null)
+                {
+                    var monobeh = idPlace.Value as MonoBehaviour;
+                    if (monobeh != null)
+                        DestroyImmediate(monobeh.gameObject);
+                }
+            }
+
+            _placesById = null;
+        }
 
         public void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
