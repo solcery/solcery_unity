@@ -79,12 +79,10 @@ namespace Solcery.UI
                 {
                     if (existingPlace.DisplayData == displayData)
                     {
-                        Debug.Log("same display data");
                         continue;
                     }
                     else
                     {
-                        Debug.Log("not the same display data");
                         var monobeh = existingPlace as MonoBehaviour;
                         if (monobeh != null)
                             DestroyImmediate(monobeh.gameObject);

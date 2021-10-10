@@ -40,10 +40,10 @@ namespace Solcery
             _currentGameState = null;
         }
 
-        private void OnGameStateUpdate(GameState boardData)
+        private void OnGameStateUpdate(GameState gameState)
         {
-            _previousGameState = (boardData == null) ? null : _currentGameState;
-            _currentGameState = boardData;
+            _previousGameState = (gameState == null) ? null : _currentGameState;
+            _currentGameState = gameState;
 
             TrackCardsThatChangedPlaces();
         }
