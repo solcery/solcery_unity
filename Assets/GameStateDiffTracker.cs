@@ -9,15 +9,15 @@ namespace Solcery
 {
     public class GameStateDiffTracker : Singleton<GameStateDiffTracker>
     {
-        public int StatesProcessed = 0;
+        // public int StatesProcessed = 0;
 
-        [HideInInspector]
-        public AsyncReactiveProperty<GameState> GameStateWithDiff;
+        // [HideInInspector]
+        // public AsyncReactiveProperty<GameState> GameStateWithDiff;
 
-        private GameState _currentGameState;
-        private GameState _previousGameState;
+        // private GameState _newGameState;
+        // private GameState _previousGameState;
 
-        private CancellationTokenSource _cts;
+        // private CancellationTokenSource _cts;
 
         private List<BoardDataCardChangedPlace> _cardsThatChangedPlaces;
         private List<BoardDataCardChangedPlace> _cardsThatStayed;
@@ -25,48 +25,48 @@ namespace Solcery
 
         public void Init()
         {
-            _cts = new CancellationTokenSource();
-            _previousGameState = null;
-            Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _cts.Token);
+            // _cts = new CancellationTokenSource();
+            // _previousGameState = null;
+            // Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _cts.Token);
         }
 
         public void DeInit()
         {
-            _cts?.Cancel();
-            _cts?.Dispose();
-            _cts = null;
+            // _cts?.Cancel();
+            // _cts?.Dispose();
+            // _cts = null;
 
-            _previousGameState = null;
-            _currentGameState = null;
+            // _previousGameState = null;
+            // _newGameState = null;
         }
 
-        private void OnGameStateUpdate(GameState gameState)
-        {
-            _previousGameState = (gameState == null) ? null : _currentGameState;
-            _currentGameState = gameState;
+        // private GameState OnGameStateUpdate(GameState prevGameState, GameState newGameState)
+        // {
+        //     _previousGameState = (newGameState == null) ? null : _newGameState;
+        //     _newGameState = newGameState;
 
-            TrackCardsThatChangedPlaces();
-        }
+        //     return TrackCardsThatChangedPlaces(prevGameState, newGameState);
+        // }
 
-        private void TrackCardsThatChangedPlaces()
+        public GameState GetGameStateDiff(GameState _previousGameState, GameState _newGameState)
         {
-            if (_currentGameState == null || _currentGameState.Cards == null)
+            if (_newGameState == null || _newGameState.Cards == null)
             {
                 _cardsThatChangedPlaces = null;
                 _cardsThatStayed = null;
-                GameStateWithDiff.Value = null;
-                return;
+                // GameStateWithDiff.Value = null;
+                return _newGameState;
             }
 
             _cardsThatChangedPlaces = new List<BoardDataCardChangedPlace>();
             _cardsThatStayed = new List<BoardDataCardChangedPlace>();
 
-            foreach (var card in _currentGameState.Cards)
+            foreach (var card in _newGameState.Cards)
             {
                 var cardId = card.CardId;
 
                 var previousPlace = _previousGameState?.GetCard(cardId)?.CardPlace;
-                var currentPlace = _currentGameState?.GetCard(cardId)?.CardPlace;
+                var currentPlace = _newGameState?.GetCard(cardId)?.CardPlace;
 
                 if (previousPlace != currentPlace)
                 {
@@ -110,9 +110,10 @@ namespace Solcery
                     _cardPlaceDiffs.Add(stay.StayedIn, new CardPlaceDiff(new List<BoardDataCardChangedPlace>() { stay }, null, null));
             }
 
-            _currentGameState.Diff = new GameStateDiff(_cardPlaceDiffs);
-            StatesProcessed += 1;
-            GameStateWithDiff.Value = _currentGameState;
+            _newGameState.Diff = new GameStateDiff(_cardPlaceDiffs);
+            // StatesProcessed += 1;
+            // GameStateWithDiff.Value = _currentGameState;
+            return _newGameState;
         }
     }
 }

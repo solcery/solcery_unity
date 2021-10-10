@@ -12,6 +12,7 @@ namespace Solcery
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, CardData> CardsById;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public Dictionary<int, List<CardData>> CardsByPlace;
         [NonSerialized] [Newtonsoft.Json.JsonIgnore] public GameStateDiff Diff;
+        [NonSerialized] [Newtonsoft.Json.JsonIgnore] public bool HasBeenProcessed;
 
         public GameState Prettify()
         {

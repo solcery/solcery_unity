@@ -7,7 +7,7 @@ namespace Solcery
 {
     public class IdleStateBehaviour : GameStateBehaviour
     {
-        private int _lastStatesProcessed;
+        private GameState _lastGameState;
 
         protected override async UniTask OnEnterState()
         {
@@ -16,27 +16,6 @@ namespace Solcery
             Reactives.Subscribe(Game.Instance?.GameContent, OnGameContentUpdate, _stateCTS.Token);
             Reactives.Subscribe(Game.Instance?.GameDisplay, OnGameDisplayUpdate, _stateCTS.Token);
             Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _stateCTS.Token);
-            Reactives.Subscribe(GameStateDiffTracker.Instance?.GameStateWithDiff, OnGameStateDiffUpdate, _stateCTS.Token);
-        }
-
-        private void OnGameStateDiffUpdate(GameState gameState)
-        {
-            Debug.Log($"states processed : {GameStateDiffTracker.Instance.StatesProcessed}");
-            Debug.Log($"lastStatesProcessed : {_lastStatesProcessed}");
-            if (GameStateDiffTracker.Instance.StatesProcessed == _lastStatesProcessed)
-            {
-                UnityEngine.Debug.Log($"already processed state #: {_lastStatesProcessed}");
-                return;
-            }
-
-            _lastStatesProcessed = GameStateDiffTracker.Instance.StatesProcessed;
-
-            UnityEngine.Debug.Log("OnGameStateDiffUpdate");
-            if (gameState == null) { ExitGame(); return; }
-            UIGame.Instance?.OnGameStateUpdate(gameState);
-
-            if (UICardAnimator.Instance.HasSomethingToAnimate)
-                stateMachine?.Trigger("Animate");
         }
 
         private void OnGameContentUpdate(GameContent gameContent)
@@ -53,6 +32,23 @@ namespace Solcery
         private void OnGameStateUpdate(GameState gameState)
         {
             if (gameState == null) { ExitGame(); return; }
+
+            if (gameState.HasBeenProcessed)
+            {
+                Debug.Log("has been processed");
+                return;
+            }
+
+            var gameStateWithDiff = GameStateDiffTracker.Instance?.GetGameStateDiff(_lastGameState, gameState);
+
+            if (gameStateWithDiff != null)
+            {
+                _lastGameState = gameStateWithDiff;
+                _lastGameState.HasBeenProcessed = true;
+                UIGame.Instance?.OnGameStateUpdate(gameStateWithDiff);
+                if (UICardAnimator.Instance.HasSomethingToAnimate)
+                    stateMachine?.Trigger("Animate");
+            }
         }
 
         private void ExitGame()
