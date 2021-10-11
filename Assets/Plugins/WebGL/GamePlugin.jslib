@@ -5,4 +5,7 @@ mergeInto(LibraryManager.library, {
     OpenLinkInNewTab: function (link) {
         ReactUnityWebGL.OpenLinkInNewTab(Pointer_stringify(link));
     },
+    CastCard: function (cardId) {
+      ReactUnityWebGL.CastCard(cardId);
+  },
 });

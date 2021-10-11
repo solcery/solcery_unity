@@ -2096,16 +2096,17 @@ MonoBehaviour:
     {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
     1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"Shop\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    true,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Title\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    true,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayerHand\",\r\n      \"PlaceId\":
+    3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.0,\r\n       
+    \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
+    0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
+    \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Title\",\r\n     
+    \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
     \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.9,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\":

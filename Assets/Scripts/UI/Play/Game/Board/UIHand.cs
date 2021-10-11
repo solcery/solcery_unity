@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Solcery.Modules;
+using Solcery.React;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -162,7 +163,7 @@ namespace Solcery.UI
 
         protected virtual void OnCardCasted(int cardId)
         {
-            LogActionCreator.Instance?.CastCard(cardId);
+            UnityToReact.Instance?.CallCastCard(cardId);
         }
 
         public void DeleteAllCards()
