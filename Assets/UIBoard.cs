@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Solcery.Utils;
 using UnityEngine;
 
@@ -78,6 +79,9 @@ namespace Solcery.UI
                         case CardLayoutOption.Map:
                             break;
                         case CardLayoutOption.Title:
+                            var title = place as UITitle;
+                            var cards = _gameState.GetCardsForPlace(placeId);
+                            title?.UpdateWithCards(_gameContent, cards);
                             break;
                     }
                 }
@@ -99,6 +103,19 @@ namespace Solcery.UI
 
             if (_gameDisplay == null)
                 return;
+
+            var placeIdsToDelete = _placesById.Keys.Except(_gameDisplay.PlaceDisplayDatas.Select(d => d.PlaceId));
+            Debug.Log(placeIdsToDelete.Count());
+
+            foreach (var placeIdToDelete in placeIdsToDelete)
+            {
+                if (_placesById.TryGetValue(placeIdToDelete, out var existingPlace))
+                {
+                    var monobeh = existingPlace as MonoBehaviour;
+                    if (monobeh != null)
+                        DestroyImmediate(monobeh.gameObject);
+                }
+            }
 
             foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
             {

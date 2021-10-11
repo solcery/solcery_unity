@@ -63,5 +63,13 @@ namespace Solcery
                 }
             }
         }
+
+        public List<CardData> GetCardsForPlace(int placeId)
+        {
+            if (CardsByPlace.TryGetValue(placeId, out var cards))
+                return cards;
+
+            return null;
+        }
     }
 }

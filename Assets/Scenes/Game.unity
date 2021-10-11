@@ -1873,7 +1873,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 17,\r\n      \"Metadata\":
+  gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Disloyal Minion\",\r\n       
     \"Description\": \"Deal 2 Dmg. Move this card to enemy deck.\"\r\n      },\r\n     
@@ -1976,8 +1976,11 @@ MonoBehaviour:
     []\r\n                                }\r\n                              ]\r\n                           
     }\r\n                          ]\r\n                        }\r\n                     
     ]\r\n                    }\r\n                  ]\r\n                }\r\n             
-    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
-  gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 17,\r\n      \"Metadata\":
+    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 2,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some title\",\r\n       
+    \"Description\": \"Some title here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+  gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/1882e7db8682f572d09cda088ad7ae2c.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Disloyal Minion\",\r\n       
     \"Description\": \"Deal 2 Dmg. Move this card to enemy deck.\"\r\n      },\r\n     
@@ -2080,7 +2083,10 @@ MonoBehaviour:
     []\r\n                                }\r\n                              ]\r\n                           
     }\r\n                          ]\r\n                        }\r\n                     
     ]\r\n                    }\r\n                  ]\r\n                }\r\n             
-    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 2,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Another title\",\r\n       
+    \"Description\": \"Another title here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent3: 
   gameContent4: 
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
@@ -2098,7 +2104,12 @@ MonoBehaviour:
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
     \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Title\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
+    \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.9,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 3\r\n    }\r\n  ]\r\n}\r\n"
   gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
     \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
@@ -2118,29 +2129,30 @@ MonoBehaviour:
   gameDisplay3: 
   gameDisplay4: 
   gameState1: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
-    \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    2,\r\n      \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 3,\r\n      \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 17,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 17,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
-    17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n     
-    \"CardType\": 17,\r\n      \"CardPlace\": 2\r\n    }\r\n  ],\r\n  \"Random\":
+    1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
+    \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
+    2,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
+    \"CardId\": 3,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n   
+    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n   
+    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
+    1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 1,\r\n     
+    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 2\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n     
+    \"CardType\": 2,\r\n      \"CardPlace\": 4\r\n    }\r\n  ],\r\n  \"Random\":
     {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n   
     \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
-    \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    2,\r\n      \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 3,\r\n      \"CardType\": 17,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 17,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 17,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
-    17,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n     
-    \"CardType\": 17,\r\n      \"CardPlace\": 3\r\n    }\r\n  ],\r\n  \"Random\":
-    {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n   
-    \"w\": 88675123\r\n  }\r\n}\r\n"
+    1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
+    \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
+    2,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
+    \"CardId\": 3,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n   
+    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n   
+    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
+    1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 1,\r\n     
+    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 2\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\":
+    123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n 
+    }\r\n}\r\n"
   gameState3: 
   gameState4: 
 --- !u!4 &1444101897

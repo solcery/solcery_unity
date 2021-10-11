@@ -50,7 +50,7 @@ namespace Solcery.UI
             }
             else
             {
-                Debug.LogError("BoardCardType from this BoardCardData doesn't exist in this BoardData");
+                Debug.LogWarning("CardType from this CardData doesn't exist in this GameState");
 
                 SetName("unknown card type!");
                 SetDescription("unknown card type!");
@@ -65,6 +65,7 @@ namespace Solcery.UI
             _onCardCasted = onCardCasted;
             _cardData = cardData;
 
+            SetSprite(null);
             SetInteractabe(isInteractable);
             SetAnimator();
             UpdateGameContent(gameContent);
@@ -168,6 +169,9 @@ namespace Solcery.UI
 
         private void SetSprite(Sprite sprite)
         {
+            if (cardImage == null)
+                return;
+
             cardImage.sprite = sprite;
         }
 
