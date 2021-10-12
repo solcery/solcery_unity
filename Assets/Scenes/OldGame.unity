@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -861,7 +861,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216535360}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -3013,17 +3013,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  BoardDataWithDiff:
-    latestValue:
-      Step: 0
-      Cards: []
-      Players: []
-      Random:
-        x: 0
-        y: 0
-        z: 0
-        w: 0
-      EndTurnCardId: 0
 --- !u!4 &968767907
 Transform:
   m_ObjectHideFlags: 0
@@ -5797,7 +5786,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: _placesById
+      Entry: 6
+      Data: 
   places: {fileID: 11400000, guid: 5dd3cb03f6fcdf44e9666db42256910b, type: 2}
 --- !u!1 &1957612272
 GameObject:

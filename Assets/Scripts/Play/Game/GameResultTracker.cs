@@ -106,13 +106,13 @@ namespace Solcery
 
         private void GameOverPopup(float delay, string title = null, string description = null, int playerId = 0, bool hasOutcome = false, PlayerOutcome outcome = PlayerOutcome.Undefined)
         {
-            UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverPopupData(title, description, () =>
-            {
-                LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
-                Log.Instance?.UpdateLog(null);
-                Board.Instance?.UpdateBoard(null);
-                OldGame.Instance?.UpdateGameContent(null);
-            }));
+            // UIGameOverPopup.Instance?.OpenWithDelay(delay, new GameOverPopupData(title, description, () =>
+            // {
+            //     LogActionCreator.Instance.LeaveGame(playerId, hasOutcome, outcome);
+            //     Log.Instance?.UpdateLog(null);
+            //     Board.Instance?.UpdateBoard(null);
+            //     OldGame.Instance?.UpdateGameContent(null);
+            // }));
         }
     }
 }

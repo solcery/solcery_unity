@@ -30,9 +30,12 @@ namespace Solcery.UI
 
         public void UpdateGameContent(GameContent gameContent)
         {
-            foreach (var card in _cardsById.Values)
+            if (_cardsById != null && _cardsById.Count > 0)
             {
-                card.UpdateGameContent(gameContent);
+                foreach (var card in _cardsById.Values)
+                {
+                    card?.UpdateGameContent(gameContent);
+                }
             }
         }
 

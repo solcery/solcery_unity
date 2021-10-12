@@ -5,14 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Solcery.UI.Play.Game
+namespace Solcery.UI
 {
     public class UIGameOverPopup : Singleton<UIGameOverPopup>
     {
         [SerializeField] Canvas canvas = null;
         [SerializeField] TextMeshProUGUI titleText = null;
         [SerializeField] TextMeshProUGUI descriptionText = null;
-        [SerializeField] private Button stayButton = null;
+
         [SerializeField] private Button exitButton = null;
 
         private GameOverPopupData _data;
@@ -25,6 +25,9 @@ namespace Solcery.UI.Play.Game
 
         public void Open(GameOverPopupData data)
         {
+            if (data == null)
+                return;
+
             _data = data;
 
             if (canvas != null) canvas.enabled = true;
@@ -32,19 +35,14 @@ namespace Solcery.UI.Play.Game
             if (titleText != null) titleText.text = _data.Title;
             if (descriptionText != null) descriptionText.text = _data.Description;
 
+            exitButton?.onClick?.RemoveAllListeners();
             exitButton?.onClick?.AddListener(Exit);
-            stayButton?.onClick?.AddListener(Stay);
         }
 
         private void Exit()
         {
             if (canvas != null) canvas.enabled = false;
-            _data?.Callback?.Invoke();
-        }
-
-        private void Stay()
-        {
-            if (canvas != null) canvas.enabled = false;
+            // callback
         }
     }
 }

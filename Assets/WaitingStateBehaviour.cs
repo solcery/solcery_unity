@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
-using UnityEngine;
 
 namespace Solcery
 {
@@ -31,6 +30,13 @@ namespace Solcery
             if (gameState == null) return;
 
             stateMachine?.Trigger("Init");
+        }
+
+        protected override async UniTask OnExitState()
+        {
+            UIWaiting.Instance?.DeInit();
+
+            await base.OnExitState();
         }
     }
 }

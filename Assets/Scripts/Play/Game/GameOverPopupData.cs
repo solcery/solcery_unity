@@ -7,12 +7,11 @@ namespace Solcery
     {
         public string Title;
         public string Description;
-        public Action Callback;
-        public GameOverPopupData(string title, string description, Action callback)
+
+        public GameOverPopupData(string title, string description)
         {
             Title = title;
             Description = description;
-            Callback = callback;
         }
     }
 }

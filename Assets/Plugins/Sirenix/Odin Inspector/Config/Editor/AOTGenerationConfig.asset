@@ -16,12 +16,19 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637696087673127832
+  lastScan: 637696507104492075
   supportSerializedTypes:
   - TypeName: System.Action`1[[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: Solcery.CardIcon, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
   - TypeName: Solcery.CardLayoutOption, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.CardIcon, Assembly-CSharp],[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[Solcery.CardLayoutOption,
@@ -40,6 +47,10 @@ MonoBehaviour:
       UnityEngine.CoreModule]], mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardIcon,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Solcery.CardLayoutOption,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
@@ -52,6 +63,10 @@ MonoBehaviour:
     IsCustom: 0
     Emit: 1
   - TypeName: Solcery.UI.IBoardPlace, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.CardIcon, Assembly-CSharp]],
+      mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.IEqualityComparer`1[[Solcery.CardLayoutOption,

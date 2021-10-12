@@ -32,6 +32,9 @@ namespace Solcery.UI
                 }
             }
 
+            _gameContent = null;
+            _gameDisplay = null;
+            _gameState = null;
             _placesById = null;
         }
 
@@ -49,7 +52,6 @@ namespace Solcery.UI
 
         public void OnGameStateDiffUpdate(GameState gameState)
         {
-            Debug.Log("UIBoard.OnGameStateUpdate");
             _gameState = gameState;
 
             foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
@@ -104,13 +106,10 @@ namespace Solcery.UI
 
         private void ProcessDisplayData()
         {
-            Debug.Log("ProcessDisplayData");
-
             if (_gameDisplay == null)
                 return;
 
             var placeIdsToDelete = _placesById.Keys.Except(_gameDisplay.PlaceDisplayDatas.Select(d => d.PlaceId));
-            Debug.Log(placeIdsToDelete.Count());
 
             foreach (var placeIdToDelete in placeIdsToDelete)
             {

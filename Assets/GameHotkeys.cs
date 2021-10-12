@@ -22,36 +22,40 @@ namespace Solcery
         [BoxGroup("GameState")] [InfoBox("C", InfoMessageType.None)] [Multiline(2)] [SerializeField] private string gameState3;
         [BoxGroup("GameState")] [InfoBox("V", InfoMessageType.None)] [Multiline(2)] [SerializeField] private string gameState4;
 
+        [BoxGroup("Other")] [InfoBox("O", InfoMessageType.None)] [Multiline(2)] [SerializeField] private string gameOverPopup1;
+
         public override void PerformUpdate()
         {
 #if (UNITY_EDITOR)
             if (Input.GetKeyDown(KeyCode.Q))
-                // Game.Instance?.UpdateGameContent(gameContent1);
                 ReactToUnity.Instance?.UpdateGameContent(gameContent1);
             if (Input.GetKeyDown(KeyCode.W))
-                Game.Instance?.UpdateGameContent(gameContent2);
+                ReactToUnity.Instance?.UpdateGameContent(gameContent2);
             if (Input.GetKeyDown(KeyCode.E))
-                Game.Instance?.UpdateGameContent(gameContent3);
+                ReactToUnity.Instance?.UpdateGameContent(gameContent3);
             if (Input.GetKeyDown(KeyCode.R))
-                Game.Instance?.UpdateGameContent(gameContent4);
+                ReactToUnity.Instance?.UpdateGameContent(gameContent4);
 
             if (Input.GetKeyDown(KeyCode.A))
-                Game.Instance?.UpdateGameDisplay(gameDisplay1);
+                ReactToUnity.Instance?.UpdateGameDisplay(gameDisplay1);
             if (Input.GetKeyDown(KeyCode.S))
-                Game.Instance?.UpdateGameDisplay(gameDisplay2);
+                ReactToUnity.Instance?.UpdateGameDisplay(gameDisplay2);
             if (Input.GetKeyDown(KeyCode.D))
-                Game.Instance?.UpdateGameDisplay(gameDisplay3);
+                ReactToUnity.Instance?.UpdateGameDisplay(gameDisplay3);
             if (Input.GetKeyDown(KeyCode.F))
-                Game.Instance?.UpdateGameDisplay(gameDisplay4);
+                ReactToUnity.Instance?.UpdateGameDisplay(gameDisplay4);
 
             if (Input.GetKeyDown(KeyCode.Z))
-                Game.Instance?.UpdateGameState(gameState1);
+                ReactToUnity.Instance?.UpdateGameState(gameState1);
             if (Input.GetKeyDown(KeyCode.X))
-                Game.Instance?.UpdateGameState(gameState2);
+                ReactToUnity.Instance?.UpdateGameState(gameState2);
             if (Input.GetKeyDown(KeyCode.C))
-                Game.Instance?.UpdateGameState(gameState3);
+                ReactToUnity.Instance?.UpdateGameState(gameState3);
             if (Input.GetKeyDown(KeyCode.V))
-                Game.Instance?.UpdateGameState(gameState4);
+                ReactToUnity.Instance?.UpdateGameState(gameState4);
+
+            if (Input.GetKeyDown(KeyCode.O))
+                ReactToUnity.Instance?.OpenGameOverPopup(gameOverPopup1);
 #endif
         }
     }

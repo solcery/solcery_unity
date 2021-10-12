@@ -20,15 +20,29 @@ namespace Solcery
             Reactives.Subscribe(Game.Instance?.GameState, OnGameStateUpdate, _stateCTS.Token);
         }
 
+        protected override async UniTask OnExitState()
+        {
+            if (_lastGameContent != null)
+                _lastGameContent.HasBeenProcessed = false;
+            if (_lastGameDisplay != null)
+                _lastGameDisplay.HasBeenProcessed = false;
+            if (_lastGameState != null)
+                _lastGameState.HasBeenProcessed = false;
+
+            _lastGameContent = null;
+            _lastGameDisplay = null;
+            _lastGameState = null;
+
+            await base.OnExitState();
+        }
+
         private void OnGameContentUpdate(GameContent gameContent)
         {
-            Debug.Log("OnGameContentUpdate");
-
-            if (gameContent == null) { ExitGame(); return; }
+            if (gameContent == null) { Debug.Log("null GameContent"); ExitGame(); return; }
 
             if (gameContent.HasBeenProcessed)
             {
-                Debug.Log("GameContent has been processed");
+                // Debug.Log("GameContent has been processed");
                 return;
             }
 
@@ -40,13 +54,11 @@ namespace Solcery
 
         private void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
-            Debug.Log("OnGameDisplayUpdate");
-
-            if (gameDisplay == null) { ExitGame(); return; }
+            if (gameDisplay == null) { Debug.Log("null GameDisplay"); ExitGame(); return; }
 
             if (gameDisplay.HasBeenProcessed)
             {
-                Debug.Log("GameDisplay has been processed");
+                // Debug.Log("GameDisplay has been processed");
                 return;
             }
 
@@ -65,11 +77,11 @@ namespace Solcery
 
         private void OnGameStateUpdate(GameState gameState)
         {
-            if (gameState == null) { ExitGame(); return; }
+            if (gameState == null) { Debug.Log("null GameState"); ExitGame(); return; }
 
             if (gameState.HasBeenProcessed)
             {
-                Debug.Log("GameState has been processed");
+                // Debug.Log("GameState has been processed");
                 return;
             }
 
