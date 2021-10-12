@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
 using Solcery.Modules;
+using Solcery.React;
 using Solcery.Utils;
 
 namespace Solcery
@@ -14,6 +15,11 @@ namespace Solcery
         private AsyncReactiveProperty<GameContent> _gameContent = new AsyncReactiveProperty<GameContent>(null);
         private AsyncReactiveProperty<GameDisplay> _gameDisplay = new AsyncReactiveProperty<GameDisplay>(null);
         private AsyncReactiveProperty<GameState> _gameState = new AsyncReactiveProperty<GameState>(null);
+
+        void Start()
+        {
+            UnityToReact.Instance?.CallOnUnityLoaded();
+        }
 
         public void UpdateGameContent(string gameContentJson)
         {

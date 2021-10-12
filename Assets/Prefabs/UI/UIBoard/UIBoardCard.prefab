@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 15.55
   m_fontSizeBase: 11.27
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f149321ad32e4a8c3a49fa3ed3c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardIcons: {fileID: 11400000, guid: c4bfe57b26260e1409a1c5e128d7b3d1, type: 2}
   arf: {fileID: 2629152384893398422}
   cg: {fileID: 4440240633767081101}
   animator: {fileID: 8150576541526316475}
@@ -238,7 +239,7 @@ MonoBehaviour:
   cardName: {fileID: 8118980716047174774}
   cardDescription: {fileID: 1933504690624659153}
   cardCoinsCount: {fileID: 72060295701108339}
-  cardCoins: {fileID: 8118980715304107493}
+  cardIconImage: {fileID: 8118980715304107491}
 --- !u!114 &2629152384893398422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 2
-  m_AspectRatio: 0.7133789
+  m_AspectRatio: 0.71875
 --- !u!1 &3834954703817365357
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 641f4070d53a74d4c88c37a69b034be3, type: 2}
   m_sharedMaterial: {fileID: -7467861116729273682, guid: 641f4070d53a74d4c88c37a69b034be3, type: 2}
@@ -457,7 +458,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.25
+  m_fontSize: 23.35
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -587,12 +588,12 @@ GameObject:
   - component: {fileID: 8118980715304107488}
   - component: {fileID: 8118980715304107491}
   m_Layer: 5
-  m_Name: CardCoins
+  m_Name: CardIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8118980715304107490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -610,9 +611,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.025771093, y: 0.82221556}
   m_AnchorMax: {x: 0.24439964, y: 1.0135949}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.00011444092, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &8118980715304107488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -641,9 +642,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8139076e7296f24ab0762816a1af84e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

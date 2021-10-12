@@ -12,6 +12,7 @@ namespace Solcery.UI
         public bool IsFaceDown => _isFaceDown;
         public AspectRatioFitter ARF => arf;
 
+        [SerializeField] private CardIcons cardIcons = null;
         [SerializeField] private AspectRatioFitter arf = null;
         [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private Animator animator = null;
@@ -24,7 +25,7 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardName = null;
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
-        [SerializeField] private GameObject cardCoins = null;
+        [SerializeField] private Image cardIconImage = null;
 
         private CardData _cardData;
         private CardType _cardType;
@@ -43,7 +44,7 @@ namespace Solcery.UI
             if (_cardType != null)
             {
                 SetPicture(_cardType.Metadata);
-                SetCoins(_showCoins, _cardType.Metadata.Coins);
+                SetCoins(_showCoins, _cardType.Metadata.Icon, _cardType.Metadata.Coins);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SubsribeToButton();
@@ -175,18 +176,27 @@ namespace Solcery.UI
             cardImage.sprite = sprite;
         }
 
-        private void SetCoins(bool showCoins, int coinsCount = 0)
+        private void SetCoins(bool showIcon, CardIcon icon = CardIcon.None, int coinsCount = 0)
         {
-            if (cardCoins == null || cardCoinsCount == null)
+            if (cardIconImage == null || cardCoinsCount == null)
                 return;
 
-            if (!showCoins)
-                cardCoins.SetActive(false);
+            if (!showIcon)
+                cardIconImage.gameObject.SetActive(false);
             else
             {
-                cardCoins.SetActive(true);
-                if (cardCoinsCount != null)
-                    cardCoinsCount.text = coinsCount.ToString();
+                var sprite = cardIcons.GetSpriteByCardIcon(icon);
+
+                if (sprite == null)
+                    cardIconImage.gameObject.SetActive(false);
+                else
+                {
+                    cardIconImage.sprite = sprite;
+                    cardIconImage.gameObject.SetActive(true);
+
+                    if (cardCoinsCount != null)
+                        cardCoinsCount.text = coinsCount.ToString();
+                }
             }
         }
 

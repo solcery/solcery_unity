@@ -1875,219 +1875,21 @@ MonoBehaviour:
     SerializationNodes: []
   gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Disloyal Minion\",\r\n       
-    \"Description\": \"Deal 2 Dmg. Move this card to enemy deck.\"\r\n      },\r\n     
-    \"BrickTree\": {\r\n        \"Genesis\": {\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 1,\r\n          \"Object\": 0,\r\n          \"HasField\": false,\r\n         
-    \"IntField\": 0,\r\n          \"StringField\": null,\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": [\r\n            {\r\n              \"Type\":
-    0,\r\n              \"Subtype\": 1,\r\n              \"Object\": 0,\r\n             
-    \"HasField\": false,\r\n              \"IntField\": 0,\r\n              \"StringField\":
-    null,\r\n              \"HasObjectSelection\": false,\r\n              \"Slots\":
-    [\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 6,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    \"display\",\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 0,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 2,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": []\r\n                    }\r\n                  ]\r\n               
-    },\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 6,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    \"cost\",\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 0,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 1,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": []\r\n                    }\r\n                  ]\r\n               
-    }\r\n              ]\r\n            },\r\n            {\r\n              \"Type\":
-    0,\r\n              \"Subtype\": 2,\r\n              \"Object\": 0,\r\n             
-    \"HasField\": false,\r\n              \"IntField\": 0,\r\n              \"StringField\":
-    null,\r\n              \"HasObjectSelection\": false,\r\n              \"Slots\":
-    [\r\n                {\r\n                  \"Type\": 1,\r\n                 
-    \"Subtype\": 100,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    false,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    null,\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 4,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 0,\r\n                     
-    \"StringField\": \"display\",\r\n                      \"HasObjectSelection\":
-    false,\r\n                      \"Slots\": []\r\n                    }\r\n                 
-    ]\r\n                },\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 4,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 14,\r\n                  \"StringField\":
-    null,\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": []\r\n                },\r\n                {\r\n                 
-    \"Type\": 0,\r\n                  \"Subtype\": 1,\r\n                  \"Object\":
-    0,\r\n                  \"HasField\": false,\r\n                  \"IntField\":
-    0,\r\n                  \"StringField\": null,\r\n                  \"HasObjectSelection\":
-    false,\r\n                  \"Slots\": [\r\n                    {\r\n                     
-    \"Type\": 0,\r\n                      \"Subtype\": 1,\r\n                     
-    \"Object\": 0,\r\n                      \"HasField\": false,\r\n                     
-    \"IntField\": 0,\r\n                      \"StringField\": null,\r\n                     
-    \"HasObjectSelection\": false,\r\n                      \"Slots\": [\r\n                       
-    {\r\n                          \"Type\": 0,\r\n                          \"Subtype\":
-    6,\r\n                          \"Object\": 0,\r\n                          \"HasField\":
-    true,\r\n                          \"IntField\": 0,\r\n                         
-    \"StringField\": \"dmg\",\r\n                          \"HasObjectSelection\":
-    false,\r\n                          \"Slots\": [\r\n                           
-    {\r\n                              \"Type\": 2,\r\n                             
-    \"Subtype\": 0,\r\n                              \"Object\": 0,\r\n                             
-    \"HasField\": true,\r\n                              \"IntField\": 2,\r\n                             
-    \"StringField\": null,\r\n                              \"HasObjectSelection\":
-    false,\r\n                              \"Slots\": []\r\n                           
-    }\r\n                          ]\r\n                        },\r\n                       
-    {\r\n                          \"Type\": 0,\r\n                          \"Subtype\":
-    4,\r\n                          \"Object\": 0,\r\n                          \"HasField\":
-    true,\r\n                          \"IntField\": 13,\r\n                         
-    \"StringField\": null,\r\n                          \"HasObjectSelection\": false,\r\n                         
-    \"Slots\": []\r\n                        }\r\n                      ]\r\n                   
-    },\r\n                    {\r\n                      \"Type\": 0,\r\n                     
-    \"Subtype\": 100,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": false,\r\n                      \"IntField\": 0,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": [\r\n                        {\r\n                          \"Type\":
-    2,\r\n                          \"Subtype\": 2,\r\n                         
-    \"Object\": 0,\r\n                          \"HasField\": false,\r\n                         
-    \"IntField\": 0,\r\n                          \"StringField\": null,\r\n                         
-    \"HasObjectSelection\": false,\r\n                          \"Slots\": [\r\n                           
-    {\r\n                              \"Type\": 2,\r\n                             
-    \"Subtype\": 0,\r\n                              \"Object\": 0,\r\n                             
-    \"HasField\": true,\r\n                              \"IntField\": 4,\r\n                             
-    \"StringField\": null,\r\n                              \"HasObjectSelection\":
-    false,\r\n                              \"Slots\": []\r\n                           
-    },\r\n                            {\r\n                              \"Type\":
-    2,\r\n                              \"Subtype\": 3,\r\n                             
-    \"Object\": 0,\r\n                              \"HasField\": false,\r\n                             
-    \"IntField\": 0,\r\n                              \"StringField\": null,\r\n                             
-    \"HasObjectSelection\": false,\r\n                              \"Slots\": [\r\n                               
-    {\r\n                                  \"Type\": 2,\r\n                                 
-    \"Subtype\": 0,\r\n                                  \"Object\": 0,\r\n                                 
-    \"HasField\": true,\r\n                                  \"IntField\": 3,\r\n                                 
-    \"StringField\": null,\r\n                                  \"HasObjectSelection\":
-    false,\r\n                                  \"Slots\": []\r\n                               
-    },\r\n                                {\r\n                                 
-    \"Type\": 2,\r\n                                  \"Subtype\": 105,\r\n                                 
-    \"Object\": 0,\r\n                                  \"HasField\": false,\r\n                                 
-    \"IntField\": 0,\r\n                                  \"StringField\": null,\r\n                                 
-    \"HasObjectSelection\": false,\r\n                                  \"Slots\":
-    []\r\n                                }\r\n                              ]\r\n                           
-    }\r\n                          ]\r\n                        }\r\n                     
-    ]\r\n                    }\r\n                  ]\r\n                }\r\n             
-    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 2,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Picture\": 140,\r\n        \"Icon\": 2,\r\n        \"Coins\": 1,\r\n       
+    \"Name\": \"Disloyal Minion\",\r\n        \"Description\": \"Deal 2 Dmg. Move
+    this card to enemy deck.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 101,\r\n     
+    \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some title\",\r\n       
     \"Description\": \"Some title here\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    3,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    102,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some button\",\r\n       
     \"Description\": \"Some button here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/1882e7db8682f572d09cda088ad7ae2c.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Disloyal Minion\",\r\n       
-    \"Description\": \"Deal 2 Dmg. Move this card to enemy deck.\"\r\n      },\r\n     
-    \"BrickTree\": {\r\n        \"Genesis\": {\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 1,\r\n          \"Object\": 0,\r\n          \"HasField\": false,\r\n         
-    \"IntField\": 0,\r\n          \"StringField\": null,\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": [\r\n            {\r\n              \"Type\":
-    0,\r\n              \"Subtype\": 1,\r\n              \"Object\": 0,\r\n             
-    \"HasField\": false,\r\n              \"IntField\": 0,\r\n              \"StringField\":
-    null,\r\n              \"HasObjectSelection\": false,\r\n              \"Slots\":
-    [\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 6,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    \"display\",\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 0,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 2,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": []\r\n                    }\r\n                  ]\r\n               
-    },\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 6,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    \"cost\",\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 0,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 1,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": []\r\n                    }\r\n                  ]\r\n               
-    }\r\n              ]\r\n            },\r\n            {\r\n              \"Type\":
-    0,\r\n              \"Subtype\": 2,\r\n              \"Object\": 0,\r\n             
-    \"HasField\": false,\r\n              \"IntField\": 0,\r\n              \"StringField\":
-    null,\r\n              \"HasObjectSelection\": false,\r\n              \"Slots\":
-    [\r\n                {\r\n                  \"Type\": 1,\r\n                 
-    \"Subtype\": 100,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    false,\r\n                  \"IntField\": 0,\r\n                  \"StringField\":
-    null,\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": [\r\n                    {\r\n                      \"Type\": 2,\r\n                     
-    \"Subtype\": 4,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": true,\r\n                      \"IntField\": 0,\r\n                     
-    \"StringField\": \"display\",\r\n                      \"HasObjectSelection\":
-    false,\r\n                      \"Slots\": []\r\n                    }\r\n                 
-    ]\r\n                },\r\n                {\r\n                  \"Type\": 0,\r\n                 
-    \"Subtype\": 4,\r\n                  \"Object\": 0,\r\n                  \"HasField\":
-    true,\r\n                  \"IntField\": 14,\r\n                  \"StringField\":
-    null,\r\n                  \"HasObjectSelection\": false,\r\n                 
-    \"Slots\": []\r\n                },\r\n                {\r\n                 
-    \"Type\": 0,\r\n                  \"Subtype\": 1,\r\n                  \"Object\":
-    0,\r\n                  \"HasField\": false,\r\n                  \"IntField\":
-    0,\r\n                  \"StringField\": null,\r\n                  \"HasObjectSelection\":
-    false,\r\n                  \"Slots\": [\r\n                    {\r\n                     
-    \"Type\": 0,\r\n                      \"Subtype\": 1,\r\n                     
-    \"Object\": 0,\r\n                      \"HasField\": false,\r\n                     
-    \"IntField\": 0,\r\n                      \"StringField\": null,\r\n                     
-    \"HasObjectSelection\": false,\r\n                      \"Slots\": [\r\n                       
-    {\r\n                          \"Type\": 0,\r\n                          \"Subtype\":
-    6,\r\n                          \"Object\": 0,\r\n                          \"HasField\":
-    true,\r\n                          \"IntField\": 0,\r\n                         
-    \"StringField\": \"dmg\",\r\n                          \"HasObjectSelection\":
-    false,\r\n                          \"Slots\": [\r\n                           
-    {\r\n                              \"Type\": 2,\r\n                             
-    \"Subtype\": 0,\r\n                              \"Object\": 0,\r\n                             
-    \"HasField\": true,\r\n                              \"IntField\": 2,\r\n                             
-    \"StringField\": null,\r\n                              \"HasObjectSelection\":
-    false,\r\n                              \"Slots\": []\r\n                           
-    }\r\n                          ]\r\n                        },\r\n                       
-    {\r\n                          \"Type\": 0,\r\n                          \"Subtype\":
-    4,\r\n                          \"Object\": 0,\r\n                          \"HasField\":
-    true,\r\n                          \"IntField\": 13,\r\n                         
-    \"StringField\": null,\r\n                          \"HasObjectSelection\": false,\r\n                         
-    \"Slots\": []\r\n                        }\r\n                      ]\r\n                   
-    },\r\n                    {\r\n                      \"Type\": 0,\r\n                     
-    \"Subtype\": 100,\r\n                      \"Object\": 0,\r\n                     
-    \"HasField\": false,\r\n                      \"IntField\": 0,\r\n                     
-    \"StringField\": null,\r\n                      \"HasObjectSelection\": false,\r\n                     
-    \"Slots\": [\r\n                        {\r\n                          \"Type\":
-    2,\r\n                          \"Subtype\": 2,\r\n                         
-    \"Object\": 0,\r\n                          \"HasField\": false,\r\n                         
-    \"IntField\": 0,\r\n                          \"StringField\": null,\r\n                         
-    \"HasObjectSelection\": false,\r\n                          \"Slots\": [\r\n                           
-    {\r\n                              \"Type\": 2,\r\n                             
-    \"Subtype\": 0,\r\n                              \"Object\": 0,\r\n                             
-    \"HasField\": true,\r\n                              \"IntField\": 4,\r\n                             
-    \"StringField\": null,\r\n                              \"HasObjectSelection\":
-    false,\r\n                              \"Slots\": []\r\n                           
-    },\r\n                            {\r\n                              \"Type\":
-    2,\r\n                              \"Subtype\": 3,\r\n                             
-    \"Object\": 0,\r\n                              \"HasField\": false,\r\n                             
-    \"IntField\": 0,\r\n                              \"StringField\": null,\r\n                             
-    \"HasObjectSelection\": false,\r\n                              \"Slots\": [\r\n                               
-    {\r\n                                  \"Type\": 2,\r\n                                 
-    \"Subtype\": 0,\r\n                                  \"Object\": 0,\r\n                                 
-    \"HasField\": true,\r\n                                  \"IntField\": 3,\r\n                                 
-    \"StringField\": null,\r\n                                  \"HasObjectSelection\":
-    false,\r\n                                  \"Slots\": []\r\n                               
-    },\r\n                                {\r\n                                 
-    \"Type\": 2,\r\n                                  \"Subtype\": 105,\r\n                                 
-    \"Object\": 0,\r\n                                  \"HasField\": false,\r\n                                 
-    \"IntField\": 0,\r\n                                  \"StringField\": null,\r\n                                 
-    \"HasObjectSelection\": false,\r\n                                  \"Slots\":
-    []\r\n                                }\r\n                              ]\r\n                           
-    }\r\n                          ]\r\n                        }\r\n                     
-    ]\r\n                    }\r\n                  ]\r\n                }\r\n             
-    ]\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 2,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Picture\": 140,\r\n        \"Icon\": 1,\r\n        \"Coins\": 1,\r\n       
+    \"Name\": \"Disloyal Minion\",\r\n        \"Description\": \"Deal 2 Dmg. Move
+    this card to enemy deck.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 101,\r\n     
+    \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Another title\",\r\n       
     \"Description\": \"Another title here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent3: 
@@ -2147,10 +1949,15 @@ MonoBehaviour:
     1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 1,\r\n     
     \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
     1,\r\n      \"CardPlace\": 2\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n     
-    \"CardType\": 2,\r\n      \"CardPlace\": 4\r\n    },\r\n    {\r\n      \"CardId\":
-    9,\r\n      \"CardType\": 3,\r\n      \"CardPlace\": 5\r\n    }\r\n  ],\r\n 
-    \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\":
-    521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
+    \"CardType\": 1,\r\n      \"CardPlace\": 2\r\n    },\r\n    {\r\n      \"CardId\":
+    9,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 2\r\n    },\r\n    {\r\n     
+    \"CardId\": 10,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 2\r\n    },\r\n   
+    {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
+    2\r\n    },\r\n    {\r\n      \"CardId\": 12,\r\n      \"CardType\": 101,\r\n     
+    \"CardPlace\": 4\r\n    },\r\n    {\r\n      \"CardId\": 13,\r\n      \"CardType\":
+    102,\r\n      \"CardPlace\": 5\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\":
+    123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n 
+    }\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
     1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
     \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
@@ -2160,9 +1967,13 @@ MonoBehaviour:
     },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
     1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 1,\r\n     
     \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\":
-    123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n 
-    }\r\n}\r\n"
+    1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n     
+    \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\":
+    9,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n     
+    \"CardId\": 10,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n   
+    {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
+    3\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
+    362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState3: 
   gameState4: 
 --- !u!4 &1444101897
