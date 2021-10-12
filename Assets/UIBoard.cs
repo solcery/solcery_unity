@@ -78,16 +78,37 @@ namespace Solcery.UI
                             var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
                             pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount);
                             break;
-                        case CardLayoutOption.Map:
+                        case CardLayoutOption.Widget:
+                            var widget = place as UIWidget;
+                            var widgetCards = _gameState.GetCardsForPlace(placeId);
+                            if (widgetCards == null || widgetCards.Count <= 0)
+                            {
+                                DestroyImmediate(widget.gameObject);
+                                _placesById.Remove(placeId);
+                                continue;
+                            }
+                            widget?.UpdateWithCards(_gameContent, widgetCards);
                             break;
                         case CardLayoutOption.Title:
                             var title = place as UITitle;
                             var titleCards = _gameState.GetCardsForPlace(placeId);
+                            // if (titleCards == null || titleCards.Count <= 0)
+                            // {
+                            //     DestroyImmediate(title.gameObject);
+                            //     _placesById.Remove(placeId);
+                            //     continue;
+                            // }
                             title?.UpdateWithCards(_gameContent, titleCards);
                             break;
                         case CardLayoutOption.Button:
                             var button = place as UIButton;
                             var buttonCards = _gameState.GetCardsForPlace(placeId);
+                            // if (buttonCards == null || buttonCards.Count <= 0)
+                            // {
+                            //     DestroyImmediate(button.gameObject);
+                            //     _placesById.Remove(placeId);
+                            //     continue;
+                            // }
                             button?.UpdateWithCards(_gameContent, buttonCards);
                             break;
                     }

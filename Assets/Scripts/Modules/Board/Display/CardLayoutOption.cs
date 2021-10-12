@@ -7,7 +7,7 @@ namespace Solcery
     {
         Stacked,
         LayedOut,
-        Map, //card name : amount
+        Widget, //Picture and Coins
         Title, //description of the top card
         Button //title of the top card and cast on click
     }
