@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using Solcery.React;
 using Solcery.Utils;
 using TMPro;
 using UnityEngine;
@@ -42,7 +43,8 @@ namespace Solcery.UI
         private void Exit()
         {
             if (canvas != null) canvas.enabled = false;
-            // callback
+
+            UnityToReact.Instance?.CallOnGameOverPopupButtonClicked();
         }
     }
 }

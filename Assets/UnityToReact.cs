@@ -5,14 +5,24 @@ namespace Solcery.React
 {
     public class UnityToReact : Singleton<UnityToReact>
     {
-        [DllImport("__Internal")] private static extern void OnUnityLoaded(string message);
+        [DllImport("__Internal")] private static extern void OnUnityLoaded();
+        [DllImport("__Internal")] private static extern void OnGameOverPopupButtonClicked();
         [DllImport("__Internal")] private static extern void OpenLinkInNewTab(string link);
         [DllImport("__Internal")] private static extern void CastCard(int cardId);
 
         public void CallOnUnityLoaded()
         {
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-            OnUnityLoaded ("message");
+            OnUnityLoaded ();
+#endif
+        }
+
+        public void CallOnGameOverPopupButtonClicked()
+        {
+            UnityEngine.Debug.Log("GameOver");
+
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            OnGameOverPopupButtonClicked ();
 #endif
         }
 
