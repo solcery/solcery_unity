@@ -1,15 +1,18 @@
 using System.Collections.Generic;
+using Solcery.React;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Solcery.UI
 {
-    public class UITitle : MonoBehaviour, IBoardPlace
+    public class UIButton : MonoBehaviour, IBoardPlace
     {
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
-        [SerializeField] private TextMeshProUGUI titleText = null;
+        [SerializeField] private Button button = null;
+        [SerializeField] private TextMeshProUGUI buttonText = null;
 
         private PlaceDisplayData _displayData;
         protected bool _areCardsFaceDown;
@@ -25,7 +28,7 @@ namespace Solcery.UI
 
         public Vector3 GetCardRotation(int cardId)
         {
-            return Vector3.one;
+            return Vector3.zero;
         }
 
         public Vector2 GetCardSize(int cardId)
@@ -50,12 +53,14 @@ namespace Solcery.UI
 
         public void UpdateWithCards(GameContent gameContent, List<CardData> cards)
         {
+            button.onClick.RemoveAllListeners();
+
             _cards = cards;
 
             if (_cards == null || _cards.Count <= 0)
             {
-                if (titleText != null)
-                    titleText.text = "No cards in this place";
+                if (buttonText != null)
+                    buttonText.text = "No cards in this place";
 
                 return;
             }
@@ -64,24 +69,26 @@ namespace Solcery.UI
 
             if (_topCardData == null)
             {
-                if (titleText != null)
-                    titleText.text = "Top card is null";
+                if (buttonText != null)
+                    buttonText.text = "Top card is null";
 
                 return;
             }
+
+            button.onClick.AddListener(() => UnityToReact.Instance?.CallCastCard(_topCardData.CardId));
 
             _topCardType = gameContent.GetCardTypeById(_topCardData.CardType);
 
             if (_topCardType == null)
             {
-                if (titleText != null)
-                    titleText.text = "CardType is null";
+                if (buttonText != null)
+                    buttonText.text = "CardType is null";
 
                 return;
             }
 
-            if (titleText != null)
-                titleText.text = _topCardType.Metadata.Description;
+            if (buttonText != null)
+                buttonText.text = _topCardType.Metadata.Name;
         }
     }
 }

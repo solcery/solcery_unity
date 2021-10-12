@@ -8,6 +8,7 @@ namespace Solcery
         Stacked,
         LayedOut,
         Map, //card name : amount
-        Title // name of the top card
+        Title, //description of the top card
+        Button //title of the top card and cast on click
     }
 }

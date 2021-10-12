@@ -80,8 +80,13 @@ namespace Solcery.UI
                             break;
                         case CardLayoutOption.Title:
                             var title = place as UITitle;
-                            var cards = _gameState.GetCardsForPlace(placeId);
-                            title?.UpdateWithCards(_gameContent, cards);
+                            var titleCards = _gameState.GetCardsForPlace(placeId);
+                            title?.UpdateWithCards(_gameContent, titleCards);
+                            break;
+                        case CardLayoutOption.Button:
+                            var button = place as UIButton;
+                            var buttonCards = _gameState.GetCardsForPlace(placeId);
+                            button?.UpdateWithCards(_gameContent, buttonCards);
                             break;
                     }
                 }

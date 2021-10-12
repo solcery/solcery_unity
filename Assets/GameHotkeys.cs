@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Solcery.React;
 using Solcery.Utils;
 using UnityEngine;
 
@@ -25,7 +26,8 @@ namespace Solcery
         {
 #if (UNITY_EDITOR)
             if (Input.GetKeyDown(KeyCode.Q))
-                Game.Instance?.UpdateGameContent(gameContent1);
+                // Game.Instance?.UpdateGameContent(gameContent1);
+                ReactToUnity.Instance?.UpdateGameContent(gameContent1);
             if (Input.GetKeyDown(KeyCode.W))
                 Game.Instance?.UpdateGameContent(gameContent2);
             if (Input.GetKeyDown(KeyCode.E))
