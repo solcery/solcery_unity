@@ -72,19 +72,19 @@ namespace Solcery.UI
                 }
 
                 var placeDiff = _gameState.Diff.GetDiffForPlace(placeId);
+                var areCardsInteractable = displayData.IsInteractable;
                 var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
 
                 switch (displayData.CardLayoutOption)
                 {
                     case CardLayoutOption.LayedOut:
                         var hand = place as UIHand;
-                        var areCardsInteractable = displayData.IsInteractable;
                         hand?.UpdateWithDiff(_gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
                         break;
                     case CardLayoutOption.Stacked:
                         var pile = place as UIPile;
                         var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
-                        pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount, areCardsFaceDown);
+                        pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount, areCardsInteractable, areCardsFaceDown);
                         break;
                     case CardLayoutOption.Widget:
                         var widget = place as UIWidget;

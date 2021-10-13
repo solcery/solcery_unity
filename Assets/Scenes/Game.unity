@@ -2480,7 +2480,7 @@ MonoBehaviour:
   gameContent4: 
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
     \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": false,\r\n     
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
     \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n     
     },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
     0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
@@ -2489,7 +2489,7 @@ MonoBehaviour:
     \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"HorizontalAnchors\":
     {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
     \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
