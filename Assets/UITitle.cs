@@ -14,7 +14,7 @@ namespace Solcery.UI
         private PlaceDisplayData _displayData;
         protected bool _areCardsFaceDown;
 
-        List<CardData> _cards;
+        private List<CardData> _cards;
         private CardData _topCardData;
         private CardType _topCardType;
 

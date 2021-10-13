@@ -9,6 +9,7 @@ namespace Solcery
         public int PlaceId = 3;
         public bool IsInteractable;
         public bool IsVisible;
+        public bool Stretch;
         public PlaceDisplayAnchors HorizontalAnchors;
         public PlaceDisplayAnchors VerticalAnchors;
         public CardFaceOption CardFaceOption;

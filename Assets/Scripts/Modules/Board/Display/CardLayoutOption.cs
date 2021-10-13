@@ -9,6 +9,7 @@ namespace Solcery
         LayedOut,
         Widget, //Picture and Coins
         Title, //description of the top card
-        Button //title of the top card and cast on click
+        Button, //title of the top card and cast on click
+        Picture
     }
 }

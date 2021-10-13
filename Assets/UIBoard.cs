@@ -111,6 +111,17 @@ namespace Solcery.UI
                             // }
                             button?.UpdateWithCards(_gameContent, buttonCards);
                             break;
+                        case CardLayoutOption.Picture:
+                            var picture = place as UIPicture;
+                            var pictureCards = _gameState.GetCardsForPlace(placeId);
+                            if (pictureCards == null || pictureCards.Count <= 0)
+                            {
+                                DestroyImmediate(picture.gameObject);
+                                _placesById.Remove(placeId);
+                                continue;
+                            }
+                            picture?.UpdateWithCards(_gameContent, pictureCards, displayData.Stretch);
+                            break;
                     }
                 }
             }
