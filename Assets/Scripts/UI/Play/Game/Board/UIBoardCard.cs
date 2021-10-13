@@ -61,6 +61,8 @@ namespace Solcery.UI
 
         public void Init(GameContent gameContent, CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
+            Debug.Log(isInteractable);
+            
             _showCoins = showCoins;
             _isFaceDown = isFaceDown;
             _onCardCasted = onCardCasted;
@@ -219,11 +221,13 @@ namespace Solcery.UI
 
         private void OnPointerEnter()
         {
+            Debug.Log("Highlighted 1");
             _isPointerOver = true;
 
             if (!_isInteractable)
                 return;
 
+            Debug.Log("Highlighted 2");
             animator?.SetTrigger("Highlighted");
         }
 
