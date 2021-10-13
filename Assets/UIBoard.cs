@@ -100,23 +100,23 @@ namespace Solcery.UI
                     case CardLayoutOption.Title:
                         var title = place as UITitle;
                         var titleCards = _gameState.GetCardsForPlace(placeId);
-                        // if (titleCards == null || titleCards.Count <= 0)
-                        // {
-                        //     DestroyImmediate(title.gameObject);
-                        //     _placesById.Remove(placeId);
-                        //     continue;
-                        // }
+                        if (titleCards == null || titleCards.Count <= 0)
+                        {
+                            DestroyImmediate(title.gameObject);
+                            _placesById.Remove(placeId);
+                            continue;
+                        }
                         title?.UpdateWithCards(_gameContent, titleCards);
                         break;
                     case CardLayoutOption.Button:
                         var button = place as UIButton;
                         var buttonCards = _gameState.GetCardsForPlace(placeId);
-                        // if (buttonCards == null || buttonCards.Count <= 0)
-                        // {
-                        //     DestroyImmediate(button.gameObject);
-                        //     _placesById.Remove(placeId);
-                        //     continue;
-                        // }
+                        if (buttonCards == null || buttonCards.Count <= 0)
+                        {
+                            DestroyImmediate(button.gameObject);
+                            _placesById.Remove(placeId);
+                            continue;
+                        }
                         button?.UpdateWithCards(_gameContent, buttonCards);
                         break;
                     case CardLayoutOption.Picture:
