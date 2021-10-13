@@ -39,7 +39,7 @@ namespace Solcery.UI
 
         public void UpdateGameContent(GameContent gameContent)
         {
-            _cardType = gameContent.GetCardTypeById(_cardData.CardType);
+            _cardType = gameContent?.GetCardTypeById(_cardData.CardType);
 
             if (_cardType != null)
             {

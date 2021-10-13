@@ -57,72 +57,79 @@ namespace Solcery.UI
             foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
             {
                 var placeId = displayData.PlaceId;
+                IBoardPlace place;
 
-                if (_placesById.TryGetValue(placeId, out var place))
+                if (!_placesById.TryGetValue(placeId, out place))
                 {
-                    if (place == null)
-                        continue;
-
-                    var placeDiff = _gameState.Diff.GetDiffForPlace(placeId);
-
-                    switch (displayData.CardLayoutOption)
+                    place = CreatePlace(displayData, placeId);
+                    if (place != null)
+                        _placesById[placeId] = place;
+                    else
                     {
-                        case CardLayoutOption.LayedOut:
-                            var hand = place as UIHand;
-                            var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
-                            var areCardsInteractable = displayData.IsInteractable;
-                            hand?.UpdateWithDiff(_gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
-                            break;
-                        case CardLayoutOption.Stacked:
-                            var pile = place as UIPile;
-                            var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
-                            pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount);
-                            break;
-                        case CardLayoutOption.Widget:
-                            var widget = place as UIWidget;
-                            var widgetCards = _gameState.GetCardsForPlace(placeId);
-                            if (widgetCards == null || widgetCards.Count <= 0)
-                            {
-                                DestroyImmediate(widget.gameObject);
-                                _placesById.Remove(placeId);
-                                continue;
-                            }
-                            widget?.UpdateWithCards(_gameContent, widgetCards);
-                            break;
-                        case CardLayoutOption.Title:
-                            var title = place as UITitle;
-                            var titleCards = _gameState.GetCardsForPlace(placeId);
-                            // if (titleCards == null || titleCards.Count <= 0)
-                            // {
-                            //     DestroyImmediate(title.gameObject);
-                            //     _placesById.Remove(placeId);
-                            //     continue;
-                            // }
-                            title?.UpdateWithCards(_gameContent, titleCards);
-                            break;
-                        case CardLayoutOption.Button:
-                            var button = place as UIButton;
-                            var buttonCards = _gameState.GetCardsForPlace(placeId);
-                            // if (buttonCards == null || buttonCards.Count <= 0)
-                            // {
-                            //     DestroyImmediate(button.gameObject);
-                            //     _placesById.Remove(placeId);
-                            //     continue;
-                            // }
-                            button?.UpdateWithCards(_gameContent, buttonCards);
-                            break;
-                        case CardLayoutOption.Picture:
-                            var picture = place as UIPicture;
-                            var pictureCards = _gameState.GetCardsForPlace(placeId);
-                            if (pictureCards == null || pictureCards.Count <= 0)
-                            {
-                                DestroyImmediate(picture.gameObject);
-                                _placesById.Remove(placeId);
-                                continue;
-                            }
-                            picture?.UpdateWithCards(_gameContent, pictureCards, displayData.Stretch);
-                            break;
+                        _placesById.Remove(placeId);
+                        continue;
                     }
+                }
+
+                var placeDiff = _gameState.Diff.GetDiffForPlace(placeId);
+
+                switch (displayData.CardLayoutOption)
+                {
+                    case CardLayoutOption.LayedOut:
+                        var hand = place as UIHand;
+                        var areCardsFaceDown = (displayData.CardFaceOption == CardFaceOption.Down);
+                        var areCardsInteractable = displayData.IsInteractable;
+                        hand?.UpdateWithDiff(_gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
+                        break;
+                    case CardLayoutOption.Stacked:
+                        var pile = place as UIPile;
+                        var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
+                        pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount);
+                        break;
+                    case CardLayoutOption.Widget:
+                        var widget = place as UIWidget;
+                        var widgetCards = _gameState.GetCardsForPlace(placeId);
+                        if (widgetCards == null || widgetCards.Count <= 0)
+                        {
+                            DestroyImmediate(widget.gameObject);
+                            _placesById.Remove(placeId);
+                            continue;
+                        }
+                        widget?.UpdateWithCards(_gameContent, widgetCards);
+                        break;
+                    case CardLayoutOption.Title:
+                        var title = place as UITitle;
+                        var titleCards = _gameState.GetCardsForPlace(placeId);
+                        // if (titleCards == null || titleCards.Count <= 0)
+                        // {
+                        //     DestroyImmediate(title.gameObject);
+                        //     _placesById.Remove(placeId);
+                        //     continue;
+                        // }
+                        title?.UpdateWithCards(_gameContent, titleCards);
+                        break;
+                    case CardLayoutOption.Button:
+                        var button = place as UIButton;
+                        var buttonCards = _gameState.GetCardsForPlace(placeId);
+                        // if (buttonCards == null || buttonCards.Count <= 0)
+                        // {
+                        //     DestroyImmediate(button.gameObject);
+                        //     _placesById.Remove(placeId);
+                        //     continue;
+                        // }
+                        button?.UpdateWithCards(_gameContent, buttonCards);
+                        break;
+                    case CardLayoutOption.Picture:
+                        var picture = place as UIPicture;
+                        var pictureCards = _gameState.GetCardsForPlace(placeId);
+                        if (pictureCards == null || pictureCards.Count <= 0)
+                        {
+                            DestroyImmediate(picture.gameObject);
+                            _placesById.Remove(placeId);
+                            continue;
+                        }
+                        picture?.UpdateWithCards(_gameContent, pictureCards, displayData.Stretch);
+                        break;
                 }
             }
         }

@@ -22,23 +22,26 @@ namespace Solcery
 
         protected override async UniTask OnExitState()
         {
-            // if (_lastGameContent != null)
-            //     _lastGameContent.HasBeenProcessed = false;
-            // if (_lastGameDisplay != null)
-            //     _lastGameDisplay.HasBeenProcessed = false;
-            // if (_lastGameState != null)
-            //     _lastGameState.HasBeenProcessed = false;
-
-            // _lastGameContent = null;
-            // _lastGameDisplay = null;
-            // _lastGameState = null;
-
             await base.OnExitState();
+        }
+
+        private void Nullify()
+        {
+            if (_lastGameContent != null)
+                _lastGameContent.HasBeenProcessed = false;
+            if (_lastGameDisplay != null)
+                _lastGameDisplay.HasBeenProcessed = false;
+            if (_lastGameState != null)
+                _lastGameState.HasBeenProcessed = false;
+
+            _lastGameContent = null;
+            _lastGameDisplay = null;
+            _lastGameState = null;
         }
 
         private void OnGameContentUpdate(GameContent gameContent)
         {
-            if (gameContent == null) { Debug.Log("null GameContent"); ExitGame(); return; }
+            if (gameContent == null) { Debug.Log("null GameContent"); Nullify(); ExitGame(); return; }
 
             if (gameContent.HasBeenProcessed)
             {
@@ -54,7 +57,7 @@ namespace Solcery
 
         private void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
-            if (gameDisplay == null) { Debug.Log("null GameDisplay"); ExitGame(); return; }
+            if (gameDisplay == null) { Debug.Log("null GameDisplay"); Nullify(); ExitGame(); return; }
 
             if (gameDisplay.HasBeenProcessed)
             {
@@ -77,7 +80,7 @@ namespace Solcery
 
         private void OnGameStateUpdate(GameState gameState)
         {
-            if (gameState == null) { Debug.Log("null GameState"); ExitGame(); return; }
+            if (gameState == null) { Debug.Log("null GameState"); Nullify(); ExitGame(); return; }
 
             if (gameState.HasBeenProcessed)
             {

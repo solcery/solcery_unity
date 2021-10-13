@@ -2574,7 +2574,9 @@ MonoBehaviour:
     9,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n     
     \"CardId\": 10,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n   
     {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
-    3\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
+    3\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n      \"CardType\": 103,\r\n     
+    \"CardPlace\": 6,\r\n      \"Attrs\": [{ \"Name\": \"number\", \"Value\": 78
+    }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
     362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState3: 
   gameState4: 

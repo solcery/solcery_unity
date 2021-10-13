@@ -77,11 +77,13 @@ namespace Solcery.UI
 
             if (_topCardType == null)
             {
-                image?.gameObject?.SetActive(false);
+                if (image != null && image.gameObject != null)
+                    image.gameObject.SetActive(false);
                 return;
             }
 
-            image?.gameObject?.SetActive(true);
+            if (image != null && image.gameObject != null)
+                image?.gameObject?.SetActive(true);
 
             var pictureUrl = _topCardType.Metadata.PictureUrl;
             var picture = _topCardType.Metadata.Picture;
