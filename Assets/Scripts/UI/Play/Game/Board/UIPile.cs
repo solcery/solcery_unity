@@ -10,6 +10,7 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardsCountText = null;
 
         private int _currentCardsCount;
+        private CardPlaceDiff _cardPlaceDiff;
 
         public new void Clear()
         {
@@ -17,15 +18,26 @@ namespace Solcery.UI
             base.Clear();
         }
 
-        public void UpdateWithDiff(GameContent gameContent, CardPlaceDiff cardPlaceDiff, int cardsCount)
+        public void UpdateWithDiff(GameContent gameContent, CardPlaceDiff cardPlaceDiff, int cardsCount, bool areCardsFaceDown)
         {
-            // TODO: count +- count here from each diff
-            if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
-                SetCardsCountText(cardsCount).Forget();
+            _cardPlaceDiff = cardPlaceDiff;
+
+            if (areCardsFaceDown)
+            {
+                if (cardsCountText != null && cardsCountText.gameObject != null)
+                    cardsCountText.gameObject.SetActive(true);
+                if (_currentCardsCount != cardsCount || (cardPlaceDiff != null && ((cardPlaceDiff.Arrived != null && cardPlaceDiff.Arrived.Count > 0) || (cardPlaceDiff.Departed != null && cardPlaceDiff.Departed.Count > 0))))
+                    SetCardsCountText(cardsCount).Forget();
+            }
+            else
+            {
+                if (cardsCountText != null && cardsCountText.gameObject != null)
+                    cardsCountText.gameObject.SetActive(false);
+            }
 
             _currentCardsCount = cardsCount;
 
-            base.UpdateWithDiff(gameContent, cardPlaceDiff, false, true, false, true, true);
+            base.UpdateWithDiff(gameContent, cardPlaceDiff, false, areCardsFaceDown, false, true, true);
         }
 
         private async UniTaskVoid SetCardsCountText(int newCardsCount)
@@ -37,7 +49,9 @@ namespace Solcery.UI
                 else
                 {
                     cardsCountText.gameObject?.SetActive(false);
+
                     await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
+
                     if (cardsCountText != null)
                     {
                         cardsCountText.text = newCardsCount.ToString();
