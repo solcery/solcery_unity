@@ -22,16 +22,19 @@ namespace Solcery.UI
 
         public void OnGameContentUpdate(GameContent gameContent)
         {
+            Debug.Log("UIGame.OnGameContentUpdate");
             board?.OnGameContentUpdate(gameContent);
         }
 
         public void OnGameDisplayUpdate(GameDisplay gameDisplay)
         {
+            Debug.Log("UIGame.OnGameDisplayUpdate");
             board?.OnGameDisplayUpdate(gameDisplay);
         }
 
         public void OnGameStateDiffUpdate(GameState gameState)
         {
+            Debug.Log("UIGame.OnGameStateUpdate");
             board?.OnGameStateDiffUpdate(gameState);
         }
     }

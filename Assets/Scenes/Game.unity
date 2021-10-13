@@ -2461,6 +2461,9 @@ MonoBehaviour:
     \"Description\": \"Some title here\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
     102,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some button\",\r\n       
+    \"Description\": \"Some button here\"\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/grimsyndicate/8477d9dc4eed162da236ca0cfeac4349.jpg\",\r\n       
+    \"Picture\": 88,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some button\",\r\n       
     \"Description\": \"Some button here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/1882e7db8682f572d09cda088ad7ae2c.jpg\",\r\n       
@@ -2538,9 +2541,10 @@ MonoBehaviour:
     2\r\n    },\r\n    {\r\n      \"CardId\": 12,\r\n      \"CardType\": 101,\r\n     
     \"CardPlace\": 4\r\n    },\r\n    {\r\n      \"CardId\": 13,\r\n      \"CardType\":
     102,\r\n      \"CardPlace\": 5\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n     
-    \"CardType\": 103,\r\n      \"CardPlace\": 6\r\n    }\r\n  ],\r\n  \"Random\":
-    {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n   
-    \"w\": 88675123\r\n  }\r\n}\r\n"
+    \"CardType\": 103,\r\n      \"CardPlace\": 6,\r\n      \"Attrs\": [{ \"Name\":
+    \"number\", \"Value\": 16 }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\":
+    123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n 
+    }\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
     1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
     \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
@@ -2555,7 +2559,9 @@ MonoBehaviour:
     9,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n     
     \"CardId\": 10,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n   
     {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
-    3\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
+    3\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n      \"CardType\": 103,\r\n     
+    \"CardPlace\": 6,\r\n      \"Attrs\": [{ \"Name\": \"number\", \"Value\": 37
+    }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
     362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState3: 
   gameState4: 

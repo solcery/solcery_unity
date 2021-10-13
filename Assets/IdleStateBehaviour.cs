@@ -22,16 +22,16 @@ namespace Solcery
 
         protected override async UniTask OnExitState()
         {
-            if (_lastGameContent != null)
-                _lastGameContent.HasBeenProcessed = false;
-            if (_lastGameDisplay != null)
-                _lastGameDisplay.HasBeenProcessed = false;
-            if (_lastGameState != null)
-                _lastGameState.HasBeenProcessed = false;
+            // if (_lastGameContent != null)
+            //     _lastGameContent.HasBeenProcessed = false;
+            // if (_lastGameDisplay != null)
+            //     _lastGameDisplay.HasBeenProcessed = false;
+            // if (_lastGameState != null)
+            //     _lastGameState.HasBeenProcessed = false;
 
-            _lastGameContent = null;
-            _lastGameDisplay = null;
-            _lastGameState = null;
+            // _lastGameContent = null;
+            // _lastGameDisplay = null;
+            // _lastGameState = null;
 
             await base.OnExitState();
         }
@@ -58,7 +58,7 @@ namespace Solcery
 
             if (gameDisplay.HasBeenProcessed)
             {
-                // Debug.Log("GameDisplay has been processed");
+                Debug.Log("GameDisplay has been processed");
                 return;
             }
 
@@ -81,16 +81,16 @@ namespace Solcery
 
             if (gameState.HasBeenProcessed)
             {
-                // Debug.Log("GameState has been processed");
+                Debug.Log("GameState has been processed");
                 return;
             }
 
             var gameStateWithDiff = GameStateDiffTracker.Instance?.GetGameStateDiff(_lastGameState, gameState);
+            _lastGameState = gameStateWithDiff;
+            _lastGameState.HasBeenProcessed = true;
 
             if (gameStateWithDiff != null)
             {
-                _lastGameState = gameStateWithDiff;
-                _lastGameState.HasBeenProcessed = true;
                 UIGame.Instance?.OnGameStateDiffUpdate(gameStateWithDiff);
                 if (UICardAnimator.Instance.HasSomethingToAnimate)
                     stateMachine?.Trigger("Animate");

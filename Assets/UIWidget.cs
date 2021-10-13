@@ -23,7 +23,7 @@ namespace Solcery.UI
         private CardData _topCardData;
         private CardType _topCardType;
         private int _currentNumber;
-        private bool _isInitialNumber = true;
+        // private bool _isInitialNumber = true;
 
         public Vector3 GetCardDestination(int cardId)
         {
@@ -52,11 +52,13 @@ namespace Solcery.UI
 
         public void UpdateGameContent(GameContent gameContent)
         {
-
+            UpdateWithCards(gameContent, _cards);
         }
 
         public void UpdateWithCards(GameContent gameContent, List<CardData> cards)
         {
+            Debug.Log("UIWidget.UpdateWithCards");
+
             _cards = cards;
 
             if (_cards == null || _cards.Count <= 0)
@@ -91,7 +93,7 @@ namespace Solcery.UI
             else
                 SetSprite(cardPictures.GetSpriteByIndex(picture));
 
-            if (!_topCardData.Attrs.TryGetValue("number", out var number))
+            if (!_topCardData.TryGetAttrValue("number", out var number))
             {
                 Debug.Log("no number attribute");
             }
@@ -111,12 +113,10 @@ namespace Solcery.UI
 
         private void SetNumber(int newNumber)
         {
+            Debug.Log("UIWidget.SetNumber");
+
             if (_currentNumber != newNumber)
-                if (!_isInitialNumber)
-                {
-                    diff?.Show(newNumber - _currentNumber);
-                    _isInitialNumber = false;
-                }
+                diff?.Show(newNumber - _currentNumber);
 
             _currentNumber = newNumber;
 
