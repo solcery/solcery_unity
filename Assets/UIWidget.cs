@@ -23,7 +23,7 @@ namespace Solcery.UI
         private CardData _topCardData;
         private CardType _topCardType;
         private int _currentNumber;
-        // private bool _isInitialNumber = true;
+        private bool _isInitialNumber = true;
 
         public Vector3 GetCardDestination(int cardId)
         {
@@ -116,9 +116,11 @@ namespace Solcery.UI
             Debug.Log("UIWidget.SetNumber");
 
             if (_currentNumber != newNumber)
-                diff?.Show(newNumber - _currentNumber);
+                if (!_isInitialNumber)
+                    diff?.Show(newNumber - _currentNumber);
 
             _currentNumber = newNumber;
+            _isInitialNumber = false;
 
             if (numberText != null)
                 numberText.text = newNumber.ToString();
