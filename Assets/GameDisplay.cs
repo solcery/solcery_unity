@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Solcery
 {
@@ -21,6 +22,7 @@ namespace Solcery
         private void CreateDisplayDataDictionary()
         {
             DisplayDataByPlaceId = new Dictionary<int, PlaceDisplayData>();
+            // var sortedList = PlaceDisplayDatas.OrderBy(d => d.PlaceId).ToList();
 
             foreach (var displayData in PlaceDisplayDatas)
             {
