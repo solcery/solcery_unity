@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.55
+  m_fontSize: 16.25
   m_fontSizeBase: 11.27
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -230,8 +230,9 @@ MonoBehaviour:
   arf: {fileID: 2629152384893398422}
   cg: {fileID: 4440240633767081101}
   animator: {fileID: 8150576541526316475}
-  pointerHandler: {fileID: 4002356702728752971}
-  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
+  faceUpPointerHandler: {fileID: 4002356702728752971}
+  faceDownPointerHandler: {fileID: 7500633643191244612}
+  cardPictures: {fileID: 0}
   cardImage: {fileID: 3834954703965132792}
   cardFrameFaceUp: {fileID: 8118980715419479460}
   cardFrameFaceDown: {fileID: 5222789459842261255}
@@ -511,6 +512,7 @@ GameObject:
   - component: {fileID: 5272270672153570919}
   - component: {fileID: 3921602445127436964}
   - component: {fileID: 7771859694615426429}
+  - component: {fileID: 7500633643191244612}
   m_Layer: 5
   m_Name: FaceDown
   m_TagString: Untagged
@@ -576,6 +578,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7500633643191244612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852301367618732389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fb7d9cad4945c43a4f4f5aa495bef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8118980715304107493
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.025771093, y: 0.82221556}
   m_AnchorMax: {x: 0.24439964, y: 1.0135949}
-  m_AnchoredPosition: {x: 0.00011444092, y: 0}
+  m_AnchoredPosition: {x: 0.00010681152, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8118980715304107488

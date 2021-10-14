@@ -16,7 +16,8 @@ namespace Solcery.UI
         [SerializeField] private AspectRatioFitter arf = null;
         [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private Animator animator = null;
-        [SerializeField] private UIBoardCardPointerHandler pointerHandler = null;
+        [SerializeField] private UIBoardCardPointerHandler faceUpPointerHandler = null;
+        [SerializeField] private UIBoardCardPointerHandler faceDownPointerHandler = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image cardImage = null;
         [SerializeField] private Image cardFrameFaceUp = null;
@@ -61,8 +62,6 @@ namespace Solcery.UI
 
         public void Init(GameContent gameContent, CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
         {
-            Debug.Log(isInteractable);
-            
             _showCoins = showCoins;
             _isFaceDown = isFaceDown;
             _onCardCasted = onCardCasted;
@@ -84,8 +83,10 @@ namespace Solcery.UI
         {
             _isInteractable = isInteractable;
             _pointerDown = false;
-            if (pointerHandler != null)
-                pointerHandler.enabled = true;
+            if (faceUpPointerHandler != null)
+                faceUpPointerHandler.enabled = true;
+            if (faceDownPointerHandler != null)
+                faceDownPointerHandler.enabled = true;
 
             if (animator != null)
             {
@@ -149,7 +150,7 @@ namespace Solcery.UI
             if (cardFrameFaceDown != null) cardFrameFaceDown.maskable = false;
         }
 
-        public void PlayTurningAnimation()
+        public void TurnTheOtherWayAround()
         {
             if (animator != null)
             {
@@ -216,18 +217,17 @@ namespace Solcery.UI
 
         private void SubsribeToButton()
         {
-            pointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
+            faceUpPointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
+            faceDownPointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
         }
 
         private void OnPointerEnter()
         {
-            Debug.Log("Highlighted 1");
             _isPointerOver = true;
 
             if (!_isInteractable)
                 return;
 
-            Debug.Log("Highlighted 2");
             animator?.SetTrigger("Highlighted");
         }
 
@@ -260,7 +260,8 @@ namespace Solcery.UI
 
             if (_pointerDown)
             {
-                pointerHandler.enabled = false;
+                faceUpPointerHandler.enabled = false;
+                faceDownPointerHandler.enabled = false;
                 animator?.SetBool("IsPressed", true);
                 _isPointerOver = false;
                 _onCardCasted?.Invoke(_cardData.CardId);

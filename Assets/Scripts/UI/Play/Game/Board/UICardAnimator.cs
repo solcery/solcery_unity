@@ -91,7 +91,7 @@ namespace Solcery.UI
                         }
 
                         if (fromPlace.AreCardsFaceDown != toPlace.AreCardsFaceDown)
-                            cardClone?.PlayTurningAnimation();
+                            cardClone?.TurnTheOtherWayAround();
                     }
                 }
             }
