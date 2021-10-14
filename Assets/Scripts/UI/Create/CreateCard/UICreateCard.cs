@@ -49,7 +49,7 @@ namespace Solcery.UI.Create
                 _currentCard.Metadata = new CardMetadata();
                 _currentCard.Metadata.Name = cardName;
                 _currentCard.Metadata.Description = cardDescription;
-                _currentCard.Metadata.Coins = cardCoins;
+                // _currentCard.Metadata.Coins = cardCoins;
                 _currentCard.Metadata.Picture = cardPicture;
 
                 _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;

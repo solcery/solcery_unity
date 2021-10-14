@@ -57,7 +57,7 @@ namespace Solcery.UI
 
         public void UpdateWithCards(GameContent gameContent, List<CardData> cards)
         {
-            Debug.Log("UIWidget.UpdateWithCards");
+            // Debug.Log("UIWidget.UpdateWithCards");
 
             _cards = cards;
 
@@ -115,7 +115,7 @@ namespace Solcery.UI
 
         private void SetNumber(int newNumber)
         {
-            Debug.Log("UIWidget.SetNumber");
+            // Debug.Log("UIWidget.SetNumber");
 
             if (_currentNumber != newNumber)
                 if (!_isInitialNumber)

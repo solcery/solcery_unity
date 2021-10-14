@@ -57,7 +57,7 @@ namespace Solcery.UI.Create
             if (Data.CardType != null)
             {
                 SetPicture(Data.CardType.Metadata.Picture);
-                SetCoinsCount(Data.CardType.Metadata.Coins);
+                SetCoinsCount(0);
                 SetName(Data.CardType.Metadata.Name);
                 SetDescription(Data.CardType.Metadata.Description);
             }

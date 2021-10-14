@@ -45,7 +45,7 @@ namespace Solcery.UI
             if (_cardType != null)
             {
                 SetPicture(_cardType.Metadata);
-                SetCoins(_showCoins, _cardType.Metadata.Icon, _cardType.Metadata.Coins);
+                SetCoins(_showCoins, _cardType, _cardData);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SubsribeToButton();
@@ -179,8 +179,19 @@ namespace Solcery.UI
             cardImage.sprite = sprite;
         }
 
-        private void SetCoins(bool showIcon, CardIcon icon = CardIcon.None, int coinsCount = 0)
+        private void SetCoins(bool showIcon, CardType cardType = null, CardData cardData = null)
         {
+            if (cardType == null)
+                return;
+
+            if (cardData == null)
+                return;
+
+            var icon = cardType.Metadata.Icon;
+            int coinsCount;
+            if (!cardData.TryGetAttrValue("number", out coinsCount))
+                showIcon = false;
+
             if (cardIconImage == null || cardCoinsCount == null)
                 return;
 

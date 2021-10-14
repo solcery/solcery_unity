@@ -9,16 +9,19 @@ namespace Solcery
         public int CardId;
         public int CardType;
         public int CardPlace;
-        public List<CardAttr> Attrs;
+        public List<CardAttr> Attrs = new List<CardAttr>();
 
         public bool TryGetAttrValue(string name, out int value)
         {
-            foreach (var attr in Attrs)
+            if (Attrs != null || Attrs.Count > 0)
             {
-                if (attr.Name == name)
+                foreach (var attr in Attrs)
                 {
-                    value = attr.Value;
-                    return true;
+                    if (attr.Name == name)
+                    {
+                        value = attr.Value;
+                        return true;
+                    }
                 }
             }
 

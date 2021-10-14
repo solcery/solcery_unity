@@ -32,7 +32,7 @@ namespace Solcery.UI
             if (_cardType != null)
             {
                 SetPicture(_cardType.Metadata.Picture);
-                SetCoinsCount(_cardType.Metadata.Coins);
+                SetCoinsCount(0);
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SetButton();

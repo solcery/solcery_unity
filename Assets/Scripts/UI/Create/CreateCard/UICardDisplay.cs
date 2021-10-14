@@ -36,7 +36,7 @@ namespace Solcery.UI.Create
         {
             cardNameInput.text = metadata.Name;
             cardDescriptionInput.text = metadata.Description;
-            cardCoinsInput.text = metadata.Coins.ToString();
+            cardCoinsInput.text = "";
             _currentPictureIndex = metadata.Picture;
             cardPicture.sprite = cardPictures.GetSpriteByIndex(metadata.Picture);
 

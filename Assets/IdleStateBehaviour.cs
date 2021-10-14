@@ -61,7 +61,7 @@ namespace Solcery
 
             if (gameDisplay.HasBeenProcessed)
             {
-                Debug.Log("GameDisplay has been processed");
+                // Debug.Log("GameDisplay has been processed");
                 return;
             }
 
@@ -84,7 +84,7 @@ namespace Solcery
 
             if (gameState.HasBeenProcessed)
             {
-                Debug.Log("GameState has been processed");
+                // Debug.Log("GameState has been processed");
                 return;
             }
 
