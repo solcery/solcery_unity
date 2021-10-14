@@ -232,7 +232,7 @@ MonoBehaviour:
   animator: {fileID: 8150576541526316475}
   faceUpPointerHandler: {fileID: 4002356702728752971}
   faceDownPointerHandler: {fileID: 7500633643191244612}
-  cardPictures: {fileID: 11400000, guid: 1b944f99081610248bda5eb20fbd606a, type: 2}
+  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
   cardImage: {fileID: 3834954703965132792}
   cardFrameFaceUp: {fileID: 8118980715419479460}
   cardFrameFaceDown: {fileID: 5222789459842261255}
