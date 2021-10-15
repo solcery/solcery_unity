@@ -16,11 +16,8 @@ MonoBehaviour:
   deleteDllAfterBuilds: 0
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637694339755647429
+  lastScan: 637698748585411332
   supportSerializedTypes:
-  - TypeName: System.Action, mscorlib
-    IsCustom: 0
-    Emit: 1
   - TypeName: System.Action`1[[Solcery.NodeEditor.NodeEditorData, Assembly-CSharp]],
       mscorlib
     IsCustom: 0
