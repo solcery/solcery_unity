@@ -28,6 +28,8 @@ namespace Solcery.UI.NodeEditor
 
         public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted, Action brickInputChanged)
         {
+            Debug.Log("BrickNode.Init");
+            Debug.Log(brickInputChanged == null);
             highligter?.Init(() => { onHighlighted?.Invoke(this); }, () => { onDeHighlighted?.Invoke(this); });
 
             Config = config;

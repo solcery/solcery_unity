@@ -9,7 +9,20 @@ namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditor : UpdateableSingleton<UINodeEditor>
     {
-        public Action OnBrickInputChanged;
+        // [NonSerialized] public Action OnBrickInputChanged = () => { Debug.Log("boom"); };
+
+        void OnBrickInputChanged()
+        {
+            _subscribee?.Invoke();
+        }
+
+        Action _subscribee;
+
+        public void Subscribe(Action subscribee)
+        {
+            _subscribee = subscribee;
+        }
+
         public BrickTree BrickTree => _brickTree;
 
         [SerializeField] private UINodeEditorZoom zoom = null;
@@ -87,6 +100,7 @@ namespace Solcery.UI.NodeEditor
                 contentBlockerButton.onClick.RemoveAllListeners();
                 subtypePopup.Close();
                 zoom.SetActive(true);
+                Debug.Log("checkValidity");
                 _brickTree.CheckValidity(_isNullGenesisValid);
             }
             else

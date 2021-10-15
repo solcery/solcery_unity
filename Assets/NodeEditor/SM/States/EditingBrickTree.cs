@@ -12,13 +12,11 @@ namespace Solcery.NodeEditor.SM
 
             if (UINodeEditor.Instance != null)
             {
-                // Reactives.SubscribeWithoutCurrent(UINodeEditor.Instance.BrickTree.IsValid, OnBrickTreeValidityChange, _stateCTS.Token);
-
-                if (UINodeEditor.Instance != null)
-                {
-                    UINodeEditor.Instance.BrickTree.OnValidityChanged += OnBrickTreeValidityChange;
-                    UINodeEditor.Instance.OnBrickInputChanged += OnBrickInputChanged;
-                }
+                _isCurrentBrickTreeValid = UINodeEditor.Instance.BrickTree.IsValid;
+                UINodeEditor.Instance.BrickTree.OnValidityChanged += OnBrickTreeValidityChange;
+                UnityEngine.Debug.Log("subscription");
+                UINodeEditor.Instance.Subscribe(OnBrickInputChangedFired);
+                // UnityEngine.Debug.Log(UINodeEditor.Instance.OnBrickInputChanged == null);
             }
         }
 
@@ -28,8 +26,9 @@ namespace Solcery.NodeEditor.SM
             SaveIfValid();
         }
 
-        private void OnBrickInputChanged()
+        private void OnBrickInputChangedFired()
         {
+            UnityEngine.Debug.Log("input changed");
             SaveIfValid();
         }
 

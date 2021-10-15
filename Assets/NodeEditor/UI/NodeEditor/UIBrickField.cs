@@ -35,11 +35,17 @@ namespace Solcery.UI.NodeEditor
                         if (System.Int32.TryParse(input, out var result))
                         {
                             data.IntField = result;
+                            Debug.Log("brickInputChanged");
+                            if (brickInputChanged == null)
+                                Debug.Log("null");
                             brickInputChanged?.Invoke();
                         }
                         break;
                     case UIBrickFieldType.String:
                         data.StringField = input;
+                        Debug.Log("brickInputChanged");
+                        if (brickInputChanged == null)
+                            Debug.Log("null");
                         brickInputChanged?.Invoke();
                         break;
                 };
