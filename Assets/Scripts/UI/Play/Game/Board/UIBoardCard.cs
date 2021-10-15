@@ -1,4 +1,5 @@
 using System;
+using Coffee.UIEffects;
 using Solcery.Modules;
 using TMPro;
 using UnityEngine;
@@ -27,6 +28,8 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
         [SerializeField] private Image cardIconImage = null;
+        [SerializeField] private UIShiny faceUpShiny = null;
+        [SerializeField] private UIShiny faceDownShiny = null;
 
         private CardData _cardData;
         private CardType _cardType;
@@ -49,6 +52,7 @@ namespace Solcery.UI
                 SetName(_cardType.Metadata.Name);
                 SetDescription(_cardType.Metadata.Description);
                 SubsribeToButton();
+                CheckIfHighlighted();
             }
             else
             {
@@ -83,10 +87,10 @@ namespace Solcery.UI
         {
             _isInteractable = isInteractable;
             _pointerDown = false;
-            if (faceUpPointerHandler != null)
-                faceUpPointerHandler.enabled = true;
-            if (faceDownPointerHandler != null)
-                faceDownPointerHandler.enabled = true;
+            // if (faceUpPointerHandler != null)
+            //     faceUpPointerHandler.enabled = !IsFaceDown;
+            // if (faceDownPointerHandler != null)
+            //     faceDownPointerHandler.enabled = IsFaceDown;
 
             if (animator != null)
             {
@@ -230,6 +234,10 @@ namespace Solcery.UI
         {
             faceUpPointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
             faceDownPointerHandler?.Init(OnPointerEnter, OnPointerExit, OnPointerDown, OnPointerUp, OnDrag);
+            // if (faceUpPointerHandler != null)
+            //     faceUpPointerHandler.enabled = !IsFaceDown;
+            // if (faceDownPointerHandler != null)
+            //     faceDownPointerHandler.enabled = IsFaceDown;
         }
 
         private void OnPointerEnter()
@@ -283,6 +291,25 @@ namespace Solcery.UI
         {
             if (!_isInteractable)
                 return;
+        }
+
+        private void CheckIfHighlighted()
+        {
+            var highlighted = false;
+            if (_cardData.TryGetAttrValue("highlighted", out var highlightInt))
+                if (highlightInt == 1)
+                    highlighted = true;
+
+            SetHighlighted(highlighted);
+        }
+
+        private void SetHighlighted(bool isHighlighted)
+        {
+            if (faceUpShiny != null)
+                faceUpShiny.enabled = isHighlighted;
+
+            if (faceDownShiny != null)
+                faceDownShiny.enabled = isHighlighted;
         }
     }
 }
