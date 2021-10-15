@@ -3,25 +3,14 @@ using System;
 using Solcery.Utils;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Solcery.UI.NodeEditor
 {
     public class UINodeEditor : UpdateableSingleton<UINodeEditor>
     {
-        // [NonSerialized] public Action OnBrickInputChanged = () => { Debug.Log("boom"); };
-
-        void OnBrickInputChanged()
-        {
-            _subscribee?.Invoke();
-        }
-
-        Action _subscribee;
-
-        public void Subscribe(Action subscribee)
-        {
-            _subscribee = subscribee;
-        }
+        public UnityEvent OnBrickInputChanged;
 
         public BrickTree BrickTree => _brickTree;
 
@@ -100,7 +89,6 @@ namespace Solcery.UI.NodeEditor
                 contentBlockerButton.onClick.RemoveAllListeners();
                 subtypePopup.Close();
                 zoom.SetActive(true);
-                Debug.Log("checkValidity");
                 _brickTree.CheckValidity(_isNullGenesisValid);
             }
             else

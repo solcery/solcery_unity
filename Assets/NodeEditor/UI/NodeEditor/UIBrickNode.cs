@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Solcery.UI.NodeEditor
@@ -26,10 +27,8 @@ namespace Solcery.UI.NodeEditor
 
         private Action<UIBrickNode> _onHighlighted, _onDeHighlighted;
 
-        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted, Action brickInputChanged)
-        {
-            Debug.Log("BrickNode.Init");
-            Debug.Log(brickInputChanged == null);
+        public void Init(BrickConfig config, BrickData data, UIBrickNode parent, int indexInParentSlots, Action<UIBrickNode> onHighlighted, Action<UIBrickNode> onDeHighlighted, UnityEvent brickInputChanged)
+        {            
             highligter?.Init(() => { onHighlighted?.Invoke(this); }, () => { onDeHighlighted?.Invoke(this); });
 
             Config = config;

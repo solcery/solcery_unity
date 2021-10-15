@@ -929,6 +929,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  OnBrickInputChanged:
+    m_PersistentCalls:
+      m_Calls: []
   zoom: {fileID: 924536174}
   horizontalPadding: 400
   verticalPadding: 400

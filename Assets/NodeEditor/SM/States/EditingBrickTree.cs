@@ -14,8 +14,7 @@ namespace Solcery.NodeEditor.SM
             {
                 _isCurrentBrickTreeValid = UINodeEditor.Instance.BrickTree.IsValid;
                 UINodeEditor.Instance.BrickTree.OnValidityChanged += OnBrickTreeValidityChange;
-                UnityEngine.Debug.Log("subscription");
-                UINodeEditor.Instance.Subscribe(OnBrickInputChangedFired);
+                UINodeEditor.Instance.OnBrickInputChanged.AddListener(OnBrickInputChangedFired);
                 // UnityEngine.Debug.Log(UINodeEditor.Instance.OnBrickInputChanged == null);
             }
         }
@@ -28,7 +27,6 @@ namespace Solcery.NodeEditor.SM
 
         private void OnBrickInputChangedFired()
         {
-            UnityEngine.Debug.Log("input changed");
             SaveIfValid();
         }
 

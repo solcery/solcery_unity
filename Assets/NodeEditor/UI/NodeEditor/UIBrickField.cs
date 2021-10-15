@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 namespace Solcery.UI.NodeEditor
 {
@@ -9,8 +10,12 @@ namespace Solcery.UI.NodeEditor
         [SerializeField] private TextMeshProUGUI fieldName = null;
         [SerializeField] private TMP_InputField fieldInput = null;
 
-        public void Init(string fieldName, UIBrickFieldType fieldType, BrickData data, Action brickInputChanged)
+        private UnityEvent _onBrickInputChanged;
+
+        public void Init(string fieldName, UIBrickFieldType fieldType, BrickData data, UnityEvent brickInputChanged)
         {
+            _onBrickInputChanged = brickInputChanged;
+
             this.fieldName.text = fieldName;
 
             fieldInput.text = fieldType switch
@@ -35,18 +40,12 @@ namespace Solcery.UI.NodeEditor
                         if (System.Int32.TryParse(input, out var result))
                         {
                             data.IntField = result;
-                            Debug.Log("brickInputChanged");
-                            if (brickInputChanged == null)
-                                Debug.Log("null");
-                            brickInputChanged?.Invoke();
+                            _onBrickInputChanged?.Invoke();
                         }
                         break;
                     case UIBrickFieldType.String:
                         data.StringField = input;
-                        Debug.Log("brickInputChanged");
-                        if (brickInputChanged == null)
-                            Debug.Log("null");
-                        brickInputChanged?.Invoke();
+                        _onBrickInputChanged?.Invoke();
                         break;
                 };
             });
