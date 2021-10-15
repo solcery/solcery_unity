@@ -147,6 +147,8 @@ GameObject:
   - component: {fileID: 3200764471413365603}
   - component: {fileID: 3200764471413365604}
   - component: {fileID: 8441973818056527902}
+  - component: {fileID: 2365810452183795703}
+  - component: {fileID: 127797367987737799}
   m_Layer: 5
   m_Name: UIButton
   m_TagString: Untagged
@@ -270,3 +272,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 3200764471413365604}
   buttonText: {fileID: 3200764471394997283}
+--- !u!114 &2365810452183795703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200764471413365606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 0
+  m_BlurFactor: 0
+  m_EffectMode: 0
+  m_ColorMode: 1
+  m_BlurMode: 3
+  m_AdvancedBlur: 0
+--- !u!114 &127797367987737799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200764471413365606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BlurFactor: 1
+  m_Style: 3
+  m_EffectColor: {r: 0.9844673, g: 0.90943396, b: 1, a: 0.5019608}
+  m_EffectDistance: {x: 6, y: -6}
+  m_UseGraphicAlpha: 1
