@@ -10,6 +10,7 @@ namespace Solcery
         public bool IsInteractable;
         public bool IsVisible;
         public bool Stretch;
+        public int ZOrder;
         public PlaceDisplayAnchors HorizontalAnchors;
         public PlaceDisplayAnchors VerticalAnchors;
         public CardFaceOption CardFaceOption;

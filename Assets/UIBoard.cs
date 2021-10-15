@@ -160,9 +160,12 @@ namespace Solcery.UI
                 }
             }
 
+            Debug.Log("Process");
+
             foreach (var displayData in _gameDisplay.PlaceDisplayDatas)
             {
                 var placeId = displayData.PlaceId;
+                Debug.Log(displayData.ZOrder);
 
                 if (_placesById.TryGetValue(placeId, out var existingPlace))
                 {

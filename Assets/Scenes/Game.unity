@@ -2486,14 +2486,15 @@ MonoBehaviour:
     0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
     0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Shop\",\r\n      \"PlaceId\":
     2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"HorizontalAnchors\":
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    2,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.0,\r\n        \"Max\":
+    0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n       
+    \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayerHand\",\r\n      \"PlaceId\":
+    3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"ZOrder\": 1,\r\n      \"HorizontalAnchors\":
     {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
+    {\r\n        \"Min\": 0.23,\r\n        \"Max\": 0.55\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"Title\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
@@ -2559,9 +2560,12 @@ MonoBehaviour:
     \"CardId\": 14,\r\n      \"CardType\": 103,\r\n      \"CardPlace\": 6,\r\n     
     \"Attrs\": [{ \"Name\": \"number\", \"Value\": 16 }]\r\n    },\r\n    {\r\n     
     \"CardId\": 15,\r\n      \"CardType\": 104,\r\n      \"CardPlace\": 7,\r\n     
-    \"Attrs\": [{ \"Name\": \"number\", \"Value\": 16 }]\r\n    }\r\n  ],\r\n  \"Random\":
-    {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n   
-    \"w\": 88675123\r\n  }\r\n}\r\n"
+    \"Attrs\": [{ \"Name\": \"number\", \"Value\": 16 }]\r\n    },\r\n    {\r\n     
+    \"CardId\": 16,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n   
+    {\r\n      \"CardId\": 17,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
+    3\r\n    },\r\n    {\r\n      \"CardId\": 18,\r\n      \"CardType\": 1,\r\n     
+    \"CardPlace\": 3\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n   
+    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
     1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
     \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":

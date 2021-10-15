@@ -14,15 +14,21 @@ namespace Solcery
 
         public GameDisplay Prettify()
         {
+            SortPlaceDisplayDatas();
             CreateDisplayDataDictionary();
 
             return this;
         }
 
+        private void SortPlaceDisplayDatas()
+        {
+            var sorted = PlaceDisplayDatas.OrderBy(d => d.ZOrder).ToList();
+            PlaceDisplayDatas = sorted;
+        }
+
         private void CreateDisplayDataDictionary()
         {
             DisplayDataByPlaceId = new Dictionary<int, PlaceDisplayData>();
-            // var sortedList = PlaceDisplayDatas.OrderBy(d => d.PlaceId).ToList();
 
             foreach (var displayData in PlaceDisplayDatas)
             {
