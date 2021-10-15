@@ -272,6 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 3200764471413365604}
   buttonText: {fileID: 3200764471394997283}
+  effect: {fileID: 2365810452183795703}
+  shadow: {fileID: 127797367987737799}
 --- !u!114 &2365810452183795703
 MonoBehaviour:
   m_ObjectHideFlags: 0

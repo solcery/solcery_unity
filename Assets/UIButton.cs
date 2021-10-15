@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Coffee.UIEffects;
 using Solcery.React;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,9 @@ namespace Solcery.UI
 
         [SerializeField] private Button button = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
+        [SerializeField] private UIEffect effect = null;
+        [SerializeField] private UIShadow shadow = null;
+
 
         private PlaceDisplayData _displayData;
         protected bool _areCardsFaceDown;
@@ -89,6 +93,27 @@ namespace Solcery.UI
 
             if (buttonText != null)
                 buttonText.text = _topCardType.Metadata.Name;
+
+            CheckIfHighlighted();
+        }
+
+        private void CheckIfHighlighted()
+        {
+            var highlighted = false;
+            if (_topCardData.TryGetAttrValue("highlighted", out var highlightInt))
+                if (highlightInt == 1)
+                    highlighted = true;
+
+            SetHighlighted(highlighted);
+        }
+
+        private void SetHighlighted(bool isHighlighted)
+        {
+            if (effect != null)
+                effect.enabled = isHighlighted;
+
+            if (shadow != null)
+                shadow.enabled = isHighlighted;
         }
     }
 }
