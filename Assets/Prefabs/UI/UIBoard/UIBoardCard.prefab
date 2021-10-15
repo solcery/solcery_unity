@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.05
+  m_fontSize: 15.15
   m_fontSizeBase: 11.27
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -232,7 +232,7 @@ MonoBehaviour:
   animator: {fileID: 8150576541526316475}
   faceUpPointerHandler: {fileID: 4002356702728752971}
   faceDownPointerHandler: {fileID: 7500633643191244612}
-  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
+  cardPictures: {fileID: 0}
   cardImage: {fileID: 3834954703965132792}
   cardFrameFaceUp: {fileID: 8118980715419479460}
   cardFrameFaceDown: {fileID: 5222789459842261255}

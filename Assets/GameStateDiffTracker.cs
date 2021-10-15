@@ -21,6 +21,7 @@ namespace Solcery
 
         private List<BoardDataCardChangedPlace> _cardsThatChangedPlaces;
         private List<BoardDataCardChangedPlace> _cardsThatStayed;
+        private List<BoardDataCardChangedPlace> _cardsThatGotDeleted;
         private Dictionary<int, CardPlaceDiff> _cardPlaceDiffs;
 
         public void Init()
@@ -60,6 +61,23 @@ namespace Solcery
 
             _cardsThatChangedPlaces = new List<BoardDataCardChangedPlace>();
             _cardsThatStayed = new List<BoardDataCardChangedPlace>();
+            _cardsThatGotDeleted = new List<BoardDataCardChangedPlace>();
+
+            if (_previousGameState != null)
+            {
+                foreach(var prevCard in _previousGameState.Cards)
+                {
+                    if (!_newGameState.CardsById.ContainsKey(prevCard.CardId))
+                    {
+                        _cardsThatChangedPlaces.Add(new BoardDataCardChangedPlace()
+                        {
+                            CardData = prevCard,
+                            From = _previousGameState?.GetCard(prevCard.CardId)?.CardPlace ?? 0,
+                            To = 0
+                        });
+                    }
+                }
+            }
 
             foreach (var card in _newGameState.Cards)
             {

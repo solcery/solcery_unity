@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4e4ab362af30c40b472c0e209f6335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
+  cardPictures: {fileID: 0}
   image: {fileID: 590343390364031574}
   diff: {fileID: 590343390532820065}
   numberText: {fileID: 590343391994709602}

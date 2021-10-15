@@ -88,7 +88,7 @@ namespace Solcery.UI
                 CardPicturesFromUrl.Instance?.GetTextureByUrl(pictureUrl, (sprite) => SetSprite(sprite));
             }
             else
-                SetSprite(cardPictures.GetSpriteByIndex(picture), stretch);
+                SetSprite(cardPictures?.GetSpriteByIndex(picture), stretch);
         }
 
         private void SetSprite(Sprite sprite, bool stretch = false)

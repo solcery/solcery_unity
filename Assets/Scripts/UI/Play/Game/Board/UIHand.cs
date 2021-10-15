@@ -86,6 +86,7 @@ namespace Solcery.UI
             {
                 foreach (var departedCard in cardPlaceDiff.Departed)
                 {
+                    if (departedCard.CardData == null) continue;
                     var cardToDelete = GetCardById(departedCard.CardData.CardId);
                     UICardAnimator.Instance?.Clone(cardToDelete, departedCard);
                     DeleteCard(cardToDelete);
