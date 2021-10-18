@@ -1,5 +1,4 @@
 using System;
-// using Coffee.UIEffects;
 using Solcery.Modules;
 using TMPro;
 using UnityEngine;
@@ -28,8 +27,8 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
         [SerializeField] private Image cardIconImage = null;
-        // [SerializeField] private UIShiny faceUpShiny = null;
-        // [SerializeField] private UIShiny faceDownShiny = null;
+        [SerializeField] private Image faceUpOutline = null;
+        [SerializeField] private Image faceDownOutline = null;
 
         private CardData _cardData;
         private CardType _cardType;
@@ -305,11 +304,11 @@ namespace Solcery.UI
 
         private void SetHighlighted(bool isHighlighted)
         {
-            // if (faceUpShiny != null)
-            //     faceUpShiny.enabled = isHighlighted;
+            if (faceUpOutline != null)
+                faceUpOutline.enabled = isHighlighted;
 
-            // if (faceDownShiny != null)
-            //     faceDownShiny.enabled = isHighlighted;
+            if (faceDownOutline != null)
+                faceDownOutline.enabled = isHighlighted;
         }
     }
 }

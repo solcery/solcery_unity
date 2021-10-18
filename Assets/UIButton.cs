@@ -14,7 +14,8 @@ namespace Solcery.UI
         [SerializeField] private Button button = null;
         [SerializeField] private Image image = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
-        [SerializeField] private Material outline = null;
+        // [SerializeField] private Material outline = null;
+        [SerializeField] private GameObject outline = null;
 
 
         private PlaceDisplayData _displayData;
@@ -109,7 +110,7 @@ namespace Solcery.UI
         private void SetHighlighted(bool isHighlighted)
         {
             if (outline != null)
-                image.material = isHighlighted ? outline : null;
+                outline?.SetActive(isHighlighted);
         }
     }
 }
