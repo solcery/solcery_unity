@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.3
+  m_fontSize: 12.35
   m_fontSizeBase: 11.27
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -241,8 +241,8 @@ MonoBehaviour:
   cardDescription: {fileID: 1933504690624659153}
   cardCoinsCount: {fileID: 72060295701108339}
   cardIconImage: {fileID: 8118980715304107491}
-  faceUpShiny: {fileID: 1517851797713306882}
-  faceDownShiny: {fileID: 3352306485456621020}
+  faceUpShiny: {fileID: 0}
+  faceDownShiny: {fileID: 0}
 --- !u!114 &2629152384893398422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +345,6 @@ GameObject:
   - component: {fileID: 3834954703965132793}
   - component: {fileID: 3834954703965132795}
   - component: {fileID: 3834954703965132792}
-  - component: {fileID: 1517851797713306882}
   m_Layer: 5
   m_Name: CardImage
   m_TagString: Untagged
@@ -410,32 +409,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1517851797713306882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834954703965132798}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 0
-  m_Width: 0.49
-  m_Rotation: 135
-  m_Softness: 1
-  m_Brightness: 0.41
-  m_Gloss: 0.302
-  m_EffectArea: 0
-  m_Player:
-    play: 1
-    initialPlayDelay: 2
-    duration: 0.69
-    loop: 1
-    loopDelay: 1
-    updateMode: 0
 --- !u!1 &4682548632184147924
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +930,6 @@ GameObject:
   - component: {fileID: 4654560135142465280}
   - component: {fileID: 8420160995668729283}
   - component: {fileID: 5222789459842261255}
-  - component: {fileID: 3352306485456621020}
   m_Layer: 5
   m_Name: CardFrameFaceDown
   m_TagString: Untagged
@@ -1022,32 +994,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 3
---- !u!114 &3352306485456621020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8721124727756696443}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 0
-  m_Width: 0.338
-  m_Rotation: 135
-  m_Softness: 1
-  m_Brightness: 0.69
-  m_Gloss: 0.35
-  m_EffectArea: 0
-  m_Player:
-    play: 1
-    initialPlayDelay: 2
-    duration: 0.69
-    loop: 1
-    loopDelay: 1
-    updateMode: 0
 --- !u!1 &9016594400936914499
 GameObject:
   m_ObjectHideFlags: 0

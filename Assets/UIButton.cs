@@ -14,7 +14,7 @@ namespace Solcery.UI
 
         [SerializeField] private Button button = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
-        [SerializeField] private UIShiny shiny = null;
+        // [SerializeField] private UIShiny shiny = null;
 
 
         private PlaceDisplayData _displayData;
@@ -108,8 +108,8 @@ namespace Solcery.UI
 
         private void SetHighlighted(bool isHighlighted)
         {
-            if (shiny != null)
-                shiny.enabled = isHighlighted;
+            // if (shiny != null)
+            //     shiny.enabled = isHighlighted;
         }
     }
 }

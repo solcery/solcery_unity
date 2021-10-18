@@ -28,8 +28,8 @@ namespace Solcery.UI
         [SerializeField] private TextMeshProUGUI cardDescription = null;
         [SerializeField] private TextMeshProUGUI cardCoinsCount = null;
         [SerializeField] private Image cardIconImage = null;
-        [SerializeField] private UIShiny faceUpShiny = null;
-        [SerializeField] private UIShiny faceDownShiny = null;
+        // [SerializeField] private UIShiny faceUpShiny = null;
+        // [SerializeField] private UIShiny faceDownShiny = null;
 
         private CardData _cardData;
         private CardType _cardType;
@@ -305,11 +305,11 @@ namespace Solcery.UI
 
         private void SetHighlighted(bool isHighlighted)
         {
-            if (faceUpShiny != null)
-                faceUpShiny.enabled = isHighlighted;
+            // if (faceUpShiny != null)
+            //     faceUpShiny.enabled = isHighlighted;
 
-            if (faceDownShiny != null)
-                faceDownShiny.enabled = isHighlighted;
+            // if (faceDownShiny != null)
+            //     faceDownShiny.enabled = isHighlighted;
         }
     }
 }

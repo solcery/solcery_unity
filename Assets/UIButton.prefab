@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 3200764471413365603}
   - component: {fileID: 3200764471413365604}
   - component: {fileID: 8441973818056527902}
-  - component: {fileID: 8701782103294500090}
   m_Layer: 5
   m_Name: UIButton
   m_TagString: Untagged
@@ -271,30 +270,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 3200764471413365604}
   buttonText: {fileID: 3200764471394997283}
-  shiny: {fileID: 8701782103294500090}
---- !u!114 &8701782103294500090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3200764471413365606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 0.4250435
-  m_Width: 0.448
-  m_Rotation: 135
-  m_Softness: 1
-  m_Brightness: 0.356
-  m_Gloss: 0.644
-  m_EffectArea: 0
-  m_Player:
-    play: 1
-    initialPlayDelay: 2
-    duration: 0.6
-    loop: 1
-    loopDelay: 1
-    updateMode: 0
+  shiny: {fileID: 0}
