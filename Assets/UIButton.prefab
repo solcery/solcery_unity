@@ -269,5 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 3200764471413365604}
+  image: {fileID: 3200764471413365603}
   buttonText: {fileID: 3200764471394997283}
-  shiny: {fileID: 0}
+  outline: {fileID: 2100000, guid: c6f53ed52f848b44db269da09eb19aac, type: 2}

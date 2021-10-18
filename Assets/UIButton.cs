@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-// using Coffee.UIEffects;
 using Solcery.React;
 using TMPro;
 using UnityEngine;
@@ -13,8 +12,9 @@ namespace Solcery.UI
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
         [SerializeField] private Button button = null;
+        [SerializeField] private Image image = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
-        // [SerializeField] private UIShiny shiny = null;
+        [SerializeField] private Material outline = null;
 
 
         private PlaceDisplayData _displayData;
@@ -108,8 +108,8 @@ namespace Solcery.UI
 
         private void SetHighlighted(bool isHighlighted)
         {
-            // if (shiny != null)
-            //     shiny.enabled = isHighlighted;
+            if (outline != null)
+                image.material = isHighlighted ? outline : null;
         }
     }
 }
