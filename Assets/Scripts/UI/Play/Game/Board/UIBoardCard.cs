@@ -170,7 +170,7 @@ namespace Solcery.UI
             {
                 CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl, (sprite) => SetSprite(sprite));
             }
-            else
+            else if (cardPictures != null)
                 SetSprite(cardPictures?.GetSpriteByIndex(metadata.Picture));
         }
 
