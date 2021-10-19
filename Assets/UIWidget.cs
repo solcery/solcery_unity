@@ -93,7 +93,7 @@ namespace Solcery.UI
                 CardPicturesFromUrl.Instance?.GetTextureByUrl(pictureUrl, (sprite) => SetSprite(sprite));
             }
             else
-                SetSprite(cardPictures.GetSpriteByIndex(picture));
+                SetSprite(cardPictures?.GetSpriteByIndex(picture));
 
             if (!_topCardData.TryGetAttrValue("number", out var number))
             {

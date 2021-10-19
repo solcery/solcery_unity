@@ -12,7 +12,7 @@ namespace Solcery.UI
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
         [SerializeField] private Button button = null;
-        [SerializeField] private Image image = null;
+        // [SerializeField] private Image image = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
         // [SerializeField] private Material outline = null;
         [SerializeField] private GameObject outline = null;

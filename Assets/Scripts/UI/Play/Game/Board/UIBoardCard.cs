@@ -171,7 +171,7 @@ namespace Solcery.UI
                 CardPicturesFromUrl.Instance?.GetTextureByUrl(metadata.PictureUrl, (sprite) => SetSprite(sprite));
             }
             else
-                SetSprite(cardPictures.GetSpriteByIndex(metadata.Picture));
+                SetSprite(cardPictures?.GetSpriteByIndex(metadata.Picture));
         }
 
         private void SetSprite(Sprite sprite)
