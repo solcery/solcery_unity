@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd027f2aac01124995d72b9496be5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPictures: {fileID: 0}
+  cardPictures: {fileID: 11400000, guid: aaf0fc7063407d24b90b8d663200ae6e, type: 2}
   image: {fileID: 3891229482777554651}
   arf: {fileID: 3891229482777554645}
   imageRect: {fileID: 3891229482777554648}
