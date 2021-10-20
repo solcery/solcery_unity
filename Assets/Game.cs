@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Solcery.Modules;
 using Solcery.React;
 using Solcery.Utils;
+using UnityEngine;
 
 namespace Solcery
 {
@@ -18,6 +19,9 @@ namespace Solcery
 
         void Start()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            WebGLInput.captureAllKeyboardInput = false;
+#endif
             UnityToReact.Instance?.CallOnUnityLoaded();
         }
 
