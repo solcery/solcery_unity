@@ -14,6 +14,7 @@ namespace Solcery.UI
         [SerializeField] private Image image = null;
         [SerializeField] private AspectRatioFitter arf = null;
         [SerializeField] private RectTransform imageRect = null;
+        [SerializeField] protected Image bgImage = null;
 
         private PlaceDisplayData _displayData;
         protected bool _areCardsFaceDown;
@@ -50,13 +51,16 @@ namespace Solcery.UI
 
         public void UpdateGameContent(GameContent gameContent)
         {
-            UpdateWithCards(gameContent, _cards, _stretch);
+            UpdateWithCards(_displayData, gameContent, _cards, _stretch);
         }
 
-        public void UpdateWithCards(GameContent gameContent, List<CardData> cards, bool stretch = false)
+        public void UpdateWithCards(PlaceDisplayData displayData, GameContent gameContent, List<CardData> cards, bool stretch = false)
         {
+            _displayData = displayData;
             _cards = cards;
             _stretch = stretch;
+
+            SetBgColor();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -90,6 +94,22 @@ namespace Solcery.UI
             else if (cardPictures != null)
                 SetSprite(cardPictures?.GetSpriteByIndex(picture), stretch);
         }
+
+        private void SetBgColor()
+        {
+            if (_displayData.HasBg)
+                if (ColorUtility.TryParseHtmlString(_displayData.BgColor, out var bgColor))
+                    if (bgImage != null)
+                    {
+                        bgImage.gameObject.SetActive(true);
+                        bgImage.color = bgColor;
+                        return;
+                    }
+
+            if (bgImage != null)
+                bgImage.gameObject.SetActive(false);
+        }
+
 
         private void SetSprite(Sprite sprite, bool stretch = false)
         {

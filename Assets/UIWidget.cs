@@ -15,6 +15,7 @@ namespace Solcery.UI
         [SerializeField] private Image image = null;
         [SerializeField] private UIDiff diff = null;
         [SerializeField] private TextMeshProUGUI numberText = null;
+        [SerializeField] protected Image bgImage = null;
 
         private PlaceDisplayData _displayData;
         protected bool _areCardsFaceDown;
@@ -52,14 +53,16 @@ namespace Solcery.UI
 
         public void UpdateGameContent(GameContent gameContent)
         {
-            UpdateWithCards(gameContent, _cards);
+            UpdateWithCards(_displayData, gameContent, _cards);
         }
 
-        public void UpdateWithCards(GameContent gameContent, List<CardData> cards)
+        public void UpdateWithCards(PlaceDisplayData displayData, GameContent gameContent, List<CardData> cards)
         {
             // Debug.Log("UIWidget.UpdateWithCards");
-
+            _displayData = displayData;
             _cards = cards;
+
+            SetBgColor();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -103,6 +106,21 @@ namespace Solcery.UI
             {
                 SetNumber(number);
             }
+        }
+
+        private void SetBgColor()
+        {
+            if (_displayData.HasBg)
+                if (ColorUtility.TryParseHtmlString(_displayData.BgColor, out var bgColor))
+                    if (bgImage != null)
+                    {
+                        bgImage.gameObject.SetActive(true);
+                        bgImage.color = bgColor;
+                        return;
+                    }
+
+            if (bgImage != null)
+                bgImage.gameObject.SetActive(false);
         }
 
         private void SetSprite(Sprite sprite)

@@ -13,6 +13,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         private PlaceDisplayData _displayData;
 
+        [SerializeField] protected Image bgImage = null;
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected Transform content = null;
 
@@ -39,10 +40,13 @@ namespace Solcery.UI
             }
         }
 
-        public void UpdateWithDiff(GameContent gameContent, CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
+        public void UpdateWithDiff(PlaceDisplayData displayData, GameContent gameContent, CardPlaceDiff cardPlaceDiff, bool areCardsInteractable, bool areCardsFaceDown, bool showCoins, bool areCardsScattered = false, bool hideAllButTop = false)
         {
+            _displayData = displayData;
             _areCardsFaceDown = areCardsFaceDown;
             _hideAllButTop = hideAllButTop;
+
+            SetBgColor();
 
             if (_cardsById == null)
                 _cardsById = new Dictionary<int, UIBoardCard>();
@@ -130,6 +134,21 @@ namespace Solcery.UI
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
             LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+        }
+
+        private void SetBgColor()
+        {
+            if (_displayData.HasBg)
+                if (ColorUtility.TryParseHtmlString(_displayData.BgColor, out var bgColor))
+                    if (bgImage != null)
+                    {
+                        bgImage.gameObject.SetActive(true);
+                        bgImage.color = bgColor;
+                        return;
+                    }
+
+            if (bgImage != null)
+                bgImage.gameObject.SetActive(false);
         }
 
         public void OnCardArrival(int cardId)

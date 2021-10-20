@@ -79,12 +79,12 @@ namespace Solcery.UI
                 {
                     case CardLayoutOption.LayedOut:
                         var hand = place as UIHand;
-                        hand?.UpdateWithDiff(_gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
+                        hand?.UpdateWithDiff(displayData, _gameContent, placeDiff, areCardsInteractable, areCardsFaceDown, true);
                         break;
                     case CardLayoutOption.Stacked:
                         var pile = place as UIPile;
                         var cardsCount = _gameState.CardsByPlace.ContainsKey(placeId) ? _gameState.CardsByPlace[placeId].Count : 0;
-                        pile?.UpdateWithDiff(_gameContent, placeDiff, cardsCount, areCardsInteractable, areCardsFaceDown);
+                        pile?.UpdateWithDiff(displayData, _gameContent, placeDiff, cardsCount, areCardsInteractable, areCardsFaceDown);
                         break;
                     case CardLayoutOption.Widget:
                         var widget = place as UIWidget;
@@ -95,7 +95,7 @@ namespace Solcery.UI
                             _placesById.Remove(placeId);
                             continue;
                         }
-                        widget?.UpdateWithCards(_gameContent, widgetCards);
+                        widget?.UpdateWithCards(displayData, _gameContent, widgetCards);
                         break;
                     case CardLayoutOption.Title:
                         var title = place as UITitle;
@@ -106,7 +106,7 @@ namespace Solcery.UI
                             _placesById.Remove(placeId);
                             continue;
                         }
-                        title?.UpdateWithCards(_gameContent, titleCards);
+                        title?.UpdateWithCards(displayData, _gameContent, titleCards);
                         break;
                     case CardLayoutOption.Button:
                         var button = place as UIButton;
@@ -117,7 +117,7 @@ namespace Solcery.UI
                             _placesById.Remove(placeId);
                             continue;
                         }
-                        button?.UpdateWithCards(_gameContent, buttonCards);
+                        button?.UpdateWithCards(displayData, _gameContent, buttonCards);
                         break;
                     case CardLayoutOption.Picture:
                         var picture = place as UIPicture;
@@ -128,7 +128,7 @@ namespace Solcery.UI
                             _placesById.Remove(placeId);
                             continue;
                         }
-                        picture?.UpdateWithCards(_gameContent, pictureCards, displayData.Stretch);
+                        picture?.UpdateWithCards(displayData, _gameContent, pictureCards, displayData.Stretch);
                         break;
                 }
             }

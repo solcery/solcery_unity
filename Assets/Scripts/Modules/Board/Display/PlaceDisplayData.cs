@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Solcery
 {
@@ -11,6 +12,8 @@ namespace Solcery
         public bool IsVisible;
         public bool Stretch;
         public int ZOrder;
+        public bool HasBg;
+        public string BgColor;
         public PlaceDisplayAnchors HorizontalAnchors;
         public PlaceDisplayAnchors VerticalAnchors;
         public CardFaceOption CardFaceOption;

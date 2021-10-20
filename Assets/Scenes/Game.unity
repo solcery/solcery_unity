@@ -2465,9 +2465,9 @@ MonoBehaviour:
     \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/grimsyndicate/8477d9dc4eed162da236ca0cfeac4349.jpg\",\r\n       
     \"Picture\": 88,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some widget\",\r\n       
     \"Description\": \"Some widget here\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 104,\r\n      \"Metadata\": {\r\n        \"Picture\": 137,\r\n       
-    \"Coins\": 1,\r\n        \"Name\": \"Some picture\",\r\n        \"Description\":
-    \"Some picture here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+    \"Id\": 104,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/BzKx0JT/2-46.jpg\",\r\n       
+    \"Picture\": 137,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some picture\",\r\n       
+    \"Description\": \"Some picture here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
     {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/1882e7db8682f572d09cda088ad7ae2c.jpg\",\r\n       
     \"Picture\": 140,\r\n        \"Icon\": 1,\r\n        \"Coins\": 1,\r\n       
@@ -2611,41 +2611,45 @@ MonoBehaviour:
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
     \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 5,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n       
-    \"Max\": 0.85\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n     
-    \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Shop\",\r\n     
-    \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    true,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 2,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.0,\r\n       
-    \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayerHand\",\r\n     
-    \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    \"ZOrder\": 5,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Shop\",\r\n      \"PlaceId\":
+    2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": true,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    2,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 1,\r\n      \"HorizontalAnchors\":
     {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.23,\r\n        \"Max\": 0.55\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"Title\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 6,\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 6,\r\n      \"HasBg\":
+    false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n       
+    \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.9,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 3\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"Button\",\r\n      \"PlaceId\": 5,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 10,\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.76,\r\n        \"Max\": 0.95\r\n      },\r\n      \"VerticalAnchors\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 10,\r\n      \"HasBg\":
+    false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n       
+    \"Min\": 0.76,\r\n        \"Max\": 0.95\r\n      },\r\n      \"VerticalAnchors\":
     {\r\n        \"Min\": 0.1,\r\n        \"Max\": 0.3\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 4\r\n    },\r\n    {\r\n      \"PlaceName\":
     \"Widget\",\r\n      \"PlaceId\": 6,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\":
-    3,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.8,\r\n        \"Max\":
-    1.0\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.4,\r\n       
-    \"Max\": 0.6\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    2\r\n    },\r\n    {\r\n      \"PlaceName\": \"Picture\",\r\n      \"PlaceId\":
-    7,\r\n      \"IsVisible\": true,\r\n      \"Stretch\": true,\r\n      \"ZOrder\":
-    6,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\":
-    0.5\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n       
-    \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    5\r\n    }\r\n  ]\r\n}\r\n"
+    3,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 2\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Picture\",\r\n      \"PlaceId\": 7,\r\n      \"IsVisible\": true,\r\n     
+    \"Stretch\": true,\r\n      \"ZOrder\": 6,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.2,\r\n        \"Max\": 0.5\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 5\r\n    }\r\n  ]\r\n}\r\n"
   gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
     \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
