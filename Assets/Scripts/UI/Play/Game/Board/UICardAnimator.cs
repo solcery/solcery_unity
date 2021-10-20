@@ -42,7 +42,7 @@ namespace Solcery.UI
                 var le = cardClone.gameObject.AddComponent<LayoutElement>();
                 le.ignoreLayout = true;
                 cardClone.MakeUnmaskable();
-                // cardClone.transform.SetParent(destinationCardsParent, true);
+                cardClone.transform.SetParent(destinationCardsParent, true);
 
                 if (_clonedCards.ContainsKey(departedCard.CardData.CardId))
                     _clonedCards[departedCard.CardData.CardId] = cardClone;
