@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
-        m_Texture: {fileID: 2800000, guid: 74087f6d03f233e4a8a142fa01f9e5cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 44c751ba2c4260e4584b6890bfc66d2d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OverlayTex:
@@ -169,8 +169,8 @@ Material:
     - _OutlinePixelWidth: 3
     - _OutlineTexGrey: 0
     - _OutlineTexToggle: 1
-    - _OutlineTexXSpeed: 10
-    - _OutlineTexYSpeed: 0
+    - _OutlineTexXSpeed: 0
+    - _OutlineTexYSpeed: 20
     - _OutlineWidth: 0.02
     - _OverlayBlend: 1
     - _OverlayGlow: 1

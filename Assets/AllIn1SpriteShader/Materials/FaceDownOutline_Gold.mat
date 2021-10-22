@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FaceDownOutline
+  m_Name: FaceDownOutline_Gold
   m_Shader: {fileID: 4800000, guid: a53f4bb29f3644b43b5075c6dcfecb32, type: 3}
   m_ShaderKeywords: ONLYOUTLINE_ON OUTBASEPIXELPERF_ON OUTBASE_ON OUTTEX_ON _ONLYOUTLINE_ON
     _OUTLINEISPIXEL_ON _OUTLINETEXTOGGLE_ON
