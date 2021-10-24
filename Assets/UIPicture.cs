@@ -78,7 +78,8 @@ namespace Solcery.UI
 
             if (_topCardType == null)
             {
-                image?.gameObject?.SetActive(false);
+                if (image != null && image.gameObject != null)
+                    image?.gameObject?.SetActive(false);
                 return;
             }
 

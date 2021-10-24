@@ -43,7 +43,7 @@ namespace Solcery.UI
 
         public Transform GetCardsParent()
         {
-            return this.transform;
+            return this?.transform;
         }
 
         public void OnCardArrival(int cardId)

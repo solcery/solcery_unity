@@ -123,6 +123,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10761574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10761575}
+  - component: {fileID: 10761577}
+  - component: {fileID: 10761576}
+  m_Layer: 5
+  m_Name: bg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &10761575
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10761574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 550124341}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &10761576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10761574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3727872356068159283, guid: 8e20780f916e505419cf7fb52b69f9ab, type: 3}
+  m_Type: 2
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 4
+--- !u!222 &10761577
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10761574}
+  m_CullTransparentMesh: 1
 --- !u!1 &27923145
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +841,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 10761575}
   m_Father: {fileID: 1603733014}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2451,968 +2527,560 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  burnMaterial: {fileID: 2100000, guid: 28c809b059672094f83f786b1c6b7b0e, type: 2}
   gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Icon\": 2,\r\n        \"Coins\": 1,\r\n       
-    \"Name\": \"Disloyal Minion\",\r\n        \"Description\": \"Deal 2 Dmg. Move
-    this card to enemy deck.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 101,\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some title\",\r\n       
-    \"Description\": \"Some title here\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    102,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some button\",\r\n       
-    \"Description\": \"Some button here\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/grimsyndicate/8477d9dc4eed162da236ca0cfeac4349.jpg\",\r\n       
-    \"Picture\": 88,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some widget\",\r\n       
-    \"Description\": \"Some widget here\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 104,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/BzKx0JT/2-46.jpg\",\r\n       
-    \"Picture\": 137,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Some picture\",\r\n       
-    \"Description\": \"Some picture here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
-  gameContent2: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/1882e7db8682f572d09cda088ad7ae2c.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Icon\": 1,\r\n        \"Coins\": 1,\r\n       
-    \"Name\": \"Disloyal Minion\",\r\n        \"Description\": \"Deal 2 Dmg. Move
-    this card to enemy deck.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 101,\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Picture\": 140,\r\n        \"Coins\": 1,\r\n        \"Name\": \"Another title\",\r\n       
-    \"Description\": \"Another title here\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
-  gameContent3: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 132,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/sVRnNSY/2-54.jpg\",\r\n       
-    \"Name\": \"TestCard\",\r\n        \"Description\": \"Does everything\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 147,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/qrdYYb4/2-51.jpg\",\r\n       
-    \"Name\": \"Cheat0\",\r\n        \"Description\": \"CLEAR\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 149,\r\n      \"BrickTree\": {},\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://i.ibb.co/S5FSZF8/2-57.jpg\",\r\n       
-    \"Name\": \"Cheat1\",\r\n        \"Description\": \"Inits test fight\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 157,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/BzKx0JT/2-46.jpg\",\r\n       
-    \"Name\": \"Rolf\",\r\n        \"Description\": \"Strong and brave.\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 161,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/tDmL99p/Solcerer.jpg\",\r\n       
-    \"Name\": \"Player\",\r\n        \"Description\": \"It's you!\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 178,\r\n      \"BrickTree\": {},\r\n      \"Metadata\":
-    {\r\n        \"Name\": \"End Turn\",\r\n        \"Description\": \"Ends player
-    turn and starts enemy turn\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 179,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"Name\": \"Start Game\",\r\n       
-    \"Description\": \"Init. Sets up the game board\"\r\n      }\r\n    },\r\n   
-    {\r\n      \"Id\": 180,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://i.ibb.co/Kmg1tt8/1-15-Coin.jpg\",\r\n        \"Name\":
-    \"Loot Spell\",\r\n        \"Description\": \"Deals 2 damage\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 182,\r\n      \"BrickTree\": {},\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://i.ibb.co/fNvGGsB/2-2.jpg\",\r\n       
-    \"Name\": \"Dire Wolf\",\r\n        \"Description\": \"default enemy\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 193,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/s5jVWy2/1-37-Heart.jpg\",\r\n       
-    \"Name\": \"Powerful Bite\",\r\n        \"Description\": \"Deals 1 damage to
-    random Hero\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 201,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/M9b0Pf4/2-32.jpg\",\r\n       
-    \"Name\": \"Test Enemy\",\r\n        \"Description\": \"Has 5 test spells\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 206,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": { \"Name\": \"Enemy Turn\", \"Description\": \"Performs enemy turn\"
-    }\r\n    },\r\n    {\r\n      \"Id\": 207,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"Name\": \"New Round\",\r\n        \"Description\":
-    \"Draws all cards for enemy and player\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 226,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n       
-    \"Name\": \"Next Room\",\r\n        \"Description\": \"Proceed to next fight\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 235,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"Name\": \"Take Card\",\r\n        \"Description\":
-    \"Move the Loot Card to your Deck\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    236,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"Name\":
-    \"Refuse Card\",\r\n        \"Description\": \"Moves the Loot Card to Exile\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 259,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/P540Bqt/1-60-Obelisk-1.jpg\",\r\n       
-    \"Name\": \"Tombstone\",\r\n        \"Description\": \"Here lies another wretch,
-    destined to be forgotten\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 265,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/TwnG83g/icon-life.png\",\r\n       
-    \"Name\": \"HP\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 300,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/LvngwJP/2-28.jpg\",\r\n       
-    \"Name\": \"Vicious Strike\",\r\n        \"Description\": \"Deals 1-3 damage
-    to the Player.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 301,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/hM8LtPN/2-36.jpg\",\r\n       
-    \"Name\": \"Sneak Attack\",\r\n        \"Description\": \"Deals 3 damage.\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 302,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/Jcydh40/2-29.jpg\",\r\n       
-    \"Name\": \"Potion of Alacrity\",\r\n        \"Description\": \"Allows to cast
-    1 additional Card. 1 Use.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 303,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/mzNfHWT/1-82-Stoneskin.jpg\",\r\n       
-    \"Name\": \"Stoneskin\",\r\n        \"Description\": \"Gives 5 Block until the
-    end of turn.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 304,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/mHGjsZQ/2-55.jpg\",\r\n       
-    \"Name\": \"Shield Block\",\r\n        \"Description\": \"Gives 3 Block until
-    the end of turn.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 305,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/cJX7cBs/1-25-Fireball.jpg\",\r\n       
-    \"Name\": \"Fireball\",\r\n        \"Description\": \"Deals 6-8 damage to a RANDOM
-    character.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 306,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/N2wP0SV/1-18-Curse.jpg\",\r\n       
-    \"Name\": \"Terrify\",\r\n        \"Description\": \"Makes the enemy deal 2 less
-    Damage for 3 turns.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 307,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/zhh5DWZ/1-41-Ice-fish.jpg\",\r\n       
-    \"Name\": \"Freeze\",\r\n        \"Description\": \"Stuns the enemy for 1 Turn.\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 308,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/27Dh20Y/1-81-Star-fire.jpg\",\r\n       
-    \"Name\": \"Lightning Bolt\",\r\n        \"Description\": \"Deals 2-5 damage
-    with a chance to Stun the enemy for 1 turn.\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 309,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://i.ibb.co/gDtzqxp/1-83-Swordsman.jpg\",\r\n        \"Name\":
-    \"Suit Up!\",\r\n        \"Description\": \"Grants 3 Block each Turn for the
-    next 3 Turns.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 310,\r\n     
-    \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/yVm9HyF/2-47.jpg\",\r\n       
-    \"Name\": \"Cruel Harvest\",\r\n        \"Description\": \"Deals 2 Damage with
-    a chance to cause Bleeding.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    311,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
-    \"https://i.ibb.co/wWhQkjr/2-33.jpg\",\r\n        \"Name\": \"Enemy - Covetous
-    Imp\",\r\n        \"Description\": \"Can steal Treasures from your Deck.\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 312,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/w4HnMtZ/2-25.jpg\",\r\n       
-    \"Name\": \"Enemy - Scheming Warlock\",\r\n        \"Description\": \"Can fill
-    your Deck with dangerous Curses.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    313,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
-    \"https://i.ibb.co/ng0YX7Z/1-75-Sight.jpg\",\r\n        \"Name\": \"Curse of
-    Madness\",\r\n        \"Description\": \"Shuffles itself into your Deck. Deals
-    6 Damage if you don't Cast it.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    314,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
-    \"https://i.ibb.co/1J6NJ4M/2-48.jpg\",\r\n        \"Name\": \"Mark\",\r\n       
-    \"Description\": \"He prefers to stick to the shadows.\"\r\n      }\r\n    },\r\n   
-    {\r\n      \"Id\": 315,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://i.ibb.co/dr6dVqS/1-92-Warlock.jpg\",\r\n        \"Name\":
-    \"Alex\",\r\n        \"Description\": \"Friends, enemies - what's the difference?\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 319,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/t2SV7rV/2-9.jpg\",\r\n       
-    \"Name\": \"Enemy - Corrupted Guardsman\",\r\n        \"Description\": \"Attacks
-    ONLY you.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 329,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": { \"Name\": \"Metabae\", \"Description\": \"Waifu
-    material\" }\r\n    },\r\n    {\r\n      \"Id\": 330,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": { \"Name\": \"Lunarian\", \"Description\": \"From
-    Lunaria\" }\r\n    },\r\n    {\r\n      \"Id\": 331,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/nb1Mg7s/1-40-HP.jpg\",\r\n       
-    \"Name\": \"Potion of Health\",\r\n        \"Description\": \"Restores 5 Health.
-    1 Use.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 332,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/qMDMF6H/1-4-Artifact.jpg\",\r\n       
-    \"Name\": \"Heroic Smite\",\r\n        \"Description\": \"Deals 2-4 Damage.\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 333,\r\n      \"BrickTree\": {},\r\n     
-    \"Metadata\": {\r\n        \"Name\": \"Degen Ape\",\r\n        \"Description\":
-    \"Best student in the class! \"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    335,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n        \"Name\":
-    \"The Snek\",\r\n        \"Description\": \"The sneaky-sneky snek. Venomous and
-    agile\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 343,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"Name\": \"SolBear\",\r\n        \"Description\":
-    \"A glass of vodka and he can do anything\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 344,\r\n      \"BrickTree\": {},\r\n      \"Metadata\": {\r\n       
-    \"Name\": \"Bold Badger\",\r\n        \"Description\": \"What does the badger
-    say? \"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 346,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/JxhhJGf/1-98-Wizard.jpg\",\r\n       
-    \"Name\": \"Wizard's wrath\",\r\n        \"Description\": \"Deal 10 damage. Draw
-    2 cards.\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 773,\r\n      \"BrickTree\":
-    {},\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://i.ibb.co/sVRnNSY/2-54.jpg\",\r\n       
-    \"Name\": \"TestCard1\",\r\n        \"Description\": \"Does everything\"\r\n     
-    }\r\n    }\r\n  ]\r\n}\r\n"
+    {\r\n        \"Picture\": 160,\r\n        \"Icon\": 2,\r\n        \"Name\": \"Solcerer\",\r\n       
+    \"Description\": \"Meet your maker\"\r\n      }\r\n    },\r\n\r\n\r\n\r\n   
+    {\r\n      \"Id\": 11,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Name\": \"DegenApe\",\r\n        \"Description\": \"Fuck, ok\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 12,\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
+    \"https://arweave.net/R3CO7jcvxTya4A2Mhp16nyrmaB1EaW1v55p16FidRfo/data.png\",\r\n       
+    \"Name\": \"Metabae\",\r\n        \"Description\": \"Waifu material\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 13,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/ryJ8dd5H756KAitCzgtV2hShap8FYL9iq8nuni6si9g/data.png\",\r\n       
+    \"Name\": \"Snek\",\r\n        \"Description\": \"Hiss-hiss\"\r\n      }\r\n   
+    },\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 21,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/GIv_mIv9iwJLCkUZrFKBuKNZZplFsgkYAabdrdZXWoY\",\r\n       
+    \"Name\": \"BoldBadger\",\r\n        \"Description\": \"What does the badger
+    say?\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 22,\r\n      \"Metadata\":
+    {\r\n        \"PictureUrl\": \"https://arweave.net/PRQ4HoaZyhR4ZVjsrxoOaWZLhRHzBlLrp-Q5h8lW8wQ?ext=jpeg\",\r\n       
+    \"Name\": \"GalacticGecko\",\r\n        \"Description\": \"Out of this world\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 23,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://media.howrare.is/images/smb/ff19da7553f7dd0020e008f9a22cfedb.png\",\r\n       
+    \"Name\": \"SMB\",\r\n        \"Description\": \"Essense of wealth\"\r\n     
+    }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 31,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://6cqx7ekxpqke2kn24pidtpcftghubkiyepgntqlvngptbwnl6iua.arweave.net/8KF_kVd8FE0puuPQObxFmY9AqRgjzNnBdWmfMNmr8ig/?ext=png\",\r\n       
+    \"Name\": \"Meerkat\",\r\n        \"Description\": \"Never talk about the Meerkat
+    club\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 32,\r\n      \"Metadata\":
+    {\r\n        \"PictureUrl\": \"https://4w5qopogxy735ydfrvlfjycvuyho5a2am3g5wtektb3kqmnspl7a.arweave.net/5bsHPca-P77gZY1WVOBVpg7ug0BmzdtMiph2qDGyev4/7569.png\",\r\n       
+    \"Name\": \"Caveman\",\r\n        \"Description\": \"Loves protein\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 33,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/MJT_IFGBChP3x9SSqcNOwFAi4JlnReQD1I2CTVLp4O0/data.png\",\r\n       
+    \"Name\": \"Slow Patrol\",\r\n        \"Description\": \"Was the last one the
+    get here\"\r\n      }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 41,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 42,\r\n        \"Name\": \"Imp\",\r\n       
+    \"Description\": \"Troublesome and mischievous\"\r\n      }\r\n    },\r\n   
+    {\r\n      \"Id\": 42,\r\n      \"Metadata\": {\r\n        \"Picture\": 63,\r\n       
+    \"Name\": \"Poison imp\",\r\n        \"Description\": \"Poisonous and sneaky\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 43,\r\n      \"Metadata\": {\r\n       
+    \"Picture\": 76,\r\n        \"Name\": \"Skeleton\",\r\n        \"Description\":
+    \"Undead horror\"\r\n      }\r\n    },\r\n\r\n    {\r\n      \"Id\": 51,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 74,\r\n        \"Name\": \"Blob\",\r\n       
+    \"Description\": \"Watches you closely\"\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 52,\r\n      \"Metadata\": {\r\n        \"Picture\": 96,\r\n        \"Name\":
+    \"Werewolf\",\r\n        \"Description\": \"Cursed shapeshifter\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 53,\r\n      \"Metadata\": {\r\n        \"Picture\":
+    31,\r\n        \"Name\": \"Ghoul\",\r\n        \"Description\": \"Born in the
+    graveyard\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 61,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 16,\r\n        \"Name\": \"Cultist\",\r\n        \"Description\":
+    \"Manifestation of devotion\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
+    62,\r\n      \"Metadata\": {\r\n        \"Picture\": 110,\r\n        \"Name\":
+    \"Demon\",\r\n        \"Description\": \"Uncut evil\"\r\n      }\r\n    },\r\n   
+    {\r\n      \"Id\": 63,\r\n      \"Metadata\": {\r\n        \"Picture\": 141,\r\n       
+    \"Name\": \"Witch\",\r\n        \"Description\": \"Avoid her at night\"\r\n     
+    }\r\n    },\r\n\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 101,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 4,\r\n        \"Name\": \"Helmet\",\r\n        \"Description\":
+    \"Your head is safe\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 102,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 13,\r\n        \"Name\": \"Chest\",\r\n       
+    \"Description\": \"Protects the bones\"\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"Picture\": 14,\r\n       
+    \"Name\": \"Coin\",\r\n        \"Description\": \"Toss a coin to your hero\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 104,\r\n      \"Metadata\": {\r\n       
+    \"Picture\": 39,\r\n        \"Name\": \"Potion\",\r\n        \"Description\":
+    \"Two is always better\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 105,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 88,\r\n        \"Name\": \"Tower\",\r\n       
+    \"Description\": \"See far beyond\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
+    106,\r\n      \"Metadata\": {\r\n        \"Picture\": 90,\r\n        \"Name\":
+    \"Waggon\",\r\n        \"Description\": \"Caravan stories\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 107,\r\n      \"Metadata\": {\r\n        \"Picture\":
+    92,\r\n        \"Name\": \"Warpstone\",\r\n        \"Description\": \"Necessity
+    for crafting\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 108,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 128,\r\n        \"Name\": \"Elixir\",\r\n        \"Description\":
+    \"Cast without limits\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 109,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 130,\r\n        \"Name\": \"Armor\",\r\n       
+    \"Description\": \"Heavy and thick\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+  gameContent2: 
+  gameContent3: 
   gameContent4: 
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 5,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Shop\",\r\n      \"PlaceId\":
-    2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    2,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"PlayerHand\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 1,\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.23,\r\n        \"Max\": 0.55\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Title\",\r\n      \"PlaceId\": 4,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 6,\r\n      \"HasBg\":
-    false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.9,\r\n        \"Max\": 1.0\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 3\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Button\",\r\n      \"PlaceId\": 5,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\": 10,\r\n      \"HasBg\":
-    false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.76,\r\n        \"Max\": 0.95\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.1,\r\n        \"Max\": 0.3\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 4\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Widget\",\r\n      \"PlaceId\": 6,\r\n      \"IsVisible\": true,\r\n      \"ZOrder\":
-    3,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.8,\r\n        \"Max\": 1.0\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 2\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Picture\",\r\n      \"PlaceId\": 7,\r\n      \"IsVisible\": true,\r\n     
-    \"Stretch\": true,\r\n      \"ZOrder\": 6,\r\n      \"HasBg\": false,\r\n     
+    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
     \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.2,\r\n        \"Max\": 0.5\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 5\r\n    }\r\n  ]\r\n}\r\n"
+    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    }\r\n  ]\r\n}\r\n"
   gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Deck\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
     false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.85\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.375,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Shop\",\r\n      \"PlaceId\":
-    2,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.0,\r\n       
-    \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.375,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\": \"PlayerHand\",\r\n     
-    \"PlaceId\": 3,\r\n      \"Player\": 1,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": {\r\n       
-    \"Min\": 0.0,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.03,\r\n        \"Max\": 0.35\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Picture\",\r\n      \"PlaceId\": 7,\r\n      \"IsVisible\": true,\r\n     
-    \"Stretch\": false,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n       
-    \"Max\": 0.5\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 5\r\n    }\r\n  ]\r\n}\r\n"
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
+    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
+    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
+    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
+    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
+    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    }\r\n  ]\r\n}\r\n"
   gameDisplay3: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Tech: Main Deck\",\r\n      \"PlaceId\": 1,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": -0.2, \"Max\": -0.1 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 1.1, \"Max\": 1.35 },\r\n      \"ZOrder\": 1,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Tech: Loot Deck\",\r\n      \"PlaceId\": 2,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.9, \"Max\": 1 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.27, \"Max\": 0.52 },\r\n      \"ZOrder\": 2,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Tech: Stage Deck\",\r\n      \"PlaceId\": 3,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.9, \"Max\": 1 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0, \"Max\": 0.25 },\r\n      \"ZOrder\": 3,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Hero - Player Deck\",\r\n      \"PlaceId\": 10,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.45, \"Max\": 0.55 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.01, \"Max\": 0.26 },\r\n      \"ZOrder\": 10,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 1 Hand\",\r\n      \"PlaceId\": 15,\r\n      \"IsInteractable\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.02, \"Max\":
-    0.12 },\r\n      \"VerticalAnchors\": { \"Min\": 0.25, \"Max\": 0.5 },\r\n     
-    \"ZOrder\": 15,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2 Hand\",\r\n      \"PlaceId\":
-    16,\r\n      \"IsInteractable\": true,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.13, \"Max\": 0.23 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.25, \"Max\": 0.5 },\r\n      \"ZOrder\": 16,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 3 Hand\",\r\n      \"PlaceId\": 17,\r\n      \"IsInteractable\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.24, \"Max\":
-    0.34 },\r\n      \"VerticalAnchors\": { \"Min\": 0.25, \"Max\": 0.5 },\r\n     
-    \"ZOrder\": 17,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Player\",\r\n      \"PlaceId\":
-    18,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\":
-    0.45, \"Max\": 0.55 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01, \"Max\":
-    0.26 },\r\n      \"ZOrder\": 18,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Player Hand\",\r\n      \"PlaceId\":
-    14,\r\n      \"IsInteractable\": true,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.35, \"Max\": 0.65 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.25, \"Max\": 0.5 },\r\n      \"ZOrder\": 14,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Stack\",\r\n      \"PlaceId\": 22,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.45, \"Max\": 0.55 },\r\n      \"VerticalAnchors\": { \"Min\": 0.497,
-    \"Max\": 0.723 },\r\n      \"ZOrder\": 22,\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Player Discard
-    Pile\",\r\n      \"PlaceId\": 23,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.45, \"Max\": 0.55 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01,
-    \"Max\": 0.26 },\r\n      \"ZOrder\": 23,\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy/Encounter
-    Grave Pile\",\r\n      \"PlaceId\": 26,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.211, \"Max\": 0.302 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.8715, \"Max\": 1 },\r\n      \"ZOrder\": 26,\r\n      \"CardFaceOption\":
+    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Player Panel: End Turn Button\",\r\n      \"PlaceId\": 30,\r\n      \"IsInteractable\":
-    true,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\":
-    0.56, \"Max\": 0.651 },\r\n      \"VerticalAnchors\": { \"Min\": 0.201, \"Max\":
-    0.241 },\r\n      \"ZOrder\": 30,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    4\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy/Encounter\",\r\n      \"PlaceId\":
-    27,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\":
-    0.03, \"Max\": 0.196 },\r\n      \"VerticalAnchors\": { \"Min\": 0.573, \"Max\":
-    0.985 },\r\n      \"ZOrder\": 27,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Sidekick 1 Deck\",\r\n     
-    \"PlaceId\": 11,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.0199, \"Max\": 0.12 },\r\n      \"VerticalAnchors\": { \"Min\":
-    0.01, \"Max\": 0.26 },\r\n      \"ZOrder\": 900,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Hero - Sidekick 2 Deck\",\r\n      \"PlaceId\": 12,\r\n      \"IsVisible\":
-    true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.13, \"Max\": 0.23 },\r\n     
-    \"VerticalAnchors\": { \"Min\": 0.01, \"Max\": 0.26 },\r\n      \"ZOrder\": 12,\r\n     
-    \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n     
-    \"PlaceName\": \"Hero - Sidekick 3 Deck\",\r\n      \"PlaceId\": 13,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.24, \"Max\":
-    0.34 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01, \"Max\": 0.26 },\r\n     
-    \"ZOrder\": 13,\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Sidekick 1\",\r\n     
-    \"PlaceId\": 19,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.02, \"Max\": 0.12 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01,
-    \"Max\": 0.26 },\r\n      \"ZOrder\": 19,\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Sidekick
-    2\",\r\n      \"PlaceId\": 20,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.13, \"Max\": 0.23 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01,
-    \"Max\": 0.26 },\r\n      \"ZOrder\": 20,\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Sidekick
-    3\",\r\n      \"PlaceId\": 21,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.24, \"Max\": 0.34 },\r\n      \"VerticalAnchors\": { \"Min\": 0.01,
-    \"Max\": 0.26 },\r\n      \"ZOrder\": 21,\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Player Panel:
-    Central Button (start game etc)\",\r\n      \"PlaceId\": 99,\r\n      \"IsInteractable\":
-    true,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\":
-    0.45, \"Max\": 0.55 },\r\n      \"VerticalAnchors\": { \"Min\": 0.35, \"Max\":
-    0.4 },\r\n      \"ZOrder\": 99,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    4\r\n    },\r\n    {\r\n      \"PlaceName\": \"CHEAT PANEL\",\r\n      \"PlaceId\":
-    100,\r\n      \"IsInteractable\": true,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0, \"Max\": 1 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.8, \"Max\": 1 },\r\n      \"ZOrder\": 9000,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy Deck\",\r\n      \"PlaceId\": 24,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.211, \"Max\": 0.302 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.8715, \"Max\": 1 },\r\n      \"ZOrder\": 24,\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy Hand\",\r\n      \"PlaceId\": 25,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.211, \"Max\": 0.302 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.8715, \"Max\": 1 },\r\n      \"ZOrder\": 25,\r\n      \"CardFaceOption\":
+    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
     0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Fight Button\",\r\n      \"PlaceId\": 28,\r\n      \"IsInteractable\": true,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.45, \"Max\":
-    0.55 },\r\n      \"VerticalAnchors\": { \"Min\": 0.35, \"Max\": 0.4 },\r\n     
-    \"ZOrder\": 28,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    4\r\n    },\r\n    {\r\n      \"PlaceName\": \"Take Card Button\",\r\n      \"PlaceId\":
-    51,\r\n      \"IsInteractable\": true,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.48, \"Max\": 0.52 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.42, \"Max\": 0.44 },\r\n      \"ZOrder\": 51,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 4\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Refuse Card Button\",\r\n      \"PlaceId\": 52,\r\n      \"IsInteractable\":
-    true,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\":
-    0.48, \"Max\": 0.52 },\r\n      \"VerticalAnchors\": { \"Min\": 0.3, \"Max\":
-    0.32 },\r\n      \"ZOrder\": 52,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    4\r\n    },\r\n    {\r\n      \"PlaceName\": \"Tech: Exile Pile\",\r\n      \"PlaceId\":
-    4,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": -0.2,
-    \"Max\": -0.1 },\r\n      \"VerticalAnchors\": { \"Min\": 0.8, \"Max\": 1.05
-    },\r\n      \"ZOrder\": 4,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Player - HP\",\r\n     
-    \"PlaceId\": 60,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.435, \"Max\": 0.495 },\r\n      \"VerticalAnchors\": { \"Min\":
-    0.19, \"Max\": 0.25 },\r\n      \"ZOrder\": 60,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 2\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy/Encounter - HP\",\r\n      \"PlaceId\": 64,\r\n      \"IsVisible\": true,\r\n     
-    \"HorizontalAnchors\": { \"Min\": 0.015, \"Max\": 0.095 },\r\n      \"VerticalAnchors\":
-    { \"Min\": 0.885, \"Max\": 0.965 },\r\n      \"ZOrder\": 64,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 2\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Hero - Sidekick 1 - HP\",\r\n      \"PlaceId\": 61,\r\n      \"IsVisible\":
-    true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.005, \"Max\": 0.065 },\r\n     
-    \"VerticalAnchors\": { \"Min\": 0.19, \"Max\": 0.25 },\r\n      \"ZOrder\": 61,\r\n     
-    \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\": 2\r\n    },\r\n    {\r\n     
-    \"PlaceName\": \"Hero - Sidekick 2 - HP\",\r\n      \"PlaceId\": 62,\r\n     
-    \"IsVisible\": true,\r\n      \"HorizontalAnchors\": { \"Min\": 0.115, \"Max\":
-    0.175 },\r\n      \"VerticalAnchors\": { \"Min\": 0.19, \"Max\": 0.25 },\r\n     
-    \"ZOrder\": 62,\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    2\r\n    },\r\n    {\r\n      \"PlaceName\": \"Hero - Sidekick 3 - HP\",\r\n     
-    \"PlaceId\": 63,\r\n      \"IsVisible\": true,\r\n      \"HorizontalAnchors\":
-    { \"Min\": 0.225, \"Max\": 0.285 },\r\n      \"VerticalAnchors\": { \"Min\":
-    0.19, \"Max\": 0.25 },\r\n      \"ZOrder\": 63,\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 2\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay4: 
+    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
+    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
+    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
+    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
+    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
+    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item Deck\",\r\n      \"PlaceId\": 100,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\": \"Item 1\",\r\n      \"PlaceId\":
+    101,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 2\",\r\n      \"PlaceId\": 102,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.33\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 3\",\r\n      \"PlaceId\":
+    103,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\":
+    \"Item 4\",\r\n      \"PlaceId\": 104,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
+    0.66\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 5\",\r\n      \"PlaceId\":
+    105,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.33,\r\n        \"Max\": 0.66\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 6\",\r\n      \"PlaceId\": 106,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
+    0.66\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n\r\n    {\r\n      \"PlaceName\": \"Item 7\",\r\n      \"PlaceId\":
+    107,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 8\",\r\n      \"PlaceId\": 108,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.66,\r\n        \"Max\":
+    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 9\",\r\n      \"PlaceId\":
+    109,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
+  gameDisplay4: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
+    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
+    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
+    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
+    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
+    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
+    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item Deck\",\r\n      \"PlaceId\": 100,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
+    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    0\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\": \"Item 1\",\r\n      \"PlaceId\":
+    101,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 2\",\r\n      \"PlaceId\": 102,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
+    0.33\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 3\",\r\n      \"PlaceId\":
+    103,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\":
+    \"Item 4\",\r\n      \"PlaceId\": 104,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
+    0.66\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 5\",\r\n      \"PlaceId\":
+    105,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.33,\r\n        \"Max\": 0.66\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 6\",\r\n      \"PlaceId\": 106,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
+    0.66\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n\r\n    {\r\n      \"PlaceName\": \"Item 7\",\r\n      \"PlaceId\":
+    107,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Item 8\",\r\n      \"PlaceId\": 108,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
+    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
+    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
+    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
+    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.66,\r\n        \"Max\":
+    1\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
+    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 9\",\r\n      \"PlaceId\":
+    109,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
+    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
+    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
+    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
+    1,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
   gameState1: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
     1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 3,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"number\", \"Value\":
-    11 }]\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n      \"CardType\": 1,\r\n     
-    \"CardPlace\": 2\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"number\", \"Value\":
-    33 }]\r\n    },\r\n    {\r\n      \"CardId\": 10,\r\n      \"CardType\": 1,\r\n     
-    \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\", \"Value\":
-    1 }]\r\n    },\r\n    {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n     
-    \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\", \"Value\":
-    1 }]\r\n    },\r\n    {\r\n      \"CardId\": 12,\r\n      \"CardType\": 101,\r\n     
-    \"CardPlace\": 4\r\n    },\r\n    {\r\n      \"CardId\": 13,\r\n      \"CardType\":
-    102,\r\n      \"CardPlace\": 5,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n      \"CardType\":
-    103,\r\n      \"CardPlace\": 6,\r\n      \"Attrs\": [{ \"Name\": \"number\",
-    \"Value\": 16 }]\r\n    },\r\n    {\r\n      \"CardId\": 15,\r\n      \"CardType\":
-    104,\r\n      \"CardPlace\": 7,\r\n      \"Attrs\": [{ \"Name\": \"number\",
-    \"Value\": 16 }]\r\n    },\r\n    {\r\n      \"CardId\": 16,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\": 17,\r\n     
-    \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\":
-    18,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    }\r\n  ],\r\n 
-    \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\": 362739873,\r\n    \"z\":
-    521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
+    \"Value\": 1 }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n   
+    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
-    \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\":
-    2,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n    {\r\n     
-    \"CardId\": 3,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n    },\r\n   
-    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 1\r\n   
-    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
-    1\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\": 1,\r\n     
-    \"CardPlace\": 1\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n     
-    \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n      \"CardId\":
-    9,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n    {\r\n     
-    \"CardId\": 10,\r\n      \"CardType\": 1,\r\n      \"CardPlace\": 3\r\n    },\r\n   
-    {\r\n      \"CardId\": 11,\r\n      \"CardType\": 1,\r\n      \"CardPlace\":
-    3\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n      \"CardType\": 103,\r\n     
-    \"CardPlace\": 6,\r\n      \"Attrs\": [{ \"Name\": \"number\", \"Value\": 78
-    }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n    \"y\":
-    362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
+    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
+    12,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 3,\r\n      \"CardType\":
+    13,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n\r\n\r\n\r\n    {\r\n      \"CardId\": 101,\r\n     
+    \"CardType\": 41,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n     
+    \"CardType\": 42,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n     
+    \"CardType\": 43,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
   gameState3: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    147,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 100 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n     
-    \"CardType\": 149,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 100 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    2,\r\n      \"CardType\": 161,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 3,\r\n      \"CardType\": 179,\r\n      \"CardPlace\":
-    99,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 99 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\": 206,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
-    207,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n     
-    \"CardType\": 180,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    7,\r\n      \"CardType\": 180,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 8,\r\n      \"CardType\": 180,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\": 180,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 10,\r\n      \"CardType\":
-    180,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 11,\r\n     
-    \"CardType\": 226,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    12,\r\n      \"CardType\": 235,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    1 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 13,\r\n      \"CardType\": 236,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 14,\r\n      \"CardType\": 132,\r\n     
-    \"CardPlace\": 100,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    100 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\":
-    \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\":
-    0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 15,\r\n      \"CardType\":
-    259,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 16,\r\n     
-    \"CardType\": 265,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    17,\r\n      \"CardType\": 265,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 18,\r\n      \"CardType\": 265,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 19,\r\n      \"CardType\": 265,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 20,\r\n      \"CardType\":
-    265,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 21,\r\n     
-    \"CardType\": 304,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    22,\r\n      \"CardType\": 304,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 23,\r\n      \"CardType\": 301,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 24,\r\n      \"CardType\": 301,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 25,\r\n      \"CardType\":
-    305,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 26,\r\n     
-    \"CardType\": 305,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    27,\r\n      \"CardType\": 311,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 1 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 28,\r\n      \"CardType\": 312,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 1 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 29,\r\n      \"CardType\": 312,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 1 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 30,\r\n      \"CardType\":
-    312,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    1 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 31,\r\n     
-    \"CardType\": 319,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 1 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    32,\r\n      \"CardType\": 319,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 1 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 33,\r\n      \"CardType\": 310,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 34,\r\n      \"CardType\": 310,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 35,\r\n      \"CardType\":
-    310,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 36,\r\n     
-    \"CardType\": 308,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    37,\r\n      \"CardType\": 308,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 38,\r\n      \"CardType\": 300,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 39,\r\n      \"CardType\": 300,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 40,\r\n      \"CardType\":
-    303,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 41,\r\n     
-    \"CardType\": 303,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    42,\r\n      \"CardType\": 307,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 43,\r\n      \"CardType\": 307,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 44,\r\n      \"CardType\": 307,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 45,\r\n      \"CardType\":
-    332,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 46,\r\n     
-    \"CardType\": 332,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 1 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    47,\r\n      \"CardType\": 332,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    1 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 48,\r\n      \"CardType\": 306,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 49,\r\n      \"CardType\": 306,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 50,\r\n      \"CardType\":
-    302,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 51,\r\n     
-    \"CardType\": 302,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    1 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    52,\r\n      \"CardType\": 302,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 1 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 53,\r\n      \"CardType\": 331,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    },\r\n    {\r\n      \"CardId\": 54,\r\n      \"CardType\": 331,\r\n     
-    \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\":
-    1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\",
-    \"Value\": 0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 0 },\r\n       
-    { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\":
-    0 },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n        { \"Name\":
-    \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\":
-    0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 55,\r\n      \"CardType\":
-    331,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\":
-    \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\": 0 },\r\n       
-    { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\": \"sidekick\",
-    \"Value\": 0 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\": \"enemy\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\":
-    \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\": 1 },\r\n       
-    { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\",
-    \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\": 56,\r\n     
-    \"CardType\": 157,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n       
-    { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\", \"Value\":
-    0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n        { \"Name\":
-    \"sidekick\", \"Value\": 1 },\r\n        { \"Name\": \"hpPlaceId\", \"Value\":
-    0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n        { \"Name\":
-    \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\": 0 },\r\n       
-    { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\": \"loot\", \"Value\":
-    0 },\r\n        { \"Name\": \"highlighted\", \"Value\": 0 },\r\n        { \"Name\":
-    \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n    {\r\n      \"CardId\":
-    57,\r\n      \"CardType\": 314,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\":
-    [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n        { \"Name\": \"hp\",
-    \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\": 0 },\r\n       
-    { \"Name\": \"sidekick\", \"Value\": 2 },\r\n        { \"Name\": \"hpPlaceId\",
-    \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\": 0 },\r\n       
-    { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\": \"ownerHP\", \"Value\":
-    0 },\r\n        { \"Name\": \"number\", \"Value\": 0 },\r\n        { \"Name\":
-    \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\", \"Value\":
-    0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n      ]\r\n    },\r\n   
-    {\r\n      \"CardId\": 58,\r\n      \"CardType\": 315,\r\n      \"CardPlace\":
-    1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"place\", \"Value\": 1 },\r\n       
-    { \"Name\": \"hp\", \"Value\": 0 },\r\n        { \"Name\": \"deckPlace\", \"Value\":
-    0 },\r\n        { \"Name\": \"sidekick\", \"Value\": 3 },\r\n        { \"Name\":
-    \"hpPlaceId\", \"Value\": 0 },\r\n        { \"Name\": \"ownerId\", \"Value\":
-    0 },\r\n        { \"Name\": \"enemy\", \"Value\": 0 },\r\n        { \"Name\":
-    \"ownerHP\", \"Value\": 0 },\r\n        { \"Name\": \"number\", \"Value\": 0
-    },\r\n        { \"Name\": \"loot\", \"Value\": 0 },\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 0 },\r\n        { \"Name\": \"fightsWon\", \"Value\": 0 }\r\n     
-    ]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState4: 
+    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
+    12,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 3,\r\n      \"CardType\":
+    13,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\":
+    21,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
+    22,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
+    23,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n\r\n\r\n\r\n\r\n    {\r\n      \"CardId\": 101,\r\n     
+    \"CardType\": 41,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n     
+    \"CardType\": 42,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n     
+    \"CardType\": 43,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n     
+    \"CardType\": 51,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n     
+    \"CardType\": 52,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n     
+    \"CardType\": 53,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
+    \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState4: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\":
+    21,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
+    22,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
+    23,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
+    31,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n      \"CardType\":
+    32,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\":
+    33,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n\r\n\r\n\r\n\r\n    \r\n    {\r\n      \"CardId\":
+    104,\r\n      \"CardType\": 51,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
+    105,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
+    106,\r\n      \"CardType\": 53,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
+    61,\r\n      \"CardType\": 61,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
+    62,\r\n      \"CardType\": 62,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
+    63,\r\n      \"CardType\": 63,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
+    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState5: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
+    31,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n      \"CardType\":
+    32,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\":
+    33,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 61,\r\n      \"CardType\":
+    61,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 62,\r\n      \"CardType\":
+    62,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 63,\r\n      \"CardType\":
+    63,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n\r\n     {\r\n      \"CardId\": 101,\r\n      \"CardType\":
+    101,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n      \"CardType\":
+    102,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n      \"CardType\":
+    103,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n      \"CardType\":
+    104,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n      \"CardType\":
+    105,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n      \"CardType\":
+    106,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 107,\r\n      \"CardType\":
+    107,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 108,\r\n      \"CardType\":
+    108,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 109,\r\n      \"CardType\":
+    109,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState6: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 101,\r\n      \"CardType\":
+    101,\r\n      \"CardPlace\": 101,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n      \"CardType\":
+    102,\r\n      \"CardPlace\": 102,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n      \"CardType\":
+    103,\r\n      \"CardPlace\": 103,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n      \"CardType\":
+    104,\r\n      \"CardPlace\": 104,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n      \"CardType\":
+    105,\r\n      \"CardPlace\": 105,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n      \"CardType\":
+    106,\r\n      \"CardPlace\": 106,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 107,\r\n      \"CardType\":
+    107,\r\n      \"CardPlace\": 107,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 108,\r\n      \"CardType\":
+    108,\r\n      \"CardPlace\": 108,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 109,\r\n      \"CardType\":
+    109,\r\n      \"CardPlace\": 109,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState7: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
+    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
   gameOverPopup1: "{\r\n  \"Title\": \"Game over\",\r\n  \"Description\": \"Description
     goes here\"\r\n}\r\n"
 --- !u!4 &1444101897

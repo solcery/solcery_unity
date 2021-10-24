@@ -27,7 +27,13 @@ namespace Solcery.UI
         {
             if (UIBoard.Instance.GetBoardPlace(departedCard.To, out var toPlace))
             {
-                var destinationCardsParent = toPlace.GetCardsParent();
+                if (toPlace == null)
+                    return;
+
+                var destinationCardsParent = toPlace?.GetCardsParent();
+
+                if (destinationCardsParent == null)
+                    return;
 
                 if (cardToDelete == null)
                     return;
@@ -72,6 +78,9 @@ namespace Solcery.UI
                 {
                     if (_clonedCards.TryGetValue(departedCard.CardData.CardId, out var cardClone))
                     {
+                        if (cardClone == null)
+                            continue;
+
                         var cardId = departedCard.CardData.CardId;
                         var cardRect = cardClone.GetComponent<RectTransform>();
                         var cardSize = cardRect.rect.size;
