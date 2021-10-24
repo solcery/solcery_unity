@@ -269,7 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f66f11eb42cd6439ef824baadc8b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakingMaterial: {fileID: 2100000, guid: b20da97045ecb2940a96c99d2c4adef3, type: 2}
   button: {fileID: 3582159502477088645}
+  buttonImage: {fileID: 7763182556657244684}
   buttonText: {fileID: 3200764471394997283}
   outline: {fileID: 172010436317481202}
   bgImage: {fileID: 2382666100971317217}

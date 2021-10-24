@@ -11,7 +11,9 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private Material shakingMaterial = null;
         [SerializeField] private Button button = null;
+        [SerializeField] private Image buttonImage = null;
         // [SerializeField] private Image image = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
         // [SerializeField] private Material outline = null;
@@ -83,7 +85,12 @@ namespace Solcery.UI
                 return;
             }
 
-            button.onClick.AddListener(() => UnityToReact.Instance?.CallCastCard(_topCardData.CardId));
+            SetShaking(false);
+            button.onClick.AddListener(() =>
+            {
+                SetShaking(true);
+                UnityToReact.Instance?.CallCastCard(_topCardData.CardId);
+            });
 
             _topCardType = gameContent.GetCardTypeById(_topCardData.CardType);
 
@@ -130,6 +137,14 @@ namespace Solcery.UI
         {
             if (outline != null)
                 outline?.SetActive(isHighlighted);
+        }
+
+        private void SetShaking(bool isShaking)
+        {
+            if (buttonImage == null)
+                return;
+
+            buttonImage.material = isShaking ? shakingMaterial : null;
         }
     }
 }
