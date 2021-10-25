@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 3200764471413365605}
   - component: {fileID: 3200764471413365602}
   - component: {fileID: 8441973818056527902}
+  - component: {fileID: 7068555638214088443}
   m_Layer: 5
   m_Name: UIButton
   m_TagString: Untagged
@@ -269,12 +270,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f66f11eb42cd6439ef824baadc8b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakingMaterial: {fileID: 2100000, guid: b20da97045ecb2940a96c99d2c4adef3, type: 2}
+  animator: {fileID: 7068555638214088443}
   button: {fileID: 3582159502477088645}
-  buttonImage: {fileID: 7763182556657244684}
   buttonText: {fileID: 3200764471394997283}
   outline: {fileID: 172010436317481202}
   bgImage: {fileID: 2382666100971317217}
+--- !u!95 &7068555638214088443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200764471413365606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa94ee76329525442a8491b429cc5349, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7968341354002788284
 GameObject:
   m_ObjectHideFlags: 0

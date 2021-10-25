@@ -11,12 +11,9 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
-        [SerializeField] private Material shakingMaterial = null;
+        [SerializeField] private Animator animator = null;
         [SerializeField] private Button button = null;
-        [SerializeField] private Image buttonImage = null;
-        // [SerializeField] private Image image = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
-        // [SerializeField] private Material outline = null;
         [SerializeField] private GameObject outline = null;
         [SerializeField] protected Image bgImage = null;
 
@@ -141,10 +138,8 @@ namespace Solcery.UI
 
         private void SetShaking(bool isShaking)
         {
-            if (buttonImage == null)
-                return;
-
-            buttonImage.material = isShaking ? shakingMaterial : null;
+            if (animator != null)
+                animator.SetBool("IsShaking", isShaking);
         }
     }
 }
