@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -283,6 +284,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      UIEffect_Demo_red: 21300010
+      UIEffect_Demo_Unity-chan: 21300012
+      old_medium: 21300004
+      old_fast: 21300002
+      UIEffect_Demo_Dark_Silhouette: 21300006
+      old_detail: 21300000
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
