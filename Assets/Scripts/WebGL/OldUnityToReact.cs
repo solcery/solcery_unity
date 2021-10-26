@@ -22,63 +22,63 @@ namespace Solcery.WebGL
 
         public void CallOnUnityLoaded()
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            OnUnityLoaded ("message");
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             OnUnityLoaded ("message");
+// #endif
         }
 
         public void CallOpenLinkInNewTab(string link)
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            OpenLinkInNewTab (link);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             OpenLinkInNewTab (link);
+// #endif
         }
 
         public void CallUpdateCard(CollectionCardType card)
         {
             var cardJson = JsonConvert.SerializeObject(card);
 
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            UpdateCard(cardJson);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             UpdateCard(cardJson);
+// #endif
         }
 
         public void CallUpdateRuleset(string ruleset)
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            UpdateRuleset(ruleset);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             UpdateRuleset(ruleset);
+// #endif
         }
 
         public void CallCreateBoard()
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            CreateBoard();
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             CreateBoard();
+// #endif
         }
 
         public void CallJoinBoard(string gameKey)
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            JoinBoard(gameKey);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             JoinBoard(gameKey);
+// #endif
         }
 
         public void CallLogAction(LogData logData)
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            var logDataJson = JsonConvert.SerializeObject(logData);
-            LogAction(logDataJson);
-#else
-            Log.Instance?.FakeLogAction(logData);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             var logDataJson = JsonConvert.SerializeObject(logData);
+//             LogAction(logDataJson);
+// #else
+//             Log.Instance?.FakeLogAction(logData);
+// #endif
         }
 
         public void CallGameOverCallback(string callback)
         {
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-            GameOverCallback(callback);
-#endif
+// #if (UNITY_WEBGL && !UNITY_EDITOR)
+//             GameOverCallback(callback);
+// #endif
         }
     }
 }
