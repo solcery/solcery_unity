@@ -149,10 +149,9 @@ namespace Solcery.UI
         private void CheckPixelsPerUnit()
         {
             var pixelsPerUnit = defaultPixelsPerUnit;
-            if (_topCardData.TryGetAttrValue("pixelsPerUnit", out var pixelsPerUnitInt))
-            {
-                pixelsPerUnit = (float)((float)pixelsPerUnitInt / 1000);
-            }
+
+            if (_displayData.PixelsPerUnit != 0)
+                pixelsPerUnit = (float)((float)_displayData.PixelsPerUnit / 10000);
 
             if (outlineImage != null)
                 outlineImage.pixelsPerUnitMultiplier = pixelsPerUnit;
