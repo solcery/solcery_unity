@@ -151,6 +151,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 550124341}
   m_RootOrder: 0
@@ -225,6 +226,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298485635}
   m_RootOrder: 0
@@ -270,6 +272,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 592665501}
   m_RootOrder: 0
@@ -321,6 +324,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 761968071}
   - {fileID: 851461777}
@@ -360,6 +364,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1700721417}
   m_RootOrder: 1
@@ -494,6 +499,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2107706760}
   - {fileID: 1844096324}
@@ -526,6 +532,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 27923146}
   - {fileID: 1711342658}
@@ -563,6 +570,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1851372073}
   - {fileID: 1913691975}
@@ -576,7 +584,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &386911354
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -589,6 +597,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -635,6 +644,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1603733014}
   m_RootOrder: 2
@@ -735,6 +745,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -766,6 +777,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298485635}
   m_RootOrder: 2
@@ -810,6 +822,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1432915053}
   m_RootOrder: 1
@@ -841,6 +854,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 10761575}
   m_Father: {fileID: 1603733014}
@@ -902,6 +916,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 36627920}
   - {fileID: 1025429758}
@@ -935,6 +950,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -987,6 +1003,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298485635}
   m_RootOrder: 3
@@ -1033,6 +1050,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 44720798}
   m_RootOrder: 0
@@ -1187,6 +1205,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1220,6 +1239,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1169705701}
   m_Father: {fileID: 44720798}
@@ -1340,6 +1360,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1281578444}
   m_RootOrder: 0
@@ -1415,6 +1436,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0954452, y: 1.0954452, z: 1.0954452}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1998882243}
   - {fileID: 44720798}
@@ -1491,6 +1513,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 592665501}
   m_RootOrder: 1
@@ -1544,6 +1567,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 851461777}
   m_RootOrder: 0
@@ -1678,6 +1702,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1603733014}
   m_RootOrder: 0
@@ -1914,6 +1939,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 904714651}
   - {fileID: 1420752928}
@@ -1978,6 +2004,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1697962376}
   - {fileID: 1833579696}
@@ -1991,7 +2018,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1331555920
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2004,6 +2031,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2051,6 +2079,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2022110410}
   m_RootOrder: 0
@@ -2126,6 +2155,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1465126209}
   m_RootOrder: 1
@@ -2259,6 +2289,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 386911353}
   - {fileID: 1465126209}
@@ -2483,6 +2514,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 298485635}
   - {fileID: 527275142}
@@ -2529,558 +2561,31 @@ MonoBehaviour:
     SerializationNodes: []
   burnMaterial: {fileID: 2100000, guid: 28c809b059672094f83f786b1c6b7b0e, type: 2}
   gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
-    {\r\n        \"Picture\": 160,\r\n        \"Icon\": 2,\r\n        \"Name\": \"Solcerer\",\r\n       
-    \"Description\": \"Meet your maker\"\r\n      }\r\n    },\r\n\r\n\r\n\r\n   
-    {\r\n      \"Id\": 11,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
-    \"Name\": \"DegenApe\",\r\n        \"Description\": \"Fuck, ok\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 12,\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
-    \"https://arweave.net/R3CO7jcvxTya4A2Mhp16nyrmaB1EaW1v55p16FidRfo/data.png\",\r\n       
-    \"Name\": \"Metabae\",\r\n        \"Description\": \"Waifu material\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 13,\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://arweave.net/ryJ8dd5H756KAitCzgtV2hShap8FYL9iq8nuni6si9g/data.png\",\r\n       
-    \"Name\": \"Snek\",\r\n        \"Description\": \"Hiss-hiss\"\r\n      }\r\n   
-    },\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 21,\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://arweave.net/GIv_mIv9iwJLCkUZrFKBuKNZZplFsgkYAabdrdZXWoY\",\r\n       
-    \"Name\": \"BoldBadger\",\r\n        \"Description\": \"What does the badger
-    say?\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 22,\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://arweave.net/PRQ4HoaZyhR4ZVjsrxoOaWZLhRHzBlLrp-Q5h8lW8wQ?ext=jpeg\",\r\n       
-    \"Name\": \"GalacticGecko\",\r\n        \"Description\": \"Out of this world\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 23,\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://media.howrare.is/images/smb/ff19da7553f7dd0020e008f9a22cfedb.png\",\r\n       
-    \"Name\": \"SMB\",\r\n        \"Description\": \"Essense of wealth\"\r\n     
-    }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 31,\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://6cqx7ekxpqke2kn24pidtpcftghubkiyepgntqlvngptbwnl6iua.arweave.net/8KF_kVd8FE0puuPQObxFmY9AqRgjzNnBdWmfMNmr8ig/?ext=png\",\r\n       
-    \"Name\": \"Meerkat\",\r\n        \"Description\": \"Never talk about the Meerkat
-    club\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 32,\r\n      \"Metadata\":
-    {\r\n        \"PictureUrl\": \"https://4w5qopogxy735ydfrvlfjycvuyho5a2am3g5wtektb3kqmnspl7a.arweave.net/5bsHPca-P77gZY1WVOBVpg7ug0BmzdtMiph2qDGyev4/7569.png\",\r\n       
-    \"Name\": \"Caveman\",\r\n        \"Description\": \"Loves protein\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 33,\r\n      \"Metadata\": {\r\n       
-    \"PictureUrl\": \"https://arweave.net/MJT_IFGBChP3x9SSqcNOwFAi4JlnReQD1I2CTVLp4O0/data.png\",\r\n       
-    \"Name\": \"Slow Patrol\",\r\n        \"Description\": \"Was the last one the
-    get here\"\r\n      }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 41,\r\n     
-    \"Metadata\": {\r\n        \"Picture\": 42,\r\n        \"Name\": \"Imp\",\r\n       
-    \"Description\": \"Troublesome and mischievous\"\r\n      }\r\n    },\r\n   
-    {\r\n      \"Id\": 42,\r\n      \"Metadata\": {\r\n        \"Picture\": 63,\r\n       
-    \"Name\": \"Poison imp\",\r\n        \"Description\": \"Poisonous and sneaky\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 43,\r\n      \"Metadata\": {\r\n       
-    \"Picture\": 76,\r\n        \"Name\": \"Skeleton\",\r\n        \"Description\":
-    \"Undead horror\"\r\n      }\r\n    },\r\n\r\n    {\r\n      \"Id\": 51,\r\n     
-    \"Metadata\": {\r\n        \"Picture\": 74,\r\n        \"Name\": \"Blob\",\r\n       
-    \"Description\": \"Watches you closely\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 52,\r\n      \"Metadata\": {\r\n        \"Picture\": 96,\r\n        \"Name\":
-    \"Werewolf\",\r\n        \"Description\": \"Cursed shapeshifter\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 53,\r\n      \"Metadata\": {\r\n        \"Picture\":
-    31,\r\n        \"Name\": \"Ghoul\",\r\n        \"Description\": \"Born in the
-    graveyard\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 61,\r\n      \"Metadata\":
-    {\r\n        \"Picture\": 16,\r\n        \"Name\": \"Cultist\",\r\n        \"Description\":
-    \"Manifestation of devotion\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    62,\r\n      \"Metadata\": {\r\n        \"Picture\": 110,\r\n        \"Name\":
-    \"Demon\",\r\n        \"Description\": \"Uncut evil\"\r\n      }\r\n    },\r\n   
-    {\r\n      \"Id\": 63,\r\n      \"Metadata\": {\r\n        \"Picture\": 141,\r\n       
-    \"Name\": \"Witch\",\r\n        \"Description\": \"Avoid her at night\"\r\n     
-    }\r\n    },\r\n\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 101,\r\n      \"Metadata\":
-    {\r\n        \"Picture\": 4,\r\n        \"Name\": \"Helmet\",\r\n        \"Description\":
-    \"Your head is safe\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 102,\r\n     
-    \"Metadata\": {\r\n        \"Picture\": 13,\r\n        \"Name\": \"Chest\",\r\n       
-    \"Description\": \"Protects the bones\"\r\n      }\r\n    },\r\n    {\r\n     
-    \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"Picture\": 14,\r\n       
-    \"Name\": \"Coin\",\r\n        \"Description\": \"Toss a coin to your hero\"\r\n     
-    }\r\n    },\r\n    {\r\n      \"Id\": 104,\r\n      \"Metadata\": {\r\n       
-    \"Picture\": 39,\r\n        \"Name\": \"Potion\",\r\n        \"Description\":
-    \"Two is always better\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 105,\r\n     
-    \"Metadata\": {\r\n        \"Picture\": 88,\r\n        \"Name\": \"Tower\",\r\n       
-    \"Description\": \"See far beyond\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
-    106,\r\n      \"Metadata\": {\r\n        \"Picture\": 90,\r\n        \"Name\":
-    \"Waggon\",\r\n        \"Description\": \"Caravan stories\"\r\n      }\r\n   
-    },\r\n    {\r\n      \"Id\": 107,\r\n      \"Metadata\": {\r\n        \"Picture\":
-    92,\r\n        \"Name\": \"Warpstone\",\r\n        \"Description\": \"Necessity
-    for crafting\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 108,\r\n      \"Metadata\":
-    {\r\n        \"Picture\": 128,\r\n        \"Name\": \"Elixir\",\r\n        \"Description\":
-    \"Cast without limits\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 109,\r\n     
-    \"Metadata\": {\r\n        \"Picture\": 130,\r\n        \"Name\": \"Armor\",\r\n       
-    \"Description\": \"Heavy and thick\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+    {\r\n        \"Name\": \"Button\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent2: 
   gameContent3: 
   gameContent4: 
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
-    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
-    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
-    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
-    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
-    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay3: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
-    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
-    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
-    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
-    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
-    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item Deck\",\r\n      \"PlaceId\": 100,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\": \"Item 1\",\r\n      \"PlaceId\":
-    101,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 2\",\r\n      \"PlaceId\": 102,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.33\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 3\",\r\n      \"PlaceId\":
-    103,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
+    \"Button\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"IsVisible\":
+    true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\": 100,\r\n      \"HorizontalAnchors\":
     {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\":
-    \"Item 4\",\r\n      \"PlaceId\": 104,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
-    0.66\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 5\",\r\n      \"PlaceId\":
-    105,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.33,\r\n        \"Max\": 0.66\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 6\",\r\n      \"PlaceId\": 106,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
-    0.66\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n\r\n    {\r\n      \"PlaceName\": \"Item 7\",\r\n      \"PlaceId\":
-    107,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 8\",\r\n      \"PlaceId\": 108,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.66,\r\n        \"Max\":
-    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 9\",\r\n      \"PlaceId\":
-    109,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay4: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.1,\r\n        \"Max\": 0.9\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekicks Deck\",\r\n      \"PlaceId\": 3,\r\n      \"Player\": 0,\r\n     
-    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": false,\r\n     
-    \"IsInteractable\": true,\r\n      \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n     
-    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
-    0.75,\r\n        \"Max\": 0.9\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
-    \"Min\": 0.3,\r\n        \"Max\": 0.7\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 1\",\r\n      \"PlaceId\": 11,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Sidekick 2\",\r\n      \"PlaceId\":
-    12,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.4\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Sidekick 3\",\r\n      \"PlaceId\": 13,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.4\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n\r\n\r\n    \r\n    {\r\n      \"PlaceName\": \"Enemy Deck\",\r\n     
-    \"PlaceId\": 20,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 1\",\r\n      \"PlaceId\":
-    21,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.05,\r\n        \"Max\": 0.25\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Enemy 2\",\r\n      \"PlaceId\": 22,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.25,\r\n        \"Max\": 0.45\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.6,\r\n        \"Max\":
-    1\r\n      },\r\n      \"CardFaceOption\": 0,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n    {\r\n      \"PlaceName\": \"Enemy 3\",\r\n      \"PlaceId\":
-    23,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.45,\r\n        \"Max\": 0.65\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.6,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 0\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item Deck\",\r\n      \"PlaceId\": 100,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": false,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.75,\r\n        \"Max\": 0.9\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.3,\r\n        \"Max\":
-    0.7\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    0\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\": \"Item 1\",\r\n      \"PlaceId\":
-    101,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 2\",\r\n      \"PlaceId\": 102,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\":
-    0.33\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 3\",\r\n      \"PlaceId\":
-    103,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.33\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n\r\n\r\n    {\r\n      \"PlaceName\":
-    \"Item 4\",\r\n      \"PlaceId\": 104,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
-    0.66\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 5\",\r\n      \"PlaceId\":
-    105,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.33,\r\n        \"Max\": 0.66\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 6\",\r\n      \"PlaceId\": 106,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.33,\r\n        \"Max\":
-    0.66\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n\r\n    {\r\n      \"PlaceName\": \"Item 7\",\r\n      \"PlaceId\":
-    107,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0,\r\n        \"Max\": 0.2\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
-    \"Item 8\",\r\n      \"PlaceId\": 108,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\":
-    false,\r\n      \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n     
-    \"ZOrder\": 1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n     
-    \"HorizontalAnchors\": {\r\n        \"Min\": 0.2,\r\n        \"Max\": 0.4\r\n     
-    },\r\n      \"VerticalAnchors\": {\r\n        \"Min\": 0.66,\r\n        \"Max\":
-    1\r\n      },\r\n      \"CardFaceOption\": 1,\r\n      \"CardLayoutOption\":
-    1\r\n    },\r\n    {\r\n      \"PlaceName\": \"Item 9\",\r\n      \"PlaceId\":
-    109,\r\n      \"Player\": 0,\r\n      \"AreCardsInteractableIfMeIsActive\": false,\r\n     
-    \"IsVisible\": true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\":
-    1,\r\n      \"HasBg\": false,\r\n      \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.66,\r\n        \"Max\": 1\r\n      },\r\n      \"CardFaceOption\":
-    1,\r\n      \"CardLayoutOption\": 1\r\n    }\r\n  ]\r\n}\r\n"
+    {\r\n        \"Min\": 0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 4\r\n    }\r\n  ]\r\n}\r\n"
+  gameDisplay2: 
+  gameDisplay3: 
+  gameDisplay4: 
   gameState1: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    }\r\n  ],\r\n  \"Random\": {\r\n    \"x\": 123691089,\r\n   
-    \"y\": 362739873,\r\n    \"z\": 521288629,\r\n    \"w\": 88675123\r\n  }\r\n}\r\n"
+    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"highlighted\",
+    \"Value\": 1 },\r\n        { \"Name\": \"pixelsPerUnit\", \"Value\": 1000 }\r\n     
+    ]\r\n    }\r\n  ]\r\n}\r\n"
   gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
-    11,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
-    12,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 3,\r\n      \"CardType\":
-    13,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n\r\n\r\n\r\n    {\r\n      \"CardId\": 101,\r\n     
-    \"CardType\": 41,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n     
-    \"CardType\": 42,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n     
-    \"CardType\": 43,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState3: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
-    11,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
-    12,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 3,\r\n      \"CardType\":
-    13,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\":
-    21,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
-    22,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
-    23,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n\r\n\r\n\r\n\r\n    {\r\n      \"CardId\": 101,\r\n     
-    \"CardType\": 41,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n     
-    \"CardType\": 42,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n     
-    \"CardType\": 43,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n     
-    \"CardType\": 51,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n     
-    \"CardType\": 52,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n     
-    \"CardType\": 53,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\": [{ \"Name\":
-    \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState4: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 4,\r\n      \"CardType\":
-    21,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 5,\r\n      \"CardType\":
-    22,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 6,\r\n      \"CardType\":
-    23,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    31,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n      \"CardType\":
-    32,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\":
-    33,\r\n      \"CardPlace\": 3,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n\r\n\r\n\r\n\r\n    \r\n    {\r\n      \"CardId\":
-    104,\r\n      \"CardType\": 51,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
-    105,\r\n      \"CardType\": 52,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
-    106,\r\n      \"CardType\": 53,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
-    61,\r\n      \"CardType\": 61,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
-    62,\r\n      \"CardType\": 62,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\":
-    63,\r\n      \"CardType\": 63,\r\n      \"CardPlace\": 20,\r\n      \"Attrs\":
-    [{ \"Name\": \"highlighted\", \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState5: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 7,\r\n      \"CardType\":
-    31,\r\n      \"CardPlace\": 11,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 8,\r\n      \"CardType\":
-    32,\r\n      \"CardPlace\": 12,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 9,\r\n      \"CardType\":
-    33,\r\n      \"CardPlace\": 13,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 61,\r\n      \"CardType\":
-    61,\r\n      \"CardPlace\": 21,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 62,\r\n      \"CardType\":
-    62,\r\n      \"CardPlace\": 22,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 63,\r\n      \"CardType\":
-    63,\r\n      \"CardPlace\": 23,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n\r\n     {\r\n      \"CardId\": 101,\r\n      \"CardType\":
-    101,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n      \"CardType\":
-    102,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n      \"CardType\":
-    103,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n      \"CardType\":
-    104,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n      \"CardType\":
-    105,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n      \"CardType\":
-    106,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 107,\r\n      \"CardType\":
-    107,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 108,\r\n      \"CardType\":
-    108,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 109,\r\n      \"CardType\":
-    109,\r\n      \"CardPlace\": 100,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState6: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 2,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 101,\r\n      \"CardType\":
-    101,\r\n      \"CardPlace\": 101,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 102,\r\n      \"CardType\":
-    102,\r\n      \"CardPlace\": 102,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 103,\r\n      \"CardType\":
-    103,\r\n      \"CardPlace\": 103,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 104,\r\n      \"CardType\":
-    104,\r\n      \"CardPlace\": 104,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 105,\r\n      \"CardType\":
-    105,\r\n      \"CardPlace\": 105,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 106,\r\n      \"CardType\":
-    106,\r\n      \"CardPlace\": 106,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 107,\r\n      \"CardType\":
-    107,\r\n      \"CardPlace\": 107,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 108,\r\n      \"CardType\":
-    108,\r\n      \"CardPlace\": 108,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    },\r\n    {\r\n      \"CardId\": 109,\r\n      \"CardType\":
-    109,\r\n      \"CardPlace\": 109,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState7: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
-    \"Value\": 0 }]\r\n    }\r\n  ]\r\n}\r\n"
+    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"highlighted\",
+    \"Value\": 1 }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState3: 
+  gameState4: 
+  gameState5: 
+  gameState6: 
+  gameState7: 
   gameOverPopup1: "{\r\n  \"Title\": \"Game over\",\r\n  \"Description\": \"Description
     goes here\"\r\n}\r\n"
 --- !u!4 &1444101897
@@ -3093,6 +2598,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3125,6 +2631,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1266997897}
   - {fileID: 1419278409}
@@ -3138,7 +2645,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1465126210
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3151,6 +2658,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3197,6 +2705,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298485635}
   m_RootOrder: 4
@@ -3243,6 +2752,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1700721417}
   m_RootOrder: 0
@@ -3404,6 +2914,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1209255632}
   - {fileID: 550124341}
@@ -3529,6 +3040,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1700721417}
   m_Father: {fileID: 0}
@@ -3663,6 +3175,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1512261940}
   - {fileID: 116322282}
@@ -3701,6 +3214,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298485635}
   m_RootOrder: 1
@@ -3747,6 +3261,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331555919}
   m_RootOrder: 1
@@ -3880,6 +3395,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 159621755}
   m_RootOrder: 1
@@ -4062,6 +3578,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 386911353}
   m_RootOrder: 1
@@ -4196,6 +3713,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2030102016}
   m_Father: {fileID: 938487473}
@@ -4335,6 +3853,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1349680054}
   - {fileID: 938487473}
@@ -4399,6 +3918,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998882243}
   m_RootOrder: 0
@@ -4532,6 +4052,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 159621755}
   m_RootOrder: 0

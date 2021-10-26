@@ -11,11 +11,14 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private float defaultPixelsPerUnit;
         [SerializeField] private Animator animator = null;
         [SerializeField] private Button button = null;
         [SerializeField] private TextMeshProUGUI buttonText = null;
         [SerializeField] private GameObject outline = null;
         [SerializeField] protected Image bgImage = null;
+        [SerializeField] private Image outlineImage = null;
+        [SerializeField] private Image buttonImage = null;
 
 
         private PlaceDisplayData _displayData;
@@ -103,6 +106,7 @@ namespace Solcery.UI
                 buttonText.text = _topCardType.Metadata.Name;
 
             CheckIfHighlighted();
+            CheckPixelsPerUnit();
         }
 
         private void SetBgColor()
@@ -140,6 +144,21 @@ namespace Solcery.UI
         {
             if (animator != null)
                 animator.SetBool("IsShaking", isShaking);
+        }
+
+        private void CheckPixelsPerUnit()
+        {
+            var pixelsPerUnit = defaultPixelsPerUnit;
+            if (_topCardData.TryGetAttrValue("pixelsPerUnit", out var pixelsPerUnitInt))
+            {
+                pixelsPerUnit = (float)((float)pixelsPerUnitInt / 1000);
+            }
+
+            if (outlineImage != null)
+                outlineImage.pixelsPerUnitMultiplier = pixelsPerUnit;
+
+            if (buttonImage != null)
+                buttonImage.pixelsPerUnitMultiplier = pixelsPerUnit;
         }
     }
 }
