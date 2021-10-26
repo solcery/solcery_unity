@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
-    OnUnityLoaded: function (message) {
-      ReactUnityWebGL.OnUnityLoaded(Pointer_stringify(message));
+    OnUnityLoaded: function () {
+      ReactUnityWebGL.OnUnityLoaded();
     },
     OnGameOverPopupButtonClicked: function () {
       ReactUnityWebGL.OnGameOverPopupButtonClicked();

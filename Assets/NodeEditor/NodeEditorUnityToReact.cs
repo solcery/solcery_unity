@@ -11,18 +11,18 @@ namespace Solcery.NodeEditor
 
         public void CallOnNodeEditorLoaded()
         {
-// #if (UNITY_WEBGL && !UNITY_EDITOR)
-//             OnNodeEditorLoaded();
-// #endif
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            OnNodeEditorLoaded();
+#endif
         }
 
         public void CallSaveBrickTree(BrickTree brickTree)
         {
-//             var brickTreeJson = JsonConvert.SerializeObject(brickTree);
+            var brickTreeJson = JsonConvert.SerializeObject(brickTree);
 
-// #if (UNITY_WEBGL && !UNITY_EDITOR)
-//             SaveBrickTree(brickTreeJson);
-// #endif
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+            SaveBrickTree(brickTreeJson);
+#endif
         }
     }
 }
