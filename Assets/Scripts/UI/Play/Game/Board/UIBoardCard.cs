@@ -35,6 +35,7 @@ namespace Solcery.UI
         private Action<int> _onCardCasted;
 
         private bool _isFaceDown;
+        private bool _oldIsInteractable;
         private bool _isInteractable;
         private bool _showCoins;
         private bool _pointerDown = false;
@@ -85,6 +86,7 @@ namespace Solcery.UI
         public void SetInteractabe(bool isInteractable)
         {
             _isInteractable = isInteractable;
+            _oldIsInteractable = _isInteractable;
             _pointerDown = false;
             // if (faceUpPointerHandler != null)
             //     faceUpPointerHandler.enabled = !IsFaceDown;
@@ -116,6 +118,11 @@ namespace Solcery.UI
 
         public void StopShaking()
         {
+            // Debug.Log("StopShaking");
+            // faceUpPointerHandler.enabled = true;
+            // faceDownPointerHandler.enabled = true;
+            _isInteractable = _oldIsInteractable;
+
             if (animator != null)
                 animator?.SetBool("IsPressed", false);
         }
@@ -278,10 +285,12 @@ namespace Solcery.UI
 
             if (_pointerDown)
             {
-                faceUpPointerHandler.enabled = false;
-                faceDownPointerHandler.enabled = false;
+                // faceUpPointerHandler.enabled = false;
+                // faceDownPointerHandler.enabled = false;
                 animator?.SetBool("IsPressed", true);
-                _isPointerOver = false;
+                // _isPointerOver = false;
+                _oldIsInteractable = _isInteractable;
+                _isInteractable = false;
                 _onCardCasted?.Invoke(_cardData.CardId);
             }
         }

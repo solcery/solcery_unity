@@ -2529,35 +2529,111 @@ MonoBehaviour:
     SerializationNodes: []
   burnMaterial: {fileID: 2100000, guid: 28c809b059672094f83f786b1c6b7b0e, type: 2}
   gameContent1: "{\r\n  \"CardTypes\": [\r\n    {\r\n      \"Id\": 1,\r\n      \"Metadata\":
-    {\r\n        \"Name\": \"Button\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+    {\r\n        \"Picture\": 160,\r\n        \"Icon\": 2,\r\n        \"Name\": \"Solcerer\",\r\n       
+    \"Description\": \"Meet your maker\"\r\n      }\r\n    },\r\n\r\n\r\n\r\n   
+    {\r\n      \"Id\": 11,\r\n      \"Metadata\": {\r\n        \"PictureUrl\": \"https://media.howrare.is/images/da/21337ed603e2248c4434a47e15c30e08.jpg\",\r\n       
+    \"Name\": \"DegenApe\",\r\n        \"Description\": \"Fuck, ok\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 12,\r\n      \"Metadata\": {\r\n        \"PictureUrl\":
+    \"https://arweave.net/R3CO7jcvxTya4A2Mhp16nyrmaB1EaW1v55p16FidRfo/data.png\",\r\n       
+    \"Name\": \"Metabae\",\r\n        \"Description\": \"Waifu material\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 13,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/ryJ8dd5H756KAitCzgtV2hShap8FYL9iq8nuni6si9g/data.png\",\r\n       
+    \"Name\": \"Snek\",\r\n        \"Description\": \"Hiss-hiss\"\r\n      }\r\n   
+    },\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 21,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/GIv_mIv9iwJLCkUZrFKBuKNZZplFsgkYAabdrdZXWoY\",\r\n       
+    \"Name\": \"BoldBadger\",\r\n        \"Description\": \"What does the badger
+    say?\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 22,\r\n      \"Metadata\":
+    {\r\n        \"PictureUrl\": \"https://arweave.net/PRQ4HoaZyhR4ZVjsrxoOaWZLhRHzBlLrp-Q5h8lW8wQ?ext=jpeg\",\r\n       
+    \"Name\": \"GalacticGecko\",\r\n        \"Description\": \"Out of this world\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 23,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://media.howrare.is/images/smb/ff19da7553f7dd0020e008f9a22cfedb.png\",\r\n       
+    \"Name\": \"SMB\",\r\n        \"Description\": \"Essense of wealth\"\r\n     
+    }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 31,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://6cqx7ekxpqke2kn24pidtpcftghubkiyepgntqlvngptbwnl6iua.arweave.net/8KF_kVd8FE0puuPQObxFmY9AqRgjzNnBdWmfMNmr8ig/?ext=png\",\r\n       
+    \"Name\": \"Meerkat\",\r\n        \"Description\": \"Never talk about the Meerkat
+    club\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 32,\r\n      \"Metadata\":
+    {\r\n        \"PictureUrl\": \"https://4w5qopogxy735ydfrvlfjycvuyho5a2am3g5wtektb3kqmnspl7a.arweave.net/5bsHPca-P77gZY1WVOBVpg7ug0BmzdtMiph2qDGyev4/7569.png\",\r\n       
+    \"Name\": \"Caveman\",\r\n        \"Description\": \"Loves protein\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 33,\r\n      \"Metadata\": {\r\n       
+    \"PictureUrl\": \"https://arweave.net/MJT_IFGBChP3x9SSqcNOwFAi4JlnReQD1I2CTVLp4O0/data.png\",\r\n       
+    \"Name\": \"Slow Patrol\",\r\n        \"Description\": \"Was the last one the
+    get here\"\r\n      }\r\n    },\r\n\r\n\r\n    {\r\n      \"Id\": 41,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 42,\r\n        \"Name\": \"Imp\",\r\n       
+    \"Description\": \"Troublesome and mischievous\"\r\n      }\r\n    },\r\n   
+    {\r\n      \"Id\": 42,\r\n      \"Metadata\": {\r\n        \"Picture\": 63,\r\n       
+    \"Name\": \"Poison imp\",\r\n        \"Description\": \"Poisonous and sneaky\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 43,\r\n      \"Metadata\": {\r\n       
+    \"Picture\": 76,\r\n        \"Name\": \"Skeleton\",\r\n        \"Description\":
+    \"Undead horror\"\r\n      }\r\n    },\r\n\r\n    {\r\n      \"Id\": 51,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 74,\r\n        \"Name\": \"Blob\",\r\n       
+    \"Description\": \"Watches you closely\"\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 52,\r\n      \"Metadata\": {\r\n        \"Picture\": 96,\r\n        \"Name\":
+    \"Werewolf\",\r\n        \"Description\": \"Cursed shapeshifter\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 53,\r\n      \"Metadata\": {\r\n        \"Picture\":
+    31,\r\n        \"Name\": \"Ghoul\",\r\n        \"Description\": \"Born in the
+    graveyard\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 61,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 16,\r\n        \"Name\": \"Cultist\",\r\n        \"Description\":
+    \"Manifestation of devotion\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
+    62,\r\n      \"Metadata\": {\r\n        \"Picture\": 110,\r\n        \"Name\":
+    \"Demon\",\r\n        \"Description\": \"Uncut evil\"\r\n      }\r\n    },\r\n   
+    {\r\n      \"Id\": 63,\r\n      \"Metadata\": {\r\n        \"Picture\": 141,\r\n       
+    \"Name\": \"Witch\",\r\n        \"Description\": \"Avoid her at night\"\r\n     
+    }\r\n    },\r\n\r\n\r\n\r\n\r\n    {\r\n      \"Id\": 101,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 4,\r\n        \"Name\": \"Helmet\",\r\n        \"Description\":
+    \"Your head is safe\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 102,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 13,\r\n        \"Name\": \"Chest\",\r\n       
+    \"Description\": \"Protects the bones\"\r\n      }\r\n    },\r\n    {\r\n     
+    \"Id\": 103,\r\n      \"Metadata\": {\r\n        \"Picture\": 14,\r\n       
+    \"Name\": \"Coin\",\r\n        \"Description\": \"Toss a coin to your hero\"\r\n     
+    }\r\n    },\r\n    {\r\n      \"Id\": 104,\r\n      \"Metadata\": {\r\n       
+    \"Picture\": 39,\r\n        \"Name\": \"Potion\",\r\n        \"Description\":
+    \"Two is always better\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 105,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 88,\r\n        \"Name\": \"Tower\",\r\n       
+    \"Description\": \"See far beyond\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\":
+    106,\r\n      \"Metadata\": {\r\n        \"Picture\": 90,\r\n        \"Name\":
+    \"Waggon\",\r\n        \"Description\": \"Caravan stories\"\r\n      }\r\n   
+    },\r\n    {\r\n      \"Id\": 107,\r\n      \"Metadata\": {\r\n        \"Picture\":
+    92,\r\n        \"Name\": \"Warpstone\",\r\n        \"Description\": \"Necessity
+    for crafting\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 108,\r\n      \"Metadata\":
+    {\r\n        \"Picture\": 128,\r\n        \"Name\": \"Elixir\",\r\n        \"Description\":
+    \"Cast without limits\"\r\n      }\r\n    },\r\n    {\r\n      \"Id\": 109,\r\n     
+    \"Metadata\": {\r\n        \"Picture\": 130,\r\n        \"Name\": \"Armor\",\r\n       
+    \"Description\": \"Heavy and thick\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
   gameContent2: 
   gameContent3: 
   gameContent4: 
   gameDisplay1: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Button\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"IsVisible\":
-    true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\": 100,\r\n      \"PixelsPerUnit\"
-    : 10000,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n       
-    \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 4\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay2: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Button\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"IsVisible\":
-    true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\": 100,\r\n      \"PixelsPerUnit\"
-    : 40000,\r\n      \"HorizontalAnchors\": {\r\n        \"Min\": 0.4,\r\n       
-    \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\": {\r\n        \"Min\":
-    0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\": 0,\r\n     
-    \"CardLayoutOption\": 4\r\n    }\r\n  ]\r\n}\r\n"
-  gameDisplay3: "{\r\n  \"PlaceDisplayDatas\": [\r\n    {\r\n      \"PlaceName\":
-    \"Button\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n      \"IsVisible\":
-    true,\r\n      \"IsInteractable\": true,\r\n      \"ZOrder\": 100,\r\n      \"HorizontalAnchors\":
-    {\r\n        \"Min\": 0.4,\r\n        \"Max\": 0.6\r\n      },\r\n      \"VerticalAnchors\":
-    {\r\n        \"Min\": 0.3,\r\n        \"Max\": 0.5\r\n      },\r\n      \"CardFaceOption\":
-    0,\r\n      \"CardLayoutOption\": 4\r\n    }\r\n  ]\r\n}\r\n"
+    \"Solcerer Front\",\r\n      \"PlaceId\": 1,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.3,\r\n        \"Max\": 0.6\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 1\r\n    },\r\n    {\r\n      \"PlaceName\":
+    \"Solcerer Back\",\r\n      \"PlaceId\": 2,\r\n      \"Player\": 0,\r\n     
+    \"AreCardsInteractableIfMeIsActive\": false,\r\n      \"IsVisible\": true,\r\n     
+    \"IsInteractable\": true,\r\n      \"ZOrder\": 11,\r\n      \"HasBg\": false,\r\n     
+    \"BgColor\": \"#FF0000\",\r\n      \"HorizontalAnchors\": {\r\n        \"Min\":
+    0.65,\r\n        \"Max\": 1\r\n      },\r\n      \"VerticalAnchors\": {\r\n       
+    \"Min\": 0.2,\r\n        \"Max\": 0.8\r\n      },\r\n      \"CardFaceOption\":
+    0,\r\n      \"CardLayoutOption\": 0\r\n    }\r\n  ]\r\n}\r\n"
+  gameDisplay2: 
+  gameDisplay3: 
   gameDisplay4: 
   gameState1: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
-    1,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [\r\n        { \"Name\": \"highlighted\",
-    \"Value\": 1 }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
-  gameState2: 
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    }\r\n  ]\r\n}\r\n"
+  gameState2: "{\r\n  \"Cards\": [\r\n    {\r\n      \"CardId\": 0,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 1,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    },\r\n    {\r\n      \"CardId\": 2,\r\n      \"CardType\":
+    11,\r\n      \"CardPlace\": 1,\r\n      \"Attrs\": [{ \"Name\": \"highlighted\",
+    \"Value\": 1 }]\r\n    }\r\n  ]\r\n}\r\n"
   gameState3: 
   gameState4: 
   gameState5: 
