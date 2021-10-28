@@ -42,11 +42,14 @@ namespace Solcery.Modules
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    tasks.Add(GetSpriteAsync(url));
+                    // tasks.Add(GetSpriteAsync(url));
+                    await GetSpriteAsync(url);
+                    // Debug.Log($"add task: {tasks.Count}");
                 }
             }
 
-            await UniTask.WhenAll(tasks);
+            // await UniTask.WhenAll(tasks);
+            Debug.Log("WhenAll");
         }
 
         async UniTask GetSpriteAsync(string url)
@@ -68,6 +71,7 @@ namespace Solcery.Modules
             else
                 SpritesByUrl[url] = sprite;
 
+            Debug.Log("loaded");
             NotifySubscribers(url, sprite);
         }
 
