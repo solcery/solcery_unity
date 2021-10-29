@@ -59,6 +59,10 @@ namespace Solcery.Modules
             // Debug.Log("start loading...");
             var req = UnityWebRequestTexture.GetTexture(url, true);
             var op = await req.SendWebRequest();
+
+            if (op.result != UnityWebRequest.Result.Success)
+                return;
+                
             var www = (DownloadHandlerTexture)(op.downloadHandler);
 
             // Texture2D wwwTex = DownloadHandlerTexture.GetContent(req);
