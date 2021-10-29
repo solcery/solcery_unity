@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637710712343783099
+  lastScan: 637710743612655581
   supportSerializedTypes:
   - TypeName: System.Action`1[[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
     IsCustom: 0

@@ -52,17 +52,21 @@ namespace Solcery.Modules
             Debug.Log("WhenAll");
         }
 
+        Texture2D newTex;
+
         async UniTask GetSpriteAsync(string url)
         {
-            // Debug.Log("start loading...");
-            var req = UnityWebRequestTexture.GetTexture(url);
+            Debug.Log("start loading...");
+            var req = UnityWebRequestTexture.GetTexture(url, true);
             var op = await req.SendWebRequest();
             var www = (DownloadHandlerTexture)(op.downloadHandler);
 
-            Texture2D wwwTex = DownloadHandlerTexture.GetContent(req);
-            Texture2D newTex = new Texture2D(wwwTex.width, wwwTex.height);
-            newTex.SetPixels(wwwTex.GetPixels(0));
-            newTex.Apply(true);
+            // Texture2D wwwTex = DownloadHandlerTexture.GetContent(req);
+            // Texture2D newTex = new Texture2D(wwwTex.width, wwwTex.height);
+            // newTex.SetPixels(wwwTex.GetPixels(0));
+            // newTex.Apply(true);
+
+            newTex = www.texture;
 
             var sprite = Sprite.Create(newTex, new Rect(0.0f, 0.0f, newTex.width, newTex.height), new Vector2(0.5f, 0.5f), 100.0f);
 
