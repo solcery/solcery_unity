@@ -49,14 +49,14 @@ namespace Solcery.Modules
             }
 
             // await UniTask.WhenAll(tasks);
-            Debug.Log("WhenAll");
+            // Debug.Log("WhenAll");
         }
 
         Texture2D newTex;
 
         async UniTask GetSpriteAsync(string url)
         {
-            Debug.Log("start loading...");
+            // Debug.Log("start loading...");
             var req = UnityWebRequestTexture.GetTexture(url, true);
             var op = await req.SendWebRequest();
             var www = (DownloadHandlerTexture)(op.downloadHandler);
@@ -75,7 +75,7 @@ namespace Solcery.Modules
             else
                 SpritesByUrl[url] = sprite;
 
-            Debug.Log("loaded");
+            // Debug.Log("loaded");
             NotifySubscribers(url, sprite);
         }
 
