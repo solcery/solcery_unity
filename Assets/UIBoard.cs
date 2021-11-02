@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Solcery.Utils;
@@ -13,7 +14,7 @@ namespace Solcery.UI
         private GameDisplay _gameDisplay;
         private GameState _gameState;
 
-        public Dictionary<int, IBoardPlace> _placesById;
+        [NonSerialized] public Dictionary<int, IBoardPlace> _placesById;
 
         public void Init()
         {

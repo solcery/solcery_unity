@@ -93,6 +93,8 @@ MonoBehaviour:
   bgImage: {fileID: 1806172323179552598}
   cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 3143025930282575442}
+  contentRect: {fileID: 3143025930282575442}
+  highlightedRect: {fileID: 0}
   cardsCountText: {fileID: 3143025929730252714}
 --- !u!222 &3143025928819917209
 CanvasRenderer:
