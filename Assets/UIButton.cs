@@ -11,6 +11,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private float defaultPixelsPerUnit;
         [SerializeField] private Animator animator = null;
         [SerializeField] private Button button = null;
@@ -66,6 +67,7 @@ namespace Solcery.UI
             _cards = cards;
 
             SetBgColor();
+            SetAlpha();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -107,6 +109,19 @@ namespace Solcery.UI
 
             CheckIfHighlighted();
             CheckPixelsPerUnit();
+        }
+
+        private void SetAlpha()
+        {
+            if (cg == null)
+                return;
+
+            var isAlphaZero = _displayData.Alpha == 0;
+            cg.interactable = !isAlphaZero;
+            cg.blocksRaycasts = !isAlphaZero;
+
+            float alpha = (float)_displayData.Alpha / 100;
+            cg.alpha = alpha;
         }
 
         private void SetBgColor()

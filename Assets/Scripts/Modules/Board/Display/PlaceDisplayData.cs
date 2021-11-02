@@ -8,7 +8,7 @@ namespace Solcery
         public string PlaceName;
         public int PlaceId;
         public bool IsInteractable;
-        public bool IsVisible;
+        public int Alpha = 100;
         public bool Stretch;
         public int ZOrder;
         public bool HasBg;

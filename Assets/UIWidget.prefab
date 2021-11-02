@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 590343390532820067}
   - component: {fileID: 590343390532820069}
   - component: {fileID: 590343390532820065}
+  - component: {fileID: 4066580710004594818}
   m_Layer: 5
   m_Name: UIWidget
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4e4ab362af30c40b472c0e209f6335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 4066580710004594818}
   cardPictures: {fileID: 0}
   image: {fileID: 590343390364031574}
   diff: {fileID: 590343390532820065}
@@ -191,6 +193,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 590343390364031577}
   hpDiffText: {fileID: 590343391828653503}
+--- !u!225 &4066580710004594818
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590343390532820063}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &590343391828653501
 GameObject:
   m_ObjectHideFlags: 0

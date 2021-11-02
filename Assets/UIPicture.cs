@@ -10,6 +10,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image image = null;
         [SerializeField] private AspectRatioFitter arf = null;
@@ -61,6 +62,7 @@ namespace Solcery.UI
             _stretch = stretch;
 
             SetBgColor();
+            SetAlpha();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -94,6 +96,15 @@ namespace Solcery.UI
             }
             else if (cardPictures != null)
                 SetSprite(cardPictures?.GetSpriteByIndex(picture), stretch);
+        }
+
+        private void SetAlpha()
+        {
+            if (cg == null)
+                return;
+
+            float alpha = (float)_displayData.Alpha / 100;
+            cg.alpha = alpha;
         }
 
         private void SetBgColor()

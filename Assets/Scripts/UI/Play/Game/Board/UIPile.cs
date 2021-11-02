@@ -60,10 +60,5 @@ namespace Solcery.UI
                 }
             }
         }
-
-        // protected override void OnCardCasted(int cardId)
-        // {
-
-        // }
     }
 }

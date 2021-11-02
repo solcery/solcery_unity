@@ -10,6 +10,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private TextMeshProUGUI titleText = null;
         [SerializeField] protected Image bgImage = null;
 
@@ -56,6 +57,7 @@ namespace Solcery.UI
             _cards = cards;
 
             SetBgColor();
+            SetAlpha();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -87,6 +89,15 @@ namespace Solcery.UI
 
             if (titleText != null)
                 titleText.text = _topCardType.Metadata.Description;
+        }
+
+        private void SetAlpha()
+        {
+            if (cg == null)
+                return;
+
+            float alpha = (float)_displayData.Alpha / 100;
+            cg.alpha = alpha;
         }
 
         private void SetBgColor()

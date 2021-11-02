@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 8107790488379550089}
   - component: {fileID: 8107790488379550086}
   - component: {fileID: 237153992978692278}
+  - component: {fileID: 4880713375697169513}
   m_Layer: 5
   m_Name: UIHand
   m_TagString: Untagged
@@ -134,9 +135,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05983ec251d9d244faba668d3dd2d00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 4880713375697169513}
   bgImage: {fileID: 5177315226968522406}
   cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 826622418707694682}
+--- !u!225 &4880713375697169513
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107790488379550088}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &8107790489003174919
 PrefabInstance:
   m_ObjectHideFlags: 0

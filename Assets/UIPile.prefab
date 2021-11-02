@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 3143025928819917211}
   - component: {fileID: 3143025928819917208}
   - component: {fileID: 3143025928819917209}
+  - component: {fileID: 155594405924533497}
   m_Layer: 5
   m_Name: UIPile
   m_TagString: Untagged
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c78a7f19790745468a57047591caad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 155594405924533497}
   bgImage: {fileID: 1806172323179552598}
   cardPrefab: {fileID: 1933504691992468128, guid: c8ce5c17e66afb040bf21e477b4ff943, type: 3}
   content: {fileID: 3143025930282575442}
@@ -100,6 +102,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3143025928819917204}
   m_CullTransparentMesh: 1
+--- !u!225 &155594405924533497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143025928819917204}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3143025929257725072
 GameObject:
   m_ObjectHideFlags: 0

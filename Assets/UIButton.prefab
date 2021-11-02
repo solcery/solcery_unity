@@ -28,7 +28,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3200764471413365605}
   m_RootOrder: 1
@@ -104,7 +103,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7688136200847551801}
   m_RootOrder: 0
@@ -223,6 +221,7 @@ GameObject:
   - component: {fileID: 3200764471413365602}
   - component: {fileID: 8441973818056527902}
   - component: {fileID: 7068555638214088443}
+  - component: {fileID: 5247929631630308912}
   m_Layer: 5
   m_Name: UIButton
   m_TagString: Untagged
@@ -240,7 +239,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1335294929501689914}
   - {fileID: 263864057061682342}
@@ -273,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f66f11eb42cd6439ef824baadc8b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 5247929631630308912}
   defaultPixelsPerUnit: 2.5
   animator: {fileID: 7068555638214088443}
   button: {fileID: 3582159502477088645}
@@ -283,7 +282,7 @@ MonoBehaviour:
   buttonImage: {fileID: 7763182556657244684}
 --- !u!95 &7068555638214088443
 Animator:
-  serializedVersion: 4
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -296,11 +295,22 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &5247929631630308912
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200764471413365606}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7968341354002788284
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +340,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3200764471394997284}
   m_Father: {fileID: 3200764471413365605}
@@ -451,7 +460,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3200764471413365605}
   m_RootOrder: 0

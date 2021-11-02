@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3891229484226795999}
   - component: {fileID: 3891229484226795998}
+  - component: {fileID: 3694476223976057887}
   m_Layer: 5
   m_Name: UIPicture
   m_TagString: Untagged
@@ -215,8 +216,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd027f2aac01124995d72b9496be5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 3694476223976057887}
   cardPictures: {fileID: 0}
   image: {fileID: 3891229482777554651}
   arf: {fileID: 3891229482777554645}
   imageRect: {fileID: 3891229482777554648}
   bgImage: {fileID: 2686792345322612013}
+--- !u!225 &3694476223976057887
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891229484226795996}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

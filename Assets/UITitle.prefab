@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6911490291294355594}
   - component: {fileID: 6911490291294355597}
+  - component: {fileID: 5800425340828679255}
   m_Layer: 5
   m_Name: UITitle
   m_TagString: Untagged
@@ -125,8 +126,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7440966acf45d824db5639d0142f7e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 5800425340828679255}
   titleText: {fileID: 6911490292452697454}
   bgImage: {fileID: 5424784660095594442}
+--- !u!225 &5800425340828679255
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6911490291294355595}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6911490292452697452
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +233,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.95
+  m_fontSize: 13.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

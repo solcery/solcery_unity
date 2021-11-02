@@ -13,6 +13,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         private PlaceDisplayData _displayData;
 
+        [SerializeField] private CanvasGroup cg = null;
         [SerializeField] protected Image bgImage = null;
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected Transform content = null;
@@ -47,6 +48,7 @@ namespace Solcery.UI
             _hideAllButTop = hideAllButTop;
 
             SetBgColor();
+            SetAlpha();
 
             if (_cardsById == null)
                 _cardsById = new Dictionary<int, UIBoardCard>();
@@ -149,6 +151,19 @@ namespace Solcery.UI
 
             if (bgImage != null)
                 bgImage.gameObject.SetActive(false);
+        }
+
+        private void SetAlpha()
+        {
+            if (cg == null)
+                return;
+
+            var isAlphaZero = _displayData.Alpha == 0;
+            cg.interactable = !isAlphaZero;
+            cg.blocksRaycasts = !isAlphaZero;
+
+            float alpha = (float)_displayData.Alpha / 100;
+            cg.alpha = alpha;
         }
 
         public void OnCardArrival(int cardId)

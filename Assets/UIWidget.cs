@@ -11,6 +11,7 @@ namespace Solcery.UI
         public PlaceDisplayData DisplayData { get => _displayData; set => _displayData = value; }
         public bool AreCardsFaceDown => _areCardsFaceDown;
 
+        [SerializeField] private CanvasGroup cg = null;
         [SerializeField] private CardPictures cardPictures = null;
         [SerializeField] private Image image = null;
         [SerializeField] private UIDiff diff = null;
@@ -63,6 +64,7 @@ namespace Solcery.UI
             _cards = cards;
 
             SetBgColor();
+            SetAlpha();
 
             if (_cards == null || _cards.Count <= 0)
             {
@@ -106,6 +108,15 @@ namespace Solcery.UI
             {
                 SetNumber(number);
             }
+        }
+
+        private void SetAlpha()
+        {
+            if (cg == null)
+                return;
+
+            float alpha = (float)_displayData.Alpha / 100;
+            cg.alpha = alpha;
         }
 
         private void SetBgColor()
