@@ -33,6 +33,8 @@ namespace Solcery.UI
         private CardData _cardData;
         private CardType _cardType;
         private Action<int> _onCardCasted;
+        private Action<int> _onCardHighlighted;
+        private Action<int> _onCardDehighlighted;
 
         private bool _isFaceDown;
         private bool _oldIsInteractable;
@@ -64,11 +66,16 @@ namespace Solcery.UI
             }
         }
 
-        public void Init(GameContent gameContent, CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false, Action<int> onCardCasted = null)
+        public void Init(GameContent gameContent, CardData cardData, bool isFaceDown, bool isInteractable, bool showCoins = false,
+        Action<int> onCardCasted = null,
+        Action<int> onCardHighlighted = null,
+        Action<int> onCardDehighlighted = null)
         {
             _showCoins = showCoins;
             _isFaceDown = isFaceDown;
             _onCardCasted = onCardCasted;
+            _onCardHighlighted = onCardHighlighted;
+            _onCardDehighlighted = onCardDehighlighted;
             _cardData = cardData;
 
             SetSprite(null);
@@ -98,19 +105,28 @@ namespace Solcery.UI
                 if (!_isInteractable)
                 {
                     if (animator != null)
+                    {
                         animator?.SetTrigger("Idle");
+                        _onCardDehighlighted?.Invoke(_cardData.CardId);
+                    }
                 }
                 else
                 {
                     if (_isPointerOver)
                     {
                         if (animator != null)
+                        {
                             animator?.SetTrigger("Highlighted");
+                            _onCardHighlighted?.Invoke(_cardData.CardId);
+                        }
                     }
                     else
                     {
                         if (animator != null)
+                        {
                             animator?.SetTrigger("Idle");
+                            _onCardDehighlighted?.Invoke(_cardData.CardId);
+                        }
                     }
                 }
             }
@@ -254,6 +270,7 @@ namespace Solcery.UI
                 return;
 
             animator?.SetTrigger("Highlighted");
+            _onCardHighlighted?.Invoke(_cardData.CardId);
         }
 
         private void OnPointerExit()
@@ -264,6 +281,7 @@ namespace Solcery.UI
                 return;
 
             animator?.SetTrigger("Idle");
+            _onCardDehighlighted?.Invoke(_cardData.CardId);
             _pointerDown = false;
         }
 

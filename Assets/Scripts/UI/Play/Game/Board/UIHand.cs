@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Solcery.Modules;
 using Solcery.React;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace Solcery.UI
         [SerializeField] protected Image bgImage = null;
         [SerializeField] protected GameObject cardPrefab = null;
         [SerializeField] protected Transform content = null;
+        [SerializeField] protected RectTransform contentRect = null;
+        [SerializeField] protected RectTransform highlightedRect = null;
 
         protected bool _areCardsFaceDown;
         private int _cardsToArrive;
@@ -72,7 +75,7 @@ namespace Solcery.UI
                     if (!_cardsById.ContainsKey(stayedCard.CardData.CardId))
                     {
                         var card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                        card.Init(gameContent, stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
+                        card.Init(gameContent, stayedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted, OnCardHighlighted, OnCardDehighlighted);
 
                         // if (hideAllButTop && i != cardPlaceDiff.Stayed.Count - 1)
                         //     card.SetVisibility(false);
@@ -108,7 +111,7 @@ namespace Solcery.UI
                     UIBoardCard card;
 
                     card = Instantiate(cardPrefab, content).GetComponent<UIBoardCard>();
-                    card.Init(gameContent, arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted);
+                    card.Init(gameContent, arrivedCard.CardData, _areCardsFaceDown, areCardsInteractable, showCoins, OnCardCasted, OnCardHighlighted, OnCardDehighlighted);
 
                     if (arrivedCard.From == 0 || !UIBoard.Instance.GetBoardPlace(arrivedCard.From, out var fromPlace))
                         card.SetVisibility(true);
@@ -133,9 +136,72 @@ namespace Solcery.UI
             }
 
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+            Rebuild();
+            // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+            // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+            // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
+        }
+
+        // private int _siblingIndex;
+        private Dictionary<int, int> _cardIdSibling;
+
+        private void OnCardHighlighted(int cardId)
+        {
+            if (_cardsById.TryGetValue(cardId, out var card))
+            {
+                card?.transform?.SetParent(highlightedRect.transform, true);
+            }
+        }
+
+        private void OnCardDehighlighted(int cardId)
+        {
+            if (_cardsById.TryGetValue(cardId, out var card))
+            {
+                card?.transform?.SetParent(contentRect.transform, true);
+                //TODO: set same sibling as before highlighting
+
+                if (_cardIdSibling.TryGetValue(cardId, out var siblingInex))
+                {
+                    card.transform.SetSiblingIndex(siblingInex);
+                }
+            }
+        }
+
+        private void Rebuild()
+        {
+            _cardIdSibling = new Dictionary<int, int>();
+
+            var contentWidth = contentRect.rect.width;
+            // Debug.Log(contentWidth);
+
+            var cardsCount = _cardsById.Count;
+
+            if (cardsCount > 0)
+            {
+                var anyCard = _cardsById.First().Value;
+                var cardRect = anyCard.transform as RectTransform;
+                var cardWidth = cardRect.rect.width;
+                // Debug.Log(cardWidth);
+
+                var gapWidth = (contentWidth - cardWidth * (cardsCount + 0.4f)) / (cardsCount - 1);
+                // Debug.Log(gapWidth);
+
+                for (int i = 0; i < cardsCount; i++)
+                {
+                    var item = _cardsById.ElementAt(i);
+                    var cardId = item.Key;
+                    var card = item.Value;
+                    var currentCardPos = card.transform.localPosition;
+
+                    var padding = cardWidth * 0.2f;
+
+                    var newCardX = padding + (i + 0.5f) * cardWidth + i * gapWidth;
+                    // Debug.Log(newCardX);
+                    card.transform.localPosition = new Vector2(newCardX, currentCardPos.y);
+
+                    _cardIdSibling[cardId] = i;
+                }
+            }
         }
 
         private void SetBgColor()
