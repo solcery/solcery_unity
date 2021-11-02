@@ -98,7 +98,7 @@ namespace Solcery.UI
                     if (departedCard.CardData == null) continue;
                     var cardToDelete = GetCardById(departedCard.CardData.CardId);
                     UICardAnimator.Instance?.Clone(cardToDelete, departedCard);
-                    DeleteCard(cardToDelete);
+                    DeleteCard(cardToDelete, departedCard.CardData.CardId);
                 }
             }
 
@@ -157,6 +157,9 @@ namespace Solcery.UI
         {
             if (_cardsById.TryGetValue(cardId, out var card))
             {
+                if (card == null)
+                    return;
+
                 card?.transform?.SetParent(contentRect.transform, true);
                 //TODO: set same sibling as before highlighting
 
@@ -174,32 +177,60 @@ namespace Solcery.UI
             var contentWidth = contentRect.rect.width;
             // Debug.Log(contentWidth);
 
+            if (_cardsById == null)
+                return;
+
             var cardsCount = _cardsById.Count;
 
             if (cardsCount > 0)
             {
                 var anyCard = _cardsById.First().Value;
+
+                if (anyCard == null)
+                    return;
+
                 var cardRect = anyCard.transform as RectTransform;
                 var cardWidth = cardRect.rect.width;
-                // Debug.Log(cardWidth);
 
-                var gapWidth = (contentWidth - cardWidth * (cardsCount + 0.4f)) / (cardsCount - 1);
-                // Debug.Log(gapWidth);
+                var withoutAnim = contentWidth - cardWidth * 0.4f;
+                float nakedGapWidth = 0f;
+                float clampedGapWidth = 0f;
+                float bigPadding = 0f;
+
+                if (cardsCount == 1)
+                {
+                    nakedGapWidth = 0f;
+                    clampedGapWidth = 0f;
+                    bigPadding = (withoutAnim - cardWidth) / 2f;
+                }
+                else
+                {
+                    nakedGapWidth = (withoutAnim - cardWidth * cardsCount) / (cardsCount - 1);
+                    clampedGapWidth = Mathf.Clamp(nakedGapWidth, -cardWidth, cardWidth * 0.5f);
+                    bigPadding = (withoutAnim - cardWidth * cardsCount - clampedGapWidth * (cardsCount - 1)) / 2;
+                }
+
+                // var gapWidth = cardsCount > 1 ? (contentWidth - cardWidth * (cardsCount + 0.4f)) / (cardsCount - 1) : (contentWidth - cardWidth * 1.4f) / 2;
 
                 for (int i = 0; i < cardsCount; i++)
                 {
                     var item = _cardsById.ElementAt(i);
                     var cardId = item.Key;
                     var card = item.Value;
+
+                    if (card == null)
+                        continue;
+
                     var currentCardPos = card.transform.localPosition;
 
-                    var padding = cardWidth * 0.2f;
+                    var paddingForAnim = cardWidth * 0.2f;
 
-                    var newCardX = padding + (i + 0.5f) * cardWidth + i * gapWidth;
+                    var newCardX = paddingForAnim + bigPadding + (i + 0.5f) * cardWidth + i * clampedGapWidth;
                     // Debug.Log(newCardX);
-                    card.transform.localPosition = new Vector2(newCardX, currentCardPos.y);
+                    card.transform.localPosition = new Vector3(newCardX, currentCardPos.y, 0);
 
                     _cardIdSibling[cardId] = i;
+                    card.transform.SetSiblingIndex(i);
                 }
             }
         }
@@ -243,6 +274,7 @@ namespace Solcery.UI
             {
                 HideAllButTop();
                 _cardsToArrive = 0;
+                Rebuild();
             }
         }
 
@@ -291,13 +323,16 @@ namespace Solcery.UI
             return null;
         }
 
-        private void DeleteCard(UIBoardCard card)
+        private void DeleteCard(UIBoardCard card, int cardId = -1)
         {
             if (card != null)
             {
                 card?.DeInit();
                 DestroyImmediate(card.gameObject);
             }
+
+            if (cardId >= 0)
+                _cardsById.Remove(cardId);
         }
 
         public Vector3 GetCardDestination(int cardId)
