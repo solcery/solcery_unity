@@ -135,8 +135,8 @@ namespace Solcery.UI
                 HideAllButTop();
             }
 
-
-            Rebuild();
+            if (!_hideAllButTop)
+                Rebuild();
             // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
             // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
             // LayoutRebuilder.ForceRebuildLayoutImmediate(content as RectTransform);
@@ -163,7 +163,7 @@ namespace Solcery.UI
                 card?.transform?.SetParent(contentRect.transform, true);
                 //TODO: set same sibling as before highlighting
 
-                if (_cardIdSibling.TryGetValue(cardId, out var siblingInex))
+                if (_cardIdSibling != null && _cardIdSibling.TryGetValue(cardId, out var siblingInex))
                 {
                     card.transform.SetSiblingIndex(siblingInex);
                 }
@@ -274,8 +274,10 @@ namespace Solcery.UI
             {
                 HideAllButTop();
                 _cardsToArrive = 0;
-                Rebuild();
             }
+
+            if (!_hideAllButTop)
+                Rebuild();
         }
 
         private void HideAllButTop()

@@ -35,7 +35,7 @@ namespace Solcery.React
 
         public void CallCastCard(int cardId)
         {
-            // UnityEngine.Debug.Log($"CastCard: {cardId}");
+            UnityEngine.Debug.Log($"CastCard: {cardId}");
 
 #if (UNITY_WEBGL && !UNITY_EDITOR)
             CastCard(cardId);
