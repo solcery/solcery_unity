@@ -32,8 +32,27 @@ namespace Solcery.UI.NodeEditor
                 _ => TMP_InputField.ContentType.Name
             };
 
+            fieldInput.onSelect.AddListener((i) =>
+            {
+                if (string.Equals(fieldInput.text, "0"))
+                    fieldInput.text = string.Empty;
+                // Debug.Log("select");
+            });
+
+            fieldInput.onDeselect.AddListener((i) =>
+            {
+                if (string.IsNullOrEmpty(fieldInput.text) || string.Equals(fieldInput.text, "0"))
+                    fieldInput.text = "0";
+                // Debug.Log("deselect");
+            });
+
             fieldInput.onValueChanged.AddListener((string input) =>
             {
+                if (string.IsNullOrEmpty(input))
+                    return;
+
+                // Debug.Log("value changed");
+
                 switch (fieldType)
                 {
                     case UIBrickFieldType.Int:
@@ -50,7 +69,7 @@ namespace Solcery.UI.NodeEditor
                 };
             });
 
-            fieldInput.Select();
+            // fieldInput.Select();
         }
     }
 }

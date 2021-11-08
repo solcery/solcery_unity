@@ -18,6 +18,7 @@ namespace Solcery.NodeEditor
 
         public void CallSaveBrickTree(BrickTree brickTree)
         {
+            // UnityEngine.Debug.Log("Save");
             var brickTreeJson = JsonConvert.SerializeObject(brickTree);
 
 #if (UNITY_WEBGL && !UNITY_EDITOR)
