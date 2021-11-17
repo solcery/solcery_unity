@@ -44,9 +44,9 @@ namespace Ilumisoft.VisualStateMachine
                     _onExitAciton = UniTask.UnityAction(async () => { await OnExitState(); });
 
                     // state.OnEnterState.AddListener(OnEnterState);
-                    state.OnEnterState.AddListener(_onEnterAciton);
-                    state.OnExitState.AddListener(_onExitAciton);
-                    state.OnUpdateState.AddListener(OnUpdateState);
+                    state?.OnEnterState.AddListener(_onEnterAciton);
+                    state?.OnExitState.AddListener(_onExitAciton);
+                    state?.OnUpdateState.AddListener(OnUpdateState);
                 }
                 else
                 {
@@ -62,9 +62,9 @@ namespace Ilumisoft.VisualStateMachine
             // Stop listening to state events when the behaviour gets destroyed
             if (StateMachine != null && state != null)
             {
-                state.OnEnterState.RemoveListener(_onEnterAciton);
-                state.OnExitState.RemoveListener(_onExitAciton);
-                state.OnUpdateState.RemoveListener(OnUpdateState);
+                state?.OnEnterState?.RemoveListener(_onEnterAciton);
+                state?.OnExitState?.RemoveListener(_onExitAciton);
+                state?.OnUpdateState?.RemoveListener(OnUpdateState);
             }
         }
 

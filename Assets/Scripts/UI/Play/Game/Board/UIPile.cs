@@ -37,7 +37,7 @@ namespace Solcery.UI
 
             _currentCardsCount = cardsCount;
 
-            base.UpdateWithDiff(displayData, gameContent, cardPlaceDiff, areCardsInteractable, areCardsFaceDown, false, true, true);
+            base.UpdateWithDiff(displayData, gameContent, cardPlaceDiff, areCardsInteractable, areCardsFaceDown, true, true, true);
         }
 
         private async UniTaskVoid SetCardsCountText(int newCardsCount)
