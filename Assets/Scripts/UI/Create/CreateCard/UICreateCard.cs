@@ -1,6 +1,5 @@
-using Solcery.UI.Create.NodeEditor;
+
 using Solcery.Utils;
-using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -55,7 +54,7 @@ namespace Solcery.UI.Create
                 _currentCard.BrickTree = UINodeEditor.Instance.BrickTree;
 
                 UICreatingCardPopup.Instance?.Open(_currentCard.Metadata);
-                OldUnityToReact.Instance?.CallUpdateCard(_currentCard);
+                // OldUnityToReact.Instance?.CallUpdateCard(_currentCard);
                 UINodeEditor.Instance?.DeleteGenesisBrickNode();
             });
         }

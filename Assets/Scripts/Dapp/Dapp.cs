@@ -1,6 +1,5 @@
 using Solcery.Utils;
 using Solcery.Modules;
-using Solcery.WebGL;
 
 namespace Solcery
 {
@@ -14,7 +13,7 @@ namespace Solcery
             LogActionCreator.Instance?.Init();
             Board.Instance?.Init();
             Log.Instance?.Init();
-            OldUnityToReact.Instance?.CallOnUnityLoaded();
+            // OldUnityToReact.Instance?.CallOnUnityLoaded();
         }
 
         public void DeInit()

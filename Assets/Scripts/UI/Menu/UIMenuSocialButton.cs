@@ -1,4 +1,3 @@
-using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -45,8 +44,8 @@ namespace Solcery.UI.Menu
 
         private void OnButtonClicked()
         {
-            if (!string.IsNullOrEmpty(link))
-                OldUnityToReact.Instance?.CallOpenLinkInNewTab(link);
+            // if (!string.IsNullOrEmpty(link))
+                // OldUnityToReact.Instance?.CallOpenLinkInNewTab(link);
         }
 
         private void ChangeFrameColor(Color newColor)

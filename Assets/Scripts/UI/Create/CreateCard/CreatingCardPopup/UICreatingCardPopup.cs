@@ -1,5 +1,4 @@
 using Solcery.Utils;
-using Solcery.WebGL;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,16 +33,16 @@ namespace Solcery.UI.Create
             signTransactionStatus?.SetState(UIStatusState.Waiting);
             confirmTransactionStatus?.SetState(UIStatusState.Waiting);
 
-            OldReactToUnity.OnCardCreationSignDataChanged += OnCardCreationSignDataChanged;
-            OldReactToUnity.OnCardCreationConfirmDataChanged += OnCardCreationConfirmDataChanged;
+            // OldReactToUnity.OnCardCreationSignDataChanged += OnCardCreationSignDataChanged;
+            // OldReactToUnity.OnCardCreationConfirmDataChanged += OnCardCreationConfirmDataChanged;
 
             okButton.onClick.AddListener(() => { Close(); });
         }
 
         private void Close()
         {
-            OldReactToUnity.OnCardCreationSignDataChanged -= OnCardCreationSignDataChanged;
-            OldReactToUnity.OnCardCreationConfirmDataChanged -= OnCardCreationConfirmDataChanged;
+            // OldReactToUnity.OnCardCreationSignDataChanged -= OnCardCreationSignDataChanged;
+            // OldReactToUnity.OnCardCreationConfirmDataChanged -= OnCardCreationConfirmDataChanged;
 
             okButton.onClick.RemoveAllListeners();
             canvas.enabled = false;

@@ -1,7 +1,5 @@
 using Solcery.Modules;
 using Solcery.Utils;
-using Solcery.WebGL;
-
 namespace Solcery
 {
     public class Play : Singleton<Play>
@@ -15,7 +13,7 @@ namespace Solcery
             Board.Instance?.Init();
             Log.Instance?.Init();
 
-            OldUnityToReact.Instance?.CallOnUnityLoaded();
+            // OldUnityToReact.Instance?.CallOnUnityLoaded();
 
             // PlaySM.Instance?.Enter();
         }

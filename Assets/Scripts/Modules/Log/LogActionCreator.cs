@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Solcery.Utils;
-using Solcery.WebGL;
 
 namespace Solcery.Modules
 {
@@ -52,7 +51,7 @@ namespace Solcery.Modules
 
         private void SendLogAction(LogData logData)
         {
-            OldUnityToReact.Instance?.CallLogAction(logData);
+            // OldUnityToReact.Instance?.CallLogAction(logData);
         }
     }
 }

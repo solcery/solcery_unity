@@ -1,7 +1,5 @@
 using Solcery.Utils;
-using Solcery.WebGL;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Solcery.UI.Menu
 {

@@ -6,7 +6,6 @@ using Solcery.Modules;
 using Solcery.Ruleset;
 using Solcery.Utils;
 using Solcery.Utils.Reactives;
-using Solcery.WebGL;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -232,7 +231,7 @@ namespace Solcery.UI.Create
             rulesetData.DisplayData = rulesetDisplayData;
 
             var rulesetJson = JsonUtility.ToJson(rulesetData);
-            OldUnityToReact.Instance.CallUpdateRuleset(rulesetJson);
+            // OldUnityToReact.Instance.CallUpdateRuleset(rulesetJson);
         }
     }
 }
