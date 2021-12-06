@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,6 +210,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 662205573}
   - {fileID: 758198952}
@@ -243,6 +244,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -295,6 +297,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -368,6 +371,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -387,10 +391,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1797080464029737537, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 1797080464029737537, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
     - target: {fileID: 1797080464029737540, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -421,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797080464029737540, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 240
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 1797080464029737540, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
       propertyPath: m_SizeDelta.y
@@ -479,30 +479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIBrickSubtypePopup
       objectReference: {fileID: 0}
-    - target: {fileID: 1797080464029737541, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3379419626283032386, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3379419626283032386, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6949334546707244778, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_Spacing
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7799966083382564343, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7799966083382564343, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8767a673d3fd22e4fb50659ec5626718, type: 3}
 --- !u!224 &615426017 stripped
@@ -548,6 +524,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 172695551}
   m_RootOrder: 0
@@ -595,6 +572,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 924536170}
   m_RootOrder: 0
@@ -669,6 +647,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 172695551}
   m_RootOrder: 1
@@ -716,6 +695,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1454656437}
   m_Father: {fileID: 1520103435}
@@ -812,6 +792,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 723915197}
   - {fileID: 1520103435}
@@ -1047,170 +1028,250 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  testNodeEditorDataJson: "{\r\n  \"GenesisBrickType\": 2,\r\n  \"BrickTree\": {\r\n   
-    \"Genesis\": {\r\n      \"Type\": 2,\r\n      \"Subtype\": 1,\r\n      \"Object\":
-    0,\r\n      \"HasField\": false,\r\n      \"IntField\": 0,\r\n      \"StringField\":
-    null,\r\n      \"HasObjectSelection\": false,\r\n      \"Slots\": [\r\n       
-    null,\r\n        {\r\n          \"Type\": 2,\r\n          \"Subtype\": 0,\r\n         
-    \"Object\": 0,\r\n          \"HasField\": true,\r\n          \"IntField\": 0,\r\n         
-    \"StringField\": null,\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": []\r\n        },\r\n        {\r\n          \"Type\": 2,\r\n         
-    \"Subtype\": 0,\r\n          \"Object\": 0,\r\n          \"HasField\": true,\r\n         
-    \"IntField\": 0,\r\n          \"StringField\": null,\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": []\r\n        }\r\n      ]\r\n    },\r\n    \"IsValid\":
-    true\r\n  },\r\n  \"BrickConfigsData\": {\r\n    \"ConfigsByType\": {\r\n     
-    \"Action\": [\r\n        {\r\n          \"Name\": \"Void\",\r\n          \"Type\":
-    0,\r\n          \"Subtype\": 0,\r\n          \"Description\": \"Does nothing\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n       
-    },\r\n        {\r\n          \"Name\": \"Set\",\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 1,\r\n          \"Description\": \"Runs all containing <b>actions</b>
-    one by one.\",\r\n          \"HasField\": false,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [\r\n            { \"Type\": 0, \"Name\": \"Action #1\" },\r\n           
-    { \"Type\": 0, \"Name\": \"Action #2\" }\r\n          ]\r\n        },\r\n       
-    {\r\n          \"Name\": \"Conditional\",\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 2,\r\n          \"Description\": \"Applies <b>positive</b> if <b>condition</b>
-    is passed, otherwise applies <b>negative</b>.\",\r\n          \"HasField\": false,\r\n         
-    \"FieldType\": 1,\r\n          \"FieldName\": \"TestField\",\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": [\r\n            { \"Type\": 1, \"Name\": \"Condition\"
-    },\r\n            { \"Type\": 0, \"Name\": \"Positive\" },\r\n            { \"Type\":
-    0, \"Name\": \"Negative\" }\r\n          ]\r\n        },\r\n        {\r\n         
-    \"Name\": \"Loop\",\r\n          \"Type\": 0,\r\n          \"Subtype\": 3,\r\n         
-    \"Description\": \"Applies <b>action</b> if <b>amount</b> times.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 1,\r\n          \"FieldName\":
-    \"TestField\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\":
-    [\r\n            { \"Type\": 2, \"Name\": \"Amount\" },\r\n            { \"Type\":
-    0, \"Name\": \"Action\" }\r\n          ]\r\n        },\r\n        {\r\n         
-    \"Name\": \"Card\",\r\n          \"Type\": 0,\r\n          \"Subtype\": 4,\r\n         
-    \"Description\": \"Applies <b>action</b> if <b>amount</b> times.\",\r\n         
-    \"HasField\": true,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"TestField\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\":
-    []\r\n        },\r\n        {\r\n          \"Name\": \"MoveTo\",\r\n         
-    \"Type\": 0,\r\n          \"Subtype\": 100,\r\n          \"Description\": \"Moves
-    current card to place\",\r\n          \"HasField\": false,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [{ \"Type\": 2, \"Name\": \"Player index\" }]\r\n        },\r\n       
-    {\r\n          \"Name\": \"SetPlayerAttr\",\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 101,\r\n          \"Description\": \"0 - active, 1 - hp, 2 - mana\",\r\n         
-    \"HasField\": true,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"AttrIndex\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\":
-    [\r\n            { \"Type\": 2, \"Name\": \"PlayerIndex\" },\r\n            {
-    \"Type\": 2, \"Name\": \"AttrValue\" }\r\n          ]\r\n        },\r\n       
-    {\r\n          \"Name\": \"AddPlayerAttr\",\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 102,\r\n          \"Description\": \"0 - active, 1 - hp, 2 - mana\",\r\n         
-    \"HasField\": true,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"AttrIndex\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\":
-    [\r\n            { \"Type\": 2, \"Name\": \"PlayerIndex\" },\r\n            {
-    \"Type\": 2, \"Name\": \"AttrValue\" }\r\n          ]\r\n        },\r\n       
-    {\r\n          \"Name\": \"ApplyToPlace\",\r\n          \"Type\": 0,\r\n         
-    \"Subtype\": 103,\r\n          \"Description\": \"Applies action to random card
-    in place\",\r\n          \"HasField\": false,\r\n          \"FieldType\": 0,\r\n         
-    \"FieldName\": \"AttrIndex\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [\r\n            { \"Type\": 2, \"Name\": \"Place index\" },\r\n           
-    { \"Type\": 0, \"Name\": \"Action\" },\r\n            { \"Type\": 2, \"Name\":
-    \"Limit (0 = no limit)\" }\r\n          ]\r\n        }\r\n      ],\r\n      \"Condition\":
-    [\r\n        {\r\n          \"Name\": \"True\",\r\n          \"Type\": 1,\r\n         
-    \"Subtype\": 0,\r\n          \"Description\": \"Returns true.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n       
-    },\r\n        {\r\n          \"Name\": \"False\",\r\n          \"Type\": 1,\r\n         
-    \"Subtype\": 1,\r\n          \"Description\": \"Returns false.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n       
-    },\r\n        {\r\n          \"Name\": \"Or\",\r\n          \"Type\": 1,\r\n         
-    \"Subtype\": 2,\r\n          \"Description\": \"Logical \\\"or\\\". Returns true
-    if one of containing <b>conditions</b> return true, otherwise returns false.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": [\r\n           
-    { \"Type\": 1, \"Name\": \"Condition #1\" },\r\n            { \"Type\": 1, \"Name\":
-    \"Condition #2\" }\r\n          ]\r\n        },\r\n        {\r\n          \"Name\":
-    \"And\",\r\n          \"Type\": 1,\r\n          \"Subtype\": 3,\r\n         
-    \"Description\": \"Logical \\\"and\\\". Returns true if all of containing <b>conditions</b>
-    return true, otherwise returns false.\",\r\n          \"HasField\": false,\r\n         
-    \"FieldType\": 0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": [\r\n            { \"Type\": 1, \"Name\": \"Condition
-    #1\" },\r\n            { \"Type\": 1, \"Name\": \"Condition #2\" }\r\n         
-    ]\r\n        },\r\n        {\r\n          \"Name\": \"Not\",\r\n          \"Type\":
-    1,\r\n          \"Subtype\": 4,\r\n          \"Description\": \"Logical \\\"not\\\".
-    Returns the opposite on corresponding <b>condition</b> result.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": [{
-    \"Type\": 1, \"Name\": \"Condition\" }]\r\n        },\r\n        {\r\n         
-    \"Name\": \"Equal\",\r\n          \"Type\": 1,\r\n          \"Subtype\": 5,\r\n         
-    \"Description\": \"Returns true if <b>values</b> are equal.\",\r\n          \"HasField\":
-    false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\": \"\",\r\n         
-    \"HasObjectSelection\": false,\r\n          \"Slots\": [\r\n            { \"Type\":
-    2, \"Name\": \"Value #1\" },\r\n            { \"Type\": 2, \"Name\": \"Value
-    #2\" }\r\n          ]\r\n        },\r\n        {\r\n          \"Name\": \"Greater
-    than\",\r\n          \"Type\": 1,\r\n          \"Subtype\": 6,\r\n          \"Description\":
-    \"Returns true if <b>value#1</b> is greater than <b>value#2</b>.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": [\r\n           
-    { \"Type\": 2, \"Name\": \"Value #1\" },\r\n            { \"Type\": 2, \"Name\":
-    \"Value #2\" }\r\n          ]\r\n        },\r\n        {\r\n          \"Name\":
-    \"Less than\",\r\n          \"Type\": 1,\r\n          \"Subtype\": 7,\r\n         
-    \"Description\": \"Returns true if <b>value#1</b> is lesser than <b>value#2</b>.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": [\r\n           
-    { \"Type\": 2, \"Name\": \"Value #1\" },\r\n            { \"Type\": 2, \"Name\":
-    \"Value #2\" }\r\n          ]\r\n        },\r\n        {\r\n          \"Name\":
-    \"Is at place\",\r\n          \"Type\": 1,\r\n          \"Subtype\": 100,\r\n         
-    \"Description\": \"Returns true card is at given place\",\r\n          \"HasField\":
-    false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\": \"Place Index\",\r\n         
-    \"HasObjectSelection\": false,\r\n          \"Slots\": [{ \"Type\": 2, \"Name\":
-    \"Value #1\" }]\r\n        }\r\n      ],\r\n      \"Value\": [\r\n        {\r\n         
-    \"Name\": \"Constant\",\r\n          \"Type\": 2,\r\n          \"Subtype\": 0,\r\n         
-    \"Description\": \"Returns given integer <b>value</b>.\",\r\n          \"HasField\":
-    true,\r\n          \"FieldType\": 0,\r\n          \"FieldName\": \"Value\",\r\n         
-    \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n        },\r\n       
-    {\r\n          \"Name\": \"Conditional\",\r\n          \"Type\": 2,\r\n         
-    \"Subtype\": 1,\r\n          \"Description\": \"Returns <b>positive</b> brick
-    value if <b>condition</b> is passed, otherwise returns <b>negative</b>.\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": [\r\n           
-    { \"Type\": 1, \"Name\": \"Condition\" },\r\n            { \"Type\": 2, \"Name\":
-    \"Positive\" },\r\n            { \"Type\": 2, \"Name\": \"Negative\" }\r\n         
-    ]\r\n        },\r\n        {\r\n          \"Name\": \"Add\",\r\n          \"Type\":
-    2,\r\n          \"Subtype\": 2,\r\n          \"Description\": \"Returns sum of
-    <b>values</b>\",\r\n          \"HasField\": false,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [\r\n            { \"Type\": 2, \"Name\": \"Value #1\" },\r\n           
-    { \"Type\": 2, \"Name\": \"Value #2\" }\r\n          ]\r\n        },\r\n       
-    {\r\n          \"Name\": \"Substract\",\r\n          \"Type\": 2,\r\n         
-    \"Subtype\": 3,\r\n          \"Description\": \"Returns <b>value #1</b> minus
-    <b>value #2</b>\",\r\n          \"HasField\": false,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [\r\n            { \"Type\": 2, \"Name\": \"Value #1\" },\r\n           
-    { \"Type\": 2, \"Name\": \"Value #2\" }\r\n          ]\r\n        },\r\n       
-    {\r\n          \"Name\": \"Get player attr\",\r\n          \"Type\": 2,\r\n         
-    \"Subtype\": 100,\r\n          \"Description\": \"0 - active, 1 - hp, 2 - mana\",\r\n         
-    \"HasField\": true,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"Attr index\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\":
-    [{ \"Type\": 2, \"Name\": \"Player index\" }]\r\n        },\r\n        {\r\n         
-    \"Name\": \"Get owner index\",\r\n          \"Type\": 2,\r\n          \"Subtype\":
-    101,\r\n          \"Description\": \"Returns owner's index (1 or 2) or 0 if neutral\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n       
-    },\r\n        {\r\n          \"Name\": \"Get cards amount\",\r\n          \"Type\":
-    2,\r\n          \"Subtype\": 102,\r\n          \"Description\": \"Returns cards
-    amount at place\",\r\n          \"HasField\": false,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"\",\r\n          \"HasObjectSelection\": false,\r\n         
-    \"Slots\": [{ \"Type\": 2, \"Name\": \"Place index\" }]\r\n        },\r\n       
-    {\r\n          \"Name\": \"Get current place\",\r\n          \"Type\": 2,\r\n         
-    \"Subtype\": 103,\r\n          \"Description\": \"Returns current place of card\",\r\n         
-    \"HasField\": false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\":
-    \"\",\r\n          \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n       
-    },\r\n        {\r\n          \"Name\": \"GetCtxVar (WIP)\",\r\n          \"Type\":
-    2,\r\n          \"Subtype\": 104,\r\n          \"Description\": \"Returns id
-    of player casted the card\",\r\n          \"HasField\": true,\r\n          \"FieldType\":
-    0,\r\n          \"FieldName\": \"Var index\",\r\n          \"HasObjectSelection\":
-    false,\r\n          \"Slots\": []\r\n        },\r\n        {\r\n          \"Name\":
-    \"CasterPlayerIndex\",\r\n          \"Type\": 2,\r\n          \"Subtype\": 105,\r\n         
-    \"Description\": \"Returns id of player casted the card\",\r\n          \"HasField\":
-    false,\r\n          \"FieldType\": 0,\r\n          \"FieldName\": \"\",\r\n         
-    \"HasObjectSelection\": false,\r\n          \"Slots\": []\r\n        }\r\n     
-    ]\r\n    }\r\n  }\r\n}\r\n"
+  testNodeEditorDataJson: "{\r\n    \"GenesisBrickType\": 2,\r\n    \"BrickTree\":
+    {\r\n      \"Genesis\": {\r\n        \"Type\": 2,\r\n        \"Subtype\": 1,\r\n       
+    \"Object\": 0,\r\n        \"HasField\": false,\r\n        \"IntField\": 0,\r\n       
+    \"StringField\": null,\r\n        \"HasObjectSelection\": false,\r\n        \"Slots\":
+    [\r\n          null,\r\n          {\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 0,\r\n            \"Object\": 0,\r\n            \"HasField\": true,\r\n           
+    \"IntField\": 0,\r\n            \"StringField\": null,\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 0,\r\n            \"Object\": 0,\r\n           
+    \"HasField\": true,\r\n            \"IntField\": 0,\r\n            \"StringField\":
+    null,\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          }\r\n        ]\r\n      },\r\n      \"IsValid\": true\r\n   
+    },\r\n    \"BrickConfigsData\": {\r\n      \"ConfigsByType\": {\r\n        \"Action\":
+    [\r\n          {\r\n            \"Name\": \"Void\",\r\n            \"Type\":
+    0,\r\n            \"Subtype\": 0,\r\n            \"Description\": \"Does nothing\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"Set\",\r\n           
+    \"Type\": 0,\r\n            \"Subtype\": 1,\r\n            \"Description\": \"Runs
+    all containing <b>actions</b> one by one.\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 0, \"Name\":
+    \"Action #1\" },\r\n              { \"Type\": 0, \"Name\": \"Action #2\" }\r\n           
+    ]\r\n          },\r\n          {\r\n            \"Name\": \"Conditional\",\r\n           
+    \"Type\": 0,\r\n            \"Subtype\": 2,\r\n            \"Description\": \"Applies
+    <b>positive</b> if <b>condition</b> is passed, otherwise applies <b>negative</b>.\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 1,\r\n            \"FieldName\":
+    \"TestField\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 1, \"Name\": \"Condition\" },\r\n             
+    { \"Type\": 0, \"Name\": \"Positive\" },\r\n              { \"Type\": 0, \"Name\":
+    \"Negative\" }\r\n            ]\r\n          },\r\n          {\r\n           
+    \"Name\": \"Loop\",\r\n            \"Type\": 0,\r\n            \"Subtype\": 3,\r\n           
+    \"Description\": \"Applies <b>action</b> if <b>amount</b> times.\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 1,\r\n            \"FieldName\":
+    \"TestField\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 2, \"Name\": \"Amount\" },\r\n              {
+    \"Type\": 0, \"Name\": \"Action\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"Card\",\r\n            \"Type\": 0,\r\n           
+    \"Subtype\": 4,\r\n            \"Description\": \"Applies <b>action</b> if <b>amount</b>
+    times.\",\r\n            \"HasField\": true,\r\n            \"FieldType\": 0,\r\n           
+    \"FieldName\": \"TestField\",\r\n            \"HasObjectSelection\": false,\r\n           
+    \"Slots\": []\r\n          },\r\n          {\r\n            \"Name\": \"MoveTo\",\r\n           
+    \"Type\": 0,\r\n            \"Subtype\": 100,\r\n            \"Description\":
+    \"Moves current card to place\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [{ \"Type\": 2, \"Name\": \"Player index\" }]\r\n         
+    },\r\n          {\r\n            \"Name\": \"SetPlayerAttr\",\r\n           
+    \"Type\": 0,\r\n            \"Subtype\": 101,\r\n            \"Description\":
+    \"0 - active, 1 - hp, 2 - mana\",\r\n            \"HasField\": true,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"AttrIndex\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": [\r\n              {
+    \"Type\": 2, \"Name\": \"PlayerIndex\" },\r\n              { \"Type\": 2, \"Name\":
+    \"AttrValue\" }\r\n            ]\r\n          },\r\n          {\r\n           
+    \"Name\": \"AddPlayerAttr\",\r\n            \"Type\": 0,\r\n            \"Subtype\":
+    102,\r\n            \"Description\": \"0 - active, 1 - hp, 2 - mana\",\r\n           
+    \"HasField\": true,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"AttrIndex\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 2, \"Name\": \"PlayerIndex\" },\r\n             
+    { \"Type\": 2, \"Name\": \"AttrValue\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"ApplyToPlace\",\r\n            \"Type\": 0,\r\n           
+    \"Subtype\": 103,\r\n            \"Description\": \"Applies action to random
+    card in place\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"AttrIndex\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 2, \"Name\":
+    \"Place index\" },\r\n              { \"Type\": 0, \"Name\": \"Action\" },\r\n             
+    { \"Type\": 2, \"Name\": \"Limit (0 = no limit)\" }\r\n            ]\r\n         
+    }\r\n        ],\r\n        \"Condition\": [\r\n          {\r\n            \"Name\":
+    \"True\",\r\n            \"Type\": 1,\r\n            \"Subtype\": 0,\r\n           
+    \"Description\": \"Returns true.\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"False\",\r\n            \"Type\": 1,\r\n            \"Subtype\":
+    1,\r\n            \"Description\": \"Returns false.\",\r\n            \"HasField\":
+    false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": []\r\n          },\r\n         
+    {\r\n            \"Name\": \"Or\",\r\n            \"Type\": 1,\r\n           
+    \"Subtype\": 2,\r\n            \"Description\": \"Logical \\\"or\\\". Returns
+    true if one of containing <b>conditions</b> return true, otherwise returns false.\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 1, \"Name\": \"Condition #1\" },\r\n             
+    { \"Type\": 1, \"Name\": \"Condition #2\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"And\",\r\n            \"Type\": 1,\r\n           
+    \"Subtype\": 3,\r\n            \"Description\": \"Logical \\\"and\\\". Returns
+    true if all of containing <b>conditions</b> return true, otherwise returns false.\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 1, \"Name\": \"Condition #1\" },\r\n             
+    { \"Type\": 1, \"Name\": \"Condition #2\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"Not\",\r\n            \"Type\": 1,\r\n           
+    \"Subtype\": 4,\r\n            \"Description\": \"Logical \\\"not\\\". Returns
+    the opposite on corresponding <b>condition</b> result.\",\r\n            \"HasField\":
+    false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": [{ \"Type\": 1, \"Name\":
+    \"Condition\" }]\r\n          },\r\n          {\r\n            \"Name\": \"Equal\",\r\n           
+    \"Type\": 1,\r\n            \"Subtype\": 5,\r\n            \"Description\": \"Returns
+    true if <b>values</b> are equal.\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 2, \"Name\":
+    \"Value #1\" },\r\n              { \"Type\": 2, \"Name\": \"Value #2\" }\r\n           
+    ]\r\n          },\r\n          {\r\n            \"Name\": \"Greater than\",\r\n           
+    \"Type\": 1,\r\n            \"Subtype\": 6,\r\n            \"Description\": \"Returns
+    true if <b>value#1</b> is greater than <b>value#2</b>.\",\r\n            \"HasField\":
+    false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": [\r\n              {
+    \"Type\": 2, \"Name\": \"Value #1\" },\r\n              { \"Type\": 2, \"Name\":
+    \"Value #2\" }\r\n            ]\r\n          },\r\n          {\r\n           
+    \"Name\": \"Less than\",\r\n            \"Type\": 1,\r\n            \"Subtype\":
+    7,\r\n            \"Description\": \"Returns true if <b>value#1</b> is lesser
+    than <b>value#2</b>.\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 2, \"Name\":
+    \"Value #1\" },\r\n              { \"Type\": 2, \"Name\": \"Value #2\" }\r\n           
+    ]\r\n          },\r\n          {\r\n            \"Name\": \"Is at place\",\r\n           
+    \"Type\": 1,\r\n            \"Subtype\": 100,\r\n            \"Description\":
+    \"Returns true card is at given place\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"Place Index\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": [{ \"Type\": 2, \"Name\":
+    \"Value #1\" }]\r\n          }\r\n        ],\r\n        \"Value\": [\r\n         
+    {\r\n            \"Name\": \"Constant\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 0,\r\n            \"Description\": \"Returns given integer <b>value</b>.\",\r\n           
+    \"HasField\": true,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"Value\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"Conditional\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 1,\r\n            \"Description\": \"Returns
+    <b>positive</b> brick value if <b>condition</b> is passed, otherwise returns
+    <b>negative</b>.\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 1, \"Name\":
+    \"Condition\" },\r\n              { \"Type\": 2, \"Name\": \"Positive\" },\r\n             
+    { \"Type\": 2, \"Name\": \"Negative\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"Add\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 2,\r\n            \"Description\": \"Returns sum of <b>values</b>\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    [\r\n              { \"Type\": 2, \"Name\": \"Value #1\" },\r\n             
+    { \"Type\": 2, \"Name\": \"Value #2\" }\r\n            ]\r\n          },\r\n         
+    {\r\n            \"Name\": \"Substract\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 3,\r\n            \"Description\": \"Returns <b>value #1</b> minus
+    <b>value #2</b>\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [\r\n              { \"Type\": 2, \"Name\":
+    \"Value #1\" },\r\n              { \"Type\": 2, \"Name\": \"Value #2\" }\r\n           
+    ]\r\n          },\r\n          {\r\n            \"Name\": \"Get player attr\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 100,\r\n            \"Description\":
+    \"0 - active, 1 - hp, 2 - mana\",\r\n            \"HasField\": true,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"Attr index\",\r\n           
+    \"HasObjectSelection\": false,\r\n            \"Slots\": [{ \"Type\": 2, \"Name\":
+    \"Player index\" }]\r\n          },\r\n          {\r\n            \"Name\": \"Get
+    owner index\",\r\n            \"Type\": 2,\r\n            \"Subtype\": 101,\r\n           
+    \"Description\": \"Returns owner's index (1 or 2) or 0 if neutral\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"Get cards amount\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 102,\r\n            \"Description\":
+    \"Returns cards amount at place\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": [{ \"Type\": 2, \"Name\": \"Place index\" }]\r\n         
+    },\r\n          {\r\n            \"Name\": \"Get current place\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 103,\r\n            \"Description\":
+    \"Returns current place of card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"GetCtxVar (WIP)\",\r\n            \"Type\": 2,\r\n            \"Subtype\":
+    104,\r\n            \"Description\": \"Returns id of player casted the card\",\r\n           
+    \"HasField\": true,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"Var index\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"CasterPlayerIndex\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 105,\r\n            \"Description\":
+    \"Returns id of player casted the card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 2\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 106,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 3\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 107,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 4\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 108,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 5\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 109,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 6\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 110,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 7\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 111,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex 8\",\r\n            \"Type\": 2,\r\n           
+    \"Subtype\": 112,\r\n            \"Description\": \"Returns id of player casted
+    the card\",\r\n            \"HasField\": false,\r\n            \"FieldType\":
+    0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex\",\r\n            \"Type\": 2,\r\n            \"Subtype\":
+    113,\r\n            \"Description\": \"Returns id of player casted the card\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"CasterPlayerIndex\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 114,\r\n            \"Description\":
+    \"Returns id of player casted the card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex\",\r\n            \"Type\": 2,\r\n            \"Subtype\":
+    115,\r\n            \"Description\": \"Returns id of player casted the card\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"CasterPlayerIndex\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 116,\r\n            \"Description\":
+    \"Returns id of player casted the card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex\",\r\n            \"Type\": 2,\r\n            \"Subtype\":
+    117,\r\n            \"Description\": \"Returns id of player casted the card\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"CasterPlayerIndex\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 118,\r\n            \"Description\":
+    \"Returns id of player casted the card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          },\r\n          {\r\n           
+    \"Name\": \"CasterPlayerIndex\",\r\n            \"Type\": 2,\r\n            \"Subtype\":
+    119,\r\n            \"Description\": \"Returns id of player casted the card\",\r\n           
+    \"HasField\": false,\r\n            \"FieldType\": 0,\r\n            \"FieldName\":
+    \"\",\r\n            \"HasObjectSelection\": false,\r\n            \"Slots\":
+    []\r\n          },\r\n          {\r\n            \"Name\": \"CasterPlayerIndex\",\r\n           
+    \"Type\": 2,\r\n            \"Subtype\": 120,\r\n            \"Description\":
+    \"Returns id of player casted the card\",\r\n            \"HasField\": false,\r\n           
+    \"FieldType\": 0,\r\n            \"FieldName\": \"\",\r\n            \"HasObjectSelection\":
+    false,\r\n            \"Slots\": []\r\n          }\r\n        ]\r\n      }\r\n   
+    }\r\n  }\r\n  "
 --- !u!4 &989988407
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,6 +1282,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1253,6 +1315,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454656437}
   m_RootOrder: 0
@@ -1386,6 +1449,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1481,6 +1545,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1511,6 +1576,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1005206752}
   - {fileID: 1958165433}
@@ -1552,6 +1618,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 765117643}
   m_Father: {fileID: 924536170}
@@ -1657,6 +1724,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1713,6 +1781,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454656437}
   m_RootOrder: 1
@@ -1849,6 +1918,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454656437}
   m_RootOrder: 2
