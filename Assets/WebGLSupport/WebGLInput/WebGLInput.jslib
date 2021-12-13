@@ -1,8 +1,13 @@
 var WebGLInput = {
     $instances: [],
+	WebGLInputInit : function() {
+		// Remove the `Runtime` object from "v1.37.27: 12/24/2017"
+		// if Runtime not defined. create and add functon!!
+		if(typeof Runtime === "undefined") Runtime = { dynCall : dynCall }
+	},
+    WebGLInputCreate: function (canvasId, x, y, width, height, fontsize, text, placeholder, isMultiLine, isPassword, isHidden, isMobile) {
 
-    WebGLInputCreate: function (canvasId, x, y, width, height, fontsize, text, placeholder, isMultiLine, isPassword, isHidden) {
-        var container = document.getElementById(Pointer_stringify(canvasId));
+        var container = document.getElementById(UTF8ToString(canvasId));
         var canvas = document.getElementsByTagName('canvas')[0];
 
         // if container is null and have canvas
@@ -28,28 +33,43 @@ var WebGLInput = {
 
         var input = document.createElement(isMultiLine?"textarea":"input");
         input.style.position = "absolute";
-        input.style.top = y + "px";
-        input.style.left = x + "px";
-        input.style.width = width + "px";
-        input.style.height = height + "px";
+
+		if(isMobile) {
+			input.style.bottom = 1 + "vh";
+			input.style.left = 5 + "vw";
+			input.style.width = 90 + "vw";
+			input.style.height = (isMultiLine? 18 : 10) + "vh";
+			input.style.fontSize = 5 + "vh";
+			input.style.borderWidth = 5 + "px";
+			input.style.borderColor = "#000000";
+		} else {
+			input.style.top = y + "px";
+			input.style.left = x + "px";
+			input.style.width = width + "px";
+			input.style.height = height + "px";
+			input.style.fontSize = fontsize + "px";
+		}
 
 		input.style.outlineWidth = 1 + 'px';
 		input.style.opacity = isHidden?0:1;
 		input.style.resize = 'none'; // for textarea
 		input.style.padding = '0px 1px';
 		input.style.cursor = "default";
+		input.style.touchAction = 'manipulation'; // for mobile
 
 		input.spellcheck = false;
-		input.value = Pointer_stringify(text);
-		input.placeholder = Pointer_stringify(placeholder);
-		input.style.fontSize = fontsize + "px";
-		//input.setSelectionRange(0, input.value.length);
+		input.value = UTF8ToString(text);
+		input.placeholder = UTF8ToString(placeholder);
 		
 		if(isPassword){
 			input.type = 'password';
 		}
 
-        container.appendChild(input);
+		if(isMobile) {
+			document.body.appendChild(input);
+		} else {
+	        container.appendChild(input);
+		}
         return instances.push(input) - 1;
     },
 	WebGLInputEnterSubmit: function(id, falg){
@@ -141,7 +161,7 @@ var WebGLInput = {
 	},
 	WebGLInputText:function(id, text){
         var input = instances[id];
-		input.value = Pointer_stringify(text);
+		input.value = UTF8ToString(text);
 	},
 	WebGLInputDelete:function(id){
         var input = instances[id];
@@ -151,6 +171,10 @@ var WebGLInput = {
 	WebGLInputEnableTabText:function(id, enable) {
         var input = instances[id];
 		input.enableTabText = enable;
+	},
+	WebGLInputForceBlur:function(id) {
+        var input = instances[id];
+		input.blur();
 	},
 }
 
